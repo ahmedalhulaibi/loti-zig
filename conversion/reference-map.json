@@ -1,0 +1,837 @@
+{
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "zig_version": "0.17.0",
+  "inventory_api_symbols": 76,
+  "stdlib_sha256": {
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf",
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
+  },
+  "entries": [
+    {
+      "original": "__kernel_timespec",
+      "zig": "std.os.linux.kernel_timespec",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_cqring_offsets",
+      "zig": "std.os.linux.io_cqring_offsets",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_ring_get_sqe",
+      "zig": "std.os.linux.IoUring.get_sqe",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Corrects an original prose typo; no function named io_ring_get_sqe exists.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn get_sqe(self: *IoUring) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_sqring_offsets",
+      "zig": "std.os.linux.io_sqring_offsets",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring",
+      "zig": "std.os.linux.IoUring",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_cq",
+      "zig": "std.os.linux.IoUring.CompletionQueue",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_cq_advance",
+      "zig": "std.os.linux.IoUring.cq_advance",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Acknowledge exactly the manually processed count.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn cq_advance(self: *IoUring, count: u32) void"
+    },
+    {
+      "original": "io_uring_cq_ready",
+      "zig": "std.os.linux.IoUring.cq_ready",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Acquire-load completion readiness; does not consume entries.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn cq_ready(self: *IoUring) u32"
+    },
+    {
+      "original": "io_uring_cqe",
+      "zig": "std.os.linux.io_uring_cqe",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_cqe_get_data",
+      "zig": "cqe.user_data",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Read the u64 correlation tag directly."
+    },
+    {
+      "original": "io_uring_cqe_seen",
+      "zig": "std.os.linux.IoUring.cqe_seen",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Only for manually borrowed CQEs; not for copy_cqe/copy_cqes results.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn cqe_seen(self: *IoUring, cqe: *linux.io_uring_cqe) void"
+    },
+    {
+      "original": "io_uring_enter",
+      "zig": "std.os.linux.io_uring_enter",
+      "example": "examples/raw_cat.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Publishes submitted entries or waits according to flags; decode the raw usize result with linux.errno.",
+      "declaration_source": "os/linux.zig",
+      "zig_signature": "pub fn io_uring_enter(fd: fd_t, to_submit: u32, min_complete: u32, flags: u32, sig: ?*sigset_t) usize"
+    },
+    {
+      "original": "io_uring_for_each_cqe",
+      "zig": "CQ head/count/mask iteration",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Borrow CQ slots after acquiring readiness; acknowledge once after processing."
+    },
+    {
+      "original": "io_uring_get_probe",
+      "zig": "raw_ops.probe",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Explicit native helper; does not invent a standard-library method.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn probe() !linux.io_uring_probe"
+    },
+    {
+      "original": "io_uring_get_probe_ring",
+      "zig": "std.os.linux.IoUring.get_probe",
+      "example": "examples/probe.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Returns an owned fixed-capacity probe value; no heap allocation or free.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn get_probe(self: *IoUring) !linux.io_uring_probe"
+    },
+    {
+      "original": "io_uring_get_sqe",
+      "zig": "std.os.linux.IoUring.get_sqe",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Queue exhaustion is SubmissionQueueFull, not a null pointer.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn get_sqe(self: *IoUring) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_opcode_supported",
+      "zig": "probe.is_supported(opcode)",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Takes a native IORING_OP enum and returns bool, using kernel probe flags."
+    },
+    {
+      "original": "io_uring_params",
+      "zig": "std.os.linux.io_uring_params",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_peek_batch_cqe",
+      "zig": "std.os.linux.IoUring.copy_cqes",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "wait_nr=0 returns the actual copied count and consumes those entries.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn copy_cqes(self: *IoUring, cqes: []linux.io_uring_cqe, wait_nr: u32) !u32"
+    },
+    {
+      "original": "io_uring_peek_cqe",
+      "zig": "std.os.linux.IoUring.copy_cqes",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "A one-element destination with wait_nr=0 gives nonblocking copy-and-consume, not a borrowed pointer.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn copy_cqes(self: *IoUring, cqes: []linux.io_uring_cqe, wait_nr: u32) !u32"
+    },
+    {
+      "original": "io_uring_prep_accept",
+      "zig": "std.os.linux.IoUring.accept",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn accept(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    addr: ?*posix.sockaddr,\n    addrlen: ?*posix.socklen_t,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_cancel",
+      "zig": "std.os.linux.IoUring.cancel",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn cancel(\n    self: *IoUring,\n    user_data: u64,\n    cancel_user_data: u64,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_close",
+      "zig": "std.os.linux.IoUring.close",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn close(self: *IoUring, user_data: u64, fd: linux.fd_t) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_connect",
+      "zig": "std.os.linux.IoUring.connect",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn connect(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    addr: *const posix.sockaddr,\n    addrlen: posix.socklen_t,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_epoll_ctl",
+      "zig": "std.os.linux.IoUring.epoll_ctl",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn epoll_ctl(\n    self: *IoUring,\n    user_data: u64,\n    epfd: linux.fd_t,\n    fd: linux.fd_t,\n    op: u32,\n    ev: ?*linux.epoll_event,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_fadvise",
+      "zig": "raw_ops.fadvise",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; correlated CQEs and actual read/memory effects checked",
+      "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn fadvise(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, offset: u64, length: u32, advice: u32) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_fallocate",
+      "zig": "std.os.linux.IoUring.fallocate",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn fallocate(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    mode: i32,\n    offset: u64,\n    len: u64,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_files_update",
+      "zig": "sqe.prep_files_update",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Use get_sqe then the native SQE preparer; not synchronous register_files_update.",
+      "declaration_source": "os/linux/io_uring_sqe.zig",
+      "zig_signature": "pub fn prep_files_update(\n        sqe: *linux.io_uring_sqe,\n        fds: []const linux.fd_t,\n        offset: u32,\n    ) void"
+    },
+    {
+      "original": "io_uring_prep_fsync",
+      "zig": "std.os.linux.IoUring.fsync",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn fsync(self: *IoUring, user_data: u64, fd: linux.fd_t, flags: u32) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_link_timeout",
+      "zig": "std.os.linux.IoUring.link_timeout",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn link_timeout(\n    self: *IoUring,\n    user_data: u64,\n    ts: *const linux.kernel_timespec,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_madvise",
+      "zig": "raw_ops.madvise",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; correlated CQEs and actual read/memory effects checked",
+      "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn madvise(ring: *linux.IoUring, tag: u64, memory: []u8, advice: u32) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_nop",
+      "zig": "std.os.linux.IoUring.nop",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn nop(self: *IoUring, user_data: u64) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_openat",
+      "zig": "std.os.linux.IoUring.openat",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn openat(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    path: [*:0]const u8,\n    flags: linux.O,\n    mode: posix.mode_t,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_openat2",
+      "zig": "raw_ops.openat2",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; correlated CQEs and actual read/memory effects checked",
+      "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn openat2(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, path: [*:0]const u8, how: *const OpenHow) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_poll_add",
+      "zig": "std.os.linux.IoUring.poll_add",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn poll_add(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    poll_mask: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_poll_remove",
+      "zig": "std.os.linux.IoUring.poll_remove",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn poll_remove(\n    self: *IoUring,\n    user_data: u64,\n    target_user_data: u64,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_provide_buffers",
+      "zig": "std.os.linux.IoUring.provide_buffers",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn provide_buffers(\n    self: *IoUring,\n    user_data: u64,\n    buffers: [*]u8,\n    buffer_size: usize,\n    buffers_count: usize,\n    group_id: usize,\n    buffer_id: usize,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_read",
+      "zig": "std.os.linux.IoUring.read",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn read(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: ReadBuffer,\n    offset: u64,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_read_fixed",
+      "zig": "std.os.linux.IoUring.read_fixed",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn read_fixed(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: *posix.iovec,\n    offset: u64,\n    buffer_index: u16,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_readv",
+      "zig": "std.os.linux.IoUring.read",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "No ring.readv method: call ring.read with ReadBuffer.iovecs.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn read(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: ReadBuffer,\n    offset: u64,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_recv",
+      "zig": "std.os.linux.IoUring.recv",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn recv(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: RecvBuffer,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_recvmsg",
+      "zig": "std.os.linux.IoUring.recvmsg",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn recvmsg(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    msg: *linux.msghdr,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_remove_buffers",
+      "zig": "std.os.linux.IoUring.remove_buffers",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn remove_buffers(\n    self: *IoUring,\n    user_data: u64,\n    buffers_count: usize,\n    group_id: usize,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_send",
+      "zig": "std.os.linux.IoUring.send",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn send(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: []const u8,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_sendmsg",
+      "zig": "std.os.linux.IoUring.sendmsg",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn sendmsg(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    msg: *const linux.msghdr_const,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_splice",
+      "zig": "std.os.linux.IoUring.splice",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Offsets are u64 values, not pointers; maxInt(u64) means current position. Set splice flags in SQE rw_flags. One descriptor must be a pipe.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn splice(self: *IoUring, user_data: u64, fd_in: linux.fd_t, off_in: u64, fd_out: linux.fd_t, off_out: u64, len: usize) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_statx",
+      "zig": "std.os.linux.IoUring.statx",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn statx(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    path: [:0]const u8,\n    flags: u32,\n    mask: linux.STATX,\n    buf: *linux.Statx,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_timeout",
+      "zig": "std.os.linux.IoUring.timeout",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn timeout(\n    self: *IoUring,\n    user_data: u64,\n    ts: *const linux.kernel_timespec,\n    count: u32,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_timeout_remove",
+      "zig": "std.os.linux.IoUring.timeout_remove",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn timeout_remove(\n    self: *IoUring,\n    user_data: u64,\n    timeout_user_data: u64,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_write",
+      "zig": "std.os.linux.IoUring.write",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn write(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: []const u8,\n    offset: u64,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_write_fixed",
+      "zig": "std.os.linux.IoUring.write_fixed",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn write_fixed(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: *posix.iovec,\n    offset: u64,\n    buffer_index: u16,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_writev",
+      "zig": "std.os.linux.IoUring.writev",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn writev(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    iovecs: []const posix.iovec_const,\n    offset: u64,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_probe",
+      "zig": "std.os.linux.io_uring_probe",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_probe_op",
+      "zig": "std.os.linux.io_uring_probe_op",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_queue_exit",
+      "zig": "std.os.linux.IoUring.deinit",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Closes the descriptor and unmaps memory; complete or cancel-and-drain outstanding requests before destroying their operands.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn deinit(self: *IoUring) void"
+    },
+    {
+      "original": "io_uring_queue_init",
+      "zig": "std.os.linux.IoUring.init",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Returns an owned value through a Zig error union; power-of-two u16 entries.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn init(entries: u16, flags: u32) !IoUring"
+    },
+    {
+      "original": "io_uring_queue_init_params",
+      "zig": "std.os.linux.IoUring.init_params",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Caller supplies zeroed native parameters; returned fields describe actual mappings.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn init_params(entries: u16, p: *linux.io_uring_params) !IoUring"
+    },
+    {
+      "original": "io_uring_queue_mmap",
+      "zig": "RawRing.map",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Accepts an existing setup descriptor; transfers ownership on success. Requires SINGLE_MMAP.",
+      "declaration_source": "examples/raw_cat.zig",
+      "zig_signature": "pub fn map(fd: linux.fd_t, params: linux.io_uring_params) !RawRing"
+    },
+    {
+      "original": "io_uring_register",
+      "zig": "std.os.linux.io_uring_register",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Raw register returns errno-encoded usize; decode with linux.errno.",
+      "declaration_source": "os/linux.zig",
+      "zig_signature": "pub fn io_uring_register(fd: fd_t, opcode: IORING_REGISTER, arg: ?*const anyopaque, nr_args: u32) usize"
+    },
+    {
+      "original": "io_uring_register_buffers",
+      "zig": "std.os.linux.IoUring.register_buffers",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Borrowed buffers remain valid until outstanding requests finish and registration ends.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn register_buffers(self: *IoUring, buffers: []const posix.iovec) !void"
+    },
+    {
+      "original": "io_uring_register_eventfd",
+      "zig": "std.os.linux.IoUring.register_eventfd",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Completion notifications are a counter, not CQE identities.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn register_eventfd(self: *IoUring, fd: linux.fd_t) !void"
+    },
+    {
+      "original": "io_uring_register_eventfd_async",
+      "zig": "std.os.linux.IoUring.register_eventfd_async",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Inline completions do not notify; the executable forces an asynchronous NOP.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn register_eventfd_async(self: *IoUring, fd: linux.fd_t) !void"
+    },
+    {
+      "original": "io_uring_register_files",
+      "zig": "std.os.linux.IoUring.register_files",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "With IOSQE_FIXED_FILE, SQE fd is a table index rather than a process descriptor.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn register_files(self: *IoUring, fds: []const linux.fd_t) !void"
+    },
+    {
+      "original": "io_uring_register_files_update",
+      "zig": "std.os.linux.IoUring.register_files_update",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Updates a registered table at an offset; unlike prep_files_update it is a synchronous registration operation.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn register_files_update(self: *IoUring, offset: u32, fds: []const linux.fd_t) !void"
+    },
+    {
+      "original": "io_uring_register_personality",
+      "zig": "raw_ops.register_personality",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Explicit native helper; does not invent a standard-library method.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn register_personality(ring: *linux.IoUring) !u16"
+    },
+    {
+      "original": "io_uring_register_probe",
+      "zig": "raw_ops.register_probe",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Explicit native helper; does not invent a standard-library method.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn register_probe(ring: *linux.IoUring, result: *linux.io_uring_probe) !void"
+    },
+    {
+      "original": "io_uring_ring_dontfork",
+      "zig": "RawRing.dontFork",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Applies MADV_DONTFORK to both mapped ranges; compiled and invoked.",
+      "declaration_source": "examples/raw_cat.zig",
+      "zig_signature": "pub fn dontFork(self: *RawRing) !void"
+    },
+    {
+      "original": "io_uring_set_sqe_data",
+      "zig": "sqe.user_data = tag",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Corrects an original prose typo; use the native tag field."
+    },
+    {
+      "original": "io_uring_setup",
+      "zig": "std.os.linux.io_uring_setup",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Raw setup returns errno-encoded usize and fills native parameters; successful result owns a descriptor.",
+      "declaration_source": "os/linux.zig",
+      "zig_signature": "pub fn io_uring_setup(entries: u32, p: *io_uring_params) usize"
+    },
+    {
+      "original": "io_uring_sq",
+      "zig": "std.os.linux.IoUring.SubmissionQueue",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_sq_ready",
+      "zig": "std.os.linux.IoUring.sq_ready",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Counts outstanding submission entries, not completion entries.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn sq_ready(self: *IoUring) u32"
+    },
+    {
+      "original": "io_uring_sq_space_left",
+      "zig": "ring.sq.sqes.len - ring.sq_ready()",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Free slots are distinct from completion readiness."
+    },
+    {
+      "original": "io_uring_sq_test",
+      "zig": "caller-selected output pathname",
+      "example": "examples/sq_poll.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Original filename, not an API; replaced by the CLI path argument."
+    },
+    {
+      "original": "io_uring_sqe",
+      "zig": "std.os.linux.io_uring_sqe",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_sqe_set_data",
+      "zig": "sqe.user_data = tag",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "u64 tags are copied unchanged into CQEs; avoid borrowed application pointers."
+    },
+    {
+      "original": "io_uring_sqe_set_flags",
+      "zig": "sqe.flags = flags / sqe.flags |= flags",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Assignment replaces flags; |= adds bits without clearing preparer-set flags. Native flags fit u8."
+    },
+    {
+      "original": "io_uring_submit",
+      "zig": "std.os.linux.IoUring.submit",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Returns submitted SQEs, not completed operations; SQPOLL counts are not completion proof.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn submit(self: *IoUring) !u32"
+    },
+    {
+      "original": "io_uring_submit_and_wait",
+      "zig": "std.os.linux.IoUring.submit_and_wait",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Publishes requests and waits; the return value still counts submissions.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn submit_and_wait(self: *IoUring, wait_nr: u32) !u32"
+    },
+    {
+      "original": "io_uring_submit_sqe",
+      "zig": "SQPOLL write/submit sequence",
+      "example": "examples/sq_poll.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Original application helper, not a public library function."
+    },
+    {
+      "original": "io_uring_unregister_buffers",
+      "zig": "std.os.linux.IoUring.unregister_buffers",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Release registration only after dependent operations complete.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn unregister_buffers(self: *IoUring) !void"
+    },
+    {
+      "original": "io_uring_unregister_eventfd",
+      "zig": "std.os.linux.IoUring.unregister_eventfd",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Detach notifications before closing the event descriptor.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn unregister_eventfd(self: *IoUring) !void"
+    },
+    {
+      "original": "io_uring_unregister_files",
+      "zig": "std.os.linux.IoUring.unregister_files",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Release the registered table after dependent requests finish.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn unregister_files(self: *IoUring) !void"
+    },
+    {
+      "original": "io_uring_unregister_personality",
+      "zig": "raw_ops.unregister_personality",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Explicit native helper; does not invent a standard-library method.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn unregister_personality(ring: *linux.IoUring, id: u16) !void"
+    },
+    {
+      "original": "io_uring_wait_cqe",
+      "zig": "std.os.linux.IoUring.copy_cqe",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Returns a CQE value and advances the CQ; do not acknowledge it again.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn copy_cqe(ring: *IoUring) !linux.io_uring_cqe"
+    },
+    {
+      "original": "io_uring_wait_cqe_nr",
+      "zig": "std.os.linux.IoUring.copy_cqes",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "copy_cqes(destination, wait_nr) copies available entries and advances CQ; its waiting semantics are not a strict batch-size guarantee.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn copy_cqes(self: *IoUring, cqes: []linux.io_uring_cqe, wait_nr: u32) !u32"
+    },
+    {
+      "original": "io_uring_wait_cqe_timeout",
+      "zig": "raw_ops.wait_with_timeout",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "ENTER_EXT_ARG relative deadline (Linux 5.11+), optional signal mask; no hidden SQE, implicit submission or CQ consumption. Submit first, then copy available CQEs.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn wait_with_timeout(ring: *linux.IoUring, minimum: u32, timeout: *const linux.kernel_timespec, mask: ?*const linux.sigset_t) !void"
+    },
+    {
+      "original": "io_uring_wait_cqes",
+      "zig": "raw_ops.wait_with_timeout",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "ENTER_EXT_ARG relative deadline (Linux 5.11+), optional signal mask; no hidden SQE, implicit submission or CQ consumption. Submit first, then copy available CQEs.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn wait_with_timeout(ring: *linux.IoUring, minimum: u32, timeout: *const linux.kernel_timespec, mask: ?*const linux.sigset_t) !void"
+    },
+    {
+      "original": "iovec",
+      "zig": "std.posix.iovec / std.posix.iovec_const",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "loff_t",
+      "zig": "i64; SQE offsets use u64 with the current-offset sentinel",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "mode_t",
+      "zig": "std.posix.mode_t",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "msghdr",
+      "zig": "std.os.linux.msghdr / std.os.linux.msghdr_const",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "off_t",
+      "zig": "i64; SQE offsets use u64 with the current-offset sentinel",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "open_how",
+      "zig": "raw_ops.OpenHow",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "sigset_t",
+      "zig": "std.os.linux.sigset_t",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "size_t",
+      "zig": "usize",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "sockaddr",
+      "zig": "std.os.linux.sockaddr",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "socklen_t",
+      "zig": "std.os.linux.socklen_t",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "statx",
+      "zig": "std.os.linux.Statx",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    }
+  ],
+  "limitations": [
+    "This map records code bindings, not completed document conversion.",
+    "Constructor tests are not proof of executing all mixed filesystem/network operations.",
+    "Independent code review is currently blocked by the subagent host launcher."
+  ]
+}

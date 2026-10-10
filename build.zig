@@ -20,6 +20,12 @@ pub fn build(b: *std.Build) void {
         .{ "fixed-buffers", "fixed_buffers" },
         .{ "sq-poll", "sq_poll" },
         .{ "register-eventfd", "register_eventfd" },
+        .{ "webserver", "webserver" },
+        .{ "reference-setup", "reference_setup" },
+        .{ "reference-completion", "reference_completion" },
+        .{ "reference-registration", "reference_registration" },
+        .{ "reference-submission", "reference_submission" },
+        .{ "reference-raw", "reference_raw" },
     };
     inline for (names) |entry| {
         const exe = b.addExecutable(.{
