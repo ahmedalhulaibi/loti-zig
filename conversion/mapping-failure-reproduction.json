@@ -1,0 +1,42 @@
+{
+  "scope": "Existing success/fork/teardown checks do not execute partial-construction failures; the proposed failure mode is rejected. Not a reproduced mapping leak.",
+  "source_commit": "1150db6f3766a1dced3ebea019617d2d8e70e0a4",
+  "compiler": "0.17.0",
+  "cases": [
+    {
+      "stage": "shared-sq",
+      "exit_status": 1,
+      "stdout": "",
+      "stderr_first_line": "error: UnknownMappingMode"
+    },
+    {
+      "stage": "shared-sqes",
+      "exit_status": 1,
+      "stdout": "",
+      "stderr_first_line": "error: UnknownMappingMode"
+    },
+    {
+      "stage": "separate-sq",
+      "exit_status": 1,
+      "stdout": "",
+      "stderr_first_line": "error: UnknownMappingMode"
+    },
+    {
+      "stage": "separate-cq",
+      "exit_status": 1,
+      "stdout": "",
+      "stderr_first_line": "error: UnknownMappingMode"
+    },
+    {
+      "stage": "separate-sqes",
+      "exit_status": 1,
+      "stdout": "",
+      "stderr_first_line": "error: UnknownMappingMode"
+    }
+  ],
+  "source_sha256": {
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/reference_setup.zig": "08686998a5fe2df08d28a8567e793e5bc108e7a950a747859e179270d8ab574f",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e"
+  }
+}
