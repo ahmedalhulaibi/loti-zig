@@ -1,0 +1,26 @@
+{
+  "base_commit": "64b685d1f9b4457df04eaad1b41907a053e49e46",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64"
+  },
+  "scope": "Missing ordinary non-EXT_ARG sigmask-delivery/restoration evidence, not a native/kernel defect. Existing reference-signals/default already executes EXT_ARG masks. Original syscall source block ref-iouring/io_uring_enter.rst:15 and signal prose explain basic mask installation; rewritten chapter explicitly marks basic delivered signals untested.",
+  "command": [
+    "zig-out/bin/reference-signals",
+    "--ordinary"
+  ],
+  "actual": {
+    "returncode": 1,
+    "stdout": "",
+    "first_stderr": "error: ExpectedNoSignalArguments"
+  },
+  "missing": "Real basic GETEVENTS mask wait, pending SIGUSR1 interruption, blocked/null masks with CQE-producing timers, no hidden submission/consumption, exact handler/caller/action restore; no concurrent-sender or general restart claim.",
+  "source_sha256": {
+    "examples/reference_signals.zig": "b895a7413d564d6b185cfe9eee7b67f252b123dde2920457e9c2b0d2ff2bc44c",
+    "ref-iouring/io_uring_enter.rst": "889fb3351be04956766022e68925065a9da202b9be6152a857a6454543c78904",
+    "ref-zig/completion.rst": "07bcd2a63922cb9b0d0dc4e9615210dbb35f574d74bd94cc5379907c174c6c79",
+    "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d"
+  },
+  "review": "Mandatory host blocked, no retry/fallback/child attestation."
+}
