@@ -1,0 +1,62 @@
+{
+  "scope": "Author block-index coverage only; not line semantics, operation verification or independent review.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "inventory": {
+    "path": "conversion/source-inventory.json",
+    "sha256": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5"
+  },
+  "documents": [
+    {
+      "path": "conversion/implicit-literal-disposition.md",
+      "sha256": "dae260afa7908cd0013c31be64ccc544afbbe81fe1d0c8d5f4d70aba068c0dac",
+      "block_rows": 16
+    },
+    {
+      "path": "conversion/tutorial-block-disposition.md",
+      "sha256": "ac1845d6034926729a952e541551e66727d0cf0ed802ed287100dcafcf27019e",
+      "block_rows": 37
+    },
+    {
+      "path": "conversion/reference-block-disposition.md",
+      "sha256": "b0aee96ea2249d6e94538edaca4b1fcc95920d05c62c7f616d609e11f3c72ffa",
+      "block_rows": 75
+    }
+  ],
+  "inventoried_blocks": 128,
+  "noted_block_ids": 128,
+  "duplicate_ids": [],
+  "missing_ids": [],
+  "unknown_ids": [],
+  "matched_lines_in_noted_block_ranges": 3051,
+  "matched_lines_outside_noted_block_ranges": 567,
+  "outside_range_counts_by_file": {
+    "async_intro.rst": 3,
+    "changelog.rst": 2,
+    "conf.py": 2,
+    "delme.c": 226,
+    "index.rst": 18,
+    "low_level.rst": 21,
+    "ref-iouring/index.rst": 4,
+    "ref-iouring/io_uring_enter.rst": 95,
+    "ref-iouring/io_uring_register.rst": 48,
+    "ref-iouring/io_uring_setup.rst": 50,
+    "ref-liburing/advanced_usage.rst": 8,
+    "ref-liburing/completion.rst": 6,
+    "ref-liburing/cqe.rst": 2,
+    "ref-liburing/index.rst": 2,
+    "ref-liburing/setup_teardown.rst": 1,
+    "ref-liburing/sqe.rst": 3,
+    "ref-liburing/submission.rst": 4,
+    "ref-liburing/supported_caps.rst": 1,
+    "tutorial/cat_liburing.rst": 13,
+    "tutorial/cp_liburing.rst": 4,
+    "tutorial/fixed_buffers.rst": 3,
+    "tutorial/index.rst": 2,
+    "tutorial/link_liburing.rst": 4,
+    "tutorial/probe_liburing.rst": 1,
+    "tutorial/register_eventfd.rst": 3,
+    "tutorial/sq_poll.rst": 12,
+    "tutorial/webserver_liburing.rst": 8,
+    "what_is_io_uring.rst": 21
+  }
+}

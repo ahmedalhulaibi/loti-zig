@@ -3,8 +3,9 @@
 Author comparison, not independent review. Source:
 `c9ee2424af02e4c1e4765088580107d5e17b826e`. These 37 IDs are exactly the
 inventoried low-level/tutorial blocks: 29 C blocks and eight build/output
-literals. Together with `implicit-literal-disposition.md`, 53/128 blocks have
-explicit conversion notes. **This is not a complete line-level disposition.**
+literals. Together with `implicit-literal-disposition.md` and
+`reference-block-disposition.md`, all 128 block IDs have author conversion notes.
+**This is not a complete line-level disposition.**
 
 Replacement paths below are repository-relative. The migrated chapter for each
 original path is recorded in `chapter-map.json`; chapters include these compiled

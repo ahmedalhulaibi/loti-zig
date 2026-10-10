@@ -12,7 +12,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | Requirement | Actual artifacts/evidence | Open requirement |
 |---|---|---|
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
-| 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | Semantic disposition for each inventoried line/block |
+| 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | Complete line/prose semantic disposition; 128/128 block IDs have author notes, not conversion attestations |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
 | 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 19 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
@@ -39,16 +39,24 @@ with an independent Docutils parse, compare every recorded line/block range with
 the original source, and regenerate in fresh processes. `--check` alone had
 passed despite the omissions; it was not a coverage proof. LSP: both changed
 Python files supported and clean. `implicit-literal-disposition.md` records
-these 16 conversions and their limits; other dispositions remain open. This
+these 16 conversions and their limits; full line/prose disposition remains open. This
 parser check is not the blocked independent agent review.
 
 ## Current semantic comparison
 
-`tutorial-block-disposition.md` compares all 37 low-level/tutorial blocks
-(29 C/eight build-output literals). With the 16 implicit-literal notes, **53/128**
-blocks have explicit author comparison notes; the remaining 75 reference blocks
-and complete line-level disposition remain open. These notes are not a green
-conversion attestation: they identified an actual missing original feature.
+`tutorial-block-disposition.md` compares 37 low-level/tutorial blocks (29 C/eight
+build-output literals); `implicit-literal-disposition.md` covers 16 implicit C
+literals; `reference-block-disposition.md` covers the remaining 75 declarations
+and literals. The three ID sets are disjoint and equal the inventory's **128/128**
+block IDs. `block-disposition-verification.json` records exact document/inventory
+hashes and index coverage, **not** semantic acceptance or independent review.
+
+These ranges contain 3,051 inventoried lines. Another **567 matched lines** lie
+outside them, including the 226-line retired `delme.c` API checklist. Complete
+line/prose disposition remains open. Constructor-only rows explicitly separate
+preparation from operation effects; an idempotent same-FD table update does not
+verify changed-descriptor use. Full probe flags, delivered signals/restoration,
+nonblocking populated CQ and capacity/failure/state checks remain open.
 
 The original copy's `BLKGETSIZE64` input feature is now recreated and executed
 against disposable read-only virtual disks. Native `cp` accepts regular or block
@@ -173,7 +181,8 @@ git diff --check
 
 ## Next work
 
-1. Record each line/block's semantic disposition; inspect operation/lifetime gaps.
+1. Finish line/prose disposition (567 matched lines outside noted block ranges);
+   inspect operation/lifetime gaps, including changed-FD registered-table I/O.
 2. Extend failure/state checks and execute bounded source mutation verification.
 3. Obtain independent review and resolve findings; do not substitute parent checks.
 4. Rebuild/audit final artifacts, push only the personal fork, verify remote state.
