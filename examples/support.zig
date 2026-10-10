@@ -3,7 +3,7 @@ const linux = std.os.linux;
 
 pub fn output(io: std.Io, bytes: []const u8) !void {
     var buffer: [4096]u8 = undefined;
-    var writer = std.Io.File.stdout().writer(io, &buffer);
+    var writer = std.Io.File.stdout().writerStreaming(io, &buffer);
     try writer.interface.writeAll(bytes);
     try writer.interface.flush();
 }

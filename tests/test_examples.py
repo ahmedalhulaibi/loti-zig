@@ -76,8 +76,7 @@ class ExampleContracts(unittest.TestCase):
                     result = subprocess.run([str(BIN / name), str(source)], stdout=stdout,
                                             capture_output=False, stderr=subprocess.PIPE, timeout=10)
                     self.assertEqual(result.returncode, 0)
-                    # BUG: a fresh positional stdout writer overwrites each prior chunk.
-                    self.assertEqual(destination.read_bytes(), payload[:2048])
+                    self.assertEqual(destination.read_bytes(), payload)
 
     def test_linked_execution_and_failure_cancellation(self):
         message = b"Hello, io_uring!"

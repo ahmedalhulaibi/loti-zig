@@ -39,7 +39,9 @@ interrupted calls and writes exactly the returned count.
 
 ``std.posix`` here supplies native ABI declarations. It does not import foreign
 headers or require a system runtime library. Output uses Zig 0.17.0's
-``std.Io.File`` writer and explicitly flushes its buffered interface.
+``std.Io.File.writerStreaming`` and explicitly flushes its buffered interface.
+Streaming is required for stdout: a fresh positional writer starts at offset
+zero and can overwrite earlier chunks when stdout is redirected to a file.
 
 Submission and completion types
 -------------------------------
