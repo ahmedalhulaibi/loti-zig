@@ -26,8 +26,8 @@
     "conversion/literal-policy-spec-sha256.json": "cfe306a7937d296e057950d134f56b850e2700efedc9c529e6fee692a39f7651",
     "conversion/literal-policy-spec-amendment.json": "f3b73bc0ddd3c79c0c21a8674067da7f428dbe679c536d42ed82c0563bbe961a",
     "conversion/literal-policy-damages-initial.json": "4916416f2a203c8ef7a4f06b1b23b771ae5117553cea4b6dabe5d4078f94bf18",
-    "README.md": "a2f1fcf776ac399185700cd4b8a121dc22cb0eebcc105c8725e78785a5291c0b",
-    "testing.md": "d4f37631e3b6a27c41d11c5c4596d91c13aafa23f8fa349808c2c4b39b3b0516"
+    "README.md": "3f45f86f049baec7ab785ccc84b7ffcd3aa01030d563514700c8b5d1a81ad4f3",
+    "testing.md": "348b9d1e21f51e1e0c6807a2269472fc2af097ac71daeff6f808fbdf06bc06e3"
   },
   "diagnostics": {
     "scope": "Active primary LSP on three changed Python paths; no cache-only cleanliness claim. Existing OPF spelling infos/other-feature suppressions stay disclosed in their own receipts.",
@@ -71,5 +71,6 @@
     },
     "book_sha256": "643aac576f2dc2d60f16d3f1c5b5c7e2efc8aec6714455b32953f9adb69a499a",
     "scope": "Final publication/EPUBCheck/layout followed aggregate suite. Not semantic/independent-review or reader-device acceptance."
-  }
+  },
+  "replay_after_sqpoll_wakeup": "After full81-test/fifteen400-case suite and final strict publication/browser/EPUBCheck. Updated only changed execution-consumer fingerprints, not historical mutation or independent-review acceptance."
 }

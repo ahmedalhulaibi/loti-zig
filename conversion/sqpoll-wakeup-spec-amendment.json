@@ -1,0 +1,9 @@
+{
+  "scope": "Unsealed author harness-only correction before mutations, no ACL/verifier-agent claim. Initial hashes and original test source retained.",
+  "reason": "Current strace names the zero reserved getevents field min_wait_usec; historical fixture says min_time. Accept these two exact names with identical zero value/size24/mask/deadline; fixtures and expected behavior unchanged. Original first live check failed through assertion, not native/kernel defect or mutant kill.",
+  "initial": "sqpoll-wakeup-spec-initial-sha256.json",
+  "initial_test": "sqpoll-wakeup-test-initial.txt",
+  "amended_source_sha256": {
+    "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e"
+  }
+}

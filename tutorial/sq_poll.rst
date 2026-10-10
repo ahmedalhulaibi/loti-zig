@@ -21,6 +21,7 @@ fixed-file addressing rule is explicit.
 
    zig build
    zig-out/bin/sq-poll /tmp/loti-poll.txt
+   zig-out/bin/sq-poll /tmp/loti-poll.txt --observe
 
 The parameters set a 10-ms idle threshold. A first write completes, the process
 sleeps for 50 ms, and a second write is submitted. A read checks the combined
@@ -36,6 +37,27 @@ A ``submit`` return count alone cannot prove execution in polling mode.
 interval exercises the wakeup path when the poller sleeps, but timing alone does
 not prove that it slept on every run. No thread-name search or syscall-free
 claim is used as a substitute for completion evidence.
+
+The optional ``--observe`` mode emits JSON instead of file bytes. It acquire-loads
+``ring.sq.flags`` until ``IORING_SQ_NEED_WAKEUP`` is set **before each** of the
+three requests. The private ring must have equal SQ head/tail, no queued SQEs and
+no unconsumed CQEs. At most 2000 attempts, with 1-ms sleeps, are allowed; scheduling
+can extend elapsed time, and failure to observe sleep is an error, never a skip.
+The SDK then release-publishes the request and handles the wakeup. Each CQ wait
+has a 1-s EXT_ARG guard; reported submit counts are not treated as CQE results.
+
+``tests/test_sqpoll_wakeup.py`` checks five fresh whole reports, the independent
+49-byte file/readback literal, three actual ``IORING_ENTER_SQ_WAKEUP`` calls,
+registered descriptor identity and unregister-before-close/query ordering.
+The output file is closed and queried before exit while the caller's ring remains
+open. Twelve damaged traces challenge the syscall oracle. Current strace names
+the zero reserved deadline field ``min_wait_usec``; the historical fixture uses
+``min_time``. Both are decoded as the same zero value, not different deadlines.
+
+This is bounded sequential evidence on the tested kernel/architecture. It does
+not prove syscall elimination while the poller is awake, all sleep/wake races,
+concurrent producers, affinity, shared poller threads, IOPOLL or storage durability.
+Both modes create or truncate the supplied output; use an owned disposable path.
 
 Observe it
 ----------

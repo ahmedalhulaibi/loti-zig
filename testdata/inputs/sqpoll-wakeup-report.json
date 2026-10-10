@@ -1,0 +1,87 @@
+{
+  "setup": {
+    "flags": 2,
+    "idle_ms": 10
+  },
+  "before": [
+    {
+      "flags": 1,
+      "head": 0,
+      "tail": 0,
+      "queued": 0,
+      "cq_ready": 0
+    },
+    {
+      "flags": 1,
+      "head": 1,
+      "tail": 1,
+      "queued": 0,
+      "cq_ready": 0
+    },
+    {
+      "flags": 1,
+      "head": 2,
+      "tail": 2,
+      "queued": 0,
+      "cq_ready": 0
+    }
+  ],
+  "operations": [
+    {
+      "request": {
+        "operation": "WRITE",
+        "tag": 1,
+        "descriptor": 0,
+        "length": 26,
+        "offset": 0,
+        "flags": 1
+      },
+      "cqe": {
+        "user_data": 1,
+        "result": 26,
+        "flags": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "WRITE",
+        "tag": 2,
+        "descriptor": 0,
+        "length": 23,
+        "offset": 26,
+        "flags": 1
+      },
+      "cqe": {
+        "user_data": 2,
+        "result": 23,
+        "flags": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "READ",
+        "tag": 3,
+        "descriptor": 0,
+        "length": 49,
+        "offset": 0,
+        "flags": 1
+      },
+      "cqe": {
+        "user_data": 3,
+        "result": 49,
+        "flags": 0
+      }
+    }
+  ],
+  "after": {
+    "head": 3,
+    "tail": 3,
+    "queued": 0,
+    "cq_ready": 0
+  },
+  "data_hex": "5375626d697373696f6e20717565756520706f6c6c696e672e0a4166746572207468652069646c6520706572696f642e0a",
+  "cleanup": {
+    "file_closed": true,
+    "ring_still_open": true
+  }
+}

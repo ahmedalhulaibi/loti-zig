@@ -1,0 +1,11 @@
+{
+  "scope": "Unsealed author preimplementation contracts, not ACL-protected verifier-agent acceptance. Whole literal includes fixed-file requests, three acquire-observed idle snapshots, correlated CQEs and byte/ownership expectations. Trace allows variable successful wake submit counts and0\u20133 bounded completion guards, never treats returned submit count as operation completion.",
+  "source_sha256": {
+    "tests/test_sqpoll_wakeup.py": "b85c31b1fb2fdfa89a60a5065442a5143a190ab06b218a3428ba1c74bed7f475",
+    "testdata/inputs/sqpoll-wakeup-invalid-arguments.json": "8659a5c670bd7c209b920149d006a84a0b2635f8712e27dd9093247f21f5a680",
+    "testdata/inputs/sqpoll-wakeup-invalid-traces.json": "4572ca71a0a54814150030dd7579bebd6e7ac9980e53922162eff000453f08cb",
+    "testdata/inputs/sqpoll-wakeup-output.bin": "44fe6650361db29c9a01e673739d74510d87901cfbd92a2f0691a2d1900e41fb",
+    "testdata/inputs/sqpoll-wakeup-report.json": "4a59e4d0f25093615b8065cbd6abc01fca4427ab853dd9c6a8dfe43ec180118e",
+    "testdata/inputs/sqpoll-wakeup.trace": "f250196d5c720380631ad9872b82ab8a8861f1c2de0a73ee959fdd7215cdcf62"
+  }
+}

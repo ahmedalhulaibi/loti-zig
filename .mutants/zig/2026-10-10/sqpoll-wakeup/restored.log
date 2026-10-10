@@ -1,0 +1,10 @@
+test_actual_private_ring_wakeup_calls_and_damaged_traces (tests.test_sqpoll_wakeup.PollingWakeContracts.test_actual_private_ring_wakeup_calls_and_damaged_traces)
+Kills metadata-only wakeup/ownership and omitted, wrong-flag or implicit-submission syscall claims. ... ok
+test_observed_sleep_and_cqes_preserve_default_file_bytes (tests.test_sqpoll_wakeup.PollingWakeContracts.test_observed_sleep_and_cqes_preserve_default_file_bytes)
+Kills elapsed-time/fabricated-flag proxies, wrong fixed indexes/offsets and premature CQ consumption. ... ok
+test_polling_survives_an_idle_poller (tests.test_examples.ExampleContracts.test_polling_survives_an_idle_poller) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.498s
+
+OK

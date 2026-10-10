@@ -1,0 +1,44 @@
+test_actual_private_ring_wakeup_calls_and_damaged_traces (tests.test_sqpoll_wakeup.PollingWakeContracts.test_actual_private_ring_wakeup_calls_and_damaged_traces)
+Kills metadata-only wakeup/ownership and omitted, wrong-flag or implicit-submission syscall claims. ... FAIL
+test_observed_sleep_and_cqes_preserve_default_file_bytes (tests.test_sqpoll_wakeup.PollingWakeContracts.test_observed_sleep_and_cqes_preserve_default_file_bytes)
+Kills elapsed-time/fabricated-flag proxies, wrong fixed indexes/offsets and premature CQ consumption. ... FAIL
+
+======================================================================
+FAIL: test_actual_private_ring_wakeup_calls_and_damaged_traces (tests.test_sqpoll_wakeup.PollingWakeContracts.test_actual_private_ring_wakeup_calls_and_damaged_traces)
+Kills metadata-only wakeup/ownership and omitted, wrong-flag or implicit-submission syscall claims.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_sqpoll_wakeup.py", line 104, in test_actual_private_ring_wakeup_calls_and_damaged_traces
+    self.assertEqual((result.returncode, result.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: WaitTimedOut\n/home/ahmed/wor[500 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'error: WaitTimedOut\n/home/ahmed/workspace/va/loti-zig/examples/raw_ops.z'
+-  b'ig:81:18: 0x11eccbd in wait_with_timeout (sq_poll.zig)\n        .TIME => '
+-  b'return error.WaitTimedOut,\n                 ^\n/home/ahmed/workspace/va/l'
+-  b'oti-zig/examples/sq_poll.zig:35:9: 0x11ed5a3 in completed (sq_poll.zig)\n'
+-  b'        try raw.wait_with_timeout(ring, 1, &timeout, null);\n        ^\n/h'
+-  b'ome/ahmed/workspace/va/loti-zig/examples/sq_poll.zig:71:23: 0x11eea58 in mai'
+-  b'n (sq_poll.zig)\n    const first_cqe = try completed(&ring, observe);\n   '
+-  b'                   ^\n')
+
+======================================================================
+FAIL: test_observed_sleep_and_cqes_preserve_default_file_bytes (tests.test_sqpoll_wakeup.PollingWakeContracts.test_observed_sleep_and_cqes_preserve_default_file_bytes)
+Kills elapsed-time/fabricated-flag proxies, wrong fixed indexes/offsets and premature CQ consumption.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_sqpoll_wakeup.py", line 82, in test_observed_sleep_and_cqes_preserve_default_file_bytes
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'error: WaitTimedOut\n/home/ahmed/workspace/va/loti-zig/examples/raw_ops.zig:81:18: 0x11eccbd in wait_with_timeout (sq_poll.zig)\n        .TIME => return error.WaitTimedOut,\n                 ^\n/home/ahmed/workspace/va/loti-zig/examples/sq_poll.zig:35:9: 0x11ed5a3 in completed (sq_poll.zig)\n        try raw.wait_with_timeout(ring, 1, &timeout, null);\n        ^\n/home/ahmed/workspace/va/loti-zig/examples/sq_poll.zig:71:23: 0x11eea58 in main (sq_poll.zig)\n    const first_cqe = try completed(&ring, observe);\n                      ^\n'
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.127s
+
+FAILED (failures=2)

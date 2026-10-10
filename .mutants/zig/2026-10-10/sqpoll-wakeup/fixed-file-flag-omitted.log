@@ -1,0 +1,42 @@
+test_actual_private_ring_wakeup_calls_and_damaged_traces (tests.test_sqpoll_wakeup.PollingWakeContracts.test_actual_private_ring_wakeup_calls_and_damaged_traces)
+Kills metadata-only wakeup/ownership and omitted, wrong-flag or implicit-submission syscall claims. ... FAIL
+test_observed_sleep_and_cqes_preserve_default_file_bytes (tests.test_sqpoll_wakeup.PollingWakeContracts.test_observed_sleep_and_cqes_preserve_default_file_bytes)
+Kills elapsed-time/fabricated-flag proxies, wrong fixed indexes/offsets and premature CQ consumption. ... FAIL
+
+======================================================================
+FAIL: test_actual_private_ring_wakeup_calls_and_damaged_traces (tests.test_sqpoll_wakeup.PollingWakeContracts.test_actual_private_ring_wakeup_calls_and_damaged_traces)
+Kills metadata-only wakeup/ownership and omitted, wrong-flag or implicit-submission syscall claims.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_sqpoll_wakeup.py", line 104, in test_actual_private_ring_wakeup_calls_and_damaged_traces
+    self.assertEqual((result.returncode, result.stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: IoCompletionFailed\n/home/ahm[395 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'error: IoCompletionFailed\n/home/ahmed/workspace/va/loti-zig/examples/sup'
+-  b'port.zig:12:22: 0x11edad3 in completedBytes (sq_poll.zig)\n    if (cqe.re'
+-  b's < 0) return error.IoCompletionFailed;\n                     ^\n/home/ahm'
+-  b'ed/workspace/va/loti-zig/examples/sq_poll.zig:72:37: 0x11eef04 in main (sq_p'
+-  b'oll.zig)\n    if (first_cqe.user_data != 1 or try support.completedBytes('
+-  b'first_cqe) != first.len)\n                                    ^\n')
+
+======================================================================
+FAIL: test_observed_sleep_and_cqes_preserve_default_file_bytes (tests.test_sqpoll_wakeup.PollingWakeContracts.test_observed_sleep_and_cqes_preserve_default_file_bytes)
+Kills elapsed-time/fabricated-flag proxies, wrong fixed indexes/offsets and premature CQ consumption.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_sqpoll_wakeup.py", line 82, in test_observed_sleep_and_cqes_preserve_default_file_bytes
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'error: IoCompletionFailed\n/home/ahmed/workspace/va/loti-zig/examples/support.zig:12:22: 0x11edad3 in completedBytes (sq_poll.zig)\n    if (cqe.res < 0) return error.IoCompletionFailed;\n                     ^\n/home/ahmed/workspace/va/loti-zig/examples/sq_poll.zig:72:37: 0x11eef04 in main (sq_poll.zig)\n    if (first_cqe.user_data != 1 or try support.completedBytes(first_cqe) != first.len)\n                                    ^\n'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.123s
+
+FAILED (failures=2)

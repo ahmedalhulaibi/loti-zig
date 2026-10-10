@@ -1,0 +1,24 @@
+[
+  {
+    "name": "missing",
+    "arguments": [],
+    "error": "ExpectedOutputPath"
+  },
+  {
+    "name": "unknown-mode",
+    "arguments": [
+      "$output",
+      "--wrong"
+    ],
+    "error": "UnknownPollingMode"
+  },
+  {
+    "name": "extra",
+    "arguments": [
+      "$output",
+      "--observe",
+      "extra"
+    ],
+    "error": "ExpectedOutputPath"
+  }
+]

@@ -94,6 +94,7 @@ zig-out/bin/link linked.txt
 zig-out/bin/link linked.txt --fail-read
 zig-out/bin/fixed-buffers fixed.txt
 zig-out/bin/sq-poll polling.txt
+zig-out/bin/sq-poll polling.txt --observe # owned output; observed idle flags/wakeups
 zig-out/bin/register-eventfd input.txt
 zig-out/bin/probe
 zig-out/bin/probe --raw > probe.bin

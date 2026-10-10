@@ -1,0 +1,184 @@
+{
+  "scope": "Nine compiled native/three syntax-valid trace-parser mutations through public SQPOLL CLI assertions. Not all interleavings, policies/kernels/architectures, awake-enter elimination or whole-port/independent-review assurance.",
+  "mutants": [
+    {
+      "id": "sqpoll-disabled",
+      "kind": "native",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "9d5a88717a21b4ae88176012c13b711c6079d86eaa3136675c666be052b342d1",
+      "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/sqpoll-disabled.log"
+    },
+    {
+      "id": "need-wakeup-bit-wrong",
+      "kind": "native",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "3199c6309ddb9bfd56891f137ed9a46535eb7be19cedb8d6ef632f910f69e94a",
+      "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/need-wakeup-bit-wrong.log"
+    },
+    {
+      "id": "fixed-file-flag-omitted",
+      "kind": "native",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "6fc3ad61319133fff2cf69ae332fa1140f3023d76082faf362f984cd986a1267",
+      "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/fixed-file-flag-omitted.log"
+    },
+    {
+      "id": "second-offset-reset",
+      "kind": "native",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "0e5944b09c36fcc890d69bbe651bd21be7fcd97df6eeb78897d1416dddf2e1f8",
+      "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/second-offset-reset.log"
+    },
+    {
+      "id": "sleep-check-bypassed",
+      "kind": "native",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "0bbc1549b7427eaf24341f1c7dba825c53ac5992c5b7cfb0c2f3266d29c86553",
+      "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/sleep-check-bypassed.log"
+    },
+    {
+      "id": "wakeup-enter-omitted",
+      "kind": "native",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "98415882f741865c153bc1a6684e49ec6d13c6f24458230f58749455222bdfb0",
+      "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/wakeup-enter-omitted.log"
+    },
+    {
+      "id": "read-is-nop",
+      "kind": "native",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "c6d25827da42d3128ba77d76a7f8801953f363e55a3877bb4195b78477383144",
+      "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/read-is-nop.log"
+    },
+    {
+      "id": "close-observations-fabricated",
+      "kind": "native",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 1,
+      "source_sha256": "83e709c4ba0ed5c0c50a549114b17875e17043687b5ed952e3f4454468d29b67",
+      "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/close-observations-fabricated.log"
+    },
+    {
+      "id": "read-hex-corrupted",
+      "kind": "native",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "889546891ec73671707d4289e7902055483847bdb85de475551fd180ecde3d0d",
+      "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/read-hex-corrupted.log"
+    },
+    {
+      "id": "wake-count-ignored",
+      "kind": "trace-parser",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 1,
+      "source_sha256": "059a1643fda4d0f8aa5016487fefac6c9a5a999d1c6f9c42b9872b3758af74e0",
+      "log": ".mutants/python/2026-10-10/sqpoll-wakeup/wake-count-ignored.log"
+    },
+    {
+      "id": "wake-arguments-ignored",
+      "kind": "trace-parser",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "63d7847034b7be8362973e06ef9ce4d449a463758009aeff9f95428157f5f6b7",
+      "log": ".mutants/python/2026-10-10/sqpoll-wakeup/wake-arguments-ignored.log"
+    },
+    {
+      "id": "ownership-order-ignored",
+      "kind": "trace-parser",
+      "compiled": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "57b9f99d1b4226e8c1aa03612e6a2d1dfeeadeb8e2e829fed84a2cb1a9714929",
+      "log": ".mutants/python/2026-10-10/sqpoll-wakeup/ownership-order-ignored.log"
+    }
+  ],
+  "source_restored": {
+    "examples/sq_poll.zig": "38902d98ddfeb80423222129543a23fce78c130b9216c5e92346cb1a0bb710d4",
+    "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e"
+  },
+  "binary_rebuilt": true,
+  "spec_restored": true,
+  "baseline": {
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "log": ".mutants/zig/2026-10-10/sqpoll-wakeup/restored.log"
+  },
+  "containment": "Sequential user systemd scope4GiB/no-swap/TasksMax128; binary restored before parser-only variants.",
+  "log_normalization": {
+    "scope": "Trailing spaces/tabs/CR and terminal blank lines only; substantive observations unchanged.",
+    "files": [
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/sqpoll-disabled-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/sqpoll-disabled-restored-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/need-wakeup-bit-wrong-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/need-wakeup-bit-wrong-restored-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/fixed-file-flag-omitted-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/fixed-file-flag-omitted-restored-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/second-offset-reset-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/second-offset-reset-restored-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/sleep-check-bypassed-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/sleep-check-bypassed-restored-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/wakeup-enter-omitted-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/wakeup-enter-omitted-restored-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/read-is-nop-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/read-is-nop-restored-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/close-observations-fabricated-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/close-observations-fabricated-restored-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/read-hex-corrupted-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/read-hex-corrupted-restored-build.log",
+      ".mutants/zig/2026-10-10/sqpoll-wakeup/restored-build.log",
+      ".mutants/python/2026-10-10/sqpoll-wakeup/wake-count-ignored-baseline-build.log",
+      ".mutants/python/2026-10-10/sqpoll-wakeup/wake-count-ignored.log",
+      ".mutants/python/2026-10-10/sqpoll-wakeup/wake-count-ignored-restored-build.log",
+      ".mutants/python/2026-10-10/sqpoll-wakeup/wake-arguments-ignored-baseline-build.log",
+      ".mutants/python/2026-10-10/sqpoll-wakeup/wake-arguments-ignored.log",
+      ".mutants/python/2026-10-10/sqpoll-wakeup/wake-arguments-ignored-restored-build.log",
+      ".mutants/python/2026-10-10/sqpoll-wakeup/ownership-order-ignored-baseline-build.log",
+      ".mutants/python/2026-10-10/sqpoll-wakeup/ownership-order-ignored.log",
+      ".mutants/python/2026-10-10/sqpoll-wakeup/ownership-order-ignored-restored-build.log"
+    ]
+  }
+}

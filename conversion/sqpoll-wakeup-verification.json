@@ -1,0 +1,211 @@
+{
+  "scope": "Bounded private single-producer SQPOLL sleep/three real wakeup calls/registered file bytes and ownership on current Linux/x86_64. Not all races, awake-enter elimination, affinity/shared pollers/IOPOLL, physical durability, historical kernels or independent review.",
+  "reproduction": "sqpoll-wakeup-reproduction.json",
+  "core": "sqpoll-wakeup-spec-sha256.json",
+  "initial": "sqpoll-wakeup-spec-initial-sha256.json",
+  "amendment": "sqpoll-wakeup-spec-amendment.json",
+  "contracts": {
+    "tests": 2,
+    "whole_fresh_reports": 5,
+    "default_byte_contract_unchanged": true,
+    "payload_bytes": 49,
+    "pre_setup_argument_errors": 3,
+    "damaged_traces": 12,
+    "nominal_sleep_bound": "2000 acquire-load attempts with1-ms sleeps; scheduler can extend elapsed duration; CLI processes externally bounded10s; no passing skips.",
+    "completion_deadline_seconds": 1,
+    "submit_return_counts_are_not_operation_results": true
+  },
+  "literal": {
+    "setup": {
+      "flags": 2,
+      "idle_ms": 10
+    },
+    "before": [
+      {
+        "flags": 1,
+        "head": 0,
+        "tail": 0,
+        "queued": 0,
+        "cq_ready": 0
+      },
+      {
+        "flags": 1,
+        "head": 1,
+        "tail": 1,
+        "queued": 0,
+        "cq_ready": 0
+      },
+      {
+        "flags": 1,
+        "head": 2,
+        "tail": 2,
+        "queued": 0,
+        "cq_ready": 0
+      }
+    ],
+    "operations": [
+      {
+        "request": {
+          "operation": "WRITE",
+          "tag": 1,
+          "descriptor": 0,
+          "length": 26,
+          "offset": 0,
+          "flags": 1
+        },
+        "cqe": {
+          "user_data": 1,
+          "result": 26,
+          "flags": 0
+        }
+      },
+      {
+        "request": {
+          "operation": "WRITE",
+          "tag": 2,
+          "descriptor": 0,
+          "length": 23,
+          "offset": 26,
+          "flags": 1
+        },
+        "cqe": {
+          "user_data": 2,
+          "result": 23,
+          "flags": 0
+        }
+      },
+      {
+        "request": {
+          "operation": "READ",
+          "tag": 3,
+          "descriptor": 0,
+          "length": 49,
+          "offset": 0,
+          "flags": 1
+        },
+        "cqe": {
+          "user_data": 3,
+          "result": 49,
+          "flags": 0
+        }
+      }
+    ],
+    "after": {
+      "head": 3,
+      "tail": 3,
+      "queued": 0,
+      "cq_ready": 0
+    },
+    "data_hex": "5375626d697373696f6e20717565756520706f6c6c696e672e0a4166746572207468652069646c6520706572696f642e0a",
+    "cleanup": {
+      "file_closed": true,
+      "ring_still_open": true
+    }
+  },
+  "mutations": "mutation-sqpoll-wakeup.json",
+  "diagnostics": {
+    "active_primary_paths": [
+      "examples/sq_poll.zig",
+      "tests/test_sqpoll_wakeup.py"
+    ],
+    "visible": 0,
+    "scope": "Active primary LSP, not cache-only or unconditional whole-project/OPF verdict."
+  },
+  "navigation": {
+    "fabric": "command unavailable; stale cached outline not caller-completeness evidence",
+    "scope": "One SQPOLL CLI across source/tests/book/dispositions/evidence, not separate domain concerns. SDK submit/flush/sq_ring_needs_enter/state bodies and explicit CLI/book/test consumers inspected.",
+    "churn": {
+      "scope": "Committed history before implementation commit; no source/review acceptance claim. Additions largely include report/log artifacts.",
+      "coverage": {
+        "binary_files": 349,
+        "failed_commits": 0,
+        "indexed_commits": 55,
+        "loaded_commits": 55,
+        "requested_commits": 55,
+        "skipped_merge_commits": 0,
+        "status": "complete",
+        "timestamp_anomalies": 0
+      },
+      "rows": [
+        {
+          "additions": 117329,
+          "change_units": 122175,
+          "copied_lines": 2318,
+          "deletions": 7440,
+          "keys": {},
+          "new_work": 114735,
+          "refactor": 5233,
+          "replacements": 2594,
+          "rework": 2207
+        }
+      ],
+      "base_commit": "729d1b4aa64fbfaed95951db88ffae35d2eb1f64"
+    }
+  },
+  "manual_notes": "io_uring_setup.2 IORING_SETUP_SQPOLL states flag/wakeup, fixed-file/privilege history. io_uring_sqpoll.7 overview has contradictory privilege versions and calls sq_ready a flag check; those claims were not adopted. Actual SDK sq_ready is a count; flags are acquire-loaded directly. SDK flush release and subsequent internal flag check inspected; no other-architecture memory-order proof.",
+  "source_sha256": {
+    "README.md": "3f45f86f049baec7ab785ccc84b7ffcd3aa01030d563514700c8b5d1a81ad4f3",
+    "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
+    "conversion/prose-line-disposition.md": "45936811cdbd038e47f84d3b5af87008dd0dd94695f4186896e2f668e1dfa29d",
+    "conversion/sqpoll-wakeup-spec-amendment.json": "537d28860a7ecc4e5595c71c52debc463df4498be0fc9d68159bb688254098ae",
+    "conversion/sqpoll-wakeup-spec-initial-sha256.json": "9bedce75a0c3a7ad19c553a13f0461a12dab7439c4cb619386b1789659185f55",
+    "conversion/sqpoll-wakeup-spec-sha256.json": "0da3f9445d645cd528f3afae0de3e8a7f31d43994aa87968dabcf0f66f2011e0",
+    "conversion/sqpoll-wakeup-test-initial.txt": "b85c31b1fb2fdfa89a60a5065442a5143a190ab06b218a3428ba1c74bed7f475",
+    "conversion/sqpoll-wakeup.trace": "78e2ac710236a30c4db9fcd9cca1a6250099fbcd97cde078227295e85c5e4333",
+    "conversion/tutorial-block-disposition.md": "b235dc4786d54617ec910c8203bedec20b1e1373aed192b6bc2ca0ccf728af6c",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/sq_poll.zig": "38902d98ddfeb80423222129543a23fce78c130b9216c5e92346cb1a0bb710d4",
+    "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
+    "testdata/inputs/sqpoll-wakeup-invalid-arguments.json": "8659a5c670bd7c209b920149d006a84a0b2635f8712e27dd9093247f21f5a680",
+    "testdata/inputs/sqpoll-wakeup-invalid-traces.json": "4572ca71a0a54814150030dd7579bebd6e7ac9980e53922162eff000453f08cb",
+    "testdata/inputs/sqpoll-wakeup-output.bin": "44fe6650361db29c9a01e673739d74510d87901cfbd92a2f0691a2d1900e41fb",
+    "testdata/inputs/sqpoll-wakeup-report.json": "4a59e4d0f25093615b8065cbd6abc01fca4427ab853dd9c6a8dfe43ec180118e",
+    "testdata/inputs/sqpoll-wakeup.trace": "f250196d5c720380631ad9872b82ab8a8861f1c2de0a73ee959fdd7215cdcf62",
+    "testing.md": "348b9d1e21f51e1e0c6807a2269472fc2af097ac71daeff6f808fbdf06bc06e3",
+    "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
+    "tutorial/sq_poll.rst": "0c9a763df7ddcede3df3dc8920fb7efefa73e0f9bb244ba90513e95fd05f2f78"
+  },
+  "gates": {
+    "zig": "0.17.0",
+    "build_steps": 51,
+    "executables": 25,
+    "tests": 81,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 15,
+    "valid_generated_cases_per_property": 400,
+    "suite_seconds": 148.395,
+    "strict_html": true,
+    "strict_epub": true,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "chapters": 27,
+    "literals": 120,
+    "reader_cases": 81,
+    "code_blocks": 360,
+    "headings": 333,
+    "layout_violations": 0,
+    "book_sha256": "e3362e9b5b0e85414045be083dec038882ade12df08ff9bf619c66e5d389dfaf",
+    "scope": "Final book rebuilt after full suite. Browser is not Supernote/pagination/font acceptance, and green gates do not establish original-purpose/independent-review completion."
+  },
+  "reference_sha256": {
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_setup.2.txt": "7b6ace4251472dc86b83f3b6a787724e72249a929a49cb3201eb1855b986e8d3",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_sqpoll.7.txt": "1ae84af6ec71ca5bd7c73a887c6f2afa97af943ebb8f9ff94c54516910f253f0",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
+  },
+  "actual_trace": {
+    "rings": 1,
+    "registered_files": 1,
+    "wake_calls": 3,
+    "completion_guards": 3,
+    "queried_closures": 1,
+    "ring_retained_after_unregister": true
+  }
+}

@@ -1,0 +1,11 @@
+io_uring_setup(8, {flags=IORING_SETUP_SQPOLL, sq_thread_cpu=0, sq_thread_idle=10, sq_entries=8, cq_entries=16, features=IORING_FEAT_SINGLE_MMAP}) = 4
+io_uring_register(4, IORING_REGISTER_FILES, [3], 1) = 0
+io_uring_enter(4, 1, 0, IORING_ENTER_SQ_WAKEUP, NULL, 8) = 1
+io_uring_enter(4, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_time=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0
+io_uring_enter(4, 1, 0, IORING_ENTER_SQ_WAKEUP, NULL, 8) = 0
+io_uring_enter(4, 1, 0, IORING_ENTER_SQ_WAKEUP, NULL, 8) = 1
+io_uring_register(4, IORING_UNREGISTER_FILES, NULL, 0) = 0
+close(3) = 0
+fcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)
+fcntl(4, F_GETFD) = 0x1 (flags FD_CLOEXEC)
+close(4) = 0

@@ -9,7 +9,7 @@
     },
     {
       "name": "tutorial-block-disposition.md",
-      "sha256": "fb891ae0d0ef53e0bbd41ab710c80cb7bfce0d9bbfac3defaec66a3793dbf05e"
+      "sha256": "b235dc4786d54617ec910c8203bedec20b1e1373aed192b6bc2ca0ccf728af6c"
     },
     {
       "name": "reference-block-disposition.md",
@@ -17,7 +17,7 @@
     },
     {
       "name": "prose-line-disposition.md",
-      "sha256": "84142e84807e563e33ae4209ad53a8b6c44f1c1528c53f8ee31f4be3e8c7643d"
+      "sha256": "45936811cdbd038e47f84d3b5af87008dd0dd94695f4186896e2f668e1dfa29d"
     }
   ],
   "target_sha256": {
@@ -45,7 +45,7 @@
     "tutorial/link.rst": "a567172a2563a8f3ddd1040d24c1afb11acd60a68f12ca6900dbb85752526cbb",
     "tutorial/probe.rst": "b415df42f0cc9c67740248da0b7404f30b4db4e484765e0a97db0768060ff07c",
     "tutorial/register_eventfd.rst": "db713152a495faceec5cb26cac2bbb4d6c00faebbf9614d8c403e4f125a2e2f9",
-    "tutorial/sq_poll.rst": "2062bf345eccfd4b696775417b185013cbfd93864ce673d2e00a0f68b44cbe7e",
+    "tutorial/sq_poll.rst": "0c9a763df7ddcede3df3dc8920fb7efefa73e0f9bb244ba90513e95fd05f2f78",
     "tutorial/webserver.rst": "270c716d6b183bd919fc9afd3856f678eff03434761e42d19cb7e631adc21b7d",
     "what_is_io_uring.rst": "3e19f9421ed9a8a4236ded73358483f1a3c04089e2f706e41ed8838f698baca9"
   },

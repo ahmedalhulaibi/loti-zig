@@ -1,6 +1,6 @@
 {
   "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review.",
-  "book_sha256": "643aac576f2dc2d60f16d3f1c5b5c7e2efc8aec6714455b32953f9adb69a499a",
+  "book_sha256": "e3362e9b5b0e85414045be083dec038882ade12df08ff9bf619c66e5d389dfaf",
   "renderer": {
     "node": "v26.8.1",
     "playwright": "1.64.0",
@@ -7737,5 +7737,6 @@
     "suite": "77 tests/15 attributed properties x400 cases",
     "scope": "Current final archive measurements, historical screenshots/CSS assessments retained. Not device/pagination/font overrides/semantic or independent acceptance."
   },
-  "replay_after_literal_policy": "Full79-test/fifteen400-case suite and strict rebuild followed by final81-case sandboxed/offline/JS-disabled browser sweep; old screenshots and historical mutation assessments remain historical, not repeated."
+  "replay_after_literal_policy": "Full79-test/fifteen400-case suite and strict rebuild followed by final81-case sandboxed/offline/JS-disabled browser sweep; old screenshots and historical mutation assessments remain historical, not repeated.",
+  "replay_after_sqpoll_wakeup": "Full81-test/fifteen400-case suite; strict final archive rebuilt afterward; final81-case browser sweep. Old screenshots and historical mutation evidence remain historical."
 }

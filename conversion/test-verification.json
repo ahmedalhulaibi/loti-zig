@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 79,
+  "tests_run": 81,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -108,7 +108,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 108
+          "overrun": 88
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -162,7 +162,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 79
+          "overrun": 61
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -180,7 +180,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 170
+          "overrun": 136
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -305,7 +305,7 @@
     "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
     "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
     "examples/register_eventfd.zig": "3e59de2ec80f68917de35bb901729e37f0966acdb6295c4bf46dbc31d9e9bd6c",
-    "examples/sq_poll.zig": "3c7d2d3149ebbf3ebeb7a57ef438f424f8bfe7d7ab820f088b3b449bc64c80b1",
+    "examples/sq_poll.zig": "38902d98ddfeb80423222129543a23fce78c130b9216c5e92346cb1a0bb710d4",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
     "testdata/inputs/accept-flags-invalid-traces.json": "f19b59b619a819edbf2131beffe46b510f67c3ab684dadf255704f67b3225372",
@@ -383,6 +383,11 @@
     "testdata/inputs/splice-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
     "testdata/inputs/splice-partial.bin": "7456c2d90a90f290eef60a9724d811da38d479f5a6441990d9b41c4e94b634bb",
     "testdata/inputs/splice-report.json": "c6dd5af2ff11234fc659be050b94eac5a934cc9a008ca0b31e3f47ba088285a8",
+    "testdata/inputs/sqpoll-wakeup-invalid-arguments.json": "8659a5c670bd7c209b920149d006a84a0b2635f8712e27dd9093247f21f5a680",
+    "testdata/inputs/sqpoll-wakeup-invalid-traces.json": "4572ca71a0a54814150030dd7579bebd6e7ac9980e53922162eff000453f08cb",
+    "testdata/inputs/sqpoll-wakeup-output.bin": "44fe6650361db29c9a01e673739d74510d87901cfbd92a2f0691a2d1900e41fb",
+    "testdata/inputs/sqpoll-wakeup-report.json": "4a59e4d0f25093615b8065cbd6abc01fca4427ab853dd9c6a8dfe43ec180118e",
+    "testdata/inputs/sqpoll-wakeup.trace": "f250196d5c720380631ad9872b82ab8a8861f1c2de0a73ee959fdd7215cdcf62",
     "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
     "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
     "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
@@ -415,6 +420,7 @@
     "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
+    "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
     "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e",
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
