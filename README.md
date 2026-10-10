@@ -10,11 +10,28 @@ required. Original MIT licence and attribution are retained.
 See `conversion/plan.md`, `conversion/source-inventory.json`, and
 `conversion/audit.md` for scope, original line enumeration, and actual progress.
 
-## Verify the inventory
+## Build the migrated tutorial core
 
 ```sh
 zig version                         # must print 0.17.0
+zig build
+uv venv .venv
+uv pip install --python .venv/bin/python -r requirements.lock
+.venv/bin/python -m unittest tests.test_examples
 python3 tools/inventory.py --check
 ```
 
-Build and execution instructions will be added with the verified examples.
+The current test suite covers the migrated core. The HTTP example, complete API
+reference, document conversion, and Zig EPUB are still pending. See the audit;
+passing the current tests does **not** mean the complete guide is converted.
+
+```sh
+zig-out/bin/cat input.txt
+zig-out/bin/cp source.bin destination.bin
+zig-out/bin/link linked.txt
+zig-out/bin/link linked.txt --fail-read
+zig-out/bin/fixed-buffers fixed.txt
+zig-out/bin/sq-poll polling.txt
+zig-out/bin/register-eventfd input.txt
+zig-out/bin/probe
+```
