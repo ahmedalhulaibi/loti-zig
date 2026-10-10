@@ -12,7 +12,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | Requirement | Actual artifacts/evidence | Open requirement |
 |---|---|---|
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
-| 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | Complete line/prose semantic disposition; 128/128 block IDs have author notes, not conversion attestations |
+| 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
 | 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 19 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
@@ -39,7 +39,7 @@ with an independent Docutils parse, compare every recorded line/block range with
 the original source, and regenerate in fresh processes. `--check` alone had
 passed despite the omissions; it was not a coverage proof. LSP: both changed
 Python files supported and clean. `implicit-literal-disposition.md` records
-these 16 conversions and their limits; full line/prose disposition remains open. This
+these 16 conversions and their limits; independent line/prose acceptance remains open. This
 parser check is not the blocked independent agent review.
 
 ## Current semantic comparison
@@ -51,12 +51,29 @@ and literals. The three ID sets are disjoint and equal the inventory's **128/128
 block IDs. `block-disposition-verification.json` records exact document/inventory
 hashes and index coverage, **not** semantic acceptance or independent review.
 
-These ranges contain 3,051 inventoried lines. Another **567 matched lines** lie
-outside them, including the 226-line retired `delme.c` API checklist. Complete
-line/prose disposition remains open. Constructor-only rows explicitly separate
-preparation from operation effects; an idempotent same-FD table update does not
-verify changed-descriptor use. Full probe flags, delivered signals/restoration,
-nonblocking populated CQ and capacity/failure/state checks remain open.
+These ranges contain 3,051 inventoried lines. `prose-line-disposition.md` now
+compares the other **567 matched lines** in 87 ranges, including the 226-line
+retired `delme.c` declaration catalog (not a runnable program). Four note files
+now index **3,618/3,618** original matched lines. `line-disposition-verification.json`
+records each original line's actual note row, note/inventory hashes and current
+target hashes. `python3 tools/check_line_dispositions.py --check` validates this index;
+two boundary tests reject missing/duplicate/unknown references, invalid targets,
+empty ranges and stale evidence, and independently reverse-check every note link.
+This is author comparison/index evidence, **not semantic acceptance** or review.
+
+`mutation-line-dispositions.json` records three syntax-valid source mutants killed
+by these boundary tests: duplicate-block acceptance, wrong note assignment and
+ignored stale report. Exact source bytes were restored; baseline tests pass.
+This is bounded **index-tool** mutation evidence, not a whole-port assessment.
+Python LSP checks have no server findings; three auxiliary rules were marked
+false positives (digit-guarded parsing and errors handled at the CLI boundary).
+RST LSP is unsupported; refreshed Sphinx/EPUB gates validate the documentation.
+
+The comparison found missing per-I/O `linux.RWF` / `sqe.rw_flags` guidance;
+`ref-zig/submission.rst` now distinguishes it from u8 dependency flags. Constructor
+rows still separate preparation from effects. An idempotent same-FD table update
+does not verify changed-descriptor use. Full probe flags, delivered signals/mask
+restoration, populated nonblocking CQ and capacity/failure/state checks remain open.
 
 The original copy's `BLKGETSIZE64` input feature is now recreated and executed
 against disposable read-only virtual disks. Native `cp` accepts regular or block
@@ -116,8 +133,8 @@ mutation coverage or the blocked independent agent review.
 
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **25 passed**
-  (19 native + one VM + two publication + three inventory tests), zero skips,
+- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **27 passed**
+  (19 native + one VM + two publication + three inventory + two line-index tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -127,7 +144,7 @@ mutation coverage or the blocked independent agent review.
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs
   over arbitrary binary files. `test-verification.json` records **400 passing
-  generated cases for each of all three properties**, source hashes, 25 passing
+  generated cases for each of all three properties**, source hashes, 27 passing
   tests and zero skips; this remains author-run evidence, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -175,14 +192,16 @@ git diff --check
   `_build/epub/Lord-of-the-io_uring-Zig-0.17.0.epub`; its SHA-256 is in the report.
 - Publication tests reject missing chapters, reordered spine, wrong edition title,
   missing navigation, changed code/licence/image, DRM and JavaScript.
+  Tests rebuild the archive; the verifier and EPUBCheck were run **after** the
+  suite so the report fingerprints the last EPUB, not an earlier ZIP timestamp.
 - Native chapter names replace old wrapper-library paths. Tracked `delme.c`,
   `compile_commands.json` and Python bytecode are retired. Historical upstream
   text remains only as immutable conversion evidence, not reader-facing code.
 
 ## Next work
 
-1. Finish line/prose disposition (567 matched lines outside noted block ranges);
-   inspect operation/lifetime gaps, including changed-FD registered-table I/O.
+1. Obtain semantic acceptance of the author line/block comparisons; inspect
+   operation/lifetime gaps, starting with changed-FD registered-table I/O.
 2. Extend failure/state checks and execute bounded source mutation verification.
 3. Obtain independent review and resolve findings; do not substitute parent checks.
 4. Rebuild/audit final artifacts, push only the personal fork, verify remote state.

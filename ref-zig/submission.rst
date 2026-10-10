@@ -33,6 +33,11 @@ separate pointer/count pair. Offsets are absolute ``u64`` values. The all-ones
 offset selects current-position semantics where supported; explicit offsets
 avoid shared-descriptor position races.
 
+Per-I/O read/write flags from ``linux.RWF`` belong in ``sqe.rw_flags`` after
+preparation, not in the u8 ``sqe.flags`` dependency bitmap. See :man:`preadv2(2)`
+for their meanings. Kernel, filesystem and opcode support still apply; setting a
+flag is not proof that the operation supports it.
+
 ``read_fixed`` and ``write_fixed`` take an iovec pointer and registered-buffer
 index. The requested range must fit that registered buffer. They do not register
 memory implicitly. See :ref:`fixed_buffers`.

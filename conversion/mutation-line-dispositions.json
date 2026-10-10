@@ -1,0 +1,36 @@
+{
+  "scope": "Three bounded Python line-index mutations; not native operation coverage, whole-port mutation assessment or independent review.",
+  "source": "tools/check_line_dispositions.py",
+  "source_sha256": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
+  "mutants": [
+    {
+      "mutant": "allow-duplicate-block",
+      "syntax_valid": true,
+      "source_sha256": "d296939235eed6e6a4ec31c10cf8fbd8d6303943e460ba15dce42c8870a456d0",
+      "test_command": ".venv/bin/python -m unittest tests.test_dispositions -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/python/2026-10-10/line-dispositions/allow-duplicate-block.log"
+    },
+    {
+      "mutant": "wrong-note-for-every-line",
+      "syntax_valid": true,
+      "source_sha256": "f48985a7c14eaa3e14b411f603689fed865e5ec9609d5c8c0d4ead7fa684dee0",
+      "test_command": ".venv/bin/python -m unittest tests.test_dispositions -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/python/2026-10-10/line-dispositions/wrong-note-for-every-line.log"
+    },
+    {
+      "mutant": "ignore-stale-report",
+      "syntax_valid": true,
+      "source_sha256": "6482fd7363c07a6b08ef3430d8b86dd6ac38c01f99168a833e979bf5202d0741",
+      "test_command": ".venv/bin/python -m unittest tests.test_dispositions -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/python/2026-10-10/line-dispositions/ignore-stale-report.log"
+    }
+  ],
+  "exact_source_restored": true,
+  "restored_test_exit_status": 0
+}
