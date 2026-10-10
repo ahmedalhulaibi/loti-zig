@@ -126,7 +126,7 @@
     }
   ],
   "source_sha256": {
-    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
+    "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
     "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
@@ -170,5 +170,12 @@
     ],
     "complete_suite": "64 tests, zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; isolated VM, public CLI/model/binding/publication contracts replayed.",
     "historical_mutation_scope": "Historical pins retain original tested-version scope; no prior mutant re-assessment or independent agent acceptance is implied."
+  },
+  "replay_after_accept": {
+    "changed_source_consumers": [
+      "build.zig"
+    ],
+    "complete_suite": "68 tests/zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; owned block VM, CLI/TCP/reference/model/binding/publication contracts replayed.",
+    "historical_scope": "Prior mutation records are historical tested versions, not automatically reassessed; no independent review is implied."
   }
 }

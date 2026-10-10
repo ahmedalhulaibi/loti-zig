@@ -1,0 +1,19 @@
+test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans)
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ...
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='missing_submit')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='missing_submit')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 159, in test_all_address_capacities_and_descriptor_flag_plans
+    with self.assertRaises(ValueError) as raised:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.934s
+
+FAILED (failures=1)

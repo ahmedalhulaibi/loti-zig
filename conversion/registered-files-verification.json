@@ -11,7 +11,7 @@
   "source_sha256": {
     "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
-    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22"
+    "tools/reference_map.py": "93d094c634efad9b2a59800c126dc9c65e51f701e132d89b5117d120f61b8466"
   },
   "input_sha256": {
     "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
@@ -217,5 +217,12 @@
     ],
     "complete_suite": "64 tests, zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; isolated VM, public CLI/model/binding/publication contracts replayed.",
     "historical_mutation_scope": "Historical pins retain original tested-version scope; no prior mutant re-assessment or independent agent acceptance is implied."
+  },
+  "replay_after_accept": {
+    "changed_source_consumers": [
+      "tools/reference_map.py"
+    ],
+    "complete_suite": "68 tests/zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; owned block VM, CLI/TCP/reference/model/binding/publication contracts replayed.",
+    "historical_scope": "Prior mutation records are historical tested versions, not automatically reassessed; no independent review is implied."
   }
 }

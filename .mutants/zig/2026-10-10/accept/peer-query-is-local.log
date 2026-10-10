@@ -1,0 +1,28 @@
+test_independent_full_address_literal (tests.test_accept.AcceptContracts.test_independent_full_address_literal)
+A separate symbolic literal pins the whole full-address shape without the table encoder. ... FAIL
+
+======================================================================
+FAIL: test_independent_full_address_literal (tests.test_accept.AcceptContracts.test_independent_full_address_literal)
+A separate symbolic literal pins the whole full-address shape without the table encoder.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 129, in observe
+    trace = inspect_trace(path.read_text()); report = json.loads(stdout)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 84, in inspect_trace
+    raise ValueError("InvalidAcceptEndpointQuery")
+ValueError: InvalidAcceptEndpointQuery
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 168, in test_independent_full_address_literal
+    actual, peer, local, trace = observe(16, "both", Path(directory) / "accept.trace")
+                                 ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 131, in observe
+    raise AssertionError(f"Invalid public accept report/trace: {error}") from error
+AssertionError: Invalid public accept report/trace: InvalidAcceptEndpointQuery
+
+----------------------------------------------------------------------
+Ran 1 test in 0.022s
+
+FAILED (failures=1)

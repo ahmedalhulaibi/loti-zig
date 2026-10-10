@@ -1,0 +1,11 @@
+test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans)
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... ok
+test_independent_full_address_literal (tests.test_accept.AcceptContracts.test_independent_full_address_literal)
+A separate symbolic literal pins the whole full-address shape without the table encoder. ... ok
+test_invalid_arguments_fail_before_any_ready_record_or_socket_setup (tests.test_accept.AcceptContracts.test_invalid_arguments_fail_before_any_ready_record_or_socket_setup)
+Kills signed/out-of-range capacities, unknown modes, wrong arity and late validation. ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.626s
+
+OK

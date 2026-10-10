@@ -13,7 +13,7 @@
     },
     {
       "name": "reference-block-disposition.md",
-      "sha256": "f9d6262ad78f0ca006913e402d1511b34961e4060b960b1cc3a25cdd284b80dc"
+      "sha256": "22e2f37c5b15033d6c6b5136feda2254390b1db4792c339b1ed1bd583d492d06"
     },
     {
       "name": "prose-line-disposition.md",
@@ -36,7 +36,7 @@
     "ref-zig/index.rst": "796748b6db63b46962d4a596f258cd3ceecc3e4c7e6f3a19105a71568a0cd849",
     "ref-zig/setup_teardown.rst": "8cfb07794f25aaab05b111f3f8dab8685f1d78994b71509ee6b95fdb73a1e6f7",
     "ref-zig/sqe.rst": "e93b2d66aa339084a6dc0307fd1e500fada6badccbf5cf4caab12533da8913c4",
-    "ref-zig/submission.rst": "8a38573029e45a988f05253c09a9adf6356fff2a6c61923339d0f4425e8242b2",
+    "ref-zig/submission.rst": "1507474161e9a727f0076d16cb122e40a02032cce47d28c33ff4ccce7243f5ce",
     "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
     "tutorial/cat.rst": "98eb3485361b25130e5792720bf99b4f39617f67bb902b83a946fc481d83c7f6",
     "tutorial/cp.rst": "07c89cf5bf678b5e2b22ac97e710aee7111c69b7d643821484408e0efd301bf3",

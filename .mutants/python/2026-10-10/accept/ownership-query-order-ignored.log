@@ -1,0 +1,31 @@
+test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries)
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown. ...
+  test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (case='retained_before_listener_close')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown. ... FAIL
+  test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (case='ring_query_before_accepted_close')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown. ... FAIL
+
+======================================================================
+FAIL: test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (case='retained_before_listener_close')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 64, in test_actual_flags_and_ordered_ownership_queries
+    with self.assertRaises(ValueError) as raised:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (case='ring_query_before_accepted_close')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 64, in test_actual_flags_and_ordered_ownership_queries
+    with self.assertRaises(ValueError) as raised:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.065s
+
+FAILED (failures=2)

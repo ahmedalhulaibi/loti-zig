@@ -1,0 +1,91 @@
+test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries)
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown. ...
+  test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (mode='none')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown. ... FAIL
+  test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (mode='nonblock')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown. ... FAIL
+  test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (mode='cloexec')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown. ... FAIL
+  test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (mode='both')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown. ... FAIL
+
+======================================================================
+FAIL: test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (mode='none')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 51, in test_actual_flags_and_ordered_ownership_queries
+    measured = inspect_flags(path.read_text(), mode)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 34, in inspect_flags
+    raise ValueError("WrongAcceptFlagQueries")
+ValueError: WrongAcceptFlagQueries
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 53, in test_actual_flags_and_ordered_ownership_queries
+    self.fail(f"Invalid public accepted-FD flags trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public accepted-FD flags trace: WrongAcceptFlagQueries
+
+======================================================================
+FAIL: test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (mode='nonblock')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 51, in test_actual_flags_and_ordered_ownership_queries
+    measured = inspect_flags(path.read_text(), mode)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 34, in inspect_flags
+    raise ValueError("WrongAcceptFlagQueries")
+ValueError: WrongAcceptFlagQueries
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 53, in test_actual_flags_and_ordered_ownership_queries
+    self.fail(f"Invalid public accepted-FD flags trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public accepted-FD flags trace: WrongAcceptFlagQueries
+
+======================================================================
+FAIL: test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (mode='cloexec')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 51, in test_actual_flags_and_ordered_ownership_queries
+    measured = inspect_flags(path.read_text(), mode)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 34, in inspect_flags
+    raise ValueError("WrongAcceptFlagQueries")
+ValueError: WrongAcceptFlagQueries
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 53, in test_actual_flags_and_ordered_ownership_queries
+    self.fail(f"Invalid public accepted-FD flags trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public accepted-FD flags trace: WrongAcceptFlagQueries
+
+======================================================================
+FAIL: test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries) (mode='both')
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 51, in test_actual_flags_and_ordered_ownership_queries
+    measured = inspect_flags(path.read_text(), mode)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 34, in inspect_flags
+    raise ValueError("WrongAcceptFlagQueries")
+ValueError: WrongAcceptFlagQueries
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept_flags.py", line 53, in test_actual_flags_and_ordered_ownership_queries
+    self.fail(f"Invalid public accepted-FD flags trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public accepted-FD flags trace: WrongAcceptFlagQueries
+
+----------------------------------------------------------------------
+Ran 1 test in 0.064s
+
+FAILED (failures=4)

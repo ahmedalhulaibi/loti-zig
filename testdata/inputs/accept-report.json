@@ -1,0 +1,256 @@
+{
+  "failures": [
+    {
+      "request": {
+        "operation": "ACCEPT",
+        "tag": 10,
+        "descriptor": "invalid",
+        "length": 0,
+        "flags": 0,
+        "operation_flags": 0,
+        "address_supplied": true,
+        "length_supplied": true,
+        "capacity": 16
+      },
+      "cqe": {
+        "tag": 10,
+        "result": -9,
+        "flags": 0
+      },
+      "address_length": 16,
+      "storage": [
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ]
+    },
+    {
+      "request": {
+        "operation": "ACCEPT",
+        "tag": 11,
+        "descriptor": "ring",
+        "length": 0,
+        "flags": 0,
+        "operation_flags": 0,
+        "address_supplied": true,
+        "length_supplied": true,
+        "capacity": 16
+      },
+      "cqe": {
+        "tag": 11,
+        "result": -88,
+        "flags": 0
+      },
+      "address_length": 16,
+      "storage": [
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ]
+    },
+    {
+      "request": {
+        "operation": "ACCEPT",
+        "tag": 12,
+        "descriptor": "listener",
+        "length": 0,
+        "flags": 0,
+        "operation_flags": 1,
+        "address_supplied": true,
+        "length_supplied": true,
+        "capacity": 16
+      },
+      "cqe": {
+        "tag": 12,
+        "result": -22,
+        "flags": 0
+      },
+      "address_length": 16,
+      "storage": [
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ]
+    }
+  ],
+  "accepted": {
+    "request": {
+      "operation": "ACCEPT",
+      "tag": 1,
+      "descriptor": "listener",
+      "length": 0,
+      "flags": 0,
+      "operation_flags": 526336,
+      "address_supplied": true,
+      "length_supplied": true,
+      "capacity": 16
+    },
+    "cqe": {
+      "tag": 1,
+      "result": "$fd",
+      "flags": 0
+    },
+    "address_length": 16,
+    "storage": [
+      "$family0",
+      "$family1",
+      "$port_high",
+      "$port_low",
+      127,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165
+    ],
+    "peer": {
+      "address": {
+        "family": 2,
+        "address": [
+          127,
+          0,
+          0,
+          1
+        ],
+        "port": "$peer"
+      },
+      "length": 16
+    },
+    "local": {
+      "address": {
+        "family": 2,
+        "address": [
+          127,
+          0,
+          0,
+          1
+        ],
+        "port": "$local"
+      },
+      "length": 16
+    },
+    "flags": {
+      "nonblocking": true,
+      "cloexec": true
+    }
+  },
+  "listener_flags": {
+    "nonblocking": true,
+    "cloexec": true
+  },
+  "cleanup": {
+    "listener_closed": true,
+    "accepted_retained_after_listener_close": true,
+    "accepted_closed": true,
+    "ring_still_open": true
+  }
+}

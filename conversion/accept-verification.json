@@ -1,0 +1,369 @@
+{
+  "scope": "Current x86_64/Linux IPv4 loopback one-shot ACCEPT, optional output pointers/truncation/value-result capacity, new-FD flags and independent client endpoint/EOF/queried ownership. Not payload, IPv6/other protocols, resource limits/abort, descriptor reuse, concurrent/multishot/cancellation, all failures/historical kernels/architectures or independent-agent acceptance.",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64"
+  },
+  "source_sha256": {
+    "examples/reference_accept.zig": "65e864abebfd4f762906a9504614542da93da7e1aaadd383c31996ad8abf8dd4",
+    "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
+    "tests/test_accept_flags.py": "be6adee86c57e9b3046dd3139a55957c9285ce6c0fb180422c2fa37ba622a45f",
+    "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
+    "tools/reference_map.py": "93d094c634efad9b2a59800c126dc9c65e51f701e132d89b5117d120f61b8466",
+    "ref-zig/submission.rst": "1507474161e9a727f0076d16cb122e40a02032cce47d28c33ff4ccce7243f5ce",
+    "conversion/reference-map.json": "5d7435f2b49ae8179d8f974e1909d60cb48e5054ab4a67d1a2124449322d55fc",
+    "conversion/accept.trace": "b2362e9935b3439679b6535e85a3832f1f0cac424ae6cc070843970822033db2",
+    "conversion/accept-spec-sha256.json": "6d999cc73fee3ee0a523b5f7362629ee8a39f58127aceec07120e6a36624ff19",
+    "conversion/accept-spec-initial-sha256.json": "30034c7f1083356ee166a4606076f1d06ba4b022182f42e702259e1b03ba4a74",
+    "testdata/inputs/accept-flags-invalid-traces.json": "f19b59b619a819edbf2131beffe46b510f67c3ab684dadf255704f67b3225372",
+    "testdata/inputs/accept-flags.trace": "0b501a40c2110bfe687aa206523f483cb63d291e6325bc14e28da9aae533f2a6",
+    "testdata/inputs/accept-invalid-arguments.json": "83adaf5179fd1cad5012ddb03f2b40538c49f3b8bea67a639e7993e8ae0271db",
+    "testdata/inputs/accept-invalid-traces.json": "22312b9decf51d22b0af3bd3a171ef378b10dcca172dcf6e4359988b885ab96c",
+    "testdata/inputs/accept-plans.json": "d16d07cc6d510eb2d0de0ea8c57554d35551f0557741d95f2245c7c69847d04e",
+    "testdata/inputs/accept-report.json": "8a27d8f139f39c7c79488f961f9840773893ee887db3c91c1f00730a65405dec",
+    "testdata/inputs/accept.trace": "91ae99638cc4b1c2e768f9396735530203df318428034f8b750b42108604ccf4"
+  },
+  "sdk_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
+  },
+  "manual_sha256": {
+    "/home/ahmed/workspace/va/man-qmd/build/docs/linux-man-pages/man/man2/accept4.2.txt": "fea744ea61e08fd41a59842ce461ca7aff290c7f97ac8c2888a6cfb6a0787804"
+  },
+  "observed_whole_report": {
+    "failures": [
+      {
+        "request": {
+          "operation": "ACCEPT",
+          "tag": 10,
+          "descriptor": "invalid",
+          "length": 0,
+          "flags": 0,
+          "operation_flags": 0,
+          "address_supplied": true,
+          "length_supplied": true,
+          "capacity": 16
+        },
+        "cqe": {
+          "tag": 10,
+          "result": -9,
+          "flags": 0
+        },
+        "address_length": 16,
+        "storage": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      },
+      {
+        "request": {
+          "operation": "ACCEPT",
+          "tag": 11,
+          "descriptor": "ring",
+          "length": 0,
+          "flags": 0,
+          "operation_flags": 0,
+          "address_supplied": true,
+          "length_supplied": true,
+          "capacity": 16
+        },
+        "cqe": {
+          "tag": 11,
+          "result": -88,
+          "flags": 0
+        },
+        "address_length": 16,
+        "storage": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      },
+      {
+        "request": {
+          "operation": "ACCEPT",
+          "tag": 12,
+          "descriptor": "listener",
+          "length": 0,
+          "flags": 0,
+          "operation_flags": 1,
+          "address_supplied": true,
+          "length_supplied": true,
+          "capacity": 16
+        },
+        "cqe": {
+          "tag": 12,
+          "result": -22,
+          "flags": 0
+        },
+        "address_length": 16,
+        "storage": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      }
+    ],
+    "accepted": {
+      "request": {
+        "operation": "ACCEPT",
+        "tag": 1,
+        "descriptor": "listener",
+        "length": 0,
+        "flags": 0,
+        "operation_flags": 526336,
+        "address_supplied": true,
+        "length_supplied": true,
+        "capacity": 16
+      },
+      "cqe": {
+        "tag": 1,
+        "result": 5,
+        "flags": 0
+      },
+      "address_length": 16,
+      "storage": [
+        2,
+        0,
+        170,
+        208,
+        127,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "peer": {
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": 43728
+        },
+        "length": 16
+      },
+      "local": {
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": 43575
+        },
+        "length": 16
+      },
+      "flags": {
+        "nonblocking": true,
+        "cloexec": true
+      }
+    },
+    "listener_flags": {
+      "nonblocking": true,
+      "cloexec": true
+    },
+    "cleanup": {
+      "listener_closed": true,
+      "accepted_retained_after_listener_close": true,
+      "accepted_closed": true,
+      "ring_still_open": true
+    }
+  },
+  "independent_external_client": {
+    "local_address": [
+      127,
+      0,
+      0,
+      1
+    ],
+    "local_port": 43728,
+    "connected_listener_port": 43575,
+    "observed_empty_EOF_after_queried_accepted_close": true
+  },
+  "actual_submission_endpoint_ownership_oracle": {
+    "submissions": 4,
+    "rings": 1,
+    "peer_port": 43728,
+    "local_port": 43575,
+    "accepted_fd": 5,
+    "listener_fd": 3,
+    "queried_closures": 2,
+    "synchronous_accepts": 0
+  },
+  "actual_flag_values_ordered_ownership_oracle": {
+    "listener_flags": {
+      "nonblocking": true,
+      "cloexec": true
+    },
+    "accepted_flags": {
+      "nonblocking": true,
+      "cloexec": true
+    },
+    "successful_flag_queries": 6,
+    "accepted_retained_after_listener_close": true,
+    "ring_open_after_accepted_close": true
+  },
+  "fixed_value_domain": "All 72 (null or 0..16 capacity) x (none/nonblock/cloexec/both) plans in owned fresh processes; small finite domain, no new PBT attribution.",
+  "fresh_positive_core_processes": 74,
+  "typed_presocket_invalid_arguments": 10,
+  "damaged_core_traces_rejected": 7,
+  "damaged_flag_order_traces_rejected": 7,
+  "core_spec_byte_exact": "accept-spec-sha256.json: final preimplementation snapshot, with original draft retained and explicit pre-code process-group safety amendment. Not ACL sealed or independent verifier acceptance.",
+  "supplement": "Post-survivor actual fcntl flag/order oracle; original three core contracts/fixtures unchanged. Real optional-match typing fix and three affected supplemental variants reassessed.",
+  "oracle_gap": "conversion/accept-oracle-gap.json",
+  "mutation_report": "conversion/mutation-accept.json",
+  "valid_unique_mutants": {
+    "native": 11,
+    "syscall_flag_parsers": 4
+  },
+  "runner_failure": "First Python-only run used stale last-native-mutant binary despite source restoration, timed out at120s: excluded, owned scope explicitly stopped; original sources rebuilt and baseline passed; remaining oracle variants reassessed. No duplicate native kills.",
+  "diagnostics": {
+    "final_primary_paths": 7,
+    "visible_findings": 0,
+    "suppressed_findings": 4,
+    "real_optional_subscript_fixed": true,
+    "missing_import_disposition": "False positive: exact .venv importlib origin and all runtime imports verified; umbrella provider resolution/cache is not runtime root.",
+    "scope": "Not unconditional clean; two .opf auxiliary spelling infos were also observed in initial seven-path sweep, existing literal package metadata not spelling errors.",
+    "visible_auxiliary_infos": 2,
+    "auxiliary_disposition": "Two content.opf spelling infos marked false-positive with actual package-path evidence; provider still displays them. Not unconditional clean."
+  },
+  "navigation": "SDK/helper/source/build/CLI/test/map/book consumers inspected directly; unavailable Fabric/stale review graph do not establish complete callers or independent review.",
+  "publication": "27 chapters/118 literals; 81 browser cases/pre354/heading324. Not Supernote/device/pagination/font overrides.",
+  "gates": {
+    "build_steps": 49,
+    "tests": 68,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties_with_400_valid_generated_cases": 13,
+    "strict_html_epub": true,
+    "epubcheck": "5.2.1, zero fatal/error/warning/info",
+    "chapters": 27,
+    "literals": 118,
+    "browser_cases": 81
+  },
+  "review": "Mandatory supported-host reviewer blocked; no retry/fallback/artifact fabricated.",
+  "delivery": "Not pushed; semantic/state/failure acceptance and delivery remain incomplete.",
+  "post_suite_flags_clarification": {
+    "scope": "Book-only explanation of post-survivor flag/order oracle; native and core spec unchanged. Six disposition/publication/layout contracts replayed after final strict rebuild; final archive verified/measured/EPUBCheck after tests."
+  }
+}

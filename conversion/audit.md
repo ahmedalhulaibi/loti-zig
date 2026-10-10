@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 23 native executables; exact compiler gate; 47/47 build steps; 47 native CLI/TCP/reference tests plus seven binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 24 native executables; exact compiler gate; 49/49 build steps; 50 native CLI/TCP/reference tests plus eight binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -616,8 +616,8 @@ is a killed mutant or a defect in previously delivered examples. No shrinking
 claim for these development failures. See `messages-spec-sha256.json`,
 `messages-oracle-gap.json`, `messages-verification.json`, `mutation-messages.json`.
 
-Current bounded total: **125** (97 native, three line-index, twelve trace-parser,
-seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+Message checkpoint bounded total: **125** (97 native, three line-index, twelve trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). Message checkpoint gates:
 Zig 0.17.0/47 build steps; 64 tests/zero failures/errors/skips; thirteen attributed
 400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/117 literals, 81
 browser cases/351 code blocks/321 headings without violations. Scope is current
@@ -631,17 +631,73 @@ does not establish all callers; explicit CLI/build/test/map/book consumers were
 inspected. Mandatory review stays blocked, with no retry/fallback or push. Other
 semantic/state/failure gaps and personal-fork delivery keep the goal incomplete.
 
+## Supplied ACCEPT peer outputs and new-FD flags
+
+`accept-reproduction.json` records original line 505's unchecked peer outputs:
+HTTP already accepts real clients with null/null outputs. No existing native or
+kernel defect claimed. New `reference-accept CAPACITY FLAGS` owns an ephemeral
+IPv4 loopback listener, flushes readiness, then accepts an independent owned
+client. All 72 null/0–16 capacities × none/nonblock/cloexec/both flag modes are
+table-tested; this small finite value domain is not another generated property.
+
+Actual value-result length remains 16 even for zero/truncated capacity; only the
+exact native-family/network-port/address prefix is initialized, with all tails
+and guards poisoned. Null/null leaves storage untouched. Input length is a
+pointer in SQE off, not CONNECT's value. Returned CQE is a new FD independently
+identified by native endpoint syscalls/client endpoints, not a zero-success
+token. Actual flags show Linux does not inherit listener NONBLOCK. Accepted FD
+survives listener close, then closes/queries while ring remains open; client
+observes EOF. Three negative CQEs leave address bytes/length unchanged. A
+separate symbolic literal, ten typed pre-setup negatives and seven damaged
+submission/endpoint/closure traces pin whole contracts.
+
+Author spec snapshot was amended before any implementation solely to contain
+strace/native descendants in an owned process group; original draft retained.
+Final core tests/fixtures remain byte-exact, not ACL seals or verifier-agent
+acceptance. A compiled input-derived flag report survived all three core tests:
+the original trace oracle did not require actual flag queries. A supplemental
+four-mode oracle now requires six successful fcntl observations, exact absent
+or present flags and ordered listener-close/accepted-retention/ring-survival
+queries. Seven damaged flag/order traces fail; survivor now dies. A genuine
+optional-regex-match diagnostic was fixed in the supplement; affected three
+supplemental variants were reassessed, not counted twice. Import-root diagnostic
+was disposed with exact runtime import evidence; suppressed findings disclosed.
+
+Eleven compiled native/four syntax-valid syscall/flag-parser mutants die via
+assertions, no accepted errors/skips/compile failures. The first Python-only
+mutation runner mistakenly retained the last native mutant binary after source
+restoration: its 120-second harness timeout is excluded. Owned scope was stopped,
+sources restored/rebuilt three-test baseline passed, first ten native kills
+retained, remaining oracles reassessed with baseline rebuilds. Exact final
+source/spec restoration and rebuilt four-test baseline pass. Memory4GiB/no-swap,
+sequential execution; no arbitrary peer or destructive host-storage operations.
+See `accept-spec-{initial-sha256,sha256}.json`, `accept-oracle-gap.json`,
+`accept-verification.json`, `mutation-accept.json` and retained runner log.
+
+Current bounded total: **140** (108 native, three line-index, sixteen trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+Zig0.17.0/49 build steps; 68 tests/zero failures/errors/skips; thirteen attributed
+400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/118 literals, 81
+browser cases/354 code blocks/324 headings without violations. Scope: current
+Linux/x86_64, IPv4 loopback, one-shot outputs/FD flags/lifetimes. No payload,
+IPv6/other protocols, resource limits/aborts, descriptor reuse, multishot,
+concurrency/cancellation or all failure-unwind claim. Browser is not device
+pagination/font-override acceptance. Explicit SDK/source/CLI/build/test/map/book
+consumers inspected; stale graph/Fabric unavailability do not imply complete
+callgraph coverage. Independent review remains blocked; no retry/fallback or
+push. Remaining semantic/state/failure acceptance and delivery keep goal open.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **47/47**. Current complete suite: **64 passed**
-  (47 native + one VM + four publication + three inventory + two line-index + seven binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **49/49**. Current complete suite: **68 passed**
+  (50 native + one VM + four publication + three inventory + two line-index + eight binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
-- Thirteen reference executables: `reference-setup`, `reference-completion`,
+- Fourteen reference executables: `reference-setup`, `reference-completion`,
   `reference-signals`, `reference-files`, `reference-buffers`, `reference-splice`,
   `reference-poll`, `reference-epoll`, `reference-connect`, `reference-registration`,
-  `reference-messages`, `reference-submission`, `reference-raw`.
+  `reference-messages`, `reference-accept`, `reference-submission`, `reference-raw`.
 - Readers/copy: whole binary bytes, argument order, empty/boundary-size inputs,
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs;
@@ -649,7 +705,7 @@ semantic/state/failure gaps and personal-fork delivery keep the goal incomplete.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  thirteen properties**, source hashes, 64 passing tests and zero skips. These remain
+  thirteen properties**, source hashes, 68 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -689,7 +745,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **117 current literal blocks** match Sphinx's source, independently of the
+- **118 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.

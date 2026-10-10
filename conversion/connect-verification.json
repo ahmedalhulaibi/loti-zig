@@ -9,10 +9,10 @@
   "source_sha256": {
     "examples/reference_connect.zig": "222ea4bb96e82e33f6ac52aeafa1d60e6387877a844f9a88c2f54cb2c4b9e909",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
-    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
-    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22",
-    "ref-zig/submission.rst": "8a38573029e45a988f05253c09a9adf6356fff2a6c61923339d0f4425e8242b2",
-    "conversion/reference-map.json": "041c58f6f203d806a9ae784faad5769c5973ba862a299e3401fee40f9e3d3999",
+    "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
+    "tools/reference_map.py": "93d094c634efad9b2a59800c126dc9c65e51f701e132d89b5117d120f61b8466",
+    "ref-zig/submission.rst": "1507474161e9a727f0076d16cb122e40a02032cce47d28c33ff4ccce7243f5ce",
+    "conversion/reference-map.json": "5d7435f2b49ae8179d8f974e1909d60cb48e5054ab4a67d1a2124449322d55fc",
     "tests/test_connect.py": "289c8c0273c9c64111f02304f55b8e4a2acc2403ea41030abd3e0a6da50435ef",
     "testdata/inputs/connect-invalid-arguments.json": "8e6e479819c91aef336466ddf25bbcdfb1328a05790f063fa4c35445319e2e6b",
     "testdata/inputs/connect-invalid-traces.json": "5cdee35babb32813965b9c8fa3079948c1b1929ea9b56c18460f6c577a2c191a",
@@ -356,5 +356,15 @@
     ],
     "complete_suite": "64 tests, zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; isolated VM, public CLI/model/binding/publication contracts replayed.",
     "historical_mutation_scope": "Historical pins retain original tested-version scope; no prior mutant re-assessment or independent agent acceptance is implied."
+  },
+  "replay_after_accept": {
+    "changed_source_consumers": [
+      "build.zig",
+      "tools/reference_map.py",
+      "ref-zig/submission.rst",
+      "conversion/reference-map.json"
+    ],
+    "complete_suite": "68 tests/zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; owned block VM, CLI/TCP/reference/model/binding/publication contracts replayed.",
+    "historical_scope": "Prior mutation records are historical tested versions, not automatically reassessed; no independent review is implied."
   }
 }

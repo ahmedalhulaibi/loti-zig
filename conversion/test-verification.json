@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 64,
+  "tests_run": 68,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -90,7 +90,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 80
+          "overrun": 88
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -144,7 +144,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 61
+          "overrun": 82
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -162,7 +162,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 164
+          "overrun": 148
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -180,7 +180,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 58
+          "overrun": 54
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -242,7 +242,7 @@
   ],
   "source_sha256": {
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
-    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
+    "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
     "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5",
     "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
@@ -252,6 +252,7 @@
     "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "examples/readv.zig": "5e374ec56283d7f5994c83e3cb8fcd88f88b44a138fdf1c4bfab0316ad34c824",
+    "examples/reference_accept.zig": "65e864abebfd4f762906a9504614542da93da7e1aaadd383c31996ad8abf8dd4",
     "examples/reference_buffers.zig": "a44155312b4f0c382b0c29126516f2ae3dad874ae84d37b9e29790ee5fa5e13a",
     "examples/reference_completion.zig": "68cb89d6f08ffc80f4d9fe356b3328e00f3675732262b59221d3e0c13bd0fcc6",
     "examples/reference_connect.zig": "222ea4bb96e82e33f6ac52aeafa1d60e6387877a844f9a88c2f54cb2c4b9e909",
@@ -269,6 +270,13 @@
     "examples/sq_poll.zig": "3c7d2d3149ebbf3ebeb7a57ef438f424f8bfe7d7ab820f088b3b449bc64c80b1",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
+    "testdata/inputs/accept-flags-invalid-traces.json": "f19b59b619a819edbf2131beffe46b510f67c3ab684dadf255704f67b3225372",
+    "testdata/inputs/accept-flags.trace": "0b501a40c2110bfe687aa206523f483cb63d291e6325bc14e28da9aae533f2a6",
+    "testdata/inputs/accept-invalid-arguments.json": "83adaf5179fd1cad5012ddb03f2b40538c49f3b8bea67a639e7993e8ae0271db",
+    "testdata/inputs/accept-invalid-traces.json": "22312b9decf51d22b0af3bd3a171ef378b10dcca172dcf6e4359988b885ab96c",
+    "testdata/inputs/accept-plans.json": "d16d07cc6d510eb2d0de0ea8c57554d35551f0557741d95f2245c7c69847d04e",
+    "testdata/inputs/accept-report.json": "8a27d8f139f39c7c79488f961f9840773893ee887db3c91c1f00730a65405dec",
+    "testdata/inputs/accept.trace": "91ae99638cc4b1c2e768f9396735530203df318428034f8b750b42108604ccf4",
     "testdata/inputs/completion-invalid-plans.json": "20a857a64b64164cfbc6cdd99c335987b8af52e207740798e3ce9fc6f0d7997d",
     "testdata/inputs/completion-plans.json": "bb81a1461aea4ba4a95040894310a881b146a2b106971ca5f870943397350ed6",
     "testdata/inputs/connect-invalid-arguments.json": "8e6e479819c91aef336466ddf25bbcdfb1328a05790f063fa4c35445319e2e6b",
@@ -323,6 +331,8 @@
     "testdata/inputs/splice-report.json": "c6dd5af2ff11234fc659be050b94eac5a934cc9a008ca0b31e3f47ba088285a8",
     "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
     "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
+    "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
+    "tests/test_accept_flags.py": "be6adee86c57e9b3046dd3139a55957c9285ce6c0fb180422c2fa37ba622a45f",
     "tests/test_block_devices.py": "18857ffc40a06b68a695a879c45328566abd271fc86ab8c9716bdb5f86bcd5d6",
     "tests/test_connect.py": "289c8c0273c9c64111f02304f55b8e4a2acc2403ea41030abd3e0a6da50435ef",
     "tests/test_dispositions.py": "8d0ed94c868b5e4285b774a900f4e3f55bf1fb0c4d9695daa2301323bbeb02e6",
@@ -340,8 +350,8 @@
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tests/test_publication.py": "6a11d8abf7cc7bf304293aeca394e984e5263ffa4f59493a67305c94b0b1c0ea",
-    "tests/test_reader_layout.py": "286f69604522dd61fbc9646f64a7e77fd2048cbc3937cd75a1a19f3ac7a45c96",
+    "tests/test_publication.py": "da814b53fbcf0f4e6cfa5350f8b796dca3727279b2a421302d4b1ef235262c7d",
+    "tests/test_reader_layout.py": "cc1a6c48b3662aabb4c556d72b154c82fe122eaba607c880bbbcbe995a93ce32",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
@@ -350,7 +360,7 @@
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
-    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22"
+    "tools/reference_map.py": "93d094c634efad9b2a59800c126dc9c65e51f701e132d89b5117d120f61b8466"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."
 }

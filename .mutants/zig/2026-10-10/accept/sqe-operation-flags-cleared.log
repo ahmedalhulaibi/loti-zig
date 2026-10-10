@@ -1,0 +1,21 @@
+test_independent_full_address_literal (tests.test_accept.AcceptContracts.test_independent_full_address_literal)
+A separate symbolic literal pins the whole full-address shape without the table encoder. ... FAIL
+
+======================================================================
+FAIL: test_independent_full_address_literal (tests.test_accept.AcceptContracts.test_independent_full_address_literal)
+A separate symbolic literal pins the whole full-address shape without the table encoder.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 168, in test_independent_full_address_literal
+    actual, peer, local, trace = observe(16, "both", Path(directory) / "accept.trace")
+                                 ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 113, in observe
+    ready = read_ready(process)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 59, in read_ready
+    raise AssertionError("Accept readiness deadline expired")
+AssertionError: Accept readiness deadline expired
+
+----------------------------------------------------------------------
+Ran 1 test in 2.002s
+
+FAILED (failures=1)

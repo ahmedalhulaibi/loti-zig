@@ -4528,10 +4528,10 @@
   },
   "negative_cases": 9,
   "source_sha256": {
-    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
+    "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
     "examples/reference_buffers.zig": "a44155312b4f0c382b0c29126516f2ae3dad874ae84d37b9e29790ee5fa5e13a",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22",
+    "tools/reference_map.py": "93d094c634efad9b2a59800c126dc9c65e51f701e132d89b5117d120f61b8466",
     "testdata/inputs/provided-buffer-plans.json": "d50e0ed4acc123babeba111df163ae802d034cd9695c859f9bf5813d74332199",
     "testdata/inputs/provided-buffer-invalid-plans.json": "6c7749c1f127f3e155dd3d56aee2003ac0d25755431737e2921eb070c564cd59",
     "testdata/inputs/provided-buffer-input.bin": "fdeab9acf3710362bd2658cdc9a29e8f9c757fcf9811603a8c447cd1d9151108",
@@ -4593,5 +4593,13 @@
     ],
     "complete_suite": "64 tests, zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; isolated VM, public CLI/model/binding/publication contracts replayed.",
     "historical_mutation_scope": "Historical pins retain original tested-version scope; no prior mutant re-assessment or independent agent acceptance is implied."
+  },
+  "replay_after_accept": {
+    "changed_source_consumers": [
+      "build.zig",
+      "tools/reference_map.py"
+    ],
+    "complete_suite": "68 tests/zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; owned block VM, CLI/TCP/reference/model/binding/publication contracts replayed.",
+    "historical_scope": "Prior mutation records are historical tested versions, not automatically reassessed; no independent review is implied."
   }
 }

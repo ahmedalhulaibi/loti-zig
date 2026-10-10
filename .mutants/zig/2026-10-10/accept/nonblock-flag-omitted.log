@@ -1,0 +1,241 @@
+test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans)
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ...
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='null-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='0-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='1-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='2-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='3-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='4-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='5-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='6-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='7-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='8-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='9-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='10-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='11-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='12-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='13-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='14-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='15-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+  test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='16-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup. ... FAIL
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='null-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': False, 'length_sup[700 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': False, 'length_[702 chars]rue}}
+Diff is 7501 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='0-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[693 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[695 chars]rue}}
+Diff is 7494 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='1-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[691 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[693 chars]rue}}
+Diff is 7492 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='2-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[689 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[691 chars]rue}}
+Diff is 7490 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='3-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[689 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[691 chars]rue}}
+Diff is 7490 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='4-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[688 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[690 chars]rue}}
+Diff is 7489 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='5-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[689 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[691 chars]rue}}
+Diff is 7490 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='6-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[685 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[687 chars]rue}}
+Diff is 7486 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='7-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[684 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[686 chars]rue}}
+Diff is 7485 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='8-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[683 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[685 chars]rue}}
+Diff is 7484 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='9-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[680 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[682 chars]rue}}
+Diff is 7481 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='10-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[678 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[680 chars]rue}}
+Diff is 7479 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='11-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[678 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[680 chars]rue}}
+Diff is 7479 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='12-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[676 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[678 chars]rue}}
+Diff is 7477 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='13-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[673 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[675 chars]rue}}
+Diff is 7474 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='14-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[672 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[674 chars]rue}}
+Diff is 7473 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='15-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[670 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[672 chars]rue}}
+Diff is 7471 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_all_address_capacities_and_descriptor_flag_plans (tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans) (case='16-nonblock')
+All 72 plans kill truncated/output-pointer errors, inherited flags, wrong returned FD/endpoints and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 153, in test_all_address_capacities_and_descriptor_flag_plans
+    self.assertEqual(actual, expected_report(case["capacity"], case["mode"], peer, local, trace["accepted_fd"]))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[1420 chars]gs': 0, 'address_supplied': True, 'length_supp[668 chars]rue}} != {'fai[1420 chars]gs': 2048, 'address_supplied': True, 'length_s[670 chars]rue}}
+Diff is 7469 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 1.006s
+
+FAILED (failures=18)

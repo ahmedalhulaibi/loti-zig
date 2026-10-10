@@ -1,0 +1,79 @@
+[
+  {
+    "name": "missing",
+    "arguments": [],
+    "error": "ExpectedAcceptCapacityAndFlags"
+  },
+  {
+    "name": "one",
+    "arguments": [
+      "16"
+    ],
+    "error": "ExpectedAcceptCapacityAndFlags"
+  },
+  {
+    "name": "extra",
+    "arguments": [
+      "16",
+      "both",
+      "extra"
+    ],
+    "error": "ExpectedAcceptCapacityAndFlags"
+  },
+  {
+    "name": "empty",
+    "arguments": [
+      "",
+      "both"
+    ],
+    "error": "InvalidAcceptCapacity"
+  },
+  {
+    "name": "signed",
+    "arguments": [
+      "+1",
+      "both"
+    ],
+    "error": "InvalidAcceptCapacity"
+  },
+  {
+    "name": "negative",
+    "arguments": [
+      "-1",
+      "both"
+    ],
+    "error": "InvalidAcceptCapacity"
+  },
+  {
+    "name": "nondigit",
+    "arguments": [
+      "x",
+      "both"
+    ],
+    "error": "InvalidAcceptCapacity"
+  },
+  {
+    "name": "large",
+    "arguments": [
+      "17",
+      "both"
+    ],
+    "error": "AcceptCapacityOutOfRange"
+  },
+  {
+    "name": "overflow",
+    "arguments": [
+      "184467440737095516160",
+      "both"
+    ],
+    "error": "InvalidAcceptCapacity"
+  },
+  {
+    "name": "unknown_mode",
+    "arguments": [
+      "16",
+      "unknown"
+    ],
+    "error": "UnknownAcceptFlags"
+  }
+]

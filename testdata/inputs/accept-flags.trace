@@ -1,0 +1,18 @@
+getsockname(3, {sa_family=AF_INET, sin_port=htons(41234), sin_addr=inet_addr("127.0.0.1")}, [16]) = 0
+fcntl(3, F_GETFL) = 0x802 (flags O_RDWR|O_NONBLOCK)
+fcntl(3, F_GETFD) = 0x1 (flags FD_CLOEXEC)
+io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+getpeername(5, {sa_family=AF_INET, sin_port=htons(43123), sin_addr=inet_addr("127.0.0.1")}, [16]) = 0
+getsockname(5, {sa_family=AF_INET, sin_port=htons(41234), sin_addr=inet_addr("127.0.0.1")}, [16]) = 0
+fcntl(5, F_GETFL) = 0x802 (flags O_RDWR|O_NONBLOCK)
+fcntl(5, F_GETFD) = 0x1 (flags FD_CLOEXEC)
+close(3) = 0
+fcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)
+fcntl(5, F_GETFD) = 0x1 (flags FD_CLOEXEC)
+close(5) = 0
+fcntl(5, F_GETFD) = -1 EBADF (Bad file descriptor)
+fcntl(4, F_GETFD) = 0x1 (flags FD_CLOEXEC)
+close(4) = 0

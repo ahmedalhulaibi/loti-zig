@@ -1,0 +1,362 @@
+[
+  {
+    "name": "null-none",
+    "capacity": null,
+    "mode": "none"
+  },
+  {
+    "name": "null-nonblock",
+    "capacity": null,
+    "mode": "nonblock"
+  },
+  {
+    "name": "null-cloexec",
+    "capacity": null,
+    "mode": "cloexec"
+  },
+  {
+    "name": "null-both",
+    "capacity": null,
+    "mode": "both"
+  },
+  {
+    "name": "0-none",
+    "capacity": 0,
+    "mode": "none"
+  },
+  {
+    "name": "0-nonblock",
+    "capacity": 0,
+    "mode": "nonblock"
+  },
+  {
+    "name": "0-cloexec",
+    "capacity": 0,
+    "mode": "cloexec"
+  },
+  {
+    "name": "0-both",
+    "capacity": 0,
+    "mode": "both"
+  },
+  {
+    "name": "1-none",
+    "capacity": 1,
+    "mode": "none"
+  },
+  {
+    "name": "1-nonblock",
+    "capacity": 1,
+    "mode": "nonblock"
+  },
+  {
+    "name": "1-cloexec",
+    "capacity": 1,
+    "mode": "cloexec"
+  },
+  {
+    "name": "1-both",
+    "capacity": 1,
+    "mode": "both"
+  },
+  {
+    "name": "2-none",
+    "capacity": 2,
+    "mode": "none"
+  },
+  {
+    "name": "2-nonblock",
+    "capacity": 2,
+    "mode": "nonblock"
+  },
+  {
+    "name": "2-cloexec",
+    "capacity": 2,
+    "mode": "cloexec"
+  },
+  {
+    "name": "2-both",
+    "capacity": 2,
+    "mode": "both"
+  },
+  {
+    "name": "3-none",
+    "capacity": 3,
+    "mode": "none"
+  },
+  {
+    "name": "3-nonblock",
+    "capacity": 3,
+    "mode": "nonblock"
+  },
+  {
+    "name": "3-cloexec",
+    "capacity": 3,
+    "mode": "cloexec"
+  },
+  {
+    "name": "3-both",
+    "capacity": 3,
+    "mode": "both"
+  },
+  {
+    "name": "4-none",
+    "capacity": 4,
+    "mode": "none"
+  },
+  {
+    "name": "4-nonblock",
+    "capacity": 4,
+    "mode": "nonblock"
+  },
+  {
+    "name": "4-cloexec",
+    "capacity": 4,
+    "mode": "cloexec"
+  },
+  {
+    "name": "4-both",
+    "capacity": 4,
+    "mode": "both"
+  },
+  {
+    "name": "5-none",
+    "capacity": 5,
+    "mode": "none"
+  },
+  {
+    "name": "5-nonblock",
+    "capacity": 5,
+    "mode": "nonblock"
+  },
+  {
+    "name": "5-cloexec",
+    "capacity": 5,
+    "mode": "cloexec"
+  },
+  {
+    "name": "5-both",
+    "capacity": 5,
+    "mode": "both"
+  },
+  {
+    "name": "6-none",
+    "capacity": 6,
+    "mode": "none"
+  },
+  {
+    "name": "6-nonblock",
+    "capacity": 6,
+    "mode": "nonblock"
+  },
+  {
+    "name": "6-cloexec",
+    "capacity": 6,
+    "mode": "cloexec"
+  },
+  {
+    "name": "6-both",
+    "capacity": 6,
+    "mode": "both"
+  },
+  {
+    "name": "7-none",
+    "capacity": 7,
+    "mode": "none"
+  },
+  {
+    "name": "7-nonblock",
+    "capacity": 7,
+    "mode": "nonblock"
+  },
+  {
+    "name": "7-cloexec",
+    "capacity": 7,
+    "mode": "cloexec"
+  },
+  {
+    "name": "7-both",
+    "capacity": 7,
+    "mode": "both"
+  },
+  {
+    "name": "8-none",
+    "capacity": 8,
+    "mode": "none"
+  },
+  {
+    "name": "8-nonblock",
+    "capacity": 8,
+    "mode": "nonblock"
+  },
+  {
+    "name": "8-cloexec",
+    "capacity": 8,
+    "mode": "cloexec"
+  },
+  {
+    "name": "8-both",
+    "capacity": 8,
+    "mode": "both"
+  },
+  {
+    "name": "9-none",
+    "capacity": 9,
+    "mode": "none"
+  },
+  {
+    "name": "9-nonblock",
+    "capacity": 9,
+    "mode": "nonblock"
+  },
+  {
+    "name": "9-cloexec",
+    "capacity": 9,
+    "mode": "cloexec"
+  },
+  {
+    "name": "9-both",
+    "capacity": 9,
+    "mode": "both"
+  },
+  {
+    "name": "10-none",
+    "capacity": 10,
+    "mode": "none"
+  },
+  {
+    "name": "10-nonblock",
+    "capacity": 10,
+    "mode": "nonblock"
+  },
+  {
+    "name": "10-cloexec",
+    "capacity": 10,
+    "mode": "cloexec"
+  },
+  {
+    "name": "10-both",
+    "capacity": 10,
+    "mode": "both"
+  },
+  {
+    "name": "11-none",
+    "capacity": 11,
+    "mode": "none"
+  },
+  {
+    "name": "11-nonblock",
+    "capacity": 11,
+    "mode": "nonblock"
+  },
+  {
+    "name": "11-cloexec",
+    "capacity": 11,
+    "mode": "cloexec"
+  },
+  {
+    "name": "11-both",
+    "capacity": 11,
+    "mode": "both"
+  },
+  {
+    "name": "12-none",
+    "capacity": 12,
+    "mode": "none"
+  },
+  {
+    "name": "12-nonblock",
+    "capacity": 12,
+    "mode": "nonblock"
+  },
+  {
+    "name": "12-cloexec",
+    "capacity": 12,
+    "mode": "cloexec"
+  },
+  {
+    "name": "12-both",
+    "capacity": 12,
+    "mode": "both"
+  },
+  {
+    "name": "13-none",
+    "capacity": 13,
+    "mode": "none"
+  },
+  {
+    "name": "13-nonblock",
+    "capacity": 13,
+    "mode": "nonblock"
+  },
+  {
+    "name": "13-cloexec",
+    "capacity": 13,
+    "mode": "cloexec"
+  },
+  {
+    "name": "13-both",
+    "capacity": 13,
+    "mode": "both"
+  },
+  {
+    "name": "14-none",
+    "capacity": 14,
+    "mode": "none"
+  },
+  {
+    "name": "14-nonblock",
+    "capacity": 14,
+    "mode": "nonblock"
+  },
+  {
+    "name": "14-cloexec",
+    "capacity": 14,
+    "mode": "cloexec"
+  },
+  {
+    "name": "14-both",
+    "capacity": 14,
+    "mode": "both"
+  },
+  {
+    "name": "15-none",
+    "capacity": 15,
+    "mode": "none"
+  },
+  {
+    "name": "15-nonblock",
+    "capacity": 15,
+    "mode": "nonblock"
+  },
+  {
+    "name": "15-cloexec",
+    "capacity": 15,
+    "mode": "cloexec"
+  },
+  {
+    "name": "15-both",
+    "capacity": 15,
+    "mode": "both"
+  },
+  {
+    "name": "16-none",
+    "capacity": 16,
+    "mode": "none"
+  },
+  {
+    "name": "16-nonblock",
+    "capacity": 16,
+    "mode": "nonblock"
+  },
+  {
+    "name": "16-cloexec",
+    "capacity": 16,
+    "mode": "cloexec"
+  },
+  {
+    "name": "16-both",
+    "capacity": 16,
+    "mode": "both"
+  }
+]

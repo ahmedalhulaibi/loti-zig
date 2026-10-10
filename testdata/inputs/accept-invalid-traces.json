@@ -1,0 +1,51 @@
+[
+  {
+    "name": "missing_submit",
+    "old": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteAcceptKernelTrace"
+  },
+  {
+    "name": "sync_accept",
+    "old": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "accept4(3, NULL, NULL, SOCK_CLOEXEC) = 5\n",
+    "count": 1,
+    "error": "SynchronousAcceptDetected"
+  },
+  {
+    "name": "missing_peer",
+    "old": "getpeername(5, {sa_family=AF_INET, sin_port=htons(43123), sin_addr=inet_addr(\"127.0.0.1\")}, [16]) = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteAcceptKernelTrace"
+  },
+  {
+    "name": "zero_port",
+    "old": "htons(43123)",
+    "new": "htons(0)",
+    "count": 1,
+    "error": "InvalidAcceptEndpointQuery"
+  },
+  {
+    "name": "wrong_local",
+    "old": "getsockname(5, {sa_family=AF_INET, sin_port=htons(41234), sin_addr=inet_addr(\"127.0.0.1\")}, [16]) = 0\n",
+    "new": "getsockname(5, {sa_family=AF_INET, sin_port=htons(41235), sin_addr=inet_addr(\"127.0.0.1\")}, [16]) = 0\n",
+    "count": 1,
+    "error": "WrongAcceptEndpointIdentity"
+  },
+  {
+    "name": "missing_close",
+    "old": "close(5) = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "AcceptCloseNotObservedBeforeQuery"
+  },
+  {
+    "name": "missing_badf",
+    "old": "fcntl(5, F_GETFD) = -1 EBADF (Bad file descriptor)\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteAcceptQueriedCleanup"
+  }
+]

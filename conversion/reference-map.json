@@ -180,9 +180,9 @@
     {
       "original": "io_uring_prep_accept",
       "zig": "std.os.linux.IoUring.accept",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/reference_accept.zig",
+      "verification_scope": "constructed and submitted; all 72 null/0–16 IPv4 peer capacities x four new-FD flags checked against independent client/endpoints/EOF; actual returned length/initialized bytes/poison guards, three failures and queried listener/new-FD ownership; no payload/other protocols/multishot/races/all failures assurance",
+      "semantic_difference": "Listener input and optional address/length outputs; initialize capacity and retain both through CQE. Length pointer goes in SQE off, unlike CONNECT's length value. Truncated output still returns full address length. Success CQE owns a new FD; accept flags are in rw_flags and Linux does not inherit listener NONBLOCK.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn accept(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    addr: ?*posix.sockaddr,\n    addrlen: ?*posix.socklen_t,\n    flags: u32,\n) !*linux.io_uring_sqe"
     },

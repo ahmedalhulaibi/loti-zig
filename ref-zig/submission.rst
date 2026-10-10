@@ -205,6 +205,55 @@ kernels and all failure unwinding are not attested. Procfs is required.
    :language: zig
    :caption: Datagram scatter/gather, truncation and owned ancillary descriptors
 
+Executed accepted peer outputs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``reference-accept CAPACITY FLAGS`` owns a nonblocking/CLOEXEC IPv4 TCP listener
+bound only to ``127.0.0.1`` at an allocated port. It prints and flushes one JSON
+ready event. The caller then connects an owned client; the executable submits a
+one-shot ACCEPT and prints its report. It is not a server or arbitrary-network
+probe. The independent client checks both endpoint identities and receives EOF
+after the accepted socket closes.
+
+``CAPACITY`` is ``null`` or decimal 0–16. ``null`` passes both output pointers as
+null. Otherwise an aligned, poisoned address buffer and an initialized socklen
+remain live through completion. The SQE stores the address pointer in ``addr``
+and the **length pointer** in ``off``; ``len`` is zero. This is not CONNECT's
+address-length value. On success the kernel writes at most the supplied capacity
+but returns the full IPv4 address length, 16. Even capacity zero can accept a
+connection and return length 16 without writing any bytes. All untouched bytes
+and a 16-byte guard remain poisoned. Peer ports are network-endian; the family
+field is native-endian. Independent getsockname/getpeername queries observe the
+complete addresses; truncated output must not be read as a complete sockaddr.
+
+``FLAGS`` is ``none``, ``nonblock``, ``cloexec`` or ``both``. These accept4 flags
+are in ``sqe.rw_flags``, not ``sqe.flags``. A successful CQE contains a new owned
+FD, not zero-success metadata. Actual fcntl queries check NONBLOCK/CLOEXEC for
+all four modes: Linux does not inherit the listener's NONBLOCK status. The new
+socket survives queried listener closure, then closes/queries before exit while
+the ring stays open. Invalid FD/non-socket/invalid-flags requests return separate
+-EBADF/-ENOTSOCK/-EINVAL CQEs with unchanged output storage and length.
+
+All 72 capacity/flag combinations, a separate whole symbolic literal, ten typed
+pre-setup negatives and a syscall oracle/seven damaged traces are checked in
+fresh owned client processes. The finite domain is exhaustively table-tested,
+not claimed as another generated property or independent-verifier acceptance.
+
+A supplemental flag/order oracle requires six actual successful fcntl queries:
+both listener flags, accepted status/descriptor flags, accepted-FD survival after
+listener closure and ring survival after accepted closure. Seven damaged traces
+challenge those observations. It closes an author-test gap: a compiled
+input-derived flag report initially passed the core contracts without querying
+the accepted flags. This supplement is post-discovery, not independent review.
+
+Scope: current IPv4 loopback and one-shot outputs/FD flags/ownership. Payload,
+IPv6/other protocols, aborted peers/resource limits, descriptor reuse, multishot,
+concurrency/cancellation and all failure unwinding are not attested.
+
+.. literalinclude:: ../examples/reference_accept.zig
+   :language: zig
+   :caption: Owned ACCEPT peer outputs, truncated capacities and new-FD flags
+
 Executed client connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

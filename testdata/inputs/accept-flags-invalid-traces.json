@@ -1,0 +1,51 @@
+[
+  {
+    "name": "missing_status",
+    "old": "fcntl(5, F_GETFL) = 0x802 (flags O_RDWR|O_NONBLOCK)\n",
+    "new": "",
+    "count": 1,
+    "error": "WrongAcceptFlagQueries"
+  },
+  {
+    "name": "missing_descriptor",
+    "old": "fcntl(5, F_GETFD) = 0x1 (flags FD_CLOEXEC)\n",
+    "new": "",
+    "count": 1,
+    "error": "WrongAcceptFlagQueries"
+  },
+  {
+    "name": "nonblock_omitted",
+    "old": "fcntl(5, F_GETFL) = 0x802 (flags O_RDWR|O_NONBLOCK)",
+    "new": "fcntl(5, F_GETFL) = 0x2 (flags O_RDWR)",
+    "count": 1,
+    "error": "WrongAcceptFlagQueries"
+  },
+  {
+    "name": "cloexec_omitted",
+    "old": "fcntl(5, F_GETFD) = 0x1 (flags FD_CLOEXEC)\n",
+    "new": "fcntl(5, F_GETFD) = 0\n",
+    "count": 1,
+    "error": "WrongAcceptFlagQueries"
+  },
+  {
+    "name": "wrong_numeric",
+    "old": "0x802 (flags O_RDWR|O_NONBLOCK)",
+    "new": "0x2 (flags O_RDWR|O_NONBLOCK)",
+    "count": 1,
+    "error": "InvalidAcceptFlagsTrace"
+  },
+  {
+    "name": "retained_before_listener_close",
+    "old": "close(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 0x1 (flags FD_CLOEXEC)\n",
+    "new": "fcntl(5, F_GETFD) = 0x1 (flags FD_CLOEXEC)\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\n",
+    "count": 1,
+    "error": "WrongAcceptOwnershipQueryOrder"
+  },
+  {
+    "name": "ring_query_before_accepted_close",
+    "old": "close(5) = 0\nfcntl(5, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(4, F_GETFD) = 0x1 (flags FD_CLOEXEC)\n",
+    "new": "fcntl(4, F_GETFD) = 0x1 (flags FD_CLOEXEC)\nclose(5) = 0\nfcntl(5, F_GETFD) = -1 EBADF (Bad file descriptor)\n",
+    "count": 1,
+    "error": "WrongAcceptOwnershipQueryOrder"
+  }
+]

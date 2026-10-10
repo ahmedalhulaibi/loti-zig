@@ -1,0 +1,18 @@
+test_independent_full_address_literal (tests.test_accept.AcceptContracts.test_independent_full_address_literal)
+A separate symbolic literal pins the whole full-address shape without the table encoder. ... FAIL
+
+======================================================================
+FAIL: test_independent_full_address_literal (tests.test_accept.AcceptContracts.test_independent_full_address_literal)
+A separate symbolic literal pins the whole full-address shape without the table encoder.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_accept.py", line 178, in test_independent_full_address_literal
+    self.assertEqual(actual, replace(template))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[426 chars]165, 0]}, {'request': {'operation': 'ACCEPT', [1657 chars]rue}} != {'fai[426 chars]165, 165]}, {'request': {'operation': 'ACCEPT'[1665 chars]rue}}
+Diff is 7569 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.025s
+
+FAILED (failures=1)

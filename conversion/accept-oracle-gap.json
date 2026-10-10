@@ -1,0 +1,20 @@
+{
+  "scope": "Author mutation observation: actual accepted-FD flags queries were not required by original trace oracle; input-derived booleans matched all core reports despite removing those queries. Not an independently sealed verifier or native flags implementation defect.",
+  "id": "flags-from-input",
+  "compiled": true,
+  "initial_status": "survived",
+  "initial_tests": 3,
+  "build_log": ".mutants/zig/2026-10-10/accept/flags-from-input-initial-build.log",
+  "log": ".mutants/zig/2026-10-10/accept/flags-from-input-survived.log",
+  "mutation_sha256": "00e105c9a92b62f38ddd0db321a0ebac5784b869196362817203ec5d03f670c5",
+  "planned_supplement": "Independent actual fcntl values and ordered listener-close/accepted-FD-retention/ring survival syscall contract; original core spec unchanged.",
+  "final_status": "killed",
+  "supplement": [
+    "tests/test_accept_flags.py",
+    "testdata/inputs/accept-flags.trace",
+    "testdata/inputs/accept-flags-invalid-traces.json"
+  ],
+  "kernel_claim": "Six actual successful fcntl observations: both listener flags, accepted NONBLOCK/CLOEXEC (including absent flags), accepted FD survives listener close, ring stays open after accepted close. Seven damaged flag/order traces rejected; four actual flag modes measured.",
+  "core_spec_unchanged": true,
+  "optional_match_type_fix": "Supplemental parser explicitly handles absent regex match after real LSP finding. Affected three supplemental variants reassessed; old twelve core/native assessments retained, no duplicate kills."
+}

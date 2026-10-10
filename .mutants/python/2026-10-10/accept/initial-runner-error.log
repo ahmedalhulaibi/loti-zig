@@ -1,0 +1,30 @@
+Running as unit: run-p3336082-i7466543.scope; invocation ID: 5ea96c0f938c4a62ba6b9eaa98288986
+capacity-forced-full killed
+returned-length-is-capacity killed
+address-output-omitted killed
+poisoned-guard-corrupted killed
+peer-query-is-local killed
+nonblock-flag-omitted killed
+cloexec-flag-omitted killed
+flags-inherited-from-listener killed
+socket-close-omitted killed
+sqe-operation-flags-cleared killed
+Traceback (most recent call last):
+  File "/tmp/loti-accept-mutations.py", line 24, in <module>
+    result=command([sys.executable,'-m','unittest',f'tests.test_accept.AcceptContracts.{method}','-v'],runlog);output=runlog.read_text();match=re.search(r'FAILED \(([^)]+)\)',output);assert result.returncode!=0 and match and 'errors=' not in match[1] and 'skipped=' not in match[1] and re.search(r'failures=[1-9]',match[1]),(name,'not a substantive killed assessment',output[-1500:]);rows.append(dict(id=name,source=str(path.relative_to(root)),mutation_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),compiled=True,test=method,failures=int(re.search(r'failures=(\d+)',match[1])[1]),errors=0,skips=0,build_log=str(build.relative_to(root)),log=str(runlog.relative_to(root)),status='killed'));path.write_bytes(originals[path]);print(name,'killed',flush=True)
+  File "/tmp/loti-accept-mutations.py", line 19, in command
+    r=subprocess.run(args,cwd=root,capture_output=True,timeout=timeout);log.write_bytes(r.stdout+r.stderr);return r
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/subprocess.py", line 556, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/subprocess.py", line 1222, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/subprocess.py", line 2155, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/subprocess.py", line 1269, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['/home/ahmed/workspace/va/loti-zig/.venv/bin/python', '-m', 'unittest', 'tests.test_accept.AcceptContracts.test_all_address_capacities_and_descriptor_flag_plans', '-v']' timed out after 120 seconds

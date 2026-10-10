@@ -1,0 +1,149 @@
+{
+  "scope": "Historical first ten compiled native assessments only, exact restored/rebuilt three-test baseline. No Python oracle kill accepted from the following failed runner.",
+  "mutants": [
+    {
+      "id": "capacity-forced-full",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "a28c7e67f01a6e15fa3655b3b985b232604bcd8d6b0c77b59718a7b1a9c12239",
+      "compiled": true,
+      "test": "test_all_address_capacities_and_descriptor_flag_plans",
+      "failures": 64,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/capacity-forced-full-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/capacity-forced-full.log",
+      "status": "killed"
+    },
+    {
+      "id": "returned-length-is-capacity",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "8776072e33fdf979ddf18a06222590824b5897fa75eae421139d772c2f5412ec",
+      "compiled": true,
+      "test": "test_all_address_capacities_and_descriptor_flag_plans",
+      "failures": 64,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/returned-length-is-capacity-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/returned-length-is-capacity.log",
+      "status": "killed"
+    },
+    {
+      "id": "address-output-omitted",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "4b4969f19539038bd490730c3dbab3bde182713c15e11bcc7117deeb67dbb860",
+      "compiled": true,
+      "test": "test_independent_full_address_literal",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/address-output-omitted-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/address-output-omitted.log",
+      "status": "killed"
+    },
+    {
+      "id": "poisoned-guard-corrupted",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "ec7c602ad93f5bc68b922af71af25d2b4c5885a461b7aa2b84a1b3859908e12f",
+      "compiled": true,
+      "test": "test_independent_full_address_literal",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/poisoned-guard-corrupted-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/poisoned-guard-corrupted.log",
+      "status": "killed"
+    },
+    {
+      "id": "peer-query-is-local",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "8e73a6dda361c41dc519cf029d90918594a40e4f8471e9bbb72901855b9c80f7",
+      "compiled": true,
+      "test": "test_independent_full_address_literal",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/peer-query-is-local-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/peer-query-is-local.log",
+      "status": "killed"
+    },
+    {
+      "id": "nonblock-flag-omitted",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "5a2ada479e14ece38b113875faa84c0c309de7cc9bfacfdea936e397b6a8635b",
+      "compiled": true,
+      "test": "test_all_address_capacities_and_descriptor_flag_plans",
+      "failures": 18,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/nonblock-flag-omitted-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/nonblock-flag-omitted.log",
+      "status": "killed"
+    },
+    {
+      "id": "cloexec-flag-omitted",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "40082ef34a23ffae8b38d584e8de341283fe2887dad93de94dc1e5d2099b62b2",
+      "compiled": true,
+      "test": "test_all_address_capacities_and_descriptor_flag_plans",
+      "failures": 18,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/cloexec-flag-omitted-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/cloexec-flag-omitted.log",
+      "status": "killed"
+    },
+    {
+      "id": "flags-inherited-from-listener",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "62ace429fd16d5e578594698c09e71dd7bd4dd418122da98d89b00b76ea0e330",
+      "compiled": true,
+      "test": "test_all_address_capacities_and_descriptor_flag_plans",
+      "failures": 18,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/flags-inherited-from-listener-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/flags-inherited-from-listener.log",
+      "status": "killed"
+    },
+    {
+      "id": "socket-close-omitted",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "abe5c702bd43fcd8c0b4645d0078f5e36c577f7bb78f9d2a48b4600757458174",
+      "compiled": true,
+      "test": "test_independent_full_address_literal",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/socket-close-omitted-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/socket-close-omitted.log",
+      "status": "killed"
+    },
+    {
+      "id": "sqe-operation-flags-cleared",
+      "source": "examples/reference_accept.zig",
+      "mutation_sha256": "46a441e6fb27d7fec00d31d454c500848d3248163dbb8e3d43e177667adf8fd1",
+      "compiled": true,
+      "test": "test_independent_full_address_literal",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "build_log": ".mutants/zig/2026-10-10/accept/sqe-operation-flags-cleared-build.log",
+      "log": ".mutants/zig/2026-10-10/accept/sqe-operation-flags-cleared.log",
+      "status": "killed"
+    }
+  ],
+  "source_sha256": {
+    "examples/reference_accept.zig": "65e864abebfd4f762906a9504614542da93da7e1aaadd383c31996ad8abf8dd4",
+    "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1"
+  },
+  "exact_restoration": true,
+  "rebuilt_baseline": {
+    "tests": 3,
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "log": ".mutants/zig/2026-10-10/accept/restored.log"
+  },
+  "containment": "systemd user scope, MemoryMax4G, MemorySwapMax0, TasksMax128; native test children own process groups killed on all stops.",
+  "logs": "Substantive assertions required; no compile failures, runner errors or skipped variants accepted."
+}

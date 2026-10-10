@@ -19,6 +19,7 @@ SPLICE = "examples/reference_splice.zig"
 POLL = "examples/reference_poll.zig"
 EPOLL = "examples/reference_epoll.zig"
 CONNECT = "examples/reference_connect.zig"
+ACCEPT = "examples/reference_accept.zig"
 MESSAGES = "examples/reference_messages.zig"
 RAW = "examples/reference_raw.zig"
 
@@ -191,6 +192,10 @@ def generate():
                     example = CONNECT
                     scope = "constructed and submitted; caller-owned IPv4 loopback listener independently observes client identity/closure; actual endpoint queries, six correlated error CQEs, fresh failed sockets and FD cleanup checked; no payload/DNS/TLS/IPv6/datagram/cancellation or arbitrary-network assurance"
                     difference = "Takes a client socket and stable peer input, not a listener or output address; addrlen is a value in SQE off, while len is zero. Success CQE is zero, not a new FD. This example conservatively retains address storage through completion."
+                elif method == "accept":
+                    example = ACCEPT
+                    scope = "constructed and submitted; all 72 null/0–16 IPv4 peer capacities x four new-FD flags checked against independent client/endpoints/EOF; actual returned length/initialized bytes/poison guards, three failures and queried listener/new-FD ownership; no payload/other protocols/multishot/races/all failures assurance"
+                    difference = "Listener input and optional address/length outputs; initialize capacity and retain both through CQE. Length pointer goes in SQE off, unlike CONNECT's length value. Truncated output still returns full address length. Success CQE owns a new FD; accept flags are in rw_flags and Linux does not inherit listener NONBLOCK."
                 elif method in {"recvmsg", "sendmsg"}:
                     example = MESSAGES
                     scope = "constructed and submitted; two-vector private UNIX datagrams, zero-size records, data/control truncation, SCM_RIGHTS lifetime/CMSG_CLOEXEC, exact bytes/flags and selected negative CQEs/queried cleanup checked; not TCP/UDP, addresses, all ancillary types, concurrency/cancellation or all failure paths"

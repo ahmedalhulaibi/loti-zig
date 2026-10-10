@@ -47,7 +47,7 @@ virtio block support. The VM verifier accepts `--kernel` and `--busybox` paths;
 recorded lab: QEMU 11.1.1/Linux 7.2.3-arch1-3. All disks are generated files,
 attached read-only. No host storage device or root host operation is used.
 
-Publication checks verify all 27 chapters in reading order/navigation, 117 literal
+Publication checks verify all 27 chapters in reading order/navigation, 118 literal
 blocks against Sphinx source, five byte-identical illustrations, licence and local
 links. Negative tests reject nine damaged-archive classes. These checks **do not**
 prove semantic completeness or satisfy independent review.
@@ -105,6 +105,8 @@ zig-out/bin/reference-epoll
 zig-out/bin/reference-epoll add write wait modify wait modify wait delete drain close wait
 # PORT must belong to a disposable 127.0.0.1 listener owned by the caller.
 zig-out/bin/reference-connect PORT
+# Prints JSON ready; caller then connects one owned client to its loopback port.
+zig-out/bin/reference-accept 16 both
 zig-out/bin/reference-messages input.txt 3
 zig-out/bin/reference-buffers input.txt
 zig-out/bin/reference-buffers input.txt read read provide read

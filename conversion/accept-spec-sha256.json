@@ -1,0 +1,12 @@
+{
+  "scope": "Author pre-implementation tests/fixtures snapshot, not ACL-sealed or independent verifier-agent acceptance.",
+  "sha256": {
+    "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
+    "testdata/inputs/accept-invalid-arguments.json": "83adaf5179fd1cad5012ddb03f2b40538c49f3b8bea67a639e7993e8ae0271db",
+    "testdata/inputs/accept-invalid-traces.json": "22312b9decf51d22b0af3bd3a171ef378b10dcca172dcf6e4359988b885ab96c",
+    "testdata/inputs/accept-plans.json": "d16d07cc6d510eb2d0de0ea8c57554d35551f0557741d95f2245c7c69847d04e",
+    "testdata/inputs/accept-report.json": "8a27d8f139f39c7c79488f961f9840773893ee887db3c91c1f00730a65405dec",
+    "testdata/inputs/accept.trace": "91ae99638cc4b1c2e768f9396735530203df318428034f8b750b42108604ccf4"
+  },
+  "preimplementation_draft_amendment": "Before any native implementation: start a fresh owned process group and kill all descendants on readiness/completion failure, not only strace. Original draft snapshot retained in accept-spec-initial-sha256.json; behavior/fixtures unchanged; not ACL sealed or independent acceptance."
+}

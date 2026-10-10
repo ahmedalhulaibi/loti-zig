@@ -1,6 +1,6 @@
 {
   "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review.",
-  "book_sha256": "d1c06b12aa8ee853954053edc8c1440791bac6041424b350f721952bf9eccc90",
+  "book_sha256": "ddb65354a931cbc8566e0bc2785cf315663a3f6d4771fd574503521a06167e21",
   "renderer": {
     "node": "v26.8.1",
     "playwright": "1.64.0",
@@ -14,10 +14,10 @@
   ],
   "cases": 81,
   "element_counts": {
-    "pre": 351,
+    "pre": 354,
     "table": 6,
     "image": 15,
-    "heading": 321,
+    "heading": 324,
     "figure": 0
   },
   "violations": [],
@@ -1254,15 +1254,6 @@
           },
           {
             "index": 5,
-            "left": 8,
-            "right": 312,
-            "scroll": 304,
-            "client": 304,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 6,
             "left": 24,
             "right": 296,
             "scroll": 272,
@@ -1271,11 +1262,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 7,
+            "index": 6,
             "left": 8,
             "right": 312,
             "scroll": 304,
             "client": 304,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 7,
+            "left": 24,
+            "right": 296,
+            "scroll": 272,
+            "client": 272,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -1605,15 +1605,6 @@
           },
           {
             "index": 44,
-            "left": 24,
-            "right": 296,
-            "scroll": 272,
-            "client": 272,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 45,
             "left": 8,
             "right": 312,
             "scroll": 304,
@@ -1622,11 +1613,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 46,
+            "index": 45,
             "left": 24,
             "right": 296,
             "scroll": 272,
             "client": 272,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 46,
+            "left": 8,
+            "right": 312,
+            "scroll": 304,
+            "client": 304,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -1641,6 +1641,15 @@
           },
           {
             "index": 48,
+            "left": 24,
+            "right": 296,
+            "scroll": 272,
+            "client": 272,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 49,
             "left": 24,
             "right": 296,
             "scroll": 272,
@@ -1780,6 +1789,15 @@
           },
           {
             "index": 14,
+            "left": 8,
+            "right": 312,
+            "scroll": 304,
+            "client": 304,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 15,
             "left": 8,
             "right": 312,
             "scroll": 304,
@@ -3736,15 +3754,6 @@
           },
           {
             "index": 5,
-            "left": 8,
-            "right": 592,
-            "scroll": 584,
-            "client": 584,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 6,
             "left": 24,
             "right": 576,
             "scroll": 552,
@@ -3753,11 +3762,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 7,
+            "index": 6,
             "left": 8,
             "right": 592,
             "scroll": 584,
             "client": 584,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 7,
+            "left": 24,
+            "right": 576,
+            "scroll": 552,
+            "client": 552,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -4087,15 +4105,6 @@
           },
           {
             "index": 44,
-            "left": 24,
-            "right": 576,
-            "scroll": 552,
-            "client": 552,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 45,
             "left": 8,
             "right": 592,
             "scroll": 584,
@@ -4104,11 +4113,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 46,
+            "index": 45,
             "left": 24,
             "right": 576,
             "scroll": 552,
             "client": 552,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 46,
+            "left": 8,
+            "right": 592,
+            "scroll": 584,
+            "client": 584,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -4123,6 +4141,15 @@
           },
           {
             "index": 48,
+            "left": 24,
+            "right": 576,
+            "scroll": 552,
+            "client": 552,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 49,
             "left": 24,
             "right": 576,
             "scroll": 552,
@@ -4262,6 +4289,15 @@
           },
           {
             "index": 14,
+            "left": 8,
+            "right": 592,
+            "scroll": 584,
+            "client": 584,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 15,
             "left": 8,
             "right": 592,
             "scroll": 584,
@@ -6218,15 +6254,6 @@
           },
           {
             "index": 5,
-            "left": 8,
-            "right": 792,
-            "scroll": 784,
-            "client": 784,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 6,
             "left": 24,
             "right": 776,
             "scroll": 752,
@@ -6235,11 +6262,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 7,
+            "index": 6,
             "left": 8,
             "right": 792,
             "scroll": 784,
             "client": 784,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 7,
+            "left": 24,
+            "right": 776,
+            "scroll": 752,
+            "client": 752,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -6569,15 +6605,6 @@
           },
           {
             "index": 44,
-            "left": 24,
-            "right": 776,
-            "scroll": 752,
-            "client": 752,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 45,
             "left": 8,
             "right": 792,
             "scroll": 784,
@@ -6586,11 +6613,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 46,
+            "index": 45,
             "left": 24,
             "right": 776,
             "scroll": 752,
             "client": 752,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 46,
+            "left": 8,
+            "right": 792,
+            "scroll": 784,
+            "client": 784,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -6605,6 +6641,15 @@
           },
           {
             "index": 48,
+            "left": 24,
+            "right": 776,
+            "scroll": 752,
+            "client": 752,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 49,
             "left": 24,
             "right": 776,
             "scroll": 752,
@@ -6744,6 +6789,15 @@
           },
           {
             "index": 14,
+            "left": 8,
+            "right": 792,
+            "scroll": 784,
+            "client": 784,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 15,
             "left": 8,
             "right": 792,
             "scroll": 784,
@@ -7473,7 +7527,7 @@
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
-    "tests/test_reader_layout.py": "286f69604522dd61fbc9646f64a7e77fd2048cbc3937cd75a1a19f3ac7a45c96",
+    "tests/test_reader_layout.py": "cc1a6c48b3662aabb4c556d72b154c82fe122eaba607c880bbbcbe995a93ce32",
     "conversion/reader-layout-before.png": "8b87531a66190284853702a1d4bcb15b086b6c02f55b5d6d0b786d424ce77d93",
     "conversion/reader-layout-after.png": "df4728528a37f7c4e9f16da21c8567517c93e081d154a9c06b5d8b42992221dd",
     "conversion/reader-layout-code.png": "82410741bbeac87d2001436f06720ca70d6a95ff24509d528968d02d749dd437",
@@ -7519,5 +7573,12 @@
     "browser_cases": 81,
     "suite": "64 tests/zero failures/errors/skips; thirteen attributed 400-case properties",
     "scope": "Final message-book measurements above are current; historical screenshots/CSS assessments retained. Not device/pagination/font-override or independent acceptance."
+  },
+  "replay_after_accept": {
+    "chapters": 27,
+    "literal_blocks": 118,
+    "browser_cases": 81,
+    "suite": "68 tests/zero failures/errors/skips; thirteen attributed 400-case properties",
+    "scope": "Current final ACCEPT-book measurements; historical screenshots/CSS assessments retained. Not device/pagination/font overrides or independent semantic acceptance."
   }
 }
