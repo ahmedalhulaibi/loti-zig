@@ -1,0 +1,36 @@
+{
+  "baseline_commit": "4fc16974faa46a76b01d8fb4653044382ad27e24",
+  "scope": "Coverage gap, not a reproduced kernel/native defect: poll constructors execute, but reference-poll is absent and pending readiness/rearm/removal effects lack a dedicated public boundary contract.",
+  "constructor_report": [
+    {
+      "tag": 22,
+      "operation": "POLL_ADD",
+      "length": 0,
+      "flags": 0,
+      "buffer_index": 0
+    },
+    {
+      "tag": 23,
+      "operation": "POLL_REMOVE",
+      "length": 0,
+      "flags": 0,
+      "buffer_index": 0
+    }
+  ],
+  "effect_executable_present": false,
+  "source_sha256": {
+    "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
+    "build.zig": "1d227767b9a5b206e403bb8c410b0d22ed64e75832b568bfe90b2774875c72ab",
+    "tools/reference_map.py": "8a26f2ea91523da319f624c3b056b370df66b22098d85bfbeef2f6da5844b134",
+    "conversion/reference-map.json": "aa784c59f10e26d032ad1ed0e2fec9c8991ccb1c38a33d2724a746aae4e8f803",
+    "ref-zig/submission.rst": "632d7708cce7649038eecbfb966da051e9a04226c54ba395d0e26fc0e47643e2",
+    "conversion/reference-block-disposition.md": "6ad8510bc8e8e3b065e02219bce70a12d39f751783a2ad4fd352cb71993b7e3b"
+  },
+  "original_blocks": [
+    "ref-liburing/submission.rst:565",
+    "ref-liburing/submission.rst:583"
+  ],
+  "planned_boundary": "reference-poll [arm|write|wait|cancel|drain|missing|quiet ...], bounded validated command sequences over owned nonblocking pipe; one-shot readiness/rearm, two cancellation CQEs, missing tag, EBADF, HUP/EOF and before-exit FD closure.",
+  "limits": "Sequential deterministic readiness/cancel separation; no arrival/cancel race, multishot, SQPOLL, all masks/descriptors or independent review.",
+  "review_blocker": "Supported child host unavailable; no retry/fallback authorized or attempted."
+}
