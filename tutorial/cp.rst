@@ -30,8 +30,16 @@ retry without advancing. Zero progress before the range is complete is an error,
 not an invitation to loop forever. A slot is reusable only after its entire
 write completes. ``copy_cqe`` consumes every processed completion automatically.
 
-The input must be a regular file. Its initial size bounds the copy. The output
-is opened without truncation; descriptor metadata is checked for identical
+The input can be a regular file or a block device, opened read-only. For a
+regular file, metadata supplies its size. For a block device, the native
+``BLKGETSIZE64`` ioctl returns a u64 byte count. Its request is generated with
+``linux.IOCTL.IOR(0x12, 114, usize)``: Linux encodes ``size_t`` in the request
+but writes a u64 result. Decode errno and retry interrupted queries. This size
+query is synchronous; data transfers still use io_uring.
+
+The initial size bounds the copy. The destination must be a regular file,
+never a device. The output is opened without truncation; descriptor metadata is
+checked for identical
 device/inode identity before its length is set to zero. This rejects the same
 pathname and hard-link aliases without destroying the source. An empty source
 still truncates a distinct destination.
@@ -52,3 +60,9 @@ unchanged. This is not a metadata-preserving copy, crash-safe replacement or
 atomic snapshot. Concurrent source changes can cause a failure or mixed content.
 There is no final ``fsync``; completion of writes does not prove durable storage.
 See :ref:`submission` for ordering a durability request after dependent writes.
+
+``tools/check_block_devices.py`` boots an isolated x86_64 KVM guest with four
+disposable, read-only virtio disks (0, 512, 33,280 and 131,584 bytes). It checks
+the readers and copy against independent byte fixtures using ``cmp``. No host
+storage device is passed to the VM. Use only owned test devices for experiments.
+This verifies one kernel/architecture, not every device or ioctl compatibility ABI.

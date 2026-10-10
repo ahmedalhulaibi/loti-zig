@@ -14,16 +14,16 @@ sources, not separate handwritten copies. Tests/limits follow the table.
 |---|---|---|
 | `low_level.rst:23` | `ref-zig/_api/cqe.inc`, `examples/reference_setup.zig` | Native extern CQE; u64 tag, signed result, meaningful flags; ordinary 16-byte stride checked |
 | `low_level.rst:45` | `ref-zig/_api/sqe.inc`, `examples/reference_submission.zig` | Native extern SQE/overlapping fields, not copied obsolete layout; 64-byte stride and 33 constructor metadata records checked |
-| `low_level.rst:82` | `examples/raw_cat.zig` | Raw setup/map/publication/read/consume preserved; fixed streaming vectors replace whole-file allocation and size ioctl; multiple files, actual counts, cleanup; block-device reads not tested |
+| `low_level.rst:82` | `examples/raw_cat.zig` | Raw setup/map/publication/read/consume preserved; fixed streaming vectors replace whole-file allocation and size ioctl; multiple files, actual counts, cleanup; block-device bytes verified in isolated KVM guest |
 | `low_level.rst:464` | `ref-iouring/_api/params.inc`, `RawRing.init` | Exact SDK parameters and zero-initialised inputs replace obsolete handwritten fields/reserved sizes |
 | `low_level.rst:481` | `RawRing.map` | Max SQ/CQ control mapping plus SQEs; ownership/error cleanup explicit; **older separate-mapping fallback not recreated**, restriction disclosed |
 | `low_level.rst:531` | `RawRing.readv` | Acquire CQ tail, copy masked CQE, release wrapping head; copied value survives slot reuse; consume once |
 | `low_level.rst:556` | `RawRing.readv` | Capacity check, masked SQ slot, native prep, u64 tag, SQ index before release tail; architecture-specific barrier macros removed |
-| `tutorial/cat_liburing.rst:7` | `examples/cat.zig` | Native ring convenience reader; stable two-vector streaming buffers and scalar tag replace heap state pointers; whole returned byte prefix only; block-device reads not tested |
+| `tutorial/cat_liburing.rst:7` | `examples/cat.zig` | Native ring convenience reader; stable two-vector streaming buffers and scalar tag replace heap state pointers; whole returned byte prefix only; block-device bytes verified in isolated KVM guest |
 | `tutorial/cat_liburing.rst:182` | `cat.main` | `IoUring.init(8, 0)` returns owned value/error union; deferred teardown |
 | `tutorial/cat_liburing.rst:188` | `cat.main` read/submit loop | `ReadBuffer.iovecs` selects READV, constructor assigns tag, submit separate; vectors stay valid through completion |
 | `tutorial/cat_liburing.rst:201` | `cat.main` completion loop | `copy_cqe` consumes automatically; no second seen acknowledgement; tag/error/actual byte count checked |
-| `tutorial/cp_liburing.rst:10` | `examples/cp.zig`, `examples/support.zig` | Two stable 16-KiB slots pipeline read/write with partial-progress state and tags; same-inode rejection before truncation. **Gap:** original BLKGETSIZE64 input support is not recreated; current CLI rejects non-regular input |
+| `tutorial/cp_liburing.rst:10` | `examples/cp.zig`, `examples/support.zig` | Two stable 16-KiB slots pipeline read/write with partial-progress state and tags; same-inode rejection before truncation. Native BLKGETSIZE64 now restores read-only block input; generated ioctl request encodes usize and returns u64; isolated VM verifies exact bytes. Destination restricted to regular files |
 | `tutorial/fixed_buffers.rst:8` | `examples/fixed_buffers.zig` | Four registered ranges, two writes then two reads, distinct indexes/tags; stable storage and unregister/teardown lifetimes |
 | `tutorial/fixed_buffers.rst:138` | `tutorial/fixed_buffers.rst`, fixed-buffer CLI test | Poem retained; actual byte lengths replace old numeric/C-string transcript; whole stdout/file checked |
 | `tutorial/link_liburing.rst:8` | `examples/link.zig` | Write/read/close dependency chain preserved; tags allow unordered CQ arrival; cancelled close retains application ownership; successful close prevents double-close |
@@ -56,9 +56,11 @@ sources, not separate handwritten copies. Tests/limits follow the table.
   contracts: `tests/test_examples.py`, `tests/test_http.py`, `tests/test_reference.py`.
   `test-verification.json` binds source hashes and actual passing property counts.
 - Readers/copy: binary/empty/multiple-file/buffer-boundary cases and two 400-case
-  properties; aliases rejected without destruction. No block-device execution or
-  forced short-I/O fault injector. Original copy's block-device rejection is a
-  discovered conversion gap, not a justified completed port.
+  properties; aliases/unsupported kinds rejected without destruction; exact
+  redirected-stdout regression. `block-device-verification.json`: all four
+  programs preserve bytes from four owned read-only virtio devices in an isolated
+  x86_64 guest. Original copy's sizing feature is restored. Other device/ABI
+  combinations and forced short-I/O fault injection remain unverified.
 - HTTP: binary/empty files, MIME/length, indexes/queries, malformed/method/missing
   responses, traversal/encoded traversal/symlinks, fragments, limits, concurrency
   and a completing request beside a stalled client. No production security audit,

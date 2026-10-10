@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | Semantic disposition for each inventoried line/block |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 17 native CLI/TCP/reference tests; 37 tutorial-block dispositions | Restore original copy's block-device input support; inspect other declared conversion limits; broader failure paths/state checks, source mutation assessment, independent review |
+| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 19 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -48,19 +48,40 @@ parser check is not the blocked independent agent review.
 (29 C/eight build-output literals). With the 16 implicit-literal notes, **53/128**
 blocks have explicit author comparison notes; the remaining 75 reference blocks
 and complete line-level disposition remain open. These notes are not a green
-conversion attestation: they identify an actual missing original feature.
+conversion attestation: they identified an actual missing original feature.
 
-The original copy program uses `BLKGETSIZE64` for block-device input. Native
-`cp` currently accepts only regular files. **This feature is not recreated.**
-Restore native support and verify it without destructive system-device tests.
-Raw mapping's old separate-mapping fallback is also excluded; its restriction is
-documented, not silently claimed as ported. Reader block-device execution,
-complete probe-flag oracle and forced short-I/O/state checks remain unverified.
+The original copy's `BLKGETSIZE64` input feature is now recreated and executed
+against disposable read-only virtual disks. Native `cp` accepts regular or block
+input; output is explicitly restricted to regular files. Raw mapping's older
+separate-mapping fallback remains excluded: documented, not claimed as ported.
+Complete probe-flag oracle and forced short-I/O/state checks remain unverified.
+
+## Reader/copy repair and bounded mutation evidence
+
+- `1b82a08` reproduces a missed public contract: fresh positional stdout writers
+  overwrite prior chunks on regular-file redirection. Existing pipe-only PBT
+  did not catch this. `84e8f41` selects `writerStreaming`; all three readers now
+  preserve the complete redirected bytes.
+- `ab3311c` reproduces rejected block input. `sourceSize` now uses native
+  `linux.IOCTL.IOR(0x12, 114, usize)`/`linux.ioctl`; the encoded size is `size_t`,
+  the result is u64, and interrupted queries retry. The metadata query is
+  synchronous; actual data uses the existing two-slot io_uring pipeline.
+- `block-device-verification.json`: three readers plus copy execute against
+  0/512/33,280/131,584-byte virtio devices in an isolated x86_64 KVM guest.
+  Independent fixture/`cmp` checks every output byte; host disk hashes remain
+  unchanged. QEMU receives only generated read-only files, never host storage
+  devices. QEMU 11.1.1/Linux 7.2.3-arch1-3 are recorded. This is one kernel/ABI,
+  not universal device compatibility or independent review.
+- `mutation-readers-block.json`: two compiled source mutants killed—positional
+  stdout reset and returning block file metadata size instead of ioctl capacity.
+  Exact source bytes restored; both boundary tests pass afterward. This is a
+  bounded contribution, **not** the remaining whole-port mutation gate.
 
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **22 passed**
-  (17 native + two publication + three inventory tests), with `LOTI_TEST_CASES=400`.
+- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **25 passed**
+  (19 native + one VM + two publication + three inventory tests), zero skips,
+  with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
 - Five reference executables: `reference-setup`, `reference-completion`,
@@ -69,7 +90,7 @@ complete probe-flag oracle and forced short-I/O/state checks remain unverified.
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs
   over arbitrary binary files. `test-verification.json` records **400 passing
-  generated cases for each of all three properties**, source hashes, 22 passing
+  generated cases for each of all three properties**, source hashes, 25 passing
   tests and zero skips; this remains author-run evidence, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

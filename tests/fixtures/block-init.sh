@@ -9,7 +9,7 @@ fail() {
 }
 
 /bin/vm-mount 2>/tmp/error || fail guest_mount
-printf '{"event":"loti.vm.kernel","release":"%s"}\n' "$(uname -r)"
+printf '\n{"event":"loti.vm.kernel","release":"%s"}\n' "$(uname -r)"
 for specification in 'vda:0' 'vdb:512' 'vdc:33280' 'vdd:131584'; do
     device=${specification%:*}
     size=${specification#*:}

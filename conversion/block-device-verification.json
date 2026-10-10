@@ -1,0 +1,139 @@
+{
+  "scope": "Author-run x86_64 KVM guest, disposable read-only disks; not independent review or host-storage access.",
+  "kernel_release": "7.2.3-arch1-3",
+  "kernel_sha256": "7859fe1069224ddcc89df846e128d63d0b49ad488cb5bb4356bb9a63e5ad315e",
+  "busybox_sha256": "cb2179b7d490a9e22b2d1e7b95567fcf8a592d8de732ae857e741f4f3fb066ef",
+  "compare_sha256": "edcc51a8c7e7e85668f77f9a60b64ac9a771f20d0a2474348174c530ccf09abb",
+  "qemu_version": "QEMU emulator version 11.1.1",
+  "fixture_sha256": {
+    "0": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "512": "110009dcee21620b166f3abfecb5eff7a873be729d1c2d53822e7acc5f34eb9b",
+    "33280": "5ae4be12a88744aa388045d21e18e9f8bb94fd226911d3d6d06cb9c3865893f8",
+    "131584": "c9a3d8f6f5d98b1f9a3b87a28820a726edf94299be171c5a380d2edb63baa214"
+  },
+  "cases": [
+    {
+      "event": "loti.vm.case",
+      "program": "readv",
+      "size": 0,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "raw-cat",
+      "size": 0,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "cat",
+      "size": 0,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "cp",
+      "size": 0,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "readv",
+      "size": 512,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "raw-cat",
+      "size": 512,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "cat",
+      "size": 512,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "cp",
+      "size": 512,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "readv",
+      "size": 33280,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "raw-cat",
+      "size": 33280,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "cat",
+      "size": 33280,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "cp",
+      "size": 33280,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "readv",
+      "size": 131584,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "raw-cat",
+      "size": 131584,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "cat",
+      "size": 131584,
+      "exit_code": 0,
+      "result": "pass"
+    },
+    {
+      "event": "loti.vm.case",
+      "program": "cp",
+      "size": 131584,
+      "exit_code": 0,
+      "result": "pass"
+    }
+  ],
+  "source_sha256": {
+    "build.zig": "9885ee266f5d47ebbce93cbe8bfb3f73e38b1967d1623aad27a78339f66b4e1e",
+    "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5",
+    "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
+    "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
+    "examples/raw_cat.zig": "307c21c59d7308774d1574f78445da51d7c7645cecb73a987152d0d2e7c3e01f",
+    "examples/readv.zig": "5e374ec56283d7f5994c83e3cb8fcd88f88b44a138fdf1c4bfab0316ad34c824",
+    "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
+    "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
+    "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e"
+  }
+}

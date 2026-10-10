@@ -120,8 +120,10 @@ Complete raw reader
 The fixed working buffers remove whole-file allocation and size-query logic.
 The program increments its offset by the **actual** completed count and reads
 until EOF. Regular-file byte preservation, empty inputs, binary inputs and
-ring-slot reuse are exercised at the CLI boundary. Block-device behaviour is
-not independently verified by that regular-file test corpus.
+ring-slot reuse are exercised at the CLI boundary. A separate isolated KVM test
+checks read-only virtual block devices, including empty and multi-ring-wrap
+inputs. It does not replace the regular-file property corpus or prove support
+for every device/architecture.
 
 The ring has eight SQ slots but this example has only one outstanding operation.
 A deeper queue alone does not create concurrent I/O. The copy tutorial shows

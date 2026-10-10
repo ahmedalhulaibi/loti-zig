@@ -1,0 +1,93 @@
+{
+  "scope": "Two bounded source mutants for redirected stdout and restored block sizing; not whole-port mutation verification or independent review.",
+  "recorded_at": "2026-10-10T09:50:15.869088+00:00",
+  "mutants": [
+    {
+      "id": "stdout-positional-reset",
+      "source": "examples/support.zig",
+      "mutation": "writerStreaming -> writer",
+      "compiled": true,
+      "test_exit_code": 1,
+      "mutant_source_sha256": "86b71670986b77da77240c6f8ed1e3934749af6c5ce71a8db8916d8ee3d82db8",
+      "boundary_test": "ExampleContracts.test_readers_preserve_bytes_when_stdout_is_a_regular_file",
+      "claim": "Fresh positional stdout writers overwrite previous chunks on regular-file redirection.",
+      "test_log_sha256": "e8f1ddb1435b081216010893b5f4eccb093fdaeb24b4969e4e1efd1f21906e45"
+    },
+    {
+      "id": "block-size-from-file-metadata",
+      "source": "examples/cp.zig",
+      "mutation": "Successful ioctl path returns metadata.size instead of the queried u64 capacity",
+      "compiled": true,
+      "test_exit_code": 1,
+      "mutant_source_sha256": "ecdeff9a9ac4fb97b9650930a9ae70af27293f0d13483fb9d28902936ff24419",
+      "boundary_test": "BlockDeviceContracts.test_owned_virtio_disks_preserve_every_byte",
+      "claim": "Nonempty block input must not be silently copied as an empty regular file.",
+      "test_log_sha256": "1663400ed064ab68d541362c7867394849a39bb31a47f35bdeff566718bcef0b",
+      "actual_failure": {
+        "completed_cases": [
+          {
+            "event": "loti.vm.case",
+            "program": "readv",
+            "size": 0,
+            "exit_code": 0,
+            "result": "pass"
+          },
+          {
+            "event": "loti.vm.case",
+            "program": "raw-cat",
+            "size": 0,
+            "exit_code": 0,
+            "result": "pass"
+          },
+          {
+            "event": "loti.vm.case",
+            "program": "cat",
+            "size": 0,
+            "exit_code": 0,
+            "result": "pass"
+          },
+          {
+            "event": "loti.vm.case",
+            "program": "cp",
+            "size": 0,
+            "exit_code": 0,
+            "result": "pass"
+          },
+          {
+            "event": "loti.vm.case",
+            "program": "readv",
+            "size": 512,
+            "exit_code": 0,
+            "result": "pass"
+          },
+          {
+            "event": "loti.vm.case",
+            "program": "raw-cat",
+            "size": 512,
+            "exit_code": 0,
+            "result": "pass"
+          },
+          {
+            "event": "loti.vm.case",
+            "program": "cat",
+            "size": 512,
+            "exit_code": 0,
+            "result": "pass"
+          }
+        ],
+        "guest_error": {
+          "event": "loti.vm.error",
+          "reason": "byte_mismatch"
+        }
+      }
+    }
+  ],
+  "tested": 2,
+  "killed": 2,
+  "survived": 0,
+  "restored_source_sha256": {
+    "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
+    "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5"
+  },
+  "restored_boundary_tests_passed": 2
+}

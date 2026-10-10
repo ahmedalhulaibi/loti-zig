@@ -78,6 +78,23 @@ class ExampleContracts(unittest.TestCase):
                     self.assertEqual(result.returncode, 0)
                     self.assertEqual(destination.read_bytes(), payload)
 
+    def test_copy_rejects_unsupported_kinds_before_discarding_data(self):
+        payload = b"input and prior output must remain intact"
+        with tempfile.TemporaryDirectory() as directory:
+            source, destination = Path(directory) / "source", Path(directory) / "destination"
+            source.write_bytes(payload)
+            destination.write_bytes(payload)
+            for input_path, output_path, error in [
+                (Path("/dev/null"), destination, b"error: ExpectedRegularFileOrBlockDevice"),
+                (source, Path("/dev/null"), b"error: ExpectedRegularOutputFile"),
+            ]:
+                with self.subTest(input=input_path.name, output=output_path.name):
+                    result = run("cp", input_path, output_path, success=False)
+                    self.assertEqual(result.returncode, 1)
+                    self.assertEqual(result.stderr.partition(b"\n")[0], error)
+                    self.assertEqual(source.read_bytes(), payload)
+                    self.assertEqual(destination.read_bytes(), payload)
+
     def test_linked_execution_and_failure_cancellation(self):
         message = b"Hello, io_uring!"
         with tempfile.TemporaryDirectory() as directory:

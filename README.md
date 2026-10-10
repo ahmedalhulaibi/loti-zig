@@ -23,6 +23,7 @@ make html
 make epub
 .venv/bin/python tools/verify_epub.py --report conversion/epub-verification.json
 java -jar "$EPUBCHECK_JAR" _build/epub/Lord-of-the-io_uring-Zig-0.17.0.epub
+python3 tools/check_block_devices.py --report conversion/block-device-verification.json
 ```
 
 Use [EPUBCheck 5.2.1](https://github.com/w3c/epubcheck/releases/tag/v5.2.1);
@@ -30,6 +31,12 @@ set `EPUBCHECK_JAR` to its installed jar. The full Sphinx builds use warnings as
 errors. Output: `_build/html/index.html` and
 `_build/epub/Lord-of-the-io_uring-Zig-0.17.0.epub`. The EPUB needs no Calibre,
 external fonts, JavaScript or DRM. Code reflows on small displays.
+
+The complete suite also requires x86_64 Linux, writable `/dev/kvm`, QEMU,
+`/usr/lib/initcpio/busybox`, `/usr/bin/cmp` and a guest kernel with built-in
+virtio block support. The VM verifier accepts `--kernel` and `--busybox` paths;
+recorded lab: QEMU 11.1.1/Linux 7.2.3-arch1-3. All disks are generated files,
+attached read-only. No host storage device or root host operation is used.
 
 Publication checks verify all 27 chapters in reading order/navigation, 105 literal
 blocks against Sphinx source, five byte-identical illustrations, licence and local
@@ -47,10 +54,12 @@ broader failure/state checks, bounded source mutation verification and independe
 review remain open. See `conversion/audit.md` and `conversion/review-blocker.md`.
 The goal is not complete; final converted commits have not been pushed.
 
-Author notes cover 53/128 original blocks, not all lines. They identify missing
-original block-device input support in `cp`; current copy accepts regular files
-only. The raw mapper also excludes the older separate-mapping fallback. These
-limits are not hidden by compilation or publication checks.
+Author notes cover 53/128 original blocks, not all lines. Native `cp` now sizes
+read-only block-device input with `BLKGETSIZE64`; output must remain a regular
+file. An isolated VM checks all three readers and copy against four disposable
+disks. Streaming stdout also preserves chunks when redirected to a regular file.
+The raw mapper still excludes the older separate-mapping fallback; this remains
+an incomplete conversion requirement, not a limitation hidden by green builds.
 
 ## Run examples
 

@@ -2,11 +2,15 @@
 
 Compiler gate: exactly Zig `0.17.0`. Linux execution is required; a sandbox that
 blocks io_uring is a blocker, not a reason to report completion.
+The block-device test requires x86_64/KVM, QEMU, an installed guest kernel with
+built-in virtio block support, initcpio BusyBox and GNU `cmp`. It uses generated
+read-only disk files; no host block device, mount or privileged host syscall.
 
 | Boundary | Contract and kill claim | Strategy |
 |---|---|---|
-| `raw-cat`, `cat`, `readv` | Output equals concatenated input bytes; no padding, truncation or lost ranges | Hypothesis subprocess PBT; empty, binary, multiple-file, buffer-boundary inputs |
-| `cp` | Destination bytes equal input bytes; failed input must not silently produce success; multiple outstanding requests remain correctly correlated | Hypothesis PBT over payloads; boundary lengths; independently compare bytes |
+| `raw-cat`, `cat`, `readv` | Output equals concatenated input bytes; no padding, truncation, lost ranges or overwrite after stdout redirection | Hypothesis subprocess PBT; empty, binary, multiple-file, buffer-boundary inputs; exact regular-file stdout regression |
+| `cp` | Destination bytes equal input bytes; reject aliases/unsupported kinds before discarding data; outstanding requests remain correlated | Hypothesis PBT; boundary lengths; exact bytes and typed error headers |
+| Reader/copy block input | Real block-device reads/size ioctl preserve all bytes, including empty capacity; destinations stay regular files | Isolated KVM guest: four read-only virtio images, independent fixture/`cmp` oracle; host image hashes unchanged |
 | `link` | Write/read/close chain yields correlated results; deliberate read failure cancels linked close | Table-driven subprocess test; completion IDs and exact results |
 | `fixed-buffers` | Four registered buffers implement two writes and two reads; indexes and lengths correct | Exact file/stdout bytes and completion results |
 | `sq-poll` | Registered file index used; no false submission-count assumption; sleeping poller wakes and later request completes | Execute both initial and post-idle operations; verify final bytes |
