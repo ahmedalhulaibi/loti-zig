@@ -130,13 +130,18 @@ class ExampleContracts(unittest.TestCase):
             self.assertEqual(json.loads(result.stderr), {"notifications": 1, "user_data": 1, "result": len(payload)})
 
     def test_probe_emits_kernel_report_for_every_known_opcode(self):
-        records = [json.loads(line) for line in run("probe").stdout.splitlines()]
-        self.assertGreater(len(records), 32)
+        default = run("probe").stdout
+        records = [json.loads(line) for line in default.splitlines()]
+        names = json.loads((ROOT / "testdata/inputs/probe-opcodes.json").read_text())
+        self.assertEqual([item["name"] for item in records], names)
         self.assertEqual([item["opcode"] for item in records], list(range(len(records))))
         self.assertEqual(records[0], {"opcode": 0, "name": "NOP", "supported": True})
         for item in records:
             self.assertEqual(set(item), {"opcode", "name", "supported"})
             self.assertIsInstance(item["supported"], bool)
+        self.assertEqual(run("probe", "--raw").stdout, default)
+        snapshot = ROOT / "testdata/inputs/probe-mixed-little.bin"
+        self.assertEqual(run("probe", "--snapshot", snapshot).stdout, default)
 
 
 if __name__ == "__main__":

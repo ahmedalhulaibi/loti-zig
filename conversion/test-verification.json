@@ -36,7 +36,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 89
+          "overrun": 83
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -97,13 +97,16 @@
     "examples/sq_poll.zig": "3c7d2d3149ebbf3ebeb7a57ef438f424f8bfe7d7ab820f088b3b449bc64c80b1",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
+    "testdata/inputs/probe-mixed-big.bin": "9e282304bfe34e1fe5c6d112d0ba545f29830808de4df2e209887cbf0ed3cbf6",
+    "testdata/inputs/probe-mixed-little.bin": "e346d81b4a7297a2fb586603151703054e6bb16f59ccae7f57253bb6aa395b2e",
+    "testdata/inputs/probe-opcodes.json": "77e7993b0b234164d3a248e8e14a7bd19b1988d868f207181ac657b861416132",
     "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
     "testdata/inputs/registration-replacement.txt": "5f52cf151d72e08fb506215edf9498de680819fd2d5ed87c7daf59ca7765bcf0",
     "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
     "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
     "tests/test_block_devices.py": "18857ffc40a06b68a695a879c45328566abd271fc86ab8c9716bdb5f86bcd5d6",
     "tests/test_dispositions.py": "8d0ed94c868b5e4285b774a900f4e3f55bf1fb0c4d9695daa2301323bbeb02e6",
-    "tests/test_examples.py": "fca485f569e1ba936ae398c189613ecab752effcbd4ede42acd43de57ca23a7f",
+    "tests/test_examples.py": "6e988f20de4a1576865025e35c1eb7ac58b15331c002c6f3d9e236dc592406e5",
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
     "tests/test_inventory.py": "89b2b5ea10a208810d264088b935cc66f9308336a858528dd5a399724661eec5",
     "tests/test_publication.py": "8f1268c139d3518f8c00e6d28993000cf0888fc63beae81eb8b38f481538df86",

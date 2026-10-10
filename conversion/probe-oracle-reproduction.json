@@ -1,0 +1,22 @@
+{
+  "scope": "Old probe ignores requested raw/snapshot modes. Existing shape/NOP checks cannot reject a constant-true implementation on this kernel, where every SDK-named opcode advertises support.",
+  "source_commit": "0310646bef75bd87e5abb91f154b1cd911e2e8e0",
+  "source_sha256": "b62ddc468392a71419749807bfc21d6fc1570ad7c631e9be247f4ee01869737f",
+  "compiler": "0.17.0",
+  "records": 59,
+  "unsupported_named_operations": [],
+  "raw_mode_equals_default": true,
+  "snapshot_mode_equals_default": true,
+  "snapshot_first_flag_literal": 0,
+  "observed_snapshot_nop": {
+    "opcode": 0,
+    "name": "NOP",
+    "supported": true
+  },
+  "full_suite": {
+    "tests": 28,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  }
+}
