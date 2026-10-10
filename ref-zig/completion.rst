@@ -84,6 +84,7 @@ it does not establish sender races, every signal or restart policy.
 
    zig build
    zig-out/bin/reference-signals
+   zig-out/bin/reference-signals --ordinary
 
 .. literalinclude:: ../examples/reference_signals.zig
    :language: zig
@@ -93,6 +94,35 @@ it does not establish sender races, every signal or restart policy.
 fixture resolved using Python's independent signal definitions. It checks pending
 bits, handler counts/masks, both restored wait masks, original process state,
 unchanged queued NOP and actual recovery CQE. It also checks exact argument errors.
+
+Ordinary mask waits and timer CQEs
+----------------------------------
+
+``--ordinary`` uses ``linux.io_uring_enter(fd, 0, minimum, GETEVENTS, mask)``
+with the basic signal-set pointer and SDK mask size, **not EXT_ARG**. A submitted
+one-second timer bounds the first wait. A pending thread-directed ``SIGUSR1``
+unmasked during entry invokes the handler and yields raw ``EINTR``; no signal
+CQE exists. Explicit ``timeout_remove`` then produces two distinct, tag-correlated
+CQEs: the timer's ``-ECANCELED`` and the remover's zero. Arrival order is not
+assumed. The timespec remains alive until its timer completes.
+
+Two more timers expire after 20 ms and one second. Both are submitted before a
+NOP is prepared locally. A mask that blocks ``SIGUSR1`` waits for the first CQE;
+a null mask with threshold two then waits for the second without consuming the
+first. Both enters return **zero submitted entries**, not the number of CQEs.
+The timer CQEs carry ``-ETIME`` although both enter syscalls succeed. Neither
+wait submits the queued NOP or releases its ownership. Explicit unblocking
+produces the second handler invocation; only later explicit submission produces
+the NOP CQE. Original mask/action restoration remains common to both modes.
+
+``tests/test_ordinary_signals.py`` compares five fresh-process whole reports with
+an independent symbolic fixture. A syscall oracle checks all seven basic enters,
+actual masks/ABI sizes/thresholds/submission counts, two self-thread signals,
+handler mask queries and signal-return masks; ten damaged traces must fail.
+This is a bounded current-kernel sequential contract, not concurrent sender,
+SA_RESTART policy, IOPOLL, timer-cancellation races, arbitrary handlers or every
+kernel/architecture assurance. Preemption past a timer deadline can invalidate
+the stated intermediate-CQ plan; the test then fails, it does not silently skip.
 
 Exact native declarations
 -------------------------

@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 72,
+  "tests_run": 74,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -108,7 +108,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 84
+          "overrun": 104
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -162,7 +162,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 69
+          "overrun": 79
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -180,7 +180,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 143
+          "overrun": 113
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -198,7 +198,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 56
+          "overrun": 52
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -282,7 +282,7 @@
     "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
     "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
     "examples/reference_setup.zig": "c601487b9e78fd81aec3eabde091353b17b5f87251641b3443d1b302e3518ae7",
-    "examples/reference_signals.zig": "b895a7413d564d6b185cfe9eee7b67f252b123dde2920457e9c2b0d2ff2bc44c",
+    "examples/reference_signals.zig": "a2cc003381be3903aecfa65d7c7e719e4c0c45817f1ff976dcb6fd3fa54e9382",
     "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
     "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
     "examples/register_eventfd.zig": "3e59de2ec80f68917de35bb901729e37f0966acdb6295c4bf46dbc31d9e9bd6c",
@@ -331,6 +331,9 @@
     "testdata/inputs/messages-plans.json": "bdff385b0e8d694d23b2d9a154cc54a67c7fe3e645d040477332417934fbf4ce",
     "testdata/inputs/messages-report.json": "2f6e73f62e6a8ea6b48b867ddb65495091ae2d081c2bab009709b9ecf6b308d0",
     "testdata/inputs/messages.trace": "8035367ddb5958c9c2e297ca53909721071a025f77106d0c1cf86d4c57acab36",
+    "testdata/inputs/ordinary-signal-invalid-traces.json": "bf3c703258fd640792baa95ef5bb72f7ca666fd5078ccfa1e968557b0b616b8c",
+    "testdata/inputs/ordinary-signal-report.json": "591be65f688ef67060d08579890673e9f673ba747a68f7e5ef7c0e849fbdc443",
+    "testdata/inputs/ordinary-signal.trace": "2d2832b5800b8326db9f2ec53804f60da620049d584fe06acbd69d67a4ad290d",
     "testdata/inputs/poll-deadline.trace": "276b53fa38940bab91a1663190ca5fcb009af25b4b6fcbe128b3f6879db87bec",
     "testdata/inputs/poll-invalid-plans.json": "b26c9eb8d121029785b8621ddecc5ff4458847fad765b2ed90679192c5d81e17",
     "testdata/inputs/poll-invalid-traces.json": "d4a806a95beca5179e1c2051df09341fa49b4c079292bcddffc7d35bceee82d6",
@@ -375,11 +378,12 @@
     "tests/test_messages.py": "81d3040e93ec8773925d75ce0229d707ec3b8410b22a01a871913a9890b374ff",
     "tests/test_messages_census.py": "a3a9c584773a1d9c8fc6288d91773a2e3d9f213a1251490eed13ccb2dfbce8b0",
     "tests/test_messages_trace.py": "4cb1d5ed5968d9432a2eef736904398d3a980f522d3d5f600e30b0e260085c6a",
+    "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23",
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
     "tests/test_publication.py": "13bac0577bb2d8227df29269bc75482acf10427105dc062792fb75476a7400fe",
-    "tests/test_reader_layout.py": "2629997d1678af6b7ababca15de0ee610e6c7a9ec7d63e1af30ae8bfea4937e3",
+    "tests/test_reader_layout.py": "fac71edcc17e339a75a12a0fb1b4e87466b9588580e31b659030aa162decced7",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
@@ -388,7 +392,7 @@
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
-    "tools/reference_map.py": "edbd0559396af3cc76ac4653b9fdcf53d54bc7f584a6f175b6738622074e6c11"
+    "tools/reference_map.py": "4732c894e9f1f9065f945d032adf1a87728dd0ffc35cbb9d624c022e45cff643"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."
 }

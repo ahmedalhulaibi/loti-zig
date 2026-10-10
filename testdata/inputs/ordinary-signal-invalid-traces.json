@@ -1,0 +1,72 @@
+[
+  {
+    "name": "omitted basic wait",
+    "old": "io_uring_enter(3, 0, 2, IORING_ENTER_GETEVENTS, NULL, 8) = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "WrongOrdinaryEnterSequence"
+  },
+  {
+    "name": "wrong mask size",
+    "old": "[USR2 WINCH], 8",
+    "new": "[USR2 WINCH], 128",
+    "count": 1,
+    "error": "WrongOrdinaryEnterSequence"
+  },
+  {
+    "name": "null is empty",
+    "old": "IORING_ENTER_GETEVENTS, NULL, 8) = 0",
+    "new": "IORING_ENTER_GETEVENTS, [], 8) = 0",
+    "count": 1,
+    "error": "WrongOrdinaryEnterSequence"
+  },
+  {
+    "name": "wrong threshold",
+    "old": "0, 2, IORING_ENTER_GETEVENTS",
+    "new": "0, 1, IORING_ENTER_GETEVENTS",
+    "count": 1,
+    "error": "WrongOrdinaryEnterSequence"
+  },
+  {
+    "name": "implicit submission",
+    "old": "0, 1, IORING_ENTER_GETEVENTS, [USR1 WINCH]",
+    "new": "1, 1, IORING_ENTER_GETEVENTS, [USR1 WINCH]",
+    "count": 1,
+    "error": "WrongOrdinaryEnterSequence"
+  },
+  {
+    "name": "EXT_ARG substitute",
+    "old": "IORING_ENTER_GETEVENTS, [USR2 WINCH]",
+    "new": "IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, [USR2 WINCH]",
+    "count": 1,
+    "error": "WrongOrdinaryEnterSequence"
+  },
+  {
+    "name": "different thread",
+    "old": "tgkill(100, 100, SIGUSR1)",
+    "new": "tgkill(100, 101, SIGUSR1)",
+    "count": 1,
+    "error": "WrongOrdinarySignalTarget"
+  },
+  {
+    "name": "handler loses sentinel",
+    "old": "NULL, [USR1 USR2 WINCH]",
+    "new": "NULL, [USR1 USR2]",
+    "count": 1,
+    "error": "WrongOrdinaryHandlerMasks"
+  },
+  {
+    "name": "caller return loses mask",
+    "old": "rt_sigreturn({mask=[USR1 USR2]})",
+    "new": "rt_sigreturn({mask=[]})",
+    "count": 1,
+    "error": "WrongOrdinaryReturnMasks"
+  },
+  {
+    "name": "missing delivery",
+    "old": "--- SIGUSR1 {si_signo=SIGUSR1, si_code=SI_TKILL, si_pid=100, si_uid=1000} ---\n",
+    "new": "",
+    "count": 1,
+    "error": "WrongOrdinaryHandlerMasks"
+  }
+]

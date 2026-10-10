@@ -1,0 +1,9 @@
+test_actual_basic_abi_delivery_and_damaged_traces (tests.test_ordinary_signals.OrdinarySignalContracts.test_actual_basic_abi_delivery_and_damaged_traces) ... ok
+test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) ... ok
+test_pending_signal_delivery_and_wait_mask_restoration (tests.test_signals.SignalContracts.test_pending_signal_delivery_and_wait_mask_restoration) ... ok
+test_signal_reference_rejects_arguments (tests.test_signals.SignalContracts.test_signal_reference_rejects_arguments) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 6.313s
+
+OK

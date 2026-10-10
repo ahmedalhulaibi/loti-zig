@@ -39,8 +39,12 @@ EXT_ARG entry, then temporarily unmasks it. Actual handler delivery yields
 and null-mask waits expire with the signal still pending, and neither submits
 a queued NOP. Complete masks, handler state and later recovery CQE are checked.
 This is a bounded pending-signal example, not a concurrent-sender/restart-policy
-attestation. Ordinary non-EXT_ARG delivered-signal behaviour remains untested.
-See :ref:`completion` for its compiled use and Linux 5.11+ deadline requirement.
+attestation. Its ``--ordinary`` mode separately executes basic mask waits with
+submitted timer SQEs: pending-signal ``EINTR``, blocked/null masks, distinct
+cancellation/expiration CQEs and later explicit NOP recovery. The basic enter
+succeeds while expired timer CQEs contain ``-ETIME``. Neither mode attests IOPOLL
+or general restart/cancellation races. See :ref:`completion` for compiled use;
+only the EXT_ARG deadline helper requires Linux 5.11+.
 
 Publication and lifetimes
 -------------------------

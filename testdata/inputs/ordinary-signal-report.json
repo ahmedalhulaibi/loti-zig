@@ -1,0 +1,140 @@
+{
+  "interrupted": {
+    "mask": [
+      "SIGUSR2",
+      "SIGWINCH"
+    ],
+    "minimum": 1,
+    "errno": 4,
+    "submitted": 0,
+    "before": {
+      "pending": true,
+      "delivered": 0,
+      "mask": [
+        "SIGUSR1",
+        "SIGUSR2"
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    },
+    "after": {
+      "pending": false,
+      "delivered": 1,
+      "mask": [
+        "SIGUSR1",
+        "SIGUSR2"
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    }
+  },
+  "cancellation": [
+    {
+      "user_data": 10,
+      "result": -125,
+      "flags": 0
+    },
+    {
+      "user_data": 11,
+      "result": 0,
+      "flags": 0
+    }
+  ],
+  "blocked_wait": {
+    "mask": [
+      "SIGUSR1",
+      "SIGWINCH"
+    ],
+    "minimum": 1,
+    "errno": 0,
+    "submitted": 0,
+    "before": {
+      "pending": true,
+      "delivered": 1,
+      "mask": [
+        "SIGUSR1",
+        "SIGUSR2"
+      ],
+      "sq_ready": 1,
+      "cq_ready": 0
+    },
+    "after": {
+      "pending": true,
+      "delivered": 1,
+      "mask": [
+        "SIGUSR1",
+        "SIGUSR2"
+      ],
+      "sq_ready": 1,
+      "cq_ready": 1
+    }
+  },
+  "null_wait": {
+    "mask": null,
+    "minimum": 2,
+    "errno": 0,
+    "submitted": 0,
+    "before": {
+      "pending": true,
+      "delivered": 1,
+      "mask": [
+        "SIGUSR1",
+        "SIGUSR2"
+      ],
+      "sq_ready": 1,
+      "cq_ready": 1
+    },
+    "after": {
+      "pending": true,
+      "delivered": 1,
+      "mask": [
+        "SIGUSR1",
+        "SIGUSR2"
+      ],
+      "sq_ready": 1,
+      "cq_ready": 2
+    }
+  },
+  "timers": [
+    {
+      "user_data": 20,
+      "result": -62,
+      "flags": 0
+    },
+    {
+      "user_data": 21,
+      "result": -62,
+      "flags": 0
+    }
+  ],
+  "handler_masks": [
+    [
+      "SIGUSR1",
+      "SIGUSR2",
+      "SIGWINCH"
+    ],
+    [
+      "SIGUSR1",
+      "SIGUSR2"
+    ]
+  ],
+  "released": {
+    "pending": false,
+    "delivered": 2,
+    "mask": [
+      "SIGUSR2"
+    ],
+    "sq_ready": 1,
+    "cq_ready": 0
+  },
+  "submitted": 1,
+  "nop": {
+    "user_data": 1,
+    "result": 0,
+    "flags": 0
+  },
+  "sq_ready": 0,
+  "cq_ready": 0,
+  "original_action_restored": true,
+  "original_mask_restored": true
+}

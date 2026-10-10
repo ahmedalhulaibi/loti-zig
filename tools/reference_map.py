@@ -15,6 +15,7 @@ REGISTER = "examples/reference_registration.zig"
 PREPARE = "examples/reference_submission.zig"
 COPY = "examples/cp.zig"
 FILES = "examples/reference_files.zig"
+SIGNALS = "examples/reference_signals.zig"
 BUFFERS = "examples/reference_buffers.zig"
 SPLICE = "examples/reference_splice.zig"
 POLL = "examples/reference_poll.zig"
@@ -182,6 +183,10 @@ def generate():
                     example = COPY
                     scope = "constructed and submitted; mutable scalar buffer fills before dependent copy writes, exact regular/block bytes and unchanged source; diagnostic invalid-FD READ restores process limits before typed error; not forced short READ or every race/failure" if method == "read" else "constructed and submitted; exact regular/block copy bytes; controlled positive short scalar WRITE independently checks buffer/file-offset progress, slot retirement and process-limit restoration on success; single bounded regular slot, not forced vector writes, physical ENOSPC or multi-slot partial/race assurance"
                     difference = "Acquires/prepares an SQE and stores the slot tag; completed count, not requested length, advances both the retained slice and u64 file offset. Regular scalar slices here; ReadBuffer.iovecs is separate."
+                elif method in {"timeout", "timeout_remove"}:
+                    example = SIGNALS
+                    scope = "constructed and submitted; ordinary masked waits, guard cancellation and two expired timer CQEs checked; distinct tag-sorted -ECANCELED/0 target/remover CQEs, queued NOP retained until explicit submit; current sequential plan only, not general cancellation races/restart/IOPOLL"
+                    difference = "Stable kernel_timespec retained through CQE; count zero expires by time, not another operation count. Expired timer CQE -ETIME is distinct from successful basic enter return zero." if method == "timeout" else "Target is the original u64 timer tag. Successful removal CQE zero is distinct from original timer CQE -ECANCELED; no assumed CQ arrival order, not all expiration/removal races."
                 elif method in {"provide_buffers", "remove_buffers"}:
                     example = BUFFERS
                     scope = "constructed and submitted; selected bytes/flags, exhaustion, group isolation, recycling and actual removal counts checked; sequential nonempty regular-file reads only"

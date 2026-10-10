@@ -26,7 +26,7 @@ class ReaderLayoutContracts(unittest.TestCase):
             self.assertEqual((result.returncode, result.stderr), (0, ""))
             self.assertEqual(json.loads(result.stdout), {
                 "chapters": 27, "viewports": [320, 600, 800], "cases": 81,
-                "element_counts": {"pre": 357, "table": 6, "image": 15, "heading": 327, "figure": 0},
+                "element_counts": {"pre": 357, "table": 6, "image": 15, "heading": 330, "figure": 0},
                 "violations": [], "event": "loti.reader-layout.checked"})
             data = json.loads(report.read_text())
             self.assertEqual(set(data), {"scope", "book_sha256", "renderer", "chapters", "viewports",

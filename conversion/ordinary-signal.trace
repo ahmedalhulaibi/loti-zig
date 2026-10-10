@@ -1,0 +1,28 @@
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigprocmask(SIG_SETMASK, [USR1 USR2], NULL, 8) = 0
+io_uring_enter(3, 1, 0, 0, NULL, 8)     = 1
+tgkill(3408688, 3408688, SIGUSR1)       = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [USR1 USR2], 8) = 0
+io_uring_enter(3, 0, 1, IORING_ENTER_GETEVENTS, [USR2 WINCH], 8) = -1 EINTR (Interrupted system call)
+--- SIGUSR1 {si_signo=SIGUSR1, si_code=SI_TKILL, si_pid=3408688, si_uid=1000} ---
+rt_sigprocmask(SIG_BLOCK, NULL, [USR1 USR2 WINCH], 8) = 0
+rt_sigreturn({mask=[USR1 USR2]})        = -1 EINTR (Interrupted system call)
+rt_sigprocmask(SIG_BLOCK, NULL, [USR1 USR2], 8) = 0
+io_uring_enter(3, 1, 2, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(3, 2, 0, 0, NULL, 8)     = 2
+tgkill(3408688, 3408688, SIGUSR1)       = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [USR1 USR2], 8) = 0
+io_uring_enter(3, 0, 1, IORING_ENTER_GETEVENTS, [USR1 WINCH], 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [USR1 USR2], 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [USR1 USR2], 8) = 0
+io_uring_enter(3, 0, 2, IORING_ENTER_GETEVENTS, NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [USR1 USR2], 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [USR1], NULL, 8) = 0
+--- SIGUSR1 {si_signo=SIGUSR1, si_code=SI_TKILL, si_pid=3408688, si_uid=1000} ---
+rt_sigprocmask(SIG_BLOCK, NULL, [USR1 USR2], 8) = 0
+rt_sigreturn({mask=[USR2]})             = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [USR2], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [USR1 USR2], NULL, 8) = 0
+io_uring_enter(3, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0

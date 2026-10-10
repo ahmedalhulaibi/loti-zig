@@ -1,0 +1,199 @@
+{
+  "scope": "Current-kernel basic/non-EXT_ARG enter sigset mask installation, pending self-thread SIGUSR1 EINTR and mask restoration; submitted timer removal/expiration CQEs and unsubmitted NOP ownership. Bounded sequential fresh-process plan, not arbitrary handlers/signals, concurrent senders, SA_RESTART, IOPOLL, general expiration/cancellation races, all error unwinding, other kernels/architectures or independent verifier acceptance.",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64"
+  },
+  "command": [
+    "zig-out/bin/reference-signals",
+    "--ordinary"
+  ],
+  "source_sha256": {
+    "examples/reference_signals.zig": "a2cc003381be3903aecfa65d7c7e719e4c0c45817f1ff976dcb6fd3fa54e9382",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23",
+    "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
+    "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
+    "tools/reference_map.py": "4732c894e9f1f9065f945d032adf1a87728dd0ffc35cbb9d624c022e45cff643",
+    "conversion/reference-map.json": "e98c560a0020aefc41c19b530fc4cf5ec82afe9e0fc683236733e760db20155e",
+    "ref-zig/completion.rst": "1e1a954707004567b6092f1d8cbf812600f34f25b2be9942e833df998cce0a3f",
+    "ref-iouring/io_uring_enter.rst": "8f56f691c9d6812e9562651828d416c3a5bcaeeec998ae5f358625d77e6ccc43",
+    "conversion/ordinary-signal.trace": "3116b1eefa5b3421b68df05367e0edf71b46475417d6bf52fee9018d42abe518",
+    "conversion/ordinary-signal-spec-sha256.json": "56264d502db8763d9a386d9458a9035b8d16b1421f74bee1e53d5907470d46a0",
+    "conversion/ordinary-signal-spec-amendment.json": "e55035e17d5b09d1128d36b71ab2481a0733bd913a55071cfca6249e5faff4c6",
+    "testdata/inputs/ordinary-signal-invalid-traces.json": "bf3c703258fd640792baa95ef5bb72f7ca666fd5078ccfa1e968557b0b616b8c",
+    "testdata/inputs/ordinary-signal-report.json": "591be65f688ef67060d08579890673e9f673ba747a68f7e5ef7c0e849fbdc443",
+    "testdata/inputs/ordinary-signal.trace": "2d2832b5800b8326db9f2ec53804f60da620049d584fe06acbd69d67a4ad290d"
+  },
+  "sdk_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "manual_sha256": {
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_enter.2.txt": "e76e4da09284d625759a641978f8abb38fe194a9ab1bd33df213e208dcffefbe"
+  },
+  "actual_whole_report": {
+    "mask_bytes": 8,
+    "initial_mask": 0,
+    "interrupted": {
+      "mask": 134219776,
+      "minimum": 1,
+      "errno": 4,
+      "submitted": 0,
+      "before": {
+        "pending": true,
+        "delivered": 0,
+        "mask": 2560,
+        "sq_ready": 0,
+        "cq_ready": 0
+      },
+      "after": {
+        "pending": false,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 0,
+        "cq_ready": 0
+      }
+    },
+    "cancellation": [
+      {
+        "user_data": 10,
+        "result": -125,
+        "flags": 0
+      },
+      {
+        "user_data": 11,
+        "result": 0,
+        "flags": 0
+      }
+    ],
+    "blocked_wait": {
+      "mask": 134218240,
+      "minimum": 1,
+      "errno": 0,
+      "submitted": 0,
+      "before": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 0
+      },
+      "after": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 1
+      }
+    },
+    "null_wait": {
+      "mask": null,
+      "minimum": 2,
+      "errno": 0,
+      "submitted": 0,
+      "before": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 1
+      },
+      "after": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 2
+      }
+    },
+    "timers": [
+      {
+        "user_data": 20,
+        "result": -62,
+        "flags": 0
+      },
+      {
+        "user_data": 21,
+        "result": -62,
+        "flags": 0
+      }
+    ],
+    "handler_masks": [
+      134220288,
+      2560
+    ],
+    "released": {
+      "pending": false,
+      "delivered": 2,
+      "mask": 2048,
+      "sq_ready": 1,
+      "cq_ready": 0
+    },
+    "submitted": 1,
+    "nop": {
+      "user_data": 1,
+      "result": 0,
+      "flags": 0
+    },
+    "sq_ready": 0,
+    "cq_ready": 0,
+    "original_action_restored": true,
+    "original_mask_restored": true
+  },
+  "actual_basic_syscalls_handler_and_return_masks": {
+    "enter_calls": 7,
+    "submissions": 5,
+    "rings": 1,
+    "basic_mask_waits": 3,
+    "ext_arg_calls": 0,
+    "self_thread_signals": 2,
+    "handler_masks": [
+      "[USR1 USR2 WINCH]",
+      "[USR1 USR2]"
+    ],
+    "restored_return_masks": [
+      "[USR1 USR2]",
+      "[USR2]"
+    ]
+  },
+  "whole_report_processes": 5,
+  "damaged_traces_rejected": 10,
+  "selected_argument_negatives": 2,
+  "existing_default_contract": "tests.test_signals and its symbolic fixture remain byte-exact; default report remains exact. Shared mask/action restore checked for both modes.",
+  "spec": "Original author preimplementation snapshot retained, not ACL seal/independent verifier acceptance. Explicit dict-root narrowing amendment fixes six genuine Pyright findings; valid expectations and fixtures unchanged. All thirteen mutants reassessed on corrected core, unique ids counted once.",
+  "mutation": "Nine compiled native + four syntax-valid syscall variants killed through substantive assertions, zero errors/skips; exact source/spec restoration and rebuilt four-test ordinary2/default2 baseline. No shrink claim; deterministic explicit whole fixture and damaged traces. Sequential4GiB/no-swap owned process scope.",
+  "development_errors": "Private SDK copy_cqes_ready compile error corrected to public copy_cqes(...,0); neither prior delivered defect nor kill. Missing guessed manual path, truncated broad excerpt and system-Python missing Hypothesis are excluded; specific liburing mask/EINTR passages and .venv runtime imports subsequently inspected. Sphinx short title underline corrected before final publication replay.",
+  "diagnostics": {
+    "paths": 4,
+    "visible_findings": 0,
+    "suppressed_findings": 3,
+    "scope": "Active post-restoration probe; real fixture-root findings fixed, other existing disposed/provider-policy findings remain disclosed; not unconditional clean. RST checked through strict Sphinx."
+  },
+  "navigation": "Syntax outline explicitly stale; no current cached node/transitive semantic graph. Explicit native main/observers/mask/action/handler/SDK/build/CLI/test/map/book consumers inspected, not absent-caller/full-callgraph proof.",
+  "gates": {
+    "zig": "0.17.0",
+    "build_steps": 49,
+    "tests": 74,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties_with_400_valid_generated_cases": 14,
+    "strict_html_epub": true,
+    "epubcheck": "5.2.1 zero fatal/error/warning/info",
+    "chapters": 27,
+    "literals": 119,
+    "browser_cases": 81,
+    "browser_elements": {
+      "pre": 357,
+      "table": 6,
+      "image": 15,
+      "heading": 330,
+      "figure": 0
+    }
+  },
+  "review": "Mandatory supported independent host unchanged (nested npm package Oct7 predates Oct10 blocker); no retry/fallback/child report.",
+  "delivery": "Goal incomplete; no push; full semantic/state/failure acceptance and remote delivery remain required."
+}

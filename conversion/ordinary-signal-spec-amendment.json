@@ -1,0 +1,9 @@
+{
+  "scope": "One unsealed author test-harness correction after initial assessment, not independent verifier/ACL acceptance. Original preimplementation snapshot retained.",
+  "reason": "Recursive symbolic-mask resolver can return int/list/dict; Pyright exposed unchecked fixture root subscripting. Assert dictionary before contextual mask fields. Current valid-fixture report and all behavioral expectations/fixtures unchanged.",
+  "original_sha256": "4ebea104f96c4cef1c682afba89f6ea94040924f097e30db136120139833df75",
+  "amended_sha256": {
+    "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23"
+  },
+  "mutation": "All thirteen original ids reassessed against this corrected core; no double-counted kills."
+}

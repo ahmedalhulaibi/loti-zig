@@ -423,18 +423,18 @@
     {
       "original": "io_uring_prep_timeout",
       "zig": "std.os.linux.IoUring.timeout",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/reference_signals.zig",
+      "verification_scope": "constructed and submitted; ordinary masked waits, guard cancellation and two expired timer CQEs checked; distinct tag-sorted -ECANCELED/0 target/remover CQEs, queued NOP retained until explicit submit; current sequential plan only, not general cancellation races/restart/IOPOLL",
+      "semantic_difference": "Stable kernel_timespec retained through CQE; count zero expires by time, not another operation count. Expired timer CQE -ETIME is distinct from successful basic enter return zero.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn timeout(\n    self: *IoUring,\n    user_data: u64,\n    ts: *const linux.kernel_timespec,\n    count: u32,\n    flags: u32,\n) !*linux.io_uring_sqe"
     },
     {
       "original": "io_uring_prep_timeout_remove",
       "zig": "std.os.linux.IoUring.timeout_remove",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/reference_signals.zig",
+      "verification_scope": "constructed and submitted; ordinary masked waits, guard cancellation and two expired timer CQEs checked; distinct tag-sorted -ECANCELED/0 target/remover CQEs, queued NOP retained until explicit submit; current sequential plan only, not general cancellation races/restart/IOPOLL",
+      "semantic_difference": "Target is the original u64 timer tag. Successful removal CQE zero is distinct from original timer CQE -ECANCELED; no assumed CQ arrival order, not all expiration/removal races.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn timeout_remove(\n    self: *IoUring,\n    user_data: u64,\n    timeout_user_data: u64,\n    flags: u32,\n) !*linux.io_uring_sqe"
     },

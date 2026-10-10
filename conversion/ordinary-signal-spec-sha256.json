@@ -1,0 +1,9 @@
+{
+  "scope": "Author preimplementation snapshot, not ACL seal or independent verifier acceptance. Whole symbolic report, finite five-process boundary and actual basic-ABI/signal trace damages.",
+  "sha256": {
+    "tests/test_ordinary_signals.py": "4ebea104f96c4cef1c682afba89f6ea94040924f097e30db136120139833df75",
+    "testdata/inputs/ordinary-signal-report.json": "591be65f688ef67060d08579890673e9f673ba747a68f7e5ef7c0e849fbdc443",
+    "testdata/inputs/ordinary-signal.trace": "2d2832b5800b8326db9f2ec53804f60da620049d584fe06acbd69d67a4ad290d",
+    "testdata/inputs/ordinary-signal-invalid-traces.json": "bf3c703258fd640792baa95ef5bb72f7ca666fd5078ccfa1e968557b0b616b8c"
+  }
+}

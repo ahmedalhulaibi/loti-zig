@@ -150,9 +150,111 @@ fn restore(action: *const linux.k_sigaction, original: *const linux.sigset_t) !v
     try changeMask(linux.SIG.SETMASK, original);
 }
 
+const Completion = struct { user_data: u64, result: i32, flags: u32 };
+const OrdinaryWait = struct {
+    mask: ?u128,
+    minimum: u32,
+    errno: u16,
+    submitted: u32,
+    before: State,
+    after: State,
+};
+const OrdinaryObservations = struct {
+    interrupted: OrdinaryWait,
+    cancellation: [2]Completion,
+    blocked_wait: OrdinaryWait,
+    null_wait: OrdinaryWait,
+    timers: [2]Completion,
+    released: State,
+    submitted: u32,
+    nop: Completion,
+};
+const Reports = union(enum) { deadline: Observations, ordinary: OrdinaryObservations };
+
+fn ordinaryWait(ring: *linux.IoUring, temporary: ?*linux.sigset_t, minimum: u32, expected: linux.E) !OrdinaryWait {
+    const before = try state(ring);
+    // Basic sigset pointer + NSIG/8, not an EXT_ARG getevents structure.
+    // Already-submitted timer SQEs bound these waits. No submission or CQ consumption here.
+    const result = linux.io_uring_enter(ring.fd, 0, minimum, linux.IORING_ENTER_GETEVENTS, temporary);
+    const errno = linux.errno(result);
+    if (errno != expected) return error.UnexpectedOrdinaryEnterResult;
+    return .{
+        .mask = if (temporary) |set| maskValue(set.*) else null,
+        .minimum = minimum,
+        .errno = @backingInt(errno),
+        .submitted = if (errno == .SUCCESS) @intCast(result) else 0,
+        .before = before,
+        .after = try state(ring),
+    };
+}
+
+fn pair(ring: *linux.IoUring, first: Completion, second: Completion) ![2]Completion {
+    var cqes: [2]linux.io_uring_cqe = undefined;
+    if (try ring.copy_cqes(&cqes, 0) != 2) return error.MissingSignalTimerCompletions;
+    // Correlate by tag, not arrival order; cancellation has two distinct CQEs.
+    if (cqes[0].user_data > cqes[1].user_data) std.mem.swap(linux.io_uring_cqe, &cqes[0], &cqes[1]);
+    const result: [2]Completion = .{
+        .{ .user_data = cqes[0].user_data, .result = cqes[0].res, .flags = cqes[0].flags },
+        .{ .user_data = cqes[1].user_data, .result = cqes[1].res, .flags = cqes[1].flags },
+    };
+    if (!std.meta.eql(result, [2]Completion{ first, second })) return error.UnexpectedSignalTimerCompletions;
+    return result;
+}
+
+fn ordinaryObserve(ring: *linux.IoUring) !OrdinaryObservations {
+    const usr1 = mask(&.{.USR1});
+    const caller = mask(&.{ .USR1, .USR2 });
+    try changeMask(linux.SIG.SETMASK, &caller);
+    const guard: linux.kernel_timespec = .{ .sec = 1, .nsec = 0 };
+    _ = try ring.timeout(10, &guard, 0, 0);
+    if (try ring.submit() != 1) return error.SignalTimerSubmissionFailed;
+    try send();
+    var unblocked = mask(&.{ .USR2, .WINCH });
+    const interrupted = try ordinaryWait(ring, &unblocked, 1, .INTR);
+    _ = try ring.timeout_remove(11, 10, 0);
+    if (try ring.submit_and_wait(2) != 1) return error.SignalTimerRemovalSubmissionFailed;
+    const cancellation = try pair(ring, .{ .user_data = 10, .result = -125, .flags = 0 }, .{ .user_data = 11, .result = 0, .flags = 0 });
+
+    const deadlines: [2]linux.kernel_timespec = .{ .{ .sec = 0, .nsec = 20_000_000 }, .{ .sec = 1, .nsec = 0 } };
+    _ = try ring.timeout(20, &deadlines[0], 0, 0);
+    _ = try ring.timeout(21, &deadlines[1], 0, 0);
+    if (try ring.submit() != 2) return error.SignalTimerSubmissionFailed;
+    _ = try ring.nop(1);
+    try send();
+    var blocked = mask(&.{ .USR1, .WINCH });
+    const blocked_wait = try ordinaryWait(ring, &blocked, 1, .SUCCESS);
+    // Leave the first CQE unconsumed: min_complete=2 waits for the other timer.
+    const null_wait = try ordinaryWait(ring, null, 2, .SUCCESS);
+    const timers = try pair(ring, .{ .user_data = 20, .result = -62, .flags = 0 }, .{ .user_data = 21, .result = -62, .flags = 0 });
+    if (ring.sq_ready() != 1) return error.SignalWaitSubmittedQueuedNop;
+    try changeMask(linux.SIG.UNBLOCK, &usr1);
+    const released = try state(ring);
+    try changeMask(linux.SIG.SETMASK, &caller);
+    const submitted = try ring.submit_and_wait(1);
+    const nop = try ring.copy_cqe();
+    if (submitted != 1 or nop.user_data != 1 or nop.res != 0 or nop.flags != 0) return error.SignalRecoveryNopFailed;
+    if (@atomicLoad(u32, &deliveries, .seq_cst) != 2 or @atomicLoad(bool, &handler_failed, .seq_cst)) return error.SignalHandlerObservationFailed;
+    return .{
+        .interrupted = interrupted,
+        .cancellation = cancellation,
+        .blocked_wait = blocked_wait,
+        .null_wait = null_wait,
+        .timers = timers,
+        .released = released,
+        .submitted = submitted,
+        .nop = .{ .user_data = nop.user_data, .result = nop.res, .flags = nop.flags },
+    };
+}
+
+fn observeMode(ring: *linux.IoUring, ordinary: bool) !Reports {
+    if (ordinary) return .{ .ordinary = try ordinaryObserve(ring) };
+    return .{ .deadline = try observe(ring) };
+}
+
 pub fn main(init: std.process.Init) !void {
     const args = try init.minimal.args.toSlice(init.arena.allocator());
-    if (args.len != 1) return error.ExpectedNoSignalArguments;
+    const ordinary = args.len == 2 and std.mem.eql(u8, args[1], "--ordinary");
+    if (args.len != 1 and !ordinary) return error.ExpectedNoSignalArguments;
     var ring = try linux.IoUring.init(8, 0);
     defer ring.deinit();
     const original_mask = try currentMask();
@@ -166,7 +268,7 @@ pub fn main(init: std.process.Init) !void {
     };
     if (linux.errno(linux.sigaction(.USR1, &action, null)) != .SUCCESS)
         return error.SignalHandlerInstallFailed;
-    const observations = observe(&ring) catch |err| {
+    const observations = observeMode(&ring, ordinary) catch |err| {
         const usr1 = mask(&.{.USR1});
         try changeMask(linux.SIG.UNBLOCK, &usr1);
         try restore(&original_action, &original_mask);
@@ -180,21 +282,40 @@ pub fn main(init: std.process.Init) !void {
     if (!action_restored or !mask_restored) return error.SignalProcessStateNotRestored;
     var buffer: [4096]u8 = undefined;
     var stdout = std.Io.File.stdout().writerStreaming(init.io, &buffer);
-    try std.json.Stringify.value(.{
-        .mask_bytes = linux.NSIG / 8,
-        .initial_mask = maskValue(original_mask),
-        .interrupted = observations.interrupted,
-        .blocked_timeout = observations.blocked_timeout,
-        .null_timeout = observations.null_timeout,
-        .handler_masks = .{ maskValue(handler_masks[0]), maskValue(handler_masks[1]) },
-        .released = observations.released,
-        .submitted = observations.submitted,
-        .nop = .{ .user_data = observations.nop.user_data, .result = observations.nop.res, .flags = observations.nop.flags },
-        .sq_ready = ring.sq_ready(),
-        .cq_ready = ring.cq_ready(),
-        .original_action_restored = action_restored,
-        .original_mask_restored = mask_restored,
-    }, .{}, &stdout.interface);
+    switch (observations) {
+        .deadline => |value| try std.json.Stringify.value(.{
+            .mask_bytes = linux.NSIG / 8,
+            .initial_mask = maskValue(original_mask),
+            .interrupted = value.interrupted,
+            .blocked_timeout = value.blocked_timeout,
+            .null_timeout = value.null_timeout,
+            .handler_masks = .{ maskValue(handler_masks[0]), maskValue(handler_masks[1]) },
+            .released = value.released,
+            .submitted = value.submitted,
+            .nop = .{ .user_data = value.nop.user_data, .result = value.nop.res, .flags = value.nop.flags },
+            .sq_ready = ring.sq_ready(),
+            .cq_ready = ring.cq_ready(),
+            .original_action_restored = action_restored,
+            .original_mask_restored = mask_restored,
+        }, .{}, &stdout.interface),
+        .ordinary => |value| try std.json.Stringify.value(.{
+            .mask_bytes = linux.NSIG / 8,
+            .initial_mask = maskValue(original_mask),
+            .interrupted = value.interrupted,
+            .cancellation = value.cancellation,
+            .blocked_wait = value.blocked_wait,
+            .null_wait = value.null_wait,
+            .timers = value.timers,
+            .handler_masks = .{ maskValue(handler_masks[0]), maskValue(handler_masks[1]) },
+            .released = value.released,
+            .submitted = value.submitted,
+            .nop = value.nop,
+            .sq_ready = ring.sq_ready(),
+            .cq_ready = ring.cq_ready(),
+            .original_action_restored = action_restored,
+            .original_mask_restored = mask_restored,
+        }, .{}, &stdout.interface),
+    }
     try stdout.interface.writeByte('\n');
     try stdout.interface.flush();
 }

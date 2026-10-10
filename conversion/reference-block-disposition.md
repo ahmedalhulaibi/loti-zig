@@ -120,7 +120,7 @@ Implicit includes/layout snippets are already in `implicit-literal-disposition.m
 | Original block ID | Native replacement and semantic comparison | Evidence / limit |
 |---|---|---|
 | `ref-iouring/io_uring_setup.rst:15` | `linux.io_uring_setup(entries, params)`; errno-encoded usize and owned FD | S/E; real raw setup and mappings; parameter input/output roles updated |
-| `ref-iouring/io_uring_enter.rst:15` | `linux.io_uring_enter`: consumes already-published SQEs and counts submissions; caller release-publishes tail first; no CQ consumption; mask size supplied by SDK | S/E; raw reader; EXT_ARG uses explicit syscall6/different structure; EXT_ARG pending-signal delivery/restore now executed; ordinary-enter signal delivery and IOPOLL remain unverified |
+| `ref-iouring/io_uring_enter.rst:15` | `linux.io_uring_enter`: consumes already-published SQEs and counts submissions; caller release-publishes tail first; no CQ consumption; mask size supplied by SDK | S/E; raw reader; EXT_ARG uses explicit syscall6/different structure; EXT_ARG pending-signal delivery/restore now executed; ordinary-enter pending-signal EINTR/blocked/null masks, timer cancellation/expiration CQEs, retained NOP and actual syscall/handler/return-mask observations now checked; IOPOLL/general restart/sender or timer races unverified |
 | `ref-iouring/io_uring_register.rst:15` | `linux.io_uring_register`: typed opcode, optional argument, opcode-specific count/result | S/E; buffers/files/eventfd/probe/personality; returned ID/count distinguished from zero success |
 
 ## Audit observations
@@ -131,9 +131,9 @@ Implicit includes/layout snippets are already in `implicit-literal-disposition.m
   restore/removal/unregistration checks. Concurrent updates, partial multi-entry
   failure still need checks. Probe listing/lookup now has complete named-flag and
   synthetic-bounds oracles; independent agent review remains blocked.
-- SIGUSR1 pending delivery, EXT_ARG interruption/timeout mask restoration and
-  null-mask behaviour now run; concurrent senders, other signals/restart modes
-  and ordinary-enter delivered-signal paths remain unverified.
+- SIGUSR1 pending delivery, EXT_ARG and ordinary-mask interruption/restoration,
+  blocked/null masks, separate cancellation/expiration CQEs now run. Concurrent
+  senders, other signals/restart modes, IOPOLL and general timer races unverified.
   Populated nonblocking CQ and full-SQ rejection now have boundary/model checks;
   u32 wrap, CQ overflow and concurrent/SQPOLL interleavings remain open. Ordinary
   teardown alone is not failure cleanup evidence; five injected mmap ENOMEM paths now execute, not every errno/SDK constructor.

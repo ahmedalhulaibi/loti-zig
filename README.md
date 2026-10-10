@@ -101,6 +101,7 @@ zig-out/bin/reference-setup --mapping-failure separate-sqes
 zig-out/bin/reference-completion
 zig-out/bin/reference-completion 0 1 3 8 1
 zig-out/bin/reference-signals
+zig-out/bin/reference-signals --ordinary
 zig-out/bin/reference-files input.txt new-output.bin
 zig-out/bin/reference-splice input.txt
 zig-out/bin/reference-poll
@@ -152,8 +153,11 @@ can leave its newly created partial output; forced short writes remain open.
 `reference-signals` owns SIGUSR1 in a fresh process. It pre-queues a blocked
 thread-directed signal, checks real interrupted/blocked/null-mask waits, exact
 mask restoration, handler masks/counts, retained queued NOP and actual recovery
-CQE. It restores/checks the original kernel action and mask. It does not model
-concurrent senders or every signal/restart policy.
+CQE. It restores/checks the original kernel action and mask. `--ordinary` uses
+basic enter's signal-set ABI, submitted guard/expiration timers and distinct
+TIMEOUT_REMOVE target/remover CQEs; blocked/null waits do not submit the NOP.
+Actual syscall/handler/return-mask observations reject ten damaged traces. Neither
+mode models concurrent senders, general restart policy, IOPOLL or timer races.
 
 Probe raw output is a 2,064-byte native-endian ABI snapshot, not JSON. Snapshot
 listing uses the same SDK lookup as the live listing. Independent raw decoding

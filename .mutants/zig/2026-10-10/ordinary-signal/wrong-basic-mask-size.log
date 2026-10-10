@@ -1,0 +1,131 @@
+test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) ...
+  test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=0) ... FAIL
+  test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=1) ... FAIL
+  test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=2) ... FAIL
+  test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=3) ... FAIL
+  test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=4) ... FAIL
+
+======================================================================
+FAIL: test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_ordinary_signals.py", line 100, in test_pending_masks_timer_cqes_and_queued_nop_ownership
+    self.assertEqual(json.loads(run("reference-signals", "--ordinary").stdout), expected)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-signals exited 1: error: UnexpectedOrdinaryEnterResult
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:180:28: 0x11ed5b7 in ordinaryWait (reference_signals.zig)
+    if (errno != expected) return error.UnexpectedOrdinaryEnterResult;
+                           ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:213:25: 0x11eecbf in ordinaryObserve (reference_signals.zig)
+    const interrupted = try ordinaryWait(ring, &unblocked, 1, .INTR);
+                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:250:41: 0x11f3d21 in observeMode (reference_signals.zig)
+    if (ordinary) return .{ .ordinary = try ordinaryObserve(ring) };
+                                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:275:9: 0x11f4d2f in main (reference_signals.zig)
+        return err;
+        ^
+
+
+======================================================================
+FAIL: test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_ordinary_signals.py", line 100, in test_pending_masks_timer_cqes_and_queued_nop_ownership
+    self.assertEqual(json.loads(run("reference-signals", "--ordinary").stdout), expected)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-signals exited 1: error: UnexpectedOrdinaryEnterResult
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:180:28: 0x11ed5b7 in ordinaryWait (reference_signals.zig)
+    if (errno != expected) return error.UnexpectedOrdinaryEnterResult;
+                           ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:213:25: 0x11eecbf in ordinaryObserve (reference_signals.zig)
+    const interrupted = try ordinaryWait(ring, &unblocked, 1, .INTR);
+                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:250:41: 0x11f3d21 in observeMode (reference_signals.zig)
+    if (ordinary) return .{ .ordinary = try ordinaryObserve(ring) };
+                                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:275:9: 0x11f4d2f in main (reference_signals.zig)
+        return err;
+        ^
+
+
+======================================================================
+FAIL: test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_ordinary_signals.py", line 100, in test_pending_masks_timer_cqes_and_queued_nop_ownership
+    self.assertEqual(json.loads(run("reference-signals", "--ordinary").stdout), expected)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-signals exited 1: error: UnexpectedOrdinaryEnterResult
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:180:28: 0x11ed5b7 in ordinaryWait (reference_signals.zig)
+    if (errno != expected) return error.UnexpectedOrdinaryEnterResult;
+                           ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:213:25: 0x11eecbf in ordinaryObserve (reference_signals.zig)
+    const interrupted = try ordinaryWait(ring, &unblocked, 1, .INTR);
+                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:250:41: 0x11f3d21 in observeMode (reference_signals.zig)
+    if (ordinary) return .{ .ordinary = try ordinaryObserve(ring) };
+                                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:275:9: 0x11f4d2f in main (reference_signals.zig)
+        return err;
+        ^
+
+
+======================================================================
+FAIL: test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_ordinary_signals.py", line 100, in test_pending_masks_timer_cqes_and_queued_nop_ownership
+    self.assertEqual(json.loads(run("reference-signals", "--ordinary").stdout), expected)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-signals exited 1: error: UnexpectedOrdinaryEnterResult
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:180:28: 0x11ed5b7 in ordinaryWait (reference_signals.zig)
+    if (errno != expected) return error.UnexpectedOrdinaryEnterResult;
+                           ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:213:25: 0x11eecbf in ordinaryObserve (reference_signals.zig)
+    const interrupted = try ordinaryWait(ring, &unblocked, 1, .INTR);
+                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:250:41: 0x11f3d21 in observeMode (reference_signals.zig)
+    if (ordinary) return .{ .ordinary = try ordinaryObserve(ring) };
+                                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:275:9: 0x11f4d2f in main (reference_signals.zig)
+        return err;
+        ^
+
+
+======================================================================
+FAIL: test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) (process=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_ordinary_signals.py", line 100, in test_pending_masks_timer_cqes_and_queued_nop_ownership
+    self.assertEqual(json.loads(run("reference-signals", "--ordinary").stdout), expected)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-signals exited 1: error: UnexpectedOrdinaryEnterResult
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:180:28: 0x11ed5b7 in ordinaryWait (reference_signals.zig)
+    if (errno != expected) return error.UnexpectedOrdinaryEnterResult;
+                           ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:213:25: 0x11eecbf in ordinaryObserve (reference_signals.zig)
+    const interrupted = try ordinaryWait(ring, &unblocked, 1, .INTR);
+                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:250:41: 0x11f3d21 in observeMode (reference_signals.zig)
+    if (ordinary) return .{ .ordinary = try ordinaryObserve(ring) };
+                                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:275:9: 0x11f4d2f in main (reference_signals.zig)
+        return err;
+        ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.385s
+
+FAILED (failures=5)
