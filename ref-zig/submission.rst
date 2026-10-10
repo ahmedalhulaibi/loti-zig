@@ -97,7 +97,35 @@ one operation's byte or memory effects to another operation's success CQE.
 ``splice`` transfers between descriptors, at least one of which must be a pipe.
 Its Zig offsets are **values**, not pointer arguments. Use the all-ones sentinel
 for a pipe/current-position case; flags go in ``sqe.rw_flags`` after preparation.
-Operand support and partial results still need checking.
+The original preparer already accepted values; its pointer/NULL prose mixed in
+the synchronous syscall interface. An explicit regular-file offset leaves that
+FD's current position unchanged; the sentinel advances it by completed bytes.
+The same rule applies to the output descriptor. See :man:`splice(2)`.
+
+Executed SPLICE transfers
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``reference-splice INPUT`` reads an unchanged regular file (at most 1 MiB) through
+two owned nonblocking pipes. Each pipe is resized to exactly 4096 bytes; larger
+requests produce actual short completions. The loop advances by the **completed**
+count, not the request length. A final READ copies drained bytes into user memory
+for independent observation; it is not part of the two SPLICE legs.
+
+The reference checks file/pipe/pipe bytes, input EOF, explicit/current source
+cursors, and both output-offset modes on an owned memfd. Positional observation
+checks exact overlap/zero-gap bytes without changing the memfd cursor. It also
+checks six separate correlated negative CQEs: bad FD, empty nonblocking pipe,
+non-sentinel pipe input/output offsets, same pipe and no pipe. ``SPLICE_F_NONBLOCK``
+is value 2 in operation flags, not ``sqe.flags``; ordinary file I/O can still block.
+
+Pipe FD closure is queried before process exit; the input FD remains caller-owned.
+This example needs 4096-byte pipe support. It does not attest every filesystem,
+socket, registered descriptor, concurrency/cancellation path, physical copy
+avoidance or performance. It has no externally visible output file.
+
+.. literalinclude:: ../examples/reference_splice.zig
+   :language: zig
+   :caption: Owned SPLICE pipeline and both value-offset modes
 
 Sockets and readiness
 ---------------------

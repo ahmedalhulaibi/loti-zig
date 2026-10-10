@@ -1,0 +1,25 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0, "successful": false}
+test_literal_oracle_and_typed_invalid_inputs (tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs) ... FAIL
+
+======================================================================
+FAIL: test_literal_oracle_and_typed_invalid_inputs (tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_splice.py", line 76, in test_literal_oracle_and_typed_invalid_inputs
+    self.assertEqual(json.loads(run("reference-splice", fixture).stdout), literal)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-splice exited 1: error: SplicePipeDescriptorStillOpen
+/home/ahmed/workspace/va/loti-zig/examples/reference_splice.zig:35:33: 0x12066ee in close (reference_splice.zig)
+            if (!closed[index]) return error.SplicePipeDescriptorStillOpen;
+                                ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_splice.zig:167:26: 0x1209e1d in main (reference_splice.zig)
+    const first_closed = try first.close();
+                         ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.066s
+
+FAILED (failures=1)

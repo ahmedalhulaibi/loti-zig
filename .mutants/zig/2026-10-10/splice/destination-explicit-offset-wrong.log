@@ -1,0 +1,17 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0, "successful": false}
+test_literal_oracle_and_typed_invalid_inputs (tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs) ... FAIL
+
+======================================================================
+FAIL: test_literal_oracle_and_typed_invalid_inputs (tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_splice.py", line 76, in test_literal_oracle_and_typed_invalid_inputs
+    self.assertEqual(json.loads(run("reference-splice", fixture).stdout), literal)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'sou[1506 chars]t': 12, 'requested': 5, 'operation_flags': 2, [1607 chars]True} != {'sou[1506 chars]t': 11, 'requested': 5, 'operation_flags': 2, [1604 chars]True}
+Diff is 7113 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.020s
+
+FAILED (failures=1)

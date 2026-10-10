@@ -126,7 +126,7 @@
     }
   ],
   "source_sha256": {
-    "build.zig": "2ec0a4f3d4f6c1d844fd4e0dc3229e36998694ac4a655af4a63470c8aa5dacd9",
+    "build.zig": "1d227767b9a5b206e403bb8c410b0d22ed64e75832b568bfe90b2774875c72ab",
     "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
@@ -135,5 +135,12 @@
     "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
     "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
     "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e"
+  },
+  "replay_after_splice": {
+    "scope": "Affected execution/binding consumers replayed in complete 49-test/nine400-case suite before version-pin refresh. Historical mutation source pins remain unchanged; no new mutation or independent-review claim.",
+    "refreshed_paths": [
+      "build.zig"
+    ],
+    "suite_receipt": "conversion/test-verification.json"
   }
 }

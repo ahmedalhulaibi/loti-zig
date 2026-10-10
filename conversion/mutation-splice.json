@@ -1,0 +1,146 @@
+{
+  "scope": "Eight compiled SPLICE exercise regressions, not SDK, every errno/filesystem/architecture or whole-port assurance; no independent review.",
+  "source": "examples/reference_splice.zig",
+  "source_sha256": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
+  "mutants": [
+    {
+      "id": "requested-not-completed-progress",
+      "compiled": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "test": "tests.test_splice.SpliceContracts.test_splice_bytes_cursors_and_partial_progress",
+      "log": ".mutants/zig/2026-10-10/splice/requested-not-completed-progress.log"
+    },
+    {
+      "id": "source-offset-reset",
+      "compiled": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "test": "tests.test_splice.SpliceContracts.test_splice_bytes_cursors_and_partial_progress",
+      "log": ".mutants/zig/2026-10-10/splice/source-offset-reset.log"
+    },
+    {
+      "id": "relay-wrong-pipe-end",
+      "compiled": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "test": "tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/splice/relay-wrong-pipe-end.log"
+    },
+    {
+      "id": "current-source-offset-explicit",
+      "compiled": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "test": "tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/splice/current-source-offset-explicit.log"
+    },
+    {
+      "id": "destination-explicit-offset-wrong",
+      "compiled": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "test": "tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/splice/destination-explicit-offset-wrong.log"
+    },
+    {
+      "id": "current-destination-offset-explicit",
+      "compiled": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "test": "tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/splice/current-destination-offset-explicit.log"
+    },
+    {
+      "id": "operation-flags-omitted",
+      "compiled": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "test": "tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/splice/operation-flags-omitted.log"
+    },
+    {
+      "id": "pipe-close-omitted",
+      "compiled": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "test": "tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/splice/pipe-close-omitted.log"
+    }
+  ],
+  "restored_byte_exactly": true,
+  "rebuilt_baseline_passed": true,
+  "not_assessed": [
+    {
+      "id": "pipe-close-omitted-initial",
+      "reason": "unused capture fd; compile failure is not a runtime kill",
+      "log": ".mutants/zig/2026-10-10/splice/pipe-close-omitted-uncompiled-build.log"
+    }
+  ],
+  "development_note": "Two earlier substantive Hypothesis assertion ExceptionGroups were re-assessed with independent literal oracle; one initial close mutant did not compile. Every stop restored source and rebuilt/tested baseline before retry. Seven completed assessments retained, not repeated.",
+  "partial_fixture_role": "Spec-first explicit 8196-byte case. Its mutation failures are not claimed as a shrunk/generated regression.",
+  "log_normalization": {
+    "scope": "Trailing spaces/tabs/CR and terminal blank lines only; no substantive observations changed.",
+    "files": [
+      "requested-not-completed-progress-build.log",
+      "source-offset-reset-build.log",
+      "relay-wrong-pipe-end-build.log",
+      "current-source-offset-explicit-build.log",
+      "current-source-offset-explicit-initial.log",
+      "destination-explicit-offset-wrong-build.log",
+      "destination-explicit-offset-wrong-initial.log",
+      "current-destination-offset-explicit-build.log",
+      "operation-flags-omitted-build.log",
+      "pipe-close-omitted-uncompiled-build.log",
+      "pipe-close-omitted-build.log"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "source_size": 5,
+  "capacities": [4096, 4096],
+  "explicit": {
+    "position_before": 7,
+    "position_after": 7,
+    "splices": [
+      {"tag": 10, "phase": "fill", "input_offset": 0, "output_offset": 18446744073709551615, "requested": 5, "operation_flags": 2, "result": 5, "flags": 0},
+      {"tag": 11, "phase": "relay", "input_offset": 18446744073709551615, "output_offset": 18446744073709551615, "requested": 5, "operation_flags": 2, "result": 5, "flags": 0}
+    ],
+    "reads": [{"tag": 12, "offset": 18446744073709551615, "requested": 5, "result": 5, "flags": 0}],
+    "data": [0, 255, 90, 105, 103]
+  },
+  "eof": {"tag": 1000000, "phase": "eof", "input_offset": 5, "output_offset": 18446744073709551615, "requested": 1, "operation_flags": 2, "result": 0, "flags": 0},
+  "current": {
+    "position_before": 0,
+    "position_after": 5,
+    "splice": {"tag": 1000001, "phase": "current", "input_offset": 18446744073709551615, "output_offset": 18446744073709551615, "requested": 64, "operation_flags": 2, "result": 5, "flags": 0},
+    "read": {"tag": 1000002, "offset": 18446744073709551615, "requested": 5, "result": 5, "flags": 0},
+    "data": [0, 255, 90, 105, 103]
+  },
+  "destination": {
+    "explicit_before": 7,
+    "explicit_after": 7,
+    "current_before": 0,
+    "current_after": 5,
+    "after_observation": 5,
+    "splices": [
+      {"tag": 1000030, "phase": "fill_output_explicit", "input_offset": 0, "output_offset": 18446744073709551615, "requested": 64, "operation_flags": 2, "result": 5, "flags": 0},
+      {"tag": 1000031, "phase": "output_explicit", "input_offset": 18446744073709551615, "output_offset": 11, "requested": 5, "operation_flags": 2, "result": 5, "flags": 0},
+      {"tag": 1000032, "phase": "fill_output_current", "input_offset": 0, "output_offset": 18446744073709551615, "requested": 64, "operation_flags": 2, "result": 5, "flags": 0},
+      {"tag": 1000033, "phase": "output_current", "input_offset": 18446744073709551615, "output_offset": 18446744073709551615, "requested": 5, "operation_flags": 2, "result": 5, "flags": 0}
+    ],
+    "read": {"tag": 1000034, "offset": 0, "requested": 16, "result": 16, "flags": 0},
+    "data": [0, 255, 90, 105, 103, 0, 0, 0, 0, 0, 0, 0, 255, 90, 105, 103]
+  },
+  "failures": [
+    {"tag": 1000010, "phase": "invalid_source", "input_offset": 0, "output_offset": 18446744073709551615, "requested": 1, "operation_flags": 2, "result": -9, "flags": 0},
+    {"tag": 1000011, "phase": "empty_pipe", "input_offset": 18446744073709551615, "output_offset": 18446744073709551615, "requested": 1, "operation_flags": 2, "result": -11, "flags": 0},
+    {"tag": 1000012, "phase": "input_offset", "input_offset": 0, "output_offset": 18446744073709551615, "requested": 1, "operation_flags": 2, "result": -29, "flags": 0},
+    {"tag": 1000013, "phase": "output_offset", "input_offset": 0, "output_offset": 0, "requested": 1, "operation_flags": 2, "result": -29, "flags": 0},
+    {"tag": 1000014, "phase": "same_pipe", "input_offset": 18446744073709551615, "output_offset": 18446744073709551615, "requested": 1, "operation_flags": 2, "result": -22, "flags": 0},
+    {"tag": 1000015, "phase": "no_pipe", "input_offset": 0, "output_offset": 0, "requested": 1, "operation_flags": 2, "result": -22, "flags": 0}
+  ],
+  "pipes_closed": [true, true, true, true],
+  "source_still_open": true
+}

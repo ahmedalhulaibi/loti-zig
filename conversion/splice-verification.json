@@ -1,0 +1,166 @@
+{
+  "scope": "Sequential native SPLICE file/pipe/pipe and pipe/memfd effects on current x86_64 Linux, not every operand/filesystem/fixed-FD/concurrency/cancellation path, physical-copy/performance or independent review. Generated payloads <=12289 bytes; CLI bound 1 MiB is not an all-size attestation.",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64"
+  },
+  "source_sha256": {
+    "build.zig": "1d227767b9a5b206e403bb8c410b0d22ed64e75832b568bfe90b2774875c72ab",
+    "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
+    "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
+    "tools/reference_map.py": "8a26f2ea91523da319f624c3b056b370df66b22098d85bfbeef2f6da5844b134",
+    "conversion/reference-map.json": "aa784c59f10e26d032ad1ed0e2fec9c8991ccb1c38a33d2724a746aae4e8f803",
+    "ref-zig/submission.rst": "632d7708cce7649038eecbfb966da051e9a04226c54ba395d0e26fc0e47643e2",
+    "testdata/inputs/splice-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/splice-partial.bin": "7456c2d90a90f290eef60a9724d811da38d479f5a6441990d9b41c4e94b634bb",
+    "testdata/inputs/splice-report.json": "c6dd5af2ff11234fc659be050b94eac5a934cc9a008ca0b31e3f47ba088285a8"
+  },
+  "sdk_sha256": {
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf",
+    "Io/File.zig": "46cebd746382c5fdb04613be4fd2c98533731c9385fb70425897cfcafc27ce9c"
+  },
+  "observations": [
+    {
+      "fixture": "testdata/inputs/splice-input.bin",
+      "size": 5,
+      "sha256": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+      "whole_model_match": true,
+      "gnu_cmp_exit": 0,
+      "unchanged_source": true,
+      "fill_request_result_pairs": [
+        [
+          5,
+          5
+        ]
+      ],
+      "source_positions": [
+        7,
+        7
+      ],
+      "destination_positions": {
+        "explicit_before": 7,
+        "explicit_after": 7,
+        "current_before": 0,
+        "current_after": 5,
+        "after_observation": 5
+      },
+      "failure_results": [
+        -9,
+        -11,
+        -29,
+        -29,
+        -22,
+        -22
+      ],
+      "pipes_closed": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "source_still_open": true
+    },
+    {
+      "fixture": "testdata/inputs/splice-partial.bin",
+      "size": 8196,
+      "sha256": "7456c2d90a90f290eef60a9724d811da38d479f5a6441990d9b41c4e94b634bb",
+      "whole_model_match": true,
+      "gnu_cmp_exit": 0,
+      "unchanged_source": true,
+      "fill_request_result_pairs": [
+        [
+          8192,
+          4096
+        ],
+        [
+          4100,
+          4096
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "source_positions": [
+        7,
+        7
+      ],
+      "destination_positions": {
+        "explicit_before": 7,
+        "explicit_after": 7,
+        "current_before": 0,
+        "current_after": 64,
+        "after_observation": 64
+      },
+      "failure_results": [
+        -9,
+        -11,
+        -29,
+        -29,
+        -22,
+        -22
+      ],
+      "pipes_closed": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "source_still_open": true
+    }
+  ],
+  "property": {
+    "test": "test_splice.SpliceContracts.test_splice_bytes_cursors_and_partial_progress",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  },
+  "invalid_inputs": {
+    "missing": "SpliceInputOpenFailed",
+    "symlink": "SpliceInputOpenFailed",
+    "directory": "ExpectedRegularSpliceInput",
+    "character_device": "ExpectedRegularSpliceInput",
+    "oversize": "SpliceInputTooLarge",
+    "missing_argument": "ExpectedSpliceInput",
+    "extra_argument": "ExpectedSpliceInput"
+  },
+  "mutation_report": "conversion/mutation-splice.json",
+  "compiled_mutants_killed": 8,
+  "partial_fixture_provenance": "Spec-first explicit case, not a shrunk/generated regression or a production defect.",
+  "diagnostics": {
+    "paths_checked": 4,
+    "visible": 0,
+    "suppressed_disclosed": 1,
+    "scope": "Active LSP; not unconditional clean verdict for disposed/suppressed locations."
+  },
+  "navigation": "Current bodies/direct build, tests, map, disposition and book consumers inspected. Cached graph has old revision; no transitive-call or independent-review assurance.",
+  "change_boundary": "One SPLICE teaching/effect concern wired through source/build/CLI test/map/book/evidence. Other native sources and SDK unchanged.",
+  "gates": {
+    "tests": 49,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "properties": 9,
+    "generated_valid_each": 400,
+    "build_steps": 39,
+    "epub_literals": 113,
+    "browser_cases": 81,
+    "epubcheck": "5.2.1: zero fatals/errors/warnings/infos"
+  },
+  "remaining": "Independent review host blocked; remaining original operations/state paths/semantic acceptance and personal-fork push still open."
+}

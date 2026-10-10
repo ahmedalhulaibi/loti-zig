@@ -81,7 +81,7 @@
     }
   },
   "source_sha256": {
-    "tools/reference_map.py": "ee733cffa308e1196508fc363450cf8f4db529341d04595ea7f56cd80868e1d9",
+    "tools/reference_map.py": "8a26f2ea91523da319f624c3b056b370df66b22098d85bfbeef2f6da5844b134",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "testdata/inputs/reference-semantics-bindings.json": "bd87f6f4e06670f52ac4dc0610c8d1dbfeae4fe7b49fee2cf1a44ea41faf951c",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
@@ -93,7 +93,7 @@
     "conversion/reference-claim-audit.md": "a27ae9d7bdb58c838ef3931e11f576f25620f8de68d68083a07842d43c20b36a",
     "ref-iouring/io_uring_enter.rst": "889fb3351be04956766022e68925065a9da202b9be6152a857a6454543c78904",
     "ref-zig/setup_teardown.rst": "8cfb07794f25aaab05b111f3f8dab8685f1d78994b71509ee6b95fdb73a1e6f7",
-    "ref-zig/submission.rst": "91cc49515bdf7c822b9adad5ee635ed3c4ca58d2654d2a9041549eb2c55938fb"
+    "ref-zig/submission.rst": "632d7708cce7649038eecbfb966da051e9a04226c54ba395d0e26fc0e47643e2"
   },
   "sdk_source_sha256": {
     "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
@@ -140,5 +140,13 @@
     "baseline_commit": "866c10c",
     "baseline_sha256_verified": true,
     "scope": "Earlier two mapping-description kills remain historical. Unrelated metadata edits changed the whole producer fingerprint; those old kills are not presented as a new current-file assessment. Current five semantic mutations cover the modified claims."
+  },
+  "replay_after_splice": {
+    "scope": "Affected execution/binding consumers replayed in complete 49-test/nine400-case suite before version-pin refresh. Historical mutation source pins remain unchanged; no new mutation or independent-review claim.",
+    "refreshed_paths": [
+      "tools/reference_map.py",
+      "ref-zig/submission.rst"
+    ],
+    "suite_receipt": "conversion/test-verification.json"
   }
 }

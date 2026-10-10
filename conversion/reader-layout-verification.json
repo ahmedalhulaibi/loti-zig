@@ -1,6 +1,6 @@
 {
   "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review.",
-  "book_sha256": "113af5f820baaf39c7fdb2978019029939813a506752a99034eab97501fa56bd",
+  "book_sha256": "a87908889bed48f35f9fbd086763b670401cf1fcacc91971309b962c210b6cdb",
   "renderer": {
     "node": "v26.8.1",
     "playwright": "1.64.0",
@@ -14,10 +14,10 @@
   ],
   "cases": 81,
   "element_counts": {
-    "pre": 336,
+    "pre": 339,
     "table": 6,
     "image": 15,
-    "heading": 306,
+    "heading": 309,
     "figure": 0
   },
   "violations": [],
@@ -1209,15 +1209,6 @@
         "pre": [
           {
             "index": 0,
-            "left": 8,
-            "right": 312,
-            "scroll": 304,
-            "client": 304,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 1,
             "left": 24,
             "right": 296,
             "scroll": 272,
@@ -1226,11 +1217,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 2,
+            "index": 1,
             "left": 8,
             "right": 312,
             "scroll": 304,
             "client": 304,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 2,
+            "left": 24,
+            "right": 296,
+            "scroll": 272,
+            "client": 272,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -1560,15 +1560,6 @@
           },
           {
             "index": 39,
-            "left": 24,
-            "right": 296,
-            "scroll": 272,
-            "client": 272,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 40,
             "left": 8,
             "right": 312,
             "scroll": 304,
@@ -1577,11 +1568,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 41,
+            "index": 40,
             "left": 24,
             "right": 296,
             "scroll": 272,
             "client": 272,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 41,
+            "left": 8,
+            "right": 312,
+            "scroll": 304,
+            "client": 304,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -1596,6 +1596,15 @@
           },
           {
             "index": 43,
+            "left": 24,
+            "right": 296,
+            "scroll": 272,
+            "client": 272,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 44,
             "left": 24,
             "right": 296,
             "scroll": 272,
@@ -1690,6 +1699,15 @@
           },
           {
             "index": 9,
+            "left": 8,
+            "right": 312,
+            "scroll": 304,
+            "client": 304,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 10,
             "left": 8,
             "right": 312,
             "scroll": 304,
@@ -3601,15 +3619,6 @@
         "pre": [
           {
             "index": 0,
-            "left": 8,
-            "right": 592,
-            "scroll": 584,
-            "client": 584,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 1,
             "left": 24,
             "right": 576,
             "scroll": 552,
@@ -3618,11 +3627,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 2,
+            "index": 1,
             "left": 8,
             "right": 592,
             "scroll": 584,
             "client": 584,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 2,
+            "left": 24,
+            "right": 576,
+            "scroll": 552,
+            "client": 552,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -3952,15 +3970,6 @@
           },
           {
             "index": 39,
-            "left": 24,
-            "right": 576,
-            "scroll": 552,
-            "client": 552,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 40,
             "left": 8,
             "right": 592,
             "scroll": 584,
@@ -3969,11 +3978,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 41,
+            "index": 40,
             "left": 24,
             "right": 576,
             "scroll": 552,
             "client": 552,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 41,
+            "left": 8,
+            "right": 592,
+            "scroll": 584,
+            "client": 584,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -3988,6 +4006,15 @@
           },
           {
             "index": 43,
+            "left": 24,
+            "right": 576,
+            "scroll": 552,
+            "client": 552,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 44,
             "left": 24,
             "right": 576,
             "scroll": 552,
@@ -4082,6 +4109,15 @@
           },
           {
             "index": 9,
+            "left": 8,
+            "right": 592,
+            "scroll": 584,
+            "client": 584,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 10,
             "left": 8,
             "right": 592,
             "scroll": 584,
@@ -5993,15 +6029,6 @@
         "pre": [
           {
             "index": 0,
-            "left": 8,
-            "right": 792,
-            "scroll": 784,
-            "client": 784,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 1,
             "left": 24,
             "right": 776,
             "scroll": 752,
@@ -6010,11 +6037,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 2,
+            "index": 1,
             "left": 8,
             "right": 792,
             "scroll": 784,
             "client": 784,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 2,
+            "left": 24,
+            "right": 776,
+            "scroll": 752,
+            "client": 752,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -6344,15 +6380,6 @@
           },
           {
             "index": 39,
-            "left": 24,
-            "right": 776,
-            "scroll": 752,
-            "client": 752,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 40,
             "left": 8,
             "right": 792,
             "scroll": 784,
@@ -6361,11 +6388,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 41,
+            "index": 40,
             "left": 24,
             "right": 776,
             "scroll": 752,
             "client": 752,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 41,
+            "left": 8,
+            "right": 792,
+            "scroll": 784,
+            "client": 784,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -6380,6 +6416,15 @@
           },
           {
             "index": 43,
+            "left": 24,
+            "right": 776,
+            "scroll": 752,
+            "client": 752,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 44,
             "left": 24,
             "right": 776,
             "scroll": 752,
@@ -6474,6 +6519,15 @@
           },
           {
             "index": 9,
+            "left": 8,
+            "right": 792,
+            "scroll": 784,
+            "client": 784,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 10,
             "left": 8,
             "right": 792,
             "scroll": 784,
@@ -7203,7 +7257,7 @@
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
-    "tests/test_reader_layout.py": "19b054bb0f761f2f57c90b0db7252ac0ec1ca88b7c31a523dfda5219666a541f",
+    "tests/test_reader_layout.py": "1093c9a9f384a32b824c721fb5fb7e08c2d972e18819fdc60cc207e139d0820e",
     "conversion/reader-layout-before.png": "8b87531a66190284853702a1d4bcb15b086b6c02f55b5d6d0b786d424ce77d93",
     "conversion/reader-layout-after.png": "df4728528a37f7c4e9f16da21c8567517c93e081d154a9c06b5d8b42992221dd",
     "conversion/reader-layout-code.png": "82410741bbeac87d2001436f06720ca70d6a95ff24509d528968d02d749dd437",
@@ -7222,5 +7276,9 @@
     "limit": "No unconditional clean verdict for disposed locations; real optional-node defects fixed and negative metadata contracts added."
   },
   "preview_review": "Before heading visibly cropped; after contains all characters across lines. Code and preserved illustration previews visually inspected. Chromium previews are not device or pagination assurance.",
-  "change_boundary": "Reader-layout concern crosses stylesheet, renderer probe, public CLI contracts and documentation/evidence; native programs and teaching literals unchanged."
+  "change_boundary": "Reader-layout concern crosses stylesheet, renderer probe, public CLI contracts and documentation/evidence; native programs and teaching literals unchanged.",
+  "replay_after_splice": {
+    "scope": "Final rebuilt 113-literal EPUB, all81cases; damaged-style/metadata contracts replayed. Previous screenshots concern unchanged chapters/CSS and are not new device assurance.",
+    "suite_receipt": "conversion/test-verification.json"
+  }
 }

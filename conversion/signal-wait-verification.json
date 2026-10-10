@@ -164,11 +164,11 @@
   },
   "fresh_process_executions": 25,
   "source_sha256": {
-    "build.zig": "2ec0a4f3d4f6c1d844fd4e0dc3229e36998694ac4a655af4a63470c8aa5dacd9",
+    "build.zig": "1d227767b9a5b206e403bb8c410b0d22ed64e75832b568bfe90b2774875c72ab",
     "examples/reference_signals.zig": "b895a7413d564d6b185cfe9eee7b67f252b123dde2920457e9c2b0d2ff2bc44c",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
-    "tests/test_publication.py": "f450c1cde9ab9386cfa4c1ec7fc0bd2f7a9501c9a579ac5049592c9e084e90b2",
+    "tests/test_publication.py": "dff29aea61759b45b3ff4a2a161d93b0a3da9d616fb3970a77b15c9417b8c116",
     "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
     "testdata/inputs/signal-invalid-arguments.json": "6ef7a293b412e6da43cd05f57b81c26b34a6bde8631879e8dce77fce6018c55c"
   },
@@ -181,5 +181,13 @@
   "navigation_evidence": "Fabric transitive-call tools unavailable and cached graph stale; current source bodies and explicit consumers inspected, active LSP probes used.",
   "environment_correction": "An initial standalone Python check lacked Hypothesis; the required .venv interpreter was used. No native execution failed in that check.",
   "publication_count_correction": "The first full suite rejected stale expected literal count 105. Verifier independently reported 107 after the new signal console/source literals; the exact publication contract was updated and this complete suite passed.",
-  "current_source_replay": "25 fresh whole-report executions match after publication-consumer literal count changed; native signal code unchanged."
+  "current_source_replay": "25 fresh whole-report executions match after publication-consumer literal count changed; native signal code unchanged.",
+  "replay_after_splice": {
+    "scope": "Affected execution/binding consumers replayed in complete 49-test/nine400-case suite before version-pin refresh. Historical mutation source pins remain unchanged; no new mutation or independent-review claim.",
+    "refreshed_paths": [
+      "build.zig",
+      "tests/test_publication.py"
+    ],
+    "suite_receipt": "conversion/test-verification.json"
+  }
 }

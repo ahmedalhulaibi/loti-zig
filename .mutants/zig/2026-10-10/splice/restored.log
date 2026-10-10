@@ -1,0 +1,7 @@
+test_literal_oracle_and_typed_invalid_inputs (tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs) ... ok
+test_splice_bytes_cursors_and_partial_progress (tests.test_splice.SpliceContracts.test_splice_bytes_cursors_and_partial_progress) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.791s
+
+OK

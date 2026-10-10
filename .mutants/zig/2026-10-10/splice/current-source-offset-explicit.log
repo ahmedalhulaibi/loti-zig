@@ -1,0 +1,22 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0, "successful": false}
+test_literal_oracle_and_typed_invalid_inputs (tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs) ... FAIL
+
+======================================================================
+FAIL: test_literal_oracle_and_typed_invalid_inputs (tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_splice.py", line 76, in test_literal_oracle_and_typed_invalid_inputs
+    self.assertEqual(json.loads(run("reference-splice", fixture).stdout), literal)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-splice exited 1: error: CurrentSplicePositionMismatch
+/home/ahmed/workspace/va/loti-zig/examples/reference_splice.zig:134:39: 0x12084ed in main (reference_splice.zig)
+    if (current_after != prefix_size) return error.CurrentSplicePositionMismatch;
+                                      ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.065s
+
+FAILED (failures=1)

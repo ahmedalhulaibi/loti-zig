@@ -15,6 +15,7 @@ REGISTER = "examples/reference_registration.zig"
 PREPARE = "examples/reference_submission.zig"
 FILES = "examples/reference_files.zig"
 BUFFERS = "examples/reference_buffers.zig"
+SPLICE = "examples/reference_splice.zig"
 RAW = "examples/reference_raw.zig"
 
 PREPARERS = {
@@ -166,6 +167,8 @@ def generate():
                     difference = "No ring.readv method: call ring.read with ReadBuffer.iovecs."
                 elif method == "splice":
                     difference = "Offsets are u64 values, not pointers; maxInt(u64) means current position. Set splice flags in SQE rw_flags. One descriptor must be a pipe."
+                    example = SPLICE
+                    scope = "constructed and submitted; file/pipe/pipe transfers, forced partial progress, source/destination value-offset cursor semantics, EOF and six negative CQEs checked; private 4096-byte pipes and memfd destination only"
                 if method in {"readv", "writev", "fsync", "close", "openat", "fallocate", "statx"}:
                     example = FILES
                     scope = "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence"
