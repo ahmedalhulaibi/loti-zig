@@ -1,0 +1,27 @@
+{
+  "scope": "Absent effect verification, not a reproduced native SPLICE implementation defect. Existing mixed constructor batch is intentionally never submitted.",
+  "source_commit": "888222686b8853f6d3bd892766734c7624edcd43",
+  "constructor": {
+    "tag": 14,
+    "operation": "SPLICE",
+    "length": 4096,
+    "flags": 0,
+    "buffer_index": 0
+  },
+  "missing_executable": "reference-splice",
+  "binding": {
+    "original": "io_uring_prep_splice",
+    "zig": "std.os.linux.IoUring.splice",
+    "example": "examples/reference_submission.zig",
+    "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+    "semantic_difference": "Offsets are u64 values, not pointers; maxInt(u64) means current position. Set splice flags in SQE rw_flags. One descriptor must be a pipe.",
+    "declaration_source": "os/linux/IoUring.zig",
+    "zig_signature": "pub fn splice(self: *IoUring, user_data: u64, fd_in: linux.fd_t, off_in: u64, fd_out: linux.fd_t, off_out: u64, len: usize) !*linux.io_uring_sqe"
+  },
+  "original_block": "ref-liburing/submission.rst:418",
+  "source_sha256": {
+    "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
+    "build.zig": "2ec0a4f3d4f6c1d844fd4e0dc3229e36998694ac4a655af4a63470c8aa5dacd9",
+    "ref-zig/submission.rst": "91cc49515bdf7c822b9adad5ee635ed3c4ca58d2654d2a9041549eb2c55938fb"
+  }
+}
