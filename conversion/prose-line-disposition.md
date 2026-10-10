@@ -54,7 +54,7 @@ constructor-only and unverified scopes remain in `reference-block-disposition.md
 | `ref-iouring/io_uring_setup.rst:247-256` | `ref-iouring/io_uring_setup.rst` | Owned setup descriptor used for map/register/enter; native teardown closes and unmaps, application operand ownership remains separate |
 | `ref-iouring/io_uring_setup.rst:268-292` | `ref-iouring/io_uring_setup.rst` | Errors: invalid reserved/options/sizing, descriptor/memory limits, privileges or execution policy; named wrapper errors and related-call links replace C return/errno conventions |
 | `ref-iouring/io_uring_enter.rst:1-41` | `ref-iouring/io_uring_enter.rst` | Native submit/wait/count contract, ordinary CQ inspection and IOPOLL distinction; consumed submissions are not operation results or CQ consumption |
-| `ref-iouring/io_uring_enter.rst:53-56` | `ref-iouring/io_uring_enter.rst` | Optional atomic signal mask and restoration retained; ordinary and EXT_ARG layouts/size separated; delivered-signal test still open |
+| `ref-iouring/io_uring_enter.rst:53-56` | `ref-iouring/io_uring_enter.rst` | Optional atomic signal mask and restoration retained; ordinary and EXT_ARG layouts/size separated; SIGUSR1/EXT_ARG pending delivery, timeout/restoration and null-mask semantics now checked; ordinary-enter delivery and broader policies remain unverified |
 | `ref-iouring/io_uring_enter.rst:116-192` | `ref-zig/submission.rst` | NOP, scalar/vectored/fixed I/O, fsync ordering, one-shot readiness/removal, epoll_ctl, range sync and sockets all map to native methods/helpers; operation flags differ from SQE dependency flags |
 | `ref-iouring/io_uring_enter.rst:194-250` | `ref-zig/submission.rst` | Timers/cancellation: stable timespec, time/count/absolute modes and distinct target/remover completions; linked timer is not CQ wait; count-zero semantics corrected |
 | `ref-iouring/io_uring_enter.rst:253-317` | `ref-zig/submission.rst` | Connect, allocation/advice, open/close/statx and scalar I/O retain typed operands/lifetimes; SDK preparers avoid obsolete handwritten overlapping-field encodings |
@@ -139,7 +139,7 @@ reference sources. DONE markers are not reused as verification evidence.
   reference declarations. Constructor-only coverage is still constructor-only.
 - Sequential sparse/removal/replacement, closed application FD, async restore and
   unregistered-table effects now have exact fixed-read/CQE checks. Concurrent or
-  partial multi-entry updates, delivered signals/restoration
+  partial multi-entry updates, broader signal/ordinary-enter policies
   and forced partial-I/O/state paths still need checks.
 - All-line author note coverage closes the bookkeeping omission, not semantic
   acceptance. Independent review remains blocked; no review report exists.

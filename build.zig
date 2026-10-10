@@ -23,6 +23,7 @@ pub fn build(b: *std.Build) void {
         .{ "webserver", "webserver" },
         .{ "reference-setup", "reference_setup" },
         .{ "reference-completion", "reference_completion" },
+        .{ "reference-signals", "reference_signals" },
         .{ "reference-registration", "reference_registration" },
         .{ "reference-submission", "reference_submission" },
         .{ "reference-raw", "reference_raw" },

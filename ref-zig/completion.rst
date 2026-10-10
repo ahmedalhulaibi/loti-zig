@@ -55,6 +55,45 @@ reports timer expiration. An enter deadline limits the wait itself. A signal
 mask is installed atomically for the wait and restored afterwards; setting it
 with separate calls would leave a signal race.
 
+Delivered signals and mask restoration
+--------------------------------------
+
+``reference-signals`` starts with a private blocked ``SIGUSR1`` and sends it to
+the calling thread with ``tgkill``. The pending bit is observed before entering
+the wait: no sleep or concurrent sender is needed. A temporary mask that unblocks
+``SIGUSR1`` produces a real handler invocation and ``error.WaitInterrupted``.
+The handler records its active mask using a native syscall and lock-free atomics;
+it performs no allocation or I/O. The signal itself produces **no CQE**.
+
+The caller mask contains ``SIGUSR1``/``SIGUSR2``. Wait masks use ``SIGWINCH`` as
+an extra sentinel, so exact before/after masks detect incomplete restoration.
+The handler sees the temporary mask plus its automatically blocked signal;
+the caller's mask is restored after the handler returns. Another pending signal
+stays blocked across a deadline with a different non-null mask and then a null
+mask. **Null is not an empty mask**: it leaves the caller mask in force.
+
+A prepared NOP remains in SQ throughout both expired waits, proving the helper
+does not submit it. Explicit unblocking delivers the pending signal; only an
+explicit submit produces the correlated NOP CQE. The example restores the saved
+kernel action and complete original mask and checks both. It uses the raw kernel
+action for exact restoration because the SDK installer adds a restorer flag.
+This owns ``SIGUSR1`` in a fresh process, not arbitrary application-wide handlers;
+it does not establish sender races, every signal or restart policy.
+
+.. code-block:: console
+
+   zig build
+   zig-out/bin/reference-signals
+
+.. literalinclude:: ../examples/reference_signals.zig
+   :language: zig
+   :caption: Pending signals, interrupted/expired waits and exact restoration
+
+``tests/test_signals.py`` compares the whole report with a committed symbolic
+fixture resolved using Python's independent signal definitions. It checks pending
+bits, handler counts/masks, both restored wait masks, original process state,
+unchanged queued NOP and actual recovery CQE. It also checks exact argument errors.
+
 Exact native declarations
 -------------------------
 
@@ -93,5 +132,6 @@ and timer CQE ``-62``. Model-based Hypothesis commands then vary the nonblocking
 capacity sequence: ``count = min(capacity, remaining)``, readiness falls by that
 count, and CQ head rises exactly once. Full-SQ rejection preserves pending/tail
 state; all tags 10–17 are consumed exactly once. Invalid plans have exact errors.
-These checks do not establish delivered signals/mask restoration, u32 counter
-wrap, multishot, CQ overflow, SQPOLL interleavings or concurrent-consumer safety.
+The separate signal reference above covers pending delivery and mask restoration.
+Neither reference establishes u32 counter wrap, multishot, CQ overflow,
+SQPOLL interleavings or concurrent-consumer safety.

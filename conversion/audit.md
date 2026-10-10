@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 24 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 16 native executables; exact compiler gate; 33/33 build steps; 26 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -74,9 +74,9 @@ The comparison found missing per-I/O `linux.RWF` / `sqe.rw_flags` guidance;
 rows still separate preparation from effects. Changed-descriptor registered-file
 reads now have actual sync replacement/async restore and ownership checks.
 Probe listing flags/bounds now have an independent oracle. Full-SQ rejection and
-populated nonblocking CQ now have bounded exact/model checks. Delivered signals,
-mask restoration, u32 wrap, CQ overflow and broader failure/interleaving checks
-remain open.
+populated nonblocking CQ now have bounded exact/model checks. SIGUSR1/EXT_ARG
+pending delivery and full mask restoration now run. Broader signal/restart and
+ordinary-enter policies, u32 wrap, CQ overflow and failure/interleavings remain open.
 
 The original copy's `BLKGETSIZE64` input feature is now recreated and executed
 against disposable read-only virtual disks. Native `cp` accepts regular or block
@@ -221,15 +221,50 @@ navigation is unavailable/stale; direct bodies and CLI/test/book consumers were
 inspected. One CLI crosses consumer folders, not domain modules. Author checks
 remain separate from blocked independent review; no reviewer retry occurred.
 
+## Pending signals and complete wait-mask restoration
+
+`eb20efe` records absent runtime evidence. New `reference-signals` owns SIGUSR1
+in a fresh process: `tgkill` queues it to the blocked calling thread before entry.
+No sleep/concurrent sender is used. EXT_ARG temporarily unblocks it and produces
+actual handler delivery plus `WaitInterrupted`; handler/caller masks are observed.
+USR2/WINCH sentinels distinguish complete masks from a single-bit check.
+
+A second signal stays pending across blocked-mask and null-mask deadline expiry.
+The queued NOP remains unsubmitted in both waits. Explicit unblocking delivers
+it; explicit submission then yields tag 1/result 0/flags 0. Original mask/kernel
+action are restored and independently queried, including restorer flags.
+Native rollback errors propagate instead of being silently discarded.
+`signal-wait-verification.json` pins the full report, all source/fixture hashes,
+current kernel/compiler and **25 fresh passing processes**. The fixture resolves
+symbolic masks with Python's independent signal definitions and queries the
+parent's initial mask without changing it.
+
+Seven compiled mutants die: ignored mask, zero mask size, EINTR misreported,
+signal left blocked, wrong original-mask restore, SDK restore adding RESTORER,
+and hidden SQ submission. Both edited native sources were restored byte-exactly;
+rebuilt passing baseline and logs are in `mutation-signal-waits.json`.
+This is not ordinary-enter, asynchronous-sender race, all-signal/restart-policy,
+cross-architecture or historical-kernel attestation. Broader paths remain open.
+
+The first full suite rejected stale publication literal count 105; the verifier
+reported 107 for the two new signal console/source literals. The exact consumer
+contract was updated and the final **34-test** suite passed. An auxiliary check
+initially used system Python without Hypothesis; `.venv` corrected the command,
+not native code. Current source/test/build LSP probes are clean. Fabric call
+navigation is unavailable/stale; direct bodies and explicit build/test/book
+consumers were inspected. This is one signal-wait concern across consumer
+folders, not separate domain modules. Independent review remains blocked; no
+unsupported-host retry or replacement reviewer was launched.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **32 passed**
-  (24 native + one VM + two publication + three inventory + two line-index tests), zero skips,
+- Compiler: **0.17.0**. Build: **33/33**. Current complete suite: **34 passed**
+  (26 native + one VM + two publication + three inventory + two line-index tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
-- Five reference executables: `reference-setup`, `reference-completion`,
-  `reference-registration`, `reference-submission`, `reference-raw`.
+- Six reference executables: `reference-setup`, `reference-completion`,
+  `reference-signals`, `reference-registration`, `reference-submission`, `reference-raw`.
 - Readers/copy: whole binary bytes, argument order, empty/boundary-size inputs,
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs;
@@ -237,7 +272,7 @@ remain separate from blocked independent review; no reviewer retry occurred.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  six properties**, source hashes, 32 passing tests and zero skips. These remain
+  six properties**, source hashes, 34 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -277,7 +312,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **105 current literal blocks** match Sphinx's source, independently of the
+- **107 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.
@@ -294,7 +329,7 @@ git diff --check
 ## Next work
 
 1. Obtain semantic acceptance of the author line/block comparisons; inspect
-   operation/lifetime gaps, including signals, queue state and forced short-I/O.
+   operation/lifetime gaps, including broader signal/ordinary-enter policies, queue state and forced short-I/O.
 2. Extend failure/state checks and execute bounded source mutation verification.
 3. Obtain independent review and resolve findings; do not substitute parent checks.
 4. Rebuild/audit final artifacts, push only the personal fork, verify remote state.

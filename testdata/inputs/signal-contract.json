@@ -1,0 +1,23 @@
+{
+  "interrupted": {
+    "mask": ["SIGUSR2", "SIGWINCH"], "result": "WaitInterrupted",
+    "before": {"pending": true, "delivered": 0, "mask": ["SIGUSR1", "SIGUSR2"], "sq_ready": 0, "cq_ready": 0},
+    "after": {"pending": false, "delivered": 1, "mask": ["SIGUSR1", "SIGUSR2"], "sq_ready": 0, "cq_ready": 0}
+  },
+  "blocked_timeout": {
+    "mask": ["SIGUSR1", "SIGWINCH"], "result": "WaitTimedOut",
+    "before": {"pending": true, "delivered": 1, "mask": ["SIGUSR1", "SIGUSR2"], "sq_ready": 1, "cq_ready": 0},
+    "after": {"pending": true, "delivered": 1, "mask": ["SIGUSR1", "SIGUSR2"], "sq_ready": 1, "cq_ready": 0}
+  },
+  "null_timeout": {
+    "mask": null, "result": "WaitTimedOut",
+    "before": {"pending": true, "delivered": 1, "mask": ["SIGUSR1", "SIGUSR2"], "sq_ready": 1, "cq_ready": 0},
+    "after": {"pending": true, "delivered": 1, "mask": ["SIGUSR1", "SIGUSR2"], "sq_ready": 1, "cq_ready": 0}
+  },
+  "handler_masks": [["SIGUSR1", "SIGUSR2", "SIGWINCH"], ["SIGUSR1", "SIGUSR2"]],
+  "released": {"pending": false, "delivered": 2, "mask": ["SIGUSR2"], "sq_ready": 1, "cq_ready": 0},
+  "submitted": 1,
+  "nop": {"user_data": 1, "result": 0, "flags": 0},
+  "sq_ready": 0, "cq_ready": 0,
+  "original_action_restored": true, "original_mask_restored": true
+}

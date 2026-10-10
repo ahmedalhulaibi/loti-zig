@@ -1,0 +1,117 @@
+{
+  "scope": "Seven compiled native signal-reference/shared-wait-helper mutations; not whole-port or SDK mutation assessment, asynchronous sender-race or every signal/restart policy coverage, or independent review.",
+  "source_sha256": {
+    "examples/reference_signals.zig": "b895a7413d564d6b185cfe9eee7b67f252b123dde2920457e9c2b0d2ff2bc44c",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca"
+  },
+  "mutants": [
+    {
+      "mutant": "ignored-wait-mask",
+      "source": "examples/raw_ops.zig",
+      "source_sha256": "be30b59ae1d7d2bc94490038ff5960286de3b4140ed68234c94467930fe95b9f",
+      "compiled": true,
+      "test_command": ".venv/bin/python -m unittest tests.test_signals -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/signal-waits/ignored-wait-mask.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: UnexpectedSignalWaitResult"
+      }
+    },
+    {
+      "mutant": "wrong-mask-size",
+      "source": "examples/raw_ops.zig",
+      "source_sha256": "98610e41c9edc59c4e3d6b941a5e049e00c655d0dfb348edad2ba7f3954c412a",
+      "compiled": true,
+      "test_command": ".venv/bin/python -m unittest tests.test_signals -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/signal-waits/wrong-mask-size.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: UnexpectedSignalWaitResult"
+      }
+    },
+    {
+      "mutant": "interruption-misreported",
+      "source": "examples/raw_ops.zig",
+      "source_sha256": "210d05f08df62cdcd939afb0c4b85b6cf65c9f26e96f398506c2652fcf17e49b",
+      "compiled": true,
+      "test_command": ".venv/bin/python -m unittest tests.test_signals -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/signal-waits/interruption-misreported.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: UnexpectedSignalWaitResult"
+      }
+    },
+    {
+      "mutant": "signal-stays-blocked",
+      "source": "examples/reference_signals.zig",
+      "source_sha256": "96a8bcbd52cf2847c3296a4d16f7c995bcaf60c4ddf8907b1ad8453cafe9431a",
+      "compiled": true,
+      "test_command": ".venv/bin/python -m unittest tests.test_signals -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/signal-waits/signal-stays-blocked.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: UnexpectedSignalWaitResult"
+      }
+    },
+    {
+      "mutant": "initial-mask-not-restored",
+      "source": "examples/reference_signals.zig",
+      "source_sha256": "e8442e6fdd88fabb4c894ba0294300763e3f53573f5de1e703f135667ccbe6ad",
+      "compiled": true,
+      "test_command": ".venv/bin/python -m unittest tests.test_signals -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/signal-waits/initial-mask-not-restored.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: SignalProcessStateNotRestored"
+      }
+    },
+    {
+      "mutant": "sdk-restore-adds-restorer",
+      "source": "examples/reference_signals.zig",
+      "source_sha256": "cc93e02dec394374718239ef484e1e9b848a924b4c565f2533678b7f01484a4c",
+      "compiled": true,
+      "test_command": ".venv/bin/python -m unittest tests.test_signals -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/signal-waits/sdk-restore-adds-restorer.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: SignalProcessStateNotRestored"
+      }
+    },
+    {
+      "mutant": "hidden-sqe-submission",
+      "source": "examples/raw_ops.zig",
+      "source_sha256": "0efc52c837a2120ce1ae218b0bab4ace0e7a40e9b00944daf5d33cd951e4fcc1",
+      "compiled": true,
+      "test_command": ".venv/bin/python -m unittest tests.test_signals -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/signal-waits/hidden-sqe-submission.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: WaitUnexpectedlySucceeded"
+      }
+    }
+  ],
+  "exact_sources_restored": true,
+  "restored_test_exit_status": 0,
+  "log_normalization": "Trailing whitespace and final empty lines removed; substantive output unchanged."
+}

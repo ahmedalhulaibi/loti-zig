@@ -32,6 +32,14 @@ the mask, entering and restoring it leaves a signal race. ``linux.io_uring_enter
 supplies the ordinary mask ABI size; the EXT_ARG form has a different argument
 layout. Repository ``raw_ops.wait_with_timeout`` uses ``linux.syscall6`` and
 ``linux.io_uring_getevents_arg`` for EXT_ARG, not an incompatible cast of ``sig``.
+
+The :ref:`signal reference <completion>` queues a blocked ``SIGUSR1`` before
+EXT_ARG entry, then temporarily unmasks it. Actual handler delivery yields
+``WaitInterrupted``; the saved caller mask returns after the handler. Blocked
+and null-mask waits expire with the signal still pending, and neither submits
+a queued NOP. Complete masks, handler state and later recovery CQE are checked.
+This is a bounded pending-signal example, not a concurrent-sender/restart-policy
+attestation. Ordinary non-EXT_ARG delivered-signal behaviour remains untested.
 See :ref:`completion` for its compiled use and Linux 5.11+ deadline requirement.
 
 Publication and lifetimes

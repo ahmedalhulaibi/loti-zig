@@ -1,0 +1,28 @@
+test_pending_signal_delivery_and_wait_mask_restoration (tests.test_signals.SignalContracts.test_pending_signal_delivery_and_wait_mask_restoration) ... FAIL
+test_signal_reference_rejects_arguments (tests.test_signals.SignalContracts.test_signal_reference_rejects_arguments) ... ok
+
+======================================================================
+FAIL: test_pending_signal_delivery_and_wait_mask_restoration (tests.test_signals.SignalContracts.test_pending_signal_delivery_and_wait_mask_restoration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_signals.py", line 32, in test_pending_signal_delivery_and_wait_mask_restoration
+    self.assertEqual(json.loads(run("reference-signals").stdout), expected_report())
+                                ~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-signals exited 1: error: UnexpectedSignalWaitResult
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:98:29: 0x11ece9e in wait (reference_signals.zig)
+    if (result != expected) return error.UnexpectedSignalWaitResult;
+                            ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:122:25: 0x11ee28b in observe (reference_signals.zig)
+    const interrupted = try wait(ring, &unblocked, error.WaitInterrupted);
+                        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_signals.zig:173:9: 0x11f02b6 in main (reference_signals.zig)
+        return err;
+        ^
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.178s
+
+FAILED (failures=1)

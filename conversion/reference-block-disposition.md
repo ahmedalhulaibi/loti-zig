@@ -35,8 +35,8 @@ evidence: `raw-mapping-verification.json`. Prefixes below are repository paths.
 | `ref-liburing/completion.rst:11` | `examples/cat.zig` and `reference_completion.zig`: result/tag processing retained; copied CQE consumes automatically | E; explicit difference prevents a second acknowledgement |
 | `ref-liburing/completion.rst:45` | `copy_cqe`: wait, return owned value, consume; error union instead of errno/output pointer | S/E; first NOP CQE and timer CQE |
 | `ref-liburing/completion.rst:60` | `copy_cqes(destination, wait_nr)`: actual count, not guaranteed exact batch size | S/E; loop gathers tags 1–4; no borrowed pointer return |
-| `ref-liburing/completion.rst:76` | `raw_ops.wait_with_timeout`: EXT_ARG relative deadline and optional atomic mask | E for expiry/empty non-null mask; explicit submission required; no hidden SQE/reserved tag; delivered signals/restoration open |
-| `ref-liburing/completion.rst:97` | Same helper with minimum 1/null mask replaces timeout-only convenience | S; null and non-null masks expressible; expiry execution uses empty non-null mask |
+| `ref-liburing/completion.rst:76` | `raw_ops.wait_with_timeout`: EXT_ARG relative deadline and optional atomic mask | E; pending thread signal delivers handler and WaitInterrupted; blocked/non-null and null-mask deadlines expire; full mask/handler state restored; queued NOP stays unsubmitted; bounded SIGUSR1/EXT_ARG scope |
+| `ref-liburing/completion.rst:97` | Same helper with minimum 1/null mask replaces timeout-only convenience | S/E; null mask really preserves blocked caller mask while signal stays pending; non-null mask also expires with exact restoration; null is not an empty mask |
 | `ref-liburing/completion.rst:103` | One-element `copy_cqes(..., 0)` replaces nonblocking peek and consumes returned value | S/E; zero-capacity/populated singleton/empty singleton paths executed; count/head/readiness and once-only tag consumption checked |
 | `ref-liburing/completion.rst:118` | `copy_cqes(..., 0)` for batch; borrowed alternative documented with `cq_ready`/mask | S/E; destination-bounded populated nonblocking copies and physical CQ wrap executed; generated capacity commands checked against independent drain model; not u32 wrap or concurrency |
 | `ref-liburing/completion.rst:134` | Direct `cqe.user_data` u64 tag replaces foreign pointer extraction | E; correlation tags checked; tag does not extend operand lifetime |
@@ -120,7 +120,7 @@ Implicit includes/layout snippets are already in `implicit-literal-disposition.m
 | Original block ID | Native replacement and semantic comparison | Evidence / limit |
 |---|---|---|
 | `ref-iouring/io_uring_setup.rst:15` | `linux.io_uring_setup(entries, params)`; errno-encoded usize and owned FD | S/E; real raw setup and mappings; parameter input/output roles updated |
-| `ref-iouring/io_uring_enter.rst:15` | `linux.io_uring_enter`: counts submissions, does not consume CQEs; mask size supplied by SDK | S/E; raw reader; EXT_ARG uses explicit syscall6/different structure; signals/IOPOLL limits open |
+| `ref-iouring/io_uring_enter.rst:15` | `linux.io_uring_enter`: counts submissions, does not consume CQEs; mask size supplied by SDK | S/E; raw reader; EXT_ARG uses explicit syscall6/different structure; EXT_ARG pending-signal delivery/restore now executed; ordinary-enter signal delivery and IOPOLL remain unverified |
 | `ref-iouring/io_uring_register.rst:15` | `linux.io_uring_register`: typed opcode, optional argument, opcode-specific count/result | S/E; buffers/files/eventfd/probe/personality; returned ID/count distinguished from zero success |
 
 ## Audit observations
@@ -131,7 +131,9 @@ Implicit includes/layout snippets are already in `implicit-literal-disposition.m
   restore/removal/unregistration checks. Concurrent updates, partial multi-entry
   failure still need checks. Probe listing/lookup now has complete named-flag and
   synthetic-bounds oracles; independent agent review remains blocked.
-- Delivered signals and mask restoration/interruption still need checks.
+- SIGUSR1 pending delivery, EXT_ARG interruption/timeout mask restoration and
+  null-mask behaviour now run; concurrent senders, other signals/restart modes
+  and ordinary-enter delivered-signal paths remain unverified.
   Populated nonblocking CQ and full-SQ rejection now have boundary/model checks;
   u32 wrap, CQ overflow and concurrent/SQPOLL interleavings remain open. Ordinary
   teardown does not prove cleanup after every partial-construction failure.

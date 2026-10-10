@@ -1,0 +1,184 @@
+{
+  "scope": "Current-kernel SIGUSR1 pending delivery, EXT_ARG EINTR/deadline/null-mask behaviour, full mask/action restoration and explicit NOP recovery. No ordinary-enter, external-sender race, every signal/restart-policy, cross-architecture/historical-kernel or independent-review claim.",
+  "compiler": "0.17.0",
+  "kernel": "7.2.3-arch1-3",
+  "architecture": "x86_64",
+  "command": "zig-out/bin/reference-signals",
+  "report": {
+    "mask_bytes": 8,
+    "initial_mask": 0,
+    "interrupted": {
+      "mask": 134219776,
+      "result": "WaitInterrupted",
+      "before": {
+        "pending": true,
+        "delivered": 0,
+        "mask": 2560,
+        "sq_ready": 0,
+        "cq_ready": 0
+      },
+      "after": {
+        "pending": false,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 0,
+        "cq_ready": 0
+      }
+    },
+    "blocked_timeout": {
+      "mask": 134218240,
+      "result": "WaitTimedOut",
+      "before": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 0
+      },
+      "after": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 0
+      }
+    },
+    "null_timeout": {
+      "mask": null,
+      "result": "WaitTimedOut",
+      "before": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 0
+      },
+      "after": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 0
+      }
+    },
+    "handler_masks": [
+      134220288,
+      2560
+    ],
+    "released": {
+      "pending": false,
+      "delivered": 2,
+      "mask": 2048,
+      "sq_ready": 1,
+      "cq_ready": 0
+    },
+    "submitted": 1,
+    "nop": {
+      "user_data": 1,
+      "result": 0,
+      "flags": 0
+    },
+    "sq_ready": 0,
+    "cq_ready": 0,
+    "original_action_restored": true,
+    "original_mask_restored": true
+  },
+  "expected": {
+    "interrupted": {
+      "mask": 134219776,
+      "result": "WaitInterrupted",
+      "before": {
+        "pending": true,
+        "delivered": 0,
+        "mask": 2560,
+        "sq_ready": 0,
+        "cq_ready": 0
+      },
+      "after": {
+        "pending": false,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 0,
+        "cq_ready": 0
+      }
+    },
+    "blocked_timeout": {
+      "mask": 134218240,
+      "result": "WaitTimedOut",
+      "before": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 0
+      },
+      "after": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 0
+      }
+    },
+    "null_timeout": {
+      "mask": null,
+      "result": "WaitTimedOut",
+      "before": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 0
+      },
+      "after": {
+        "pending": true,
+        "delivered": 1,
+        "mask": 2560,
+        "sq_ready": 1,
+        "cq_ready": 0
+      }
+    },
+    "handler_masks": [
+      134220288,
+      2560
+    ],
+    "released": {
+      "pending": false,
+      "delivered": 2,
+      "mask": 2048,
+      "sq_ready": 1,
+      "cq_ready": 0
+    },
+    "submitted": 1,
+    "nop": {
+      "user_data": 1,
+      "result": 0,
+      "flags": 0
+    },
+    "sq_ready": 0,
+    "cq_ready": 0,
+    "original_action_restored": true,
+    "original_mask_restored": true,
+    "mask_bytes": 8,
+    "initial_mask": 0
+  },
+  "fresh_process_executions": 25,
+  "source_sha256": {
+    "build.zig": "53ec335fb1024eea53d3fde047fdfcb08a26b2a959cde63c864d307d09de0b8b",
+    "examples/reference_signals.zig": "b895a7413d564d6b185cfe9eee7b67f252b123dde2920457e9c2b0d2ff2bc44c",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
+    "tests/test_publication.py": "59ba89156726bbc16c71127a7968612b229ad4efc54cf438fcdac66b3b348f28",
+    "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
+    "testdata/inputs/signal-invalid-arguments.json": "6ef7a293b412e6da43cd05f57b81c26b34a6bde8631879e8dce77fce6018c55c"
+  },
+  "sdk_source_sha256": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+  "signal_fixture_scope": "Symbolic masks resolved independently using Python signal definitions; initial mask queried from parent thread without changing it.",
+  "mutation_report": "conversion/mutation-signal-waits.json",
+  "native_mutants_compiled_and_killed": 7,
+  "negative_cases": 2,
+  "change_boundary": "New native reference with build/test/book/README consumers; one signal-wait concern, not separate domain modules.",
+  "navigation_evidence": "Fabric transitive-call tools unavailable and cached graph stale; current source bodies and explicit consumers inspected, active LSP probes used.",
+  "environment_correction": "An initial standalone Python check lacked Hypothesis; the required .venv interpreter was used. No native execution failed in that check.",
+  "publication_count_correction": "The first full suite rejected stale expected literal count 105. Verifier independently reported 107 after the new signal console/source literals; the exact publication contract was updated and this complete suite passed."
+}

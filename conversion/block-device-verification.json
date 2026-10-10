@@ -126,7 +126,7 @@
     }
   ],
   "source_sha256": {
-    "build.zig": "9885ee266f5d47ebbce93cbe8bfb3f73e38b1967d1623aad27a78339f66b4e1e",
+    "build.zig": "53ec335fb1024eea53d3fde047fdfcb08a26b2a959cde63c864d307d09de0b8b",
     "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
