@@ -1,0 +1,63 @@
+{
+  "scope": "Existing passing constructor execution, not submitted file-operation effects. New file-operation CLI absent at this checkpoint.",
+  "source_commit": "12f67d877eb770015e5043f5b90f6f1e2d4f24c5",
+  "compiler": "0.17.0",
+  "constructor_command": "zig-out/bin/reference-submission testdata/inputs/registration-original.txt",
+  "constructors": [
+    {
+      "tag": 4,
+      "operation": "READV",
+      "length": 1,
+      "flags": 0,
+      "buffer_index": 0
+    },
+    {
+      "tag": 5,
+      "operation": "WRITEV",
+      "length": 1,
+      "flags": 0,
+      "buffer_index": 0
+    },
+    {
+      "tag": 6,
+      "operation": "FSYNC",
+      "length": 0,
+      "flags": 0,
+      "buffer_index": 0
+    },
+    {
+      "tag": 7,
+      "operation": "CLOSE",
+      "length": 0,
+      "flags": 0,
+      "buffer_index": 0
+    },
+    {
+      "tag": 8,
+      "operation": "OPENAT",
+      "length": 0,
+      "flags": 0,
+      "buffer_index": 0
+    },
+    {
+      "tag": 10,
+      "operation": "FALLOCATE",
+      "length": 0,
+      "flags": 0,
+      "buffer_index": 0
+    },
+    {
+      "tag": 11,
+      "operation": "STATX",
+      "length": 512,
+      "flags": 0,
+      "buffer_index": 0
+    }
+  ],
+  "file_operations_cli_exists": false,
+  "source_sha256": {
+    "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
+    "conversion/reference-block-disposition.md": "131d33ee0aea77b0ea32d4cf40d2c7f74b723d62e1dc308584fc83ddf243a3a1"
+  }
+}
