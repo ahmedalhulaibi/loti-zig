@@ -59,11 +59,16 @@ class ReferenceContracts(unittest.TestCase):
     def test_registration_helpers_and_async_notification(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "input"
-            path.write_bytes(b"registration input\n")
+            path.write_bytes((Path(__file__).resolve().parent.parent / "testdata/inputs/registration-original.txt").read_bytes())
             self.assertEqual(json.loads(run("reference-registration", path).stdout), {
                 "buffers": True, "files_updated": True, "async_notifications": 1,
                 "personality_result": 0, "probe_nop": True, "standalone_probe_nop": True,
             })
+            replacement = Path(directory) / "replacement"
+            replacement.write_bytes((Path(__file__).resolve().parent.parent / "testdata/inputs/registration-replacement.txt").read_bytes())
+            rejected = run("reference-registration", path, replacement, success=False)
+            self.assertEqual(rejected.returncode, 1)
+            self.assertEqual(rejected.stderr.decode().splitlines()[0], "error: ExpectedInputFile")
 
     def test_every_preparation_has_the_expected_opcode_and_correlation_tag(self):
         expected = [

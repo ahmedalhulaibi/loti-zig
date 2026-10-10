@@ -1,0 +1,27 @@
+{
+  "scope": "Old reference demonstrates only an idempotent same-FD update and rejects a replacement input; not a defect claim about the native SDK operation.",
+  "source_commit": "8b2befac985f98ead3bd4cacae543f2f5910cd7a",
+  "compiler": "0.17.0",
+  "source_sha256": "0e1ea84655116300a0519bb4c30758942d931c810a22bcbfde859977190e8f33",
+  "inputs": {
+    "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
+    "testdata/inputs/registration-replacement.txt": "5f52cf151d72e08fb506215edf9498de680819fd2d5ed87c7daf59ca7765bcf0"
+  },
+  "legacy_report": {
+    "buffers": true,
+    "files_updated": true,
+    "async_notifications": 1,
+    "personality_result": 0,
+    "probe_nop": true,
+    "standalone_probe_nop": true
+  },
+  "replacement_cli_exit_status": 1,
+  "replacement_cli_error": "error: ExpectedInputFile",
+  "boundary_test": "tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification",
+  "full_suite": {
+    "tests": 27,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  }
+}
