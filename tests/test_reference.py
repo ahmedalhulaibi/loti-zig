@@ -13,6 +13,7 @@ from tests.test_examples import CASES, run
 ROOT = Path(__file__).resolve().parent.parent
 ORIGINAL_FIXTURE = (ROOT / "testdata/inputs/registration-original.txt").read_bytes()
 REPLACEMENT_FIXTURE = (ROOT / "testdata/inputs/registration-replacement.txt").read_bytes()
+COMPLETION_PLANS = json.loads((ROOT / "testdata/inputs/completion-plans.json").read_text())
 
 
 class ReferenceContracts(unittest.TestCase):
@@ -55,6 +56,22 @@ class ReferenceContracts(unittest.TestCase):
 
     def test_copy_and_manual_ack_are_distinct_and_deadline_really_expires(self):
         self.assertEqual(json.loads(run("reference-completion").stdout), {
+            "empty": 0, "pending": 4, "space": 4,
+            "copied": [1, 2, 3, 4], "manual": [5, 6, 7, 8],
+            "drained": 0, "timed_out": True, "timer_result": -62,
+        })
+
+    @settings(max_examples=CASES, deadline=None)
+    @given(capacities=st.lists(st.integers(min_value=0, max_value=8), max_size=30)
+           .map(lambda prefix: prefix + [8, 0]))
+    @example(capacities=COMPLETION_PLANS["default"])
+    @example(capacities=COMPLETION_PLANS["all_at_once"])
+    @example(capacities=COMPLETION_PLANS["singletons"])
+    @example(capacities=COMPLETION_PLANS["zeros"])
+    @example(capacities=COMPLETION_PLANS["wrap_boundary"])
+    def test_nonblocking_completion_capacities_follow_queue_model(self, capacities):
+        observed = json.loads(run("reference-completion", *map(str, capacities)).stdout)
+        self.assertEqual(observed, {
             "empty": 0, "pending": 4, "space": 4,
             "copied": [1, 2, 3, 4], "manual": [5, 6, 7, 8],
             "drained": 0, "timed_out": True, "timer_result": -62,
