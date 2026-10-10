@@ -1,0 +1,10 @@
+{
+  "scope": "Author unsealed syscall-parser correction, not changed behavioral expectations or independent-verifier acceptance. Original preimplementation snapshot retained.",
+  "reason": "Greedy (.*),(.*) splits inside an rlimit struct; both live kernel trace and synthetic fixture fail WrongCopyLimitTransitions. Capture NULL or complete rlim_cur/rlim_max structures explicitly.",
+  "original_test_sha256": "6d740bc834cbaa653543b2c229d2c516317b00a084a97cf84f41dfc97c25af33",
+  "amended_sha256": {
+    "tests/test_copy_short.py": "75e7e25ff6c83c7395c45703ff3515faf71cb7fe0c794a06cf47d81309b63fe5"
+  },
+  "fixtures_and_behavioral_expectations_unchanged": true,
+  "red_log": "/tmp/loti-copy-short-green-tests.log"
+}

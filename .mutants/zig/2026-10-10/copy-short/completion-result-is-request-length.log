@@ -1,0 +1,18 @@
+test_literal_and_typed_invalid_modes_preserve_owned_inputs (tests.test_copy_short.ShortCopyContracts.test_literal_and_typed_invalid_modes_preserve_owned_inputs)
+A whole pinned literal and input-error matrix catch mirror/late-validation/truncation regressions. ... FAIL
+
+======================================================================
+FAIL: test_literal_and_typed_invalid_modes_preserve_owned_inputs (tests.test_copy_short.ShortCopyContracts.test_literal_and_typed_invalid_modes_preserve_owned_inputs)
+A whole pinned literal and input-error matrix catch mirror/late-validation/truncation regressions.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_copy_short.py", line 102, in test_literal_and_typed_invalid_modes_preserve_owned_inputs
+    self.assertEqual(json.loads(run("cp", source, output, "--short-write", 2).stdout), literal)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'eve[387 chars]lt': 5, 'flags': 0}, 'done_before': 0, 'done_a[473 chars]': 5} != {'eve[387 chars]lt': 2, 'flags': 0}, 'done_before': 0, 'done_a[473 chars]': 5}
+Diff is 1716 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.016s
+
+FAILED (failures=1)

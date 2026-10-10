@@ -1,0 +1,11 @@
+{
+  "scope": "Author pre-implementation tests/fixtures snapshot, not ACL sealed or independent verifier-agent acceptance. Limits/syscall expectations provisional until executed.",
+  "sha256": {
+    "tests/test_copy_short.py": "6d740bc834cbaa653543b2c229d2c516317b00a084a97cf84f41dfc97c25af33",
+    "testdata/inputs/copy-short-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/copy-short-invalid-plans.json": "f38442f4ced176201efff9cadee24e88c68287f8dba7ca4307c1b251c671ba22",
+    "testdata/inputs/copy-short-invalid-traces.json": "83b2f8f82d96d44689fe32d9cf9bde5bc9fc040a03a4bc1018a362d9f2c94d40",
+    "testdata/inputs/copy-short-report.json": "7f29ef2dba8ca99f113d52d739fc34e598670ef13b991d604c4a9d7e6fc238f4",
+    "testdata/inputs/copy-short.trace": "a31ba71378ecd498fe17dedffac09c22c66d2c2bbc58bab49b8fd1cec1596203"
+  }
+}

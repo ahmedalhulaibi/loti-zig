@@ -9,8 +9,8 @@
     "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
     "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
-    "tools/reference_map.py": "93d094c634efad9b2a59800c126dc9c65e51f701e132d89b5117d120f61b8466",
-    "conversion/reference-map.json": "5d7435f2b49ae8179d8f974e1909d60cb48e5054ab4a67d1a2124449322d55fc",
+    "tools/reference_map.py": "edbd0559396af3cc76ac4653b9fdcf53d54bc7f584a6f175b6738622074e6c11",
+    "conversion/reference-map.json": "096c6d3e62e115f2f6d20a6da65905b4309e00e82c5746b7a847bdf8f252c174",
     "ref-zig/submission.rst": "1507474161e9a727f0076d16cb122e40a02032cce47d28c33ff4ccce7243f5ce",
     "testdata/inputs/splice-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
     "testdata/inputs/splice-partial.bin": "7456c2d90a90f290eef60a9724d811da38d479f5a6441990d9b41c4e94b634bb",
@@ -219,5 +219,13 @@
     ],
     "complete_suite": "68 tests/zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; owned block VM, CLI/TCP/reference/model/binding/publication contracts replayed.",
     "historical_scope": "Prior mutation records are historical tested versions, not automatically reassessed; no independent review is implied."
+  },
+  "replay_after_copy_short": {
+    "changed_source_consumers": [
+      "tools/reference_map.py",
+      "conversion/reference-map.json"
+    ],
+    "suite": "72 tests/zero failures/errors/skips; fourteen attributed properties x400 generated valid cases; normal scalar/block copy, isolated VM, other public CLI/reference/model/binding/publication contracts replayed.",
+    "scope": "Historical mutation pins retain tested-version scope, not automatically reassessed. No independent reviewer acceptance."
   }
 }

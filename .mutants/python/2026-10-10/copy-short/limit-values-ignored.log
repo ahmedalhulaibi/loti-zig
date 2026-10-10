@@ -1,0 +1,31 @@
+test_actual_process_limit_transitions_and_damaged_syscall_traces (tests.test_copy_short.ShortCopyContracts.test_actual_process_limit_transitions_and_damaged_syscall_traces)
+Kills cap bypass/early restore, changed hard/foreign process limits and synchronous file-write substitution. ...
+  test_actual_process_limit_transitions_and_damaged_syscall_traces (tests.test_copy_short.ShortCopyContracts.test_actual_process_limit_transitions_and_damaged_syscall_traces) (case='wrong_cap')
+Kills cap bypass/early restore, changed hard/foreign process limits and synchronous file-write substitution. ... FAIL
+  test_actual_process_limit_transitions_and_damaged_syscall_traces (tests.test_copy_short.ShortCopyContracts.test_actual_process_limit_transitions_and_damaged_syscall_traces) (case='hard_lowered')
+Kills cap bypass/early restore, changed hard/foreign process limits and synchronous file-write substitution. ... FAIL
+
+======================================================================
+FAIL: test_actual_process_limit_transitions_and_damaged_syscall_traces (tests.test_copy_short.ShortCopyContracts.test_actual_process_limit_transitions_and_damaged_syscall_traces) (case='wrong_cap')
+Kills cap bypass/early restore, changed hard/foreign process limits and synchronous file-write substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_copy_short.py", line 142, in test_actual_process_limit_transitions_and_damaged_syscall_traces
+    with self.assertRaises(ValueError) as raised:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_actual_process_limit_transitions_and_damaged_syscall_traces (tests.test_copy_short.ShortCopyContracts.test_actual_process_limit_transitions_and_damaged_syscall_traces) (case='hard_lowered')
+Kills cap bypass/early restore, changed hard/foreign process limits and synchronous file-write substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_copy_short.py", line 142, in test_actual_process_limit_transitions_and_damaged_syscall_traces
+    with self.assertRaises(ValueError) as raised:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.019s
+
+FAILED (failures=2)

@@ -24,7 +24,7 @@ sources, not separate handwritten copies. Tests/limits follow the table.
 | `tutorial/cat_liburing.rst:182` | `cat.main` | `IoUring.init(8, 0)` returns owned value/error union; deferred teardown |
 | `tutorial/cat_liburing.rst:188` | `cat.main` read/submit loop | `ReadBuffer.iovecs` selects READV, constructor assigns tag, submit separate; vectors stay valid through completion |
 | `tutorial/cat_liburing.rst:201` | `cat.main` completion loop | `copy_cqe` consumes automatically; no second seen acknowledgement; tag/error/actual byte count checked |
-| `tutorial/cp_liburing.rst:10` | `examples/cp.zig`, `examples/support.zig` | Two stable 16-KiB slots pipeline read/write with partial-progress state and tags; same-inode rejection before truncation. Native BLKGETSIZE64 now restores read-only block input; generated ioctl request encodes usize and returns u64; isolated VM verifies exact bytes. Destination restricted to regular files |
+| `tutorial/cp_liburing.rst:10` | `examples/cp.zig`, `examples/support.zig` | Two stable 16-KiB slots pipeline read/write with partial-progress state and tags; same-inode rejection before truncation. Native BLKGETSIZE64 now restores read-only block input; generated ioctl request encodes usize and returns u64; isolated VM verifies exact bytes. Destination restricted to regular files. Optional per-process RLIMIT_FSIZE now forces a positive short scalar WRITE in the same loop, with exact buffer/file-offset progress and limit restoration on success/selected error; single bounded regular slot only |
 | `tutorial/fixed_buffers.rst:8` | `examples/fixed_buffers.zig` | Four registered ranges, two writes then two reads, distinct indexes/tags; stable storage and unregister/teardown lifetimes |
 | `tutorial/fixed_buffers.rst:138` | `tutorial/fixed_buffers.rst`, fixed-buffer CLI test | Poem retained; actual byte lengths replace old numeric/C-string transcript; whole stdout/file checked |
 | `tutorial/link_liburing.rst:8` | `examples/link.zig` | Write/read/close dependency chain preserved; tags allow unordered CQ arrival; cancelled close retains application ownership; successful close prevents double-close |
@@ -61,7 +61,7 @@ sources, not separate handwritten copies. Tests/limits follow the table.
   redirected-stdout regression. `block-device-verification.json`: all four
   programs preserve bytes from four owned read-only virtio devices in an isolated
   x86_64 guest. Original copy's sizing feature is restored. Other device/ABI
-  combinations and forced short-I/O fault injection remain unverified.
+  combinations, forced short READ/vector writes and multi-slot partial interleavings remain unverified. Controlled single-slot scalar WRITE now runs through a process-local file-size cap.
 - HTTP: binary/empty files, MIME/length, indexes/queries, malformed/method/missing
   responses, traversal/encoded traversal/symlinks, fragments, limits, concurrency
   and a completing request beside a stalled client. No production security audit,

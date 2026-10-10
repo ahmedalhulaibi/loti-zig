@@ -1,0 +1,13 @@
+test_actual_process_limit_transitions_and_damaged_syscall_traces (tests.test_copy_short.ShortCopyContracts.test_actual_process_limit_transitions_and_damaged_syscall_traces)
+Kills cap bypass/early restore, changed hard/foreign process limits and synchronous file-write substitution. ... ok
+test_completed_bytes_advance_both_buffer_and_file_offset (tests.test_copy_short.ShortCopyContracts.test_completed_bytes_advance_both_buffer_and_file_offset)
+Kills requested-count progress, reset buffer/offset, premature slot retirement and fake short-write metadata. ... ok
+test_literal_and_typed_invalid_modes_preserve_owned_inputs (tests.test_copy_short.ShortCopyContracts.test_literal_and_typed_invalid_modes_preserve_owned_inputs)
+A whole pinned literal and input-error matrix catch mirror/late-validation/truncation regressions. ... ok
+test_actual_invalid_read_restores_and_queries_before_error_return (tests.test_copy_short_recovery.ShortCopyRecoveryContracts.test_actual_invalid_read_restores_and_queries_before_error_return)
+Kills exit-only cleanup, hidden restoration failure and unobserved/error-first resource rollback. ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.260s
+
+OK

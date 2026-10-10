@@ -13,6 +13,7 @@ SETUP = "examples/reference_setup.zig"
 COMPLETE = "examples/reference_completion.zig"
 REGISTER = "examples/reference_registration.zig"
 PREPARE = "examples/reference_submission.zig"
+COPY = "examples/cp.zig"
 FILES = "examples/reference_files.zig"
 BUFFERS = "examples/reference_buffers.zig"
 SPLICE = "examples/reference_splice.zig"
@@ -177,6 +178,10 @@ def generate():
                 if method in {"readv", "writev", "fsync", "close", "openat", "fallocate", "statx"}:
                     example = FILES
                     scope = "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence"
+                elif method in {"read", "write"}:
+                    example = COPY
+                    scope = "constructed and submitted; mutable scalar buffer fills before dependent copy writes, exact regular/block bytes and unchanged source; diagnostic invalid-FD READ restores process limits before typed error; not forced short READ or every race/failure" if method == "read" else "constructed and submitted; exact regular/block copy bytes; controlled positive short scalar WRITE independently checks buffer/file-offset progress, slot retirement and process-limit restoration on success; single bounded regular slot, not forced vector writes, physical ENOSPC or multi-slot partial/race assurance"
+                    difference = "Acquires/prepares an SQE and stores the slot tag; completed count, not requested length, advances both the retained slice and u64 file offset. Regular scalar slices here; ReadBuffer.iovecs is separate."
                 elif method in {"provide_buffers", "remove_buffers"}:
                     example = BUFFERS
                     scope = "constructed and submitted; selected bytes/flags, exhaustion, group isolation, recycling and actual removal counts checked; sequential nonempty regular-file reads only"

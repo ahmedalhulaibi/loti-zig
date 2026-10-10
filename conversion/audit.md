@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 24 native executables; exact compiler gate; 49/49 build steps; 50 native CLI/TCP/reference tests plus eight binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 24 native executables; exact compiler gate; 49/49 build steps; 53 native CLI/TCP/reference tests plus nine binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -674,8 +674,8 @@ sequential execution; no arbitrary peer or destructive host-storage operations.
 See `accept-spec-{initial-sha256,sha256}.json`, `accept-oracle-gap.json`,
 `accept-verification.json`, `mutation-accept.json` and retained runner log.
 
-Current bounded total: **140** (108 native, three line-index, sixteen trace-parser,
-seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+ACCEPT checkpoint bounded total: **140** (108 native, three line-index, sixteen trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). ACCEPT checkpoint gates:
 Zig0.17.0/49 build steps; 68 tests/zero failures/errors/skips; thirteen attributed
 400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/118 literals, 81
 browser cases/354 code blocks/324 headings without violations. Scope: current
@@ -687,10 +687,63 @@ consumers inspected; stale graph/Fabric unavailability do not imply complete
 callgraph coverage. Independent review remains blocked; no retry/fallback or
 push. Remaining semantic/state/failure acceptance and delivery keep goal open.
 
+## Real positive short regular-file copy writes
+
+`copy-short-reproduction.json` records unforced partial-write coverage, not a
+native/kernel defect: the existing copy loop already advances completed bytes.
+Original C copy's partial-I/O branch is at tutorial/cp_liburing.rst:191–197.
+Optional `cp INPUT OUTPUT --short-write LIMIT` now lowers only this process's
+soft RLIMIT_FSIZE; stable regular source2–16384 bytes, 0<LIMIT<size, original
+limit must permit completion. Validation precedes destination creation/truncate;
+ordinary two-slot/block copying remains unchanged. Owned files only, no host
+device/other-process/resource-hard-limit mutation or privilege requirement.
+
+One full READ precedes a real WRITE(size,offset0) CQE=LIMIT. The helper restores
+the exact saved limit before the same copy loop submits the remaining slice at
+offsetLIMIT. Only the completed tail retires the slot. Whole output/source bytes,
+prepared requests/CQEs and exact progress are compared with an independent
+binary/split model (400 valid cases) and whole pinned literal. Fourteen typed
+invalid plans preserve prior output/input. Actual prlimit/enter traces require
+four limit operations in order around three submissions and reject synchronous
+file-write substitutes; seven damaged traces fail. Optional `--fail-read` submits
+an invalid-FD READ after arming; actual restore and query precede the typed copy
+error. Four damaged recovery traces fail; parent limits/input stay unchanged.
+This supplemental recovery contract is author-written after the first core
+green implementation, not a preimplementation/ACL-sealed verifier artifact.
+
+Original author spec snapshot retained; one explicit unsealed parser amendment
+fixes greedy capture splitting inside an rlimit structure. Live and synthetic
+traces both exposed it; behavioral expectations/fixtures stayed exact. System
+Python's missing Hypothesis was a runner prerequisite error, not a mutant. Nine
+compiled native/four syntax-valid success/recovery parser mutants die through
+assertions, zero accepted errors/skips/compile failures. Buffer-reset mutation
+leaves metadata correct but corrupts real bytes; exact byte oracle kills it.
+All regressions used explicit literal inputs, no shrinking claim. Exact source
+restoration and rebuilt four-test baseline pass; baseline rebuilt after every
+mutant, including before Python cases. Sequential 4GiB/no-swap process scope.
+
+See `copy-short-spec-sha256.json`, `copy-short-spec-amendment.json`,
+`copy-short-verification.json`, `mutation-copy-short.json` and live success/error
+traces. Map/dispositions now separate scalar READ/WRITE effects; forced short WRITEV
+and forced short READ remain unattested. Scope: current regular filesystem,
+one active slot/split, no SIGXFSZ delivery, physical ENOSPC/full-device/crash
+durability, multi-slot partial ordering/races, every restoration failure or
+other kernels/architectures. Explicit source/SDK/build/CLI/test/map/book consumers
+inspected; stale graph/unavailable Fabric is not complete-callgraph proof.
+
+Current bounded total: **153** (117 native, three line-index, twenty trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+Zig0.17.0/49 build steps; 72 tests/zero failures/errors/skips; fourteen attributed
+400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/119 literals,
+81 browser cases/357 code blocks/327 headings without violations. Diagnostics
+and disposed import-root finding disclosed, not an unconditional clean verdict.
+Browser is not device/pagination/font overrides. Mandatory review still blocked;
+no retry/fallback/push. Semantic/state/failure acceptance and delivery remain open.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **49/49**. Current complete suite: **68 passed**
-  (50 native + one VM + four publication + three inventory + two line-index + eight binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **49/49**. Current complete suite: **72 passed**
+  (53 native + one VM + four publication + three inventory + two line-index + nine binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -705,7 +758,7 @@ push. Remaining semantic/state/failure acceptance and delivery keep goal open.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  thirteen properties**, source hashes, 68 passing tests and zero skips. These remain
+  fourteen properties**, source hashes, 72 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -745,7 +798,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **118 current literal blocks** match Sphinx's source, independently of the
+- **119 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.

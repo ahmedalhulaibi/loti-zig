@@ -1,0 +1,19 @@
+test_actual_invalid_read_restores_and_queries_before_error_return (tests.test_copy_short_recovery.ShortCopyRecoveryContracts.test_actual_invalid_read_restores_and_queries_before_error_return)
+Kills exit-only cleanup, hidden restoration failure and unobserved/error-first resource rollback. ...
+  test_actual_invalid_read_restores_and_queries_before_error_return (tests.test_copy_short_recovery.ShortCopyRecoveryContracts.test_actual_invalid_read_restores_and_queries_before_error_return) (case='wrong_restored_cap')
+Kills exit-only cleanup, hidden restoration failure and unobserved/error-first resource rollback. ... FAIL
+
+======================================================================
+FAIL: test_actual_invalid_read_restores_and_queries_before_error_return (tests.test_copy_short_recovery.ShortCopyRecoveryContracts.test_actual_invalid_read_restores_and_queries_before_error_return) (case='wrong_restored_cap')
+Kills exit-only cleanup, hidden restoration failure and unobserved/error-first resource rollback.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_copy_short_recovery.py", line 57, in test_actual_invalid_read_restores_and_queries_before_error_return
+    with self.assertRaises(ValueError) as raised:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.063s
+
+FAILED (failures=1)

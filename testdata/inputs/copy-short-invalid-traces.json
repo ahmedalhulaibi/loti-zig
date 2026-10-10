@@ -1,0 +1,51 @@
+[
+  {
+    "name": "missing_arm",
+    "old": "prlimit64(0, RLIMIT_FSIZE, {rlim_cur=2, rlim_max=RLIM64_INFINITY}, NULL) = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "WrongCopyLimitTransitions"
+  },
+  {
+    "name": "wrong_cap",
+    "old": "{rlim_cur=2, rlim_max=RLIM64_INFINITY}",
+    "new": "{rlim_cur=3, rlim_max=RLIM64_INFINITY}",
+    "count": 1,
+    "error": "WrongCopyLimitTransitions"
+  },
+  {
+    "name": "foreign_pid",
+    "old": "prlimit64(0,",
+    "new": "prlimit64(123,",
+    "count": 1,
+    "error": "CopyChangedAnotherProcessLimit"
+  },
+  {
+    "name": "missing_submission",
+    "old": "io_uring_enter(5, 1, 0, 0, NULL, 8) = 1\n",
+    "new": "",
+    "count": 1,
+    "error": "WrongShortCopySubmissionCount"
+  },
+  {
+    "name": "early_restore",
+    "old": "io_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nprlimit64(0, RLIMIT_FSIZE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0\n",
+    "new": "prlimit64(0, RLIMIT_FSIZE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\n",
+    "count": 1,
+    "error": "CopyLimitRestoreNotBeforeRemainderSubmission"
+  },
+  {
+    "name": "hard_lowered",
+    "old": "{rlim_cur=2, rlim_max=RLIM64_INFINITY}",
+    "new": "{rlim_cur=2, rlim_max=2}",
+    "count": 1,
+    "error": "WrongCopyLimitTransitions"
+  },
+  {
+    "name": "synchronous_write",
+    "old": "io_uring_enter(5, 1, 0, 0, NULL, 8) = 1\n",
+    "new": "write(4, \"xx\", 2) = 2\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\n",
+    "count": 1,
+    "error": "SynchronousCopyWriteDetected"
+  }
+]

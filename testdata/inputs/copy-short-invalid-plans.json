@@ -1,0 +1,128 @@
+[
+  {
+    "name": "missing_limit",
+    "size": 5,
+    "suffix": [
+      "--short-write"
+    ],
+    "error": "ExpectedSourceAndDestination"
+  },
+  {
+    "name": "extra",
+    "size": 5,
+    "suffix": [
+      "--short-write",
+      "2",
+      "extra"
+    ],
+    "error": "ExpectedSourceAndDestination"
+  },
+  {
+    "name": "unknown",
+    "size": 5,
+    "suffix": [
+      "--unknown",
+      "2"
+    ],
+    "error": "UnknownCopyMode"
+  },
+  {
+    "name": "empty",
+    "size": 5,
+    "suffix": [
+      "--short-write",
+      ""
+    ],
+    "error": "InvalidShortWriteLimit"
+  },
+  {
+    "name": "signed",
+    "size": 5,
+    "suffix": [
+      "--short-write",
+      "+1"
+    ],
+    "error": "InvalidShortWriteLimit"
+  },
+  {
+    "name": "negative",
+    "size": 5,
+    "suffix": [
+      "--short-write",
+      "-1"
+    ],
+    "error": "InvalidShortWriteLimit"
+  },
+  {
+    "name": "nondigit",
+    "size": 5,
+    "suffix": [
+      "--short-write",
+      "x"
+    ],
+    "error": "InvalidShortWriteLimit"
+  },
+  {
+    "name": "zero",
+    "size": 5,
+    "suffix": [
+      "--short-write",
+      "0"
+    ],
+    "error": "InvalidShortWriteLimit"
+  },
+  {
+    "name": "overflow",
+    "size": 5,
+    "suffix": [
+      "--short-write",
+      "184467440737095516160"
+    ],
+    "error": "InvalidShortWriteLimit"
+  },
+  {
+    "name": "empty_source",
+    "size": 0,
+    "suffix": [
+      "--short-write",
+      "1"
+    ],
+    "error": "ShortWriteLimitMustBeBelowInputSize"
+  },
+  {
+    "name": "one_byte",
+    "size": 1,
+    "suffix": [
+      "--short-write",
+      "1"
+    ],
+    "error": "ShortWriteLimitMustBeBelowInputSize"
+  },
+  {
+    "name": "equal",
+    "size": 5,
+    "suffix": [
+      "--short-write",
+      "5"
+    ],
+    "error": "ShortWriteLimitMustBeBelowInputSize"
+  },
+  {
+    "name": "above",
+    "size": 5,
+    "suffix": [
+      "--short-write",
+      "6"
+    ],
+    "error": "ShortWriteLimitMustBeBelowInputSize"
+  },
+  {
+    "name": "two_slots",
+    "size": 16385,
+    "suffix": [
+      "--short-write",
+      "2"
+    ],
+    "error": "ShortWriteNeedsSingleBuffer"
+  }
+]

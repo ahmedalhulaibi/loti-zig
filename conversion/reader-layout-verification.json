@@ -1,6 +1,6 @@
 {
   "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review.",
-  "book_sha256": "ddb65354a931cbc8566e0bc2785cf315663a3f6d4771fd574503521a06167e21",
+  "book_sha256": "e8bf675b28190aace0c9fb1f0d36e116dae1fb0348ffc3994398828a54921d57",
   "renderer": {
     "node": "v26.8.1",
     "playwright": "1.64.0",
@@ -14,10 +14,10 @@
   ],
   "cases": 81,
   "element_counts": {
-    "pre": 354,
+    "pre": 357,
     "table": 6,
     "image": 15,
-    "heading": 324,
+    "heading": 327,
     "figure": 0
   },
   "violations": [],
@@ -467,6 +467,15 @@
             "client": 272,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
+          },
+          {
+            "index": 2,
+            "left": 24,
+            "right": 296,
+            "scroll": 272,
+            "client": 272,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
           }
         ],
         "table": [],
@@ -501,6 +510,15 @@
           },
           {
             "index": 3,
+            "left": 8,
+            "right": 312,
+            "scroll": 304,
+            "client": 304,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 4,
             "left": 8,
             "right": 312,
             "scroll": 304,
@@ -2967,6 +2985,15 @@
             "client": 552,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
+          },
+          {
+            "index": 2,
+            "left": 24,
+            "right": 576,
+            "scroll": 552,
+            "client": 552,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
           }
         ],
         "table": [],
@@ -3001,6 +3028,15 @@
           },
           {
             "index": 3,
+            "left": 8,
+            "right": 592,
+            "scroll": 584,
+            "client": 584,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 4,
             "left": 8,
             "right": 592,
             "scroll": 584,
@@ -5467,6 +5503,15 @@
             "client": 752,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
+          },
+          {
+            "index": 2,
+            "left": 24,
+            "right": 776,
+            "scroll": 752,
+            "client": 752,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
           }
         ],
         "table": [],
@@ -5501,6 +5546,15 @@
           },
           {
             "index": 3,
+            "left": 8,
+            "right": 792,
+            "scroll": 784,
+            "client": 784,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 4,
             "left": 8,
             "right": 792,
             "scroll": 784,
@@ -7527,7 +7581,7 @@
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
-    "tests/test_reader_layout.py": "cc1a6c48b3662aabb4c556d72b154c82fe122eaba607c880bbbcbe995a93ce32",
+    "tests/test_reader_layout.py": "2629997d1678af6b7ababca15de0ee610e6c7a9ec7d63e1af30ae8bfea4937e3",
     "conversion/reader-layout-before.png": "8b87531a66190284853702a1d4bcb15b086b6c02f55b5d6d0b786d424ce77d93",
     "conversion/reader-layout-after.png": "df4728528a37f7c4e9f16da21c8567517c93e081d154a9c06b5d8b42992221dd",
     "conversion/reader-layout-code.png": "82410741bbeac87d2001436f06720ca70d6a95ff24509d528968d02d749dd437",
@@ -7580,5 +7634,12 @@
     "browser_cases": 81,
     "suite": "68 tests/zero failures/errors/skips; thirteen attributed 400-case properties",
     "scope": "Current final ACCEPT-book measurements; historical screenshots/CSS assessments retained. Not device/pagination/font overrides or independent semantic acceptance."
+  },
+  "replay_after_copy_short": {
+    "chapters": 27,
+    "literals": 119,
+    "cases": 81,
+    "suite": "72 tests/14 attributed properties x400 cases",
+    "scope": "Current final book measurements; historical screenshots/CSS assessments retained. Not device/pagination/font overrides/semantic or independent acceptance."
   }
 }

@@ -1,0 +1,29 @@
+test_literal_and_typed_invalid_modes_preserve_owned_inputs (tests.test_copy_short.ShortCopyContracts.test_literal_and_typed_invalid_modes_preserve_owned_inputs)
+A whole pinned literal and input-error matrix catch mirror/late-validation/truncation regressions. ... FAIL
+
+======================================================================
+FAIL: test_literal_and_typed_invalid_modes_preserve_owned_inputs (tests.test_copy_short.ShortCopyContracts.test_literal_and_typed_invalid_modes_preserve_owned_inputs)
+A whole pinned literal and input-error matrix catch mirror/late-validation/truncation regressions.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_copy_short.py", line 102, in test_literal_and_typed_invalid_modes_preserve_owned_inputs
+    self.assertEqual(json.loads(run("cp", source, output, "--short-write", 2).stdout), literal)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: cp exited 1: error: ControlledShortWriteMissing
+/home/ahmed/workspace/va/loti-zig/examples/copy_short.zig:73:100: 0x11ef648 in beforeProgress (cp.zig)
+            if (request.offset != 0 or request.length != self.input_size or cqe.res != self.limit) return error.ControlledShortWriteMissing;
+                                                                                                   ^
+/home/ahmed/workspace/va/loti-zig/examples/cp.zig:95:28: 0x11f03c5 in copy (cp.zig)
+            if (probe) |p| try p.beforeProgress(slot.request, cqe);
+                           ^
+/home/ahmed/workspace/va/loti-zig/examples/cp.zig:64:22: 0x11f2726 in main (cp.zig)
+        try p.render(try result, init.io);
+                     ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.062s
+
+FAILED (failures=1)

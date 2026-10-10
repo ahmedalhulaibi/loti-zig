@@ -47,7 +47,7 @@ virtio block support. The VM verifier accepts `--kernel` and `--busybox` paths;
 recorded lab: QEMU 11.1.1/Linux 7.2.3-arch1-3. All disks are generated files,
 attached read-only. No host storage device or root host operation is used.
 
-Publication checks verify all 27 chapters in reading order/navigation, 118 literal
+Publication checks verify all 27 chapters in reading order/navigation, 119 literal
 blocks against Sphinx source, five byte-identical illustrations, licence and local
 links. Negative tests reject nine damaged-archive classes. These checks **do not**
 prove semantic completeness or satisfy independent review.
@@ -82,6 +82,10 @@ zig-out/bin/readv input.txt
 zig-out/bin/raw-cat input.txt
 zig-out/bin/cat input.txt
 zig-out/bin/cp source.bin destination.bin
+# Optional owned-file split; requires 2–16384 source bytes and 0<LIMIT<size.
+zig-out/bin/cp source.bin destination.bin --short-write 1
+# Controlled error: restore/query process limits before returning the read error.
+zig-out/bin/cp source.bin destination.bin --short-write 1 --fail-read
 zig-out/bin/link linked.txt
 zig-out/bin/link linked.txt --fail-read
 zig-out/bin/fixed-buffers fixed.txt

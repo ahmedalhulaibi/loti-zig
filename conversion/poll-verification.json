@@ -12,8 +12,8 @@
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
-    "tools/reference_map.py": "93d094c634efad9b2a59800c126dc9c65e51f701e132d89b5117d120f61b8466",
-    "conversion/reference-map.json": "5d7435f2b49ae8179d8f974e1909d60cb48e5054ab4a67d1a2124449322d55fc",
+    "tools/reference_map.py": "edbd0559396af3cc76ac4653b9fdcf53d54bc7f584a6f175b6738622074e6c11",
+    "conversion/reference-map.json": "096c6d3e62e115f2f6d20a6da65905b4309e00e82c5746b7a847bdf8f252c174",
     "ref-zig/submission.rst": "1507474161e9a727f0076d16cb122e40a02032cce47d28c33ff4ccce7243f5ce",
     "conversion/poll-spec-sha256.json": "25f95439286a15890ff0249e0ec14d6b9dd521ea3c8f9e35f37c4a07930817a7",
     "testdata/inputs/poll-deadline.trace": "276b53fa38940bab91a1663190ca5fcb009af25b4b6fcbe128b3f6879db87bec",
@@ -351,5 +351,13 @@
     ],
     "complete_suite": "68 tests/zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; owned block VM, CLI/TCP/reference/model/binding/publication contracts replayed.",
     "historical_scope": "Prior mutation records are historical tested versions, not automatically reassessed; no independent review is implied."
+  },
+  "replay_after_copy_short": {
+    "changed_source_consumers": [
+      "tools/reference_map.py",
+      "conversion/reference-map.json"
+    ],
+    "suite": "72 tests/zero failures/errors/skips; fourteen attributed properties x400 generated valid cases; normal scalar/block copy, isolated VM, other public CLI/reference/model/binding/publication contracts replayed.",
+    "scope": "Historical mutation pins retain tested-version scope, not automatically reassessed. No independent reviewer acceptance."
   }
 }

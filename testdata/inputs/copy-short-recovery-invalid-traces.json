@@ -1,0 +1,30 @@
+[
+  {
+    "name": "missing_restore",
+    "old": "prlimit64(0, RLIMIT_FSIZE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "CopyFailureLimitsNotRestoredAndQueried"
+  },
+  {
+    "name": "missing_last_query",
+    "old": "prlimit64(0, RLIMIT_FSIZE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0\nprlimit64(0, RLIMIT_FSIZE, NULL, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}) = 0\n",
+    "new": "prlimit64(0, RLIMIT_FSIZE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0\n",
+    "count": 1,
+    "error": "CopyFailureLimitsNotRestoredAndQueried"
+  },
+  {
+    "name": "restore_before_submission",
+    "old": "io_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nprlimit64(0, RLIMIT_FSIZE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0\n",
+    "new": "prlimit64(0, RLIMIT_FSIZE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\n",
+    "count": 1,
+    "error": "WrongCopyFailureRecoveryOrder"
+  },
+  {
+    "name": "wrong_restored_cap",
+    "old": "prlimit64(0, RLIMIT_FSIZE, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}, NULL) = 0\n",
+    "new": "prlimit64(0, RLIMIT_FSIZE, {rlim_cur=2, rlim_max=RLIM64_INFINITY}, NULL) = 0\n",
+    "count": 1,
+    "error": "CopyFailureLimitsNotRestoredAndQueried"
+  }
+]

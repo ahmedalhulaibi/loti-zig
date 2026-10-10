@@ -89,7 +89,7 @@ every operand field or execute the opcode. Original spelling errors
 | `ref-liburing/submission.rst:89` | `submit_and_wait(wait_nr)` returns submission count and requests CQ threshold | S/E; NOP batches; completion consumption separate |
 | `ref-liburing/submission.rst:114` | `ring.nop` | P/E; NOP batches/personality/async notification, no data-I/O claim |
 | `ref-liburing/submission.rst:127` | `ring.read(.buffer)`: mutable slice carries length; u64 value offset | P/E in copy/raw references; actual count may be short |
-| `ref-liburing/submission.rst:148` | `ring.write`: const slice carries length and offset | P/E in copy/link/fixed examples |
+| `ref-liburing/submission.rst:148` | `ring.write`: const slice carries length and offset | P/E in copy/link/fixed examples; controlled RLIMIT_FSIZE now yields real positive short regular-file scalar WRITE, exact remainder buffer/offset progress and resource restoration on success/selected error; not forced WRITEV or multi-slot partial/race assurance |
 | `ref-liburing/submission.rst:169` | `ring.read(.iovecs)`: vectored read with stable iovecs and buffers | P/E in readers and reference-files; two vectors with 1024/3072 bytes, observed EOF zero result, full output/hash and -EBADF CQE checked |
 | `ref-liburing/submission.rst:190` | `read_fixed`: registered range/index, not implicit registration | P/E; four registered-buffer operations |
 | `ref-liburing/submission.rst:213` | `writev`: const iovec slice and offset; vector count is not byte count | P/E; reference-files executes two vectors, exact binary output/reopen hash and correlated -EBADF; scalar copy remains separate; forced short writes unverified |

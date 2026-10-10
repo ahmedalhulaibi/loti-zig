@@ -1,0 +1,192 @@
+{
+  "scope": "Current stable regular-file scalar copy, one active <=16KiB slot, first positive WRITE split via process-local soft RLIMIT_FSIZE, exact buffer/file-offset progress and limit restoration on success/selected invalid-READ failure. Not forced short READ/WRITEV/multi-slot interleavings, physical full-storage/crash durability, SIGXFSZ delivery, all error recovery, other kernels/architectures or independent agent acceptance.",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64"
+  },
+  "source_sha256": {
+    "examples/cp.zig": "07fc47895c3b43fd704ecd17a06ca789ddf929fdadf7330ad916ed7a1e3e58d1",
+    "examples/copy_short.zig": "eefed5f302c63c89b6dac82684088e5b0da1e43b349426d47e1445bf6e9e2808",
+    "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
+    "tests/test_copy_short.py": "75e7e25ff6c83c7395c45703ff3515faf71cb7fe0c794a06cf47d81309b63fe5",
+    "tests/test_copy_short_recovery.py": "8b089719fa714b635545b12c8106009308daf8f8f1aff7438e22e9888549aae6",
+    "tools/reference_map.py": "edbd0559396af3cc76ac4653b9fdcf53d54bc7f584a6f175b6738622074e6c11",
+    "conversion/reference-map.json": "096c6d3e62e115f2f6d20a6da65905b4309e00e82c5746b7a847bdf8f252c174",
+    "tutorial/cp.rst": "ae113b0656c6cca42094d74d713a5ea2d30ad967ae9046e0dc3d75d1c74801da",
+    "conversion/copy-short.trace": "bc6ca2eb6a9bec1bd012422421673aacf8c6ec14d06c4a56254f1a24cabda71e",
+    "conversion/copy-short-recovery.trace": "68dee83142decc537e0a6d4d6954db8dafa48d1048a2b8ddf9fa91945f7ee694",
+    "conversion/copy-short-spec-sha256.json": "013478b1bce93ac777f6dc93df56be912ef4848457f74375ef04cc6eb6c2a842",
+    "conversion/copy-short-spec-amendment.json": "808ed2329c686f58bed6bf0a531989aee50d0bd26550748f7842595151eb4266",
+    "testdata/inputs/copy-short-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/copy-short-invalid-plans.json": "f38442f4ced176201efff9cadee24e88c68287f8dba7ca4307c1b251c671ba22",
+    "testdata/inputs/copy-short-invalid-traces.json": "83b2f8f82d96d44689fe32d9cf9bde5bc9fc040a03a4bc1018a362d9f2c94d40",
+    "testdata/inputs/copy-short-recovery-invalid-traces.json": "dbe2ce01e433247a30d4ba41889c41da2f113b87d838de54908df04475ccd720",
+    "testdata/inputs/copy-short-recovery.trace": "1ca9591da1ddea18ab792cdd3147427ea1abe57554177ca6da2629535d3df3eb",
+    "testdata/inputs/copy-short-report.json": "7f29ef2dba8ca99f113d52d739fc34e598670ef13b991d604c4a9d7e6fc238f4",
+    "testdata/inputs/copy-short.trace": "a31ba71378ecd498fe17dedffac09c22c66d2c2bbc58bab49b8fd1cec1596203"
+  },
+  "sdk_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "manual_sha256": {
+    "/home/ahmed/workspace/va/man-qmd/build/docs/linux-man-pages/man/man2/write.2.txt": "c01bdf4d889326931fe5fbec0a168b2263d819766288356e6aba2bf1d7033c67",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/linux-man-pages/man/man2/getrlimit.2.txt": "ea3896bbdc7a44977fe2c87f01ce9dda84b87067ea6f6483dc141000dd3d38bc"
+  },
+  "actual_literal_report": {
+    "event": "loti.copy.short-write.checked",
+    "input_size": 5,
+    "limit": 2,
+    "steps": [
+      {
+        "request": {
+          "operation": "READ",
+          "tag": 1,
+          "length": 5,
+          "offset": 0,
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 1,
+          "result": 5,
+          "flags": 0
+        },
+        "done_before": 0,
+        "done_after": 0,
+        "phase_after": "writing",
+        "written": 0
+      },
+      {
+        "request": {
+          "operation": "WRITE",
+          "tag": 1,
+          "length": 5,
+          "offset": 0,
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 1,
+          "result": 2,
+          "flags": 0
+        },
+        "done_before": 0,
+        "done_after": 2,
+        "phase_after": "writing",
+        "written": 0
+      },
+      {
+        "request": {
+          "operation": "WRITE",
+          "tag": 1,
+          "length": 3,
+          "offset": 2,
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 1,
+          "result": 3,
+          "flags": 0
+        },
+        "done_before": 2,
+        "done_after": 5,
+        "phase_after": "idle",
+        "written": 5
+      }
+    ],
+    "limits": {
+      "original": {
+        "soft": 18446744073709551615,
+        "hard": 18446744073709551615
+      },
+      "armed": {
+        "soft": 2,
+        "hard": 18446744073709551615
+      },
+      "restored": {
+        "soft": 18446744073709551615,
+        "hard": 18446744073709551615
+      }
+    },
+    "written": 5
+  },
+  "actual_process_limit_and_submission_oracles": {
+    "success": {
+      "submissions": 3,
+      "rings": 1,
+      "limit_queries": 2,
+      "limit_sets": 2,
+      "same_hard_limit": true,
+      "restored_before_remainder_submission": true,
+      "synchronous_file_writes": 0
+    },
+    "failure": {
+      "submissions": 1,
+      "limit_queries": 2,
+      "limit_sets": 2,
+      "restored_before_error_return": true
+    },
+    "original": {
+      "soft": 18446744073709551615,
+      "hard": 18446744073709551615
+    }
+  },
+  "original_parent_limits_unchanged": true,
+  "input_unchanged": true,
+  "typed_invalid_plans": 14,
+  "damaged_success_traces_rejected": 7,
+  "damaged_recovery_traces_rejected": 4,
+  "property": "tests.test_copy_short.ShortCopyContracts.test_completed_bytes_advance_both_buffer_and_file_offset: 400 valid binary/split cases plus explicit 5-byte/2 and 16384-byte/8192 examples; source/output byte equality is independent of self-reported metadata.",
+  "spec": "Original author preimplementation hashes retained; one transparent unsealed greedy-structure regex correction in copy-short-spec-amendment.json, fixtures/behavior unchanged. Recovery supplement author-written after first green core implementation; neither ACL sealed nor independent verifier acceptance.",
+  "mutation": "conversion/mutation-copy-short.json: nine compiled native/four syntax-valid success/recovery parsers, all substantive assertions/zero errors/skips; no Hypothesis error groups or compilation failures accepted. Exact restoration and rebuilt four-test baseline.",
+  "regression_provenance": "Literal explicit 5-byte/2 split kills buffer/offset/progress variants; no shrink claim.",
+  "diagnostics": {
+    "paths": 5,
+    "visible_findings": 0,
+    "suppressed_findings": 2,
+    "scope": "Active LSP after source restoration; runtime-exact sibling import resolves provider false-positive; not unconditional clean. RST checked via strict Sphinx."
+  },
+  "navigation": "Explicit copy/main/queue/helper source, stdlib/native syscall bodies, build/CLI/tests/map/book consumers inspected; Fabric unavailable and cached graph stale, not proof of absent callers.",
+  "gates": {
+    "zig": "0.17.0",
+    "build_steps": 49,
+    "tests": 72,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties_with_400_valid_generated_cases": 14,
+    "strict_html_epub": true,
+    "epubcheck": "5.2.1 zero fatal/error/warning/info",
+    "chapters": 27,
+    "literals": 119,
+    "browser_cases": 81,
+    "browser_elements": {
+      "pre": 357,
+      "table": 6,
+      "image": 15,
+      "heading": 327,
+      "figure": 0
+    }
+  },
+  "review": "Mandatory supported independent child host unavailable; no retry/fallback or fabricated report.",
+  "delivery": "Not pushed; semantic/state/failure acceptance and final personal-fork delivery remain incomplete.",
+  "property_statistics": {
+    "test": "test_copy_short.ShortCopyContracts.test_completed_bytes_advance_both_buffer_and_file_offset",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  }
+}

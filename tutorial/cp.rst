@@ -15,6 +15,9 @@ The implementation here is native Zig 0.17.0.
    zig build
    zig-out/bin/cp source.bin destination.bin
    cmp source.bin destination.bin
+   # Optional controlled split: source must have 2–16384 bytes, LIMIT below size.
+   zig-out/bin/cp source.bin destination.bin --short-write 1
+   cmp source.bin destination.bin
 
 State machine
 -------------
@@ -50,6 +53,41 @@ Complete source
 .. literalinclude:: ../examples/cp.zig
    :language: zig
    :caption: Two-slot asynchronous copy
+
+Controlled short writes
+-----------------------
+
+The normal command keeps two slots and emits no report. For an owned disposable
+regular output, ``cp INPUT OUTPUT --short-write LIMIT`` forces a **real positive
+short scalar WRITE**. Input must be a stable regular file of 2–16,384 bytes;
+LIMIT must be positive and below its size. These checks run before output
+creation/truncation. The process's original soft file-size limit must permit
+the full copy. The hard limit is never lowered; no privilege is required.
+
+The optional helper temporarily lowers only this process's RLIMIT_FSIZE. One
+READ fills the only active slot. Its first WRITE requests the full range at
+zero but completes exactly LIMIT bytes. The helper restores the original limit
+before queuing the remainder. The same copy loop advances both the buffer slice
+and file offset by the **completed**, not requested, count; only a full write
+retires the slot. A report records actual prepared requests, CQEs and progress.
+A separate literal and binary/split model check whole destination bytes, not
+just those observations. Independent prlimit64/enter traces check the cap,
+unchanged hard limit and restoration before the remainder submission.
+
+``--fail-read`` may follow this diagnostic command. It submits an invalid-FD
+READ after arming the limit; restoration and an actual limit query precede the
+typed copy error. A new partial output may remain. Recovery failure propagates
+instead of hiding behind the copy error. Use this only with owned disposable
+files. The parent/other processes are never targeted. This is not a sandbox,
+physical full-device test or durability proof, and SIGXFSZ delivery is not
+attested: the positive short result is followed by restoration, not another
+write at the still-enforced limit. Normal multi-slot copying is unchanged.
+The experiment attests one bounded split/current kernel, not forced short
+reads, vectored writes, multi-slot partial interleavings or every recovery path.
+
+.. literalinclude:: ../examples/copy_short.zig
+   :language: zig
+   :caption: Process-local short-write cap, observations and explicit recovery
 
 Limits and verification
 -----------------------

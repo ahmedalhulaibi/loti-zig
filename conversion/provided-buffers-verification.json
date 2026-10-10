@@ -4531,7 +4531,7 @@
     "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
     "examples/reference_buffers.zig": "a44155312b4f0c382b0c29126516f2ae3dad874ae84d37b9e29790ee5fa5e13a",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tools/reference_map.py": "93d094c634efad9b2a59800c126dc9c65e51f701e132d89b5117d120f61b8466",
+    "tools/reference_map.py": "edbd0559396af3cc76ac4653b9fdcf53d54bc7f584a6f175b6738622074e6c11",
     "testdata/inputs/provided-buffer-plans.json": "d50e0ed4acc123babeba111df163ae802d034cd9695c859f9bf5813d74332199",
     "testdata/inputs/provided-buffer-invalid-plans.json": "6c7749c1f127f3e155dd3d56aee2003ac0d25755431737e2921eb070c564cd59",
     "testdata/inputs/provided-buffer-input.bin": "fdeab9acf3710362bd2658cdc9a29e8f9c757fcf9811603a8c447cd1d9151108",
@@ -4601,5 +4601,12 @@
     ],
     "complete_suite": "68 tests/zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; owned block VM, CLI/TCP/reference/model/binding/publication contracts replayed.",
     "historical_scope": "Prior mutation records are historical tested versions, not automatically reassessed; no independent review is implied."
+  },
+  "replay_after_copy_short": {
+    "changed_source_consumers": [
+      "tools/reference_map.py"
+    ],
+    "suite": "72 tests/zero failures/errors/skips; fourteen attributed properties x400 generated valid cases; normal scalar/block copy, isolated VM, other public CLI/reference/model/binding/publication contracts replayed.",
+    "scope": "Historical mutation pins retain tested-version scope, not automatically reassessed. No independent reviewer acceptance."
   }
 }

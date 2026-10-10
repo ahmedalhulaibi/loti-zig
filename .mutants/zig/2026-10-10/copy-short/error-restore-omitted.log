@@ -1,0 +1,17 @@
+test_actual_invalid_read_restores_and_queries_before_error_return (tests.test_copy_short_recovery.ShortCopyRecoveryContracts.test_actual_invalid_read_restores_and_queries_before_error_return)
+Kills exit-only cleanup, hidden restoration failure and unobserved/error-first resource rollback. ... FAIL
+
+======================================================================
+FAIL: test_actual_invalid_read_restores_and_queries_before_error_return (tests.test_copy_short_recovery.ShortCopyRecoveryContracts.test_actual_invalid_read_restores_and_queries_before_error_return)
+Kills exit-only cleanup, hidden restoration failure and unobserved/error-first resource rollback.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_copy_short_recovery.py", line 44, in test_actual_invalid_read_restores_and_queries_before_error_return
+    self.assertEqual(result.stderr.splitlines()[0], b"error: IoCompletionFailed")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'error: CopyFileLimitNotRestored' != b'error: IoCompletionFailed'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.068s
+
+FAILED (failures=1)

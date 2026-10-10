@@ -333,9 +333,9 @@
     {
       "original": "io_uring_prep_read",
       "zig": "std.os.linux.IoUring.read",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/cp.zig",
+      "verification_scope": "constructed and submitted; mutable scalar buffer fills before dependent copy writes, exact regular/block bytes and unchanged source; diagnostic invalid-FD READ restores process limits before typed error; not forced short READ or every race/failure",
+      "semantic_difference": "Acquires/prepares an SQE and stores the slot tag; completed count, not requested length, advances both the retained slice and u64 file offset. Regular scalar slices here; ReadBuffer.iovecs is separate.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn read(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: ReadBuffer,\n    offset: u64,\n) !*linux.io_uring_sqe"
     },
@@ -441,9 +441,9 @@
     {
       "original": "io_uring_prep_write",
       "zig": "std.os.linux.IoUring.write",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/cp.zig",
+      "verification_scope": "constructed and submitted; exact regular/block copy bytes; controlled positive short scalar WRITE independently checks buffer/file-offset progress, slot retirement and process-limit restoration on success; single bounded regular slot, not forced vector writes, physical ENOSPC or multi-slot partial/race assurance",
+      "semantic_difference": "Acquires/prepares an SQE and stores the slot tag; completed count, not requested length, advances both the retained slice and u64 file offset. Regular scalar slices here; ReadBuffer.iovecs is separate.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn write(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: []const u8,\n    offset: u64,\n) !*linux.io_uring_sqe"
     },

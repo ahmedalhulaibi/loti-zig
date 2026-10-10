@@ -1,0 +1,76 @@
+{
+  "event": "loti.copy.short-write.checked",
+  "input_size": 5,
+  "limit": 2,
+  "steps": [
+    {
+      "request": {
+        "operation": "READ",
+        "tag": 1,
+        "length": 5,
+        "offset": 0,
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1,
+        "result": 5,
+        "flags": 0
+      },
+      "done_before": 0,
+      "done_after": 0,
+      "phase_after": "writing",
+      "written": 0
+    },
+    {
+      "request": {
+        "operation": "WRITE",
+        "tag": 1,
+        "length": 5,
+        "offset": 0,
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1,
+        "result": 2,
+        "flags": 0
+      },
+      "done_before": 0,
+      "done_after": 2,
+      "phase_after": "writing",
+      "written": 0
+    },
+    {
+      "request": {
+        "operation": "WRITE",
+        "tag": 1,
+        "length": 3,
+        "offset": 2,
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1,
+        "result": 3,
+        "flags": 0
+      },
+      "done_before": 2,
+      "done_after": 5,
+      "phase_after": "idle",
+      "written": 5
+    }
+  ],
+  "limits": {
+    "original": {
+      "soft": 18446744073709551615,
+      "hard": 18446744073709551615
+    },
+    "armed": {
+      "soft": 2,
+      "hard": 18446744073709551615
+    },
+    "restored": {
+      "soft": 18446744073709551615,
+      "hard": 18446744073709551615
+    }
+  },
+  "written": 5
+}
