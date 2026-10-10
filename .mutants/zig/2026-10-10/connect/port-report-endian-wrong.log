@@ -1,0 +1,333 @@
+{"tests": 1, "failures": 25, "errors": 0, "skips": 0}
+test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ...
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=0)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=1)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=2)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=3)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=4)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=5)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=6)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=7)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=8)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=9)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=10)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=11)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=12)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=13)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=14)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=15)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=16)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=17)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=18)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=19)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=20)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=21)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=22)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=23)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=24)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=0)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 37321}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 51601}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6618 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=1)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 48006}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2160 chars]True} != {'con[171 chars]rt': 34491}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6630 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=2)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 18350}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 44615}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6615 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=3)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 9628}, 'flags': 0}, 'cqe': {'tag': 1, 're[2152 chars]True} != {'con[171 chars]rt': 39973}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6614 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=4)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 22980}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 50265}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6632 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=5)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 43979}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 52139}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6609 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=6)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[172 chars]t': 54236}, 'flags': 0}, 'cqe': {'tag': 1, 're[2158 chars]True} != {'con[172 chars]t': 56531}, 'flags': 0}, 'cqe': {'tag': 1, 're[2160 chars]True}
+Diff is 6632 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=7)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 55788}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 60633}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6630 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=8)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 64939}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 44029}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6614 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=9)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 17353}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2159 chars]True} != {'con[171 chars]rt': 51523}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6601 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=10)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 897}, 'flags': 0}, 'cqe': {'tag': 1, 'res[2147 chars]True} != {'con[171 chars]rt': 33027}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6587 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=11)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[172 chars]t': 49079}, 'flags': 0}, 'cqe': {'tag': 1, 're[2160 chars]True} != {'con[172 chars]t': 47039}, 'flags': 0}, 'cqe': {'tag': 1, 're[2160 chars]True}
+Diff is 6620 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=12)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 61353}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2160 chars]True} != {'con[171 chars]rt': 43503}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6600 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=13)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 10726}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 58921}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6627 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=14)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 35238}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2159 chars]True} != {'con[171 chars]rt': 42633}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6610 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=15)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 53641}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 35281}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6616 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=16)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 23438}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 36443}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6611 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=17)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 64487}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 59387}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6607 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=18)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 899}, 'flags': 0}, 'cqe': {'tag': 1, 'res[2147 chars]True} != {'con[171 chars]rt': 33539}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6594 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=19)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 42880}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 32935}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6630 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=20)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[172 chars]t': 32138}, 'flags': 0}, 'cqe': {'tag': 1, 're[2159 chars]True} != {'con[172 chars]t': 35453}, 'flags': 0}, 'cqe': {'tag': 1, 're[2160 chars]True}
+Diff is 6625 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=21)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 39901}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 56731}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6615 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=22)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 52130}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 41675}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6623 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=23)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 22959}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True} != {'con[171 chars]rt': 44889}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6619 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=24)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 132, in test_native_connection_matches_external_peer_and_syscalls
+    self.assertEqual(json.loads(result.stdout), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[171 chars]rt': 3488}, 'flags': 0}, 'cqe': {'tag': 1, 're[2154 chars]True} != {'con[171 chars]rt': 40973}, 'flags': 0}, 'cqe': {'tag': 1, 'r[2161 chars]True}
+Diff is 6615 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.399s
+
+FAILED (failures=25)

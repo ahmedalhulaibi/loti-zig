@@ -1,0 +1,11 @@
+test_arguments_refusal_and_pre_setup_rejection (tests.test_connect.ConnectContracts.test_arguments_refusal_and_pre_setup_rejection)
+Kills missing/extra operands, late validation and success reported for a non-listening peer. ... ok
+test_invalid_port_language_is_rejected (tests.test_connect.ConnectContracts.test_invalid_port_language_is_rejected)
+Kills signed/nondecimal/out-of-range parsing that could dial an unintended endpoint. ... ok
+test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.816s
+
+OK

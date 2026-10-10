@@ -126,7 +126,7 @@
     }
   ],
   "source_sha256": {
-    "build.zig": "99d7847a68511080071fe23e155ee4297ff93b3edeb5291e5b81a1b7b286ab03",
+    "build.zig": "472b4062e830580e779a1a186903cbe153d214b77239e56edd0dbf6f0898e8dc",
     "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
@@ -156,5 +156,12 @@
       "build.zig"
     ],
     "suite_receipt": "conversion/test-verification.json"
+  },
+  "replay_after_connect": {
+    "changed_source_consumers": [
+      "build.zig"
+    ],
+    "complete_suite": "60 tests, zero failures/errors/skips; twelve attributed properties x400 valid generated cases; isolated VM plus public CLI/model/binding/publication contracts rerun.",
+    "historical_mutation_scope": "Historical mutation pins remain tested-version records; this replay does not re-assess those mutants or provide independent review."
   }
 }

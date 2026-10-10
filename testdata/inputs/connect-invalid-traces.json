@@ -1,0 +1,51 @@
+[
+  {
+    "name": "missing_submission",
+    "old": "io_uring_enter(5, 1, 0, 0, NULL, 8) = 1\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteConnectSyscallsOrCleanup"
+  },
+  {
+    "name": "socket_not_closed",
+    "old": "close(3) = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteConnectSyscallsOrCleanup"
+  },
+  {
+    "name": "synchronous_connect",
+    "old": "io_uring_enter(5, 1, 0, 0, NULL, 8) = 1\n",
+    "new": "connect(3, NULL, 0) = -1 EINVAL (Invalid argument)\n",
+    "count": 1,
+    "error": "UnexpectedSynchronousConnectOrListener"
+  },
+  {
+    "name": "guard_listens",
+    "old": "io_uring_enter(5, 1, 0, 0, NULL, 8) = 1\n",
+    "new": "listen(4, 1) = 0\n",
+    "count": 1,
+    "error": "UnexpectedSynchronousConnectOrListener"
+  },
+  {
+    "name": "missing_guard",
+    "old": "getsockname(4, {sa_family=AF_INET, sin_port=htons(42345), sin_addr=inet_addr(\"127.0.0.1\")}, [16]) = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteConnectEndpointQueries"
+  },
+  {
+    "name": "zero_port",
+    "old": "htons(42345)",
+    "new": "htons(0)",
+    "count": 1,
+    "error": "InvalidConnectAddressQuery"
+  },
+  {
+    "name": "missing_peer",
+    "old": "getpeername(3, {sa_family=AF_INET, sin_port=htons(43123), sin_addr=inet_addr(\"127.0.0.1\")}, [16]) = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteConnectEndpointQueries"
+  }
+]

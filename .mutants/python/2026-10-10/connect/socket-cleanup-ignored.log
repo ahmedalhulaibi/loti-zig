@@ -1,0 +1,20 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ...
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (case='socket_not_closed')
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (case='socket_not_closed')
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 140, in test_native_connection_matches_external_peer_and_syscalls
+    with self.assertRaises(ValueError) as raised:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.338s
+
+FAILED (failures=1)

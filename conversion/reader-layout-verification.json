@@ -1,6 +1,6 @@
 {
   "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review.",
-  "book_sha256": "59f9ddd382bbe19791496fea4bcc9db555644dd1527bf85743c16e77c3c0493e",
+  "book_sha256": "26435e50c4abe6c1b3176443c37f22fc4ebebe745884ba2549c4fe123ae5b813",
   "renderer": {
     "node": "v26.8.1",
     "playwright": "1.64.0",
@@ -14,10 +14,10 @@
   ],
   "cases": 81,
   "element_counts": {
-    "pre": 345,
+    "pre": 348,
     "table": 6,
     "image": 15,
-    "heading": 315,
+    "heading": 318,
     "figure": 0
   },
   "violations": [],
@@ -1236,15 +1236,6 @@
           },
           {
             "index": 3,
-            "left": 8,
-            "right": 312,
-            "scroll": 304,
-            "client": 304,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 4,
             "left": 24,
             "right": 296,
             "scroll": 272,
@@ -1253,11 +1244,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 5,
+            "index": 4,
             "left": 8,
             "right": 312,
             "scroll": 304,
             "client": 304,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 5,
+            "left": 24,
+            "right": 296,
+            "scroll": 272,
+            "client": 272,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -1587,15 +1587,6 @@
           },
           {
             "index": 42,
-            "left": 24,
-            "right": 296,
-            "scroll": 272,
-            "client": 272,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 43,
             "left": 8,
             "right": 312,
             "scroll": 304,
@@ -1604,11 +1595,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 44,
+            "index": 43,
             "left": 24,
             "right": 296,
             "scroll": 272,
             "client": 272,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 44,
+            "left": 8,
+            "right": 312,
+            "scroll": 304,
+            "client": 304,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -1623,6 +1623,15 @@
           },
           {
             "index": 46,
+            "left": 24,
+            "right": 296,
+            "scroll": 272,
+            "client": 272,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 47,
             "left": 24,
             "right": 296,
             "scroll": 272,
@@ -1744,6 +1753,15 @@
           },
           {
             "index": 12,
+            "left": 8,
+            "right": 312,
+            "scroll": 304,
+            "client": 304,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 13,
             "left": 8,
             "right": 312,
             "scroll": 304,
@@ -3682,15 +3700,6 @@
           },
           {
             "index": 3,
-            "left": 8,
-            "right": 592,
-            "scroll": 584,
-            "client": 584,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 4,
             "left": 24,
             "right": 576,
             "scroll": 552,
@@ -3699,11 +3708,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 5,
+            "index": 4,
             "left": 8,
             "right": 592,
             "scroll": 584,
             "client": 584,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 5,
+            "left": 24,
+            "right": 576,
+            "scroll": 552,
+            "client": 552,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -4033,15 +4051,6 @@
           },
           {
             "index": 42,
-            "left": 24,
-            "right": 576,
-            "scroll": 552,
-            "client": 552,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 43,
             "left": 8,
             "right": 592,
             "scroll": 584,
@@ -4050,11 +4059,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 44,
+            "index": 43,
             "left": 24,
             "right": 576,
             "scroll": 552,
             "client": 552,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 44,
+            "left": 8,
+            "right": 592,
+            "scroll": 584,
+            "client": 584,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -4069,6 +4087,15 @@
           },
           {
             "index": 46,
+            "left": 24,
+            "right": 576,
+            "scroll": 552,
+            "client": 552,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 47,
             "left": 24,
             "right": 576,
             "scroll": 552,
@@ -4190,6 +4217,15 @@
           },
           {
             "index": 12,
+            "left": 8,
+            "right": 592,
+            "scroll": 584,
+            "client": 584,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 13,
             "left": 8,
             "right": 592,
             "scroll": 584,
@@ -6128,15 +6164,6 @@
           },
           {
             "index": 3,
-            "left": 8,
-            "right": 792,
-            "scroll": 784,
-            "client": 784,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 4,
             "left": 24,
             "right": 776,
             "scroll": 752,
@@ -6145,11 +6172,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 5,
+            "index": 4,
             "left": 8,
             "right": 792,
             "scroll": 784,
             "client": 784,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 5,
+            "left": 24,
+            "right": 776,
+            "scroll": 752,
+            "client": 752,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -6479,15 +6515,6 @@
           },
           {
             "index": 42,
-            "left": 24,
-            "right": 776,
-            "scroll": 752,
-            "client": 752,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 43,
             "left": 8,
             "right": 792,
             "scroll": 784,
@@ -6496,11 +6523,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 44,
+            "index": 43,
             "left": 24,
             "right": 776,
             "scroll": 752,
             "client": 752,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 44,
+            "left": 8,
+            "right": 792,
+            "scroll": 784,
+            "client": 784,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -6515,6 +6551,15 @@
           },
           {
             "index": 46,
+            "left": 24,
+            "right": 776,
+            "scroll": 752,
+            "client": 752,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 47,
             "left": 24,
             "right": 776,
             "scroll": 752,
@@ -6636,6 +6681,15 @@
           },
           {
             "index": 12,
+            "left": 8,
+            "right": 792,
+            "scroll": 784,
+            "client": 784,
+            "white_space": "normal",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 13,
             "left": 8,
             "right": 792,
             "scroll": 784,
@@ -7365,7 +7419,7 @@
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
-    "tests/test_reader_layout.py": "95607f3b723cafb5365784d4cd621a59ad98d61f9d292156a7e10f6bc39030be",
+    "tests/test_reader_layout.py": "34b0d6f60a5d5e47a18df51c9bc5233f78a9f63350a9f9d33f457a7320af156d",
     "conversion/reader-layout-before.png": "8b87531a66190284853702a1d4bcb15b086b6c02f55b5d6d0b786d424ce77d93",
     "conversion/reader-layout-after.png": "df4728528a37f7c4e9f16da21c8567517c93e081d154a9c06b5d8b42992221dd",
     "conversion/reader-layout-code.png": "82410741bbeac87d2001436f06720ca70d6a95ff24509d528968d02d749dd437",
@@ -7396,5 +7450,13 @@
   "replay_after_epoll": {
     "scope": "Final115-literal book, all81spine-width cases; damaged contracts replayed. Previous screenshots/CSS mutation pins remain historical, not new device assurance.",
     "suite_receipt": "conversion/test-verification.json"
+  },
+  "replay_after_connect": {
+    "chapters": 27,
+    "literal_blocks": 116,
+    "browser_cases": 81,
+    "suite": "60 tests, zero failures/errors/skips; twelve attributed properties x400 valid generated cases",
+    "scope": "Final CONNECT-book measurements above are current; historical screenshots/CSS assessments retained. No Supernote/pagination/font-override or independent-review claim.",
+    "post_suite_clarification": "Documentation-only ready-fast-path clarification; four publication/layout and two disposition tests replayed; no native/spec change. Final measurement/book fingerprint above regenerated."
   }
 }

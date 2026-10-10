@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 21 native executables; exact compiler gate; 43/43 build steps; 42 native CLI/TCP/reference tests plus five binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 22 native executables; exact compiler gate; 45/45 build steps; 45 native CLI/TCP/reference tests plus five binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -524,26 +524,71 @@ union. Expected behavior and all fixtures stayed exact; amendment pins both
 versions. One development anonymous/named request-type mismatch was fixed before
 green build; it is not a runtime mutant. Independent acceptance remains open.
 
-Current bounded total: **100** (78 native, three line-index, six trace-parser,
+Epoll checkpoint bounded total: **100** (78 native, three line-index, six trace-parser,
 seven historical binding-producer, three CSS, three layout-oracle). No whole-port,
 SDK, every descriptor/flag, ET/ONESHOT/EXCLUSIVE, duplicate-lifetime, race/concurrency
-or independent-review assurance. Current gates: Zig 0.17.0/43 build steps; 57 tests,
+or independent-review assurance. Epoll checkpoint gates: Zig 0.17.0/43 build steps; 57 tests,
 zero skips; eleven attributed 400-case properties; strict publication/EPUBCheck;
 27 chapters/115 literals, 81 browser cases/345 code blocks/315 headings, no layout
 violations. Browser evidence is not device/pagination/font-override assurance.
 See `epoll-verification.json`, `epoll-spec-amendment.json`, `mutation-epoll.json`.
-Remaining message/CONNECT effects, other required state/failure semantics,
+At that checkpoint, remaining message/CONNECT effects, other required state/failure semantics,
 mandatory blocked review and personal-fork delivery keep the goal incomplete.
+
+## Submitted client connection
+
+`connect-reproduction.json` records constructor-only original line 525, not a
+kernel defect. `reference-connect PORT` now connects an owned nonblocking/CLOEXEC
+client to a caller-owned IPv4 loopback listener. CONNECT takes peer input/value
+length, not a listener/output-length pointer; actual SQE off/len/tag/flags and
+CQEs are reported. Getsockname/getpeername return actual endpoints and lengths;
+the external listener verifies both identities and EOF after client closure.
+
+Six error CQEs cover invalid FD, non-socket, short address, wrong family, refusal
+and already-connected TCP. Three failed socket probes each create/close a fresh
+FD; a private bound-but-not-listening guard holds the refusal port. Five socket
+lifetimes and the caller-owned ring are checked before exit. No packet is sent
+to an arbitrary external address. Addresses conservatively remain live through
+CQEs; modern SUBMIT_STABLE requirements are distinguished from early kernels.
+The recorded loopback trace takes the CQ-ready fast path; a delayed CONNECT or
+actual EXT_ARG fallback entry is not attested by this example.
+
+Three author spec-first tests/fixtures remain byte-exact, not ACL-sealed or an
+independent verifier's work. Twenty-five fresh processes use an independent
+listener, symbolic literal and syscall oracle: five socket lifetimes, actual
+endpoint queries, seven separate submissions, no synchronous connect/listen
+substitution. Seven damaged traces fail; 400 generated invalid-port strings and
+fixed typed/pre-setup/refusal cases reject unsafe operands. Nine compiled native
+and two syntax-valid trace-parser mutants die with substantive assertions,
+zero errors/skips; exact source restoration and rebuilt baseline pass. Port
+byte-order mutation changes only reporting, not a wire destination; zero-port
+mutation cannot address an unrelated listening port. No compile failure counted.
+
+Current bounded total: **111** (87 native, three line-index, eight trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+Zig 0.17.0/45 build steps; 60 tests/zero failures/errors/skips; twelve attributed
+400-case properties; strict publication/EPUBCheck; 27 chapters/116 literals and
+81 browser cases/348 code blocks/318 headings without violations. Scope excludes
+payload, DNS/TLS, IPv6/datagrams, remote policy, cancellation/interleavings and
+accept's supplied peer outputs; no device/pagination or whole-port assurance.
+See `connect-verification.json`, `connect-spec-sha256.json`, `mutation-connect.json`.
+Active diagnostics: four changed paths, no visible findings, one suppressed
+finding disclosed. Fabric/cached graph cannot prove complete callers; current
+explicit build/test/map/book consumers were inspected. No blocked reviewer retry,
+fallback or push. Message effects and other semantic gaps, independent review and
+personal-fork delivery still keep the goal incomplete.
 
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **43/43**. Current complete suite: **57 passed**
-  (42 native + one VM + four publication + three inventory + two line-index + five binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **45/45**. Current complete suite: **60 passed**
+  (45 native + one VM + four publication + three inventory + two line-index + five binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
-- Eight reference executables: `reference-setup`, `reference-completion`,
-  `reference-signals`, `reference-files`, `reference-buffers`, `reference-registration`, `reference-submission`, `reference-raw`.
+- Twelve reference executables: `reference-setup`, `reference-completion`,
+  `reference-signals`, `reference-files`, `reference-buffers`, `reference-splice`,
+  `reference-poll`, `reference-epoll`, `reference-connect`, `reference-registration`,
+  `reference-submission`, `reference-raw`.
 - Readers/copy: whole binary bytes, argument order, empty/boundary-size inputs,
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs;
@@ -551,7 +596,7 @@ mandatory blocked review and personal-fork delivery keep the goal incomplete.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  eleven properties**, source hashes, 57 passing tests and zero skips. These remain
+  twelve properties**, source hashes, 60 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -591,7 +636,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **111 current literal blocks** match Sphinx's source, independently of the
+- **116 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.

@@ -148,6 +148,49 @@ readiness for a descriptor/mask; submit again to observe later events.
 ``poll_remove`` identifies an outstanding poll by its submission tag. Removal
 and the target request have distinct completions; races can yield ``NOENT``.
 
+Executed client connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``reference-connect PORT`` connects an owned nonblocking/CLOEXEC TCP client to
+``127.0.0.1:PORT``. The caller must own a listening socket at that endpoint.
+No arguments, nondecimal ports, zero and values above 65535 are rejected before
+setup. The example is not a scanner; use a disposable loopback listener only.
+
+CONNECT takes a client FD, an input peer address and a numeric address length,
+not the listener/output-address/value-result length used by ACCEPT. The native
+preparer places that value in ``sqe.off``; ``sqe.len`` is zero. A correlated CQE
+of zero means connection success, not a returned FD. Native getsockname/getpeername
+then observe local/remote IPv4 endpoints with actual returned lengths; ports are
+converted from network byte order. The independent listener checks its accepted
+peer against these observations and receives EOF after queried client closure.
+
+The example keeps the peer bytes unchanged and live through completion. Modern
+SUBMIT_STABLE kernels need input storage through successful submission only;
+this conservative lifetime also covers early-kernel requirements described by
+:man:`io_uring_prep_connect(3)`. Failed socket state is unspecified: each negative
+socket probe gets a fresh owned FD, then closes it. Probes cover invalid FD,
+non-socket FD, short address, wrong family, a private bound-but-not-listening
+refusal endpoint, and already-connected TCP. The guard holds its port during the
+refusal test; no unrelated endpoint is used. Reconnect failure is observed only
+after successful endpoint queries, then the client is closed without reuse.
+
+Requests submit separately and check CQ readiness before a one-second EXT_ARG
+wait fallback (Linux 5.11+). The recorded loopback trace takes the ready fast
+path; it does not attest a delayed CONNECT or actual timeout entry. No sleeps
+or sender thread are used. Each CQE retains its original tag.
+Before exit, all five created sockets are closed/queried and the caller's ring
+remains open until normal deferred teardown. A syscall oracle checks actual
+endpoint queries, socket lifetimes, seven ring submissions and absence of a
+synchronous connect substitution. A second parser/shape is not agent review.
+
+Scope: sequential IPv4 loopback TCP handshake and selected errors. Payload I/O,
+DNS/TLS, IPv6, datagrams, remote network policy, cancellation/interleavings and
+accept's supplied peer-address outputs are not attested by this executable.
+
+.. literalinclude:: ../examples/reference_connect.zig
+   :language: zig
+   :caption: Owned client connection and independent peer endpoint observations
+
 Executed epoll interest-list changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

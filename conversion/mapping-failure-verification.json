@@ -156,7 +156,7 @@
     "examples/mapping_fault.zig": "3d09d44feeee352a3c6a6dd7660a16c803489ef86fe0b6e801ecd03fd08c1e91",
     "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0",
     "tests/test_mapping_bindings.py": "654cfafd142536ef82c7a86f877ed6b80d834c3e11fa429b4fb6dfa533fad84d",
-    "tools/reference_map.py": "d97a9793ca11c37501138ae42412c4bfe6ffb97592bd6c7e6594b54ba4dae2e5",
+    "tools/reference_map.py": "d94f0f76f7d0639654251fa7868f6aa37608c026134330690f3c9655a669ebc8",
     "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a"
   },
   "sdk_source_sha256": {
@@ -233,5 +233,12 @@
       "tools/reference_map.py"
     ],
     "suite_receipt": "conversion/test-verification.json"
+  },
+  "replay_after_connect": {
+    "changed_source_consumers": [
+      "tools/reference_map.py"
+    ],
+    "complete_suite": "60 tests, zero failures/errors/skips; twelve attributed properties x400 valid generated cases; isolated VM plus public CLI/model/binding/publication contracts rerun.",
+    "historical_mutation_scope": "Historical mutation pins remain tested-version records; this replay does not re-assess those mutants or provide independent review."
   }
 }

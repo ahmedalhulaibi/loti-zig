@@ -1,0 +1,350 @@
+{
+  "scope": "Owned IPv4 loopback TCP CONNECT, selected negative CQEs/value-length/network order, peer identity and before-exit socket lifetime; not every socket/protocol/policy, payload/DNS/TLS, cancellation/concurrency, early kernels/architectures, supplied ACCEPT peer outputs or independent agent review.",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64",
+    "strace": "strace -- version 7.0"
+  },
+  "source_sha256": {
+    "examples/reference_connect.zig": "222ea4bb96e82e33f6ac52aeafa1d60e6387877a844f9a88c2f54cb2c4b9e909",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "build.zig": "472b4062e830580e779a1a186903cbe153d214b77239e56edd0dbf6f0898e8dc",
+    "tools/reference_map.py": "d94f0f76f7d0639654251fa7868f6aa37608c026134330690f3c9655a669ebc8",
+    "ref-zig/submission.rst": "56896fb5a6c414d216ba34dbc1da1cfd07b5616a1c6cce937a8972980fd62659",
+    "conversion/reference-map.json": "7090adc80e3025e30ad0c7b6f1684ac311d469ed3be8ddc8119e516fa73d3ab9",
+    "tests/test_connect.py": "289c8c0273c9c64111f02304f55b8e4a2acc2403ea41030abd3e0a6da50435ef",
+    "testdata/inputs/connect-invalid-arguments.json": "8e6e479819c91aef336466ddf25bbcdfb1328a05790f063fa4c35445319e2e6b",
+    "testdata/inputs/connect-invalid-traces.json": "5cdee35babb32813965b9c8fa3079948c1b1929ea9b56c18460f6c577a2c191a",
+    "testdata/inputs/connect-report.json": "55746ad883291e0750c33bc05fa1e786aebb5b7205ced08f1252ae60d39b4e12",
+    "testdata/inputs/connect.trace": "1c8c241b41999e9f85636d4a2f2b61f1b08f2633f33d29bd423cc242c0657492",
+    "conversion/connect.trace": "f487f8b0115eb4b5fb6891967a0d36810b799153d2b5849c31b9d4ae39b5f7c8",
+    "conversion/connect-spec-sha256.json": "a74e51b77fa24481a852d5e390758a1d3778eaf63d9a8454a6b12576949b4438"
+  },
+  "sdk_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "manual_sha256": {
+    "/home/ahmed/workspace/va/man-qmd/build/docs/linux-man-pages/man/man2/connect.2.txt": "34f3dd05457e0a064a1e2c12d6b0e613c928a37788c5453ab6781b216b93d0d1",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_prep_connect.3.txt": "35fbb5cb9861d0106014aa0371846cdcdd6412ca14d888b8e8e53d98589a1758"
+  },
+  "actual_report": {
+    "connection": {
+      "request": {
+        "operation": "CONNECT",
+        "tag": 1,
+        "descriptor": "client",
+        "length": 0,
+        "address_length": 16,
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": 44413
+        },
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1,
+        "result": 0,
+        "flags": 0
+      },
+      "local": {
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": 60924
+        },
+        "length": 16
+      },
+      "peer": {
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": 44413
+        },
+        "length": 16
+      },
+      "flags": {
+        "nonblocking": true,
+        "cloexec": true
+      }
+    },
+    "failures": [
+      {
+        "request": {
+          "operation": "CONNECT",
+          "tag": 1000000,
+          "descriptor": "invalid",
+          "length": 0,
+          "address_length": 16,
+          "address": {
+            "family": 2,
+            "address": [
+              127,
+              0,
+              0,
+              1
+            ],
+            "port": 44413
+          },
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 1000000,
+          "result": -9,
+          "flags": 0
+        },
+        "closed": null,
+        "peer_error": null
+      },
+      {
+        "request": {
+          "operation": "CONNECT",
+          "tag": 1000001,
+          "descriptor": "ring",
+          "length": 0,
+          "address_length": 16,
+          "address": {
+            "family": 2,
+            "address": [
+              127,
+              0,
+              0,
+              1
+            ],
+            "port": 44413
+          },
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 1000001,
+          "result": -88,
+          "flags": 0
+        },
+        "closed": null,
+        "peer_error": null
+      },
+      {
+        "request": {
+          "operation": "CONNECT",
+          "tag": 1000002,
+          "descriptor": "probe",
+          "length": 0,
+          "address_length": 1,
+          "address": {
+            "family": 2,
+            "address": [
+              127,
+              0,
+              0,
+              1
+            ],
+            "port": 44413
+          },
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 1000002,
+          "result": -22,
+          "flags": 0
+        },
+        "closed": true,
+        "peer_error": null
+      },
+      {
+        "request": {
+          "operation": "CONNECT",
+          "tag": 1000003,
+          "descriptor": "probe",
+          "length": 0,
+          "address_length": 16,
+          "address": {
+            "family": 1,
+            "address": [
+              127,
+              0,
+              0,
+              1
+            ],
+            "port": 44413
+          },
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 1000003,
+          "result": -97,
+          "flags": 0
+        },
+        "closed": true,
+        "peer_error": null
+      },
+      {
+        "request": {
+          "operation": "CONNECT",
+          "tag": 1000004,
+          "descriptor": "probe",
+          "length": 0,
+          "address_length": 16,
+          "address": {
+            "family": 2,
+            "address": [
+              127,
+              0,
+              0,
+              1
+            ],
+            "port": 50863
+          },
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 1000004,
+          "result": -111,
+          "flags": 0
+        },
+        "closed": true,
+        "peer_error": 107
+      },
+      {
+        "request": {
+          "operation": "CONNECT",
+          "tag": 1000005,
+          "descriptor": "client",
+          "length": 0,
+          "address_length": 16,
+          "address": {
+            "family": 2,
+            "address": [
+              127,
+              0,
+              0,
+              1
+            ],
+            "port": 44413
+          },
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 1000005,
+          "result": -106,
+          "flags": 0
+        },
+        "closed": null,
+        "peer_error": null
+      }
+    ],
+    "refusal_address": {
+      "address": {
+        "family": 2,
+        "address": [
+          127,
+          0,
+          0,
+          1
+        ],
+        "port": 50863
+      },
+      "length": 16
+    },
+    "peer_unchanged": true,
+    "descriptors_closed": {
+      "client": true,
+      "guard": true
+    },
+    "ring_still_open": true
+  },
+  "external_listener": {
+    "local": [
+      "127.0.0.1",
+      44413
+    ],
+    "peer": [
+      "127.0.0.1",
+      60924
+    ],
+    "received_eof": true
+  },
+  "actual_syscall_oracle": {
+    "sockets": 5,
+    "closed": 5,
+    "submissions": 7,
+    "rings": 1,
+    "peer": 44413,
+    "local": 60924,
+    "guard": 50863,
+    "synchronous_connects": 0,
+    "listeners": 0
+  },
+  "spec_first_snapshot": "conversion/connect-spec-sha256.json",
+  "spec_tests_and_fixtures_remained_byte_exact": true,
+  "positive_fresh_processes_in_complete_suite": 25,
+  "invalid_argument_cases": 9,
+  "refusal_case": "Caller-owned bound non-listening socket; exact RequestedPeerConnectionFailed before report.",
+  "damaged_traces_rejected": 7,
+  "property_statistics": {
+    "test": "test_connect.ConnectContracts.test_invalid_port_language_is_rejected",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  },
+  "mutation_report": "conversion/mutation-connect.json",
+  "diagnostics": {
+    "paths": 4,
+    "visible_findings": 0,
+    "suppressed_findings": 1,
+    "scope": "Current active LSP after source restoration; suppression is disclosed, not unconditional clean."
+  },
+  "navigation": "Fabric unavailable/cached graph stale; direct new implementation and explicit build/CLI/test/map/book consumers inspected; no transitive-call completeness claim.",
+  "gates": {
+    "build_steps": 45,
+    "tests": 60,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties_with_400_generated_valid_cases": 12,
+    "strict_html_epub": true,
+    "epubcheck": "5.2.1: zero fatal/error/warning/info",
+    "chapters": 27,
+    "literals": 116,
+    "browser_cases": 81
+  },
+  "review": "Mandatory supported reviewer host still unavailable. No retry/fallback; author pre-implementation snapshot is not ACL-sealed or independent verifier-agent acceptance.",
+  "delivery": "Nothing pushed; goal incomplete.",
+  "post_suite_wait_clarification": {
+    "source": [
+      "ref-zig/submission.rst"
+    ],
+    "change": "Documentation only: observed CQ-ready fast path distinguished from unforced EXT_ARG fallback; native/spec tests unchanged.",
+    "replay": "Four publication/layout plus two line-disposition contracts replayed; strict HTML/EPUB, final fidelity/layout/EPUBCheck repeated after rebuild."
+  },
+  "wait_limit": "Recorded live loopback trace has no timed io_uring_enter: CQ-ready fast path observed. One-second EXT_ARG fallback is present but delayed CONNECT, timeout/interruption/cancellation are not attested."
+}

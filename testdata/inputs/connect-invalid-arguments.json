@@ -1,0 +1,64 @@
+[
+  {
+    "name": "missing",
+    "arguments": [],
+    "error": "ExpectedConnectPort"
+  },
+  {
+    "name": "extra",
+    "arguments": [
+      "1",
+      "2"
+    ],
+    "error": "ExpectedConnectPort"
+  },
+  {
+    "name": "empty",
+    "arguments": [
+      ""
+    ],
+    "error": "InvalidConnectPort"
+  },
+  {
+    "name": "zero",
+    "arguments": [
+      "0"
+    ],
+    "error": "InvalidConnectPort"
+  },
+  {
+    "name": "out_of_range",
+    "arguments": [
+      "65536"
+    ],
+    "error": "InvalidConnectPort"
+  },
+  {
+    "name": "signed",
+    "arguments": [
+      "+1"
+    ],
+    "error": "InvalidConnectPort"
+  },
+  {
+    "name": "negative",
+    "arguments": [
+      "-1"
+    ],
+    "error": "InvalidConnectPort"
+  },
+  {
+    "name": "nondigit",
+    "arguments": [
+      "1x"
+    ],
+    "error": "InvalidConnectPort"
+  },
+  {
+    "name": "overflow",
+    "arguments": [
+      "184467440737095516160"
+    ],
+    "error": "InvalidConnectPort"
+  }
+]

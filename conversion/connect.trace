@@ -1,0 +1,23 @@
+socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 3
+socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 4
+bind(4, {sa_family=AF_INET, sin_port=htons(0), sin_addr=inet_addr("127.0.0.1")}, 16) = 0
+getsockname(4, {sa_family=AF_INET, sin_port=htons(50863), sin_addr=inet_addr("127.0.0.1")}, [16]) = 0
+io_uring_enter(5, 1, 0, 0, NULL, 8)     = 1
+io_uring_enter(5, 1, 0, 0, NULL, 8)     = 1
+socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+io_uring_enter(5, 1, 0, 0, NULL, 8)     = 1
+close(6)                                = 0
+socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+io_uring_enter(5, 1, 0, 0, NULL, 8)     = 1
+close(6)                                = 0
+socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+io_uring_enter(5, 1, 0, 0, NULL, 8)     = 1
+getpeername(6, 0x7fff4d745088, [16])    = -1 ENOTCONN (Transport endpoint is not connected)
+close(6)                                = 0
+io_uring_enter(5, 1, 0, 0, NULL, 8)     = 1
+getsockname(3, {sa_family=AF_INET, sin_port=htons(60924), sin_addr=inet_addr("127.0.0.1")}, [16]) = 0
+getpeername(3, {sa_family=AF_INET, sin_port=htons(44413), sin_addr=inet_addr("127.0.0.1")}, [16]) = 0
+io_uring_enter(5, 1, 0, 0, NULL, 8)     = 1
+close(3)                                = 0
+close(4)                                = 0
+close(5)                                = 0

@@ -1,0 +1,10 @@
+{
+  "scope": "Author pre-implementation tests/fixtures snapshot, not verifier-agent acceptance or an ACL seal.",
+  "sha256": {
+    "tests/test_connect.py": "289c8c0273c9c64111f02304f55b8e4a2acc2403ea41030abd3e0a6da50435ef",
+    "testdata/inputs/connect-invalid-arguments.json": "8e6e479819c91aef336466ddf25bbcdfb1328a05790f063fa4c35445319e2e6b",
+    "testdata/inputs/connect-invalid-traces.json": "5cdee35babb32813965b9c8fa3079948c1b1929ea9b56c18460f6c577a2c191a",
+    "testdata/inputs/connect-report.json": "55746ad883291e0750c33bc05fa1e786aebb5b7205ced08f1252ae60d39b4e12",
+    "testdata/inputs/connect.trace": "1c8c241b41999e9f85636d4a2f2b61f1b08f2633f33d29bd423cc242c0657492"
+  }
+}

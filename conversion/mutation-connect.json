@@ -1,0 +1,193 @@
+{
+  "scope": "Nine compiled native CONNECT and two syntax-valid syscall-oracle regressions, not all networks/families/policy, concurrency/cancellation, whole-port/SDK or independent review. Mutants never intentionally address unrelated ports: port-byte-order mutation changes only output decoding; zero-port mutant targets unusable port zero.",
+  "source_sha256": {
+    "examples/reference_connect.zig": "222ea4bb96e82e33f6ac52aeafa1d60e6387877a844f9a88c2f54cb2c4b9e909",
+    "tests/test_connect.py": "289c8c0273c9c64111f02304f55b8e4a2acc2403ea41030abd3e0a6da50435ef"
+  },
+  "mutants": [
+    {
+      "id": "wrong-main-address-length",
+      "source": "examples/reference_connect.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 25,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/zig/2026-10-10/connect/wrong-main-address-length.log"
+    },
+    {
+      "id": "main-connect-uses-ring-fd",
+      "source": "examples/reference_connect.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 25,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/zig/2026-10-10/connect/main-connect-uses-ring-fd.log"
+    },
+    {
+      "id": "connect-is-nop",
+      "source": "examples/reference_connect.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 25,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/zig/2026-10-10/connect/connect-is-nop.log"
+    },
+    {
+      "id": "peer-query-is-local",
+      "source": "examples/reference_connect.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 25,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/zig/2026-10-10/connect/peer-query-is-local.log"
+    },
+    {
+      "id": "port-report-endian-wrong",
+      "source": "examples/reference_connect.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 25,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/zig/2026-10-10/connect/port-report-endian-wrong.log"
+    },
+    {
+      "id": "nonblocking-omitted",
+      "source": "examples/reference_connect.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 25,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/zig/2026-10-10/connect/nonblocking-omitted.log"
+    },
+    {
+      "id": "cloexec-omitted",
+      "source": "examples/reference_connect.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 25,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/zig/2026-10-10/connect/cloexec-omitted.log"
+    },
+    {
+      "id": "socket-close-omitted",
+      "source": "examples/reference_connect.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 25,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/zig/2026-10-10/connect/socket-close-omitted.log"
+    },
+    {
+      "id": "zero-port-validation-omitted",
+      "source": "examples/reference_connect.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_arguments_refusal_and_pre_setup_rejection",
+      "log": ".mutants/zig/2026-10-10/connect/zero-port-validation-omitted.log"
+    },
+    {
+      "id": "submission-count-ignored",
+      "source": "tests/test_connect.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/python/2026-10-10/connect/submission-count-ignored.log"
+    },
+    {
+      "id": "socket-cleanup-ignored",
+      "source": "tests/test_connect.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "log": ".mutants/python/2026-10-10/connect/socket-cleanup-ignored.log"
+    }
+  ],
+  "restored_byte_exactly": true,
+  "rebuilt_three_test_baseline_passed": true,
+  "spec_first_tests_and_fixtures_unchanged": true,
+  "log_whitespace_normalization": {
+    "paths": [
+      ".mutants/python/2026-10-10/connect/socket-cleanup-ignored-build.log",
+      ".mutants/python/2026-10-10/connect/socket-cleanup-ignored.log",
+      ".mutants/python/2026-10-10/connect/submission-count-ignored-build.log",
+      ".mutants/python/2026-10-10/connect/submission-count-ignored.log",
+      ".mutants/zig/2026-10-10/connect/cloexec-omitted-build.log",
+      ".mutants/zig/2026-10-10/connect/cloexec-omitted.log",
+      ".mutants/zig/2026-10-10/connect/connect-is-nop-build.log",
+      ".mutants/zig/2026-10-10/connect/connect-is-nop.log",
+      ".mutants/zig/2026-10-10/connect/main-connect-uses-ring-fd-build.log",
+      ".mutants/zig/2026-10-10/connect/main-connect-uses-ring-fd.log",
+      ".mutants/zig/2026-10-10/connect/nonblocking-omitted-build.log",
+      ".mutants/zig/2026-10-10/connect/nonblocking-omitted.log",
+      ".mutants/zig/2026-10-10/connect/peer-query-is-local-build.log",
+      ".mutants/zig/2026-10-10/connect/peer-query-is-local.log",
+      ".mutants/zig/2026-10-10/connect/port-report-endian-wrong-build.log",
+      ".mutants/zig/2026-10-10/connect/port-report-endian-wrong.log",
+      ".mutants/zig/2026-10-10/connect/socket-close-omitted-build.log",
+      ".mutants/zig/2026-10-10/connect/socket-close-omitted.log",
+      ".mutants/zig/2026-10-10/connect/wrong-main-address-length-build.log",
+      ".mutants/zig/2026-10-10/connect/wrong-main-address-length.log",
+      ".mutants/zig/2026-10-10/connect/zero-port-validation-omitted-build.log",
+      ".mutants/zig/2026-10-10/connect/zero-port-validation-omitted.log"
+    ],
+    "scope": "Trailing spaces/tabs/CR and terminal blank lines only; substantive failure observations unchanged."
+  }
+}

@@ -1,0 +1,20 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_arguments_refusal_and_pre_setup_rejection (tests.test_connect.ConnectContracts.test_arguments_refusal_and_pre_setup_rejection)
+Kills missing/extra operands, late validation and success reported for a non-listening peer. ...
+  test_arguments_refusal_and_pre_setup_rejection (tests.test_connect.ConnectContracts.test_arguments_refusal_and_pre_setup_rejection) (case='zero')
+Kills missing/extra operands, late validation and success reported for a non-listening peer. ... FAIL
+
+======================================================================
+FAIL: test_arguments_refusal_and_pre_setup_rejection (tests.test_connect.ConnectContracts.test_arguments_refusal_and_pre_setup_rejection) (case='zero')
+Kills missing/extra operands, late validation and success reported for a non-listening peer.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 162, in test_arguments_refusal_and_pre_setup_rejection
+    self.assertEqual(result.stderr.splitlines()[0], ("error: " + case["error"]).encode())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'error: RequestedPeerConnectionFailed' != b'error: InvalidConnectPort'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.685s
+
+FAILED (failures=1)

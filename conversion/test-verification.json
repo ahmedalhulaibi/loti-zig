@@ -1,10 +1,28 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 57,
+  "tests_run": 60,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "property_statistics": [
+    {
+      "test": "test_connect.ConnectContracts.test_invalid_port_language_is_rejected",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    },
     {
       "test": "test_epoll.EpollContracts.test_commands_follow_interest_list_and_fifo_model",
       "phases": {
@@ -72,7 +90,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 89
+          "overrun": 84
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -108,7 +126,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 79
+          "overrun": 71
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -126,7 +144,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 139
+          "overrun": 114
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -144,7 +162,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 45
+          "overrun": 55
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -206,7 +224,7 @@
   ],
   "source_sha256": {
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
-    "build.zig": "99d7847a68511080071fe23e155ee4297ff93b3edeb5291e5b81a1b7b286ab03",
+    "build.zig": "472b4062e830580e779a1a186903cbe153d214b77239e56edd0dbf6f0898e8dc",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
     "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5",
     "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
@@ -218,6 +236,7 @@
     "examples/readv.zig": "5e374ec56283d7f5994c83e3cb8fcd88f88b44a138fdf1c4bfab0316ad34c824",
     "examples/reference_buffers.zig": "a44155312b4f0c382b0c29126516f2ae3dad874ae84d37b9e29790ee5fa5e13a",
     "examples/reference_completion.zig": "68cb89d6f08ffc80f4d9fe356b3328e00f3675732262b59221d3e0c13bd0fcc6",
+    "examples/reference_connect.zig": "222ea4bb96e82e33f6ac52aeafa1d60e6387877a844f9a88c2f54cb2c4b9e909",
     "examples/reference_epoll.zig": "1aab395c92e951f58c5ebd8deba5c0704efae8e42bfbf447fd09f80f0cc42a3f",
     "examples/reference_files.zig": "4f2792ef1cd99f2191f242f040ca4a90d4af376a3dfb955cd0e04167f139f65f",
     "examples/reference_poll.zig": "5996d0502a155f8d7ed5c1d6f1e4db10233f16e6b1ee32d81de4e2a0b1e14a5d",
@@ -233,6 +252,10 @@
     "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
     "testdata/inputs/completion-invalid-plans.json": "20a857a64b64164cfbc6cdd99c335987b8af52e207740798e3ce9fc6f0d7997d",
     "testdata/inputs/completion-plans.json": "bb81a1461aea4ba4a95040894310a881b146a2b106971ca5f870943397350ed6",
+    "testdata/inputs/connect-invalid-arguments.json": "8e6e479819c91aef336466ddf25bbcdfb1328a05790f063fa4c35445319e2e6b",
+    "testdata/inputs/connect-invalid-traces.json": "5cdee35babb32813965b9c8fa3079948c1b1929ea9b56c18460f6c577a2c191a",
+    "testdata/inputs/connect-report.json": "55746ad883291e0750c33bc05fa1e786aebb5b7205ced08f1252ae60d39b4e12",
+    "testdata/inputs/connect.trace": "1c8c241b41999e9f85636d4a2f2b61f1b08f2633f33d29bd423cc242c0657492",
     "testdata/inputs/epoll-default-plan.json": "e5e4841248106c640a837accaea4ab30ce9b03d493dc50fe926f8b41162f3720",
     "testdata/inputs/epoll-invalid-plans.json": "756cf2ae47776dda177520170f1ce6ed159cf74f2944824f3dcca23171649bf3",
     "testdata/inputs/epoll-invalid-traces.json": "f3850dcb3635ead4849ac1c6c78acae38c3889b669ee5f4df13d5ad9b5a3530f",
@@ -272,6 +295,7 @@
     "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
     "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
     "tests/test_block_devices.py": "18857ffc40a06b68a695a879c45328566abd271fc86ab8c9716bdb5f86bcd5d6",
+    "tests/test_connect.py": "289c8c0273c9c64111f02304f55b8e4a2acc2403ea41030abd3e0a6da50435ef",
     "tests/test_dispositions.py": "8d0ed94c868b5e4285b774a900f4e3f55bf1fb0c4d9695daa2301323bbeb02e6",
     "tests/test_epoll.py": "16c5648faf1b43d5ac969441c23fdf1f942798f6af1182942ed40916b35a97b5",
     "tests/test_epoll_trace.py": "59f8a49cd5ca6cf31372c18d39b338a0eef88cdf8219479fe4e3258fcdad59d9",
@@ -284,8 +308,8 @@
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tests/test_publication.py": "794fe2ba1a1460dbb073161b31c744c176d7169d0190d74902e601657f00ed2b",
-    "tests/test_reader_layout.py": "95607f3b723cafb5365784d4cd621a59ad98d61f9d292156a7e10f6bc39030be",
+    "tests/test_publication.py": "40a1065010e139c76509a881d628eb38ccece0fd916d56d019c226695b30d35e",
+    "tests/test_reader_layout.py": "34b0d6f60a5d5e47a18df51c9bc5233f78a9f63350a9f9d33f457a7320af156d",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
@@ -294,7 +318,7 @@
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
-    "tools/reference_map.py": "d97a9793ca11c37501138ae42412c4bfe6ffb97592bd6c7e6594b54ba4dae2e5"
+    "tools/reference_map.py": "d94f0f76f7d0639654251fa7868f6aa37608c026134330690f3c9655a669ebc8"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."
 }

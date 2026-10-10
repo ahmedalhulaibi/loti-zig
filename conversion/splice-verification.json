@@ -6,12 +6,12 @@
     "architecture": "x86_64"
   },
   "source_sha256": {
-    "build.zig": "99d7847a68511080071fe23e155ee4297ff93b3edeb5291e5b81a1b7b286ab03",
+    "build.zig": "472b4062e830580e779a1a186903cbe153d214b77239e56edd0dbf6f0898e8dc",
     "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
-    "tools/reference_map.py": "d97a9793ca11c37501138ae42412c4bfe6ffb97592bd6c7e6594b54ba4dae2e5",
-    "conversion/reference-map.json": "603665c4c2fc566314407e0add5374253b5c3486ebd17482935275d01b2bbe52",
-    "ref-zig/submission.rst": "04a43057817a0e541633bf5950ee3442b84c5f184b4bbdcab80c04f6cccaf65c",
+    "tools/reference_map.py": "d94f0f76f7d0639654251fa7868f6aa37608c026134330690f3c9655a669ebc8",
+    "conversion/reference-map.json": "7090adc80e3025e30ad0c7b6f1684ac311d469ed3be8ddc8119e516fa73d3ab9",
+    "ref-zig/submission.rst": "56896fb5a6c414d216ba34dbc1da1cfd07b5616a1c6cce937a8972980fd62659",
     "testdata/inputs/splice-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
     "testdata/inputs/splice-partial.bin": "7456c2d90a90f290eef60a9724d811da38d479f5a6441990d9b41c4e94b634bb",
     "testdata/inputs/splice-report.json": "c6dd5af2ff11234fc659be050b94eac5a934cc9a008ca0b31e3f47ba088285a8"
@@ -182,5 +182,22 @@
       "ref-zig/submission.rst"
     ],
     "suite_receipt": "conversion/test-verification.json"
+  },
+  "replay_after_connect": {
+    "changed_source_consumers": [
+      "build.zig",
+      "tools/reference_map.py",
+      "conversion/reference-map.json",
+      "ref-zig/submission.rst"
+    ],
+    "complete_suite": "60 tests, zero failures/errors/skips; twelve attributed properties x400 valid generated cases; isolated VM plus public CLI/model/binding/publication contracts rerun.",
+    "historical_mutation_scope": "Historical mutation pins remain tested-version records; this replay does not re-assess those mutants or provide independent review."
+  },
+  "post_suite_wait_clarification": {
+    "source": [
+      "ref-zig/submission.rst"
+    ],
+    "change": "Documentation only: observed CQ-ready fast path distinguished from unforced EXT_ARG fallback; native/spec tests unchanged.",
+    "replay": "Four publication/layout plus two line-disposition contracts replayed; strict HTML/EPUB, final fidelity/layout/EPUBCheck repeated after rebuild."
   }
 }

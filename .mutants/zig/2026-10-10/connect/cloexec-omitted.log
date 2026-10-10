@@ -1,0 +1,533 @@
+{"tests": 1, "failures": 25, "errors": 0, "skips": 0}
+test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ...
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=0)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=1)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=2)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=3)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=4)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=5)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=6)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=7)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=8)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=9)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=10)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=11)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=12)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=13)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=14)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=15)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=16)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=17)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=18)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=19)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=20)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=21)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=22)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=23)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+  test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=24)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... FAIL
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=0)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=1)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=2)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=3)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=4)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=5)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=6)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=7)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=8)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=9)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=10)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=11)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=12)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=13)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=14)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=15)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=16)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=17)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=18)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=19)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=20)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=21)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=22)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=23)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+======================================================================
+FAIL: test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls) (process=24)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 125, in test_native_connection_matches_external_peer_and_syscalls
+    observed = inspect_trace(path.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 85, in inspect_trace
+    raise ValueError("IncompleteConnectSyscallsOrCleanup")
+ValueError: IncompleteConnectSyscallsOrCleanup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_connect.py", line 127, in test_native_connection_matches_external_peer_and_syscalls
+    self.fail(f"Invalid public CONNECT trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public CONNECT trace: IncompleteConnectSyscallsOrCleanup
+
+----------------------------------------------------------------------
+Ran 1 test in 0.337s
+
+FAILED (failures=25)

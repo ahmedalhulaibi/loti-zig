@@ -1,0 +1,240 @@
+{
+  "connection": {
+    "request": {
+      "operation": "CONNECT",
+      "tag": 1,
+      "descriptor": "client",
+      "length": 0,
+      "address_length": 16,
+      "address": {
+        "family": 2,
+        "address": [
+          127,
+          0,
+          0,
+          1
+        ],
+        "port": "$peer"
+      },
+      "flags": 0
+    },
+    "cqe": {
+      "tag": 1,
+      "result": 0,
+      "flags": 0
+    },
+    "local": {
+      "address": {
+        "family": 2,
+        "address": [
+          127,
+          0,
+          0,
+          1
+        ],
+        "port": "$local"
+      },
+      "length": 16
+    },
+    "peer": {
+      "address": {
+        "family": 2,
+        "address": [
+          127,
+          0,
+          0,
+          1
+        ],
+        "port": "$peer"
+      },
+      "length": 16
+    },
+    "flags": {
+      "nonblocking": true,
+      "cloexec": true
+    }
+  },
+  "failures": [
+    {
+      "request": {
+        "operation": "CONNECT",
+        "tag": 1000000,
+        "descriptor": "invalid",
+        "length": 0,
+        "address_length": 16,
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": "$peer"
+        },
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1000000,
+        "result": -9,
+        "flags": 0
+      },
+      "closed": null,
+      "peer_error": null
+    },
+    {
+      "request": {
+        "operation": "CONNECT",
+        "tag": 1000001,
+        "descriptor": "ring",
+        "length": 0,
+        "address_length": 16,
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": "$peer"
+        },
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1000001,
+        "result": -88,
+        "flags": 0
+      },
+      "closed": null,
+      "peer_error": null
+    },
+    {
+      "request": {
+        "operation": "CONNECT",
+        "tag": 1000002,
+        "descriptor": "probe",
+        "length": 0,
+        "address_length": 1,
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": "$peer"
+        },
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1000002,
+        "result": -22,
+        "flags": 0
+      },
+      "closed": true,
+      "peer_error": null
+    },
+    {
+      "request": {
+        "operation": "CONNECT",
+        "tag": 1000003,
+        "descriptor": "probe",
+        "length": 0,
+        "address_length": 16,
+        "address": {
+          "family": 1,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": "$peer"
+        },
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1000003,
+        "result": -97,
+        "flags": 0
+      },
+      "closed": true,
+      "peer_error": null
+    },
+    {
+      "request": {
+        "operation": "CONNECT",
+        "tag": 1000004,
+        "descriptor": "probe",
+        "length": 0,
+        "address_length": 16,
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": "$guard"
+        },
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1000004,
+        "result": -111,
+        "flags": 0
+      },
+      "closed": true,
+      "peer_error": 107
+    },
+    {
+      "request": {
+        "operation": "CONNECT",
+        "tag": 1000005,
+        "descriptor": "client",
+        "length": 0,
+        "address_length": 16,
+        "address": {
+          "family": 2,
+          "address": [
+            127,
+            0,
+            0,
+            1
+          ],
+          "port": "$peer"
+        },
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 1000005,
+        "result": -106,
+        "flags": 0
+      },
+      "closed": null,
+      "peer_error": null
+    }
+  ],
+  "refusal_address": {
+    "address": {
+      "family": 2,
+      "address": [
+        127,
+        0,
+        0,
+        1
+      ],
+      "port": "$guard"
+    },
+    "length": 16
+  },
+  "peer_unchanged": true,
+  "descriptors_closed": {
+    "client": true,
+    "guard": true
+  },
+  "ring_still_open": true
+}

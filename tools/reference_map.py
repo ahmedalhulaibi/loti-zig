@@ -18,6 +18,7 @@ BUFFERS = "examples/reference_buffers.zig"
 SPLICE = "examples/reference_splice.zig"
 POLL = "examples/reference_poll.zig"
 EPOLL = "examples/reference_epoll.zig"
+CONNECT = "examples/reference_connect.zig"
 RAW = "examples/reference_raw.zig"
 
 PREPARERS = {
@@ -185,6 +186,10 @@ def generate():
                     example = EPOLL
                     scope = "constructed and submitted; ADD/MOD/DEL outcomes, IN/OUT mask changes and opaque u64 data independently observed via epoll_wait; duplicate/missing and six negative CQEs, last-owned-FD removal/teardown checked; sequential level-triggered pipe only"
                     difference = "Completion zero means interest-list mutation, not readiness; event storage stays alive through the CQE, then epoll stores its mask/data. DEL accepts null. SDK target-FD cast requires a nonnegative value; retired positive owned FD exercises EBADF."
+                elif method == "connect":
+                    example = CONNECT
+                    scope = "constructed and submitted; caller-owned IPv4 loopback listener independently observes client identity/closure; actual endpoint queries, six correlated error CQEs, fresh failed sockets and FD cleanup checked; no payload/DNS/TLS/IPv6/datagram/cancellation or arbitrary-network assurance"
+                    difference = "Takes a client socket and stable peer input, not a listener or output address; addrlen is a value in SQE off, while len is zero. Success CQE is zero, not a new FD. This example conservatively retains address storage through completion."
         elif original in OTHER:
             native_name, example, difference = OTHER[original]
             native_source = "os/linux/IoUring.zig"
