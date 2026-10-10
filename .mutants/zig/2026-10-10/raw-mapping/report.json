@@ -1,0 +1,54 @@
+{
+  "scope": "Author-run shared and forced-separate real Linux mappings/I/O, fork exclusion and normal teardown. Not a historical-kernel boot, injected construction failure check, full queue model or independent review.",
+  "tested": 4,
+  "killed": 4,
+  "survived": 0,
+  "mutants": [
+    {
+      "id": "cq-base-alias",
+      "compiled": true,
+      "test_exit_code": 1,
+      "failure_classes": [
+        "CompletionPointerRegionMismatch"
+      ],
+      "mutant_source_sha256": "786d86a25ea0e464f2b1cee07a540ceb36c818d0ca4a86d707e68c99867d96b5",
+      "test_log_sha256": "aabce03d9112d04b41a8e613826adfeae72b0faf69835a427a57f9994c28b438"
+    },
+    {
+      "id": "cq-unmap-omitted",
+      "compiled": true,
+      "test_exit_code": 1,
+      "failure_classes": [
+        "MappingNotReleased"
+      ],
+      "mutant_source_sha256": "bc8cbb7df130adddeb511727fd3dd4fa36c448ae1356409e37a53a9e70ba45a2",
+      "test_log_sha256": "d68e1cfb2d73019fcf694b4c09870c1a17c80aabd9ccb03e909eab8f8bd9a6fb"
+    },
+    {
+      "id": "cq-dontfork-omitted",
+      "compiled": true,
+      "test_exit_code": 1,
+      "failure_classes": [
+        "ForkMappingInheritanceFailed"
+      ],
+      "mutant_source_sha256": "6934c05d4dd0321b4ada66b15ed564f67aa3e1ed9a33bb1d4e7cc6fa321dab82",
+      "test_log_sha256": "eef99701c99f9844beb33ad786e3df8c4c01603decc90f309c14093f1e91d831"
+    },
+    {
+      "id": "cq-mask-zero",
+      "compiled": true,
+      "test_exit_code": 1,
+      "failure_classes": [
+        "CompletionLengthOutOfBounds",
+        "CompletionLengthOutOfBounds"
+      ],
+      "mutant_source_sha256": "dfb2cccae16aa8536b2e6cca705df8209174e9a9bf5e3d4b4704973988c5ae3c",
+      "test_log_sha256": "0eea129b50473f900f6c888833cd1d7bb0beac57e0df0d384b428593be1dba04"
+    }
+  ],
+  "restored_source_sha256": {
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/reference_setup.zig": "08686998a5fe2df08d28a8567e793e5bc108e7a950a747859e179270d8ab574f",
+    "tests/test_reference.py": "cb0101dbc5d1b1c4616a4a48d28c28a575c30267267359ade4d88247929a3073"
+  }
+}

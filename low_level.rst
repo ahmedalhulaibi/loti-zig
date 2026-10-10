@@ -66,20 +66,23 @@ Setup and mappings
 ``linux.io_uring_setup``. Raw syscall results use errno-encoded ``usize``;
 ``linux.errno`` distinguishes a descriptor from failure. Check before casting.
 
-The kernel returns SQ/CQ sizes and byte offsets. ``RawRing.map`` computes the
-larger ring-control size, maps it at ``IORING_OFF_SQ_RING``, and maps the separate
-SQE array at ``IORING_OFF_SQES``. It derives aligned pointers from the returned
-offsets, not assumed offsets. The SQ index array and CQ entry array are different
-objects.
+The kernel returns SQ/CQ sizes and byte offsets. With ``IORING_FEAT_SINGLE_MMAP``,
+``RawRing.map`` maps the larger control-region size at ``IORING_OFF_SQ_RING``.
+Without it, SQ and CQ have separate mappings at ``IORING_OFF_SQ_RING`` and
+``IORING_OFF_CQ_RING``. SQEs always have their own ``IORING_OFF_SQES`` mapping.
+CQ pointers use the CQ base; SQ pointers use the SQ base. Derive aligned pointers
+from kernel offsets, not assumed offsets. SQ indices and CQ entries differ.
 
-This implementation explicitly requires ``IORING_FEAT_SINGLE_MMAP``. It does
-not claim support for the separate-mapping fallback on earlier kernels. Ring
-creation success transfers descriptor ownership; failed construction closes the
-unowned descriptor. ``deinit`` releases both mappings and the descriptor.
+Successful mapping transfers descriptor ownership. Mapping failure unwinds all
+regions already acquired; the caller still owns the descriptor. ``init`` closes
+it on failure. ``deinit`` unmaps each owned region once and closes the descriptor.
 
-``reference-setup input.bin`` also maps an existing setup descriptor, applies
-``MADV_DONTFORK`` to both ranges and completes an actual read. Preventing mapping
-inheritance does not make sharing a live ring across fork boundaries safe.
+``reference-setup input.bin --separate-mappings`` clears the feature bit in a
+local parameter copy to exercise the three-mapping strategy on the current
+kernel. It checks pointer origins, real reads across ring-slot reuse, child
+mapping exclusion and teardown. This does not attest an older kernel boot.
+``MADV_DONTFORK`` applies to every owned mapping; the child still inherits the
+descriptor. Do not use its live ring after fork.
 
 Publishing an SQE
 -----------------

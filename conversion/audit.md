@@ -52,8 +52,8 @@ conversion attestation: they identified an actual missing original feature.
 
 The original copy's `BLKGETSIZE64` input feature is now recreated and executed
 against disposable read-only virtual disks. Native `cp` accepts regular or block
-input; output is explicitly restricted to regular files. Raw mapping's older
-separate-mapping fallback remains excluded: documented, not claimed as ported.
+input; output is explicitly restricted to regular files. Raw mapping now restores
+the separate SQ/CQ strategy; forced-mode evidence is not an older-kernel boot.
 Complete probe-flag oracle and forced short-I/O/state checks remain unverified.
 
 ## Reader/copy repair and bounded mutation evidence
@@ -77,6 +77,35 @@ Complete probe-flag oracle and forced short-I/O/state checks remain unverified.
   Exact source bytes restored; both boundary tests pass afterward. This is a
   bounded contribution, **not** the remaining whole-port mutation gate.
 
+## Raw mapping restoration
+
+`e0891ef` reproduces the omitted separate-mapping branch. `RawRing.map` now
+selects a shared SQ/CQ region or independently sized SQ/CQ mappings, then maps
+SQEs separately. Error unwinding releases acquired regions; successful ownership
+includes optional CQ memory in `dontFork` and `deinit`.
+
+`raw-mapping-verification.json` records both real strategies on the current
+kernel. The reference clears SINGLE_MMAP locally for separate mode; the SDK
+wrapper still requires the feature. Each case performs 1,025 alternating
+64/31-byte READV operations across SQ/CQ slot reuse. Whole metadata, total 48,704
+bytes, independently computed SHA-256 and final prefix are checked. CQ pointer
+origins are checked separately because current kernels can share physical backing
+between distinct virtual mappings.
+
+Every mapped page passes `mincore` before fork, reports `ENOMEM` in the child
+after DONTFORK, and reports `ENOMEM` after parent teardown. Raw `fcntl` confirms
+descriptor inheritance in the child and `EBADF` after parent closure. Child
+processing uses no inherited allocator/I/O locks. Four compiled source mutants
+are killed: SQ-base CQ alias, omitted CQ unmap, omitted CQ DONTFORK, and zero CQ
+mask. `.mutants/zig/2026-10-10/raw-mapping/` retains their report and actual
+failure logs. Source/test hashes are restored exactly and the rebuilt boundary
+passes. LSP supports the three changed source/test files with no diagnostics;
+RST is unsupported, so the clean Sphinx/EPUB gates provide document checks.
+
+This evidence does **not** verify historical-kernel boot compatibility, injected
+mapping-construction failures, u32 counter wraparound/interleaving, whole-port
+mutation coverage or the blocked independent agent review.
+
 ## Native execution evidence
 
 - Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **25 passed**
@@ -97,7 +126,8 @@ Complete probe-flag oracle and forced short-I/O/state checks remain unverified.
 - HTTP: real loopback TCP; binary/empty bodies, MIME/length, queries/indexes,
   malformed/method/missing cases, traversal/symlink confinement, oversized headers,
   fragments, concurrent clients and a completing request beside a stalled client.
-- Raw setup/map/`dontFork` are invoked, followed by a real read. NOP batches verify
+- Both raw mapping strategies and actual child exclusion/teardown execute;
+  variable-length READV batches verify bytes and slot reuse. NOP batches verify
   copy/consume versus separate manual acknowledgement; EXT_ARG wait expires and a
   submitted timer returns `-ETIME`. Async-only eventfd and credential NOP execute;
   both probe paths query the kernel.

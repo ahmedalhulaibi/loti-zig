@@ -1,0 +1,23 @@
+F
+======================================================================
+FAIL: test_mapping_sizes_dontfork_and_actual_raw_read (tests.test_reference.ReferenceContracts.test_mapping_sizes_dontfork_and_actual_raw_read) (options=['--separate-mappings'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 40, in test_mapping_sizes_dontfork_and_actual_raw_read
+    header, separator, body = run("reference-setup", path, *options).stdout.partition(b"\n")
+                              ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 22, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-setup exited 1: error: ForkMappingInheritanceFailed
+/home/ahmed/workspace/va/loti-zig/examples/reference_setup.zig:37:22: 0x11ed5bd in verifyForkExclusion (reference_setup.zig)
+    if (status != 0) return error.ForkMappingInheritanceFailed;
+                     ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_setup.zig:74:5: 0x11eebab in main (reference_setup.zig)
+    try verifyForkExclusion(regions, fd, page_size);
+    ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.081s
+
+FAILED (failures=1)

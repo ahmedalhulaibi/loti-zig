@@ -61,8 +61,9 @@ Feature bits
 
 ``IORING_FEAT_SINGLE_MMAP``
    SQ and CQ share a mapping at ``IORING_OFF_SQ_RING`` sized to the larger ring
-   region. SQEs still need a separate ``IORING_OFF_SQES`` mapping. Both Zig
-   0.17.0's ``IoUring`` and this edition's ``RawRing`` require this feature.
+   region. SQEs still need a separate ``IORING_OFF_SQES`` mapping. Zig 0.17.0's
+   ``IoUring`` requires this feature. The teaching ``RawRing`` also supports
+   separate SQ/CQ mappings when the bit is absent.
 
 ``IORING_FEAT_NODROP``
    The kernel can retain completions when CQ space is exhausted. Reap regularly
@@ -91,8 +92,9 @@ Mapping and queue indices
 process pointers. For ordinary layouts the SQ region extends through
 ``sq_off.array + sq_entries * @sizeOf(u32)``; the CQ region extends through
 ``cq_off.cqes + cq_entries * @sizeOf(linux.io_uring_cqe)``. SQE mapping size is
-``sq_entries * @sizeOf(linux.io_uring_sqe)``. Without SINGLE_MMAP a raw ABI user
-would map SQ and CQ separately; the edition's implementations reject that case.
+``sq_entries * @sizeOf(linux.io_uring_sqe)``. Without SINGLE_MMAP, ``RawRing``
+maps SQ at ``IORING_OFF_SQ_RING`` and CQ at ``IORING_OFF_CQ_RING`` using their
+individual sizes. Each queue's offsets are relative to its own mapping.
 
 .. include:: _api/offsets.inc
 

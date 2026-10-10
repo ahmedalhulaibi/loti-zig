@@ -16,7 +16,7 @@ sources, not separate handwritten copies. Tests/limits follow the table.
 | `low_level.rst:45` | `ref-zig/_api/sqe.inc`, `examples/reference_submission.zig` | Native extern SQE/overlapping fields, not copied obsolete layout; 64-byte stride and 33 constructor metadata records checked |
 | `low_level.rst:82` | `examples/raw_cat.zig` | Raw setup/map/publication/read/consume preserved; fixed streaming vectors replace whole-file allocation and size ioctl; multiple files, actual counts, cleanup; block-device bytes verified in isolated KVM guest |
 | `low_level.rst:464` | `ref-iouring/_api/params.inc`, `RawRing.init` | Exact SDK parameters and zero-initialised inputs replace obsolete handwritten fields/reserved sizes |
-| `low_level.rst:481` | `RawRing.map` | Max SQ/CQ control mapping plus SQEs; ownership/error cleanup explicit; **older separate-mapping fallback not recreated**, restriction disclosed |
+| `low_level.rst:481` | `RawRing.map` | Feature-selected shared or separate SQ/CQ mapping plus SQEs; per-base pointer offsets, optional CQ ownership/advice/teardown. Both real strategies execute; forced separate mode is not a historical-kernel boot attestation |
 | `low_level.rst:531` | `RawRing.readv` | Acquire CQ tail, copy masked CQE, release wrapping head; copied value survives slot reuse; consume once |
 | `low_level.rst:556` | `RawRing.readv` | Capacity check, masked SQ slot, native prep, u64 tag, SQ index before release tail; architecture-specific barrier macros removed |
 | `tutorial/cat_liburing.rst:7` | `examples/cat.zig` | Native ring convenience reader; stable two-vector streaming buffers and scalar tag replace heap state pointers; whole returned byte prefix only; block-device bytes verified in isolated KVM guest |
@@ -69,6 +69,11 @@ sources, not separate handwritten copies. Tests/limits follow the table.
   repeated excerpts were compared directly. This does not replace a source-line
   semantic audit or independent review. Queue u32 wraparound/interleaving model,
   source mutation assessment and broader failure paths remain open.
+- `raw-mapping-verification.json`: shared/separate virtual mapping strategies,
+  1,025 variable-length reads per case, independent prefix/hash/count oracle,
+  real child DONTFORK exclusion and per-page/descriptor teardown. Four compiled
+  mapping mutants killed; exact source restoration checked. Older-kernel boot
+  compatibility and injected partial-construction failures remain unverified.
 - Original historical performance/thread/sample output is not treated as a
   measured property of this edition. Optional trace commands retain teaching
   purpose but have no execution attestation.

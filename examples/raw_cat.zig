@@ -5,6 +5,7 @@ const support = @import("support.zig");
 pub const RawRing = struct {
     fd: linux.fd_t,
     shared: []align(std.heap.page_size_min) u8,
+    completion: ?[]align(std.heap.page_size_min) u8,
     entries: []align(std.heap.page_size_min) u8,
     sq_head: *u32,
     sq_tail: *u32,
@@ -31,20 +32,29 @@ pub const RawRing = struct {
     }
 
     pub fn map(fd: linux.fd_t, params: linux.io_uring_params) !RawRing {
-        if (params.features & linux.IORING_FEAT_SINGLE_MMAP == 0) return error.SingleMappingRequired;
-        const shared_size = @max(
-            params.sq_off.array + params.sq_entries * @sizeOf(u32),
-            params.cq_off.cqes + params.cq_entries * @sizeOf(linux.io_uring_cqe),
-        );
+        const single = params.features & linux.IORING_FEAT_SINGLE_MMAP != 0;
+        const sq_size = params.sq_off.array + params.sq_entries * @sizeOf(u32);
+        const cq_size = params.cq_off.cqes + params.cq_entries * @sizeOf(linux.io_uring_cqe);
         const shared = try std.posix.mmap(
             null,
-            shared_size,
+            if (single) @max(sq_size, cq_size) else sq_size,
             .{ .READ = true, .WRITE = true },
             .{ .TYPE = .SHARED, .POPULATE = true },
             fd,
             linux.IORING_OFF_SQ_RING,
         );
         errdefer std.posix.munmap(shared);
+        var completion: ?[]align(std.heap.page_size_min) u8 = null;
+        errdefer if (completion) |memory| std.posix.munmap(memory);
+        if (!single) completion = try std.posix.mmap(
+            null,
+            cq_size,
+            .{ .READ = true, .WRITE = true },
+            .{ .TYPE = .SHARED, .POPULATE = true },
+            fd,
+            linux.IORING_OFF_CQ_RING,
+        );
+        const cq_memory = completion orelse shared;
         const entries = try std.posix.mmap(
             null,
             params.sq_entries * @sizeOf(linux.io_uring_sqe),
@@ -56,25 +66,27 @@ pub const RawRing = struct {
         errdefer std.posix.munmap(entries);
         const array: [*]u32 = @ptrCast(@alignCast(&shared[params.sq_off.array]));
         const sqes: [*]linux.io_uring_sqe = @ptrCast(@alignCast(entries.ptr));
-        const cqes: [*]linux.io_uring_cqe = @ptrCast(@alignCast(&shared[params.cq_off.cqes]));
+        const cqes: [*]linux.io_uring_cqe = @ptrCast(@alignCast(&cq_memory[params.cq_off.cqes]));
         return .{
             .fd = fd,
             .shared = shared,
+            .completion = completion,
             .entries = entries,
             .sq_head = @ptrCast(@alignCast(&shared[params.sq_off.head])),
             .sq_tail = @ptrCast(@alignCast(&shared[params.sq_off.tail])),
             .sq_mask = @as(*u32, @ptrCast(@alignCast(&shared[params.sq_off.ring_mask]))).*,
             .sq_array = array[0..params.sq_entries],
             .sqes = sqes[0..params.sq_entries],
-            .cq_head = @ptrCast(@alignCast(&shared[params.cq_off.head])),
-            .cq_tail = @ptrCast(@alignCast(&shared[params.cq_off.tail])),
-            .cq_mask = @as(*u32, @ptrCast(@alignCast(&shared[params.cq_off.ring_mask]))).*,
+            .cq_head = @ptrCast(@alignCast(&cq_memory[params.cq_off.head])),
+            .cq_tail = @ptrCast(@alignCast(&cq_memory[params.cq_off.tail])),
+            .cq_mask = @as(*u32, @ptrCast(@alignCast(&cq_memory[params.cq_off.ring_mask]))).*,
             .cqes = cqes[0..params.cq_entries],
         };
     }
 
     pub fn deinit(self: *RawRing) void {
         std.posix.munmap(self.entries);
+        if (self.completion) |memory| std.posix.munmap(memory);
         std.posix.munmap(self.shared);
         _ = linux.close(self.fd);
     }
@@ -82,6 +94,10 @@ pub const RawRing = struct {
     pub fn dontFork(self: *RawRing) !void {
         if (linux.errno(linux.madvise(self.shared.ptr, self.shared.len, linux.MADV.DONTFORK)) != .SUCCESS)
             return error.SharedMappingAdviceFailed;
+        if (self.completion) |memory| {
+            if (linux.errno(linux.madvise(memory.ptr, memory.len, linux.MADV.DONTFORK)) != .SUCCESS)
+                return error.CompletionMappingAdviceFailed;
+        }
         if (linux.errno(linux.madvise(self.entries.ptr, self.entries.len, linux.MADV.DONTFORK)) != .SUCCESS)
             return error.EntryMappingAdviceFailed;
     }

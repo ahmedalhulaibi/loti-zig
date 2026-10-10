@@ -1,6 +1,7 @@
 """Reference programs verify real mappings, completions, registrations and SQEs."""
 
 import json
+import hashlib
 from pathlib import Path
 import tempfile
 import unittest
@@ -36,16 +37,17 @@ class ReferenceContracts(unittest.TestCase):
             path.write_bytes(bytes(range(128)))
             for options in [[], ["--separate-mappings"]]:
                 with self.subTest(options=options):
-                    result = run("reference-setup", path, *options, success=not options)
-                    if options:
-                        # BUG: the original separate CQ mapping branch is rejected.
-                        self.assertEqual(result.returncode, 1)
-                        self.assertEqual(result.stderr.partition(b"\n")[0], b"error: SingleMappingRequired")
-                    else:
-                        self.assertEqual(json.loads(result.stdout), {
-                            "sq_entries": 8, "cq_entries": 32, "sqe_size": 64, "cqe_size": 16,
-                            "raw_read": 64, "dontfork": True,
-                        })
+                    header, separator, body = run("reference-setup", path, *options).stdout.partition(b"\n")
+                    self.assertEqual(separator, b"\n")
+                    self.assertEqual(json.loads(header), {
+                        "sq_entries": 8, "cq_entries": 32, "sqe_size": 64, "cqe_size": 16,
+                        "raw_read": 64, "raw_cq_entries": 512, "mapping_count": 3 if options else 2,
+                        "reads": 1025, "raw_bytes": 48704,
+                        "raw_sha256": hashlib.sha256(bytes(range(95)) * 512 + bytes(range(64))).hexdigest(),
+                        "cq_region_matches": True,
+                        "dontfork": True, "fork_excluded": True, "fd_inherited": True, "released": True,
+                    })
+                    self.assertEqual(body, bytes(range(64)))
 
     def test_copy_and_manual_ack_are_distinct_and_deadline_really_expires(self):
         self.assertEqual(json.loads(run("reference-completion").stdout), {

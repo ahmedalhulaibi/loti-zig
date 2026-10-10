@@ -1,0 +1,20 @@
+F
+======================================================================
+FAIL: test_mapping_sizes_dontfork_and_actual_raw_read (tests.test_reference.ReferenceContracts.test_mapping_sizes_dontfork_and_actual_raw_read) (options=['--separate-mappings'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 40, in test_mapping_sizes_dontfork_and_actual_raw_read
+    header, separator, body = run("reference-setup", path, *options).stdout.partition(b"\n")
+                              ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 22, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-setup exited 1: error: MappingNotReleased
+/home/ahmed/workspace/va/loti-zig/examples/reference_setup.zig:95:54: 0x11ef460 in main (reference_setup.zig)
+    if (!pagesHaveState(regions, .NOMEM, page_size)) return error.MappingNotReleased;
+                                                     ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.093s
+
+FAILED (failures=1)

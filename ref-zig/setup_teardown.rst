@@ -33,8 +33,9 @@ Separate setup and mapping
 There is no public ``IoUring.queue_mmap`` method. The repository's
 ``RawRing.map(fd, params)`` maps an already-created ring and takes descriptor
 ownership on success. The caller must close it on mapping failure. This teaching
-helper and the Zig 0.17.0 wrapper both require ``IORING_FEAT_SINGLE_MMAP``.
-``RawRing.dontFork`` applies ``MADV_DONTFORK`` to both ring and SQE
+helper selects two or three mappings from ``IORING_FEAT_SINGLE_MMAP``; the SDK
+wrapper still requires the bit. ``RawRing.dontFork`` applies ``MADV_DONTFORK`` to
+every owned ring and SQE
 mappings. It does not prevent descriptor inheritance or make shared-ring use
 after a fork safe. See :ref:`low_level` for its complete implementation.
 
@@ -45,12 +46,26 @@ Executable reference
 
    zig build
    zig-out/bin/reference-setup input.bin
+   zig-out/bin/reference-setup input.bin --separate-mappings
 
 .. literalinclude:: ../examples/reference_setup.zig
    :language: zig
    :caption: Enlarged CQ, native sizes and separate raw mapping
 
-``tests/test_reference.py`` verifies SQ 8, CQ 32, SQE 64 and CQE 16 on the
-verification host, plus the input's actual read count. ``dontFork`` is invoked,
-not merely declared; the test does not fork a child to inspect its address map.
-Mapping support or permissions can differ on another host.
+The reference uses SDK SQ 8/CQ 32 and raw SQ 8/CQ 512, with ordinary SQE 64/CQE
+16 sizes. Both mapping modes complete 1,025 alternating reads: 64 bytes at offset
+0, then 31 bytes at offset 64. Output is one JSON line (counts, SHA-256 and checks)
+followed by the final offset-zero prefix. The test checks the whole report and
+prefix against an independent byte/hash oracle; variable lengths expose stale
+CQ slot reads that a constant-length test can miss.
+
+``mincore`` checks every owned page before fork, in the child after DONTFORK,
+and after teardown. The child uses only raw syscalls; it also verifies that the
+ring descriptor is inherited, then exits without using the ring. The parent
+waits for it and verifies descriptor closure after teardown.
+
+Forced separate mode changes only local feature metadata; all mappings and I/O
+are real. Current kernels can share physical backing between these distinct
+virtual regions, so CQ pointer-origin checks also reject accidental SQ-base
+aliases. This tests the strategy, not historical-kernel compatibility or injected
+partial-construction failures. Mapping/fork permissions can differ by host.

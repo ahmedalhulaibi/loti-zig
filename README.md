@@ -58,8 +58,9 @@ Author notes cover 53/128 original blocks, not all lines. Native `cp` now sizes
 read-only block-device input with `BLKGETSIZE64`; output must remain a regular
 file. An isolated VM checks all three readers and copy against four disposable
 disks. Streaming stdout also preserves chunks when redirected to a regular file.
-The raw mapper still excludes the older separate-mapping fallback; this remains
-an incomplete conversion requirement, not a limitation hidden by green builds.
+The raw mapper now selects shared or separate SQ/CQ mappings. The reference
+exercises both strategies with actual I/O, fork exclusion and page/descriptor
+teardown checks. Forced separate mode is not a historical-kernel attestation.
 
 ## Run examples
 
@@ -76,6 +77,7 @@ zig-out/bin/register-eventfd input.txt
 zig-out/bin/probe
 zig-out/bin/webserver public 8080
 zig-out/bin/reference-setup input.txt
+zig-out/bin/reference-setup input.txt --separate-mappings
 zig-out/bin/reference-completion
 zig-out/bin/reference-registration input.txt
 zig-out/bin/reference-submission input.txt
