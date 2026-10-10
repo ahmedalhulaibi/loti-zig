@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Warnings-as-errors check of the explicitly migrated chapter subset only."""
+"""Focused four-chapter smoke check; use make html/epub for the complete guide."""
 
 from pathlib import Path
 import subprocess
@@ -8,7 +8,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parent.parent
 CHAPTERS = [
     "async_intro.rst", "what_is_io_uring.rst", "low_level.rst",
-    "tutorial/webserver_liburing.rst",
+    "tutorial/webserver.rst",
 ]
 
 

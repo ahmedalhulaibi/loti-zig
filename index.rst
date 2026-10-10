@@ -1,86 +1,75 @@
-.. Lord of the Uring documentation master file, created by
-   sphinx-quickstart on Tue Apr  7 23:00:08 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Lord of the io_uring — Zig 0.17.0
+========================================
 
-Welcome to Lord of the io_uring
-===============================
+Learn Linux asynchronous I/O with native Zig 0.17.0. The guide covers shared
+rings, a raw reader, pipelined file copying, an asynchronous HTTP server, runtime
+probing, linked requests, registered resources and the Linux syscall interface.
+No libc, foreign-language imports or external ring library is required.
 
-``io_uring`` is a powerful new way to do asynchronous I/O programming under Linux. Doing away with various limitations of previous generation  I/O subsystems, ``io_uring`` holds immense promise. For more details on what ``io_uring`` brings to the table, please see the chapter :ref:`what_is_io_uring`.
+About and attribution
+---------------------
 
+Shuveb Hussain wrote the original
+`Lord of the io_uring <https://github.com/shuveb/loti>`_ and the Linux-focused
+`unixism.net <https://unixism.net>`_ articles. Ahmed Alhulaibi's
+`Zig edition <https://github.com/ahmedalhulaibi/loti-zig>`_ recreates the examples
+and replaces language-specific explanations. Original illustrations and the
+MIT licence remain. Historical screenshots are identified as original material.
 
-About
------
-This ``io_uring`` guide was created by Shuveb Hussain, who is also the author of the Linux-focused blog, `unixism.net <https://unixism.net>`_. You can `follow me on Twitter <https://twitter.com/shuveb>`_ where my posts are mainly tech-related with a focus on Linux, performance, scalability and cloud.
+Source and build
+----------------
 
-Contributing
-------------
-The source code repository for this guide is `here on Github <https://github.com/shuveb/loti>`_. Please send me pull requests should you want to contribute. If you find any bugs in either the documentation or the included source code examples, please raise an issue on GitHub. The repository for the example programs is maintained separately. Please see details below.
+Guide, examples and tests live in the Zig-edition repository. Report edition
+bugs and contribute there, not to a separate examples repository. Included code
+is taken directly from the compiled ``examples/`` files.
 
-Source code for examples
-------------------------
-Source code for all example programs in this guide are available `on Github <https://github.com/shuveb/loti-examples>`_. If you find bugs in the examples, please raise issues on Github. I want to keep these examples simple and to the point. I many not merge pull requests that add features for that reason. Pull requests that fix bugs are welcome.
+.. code-block:: console
 
-Documentation
--------------
+   zig version
+   zig build
+   python3 -m venv .venv
+   .venv/bin/pip install -r requirements.lock
+   LOTI_TEST_CASES=400 .venv/bin/python -m unittest discover
+   make html
+   make epub
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Introduction
-    
-    async_intro
-    what_is_io_uring
-    low_level
+``zig version`` must print exactly ``0.17.0``; the build enforces this. Run on
+Linux with io_uring permitted by host/container policy. The examples use explicit
+runtime capability checks rather than infer support only from version numbers.
+The timed-wait helper needs Linux 5.11+; the HTTP confined open needs 5.6+.
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Tutorial
-    :name: sec-tutorial
-
-    tutorial/index
-    tutorial/cat_liburing
-    tutorial/cp_liburing
-    tutorial/webserver_liburing
-    tutorial/probe_liburing
-    tutorial/link_liburing
-    tutorial/fixed_buffers
-    tutorial/sq_poll
-    tutorial/register_eventfd
+The code and book have not yet passed the required independent review. See the
+repository's ``conversion/audit.md`` for evidence and outstanding gates.
 
 .. toctree::
-    :maxdepth: 1
-    :caption: liburing Reference
-    :name: sec-liburing-reference
+   :maxdepth: 1
+   :caption: Introduction
 
-    ref-liburing/index
-    ref-liburing/sqe
-    ref-liburing/cqe
-    ref-liburing/supported_caps
-    ref-liburing/setup_teardown
-    ref-liburing/submission
-    ref-liburing/completion
-    ref-liburing/advanced_usage
+   async_intro
+   what_is_io_uring
+   low_level
 
 .. toctree::
-    :maxdepth: 1
-    :caption: io_uring Reference
-    :name: sec-iouring-reference
+   :maxdepth: 2
+   :caption: Tutorial
 
-    ref-iouring/index
-    ref-iouring/io_uring_setup
-    ref-iouring/io_uring_enter
-    ref-iouring/io_uring_register
+   tutorial/index
 
 .. toctree::
-    :maxdepth: 1
-    :caption: Changelog
+   :maxdepth: 2
+   :caption: Native Zig reference
 
-    changelog.rst
+   ref-zig/index
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 2
+   :caption: Linux syscall reference
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   ref-iouring/index
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Edition history
+
+   changelog
+   license

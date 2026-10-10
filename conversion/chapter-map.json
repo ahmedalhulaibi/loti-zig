@@ -1,0 +1,33 @@
+{
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "scope": "Document paths and reading order; not a line-level semantic review attestation.",
+  "chapters": [
+    {"original": "index.rst", "zig": "index.rst"},
+    {"original": "async_intro.rst", "zig": "async_intro.rst"},
+    {"original": "what_is_io_uring.rst", "zig": "what_is_io_uring.rst"},
+    {"original": "low_level.rst", "zig": "low_level.rst"},
+    {"original": "tutorial/index.rst", "zig": "tutorial/index.rst"},
+    {"original": "tutorial/cat_liburing.rst", "zig": "tutorial/cat.rst"},
+    {"original": "tutorial/cp_liburing.rst", "zig": "tutorial/cp.rst"},
+    {"original": "tutorial/webserver_liburing.rst", "zig": "tutorial/webserver.rst"},
+    {"original": "tutorial/probe_liburing.rst", "zig": "tutorial/probe.rst"},
+    {"original": "tutorial/link_liburing.rst", "zig": "tutorial/link.rst"},
+    {"original": "tutorial/fixed_buffers.rst", "zig": "tutorial/fixed_buffers.rst"},
+    {"original": "tutorial/sq_poll.rst", "zig": "tutorial/sq_poll.rst"},
+    {"original": "tutorial/register_eventfd.rst", "zig": "tutorial/register_eventfd.rst"},
+    {"original": "ref-liburing/index.rst", "zig": "ref-zig/index.rst"},
+    {"original": "ref-liburing/sqe.rst", "zig": "ref-zig/sqe.rst"},
+    {"original": "ref-liburing/cqe.rst", "zig": "ref-zig/cqe.rst"},
+    {"original": "ref-liburing/supported_caps.rst", "zig": "ref-zig/supported_caps.rst"},
+    {"original": "ref-liburing/setup_teardown.rst", "zig": "ref-zig/setup_teardown.rst"},
+    {"original": "ref-liburing/submission.rst", "zig": "ref-zig/submission.rst"},
+    {"original": "ref-liburing/completion.rst", "zig": "ref-zig/completion.rst"},
+    {"original": "ref-liburing/advanced_usage.rst", "zig": "ref-zig/advanced_usage.rst"},
+    {"original": "ref-iouring/index.rst", "zig": "ref-iouring/index.rst"},
+    {"original": "ref-iouring/io_uring_setup.rst", "zig": "ref-iouring/io_uring_setup.rst"},
+    {"original": "ref-iouring/io_uring_enter.rst", "zig": "ref-iouring/io_uring_enter.rst"},
+    {"original": "ref-iouring/io_uring_register.rst", "zig": "ref-iouring/io_uring_register.rst"},
+    {"original": "changelog.rst", "zig": "changelog.rst"}
+  ],
+  "additional_chapters": ["license.rst"]
+}

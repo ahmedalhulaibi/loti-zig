@@ -1,58 +1,44 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+"""Publication settings for the native Zig 0.17.0 edition."""
 
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-import os
+from pathlib import Path
 import sys
-# sys.path.insert(0, os.path.abspath('.'))
 
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT / "sphinx-plugins"))
 
-# -- Project information -----------------------------------------------------
+project = "Lord of the io_uring — Zig 0.17.0"
+author = "Shuveb Hussain; Zig adaptation by Ahmed Alhulaibi"
+copyright = "2020, Shuveb Hussain; Zig adaptation, Ahmed Alhulaibi"
+version = release = "0.17.0"
+root_doc = "index"
+extensions = ["manpage", "zig_lexer"]
+exclude_patterns = [
+    "_build/**", ".venv/**", ".zig-cache/**", "zig-out/**", ".git/**",
+    "conversion/**", "examples/**", "tests/**", "tools/**", "Thumbs.db", ".DS_Store",
+]
+language = "en"
+highlight_language = "zig"
+html_theme = "alabaster"
+html_logo = "_static/io_uring_logo.png"
+html_static_path = ["_static"]
+html_theme_options = {"show_relbars": True}
+html_title = project
+html_use_index = False
+html_css_files = ["ebook.css"]
 
-project = 'Lord of the io_uring'
-copyright = '2020, Shuveb Hussain'
-author = 'Shuveb Hussain'
-
-
-# -- General configuration ---------------------------------------------------
-
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
-sys.path.insert(0, os.path.abspath('sphinx-plugins'))
-extensions = ['manpage']
-
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
-
-# -- Options for HTML output -------------------------------------------------
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = 'alabaster'
-html_logo = '_static/io_uring_logo.png'
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-
-# Alabaster theme options
-html_theme_options = {
-    'show_relbars': 'true',
-}
+# Retain the upstream licence in both rendered editions.
+html_extra_path = ["LICENSE"]
+epub_basename = "Lord-of-the-io_uring-Zig-0.17.0"
+epub_title = project
+epub_author = author
+epub_language = "en"
+epub_publisher = "ahmedalhulaibi/loti-zig"
+epub_copyright = copyright
+epub_identifier = "loti-zig-0.17.0"
+epub_scheme = "publisher-id"
+epub_uid = "loti-zig-0.17.0"
+epub_description = "Native Zig 0.17.0 adaptation of Shuveb Hussain's Linux asynchronous I/O guide."
+epub_show_urls = "no"
+epub_tocdepth = 3
+epub_use_index = False
+epub_exclude_files = ["search.xhtml", "genindex.xhtml", "LICENSE", ".buildinfo.bak"]

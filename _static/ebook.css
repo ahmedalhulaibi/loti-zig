@@ -1,0 +1,19 @@
+/* Reflow code on small e-ink displays; no external fonts or scripts. */
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 0.85em;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 0.35em;
+  overflow-wrap: anywhere;
+  vertical-align: top;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}

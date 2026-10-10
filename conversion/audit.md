@@ -1,77 +1,88 @@
 # Completion audit
 
-Status: **not complete**. Independent review is **blocked**; see `review-blocker.md`.
+Status: **not complete**. Independent review remains **blocked**; see
+`review-blocker.md`. Evidence below is author-run verification, not that review.
 
-| Requirement | Current evidence | Missing |
+## Success criteria and artifact checklist
+
+Deliver a forked, complete Zig **0.17.0** edition: enumerate every original
+C/io_uring line, recreate all examples, update every reference, preserve teaching
+coverage/attribution/licence/illustrations, validate the book, then push the fork.
+
+| Requirement | Actual artifacts/evidence | Open requirement |
 |---|---|---|
-| GitHub fork and local clone | `ahmedalhulaibi/loti-zig`; personal origin and upstream remotes | Final converted commit pushed and verified |
-| Enumerate original C/io_uring lines | 3,447 lines; 104 C blocks/declarations; regeneration and `--check` agree | Semantic disposition for every original line/block |
-| Rewrite every reference | `reference-map.json`: 76 inventoried API symbols, 98 total bindings; signatures checked against exact SDK source | Remaining 22 documents, navigation, semantic review, build commands and links |
-| Recreate examples in Zig 0.17.0 | 15 native executables; 31/31 build steps; 17 boundary tests pass | Broader failure paths, queue-state model checks, bounded mutation gate, independent review |
-| Book verification | Original edition built earlier; not Zig evidence | Zig HTML/EPUB, validator, content audit |
+| 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
+| 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,447 matched lines, 104 original blocks/declarations; regenerated `--check` | Semantic disposition for each inventoried line/block |
+| 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/98 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
+| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 17 native CLI/TCP/reference tests | Broader failure paths, generated queue-state checks, bounded source mutation assessment, independent review |
+| Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
+| Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
+| Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
+| Independent verification | Failed launcher/run recorded in `review-blocker.md`; no reviewer report exists | Working child host or owner-authorised independent mechanism |
 
-A green inventory, constructor test, or compiler gate does not prove the full
-conversion. Inspect each requirement against the resulting guide and executed code.
+A green inventory, API map, constructor test or book manifest is not proof of
+semantic completeness. In particular, document-path coverage does not establish
+line/block disposition. Nine rejected archive mutations are publication boundary
+tests, **not** the outstanding source-code mutation gate.
 
-## Verified code milestone
+## Native execution evidence
 
-```sh
-python3 tools/inventory.py --check
-python3 tools/reference_map.py --check
-zig fmt --check build.zig examples
-zig build --summary all
-LOTI_TEST_CASES=400 .venv/bin/python -m unittest tests.test_examples tests.test_http tests.test_reference
-git diff --check
-```
-
-- Compiler: **0.17.0**. Build: **31/31**. Tests: **17 passed**.
+- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **19 passed**
+  (17 native tests + two publication tests), with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
 - Five reference executables: `reference-setup`, `reference-completion`,
   `reference-registration`, `reference-submission`, `reference-raw`.
-- Core boundary checks: exact file bytes, hard-link safety, linked cancellation,
-  four fixed buffers, post-idle polling, threaded eventfd notification. The reader
-  and copy properties use 400 generated cases per configured run; the earlier
-  milestone also independently inspected Hypothesis's passing-case statistics.
-- HTTP: real loopback TCP, binary/empty files, MIME types, query paths, directory
-  indexes, missing files, method rejection, malformed escapes, direct/encoded
-  traversal, symlink confinement, oversized headers, fragmented requests,
-  concurrent clients, and one stalled client alongside a completing request.
-- Raw mapping: `RawRing.map` and **`RawRing.dontFork` are called**, followed by an
-  actual read. Native SQE/CQE sizes and requested CQ size are checked.
-- Completion: real NOPs copied and automatically consumed; a separate batch is
-  borrowed and manually acknowledged exactly once. An EXT_ARG deadline expires,
-  and a submitted timer reports `-ETIME`.
-- Registration: buffer/file registration and table update; forced async NOP
-  eventfd notification; credential registration used by an actual NOP; both probe
-  paths query the kernel.
-- Missing convenience wrappers: `openat2`, `fadvise`, and `madvise` are **submitted**.
-  The opened file yields its actual bytes; `MADV_DONTNEED` zeros an independently
-  allocated page. This is stronger evidence than constructor metadata alone.
-- `reference-submission` exercises **32 SQE constructors**. Its incompatible mixed
-  operands are deliberately **not submitted**. Do not infer filesystem/network
-  operation execution from these metadata checks.
-- SDK source hashes and actual signatures are retained in `reference-map.json`.
-  LSP probes were clean, but failed to detect an obsolete `dupeZ` call. The native
-  compiler rejected it; the corrected `dupeSentinel` call builds and runs.
+- Readers/copy: whole binary bytes, argument order, empty/boundary-size inputs,
+  hard-link safety; two Hypothesis properties use 400 generated cases each.
+- Linked success/cancellation, four fixed buffers, post-idle polling and threaded
+  eventfd notification execute on Linux; actual file/stdout bytes are checked.
+- HTTP: real loopback TCP; binary/empty bodies, MIME/length, queries/indexes,
+  malformed/method/missing cases, traversal/symlink confinement, oversized headers,
+  fragments, concurrent clients and a completing request beside a stalled client.
+- Raw setup/map/`dontFork` are invoked, followed by a real read. NOP batches verify
+  copy/consume versus separate manual acknowledgement; EXT_ARG wait expires and a
+  submitted timer returns `-ETIME`. Async-only eventfd and credential NOP execute;
+  both probe paths query the kernel.
+- `OPENAT2`, `FADVISE` and `MADVISE` are submitted; opened bytes and owned-page
+  zeroing are checked. The separate **32-constructor** mixed reference is never
+  submitted: its metadata checks are not filesystem/network operation evidence.
+- SDK signatures/hashes are retained. Compiler/runtime gates are authoritative;
+  earlier clean LSP output missed an obsolete allocator method.
 
-## Verified chapter subset
+## Whole-book publication evidence
 
-- Rewritten: `async_intro.rst`, `what_is_io_uring.rst`, `low_level.rst`, and
-  `tutorial/webserver_liburing.rst`. The legacy HTTP filename/anchor stays until
-  navigation migration; its body now includes the compiled Zig source.
-- `.venv/bin/python tools/check_chapters.py`: isolated Sphinx 8.2.3 HTML build
-  with `-n -W --keep-going` passed. All included sources are compiled repository
-  files; original illustrations remain. This is **not** a full-guide build.
-- The included `public/index.html` was served byte-exactly over actual loopback
-  TCP using the readiness record's ephemeral port.
-- Remaining original documents: **22**. Full HTML, EPUB, line/block disposition,
-  independently reviewed semantics, and final navigation are still unverified.
+```sh
+python3 tools/inventory.py --check
+python3 tools/reference_map.py --check
+python3 tools/reference_docs.py --check
+zig fmt --check build.zig examples
+zig build --summary all
+LOTI_TEST_CASES=400 .venv/bin/python -m unittest discover
+make html SPHINXOPTS='-E -n -W --keep-going'
+make epub SPHINXOPTS='-E -n -W --keep-going'
+.venv/bin/python tools/verify_epub.py --report conversion/epub-verification.json
+java -jar "$EPUBCHECK_JAR" _build/epub/Lord-of-the-io_uring-Zig-0.17.0.epub
+git diff --check
+```
+
+- Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
+  documents plus licence), exact mapped reading order and navigation.
+- **104 current literal blocks** match Sphinx's source, independently of the
+  **104 original** inventory blocks/declarations; equal counts are not a 1:1 map.
+- Local links/fragments resolve; five illustrations, logo and licence are exact.
+  No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.
+- EPUBCheck **5.2.1**: **0 errors, 0 warnings**. Output is the Zig edition at
+  `_build/epub/Lord-of-the-io_uring-Zig-0.17.0.epub`; its SHA-256 is in the report.
+- Publication tests reject missing chapters, reordered spine, wrong edition title,
+  missing navigation, changed code/licence/image, DRM and JavaScript.
+- Native chapter names replace old wrapper-library paths. Tracked `delme.c`,
+  `compile_commands.json` and Python bytecode are retired. Historical upstream
+  text remains only as immutable conversion evidence, not reader-facing code.
 
 ## Next work
 
-1. Rewrite all chapters/navigation from verified source; retire stale artifacts.
-2. Record line/block disposition and inspect all reference semantics.
-3. Extend failure/model checks and run the bounded mutation assessment.
-4. Restore independent-review capability; resolve findings.
-5. Build/audit the Zig EPUB, complete the requirement audit, then push the fork.
+1. Record each line/block's semantic disposition; inspect operation/lifetime gaps.
+2. Extend failure/state checks and execute bounded source mutation verification.
+3. Obtain independent review and resolve findings; do not substitute parent checks.
+4. Rebuild/audit final artifacts, push only the personal fork, verify remote state.

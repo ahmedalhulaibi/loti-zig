@@ -26,10 +26,14 @@ def make_link_node(rawtext, app, name, manpage_num, options):
     return node
 
 
-def man_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+def man_role(name, rawtext, text, lineno, inliner, options=None, content=None):
+    options = dict(options or {})
     app = inliner.document.settings.env.app
-    p = re.compile("([a-zA-Z0-9_\.-_]+)\((\d)\)")
-    m = p.match(text)
+    p = re.compile(r"([a-zA-Z0-9_.-]+)\((\d)\)")
+    m = p.fullmatch(text)
+    if m is None:
+        message = inliner.reporter.error(f"Invalid manual page reference: {text}", line=lineno)
+        return [inliner.problematic(rawtext, rawtext, message)], [message]
 
     manpage_num = m.group(2)
     name = m.group(1)

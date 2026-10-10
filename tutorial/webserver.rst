@@ -1,4 +1,3 @@
-.. _webserver_liburing:
 .. _webserver_zig:
 
 An asynchronous HTTP server in Zig
