@@ -1,0 +1,24 @@
+{
+  "source_commit": "656afb44f363790bdd48bb0d6aed92bd2878fe53",
+  "scope": "Original ACCEPT supplied-address output/value-result capacity is not exercised by HTTP null/null accept. Constructor-only pointer preparation is not output/FD-flag ownership evidence; no native/kernel defect claimed.",
+  "original_block": "ref-liburing/submission.rst:505",
+  "constructor": {
+    "tag": 15,
+    "operation": "ACCEPT",
+    "length": 0,
+    "flags": 0,
+    "buffer_index": 0
+  },
+  "existing_http": "Server.accept passes null address/null length and CLOEXEC; real HTTP accept already covered, not repeated as new evidence.",
+  "missing_executable": true,
+  "planned_boundary": "reference-accept CAPACITY FLAGS: own IPv4 loopback ephemeral listener; caller client; null or 0..16 peer-output capacities x none/nonblock/cloexec/both (72 plans). Independently decode exact peer bytes/returned length and FD flags, observe new FD survives listener closure/EOF/queried teardown; invalid FD/type/flags CQEs. No payload/protocol/race/multishot/all failures attestation.",
+  "review": "Supported independent reviewer still blocked; no retry/fallback or acceptance fabricated.",
+  "source_sha256": {
+    "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
+    "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
+    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
+    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22",
+    "ref-zig/submission.rst": "8a38573029e45a988f05253c09a9adf6356fff2a6c61923339d0f4425e8242b2",
+    "conversion/reference-block-disposition.md": "f9d6262ad78f0ca006913e402d1511b34961e4060b960b1cc3a25cdd284b80dc"
+  }
+}
