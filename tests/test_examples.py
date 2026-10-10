@@ -66,6 +66,19 @@ class ExampleContracts(unittest.TestCase):
                     self.assertNotEqual(result.returncode, 0)
                     self.assertEqual(source.read_bytes(), payload)
 
+    def test_readers_preserve_bytes_when_stdout_is_a_regular_file(self):
+        payload = bytes(range(256)) * 257
+        with tempfile.TemporaryDirectory() as directory:
+            source, destination = Path(directory) / "source", Path(directory) / "stdout"
+            source.write_bytes(payload)
+            for name in ["readv", "raw-cat", "cat"]:
+                with self.subTest(program=name), destination.open("wb") as stdout:
+                    result = subprocess.run([str(BIN / name), str(source)], stdout=stdout,
+                                            capture_output=False, stderr=subprocess.PIPE, timeout=10)
+                    self.assertEqual(result.returncode, 0)
+                    # BUG: a fresh positional stdout writer overwrites each prior chunk.
+                    self.assertEqual(destination.read_bytes(), payload[:2048])
+
     def test_linked_execution_and_failure_cancellation(self):
         message = b"Hello, io_uring!"
         with tempfile.TemporaryDirectory() as directory:
