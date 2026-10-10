@@ -12,7 +12,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | Requirement | Actual artifacts/evidence | Open requirement |
 |---|---|---|
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
-| 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,447 matched lines, 104 original blocks/declarations; regenerated `--check` | Semantic disposition for each inventoried line/block |
+| 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | Semantic disposition for each inventoried line/block |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/98 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
 | 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 17 native CLI/TCP/reference tests | Broader failure paths, generated queue-state checks, bounded source mutation assessment, independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
@@ -25,10 +25,27 @@ semantic completeness. In particular, document-path coverage does not establish
 line/block disposition. Nine rejected archive mutations are publication boundary
 tests, **not** the outstanding source-code mutation gate.
 
+## Inventory coverage repair
+
+The first scanner counted 3,447 lines/104 blocks but omitted implicit RST C
+literals. `ca7b34e` records the omission. The corrected inventory adds 171 lines
+and 24 blocks: 16 implicit C literals, seven implicit output literals and one
+explicit directory-output block. Existing source IDs/text and all 76 API
+symbols remain. Current totals: 3,618 lines; 120 C blocks/declarations + eight
+output literals. The immutable upstream commit is unchanged.
+
+Three boundary tests check the 16 pinned omissions, compare all implicit blocks
+with an independent Docutils parse, compare every recorded line/block range with
+the original source, and regenerate in fresh processes. `--check` alone had
+passed despite the omissions; it was not a coverage proof. LSP: both changed
+Python files supported and clean. `implicit-literal-disposition.md` records
+these 16 conversions and their limits; other dispositions remain open. This
+parser check is not the blocked independent agent review.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **19 passed**
-  (17 native tests + two publication tests), with `LOTI_TEST_CASES=400`.
+- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **22 passed**
+  (17 native + two publication + three inventory tests), with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
 - Five reference executables: `reference-setup`, `reference-completion`,
@@ -69,7 +86,7 @@ git diff --check
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
 - **104 current literal blocks** match Sphinx's source, independently of the
-  **104 original** inventory blocks/declarations; equal counts are not a 1:1 map.
+  **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.
 - EPUBCheck **5.2.1**: **0 errors, 0 warnings**. Output is the Zig edition at

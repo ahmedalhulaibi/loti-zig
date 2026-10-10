@@ -36,8 +36,12 @@ blocks against Sphinx source, five byte-identical illustrations, licence and loc
 links. Negative tests reject nine damaged-archive classes. These checks **do not**
 prove semantic completeness or satisfy independent review.
 
-`conversion/source-inventory.json` preserves 3,447 original matched lines and
-104 original blocks/declarations. `reference-map.json` maps 98 native bindings;
+`conversion/source-inventory.json` preserves 3,618 original matched lines and
+128 source blocks/declarations: 120 C blocks/declarations and eight output literals.
+This includes 16 unlabelled syscall C literals missed by the first scanner;
+`tests/test_inventory.py` cross-checks all implicit literals with Docutils and
+checks every captured line against the immutable source. `reference-map.json`
+maps 98 native bindings;
 `chapter-map.json` maps original/new paths. Line/block semantic disposition,
 broader failure/state checks, bounded source mutation verification and independent
 review remain open. See `conversion/audit.md` and `conversion/review-blocker.md`.

@@ -6192,8 +6192,25 @@
     },
     {
       "file": "ref-iouring/io_uring_enter.rst",
+      "line": 11,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 12,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
       "line": 13,
       "categories": [
+        "c-code",
         "c-reference",
         "io-uring-reference"
       ],
@@ -6307,27 +6324,366 @@
     },
     {
       "file": "ref-iouring/io_uring_enter.rst",
+      "line": 58,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 59,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
       "line": 60,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "   ret = io_uring_enter(fd, 0, 1, IORING_ENTER_GETEVENTS, &sig);"
     },
     {
       "file": "ref-iouring/io_uring_enter.rst",
+      "line": 64,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 65,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 66,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   pthread_sigmask(SIG_SETMASK, &sig, &orig);"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
       "line": 67,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "   ret = io_uring_enter(fd, 0, 1, IORING_ENTER_GETEVENTS, NULL);"
     },
     {
       "file": "ref-iouring/io_uring_enter.rst",
+      "line": 68,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   pthread_sigmask(SIG_SETMASK, &orig, NULL);"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 76,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 77,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 78,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   /*"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 79,
+      "categories": [
+        "c-code"
+      ],
+      "text": "    * IO submission data structure (Submission Queue Entry)"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 80,
+      "categories": [
+        "c-code"
+      ],
+      "text": "    */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
       "line": 81,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "   struct io_uring_sqe {"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 82,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u8    opcode;         /* type of operation for this sqe */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 83,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u8    flags;          /* IOSQE_ flags */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 84,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u16   ioprio;         /* ioprio for the request */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 85,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __s32   fd;             /* file descriptor to do IO on */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 86,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       union {"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 87,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u64   off;            /* offset into file */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 88,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u64   addr2;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 89,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       };"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 90,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u64   addr;           /* pointer to buffer or iovecs */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 91,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32   len;            /* buffer size or number of iovecs */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 92,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       union {"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 93,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __kernel_rwf_t  rw_flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 94,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u32    fsync_flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 95,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u16    poll_events;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 96,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u32    sync_range_flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 97,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u32    msg_flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 98,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u32    timeout_flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 99,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u32    accept_flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 100,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u32    cancel_flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 101,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       };"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 102,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u64    user_data;     /* data to be passed back at completion time */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 103,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       union {"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 104,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   \tstruct {"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 105,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   \t    /* index into fixed buffers, if used */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 106,
+      "categories": [
+        "c-code"
+      ],
+      "text": "               __u16    buf_index;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 107,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   \t    /* personality to use, if used */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 108,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   \t    __u16    personality;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 109,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   \t};"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 110,
+      "categories": [
+        "c-code"
+      ],
+      "text": "           __u64    __pad2[3];"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 111,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       };"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 112,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   };"
     },
     {
       "file": "ref-iouring/io_uring_enter.rst",
@@ -6803,11 +7159,84 @@
     },
     {
       "file": "ref-iouring/io_uring_enter.rst",
+      "line": 425,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 426,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 427,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   /*"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 428,
+      "categories": [
+        "c-code"
+      ],
+      "text": "    * IO completion data structure (Completion Queue Entry)"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 429,
+      "categories": [
+        "c-code"
+      ],
+      "text": "    */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
       "line": 430,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "   struct io_uring_cqe {"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 431,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u64    user_data; /* sqe->data submission passed back */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 432,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __s32    res;       /* result code for this event */"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 433,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32    flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 434,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   };"
     },
     {
       "file": "ref-iouring/io_uring_enter.rst",
@@ -7003,8 +7432,25 @@
     },
     {
       "file": "ref-iouring/io_uring_register.rst",
+      "line": 11,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_register.rst",
+      "line": 12,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_register.rst",
       "line": 13,
       "categories": [
+        "c-code",
         "c-reference",
         "io-uring-reference"
       ],
@@ -7406,8 +7852,25 @@
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
+      "line": 11,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 12,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
       "line": 13,
       "categories": [
+        "c-code",
         "c-reference",
         "io-uring-reference"
       ],
@@ -7441,11 +7904,108 @@
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
+      "line": 30,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 31,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
       "line": 32,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "   struct io_uring_params {"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 33,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 sq_entries;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 34,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 cq_entries;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 35,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 36,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 sq_thread_cpu;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 37,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 sq_thread_idle;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 38,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 features;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 39,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 resv[4];"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 40,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       struct io_sqring_offsets sq_off;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 41,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       struct io_cqring_offsets cq_off;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 42,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   };"
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
@@ -7521,8 +8081,65 @@
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
+      "line": 77,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 78,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 79,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   /*"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 80,
+      "categories": [
+        "c-code"
+      ],
+      "text": "    * Ensure that the wakeup flag is read after the tail pointer has been"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 81,
+      "categories": [
+        "c-code"
+      ],
+      "text": "    * written."
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 82,
+      "categories": [
+        "c-code"
+      ],
+      "text": "    */"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 83,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   smp_mb();"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
       "line": 84,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "   if (*sq_ring->flags & IORING_SQ_NEED_WAKEUP)"
@@ -7531,6 +8148,7 @@
       "file": "ref-iouring/io_uring_setup.rst",
       "line": 85,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "       io_uring_enter(fd, 0, 0, IORING_ENTER_SQ_WAKEUP);"
@@ -7721,8 +8339,137 @@
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
+      "line": 163,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 164,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 165,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   struct io_sqring_offsets {"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 166,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 head;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 167,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 tail;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 168,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 ring_mask;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 169,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 ring_entries;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 170,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 flags;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 171,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 dropped;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 172,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 array;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 173,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 resv[3];"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 174,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   };"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 181,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 182,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 183,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   ptr = mmap(0, sq_off.array + sq_entries * sizeof(__u32),"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 184,
+      "categories": [
+        "c-code"
+      ],
+      "text": "              PROT_READ|PROT_WRITE, MAP_SHARED|MAP_POPULATE,"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
       "line": 185,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "              ring_fd, IORING_OFF_SQ_RING);"
@@ -7734,6 +8481,30 @@
         "io-uring-reference"
       ],
       "text": "the file descriptor returned from **io_uring_setup**\\ (2). The addition"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 194,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 195,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 196,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   head = ptr + sq_off.head;"
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
@@ -7753,32 +8524,196 @@
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
+      "line": 211,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 212,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 213,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   index = tail & ring_mask;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 217,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 218,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
       "line": 219,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "   sqentries = mmap(0, sq_entries * sizeof(struct io_uring_sqe),"
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
+      "line": 220,
+      "categories": [
+        "c-code"
+      ],
+      "text": "                    PROT_READ|PROT_WRITE, MAP_SHARED|MAP_POPULATE,"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
       "line": 221,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "                    ring_fd, IORING_OFF_SQES);"
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
+      "line": 226,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 227,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 228,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   struct io_cqring_offsets {"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 229,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 head;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 230,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 tail;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 231,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 ring_mask;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 232,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 ring_entries;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 233,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 overflow;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 234,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 cqes;"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 235,
+      "categories": [
+        "c-code"
+      ],
+      "text": "       __u32 resv[4];"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 236,
+      "categories": [
+        "c-code"
+      ],
+      "text": "   };"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 241,
+      "categories": [
+        "c-code"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
+      "line": 242,
+      "categories": [
+        "c-code"
+      ],
+      "text": ""
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
       "line": 243,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "   ptr = mmap(0, cq_off.cqes + cq_entries * sizeof(struct io_uring_cqe),"
     },
     {
       "file": "ref-iouring/io_uring_setup.rst",
+      "line": 244,
+      "categories": [
+        "c-code"
+      ],
+      "text": "              PROT_READ|PROT_WRITE, MAP_SHARED|MAP_POPULATE, ring_fd,"
+    },
+    {
+      "file": "ref-iouring/io_uring_setup.rst",
       "line": 245,
       "categories": [
+        "c-code",
         "io-uring-reference"
       ],
       "text": "              IORING_OFF_CQ_RING);"
@@ -19686,6 +20621,78 @@
       "text": "This program is just a simple demonstration of how to use fixed buffers and as such does not to anything more useful beyond that. But it does serve to remind you about `the poem Leisure <https://en.wikipedia.org/wiki/Leisure_(poem)>`_ by W.H Davies, though. Two strings are written using two fixed write operations (:c:func:`io_uring_prep_write_fixed`) to a file using buffers in indices 0 and 1. Later, we read the file using two fixed read operations (:c:func:`io_uring_prep_read_fixed`) this time using buffer indices 2 and 3. We then print the results of these reads."
     },
     {
+      "file": "tutorial/fixed_buffers.rst",
+      "line": 138,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "tutorial/fixed_buffers.rst",
+      "line": 139,
+      "categories": [
+        "example-literal"
+      ],
+      "text": ""
+    },
+    {
+      "file": "tutorial/fixed_buffers.rst",
+      "line": 140,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 36"
+    },
+    {
+      "file": "tutorial/fixed_buffers.rst",
+      "line": 141,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 35"
+    },
+    {
+      "file": "tutorial/fixed_buffers.rst",
+      "line": 142,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 36"
+    },
+    {
+      "file": "tutorial/fixed_buffers.rst",
+      "line": 143,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 35"
+    },
+    {
+      "file": "tutorial/fixed_buffers.rst",
+      "line": 144,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Contents read from file:"
+    },
+    {
+      "file": "tutorial/fixed_buffers.rst",
+      "line": 145,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    What is this life if, full of care,"
+    },
+    {
+      "file": "tutorial/fixed_buffers.rst",
+      "line": 146,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    We have no time to stand and stare."
+    },
+    {
       "file": "tutorial/index.rst",
       "line": 1,
       "categories": [
@@ -20377,8 +21384,57 @@
     },
     {
       "file": "tutorial/link_liburing.rst",
+      "line": 96,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 97,
+      "categories": [
+        "example-literal"
+      ],
+      "text": ""
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 98,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    \u279c  cmake-build-debug ./link"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 99,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 16"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 100,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 16"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 101,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 0"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
       "line": 102,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    Buffer contents: Hello, io_uring!"
@@ -20430,6 +21486,62 @@
         "c-code"
       ],
       "text": "    int fd = open(FILE_NAME, O_WRONLY|O_TRUNC|O_CREAT, 0644);"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 118,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 119,
+      "categories": [
+        "example-literal"
+      ],
+      "text": ""
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 120,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    \u279c  cmake-build-debug ./link"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 121,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Error in async operation: Bad file descriptor"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 122,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: -9"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 123,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Error in async operation: Operation canceled"
+    },
+    {
+      "file": "tutorial/link_liburing.rst",
+      "line": 124,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: -125"
     },
     {
       "file": "tutorial/link_liburing.rst",
@@ -20990,8 +22102,33 @@
     },
     {
       "file": "tutorial/probe_liburing.rst",
+      "line": 74,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "tutorial/probe_liburing.rst",
+      "line": 75,
+      "categories": [
+        "example-literal"
+      ],
+      "text": ""
+    },
+    {
+      "file": "tutorial/probe_liburing.rst",
+      "line": 76,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    You are running kernel version: 5.6.4-arch1-1"
+    },
+    {
+      "file": "tutorial/probe_liburing.rst",
       "line": 77,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    Report of your kernel's list of supported io_uring operations:"
@@ -21000,6 +22137,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 78,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_NOP: yes."
@@ -21008,6 +22146,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 79,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_READV: yes."
@@ -21016,6 +22155,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 80,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_WRITEV: yes."
@@ -21024,6 +22164,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 81,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_FSYNC: yes."
@@ -21032,6 +22173,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 82,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_READ_FIXED: yes."
@@ -21040,6 +22182,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 83,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_WRITE_FIXED: yes."
@@ -21048,6 +22191,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 84,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_POLL_ADD: yes."
@@ -21056,6 +22200,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 85,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_POLL_REMOVE: yes."
@@ -21064,6 +22209,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 86,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_SYNC_FILE_RANGE: yes."
@@ -21072,6 +22218,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 87,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_SENDMSG: yes."
@@ -21080,6 +22227,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 88,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_RECVMSG: yes."
@@ -21088,6 +22236,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 89,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_TIMEOUT: yes."
@@ -21096,6 +22245,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 90,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_TIMEOUT_REMOVE: yes."
@@ -21104,6 +22254,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 91,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_ACCEPT: yes."
@@ -21112,6 +22263,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 92,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_ASYNC_CANCEL: yes."
@@ -21120,6 +22272,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 93,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_LINK_TIMEOUT: yes."
@@ -21128,6 +22281,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 94,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_CONNECT: yes."
@@ -21136,6 +22290,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 95,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_FALLOCATE: yes."
@@ -21144,6 +22299,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 96,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_OPENAT: yes."
@@ -21152,6 +22308,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 97,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_CLOSE: yes."
@@ -21160,6 +22317,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 98,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_FILES_UPDATE: yes."
@@ -21168,6 +22326,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 99,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_STATX: yes."
@@ -21176,6 +22335,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 100,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_READ: yes."
@@ -21184,6 +22344,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 101,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_WRITE: yes."
@@ -21192,6 +22353,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 102,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_FADVISE: yes."
@@ -21200,6 +22362,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 103,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_MADVISE: yes."
@@ -21208,6 +22371,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 104,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_SEND: yes."
@@ -21216,6 +22380,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 105,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_RECV: yes."
@@ -21224,6 +22389,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 106,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_OPENAT2: yes."
@@ -21232,6 +22398,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 107,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_EPOLL_CTL: yes."
@@ -21240,6 +22407,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 108,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_SPLICE: no."
@@ -21248,6 +22416,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 109,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_PROVIDE_BUFFERS: no."
@@ -21256,6 +22425,7 @@
       "file": "tutorial/probe_liburing.rst",
       "line": 110,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    IORING_OP_REMOVE_BUFFERS: no."
@@ -23420,16 +24590,66 @@
     },
     {
       "file": "tutorial/sq_poll.rst",
+      "line": 180,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 181,
+      "categories": [
+        "example-literal"
+      ],
+      "text": ""
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 182,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    \u279c  sudo ./sq_poll"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 183,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    [sudo] password for shuveb: "
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
       "line": 184,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    Kernel thread io_uring-sq is not running."
     },
     {
       "file": "tutorial/sq_poll.rst",
+      "line": 185,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 36"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 186,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 35"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
       "line": 187,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "       1750 ?        00:00:00 io_uring-sq"
@@ -23438,9 +24658,50 @@
       "file": "tutorial/sq_poll.rst",
       "line": 188,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    Kernel thread io_uring-sq found running..."
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 189,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 36"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 190,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Result of the operation: 35"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 191,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Contents read from file:"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 192,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    What is this life if, full of care,"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 193,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    We have no time to stand and stare.%                                                                    \u279c   "
     },
     {
       "file": "tutorial/sq_poll.rst",
@@ -23461,11 +24722,68 @@
     },
     {
       "file": "tutorial/sq_poll.rst",
+      "line": 201,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 202,
+      "categories": [
+        "example-literal"
+      ],
+      "text": ""
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
       "line": 203,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    \u279c  sudo bpftrace -e 'tracepoint:io_uring:io_uring_submit_sqe {printf(\"%s(%d)\\n\", comm, pid);}'"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 204,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    Attaching 1 probe..."
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 205,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    fixed_buffers(30336)"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 206,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    fixed_buffers(30336)"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 207,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    fixed_buffers(30336)"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 208,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "    fixed_buffers(30336)"
     },
     {
       "file": "tutorial/sq_poll.rst",
@@ -23477,8 +24795,25 @@
     },
     {
       "file": "tutorial/sq_poll.rst",
+      "line": 212,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "::"
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
+      "line": 213,
+      "categories": [
+        "example-literal"
+      ],
+      "text": ""
+    },
+    {
+      "file": "tutorial/sq_poll.rst",
       "line": 214,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    \u279c  sudo bpftrace -e 'tracepoint:io_uring:io_uring_submit_sqe {printf(\"%s(%d)\\n\", comm, pid);}'"
@@ -23487,6 +24822,7 @@
       "file": "tutorial/sq_poll.rst",
       "line": 215,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    io_uring-sq(30429)"
@@ -23495,6 +24831,7 @@
       "file": "tutorial/sq_poll.rst",
       "line": 216,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    io_uring-sq(30429)"
@@ -23503,6 +24840,7 @@
       "file": "tutorial/sq_poll.rst",
       "line": 217,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    io_uring-sq(30429)"
@@ -23511,6 +24849,7 @@
       "file": "tutorial/sq_poll.rst",
       "line": 218,
       "categories": [
+        "example-literal",
         "io-uring-reference"
       ],
       "text": "    io_uring-sq(30429)"
@@ -27157,6 +28496,94 @@
     },
     {
       "file": "tutorial/webserver_liburing.rst",
+      "line": 472,
+      "categories": [
+        "example-literal"
+      ],
+      "text": ".. code-block:: none "
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 473,
+      "categories": [
+        "example-literal"
+      ],
+      "text": ""
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 474,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "\t$ mkdir build"
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 475,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "\t$ cd build"
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 476,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "\t$ cmake .."
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 477,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "\t$ cmake --build ."
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 478,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "\t$ cd .."
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 479,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "\t$ build/webserver_liburing"
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 480,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "\tMinimum kernel version required is: 5.5"
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 481,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "\tYour kernel version is: 5.6"
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 482,
+      "categories": [
+        "example-literal"
+      ],
+      "text": "\tZeroHTTPd listening on port: 8000"
+    },
+    {
+      "file": "tutorial/webserver_liburing.rst",
       "line": 486,
       "categories": [
         "io-uring-reference"
@@ -28465,12 +29892,60 @@
       "declaration": "c"
     },
     {
+      "id": "ref-iouring/io_uring_enter.rst:11",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "start_line": 11,
+      "end_line": 13,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
       "id": "ref-iouring/io_uring_enter.rst:15",
       "file": "ref-iouring/io_uring_enter.rst",
       "start_line": 15,
       "end_line": 15,
       "kind": "c:function",
       "declaration": "int io_uring_enter(unsigned int fd, unsigned int to_submit, unsigned int min_complete, unsigned int flags, sigset_t *sig)"
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:58",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "start_line": 58,
+      "end_line": 60,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:64",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "start_line": 64,
+      "end_line": 68,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:76",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "start_line": 76,
+      "end_line": 112,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:425",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "start_line": 425,
+      "end_line": 434,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_register.rst:11",
+      "file": "ref-iouring/io_uring_register.rst",
+      "start_line": 11,
+      "end_line": 13,
+      "kind": "literal-block",
+      "declaration": "c"
     },
     {
       "id": "ref-iouring/io_uring_register.rst:15",
@@ -28481,12 +29956,92 @@
       "declaration": "int io_uring_register(unsigned int fd, unsigned int opcode, void *arg, unsigned int nr_args)"
     },
     {
+      "id": "ref-iouring/io_uring_setup.rst:11",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 11,
+      "end_line": 13,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
       "id": "ref-iouring/io_uring_setup.rst:15",
       "file": "ref-iouring/io_uring_setup.rst",
       "start_line": 15,
       "end_line": 15,
       "kind": "c:function",
       "declaration": "int io_uring_setup(u32 entries, struct io_uring_params *p)"
+    },
+    {
+      "id": "ref-iouring/io_uring_setup.rst:30",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 30,
+      "end_line": 42,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_setup.rst:77",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 77,
+      "end_line": 85,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_setup.rst:163",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 163,
+      "end_line": 174,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_setup.rst:181",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 181,
+      "end_line": 185,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_setup.rst:194",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 194,
+      "end_line": 196,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_setup.rst:211",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 211,
+      "end_line": 213,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_setup.rst:217",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 217,
+      "end_line": 221,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_setup.rst:226",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 226,
+      "end_line": 236,
+      "kind": "literal-block",
+      "declaration": "c"
+    },
+    {
+      "id": "ref-iouring/io_uring_setup.rst:241",
+      "file": "ref-iouring/io_uring_setup.rst",
+      "start_line": 241,
+      "end_line": 245,
+      "kind": "literal-block",
+      "declaration": "c"
     },
     {
       "id": "ref-liburing/advanced_usage.rst:9",
@@ -29113,12 +30668,28 @@
       "declaration": "c"
     },
     {
+      "id": "tutorial/fixed_buffers.rst:138",
+      "file": "tutorial/fixed_buffers.rst",
+      "start_line": 138,
+      "end_line": 146,
+      "kind": "literal-block",
+      "declaration": "unlabelled"
+    },
+    {
       "id": "tutorial/link_liburing.rst:8",
       "file": "tutorial/link_liburing.rst",
       "start_line": 8,
       "end_line": 85,
       "kind": "code-block",
       "declaration": "c"
+    },
+    {
+      "id": "tutorial/link_liburing.rst:96",
+      "file": "tutorial/link_liburing.rst",
+      "start_line": 96,
+      "end_line": 102,
+      "kind": "literal-block",
+      "declaration": "unlabelled"
     },
     {
       "id": "tutorial/link_liburing.rst:106",
@@ -29137,12 +30708,28 @@
       "declaration": "c"
     },
     {
+      "id": "tutorial/link_liburing.rst:118",
+      "file": "tutorial/link_liburing.rst",
+      "start_line": 118,
+      "end_line": 124,
+      "kind": "literal-block",
+      "declaration": "unlabelled"
+    },
+    {
       "id": "tutorial/probe_liburing.rst:7",
       "file": "tutorial/probe_liburing.rst",
       "start_line": 7,
       "end_line": 68,
       "kind": "code-block",
       "declaration": "c"
+    },
+    {
+      "id": "tutorial/probe_liburing.rst:74",
+      "file": "tutorial/probe_liburing.rst",
+      "start_line": 74,
+      "end_line": 110,
+      "kind": "literal-block",
+      "declaration": "unlabelled"
     },
     {
       "id": "tutorial/register_eventfd.rst:9",
@@ -29161,12 +30748,44 @@
       "declaration": "c"
     },
     {
+      "id": "tutorial/sq_poll.rst:180",
+      "file": "tutorial/sq_poll.rst",
+      "start_line": 180,
+      "end_line": 193,
+      "kind": "literal-block",
+      "declaration": "unlabelled"
+    },
+    {
+      "id": "tutorial/sq_poll.rst:201",
+      "file": "tutorial/sq_poll.rst",
+      "start_line": 201,
+      "end_line": 208,
+      "kind": "literal-block",
+      "declaration": "unlabelled"
+    },
+    {
+      "id": "tutorial/sq_poll.rst:212",
+      "file": "tutorial/sq_poll.rst",
+      "start_line": 212,
+      "end_line": 218,
+      "kind": "literal-block",
+      "declaration": "unlabelled"
+    },
+    {
       "id": "tutorial/webserver_liburing.rst:18",
       "file": "tutorial/webserver_liburing.rst",
       "start_line": 18,
       "end_line": 465,
       "kind": "code-block",
       "declaration": "c"
+    },
+    {
+      "id": "tutorial/webserver_liburing.rst:472",
+      "file": "tutorial/webserver_liburing.rst",
+      "start_line": 472,
+      "end_line": 482,
+      "kind": "code-block",
+      "declaration": "none "
     },
     {
       "id": "tutorial/webserver_liburing.rst:490",
