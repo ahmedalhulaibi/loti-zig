@@ -1,0 +1,15 @@
+{
+  "scope": "Author pre-implementation tests/fixtures snapshot, not ACL-sealed or independent verifier-agent acceptance.",
+  "sha256": {
+    "tests/test_messages.py": "81d3040e93ec8773925d75ce0229d707ec3b8410b22a01a871913a9890b374ff",
+    "tests/test_messages_trace.py": "4cb1d5ed5968d9432a2eef736904398d3a980f522d3d5f600e30b0e260085c6a",
+    "testdata/inputs/messages-boundary.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
+    "testdata/inputs/messages-empty.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "testdata/inputs/messages-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/messages-invalid-inputs.json": "b48140577b5ed228411b87dde2d3d7bbbba125d2a7a8b35e902edd85c4165086",
+    "testdata/inputs/messages-invalid-traces.json": "551d6f94cbdd3c7b35645906ea994d7dd5b6c425170d700a1b14eaf357e3cf57",
+    "testdata/inputs/messages-plans.json": "bdff385b0e8d694d23b2d9a154cc54a67c7fe3e645d040477332417934fbf4ce",
+    "testdata/inputs/messages-report.json": "2f6e73f62e6a8ea6b48b867ddb65495091ae2d081c2bab009709b9ecf6b308d0",
+    "testdata/inputs/messages.trace": "8035367ddb5958c9c2e297ca53909721071a025f77106d0c1cf86d4c57acab36"
+  }
+}

@@ -1,0 +1,111 @@
+[
+  {
+    "name": "no_args",
+    "arguments": [],
+    "error": "ExpectedMessageInputAndCapacity"
+  },
+  {
+    "name": "one_arg",
+    "arguments": [
+      "source"
+    ],
+    "error": "ExpectedMessageInputAndCapacity"
+  },
+  {
+    "name": "extra",
+    "arguments": [
+      "source",
+      "0",
+      "extra"
+    ],
+    "error": "ExpectedMessageInputAndCapacity"
+  },
+  {
+    "name": "empty_capacity",
+    "arguments": [
+      "source",
+      ""
+    ],
+    "error": "InvalidMessageCapacity"
+  },
+  {
+    "name": "signed_capacity",
+    "arguments": [
+      "source",
+      "+1"
+    ],
+    "error": "InvalidMessageCapacity"
+  },
+  {
+    "name": "negative_capacity",
+    "arguments": [
+      "source",
+      "-1"
+    ],
+    "error": "InvalidMessageCapacity"
+  },
+  {
+    "name": "nondigit_capacity",
+    "arguments": [
+      "source",
+      "x"
+    ],
+    "error": "InvalidMessageCapacity"
+  },
+  {
+    "name": "large_capacity",
+    "arguments": [
+      "source",
+      "4098"
+    ],
+    "error": "MessageCapacityOutOfRange"
+  },
+  {
+    "name": "overflow_capacity",
+    "arguments": [
+      "source",
+      "184467440737095516160"
+    ],
+    "error": "InvalidMessageCapacity"
+  },
+  {
+    "name": "missing",
+    "arguments": [
+      "missing",
+      "1"
+    ],
+    "error": "MessageInputOpenFailed"
+  },
+  {
+    "name": "symlink",
+    "arguments": [
+      "symlink",
+      "1"
+    ],
+    "error": "MessageInputOpenFailed"
+  },
+  {
+    "name": "directory",
+    "arguments": [
+      "directory",
+      "1"
+    ],
+    "error": "ExpectedRegularMessageInput"
+  },
+  {
+    "name": "character",
+    "arguments": [
+      "character",
+      "1"
+    ],
+    "error": "ExpectedRegularMessageInput"
+  },
+  {
+    "name": "oversized",
+    "arguments": [
+      "oversized",
+      "1"
+    ],
+    "error": "MessageInputTooLarge"
+  }
+]

@@ -1,0 +1,19 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_literal_fixed_plans_and_typed_invalid_inputs (tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs)
+Separate hand-pinned shape catches a drifting model; rejection preserves source and bounds allocations. ... FAIL
+
+======================================================================
+FAIL: test_literal_fixed_plans_and_typed_invalid_inputs (tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs)
+Separate hand-pinned shape catches a drifting model; rejection preserves source and bounds allocations.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_messages.py", line 81, in test_literal_fixed_plans_and_typed_invalid_inputs
+    self.assertEqual(json.loads(run("reference-messages", source, 3).stdout), literal)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'abi[1309 chars]e': [255, 90, 165, 165, 165, 165, 165, 165, 16[4665 chars]rue}} != {'abi[1309 chars]e': [0, 255, 90, 165, 165, 165, 165, 165, 165,[4661 chars]rue}}
+Diff is 16841 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.022s
+
+FAILED (failures=1)

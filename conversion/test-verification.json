@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 60,
+  "tests_run": 64,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -90,13 +90,31 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 84
+          "overrun": 80
         }
       },
       "stopped_because": "settings.max_examples=400"
     },
     {
       "test": "test_file_operations.FileOperationContracts.test_file_operation_effects_and_correlated_failures",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    },
+    {
+      "test": "test_messages.MessageContracts.test_datagram_vectors_flags_and_rights_follow_byte_ownership_model",
       "phases": {
         "reuse-phase": {
           "valid": 0,
@@ -126,7 +144,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 71
+          "overrun": 61
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -144,7 +162,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 114
+          "overrun": 164
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -162,7 +180,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 55
+          "overrun": 58
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -224,7 +242,7 @@
   ],
   "source_sha256": {
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
-    "build.zig": "472b4062e830580e779a1a186903cbe153d214b77239e56edd0dbf6f0898e8dc",
+    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
     "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5",
     "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
@@ -239,6 +257,7 @@
     "examples/reference_connect.zig": "222ea4bb96e82e33f6ac52aeafa1d60e6387877a844f9a88c2f54cb2c4b9e909",
     "examples/reference_epoll.zig": "1aab395c92e951f58c5ebd8deba5c0704efae8e42bfbf447fd09f80f0cc42a3f",
     "examples/reference_files.zig": "4f2792ef1cd99f2191f242f040ca4a90d4af376a3dfb955cd0e04167f139f65f",
+    "examples/reference_messages.zig": "4e29206d6b45dbe42ccac3135a586970f0016b58868efb9ae938ee927549ea76",
     "examples/reference_poll.zig": "5996d0502a155f8d7ed5c1d6f1e4db10233f16e6b1ee32d81de4e2a0b1e14a5d",
     "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
     "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
@@ -268,6 +287,16 @@
     "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1",
     "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
     "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a",
+    "testdata/inputs/messages-boundary.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
+    "testdata/inputs/messages-census-invalid-traces.json": "f5c98072eb3939044a9f91a497ba31444c1ab1c5565e280fb088731dbd530b00",
+    "testdata/inputs/messages-census.trace": "790d2c1c9ec72eaa2247082825cb086c3afe6f5f573424fa9566719a9121e10a",
+    "testdata/inputs/messages-empty.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "testdata/inputs/messages-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/messages-invalid-inputs.json": "b48140577b5ed228411b87dde2d3d7bbbba125d2a7a8b35e902edd85c4165086",
+    "testdata/inputs/messages-invalid-traces.json": "551d6f94cbdd3c7b35645906ea994d7dd5b6c425170d700a1b14eaf357e3cf57",
+    "testdata/inputs/messages-plans.json": "bdff385b0e8d694d23b2d9a154cc54a67c7fe3e645d040477332417934fbf4ce",
+    "testdata/inputs/messages-report.json": "2f6e73f62e6a8ea6b48b867ddb65495091ae2d081c2bab009709b9ecf6b308d0",
+    "testdata/inputs/messages.trace": "8035367ddb5958c9c2e297ca53909721071a025f77106d0c1cf86d4c57acab36",
     "testdata/inputs/poll-deadline.trace": "276b53fa38940bab91a1663190ca5fcb009af25b4b6fcbe128b3f6879db87bec",
     "testdata/inputs/poll-invalid-plans.json": "b26c9eb8d121029785b8621ddecc5ff4458847fad765b2ed90679192c5d81e17",
     "testdata/inputs/poll-invalid-traces.json": "d4a806a95beca5179e1c2051df09341fa49b4c079292bcddffc7d35bceee82d6",
@@ -305,11 +334,14 @@
     "tests/test_inventory.py": "89b2b5ea10a208810d264088b935cc66f9308336a858528dd5a399724661eec5",
     "tests/test_mapping_bindings.py": "654cfafd142536ef82c7a86f877ed6b80d834c3e11fa429b4fb6dfa533fad84d",
     "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0",
+    "tests/test_messages.py": "81d3040e93ec8773925d75ce0229d707ec3b8410b22a01a871913a9890b374ff",
+    "tests/test_messages_census.py": "a3a9c584773a1d9c8fc6288d91773a2e3d9f213a1251490eed13ccb2dfbce8b0",
+    "tests/test_messages_trace.py": "4cb1d5ed5968d9432a2eef736904398d3a980f522d3d5f600e30b0e260085c6a",
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tests/test_publication.py": "40a1065010e139c76509a881d628eb38ccece0fd916d56d019c226695b30d35e",
-    "tests/test_reader_layout.py": "34b0d6f60a5d5e47a18df51c9bc5233f78a9f63350a9f9d33f457a7320af156d",
+    "tests/test_publication.py": "6a11d8abf7cc7bf304293aeca394e984e5263ffa4f59493a67305c94b0b1c0ea",
+    "tests/test_reader_layout.py": "286f69604522dd61fbc9646f64a7e77fd2048cbc3937cd75a1a19f3ac7a45c96",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
@@ -318,7 +350,7 @@
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
-    "tools/reference_map.py": "d94f0f76f7d0639654251fa7868f6aa37608c026134330690f3c9655a669ebc8"
+    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."
 }

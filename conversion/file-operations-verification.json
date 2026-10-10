@@ -237,13 +237,13 @@
     "stopped_because": "settings.max_examples=400"
   },
   "source_sha256": {
-    "build.zig": "472b4062e830580e779a1a186903cbe153d214b77239e56edd0dbf6f0898e8dc",
+    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
     "examples/reference_files.zig": "4f2792ef1cd99f2191f242f040ca4a90d4af376a3dfb955cd0e04167f139f65f",
     "tests/test_file_operations.py": "11a70eafa618fa1246fcae50baa7f6ffd91c3bfd43174812c79ca7531fdbb186",
     "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
     "testdata/inputs/file-operations-report.json": "82215f932bf6622b6c5362d08c9035a33e24d3d5bd83e5f8cb3fce59466facd1",
     "testdata/inputs/file-operations-invalid-arguments.json": "95a3fe47a3473a059f6d5b4ca47cbcb298ce14d6c0d8ec8874e201824f218de6",
-    "tools/reference_map.py": "d94f0f76f7d0639654251fa7868f6aa37608c026134330690f3c9655a669ebc8",
+    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22",
     "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1"
   },
   "sdk_source_sha256": {
@@ -294,5 +294,13 @@
     ],
     "complete_suite": "60 tests, zero failures/errors/skips; twelve attributed properties x400 valid generated cases; isolated VM plus public CLI/model/binding/publication contracts rerun.",
     "historical_mutation_scope": "Historical mutation pins remain tested-version records; this replay does not re-assess those mutants or provide independent review."
+  },
+  "replay_after_messages": {
+    "changed_source_consumers": [
+      "build.zig",
+      "tools/reference_map.py"
+    ],
+    "complete_suite": "64 tests, zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; isolated VM, public CLI/model/binding/publication contracts replayed.",
+    "historical_mutation_scope": "Historical pins retain original tested-version scope; no prior mutant re-assessment or independent agent acceptance is implied."
   }
 }

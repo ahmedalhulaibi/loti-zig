@@ -1,10 +1,10 @@
 {
   "scope": "Publication structure and source fidelity; not semantic or independent review.",
   "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
-  "book_sha256": "26435e50c4abe6c1b3176443c37f22fc4ebebe745884ba2549c4fe123ae5b813",
+  "book_sha256": "d1c06b12aa8ee853954053edc8c1440791bac6041424b350f721952bf9eccc90",
   "original_chapters": 26,
   "edition_chapters": 27,
-  "literal_blocks": 116,
+  "literal_blocks": 117,
   "byte_identical_illustrations": 5,
   "licence_exact": true,
   "local_links_valid": true,

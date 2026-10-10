@@ -1,0 +1,51 @@
+[
+  {
+    "name": "missing_open",
+    "old": "openat(AT_FDCWD, \"/proc/self/fd\", O_RDONLY|O_CLOEXEC|O_DIRECTORY) = 3\n",
+    "new": "",
+    "count": 1,
+    "error": "UnownedMessageCensusRead"
+  },
+  {
+    "name": "missing_eof",
+    "old": "getdents64(3, [], 2048)                 = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteMessageCensusRead"
+  },
+  {
+    "name": "missing_final_close",
+    "old": "close(3)                                = 0\nclose(6)                                = 0\n",
+    "new": "close(6)                                = 0\n",
+    "count": 1,
+    "error": "WrongMessageCensusCount"
+  },
+  {
+    "name": "wrong_byte_count",
+    "old": "= 144",
+    "new": "= 143",
+    "count": 1,
+    "error": "InvalidMessageCensusRecords"
+  },
+  {
+    "name": "duplicate_name",
+    "old": "d_name=\"2\"",
+    "new": "d_name=\"1\"",
+    "count": 1,
+    "error": "InvalidMessageCensusName"
+  },
+  {
+    "name": "missing_self",
+    "old": "d_name=\"7\"",
+    "new": "d_name=\"9\"",
+    "count": 1,
+    "error": "IncompleteMessageCensusRead"
+  },
+  {
+    "name": "wrong_delta",
+    "old": "getdents64(7, [{d_ino=15968163, d_off=1, d_reclen=24, d_type=DT_DIR, d_name=\".\"}, {d_ino=15968162, d_off=2, d_reclen=24, d_type=DT_DIR, d_name=\"..\"}, {d_ino=15968164, d_off=3, d_reclen=24, d_type=DT_LNK, d_name=\"0\"}, {d_ino=15968165, d_off=4, d_reclen=24, d_type=DT_LNK, d_name=\"1\"}, {d_ino=15968166, d_off=5, d_reclen=24, d_type=DT_LNK, d_name=\"2\"}, {d_ino=15968167, d_off=6, d_reclen=24, d_type=DT_LNK, d_name=\"3\"}, {d_ino=15968171, d_off=7, d_reclen=24, d_type=DT_LNK, d_name=\"4\"}, {d_ino=15968172, d_off=8, d_reclen=24, d_type=DT_LNK, d_name=\"5\"}, {d_ino=15968173, d_off=9, d_reclen=24, d_type=DT_LNK, d_name=\"6\"}, {d_ino=15968174, d_off=66, d_reclen=24, d_type=DT_LNK, d_name=\"7\"}], 2048) = 240",
+    "new": "getdents64(7, [{d_ino=15968163, d_off=1, d_reclen=24, d_type=DT_DIR, d_name=\".\"}, {d_ino=15968162, d_off=2, d_reclen=24, d_type=DT_DIR, d_name=\"..\"}, {d_ino=15968164, d_off=3, d_reclen=24, d_type=DT_LNK, d_name=\"0\"}, {d_ino=15968165, d_off=4, d_reclen=24, d_type=DT_LNK, d_name=\"1\"}, {d_ino=15968166, d_off=5, d_reclen=24, d_type=DT_LNK, d_name=\"2\"}, {d_ino=15968167, d_off=6, d_reclen=24, d_type=DT_LNK, d_name=\"3\"}, {d_ino=15968171, d_off=7, d_reclen=24, d_type=DT_LNK, d_name=\"4\"}, {d_ino=15968172, d_off=8, d_reclen=24, d_type=DT_LNK, d_name=\"5\"}, {d_ino=15968174, d_off=66, d_reclen=24, d_type=DT_LNK, d_name=\"7\"}], 2048) = 216",
+    "count": 1,
+    "error": "WrongMessageDescriptorDeltas"
+  }
+]

@@ -1,0 +1,27 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_literal_fixed_plans_and_typed_invalid_inputs (tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs)
+Separate hand-pinned shape catches a drifting model; rejection preserves source and bounds allocations. ... FAIL
+
+======================================================================
+FAIL: test_literal_fixed_plans_and_typed_invalid_inputs (tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs)
+Separate hand-pinned shape catches a drifting model; rejection preserves source and bounds allocations.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_messages.py", line 81, in test_literal_fixed_plans_and_typed_invalid_inputs
+    self.assertEqual(json.loads(run("reference-messages", source, 3).stdout), literal)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-messages exited 1: error: UnexpectedMessageResult
+/home/ahmed/workspace/va/loti-zig/examples/reference_messages.zig:101:31: 0x12079c1 in expect (reference_messages.zig)
+    if (cqe.result != result) return error.UnexpectedMessageResult;
+                              ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_messages.zig:151:5: 0x120a5cf in main (reference_messages.zig)
+    try expect(received.cqe, @intCast(payload.len));
+    ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.065s
+
+FAILED (failures=1)

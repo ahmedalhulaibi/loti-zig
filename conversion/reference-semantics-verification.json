@@ -81,7 +81,7 @@
     }
   },
   "source_sha256": {
-    "tools/reference_map.py": "d94f0f76f7d0639654251fa7868f6aa37608c026134330690f3c9655a669ebc8",
+    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "testdata/inputs/reference-semantics-bindings.json": "bd87f6f4e06670f52ac4dc0610c8d1dbfeae4fe7b49fee2cf1a44ea41faf951c",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
@@ -93,7 +93,7 @@
     "conversion/reference-claim-audit.md": "a27ae9d7bdb58c838ef3931e11f576f25620f8de68d68083a07842d43c20b36a",
     "ref-iouring/io_uring_enter.rst": "889fb3351be04956766022e68925065a9da202b9be6152a857a6454543c78904",
     "ref-zig/setup_teardown.rst": "8cfb07794f25aaab05b111f3f8dab8685f1d78994b71509ee6b95fdb73a1e6f7",
-    "ref-zig/submission.rst": "56896fb5a6c414d216ba34dbc1da1cfd07b5616a1c6cce937a8972980fd62659"
+    "ref-zig/submission.rst": "8a38573029e45a988f05253c09a9adf6356fff2a6c61923339d0f4425e8242b2"
   },
   "sdk_source_sha256": {
     "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
@@ -179,5 +179,13 @@
     ],
     "change": "Documentation only: observed CQ-ready fast path distinguished from unforced EXT_ARG fallback; native/spec tests unchanged.",
     "replay": "Four publication/layout plus two line-disposition contracts replayed; strict HTML/EPUB, final fidelity/layout/EPUBCheck repeated after rebuild."
+  },
+  "replay_after_messages": {
+    "changed_source_consumers": [
+      "tools/reference_map.py",
+      "ref-zig/submission.rst"
+    ],
+    "complete_suite": "64 tests, zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; isolated VM, public CLI/model/binding/publication contracts replayed.",
+    "historical_mutation_scope": "Historical pins retain original tested-version scope; no prior mutant re-assessment or independent agent acceptance is implied."
   }
 }

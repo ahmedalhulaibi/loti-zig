@@ -1,0 +1,37 @@
+[
+  {
+    "name": "literal",
+    "input": "messages-input.bin",
+    "capacity": 3
+  },
+  {
+    "name": "whole",
+    "input": "messages-input.bin",
+    "capacity": 5
+  },
+  {
+    "name": "empty",
+    "input": "messages-empty.bin",
+    "capacity": 0
+  },
+  {
+    "name": "zero_capacity",
+    "input": "messages-input.bin",
+    "capacity": 0
+  },
+  {
+    "name": "extra_capacity",
+    "input": "messages-input.bin",
+    "capacity": 4097
+  },
+  {
+    "name": "boundary_short",
+    "input": "messages-boundary.bin",
+    "capacity": 1
+  },
+  {
+    "name": "boundary_whole",
+    "input": "messages-boundary.bin",
+    "capacity": 4097
+  }
+]

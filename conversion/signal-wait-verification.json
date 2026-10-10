@@ -164,11 +164,11 @@
   },
   "fresh_process_executions": 25,
   "source_sha256": {
-    "build.zig": "472b4062e830580e779a1a186903cbe153d214b77239e56edd0dbf6f0898e8dc",
+    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
     "examples/reference_signals.zig": "b895a7413d564d6b185cfe9eee7b67f252b123dde2920457e9c2b0d2ff2bc44c",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
-    "tests/test_publication.py": "40a1065010e139c76509a881d628eb38ccece0fd916d56d019c226695b30d35e",
+    "tests/test_publication.py": "6a11d8abf7cc7bf304293aeca394e984e5263ffa4f59493a67305c94b0b1c0ea",
     "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
     "testdata/inputs/signal-invalid-arguments.json": "6ef7a293b412e6da43cd05f57b81c26b34a6bde8631879e8dce77fce6018c55c"
   },
@@ -213,5 +213,13 @@
     ],
     "complete_suite": "60 tests, zero failures/errors/skips; twelve attributed properties x400 valid generated cases; isolated VM plus public CLI/model/binding/publication contracts rerun.",
     "historical_mutation_scope": "Historical mutation pins remain tested-version records; this replay does not re-assess those mutants or provide independent review."
+  },
+  "replay_after_messages": {
+    "changed_source_consumers": [
+      "build.zig",
+      "tests/test_publication.py"
+    ],
+    "complete_suite": "64 tests, zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; isolated VM, public CLI/model/binding/publication contracts replayed.",
+    "historical_mutation_scope": "Historical pins retain original tested-version scope; no prior mutant re-assessment or independent agent acceptance is implied."
   }
 }

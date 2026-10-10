@@ -7,14 +7,14 @@
     "strace": "strace -- version 7.0"
   },
   "source_sha256": {
-    "build.zig": "472b4062e830580e779a1a186903cbe153d214b77239e56edd0dbf6f0898e8dc",
+    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
     "examples/reference_poll.zig": "5996d0502a155f8d7ed5c1d6f1e4db10233f16e6b1ee32d81de4e2a0b1e14a5d",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
-    "tools/reference_map.py": "d94f0f76f7d0639654251fa7868f6aa37608c026134330690f3c9655a669ebc8",
-    "conversion/reference-map.json": "7090adc80e3025e30ad0c7b6f1684ac311d469ed3be8ddc8119e516fa73d3ab9",
-    "ref-zig/submission.rst": "56896fb5a6c414d216ba34dbc1da1cfd07b5616a1c6cce937a8972980fd62659",
+    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22",
+    "conversion/reference-map.json": "041c58f6f203d806a9ae784faad5769c5973ba862a299e3401fee40f9e3d3999",
+    "ref-zig/submission.rst": "8a38573029e45a988f05253c09a9adf6356fff2a6c61923339d0f4425e8242b2",
     "conversion/poll-spec-sha256.json": "25f95439286a15890ff0249e0ec14d6b9dd521ea3c8f9e35f37c4a07930817a7",
     "testdata/inputs/poll-deadline.trace": "276b53fa38940bab91a1663190ca5fcb009af25b4b6fcbe128b3f6879db87bec",
     "testdata/inputs/poll-invalid-plans.json": "b26c9eb8d121029785b8621ddecc5ff4458847fad765b2ed90679192c5d81e17",
@@ -331,5 +331,15 @@
     ],
     "change": "Documentation only: observed CQ-ready fast path distinguished from unforced EXT_ARG fallback; native/spec tests unchanged.",
     "replay": "Four publication/layout plus two line-disposition contracts replayed; strict HTML/EPUB, final fidelity/layout/EPUBCheck repeated after rebuild."
+  },
+  "replay_after_messages": {
+    "changed_source_consumers": [
+      "build.zig",
+      "tools/reference_map.py",
+      "conversion/reference-map.json",
+      "ref-zig/submission.rst"
+    ],
+    "complete_suite": "64 tests, zero failures/errors/skips; thirteen attributed properties x400 valid generated cases; isolated VM, public CLI/model/binding/publication contracts replayed.",
+    "historical_mutation_scope": "Historical pins retain original tested-version scope; no prior mutant re-assessment or independent agent acceptance is implied."
   }
 }

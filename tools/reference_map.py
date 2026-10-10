@@ -19,6 +19,7 @@ SPLICE = "examples/reference_splice.zig"
 POLL = "examples/reference_poll.zig"
 EPOLL = "examples/reference_epoll.zig"
 CONNECT = "examples/reference_connect.zig"
+MESSAGES = "examples/reference_messages.zig"
 RAW = "examples/reference_raw.zig"
 
 PREPARERS = {
@@ -190,6 +191,10 @@ def generate():
                     example = CONNECT
                     scope = "constructed and submitted; caller-owned IPv4 loopback listener independently observes client identity/closure; actual endpoint queries, six correlated error CQEs, fresh failed sockets and FD cleanup checked; no payload/DNS/TLS/IPv6/datagram/cancellation or arbitrary-network assurance"
                     difference = "Takes a client socket and stable peer input, not a listener or output address; addrlen is a value in SQE off, while len is zero. Success CQE is zero, not a new FD. This example conservatively retains address storage through completion."
+                elif method in {"recvmsg", "sendmsg"}:
+                    example = MESSAGES
+                    scope = "constructed and submitted; two-vector private UNIX datagrams, zero-size records, data/control truncation, SCM_RIGHTS lifetime/CMSG_CLOEXEC, exact bytes/flags and selected negative CQEs/queried cleanup checked; not TCP/UDP, addresses, all ancillary types, concurrency/cancellation or all failure paths"
+                    difference = "Uses mutable linux.msghdr with output flags/control length; MSG_TRUNC can return a datagram length greater than initialized storage, and zero can be a consumed record rather than EOF. Received SCM_RIGHTS descriptors require ownership/close." if method == "recvmsg" else "Uses linux.msghdr_const and stable nested iovecs/control bytes; operation flags go in SQE rw_flags, not SQE flags or the header's ignored input flags. This example retains nested storage through CQE and uses NOSIGNAL/DONTWAIT."
         elif original in OTHER:
             native_name, example, difference = OTHER[original]
             native_source = "os/linux/IoUring.zig"

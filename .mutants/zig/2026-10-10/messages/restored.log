@@ -1,0 +1,11 @@
+test_datagram_vectors_flags_and_rights_follow_byte_ownership_model (tests.test_messages.MessageContracts.test_datagram_vectors_flags_and_rights_follow_byte_ownership_model)
+Kills vector offsets, truncation=result/initialized-byte confusion, zero=EOF, missing rights/CLOEXEC and FD leaks. ... ok
+test_literal_fixed_plans_and_typed_invalid_inputs (tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs)
+Separate hand-pinned shape catches a drifting model; rejection preserves source and bounds allocations. ... ok
+test_actual_async_messages_ownership_and_damaged_traces (tests.test_messages_trace.MessageTraceContracts.test_actual_async_messages_ownership_and_damaged_traces)
+Kills synchronous stand-ins, omitted submissions/closures/CLOEXEC checks and permissive trace parsing. ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.509s
+
+OK

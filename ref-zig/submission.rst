@@ -148,6 +148,63 @@ readiness for a descriptor/mask; submit again to observe later events.
 ``poll_remove`` identifies an outstanding poll by its submission tag. Removal
 and the target request have distinct completions; races can yield ``NOENT``.
 
+Executed messages and descriptor passing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``reference-messages INPUT CAPACITY`` uses an owned UNIX datagram socketpair,
+not a network listener or externally visible socket path. INPUT must be a
+regular, final-component nonsymlink file of at most 4097 bytes; receive CAPACITY
+is a decimal value from 0 to 4097. The input is unchanged; there is no output
+file. Two stable vectors gather the send payload and scatter its receive prefix.
+Operation flags are in ``sqe.rw_flags``, not u8 ``sqe.flags`` or the send header's
+ignored input ``flags``. Header, vectors and nested control storage remain live
+through the CQE. Empty vectors still use valid userspace base addresses: Linux
+checks iovec address ranges even when lengths are zero.
+
+The first RECVMSG requests DONTWAIT/TRUNC/CMSG_CLOEXEC. For datagrams, input
+MSG_TRUNC returns the full record length even when receive capacity is smaller;
+only ``min(capacity, length)`` bytes are initialized. Output ``msg.flags`` reports
+TRUNC separately from ordinary CQE flags. The extra 16 poisoned bytes remain
+untouched. A zero result can consume an empty datagram: the next DONTWAIT receive
+returns -EAGAIN, not another empty record or TCP EOF. Never use a datagram's full
+CQE length as a buffer slice length when MSG_TRUNC was requested.
+
+A native cmsghdr encodes SOL_SOCKET/SCM_RIGHTS using aligned header/data/space
+sizes derived from the Linux ABI, without foreign macros. This passes an open
+file description reference, not an integer usable in another process. The
+sender's application FD is closed/queried after send completion and before
+receipt. The receiver's FD may reuse that numeric slot; it reads original file
+bytes and has FD_CLOEXEC from MSG_CMSG_CLOEXEC. It must be closed independently.
+Output control length and header length differ: on this x86_64 ABI they are
+24 and 20 bytes, with an 8-byte alignment. Bounds/type checks precede FD access.
+
+A second three-byte record offers another right to the same file, but receives
+into two data bytes with no ancillary capacity and without input MSG_TRUNC.
+Its CQE returns two; output flags contain TRUNC/CTRUNC/CMSG_CLOEXEC. The discarded
+tail is not a later datagram. The kernel disposes excess rights; actual procfs FD
+counts do not rise, then fall by one after the retained received FD is closed.
+Both socket FDs are closed/queried before exit. Final counts leave only the
+caller-owned ring above the initial baseline, followed by normal ring teardown.
+
+Six negative CQEs check SENDMSG/RECVMSG invalid/non-socket FDs, a short control
+header and an invalid passed FD. Requests submit separately with correlated tags;
+no pending external sender or sleep is needed. The independent byte model and
+literal also check flags, complete poisoned storage, input bytes and ownership.
+A syscall oracle checks 14 submissions, queried closure/CLOEXEC and absence of
+synchronous sendmsg/recvmsg substitutes; it is not verifier-agent acceptance.
+A separate procfs oracle decodes actual open/getdents/EOF/close snapshots and
+checks FD-count deltas 0/4/4/3/1 relative to the initial process, excluding the
+enumerating directory FD. It rejects self-reported counts without enumeration.
+
+Scope: sequential bounded UNIX datagrams and one SCM_RIGHTS descriptor. TCP
+partial sends/SIGPIPE, UDP/address outputs, credentials/other ancillary types,
+multishot, cancellation/concurrency, descriptor limits, architectures/historical
+kernels and all failure unwinding are not attested. Procfs is required.
+
+.. literalinclude:: ../examples/reference_messages.zig
+   :language: zig
+   :caption: Datagram scatter/gather, truncation and owned ancillary descriptors
+
 Executed client connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

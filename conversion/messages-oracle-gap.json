@@ -1,0 +1,27 @@
+{
+  "mutant": "census-from-self-state",
+  "compiled": true,
+  "original_tests": {
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "initial_outcome": "survived",
+  "source_sha256": "4e29206d6b45dbe42ccac3135a586970f0016b58868efb9ae938ee927549ea76",
+  "mutation": "Replaces actual procfs enumeration with expected five call-site counts; public self-report and prior socket/enter/fcntl oracle cannot distinguish fake census.",
+  "required_oracle": "Independent actual procfs open/getdents/EOF/close snapshots and FD-count deltas; not a new production kernel defect.",
+  "restoration": "Byte-exact source, rebuilt four-test baseline passed.",
+  "review": "Parent mutation discovery, not independent agent acceptance.",
+  "original_property_case_budget": 40,
+  "supplement": "tests/test_messages_census.py",
+  "supplement_is_author_post_mutant_discovery": true,
+  "original_spec_tests_and_fixtures_unchanged": true,
+  "final_outcome": "killed",
+  "final_oracle": {
+    "tests": 1,
+    "failures": 1,
+    "errors": 0,
+    "skips": 0
+  }
+}

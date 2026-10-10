@@ -1,0 +1,18 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_actual_async_messages_ownership_and_damaged_traces (tests.test_messages_trace.MessageTraceContracts.test_actual_async_messages_ownership_and_damaged_traces)
+Kills synchronous stand-ins, omitted submissions/closures/CLOEXEC checks and permissive trace parsing. ... FAIL
+
+======================================================================
+FAIL: test_actual_async_messages_ownership_and_damaged_traces (tests.test_messages_trace.MessageTraceContracts.test_actual_async_messages_ownership_and_damaged_traces)
+Kills synchronous stand-ins, omitted submissions/closures/CLOEXEC checks and permissive trace parsing.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_messages_trace.py", line 54, in test_actual_async_messages_ownership_and_damaged_traces
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'error: TruncatedControlDescriptorLeak\n/home/ahmed/workspace/va/loti-zig/examples/reference_messages.zig:178:48: 0x120c89a in main (reference_messages.zig)\n    if (after_truncation != before_truncation) return error.TruncatedControlDescriptorLeak;\n                                               ^\n'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.070s
+
+FAILED (failures=1)

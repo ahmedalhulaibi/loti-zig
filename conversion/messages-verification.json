@@ -1,0 +1,697 @@
+{
+  "scope": "Current native x86_64/Linux private UNIX datagrams, two vectors, MSG_TRUNC initialized-prefix/full-result distinction, zero-record consumption, one SCM_RIGHTS/CMSG_CLOEXEC FD lifetime/cleanup and selected negative CQEs. Not TCP/UDP/address outputs, credentials/all ancillary types, descriptor limits, concurrency/multishot/cancellation, architectures/historical kernels/all failure unwinding or independent agent acceptance.",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64",
+    "strace": "strace -- version 7.0"
+  },
+  "source_sha256": {
+    "examples/reference_messages.zig": "4e29206d6b45dbe42ccac3135a586970f0016b58868efb9ae938ee927549ea76",
+    "build.zig": "8d07d563ef060ce593d1d2b07e1ad792e44f0a642863c609f67fae62d9123fed",
+    "tools/reference_map.py": "588d7581c40811ba5669bd55be1c44a0d2ed015962943e0e1102545f47dd4c22",
+    "ref-zig/submission.rst": "8a38573029e45a988f05253c09a9adf6356fff2a6c61923339d0f4425e8242b2",
+    "conversion/reference-map.json": "041c58f6f203d806a9ae784faad5769c5973ba862a299e3401fee40f9e3d3999",
+    "tests/test_messages.py": "81d3040e93ec8773925d75ce0229d707ec3b8410b22a01a871913a9890b374ff",
+    "tests/test_messages_trace.py": "4cb1d5ed5968d9432a2eef736904398d3a980f522d3d5f600e30b0e260085c6a",
+    "tests/test_messages_census.py": "a3a9c584773a1d9c8fc6288d91773a2e3d9f213a1251490eed13ccb2dfbce8b0",
+    "testdata/inputs/messages-boundary.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
+    "testdata/inputs/messages-census-invalid-traces.json": "f5c98072eb3939044a9f91a497ba31444c1ab1c5565e280fb088731dbd530b00",
+    "testdata/inputs/messages-census.trace": "790d2c1c9ec72eaa2247082825cb086c3afe6f5f573424fa9566719a9121e10a",
+    "testdata/inputs/messages-empty.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "testdata/inputs/messages-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/messages-invalid-inputs.json": "b48140577b5ed228411b87dde2d3d7bbbba125d2a7a8b35e902edd85c4165086",
+    "testdata/inputs/messages-invalid-traces.json": "551d6f94cbdd3c7b35645906ea994d7dd5b6c425170d700a1b14eaf357e3cf57",
+    "testdata/inputs/messages-plans.json": "bdff385b0e8d694d23b2d9a154cc54a67c7fe3e645d040477332417934fbf4ce",
+    "testdata/inputs/messages-report.json": "2f6e73f62e6a8ea6b48b867ddb65495091ae2d081c2bab009709b9ecf6b308d0",
+    "testdata/inputs/messages.trace": "8035367ddb5958c9c2e297ca53909721071a025f77106d0c1cf86d4c57acab36",
+    "conversion/messages.trace": "c59834e941fa405e7bc64c57fae18ee2911ac9bd6f8d66ac2470cd0596d6923a",
+    "conversion/messages-census.trace": "0096959b129d9ca7fd62fc19cd3e50781f37d3ee3259002ec537adb4d7a7999d",
+    "conversion/messages-spec-sha256.json": "34e90602084d8af06dd4a3fe48839aa546d20dc92dc4269d7704aef1596a0ffe"
+  },
+  "sdk_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/Io/Dir.zig": "cb2ade5be3aa2e1250b9f26f613f2b1d6492272a69669ea38bcd507fb4f047d2"
+  },
+  "manual_sha256": {
+    "/home/ahmed/workspace/va/man-qmd/build/docs/linux-man-pages/man/man2/recvmsg.2.txt": "6c4f42d63a204f68d083db9369920b1bfec009027467807c84314ae3051fb7d2",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/linux-man-pages/man/man7/unix.7.txt": "d0bf20c6445a5529e1cb633f02772e17031b26fb05bdfd97090331a904c69f88"
+  },
+  "actual_literal_report": {
+    "abi": {
+      "header_size": 16,
+      "control_length": 20,
+      "control_space": 24,
+      "alignment": 8
+    },
+    "empty_before": {
+      "request": {
+        "operation": "RECVMSG",
+        "tag": 1,
+        "descriptor": "socket",
+        "length": 1,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 64,
+        "vector_lengths": [
+          0,
+          1
+        ],
+        "control_capacity": 0,
+        "name_supplied": false,
+        "name_length": 0
+      },
+      "cqe": {
+        "tag": 1,
+        "result": -11,
+        "flags": 0
+      },
+      "message": {
+        "flags": 0,
+        "control_length": 0,
+        "name_length": 0
+      },
+      "storage": [
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "control": null
+    },
+    "sent": {
+      "request": {
+        "operation": "SENDMSG",
+        "tag": 2,
+        "descriptor": "socket",
+        "length": 1,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 16448,
+        "vector_lengths": [
+          2,
+          3
+        ],
+        "control_capacity": 24,
+        "name_supplied": false,
+        "name_length": 0
+      },
+      "cqe": {
+        "tag": 2,
+        "result": 5,
+        "flags": 0
+      },
+      "control": {
+        "length": 20,
+        "level": 1,
+        "type": 1
+      },
+      "input_unchanged": true
+    },
+    "source_closed_after_send": true,
+    "received": {
+      "request": {
+        "operation": "RECVMSG",
+        "tag": 3,
+        "descriptor": "socket",
+        "length": 1,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 1073741920,
+        "vector_lengths": [
+          1,
+          2
+        ],
+        "control_capacity": 24,
+        "name_supplied": false,
+        "name_length": 0
+      },
+      "cqe": {
+        "tag": 3,
+        "result": 5,
+        "flags": 0
+      },
+      "message": {
+        "flags": 1073741856,
+        "control_length": 24,
+        "name_length": 0
+      },
+      "storage": [
+        0,
+        255,
+        90,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "control": {
+        "length": 20,
+        "level": 1,
+        "type": 1
+      }
+    },
+    "empty_after": {
+      "request": {
+        "operation": "RECVMSG",
+        "tag": 4,
+        "descriptor": "socket",
+        "length": 1,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 64,
+        "vector_lengths": [
+          0,
+          1
+        ],
+        "control_capacity": 0,
+        "name_supplied": false,
+        "name_length": 0
+      },
+      "cqe": {
+        "tag": 4,
+        "result": -11,
+        "flags": 0
+      },
+      "message": {
+        "flags": 0,
+        "control_length": 0,
+        "name_length": 0
+      },
+      "storage": [
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "control": null
+    },
+    "passed_file": {
+      "request": {
+        "operation": "READ",
+        "tag": 5,
+        "length": 6,
+        "offset": 0,
+        "flags": 0
+      },
+      "cqe": {
+        "tag": 5,
+        "result": 5,
+        "flags": 0
+      },
+      "storage": [
+        0,
+        255,
+        90,
+        105,
+        103,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "cloexec": true
+    },
+    "truncation": {
+      "sent": {
+        "request": {
+          "operation": "SENDMSG",
+          "tag": 6,
+          "descriptor": "socket",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 16448,
+          "vector_lengths": [
+            1,
+            2
+          ],
+          "control_capacity": 24,
+          "name_supplied": false,
+          "name_length": 0
+        },
+        "cqe": {
+          "tag": 6,
+          "result": 3,
+          "flags": 0
+        },
+        "control": {
+          "length": 20,
+          "level": 1,
+          "type": 1
+        },
+        "input_unchanged": true
+      },
+      "received": {
+        "request": {
+          "operation": "RECVMSG",
+          "tag": 7,
+          "descriptor": "socket",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 1073741888,
+          "vector_lengths": [
+            1,
+            1
+          ],
+          "control_capacity": 0,
+          "name_supplied": false,
+          "name_length": 0
+        },
+        "cqe": {
+          "tag": 7,
+          "result": 2,
+          "flags": 0
+        },
+        "message": {
+          "flags": 1073741864,
+          "control_length": 0,
+          "name_length": 0
+        },
+        "storage": [
+          0,
+          255,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        "control": null
+      },
+      "empty_after": {
+        "request": {
+          "operation": "RECVMSG",
+          "tag": 8,
+          "descriptor": "socket",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 64,
+          "vector_lengths": [
+            0,
+            1
+          ],
+          "control_capacity": 0,
+          "name_supplied": false,
+          "name_length": 0
+        },
+        "cqe": {
+          "tag": 8,
+          "result": -11,
+          "flags": 0
+        },
+        "message": {
+          "flags": 0,
+          "control_length": 0,
+          "name_length": 0
+        },
+        "storage": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        "control": null
+      },
+      "descriptor_delta": 0
+    },
+    "failures": [
+      {
+        "request": {
+          "operation": "SENDMSG",
+          "tag": 10,
+          "descriptor": "invalid",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 16448,
+          "vector_lengths": [
+            0,
+            0
+          ],
+          "control_capacity": 24,
+          "name_supplied": false,
+          "name_length": 0
+        },
+        "cqe": {
+          "tag": 10,
+          "result": -9,
+          "flags": 0
+        },
+        "control": {
+          "length": 20,
+          "level": 1,
+          "type": 1
+        },
+        "input_unchanged": true
+      },
+      {
+        "request": {
+          "operation": "RECVMSG",
+          "tag": 11,
+          "descriptor": "invalid",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 64,
+          "vector_lengths": [
+            0,
+            1
+          ],
+          "control_capacity": 0,
+          "name_supplied": false,
+          "name_length": 0
+        },
+        "cqe": {
+          "tag": 11,
+          "result": -9,
+          "flags": 0
+        },
+        "message": {
+          "flags": 0,
+          "control_length": 0,
+          "name_length": 0
+        },
+        "storage": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        "control": null
+      },
+      {
+        "request": {
+          "operation": "SENDMSG",
+          "tag": 12,
+          "descriptor": "ring",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 16448,
+          "vector_lengths": [
+            0,
+            0
+          ],
+          "control_capacity": 24,
+          "name_supplied": false,
+          "name_length": 0
+        },
+        "cqe": {
+          "tag": 12,
+          "result": -88,
+          "flags": 0
+        },
+        "control": {
+          "length": 20,
+          "level": 1,
+          "type": 1
+        },
+        "input_unchanged": true
+      },
+      {
+        "request": {
+          "operation": "RECVMSG",
+          "tag": 13,
+          "descriptor": "ring",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 64,
+          "vector_lengths": [
+            0,
+            1
+          ],
+          "control_capacity": 0,
+          "name_supplied": false,
+          "name_length": 0
+        },
+        "cqe": {
+          "tag": 13,
+          "result": -88,
+          "flags": 0
+        },
+        "message": {
+          "flags": 0,
+          "control_length": 0,
+          "name_length": 0
+        },
+        "storage": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        "control": null
+      },
+      {
+        "request": {
+          "operation": "SENDMSG",
+          "tag": 14,
+          "descriptor": "socket",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 16448,
+          "vector_lengths": [
+            0,
+            0
+          ],
+          "control_capacity": 24,
+          "name_supplied": false,
+          "name_length": 0
+        },
+        "cqe": {
+          "tag": 14,
+          "result": -22,
+          "flags": 0
+        },
+        "control": {
+          "length": 8,
+          "level": 1,
+          "type": 1
+        },
+        "input_unchanged": true
+      },
+      {
+        "request": {
+          "operation": "SENDMSG",
+          "tag": 15,
+          "descriptor": "socket",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 16448,
+          "vector_lengths": [
+            0,
+            0
+          ],
+          "control_capacity": 24,
+          "name_supplied": false,
+          "name_length": 0
+        },
+        "cqe": {
+          "tag": 15,
+          "result": -9,
+          "flags": 0
+        },
+        "control": {
+          "length": 20,
+          "level": 1,
+          "type": 1
+        },
+        "input_unchanged": true
+      }
+    ],
+    "cleanup": {
+      "received_closed": true,
+      "received_close_delta": -1,
+      "sockets_closed": [
+        true,
+        true
+      ],
+      "descriptor_delta_from_initial": 1,
+      "ring_still_open": true
+    }
+  },
+  "input_unchanged": true,
+  "actual_syscall_oracle": {
+    "socket_pairs": 1,
+    "submissions": 14,
+    "rings": 1,
+    "queried_closures": 4,
+    "queried_cloexec": 2,
+    "synchronous_sendmsg": 0,
+    "synchronous_recvmsg": 0
+  },
+  "actual_procfs_census_oracle": {
+    "snapshots": 5,
+    "descriptor_deltas": [
+      0,
+      4,
+      4,
+      3,
+      1
+    ],
+    "own_directory_excluded": true,
+    "all_reads_reach_eof_and_close": true
+  },
+  "fixed_valid_plans": 7,
+  "typed_invalid_inputs": 14,
+  "property_statistics": {
+    "test": "test_messages.MessageContracts.test_datagram_vectors_flags_and_rights_follow_byte_ownership_model",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  },
+  "damaged_syscall_traces_rejected": 7,
+  "damaged_census_traces_rejected": 7,
+  "spec_first_snapshot": "conversion/messages-spec-sha256.json",
+  "original_spec_tests_and_fixtures_byte_exact": true,
+  "supplement": "Author post-survivor census contract: tests/test_messages_census.py; not pre-implementation/ACL-sealed or independent verifier proof.",
+  "oracle_gap": "conversion/messages-oracle-gap.json",
+  "mutation_report": "conversion/mutation-messages.json",
+  "development_failures": {
+    "local_shadow": "Native helper local header shadowed header function; corrected before green compilation, not a mutant.",
+    "empty_iovec_sentinel": "Zero-length literal can supply an invalid base; kernel returned EFAULT before intended invalid-FD result. Stable empty backing storage restores typed negative CQEs; original tests/fixtures unchanged. No previously delivered-program defect or shrinking claim."
+  },
+  "diagnostics": {
+    "paths": 6,
+    "visible_findings": 0,
+    "suppressed_findings": 1,
+    "scope": "Active LSP after exact source restoration; suppressed finding disclosed, not unconditional clean."
+  },
+  "navigation": "Fabric tooling unavailable/stale graph; explicit source/SDK declarations, build/CLI/test/map/book consumers inspected. No complete-callgraph or independent-review claim.",
+  "gates": {
+    "build_steps": 47,
+    "tests": 64,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties_with_400_valid_generated_cases": 13,
+    "strict_html_epub": true,
+    "epubcheck": "5.2.1: zero fatal/error/warning/info",
+    "chapters": 27,
+    "literals": 117,
+    "browser_cases": 81
+  },
+  "review": "Mandatory independent supported host unavailable; no reviewer retry/fallback or report fabricated.",
+  "delivery": "Not pushed; semantic/state/failure coverage and independent acceptance remain incomplete."
+}

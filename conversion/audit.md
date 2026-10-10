@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 22 native executables; exact compiler gate; 45/45 build steps; 45 native CLI/TCP/reference tests plus five binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 23 native executables; exact compiler gate; 47/47 build steps; 47 native CLI/TCP/reference tests plus seven binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -564,8 +564,8 @@ zero errors/skips; exact source restoration and rebuilt baseline pass. Port
 byte-order mutation changes only reporting, not a wire destination; zero-port
 mutation cannot address an unrelated listening port. No compile failure counted.
 
-Current bounded total: **111** (87 native, three line-index, eight trace-parser,
-seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+CONNECT checkpoint bounded total: **111** (87 native, three line-index, eight trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). CONNECT checkpoint gates:
 Zig 0.17.0/45 build steps; 60 tests/zero failures/errors/skips; twelve attributed
 400-case properties; strict publication/EPUBCheck; 27 chapters/116 literals and
 81 browser cases/348 code blocks/318 headings without violations. Scope excludes
@@ -575,20 +575,73 @@ See `connect-verification.json`, `connect-spec-sha256.json`, `mutation-connect.j
 Active diagnostics: four changed paths, no visible findings, one suppressed
 finding disclosed. Fabric/cached graph cannot prove complete callers; current
 explicit build/test/map/book consumers were inspected. No blocked reviewer retry,
-fallback or push. Message effects and other semantic gaps, independent review and
+fallback or push. At that checkpoint, message effects and other semantic gaps, independent review and
 personal-fork delivery still keep the goal incomplete.
+
+## Submitted datagrams and ancillary ownership
+
+`messages-reproduction.json` records constructor-only original lines 442/461,
+not a native/kernel defect. `reference-messages INPUT CAPACITY` now gathers and
+scatters two vectors on a private UNIX datagram pair. Zero records are consumed,
+not interpreted as TCP EOF. With input MSG_TRUNC, CQE result is the full datagram
+length even above capacity; only the exact bounded prefix is initialized. Without
+that input flag, a short receive returns copied bytes. Output msg.flags and CQE
+flags are checked separately; whole storage includes untouched poisoned tails.
+
+Native aligned SCM_RIGHTS passes the input's open file description. The sender
+FD closes after send completion, before receipt; its numeric slot can be reused.
+The received FD independently reads original bytes and has CMSG_CLOEXEC, then
+closes/queries before exit. A second right is discarded with absent control
+capacity: CTRUNC/data TRUNC are real and the next receive is EAGAIN. Six negative
+CQEs check invalid/non-socket FDs, malformed header and invalid passed FD.
+Input stays unchanged; no external socket path, network address or output file.
+
+Three author pre-implementation contracts and fixtures remain byte-exact, not
+ACL-sealed or independent-verifier artifacts. The binary/capacity property runs
+400 valid generated cases, plus zero/boundary examples, a separate literal, seven
+fixed plans and 14 typed input negatives. One trace oracle checks 14 actual ring
+submissions and closure/CLOEXEC, with seven damaged traces. A compiled fake-census
+mutant survived these three tests (40-case initial property run): self-reported
+counts were insufficient. A supplemental oracle now independently decodes five
+actual procfs open/getdents/EOF/close snapshots, complete byte counts/names and
+FD deltas 0/4/4/3/1, excluding the enumerating FD. Seven census damages fail and
+the survivor is killed. Original spec stayed exact; no native census change.
+
+Ten compiled native/four syntax-valid syscall/census-parser mutants die with
+substantive assertions, no accepted errors/skips/compile failures. Exact source
+restoration and rebuilt four-test baseline pass, in a sequential 4 GiB/no-swap
+systemd scope. Development shadowed-local compilation and zero-length literal
+iovec sentinel EFAULT were fixed in new code before green implementation; neither
+is a killed mutant or a defect in previously delivered examples. No shrinking
+claim for these development failures. See `messages-spec-sha256.json`,
+`messages-oracle-gap.json`, `messages-verification.json`, `mutation-messages.json`.
+
+Current bounded total: **125** (97 native, three line-index, twelve trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+Zig 0.17.0/47 build steps; 64 tests/zero failures/errors/skips; thirteen attributed
+400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/117 literals, 81
+browser cases/351 code blocks/321 headings without violations. Scope is current
+x86_64/Linux, sequential bounded UNIX datagrams/one right. TCP partial sends and
+SIGPIPE, UDP/address outputs, other ancillary types, descriptor limits, races,
+multishot/cancellation, architectures/kernels and all failure unwinding remain
+unattested. Browser evidence is not device/pagination/font-override acceptance.
+Five source/test/build/generator diagnostic paths plus supplemental census probe
+have no visible findings; suppressed disposition disclosed. Fabric/cached graph
+does not establish all callers; explicit CLI/build/test/map/book consumers were
+inspected. Mandatory review stays blocked, with no retry/fallback or push. Other
+semantic/state/failure gaps and personal-fork delivery keep the goal incomplete.
 
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **45/45**. Current complete suite: **60 passed**
-  (45 native + one VM + four publication + three inventory + two line-index + five binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **47/47**. Current complete suite: **64 passed**
+  (47 native + one VM + four publication + three inventory + two line-index + seven binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
-- Twelve reference executables: `reference-setup`, `reference-completion`,
+- Thirteen reference executables: `reference-setup`, `reference-completion`,
   `reference-signals`, `reference-files`, `reference-buffers`, `reference-splice`,
   `reference-poll`, `reference-epoll`, `reference-connect`, `reference-registration`,
-  `reference-submission`, `reference-raw`.
+  `reference-messages`, `reference-submission`, `reference-raw`.
 - Readers/copy: whole binary bytes, argument order, empty/boundary-size inputs,
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs;
@@ -596,7 +649,7 @@ personal-fork delivery still keep the goal incomplete.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  twelve properties**, source hashes, 60 passing tests and zero skips. These remain
+  thirteen properties**, source hashes, 64 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -636,7 +689,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **116 current literal blocks** match Sphinx's source, independently of the
+- **117 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.

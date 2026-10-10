@@ -1,0 +1,230 @@
+{
+  "scope": "Ten compiled owned UNIX datagram/native operand/lifetime/census regressions and four syntax-valid syscall/census-oracle regressions; not all protocols/ancillary types, cancellation/concurrency/failure paths, whole-port/SDK or independent review.",
+  "containment": "systemd-run --user --scope -p MemoryMax=4G -p MemorySwapMax=0; sequential bounded foreground assessments.",
+  "source_sha256": {
+    "examples/reference_messages.zig": "4e29206d6b45dbe42ccac3135a586970f0016b58868efb9ae938ee927549ea76",
+    "tests/test_messages_trace.py": "4cb1d5ed5968d9432a2eef736904398d3a980f522d3d5f600e30b0e260085c6a",
+    "tests/test_messages_census.py": "a3a9c584773a1d9c8fc6288d91773a2e3d9f213a1251490eed13ccb2dfbce8b0"
+  },
+  "mutants": [
+    {
+      "id": "send-vector-offset-reset",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/messages/send-vector-offset-reset.log"
+    },
+    {
+      "id": "receive-vector-offset-reset",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/messages/receive-vector-offset-reset.log"
+    },
+    {
+      "id": "full-datagram-result-flag-omitted",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/messages/full-datagram-result-flag-omitted.log"
+    },
+    {
+      "id": "received-cloexec-omitted",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/messages/received-cloexec-omitted.log"
+    },
+    {
+      "id": "rights-control-space-omitted",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/messages/rights-control-space-omitted.log"
+    },
+    {
+      "id": "rights-type-is-credentials",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/messages/rights-type-is-credentials.log"
+    },
+    {
+      "id": "passed-file-read-is-nop",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/messages/passed-file-read-is-nop.log"
+    },
+    {
+      "id": "descriptor-close-omitted",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/messages/descriptor-close-omitted.log"
+    },
+    {
+      "id": "truncated-rights-buffer-present",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "log": ".mutants/zig/2026-10-10/messages/truncated-rights-buffer-present.log"
+    },
+    {
+      "id": "submission-count-ignored",
+      "source": "tests/test_messages_trace.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages_trace.MessageTraceContracts.test_actual_async_messages_ownership_and_damaged_traces",
+      "log": ".mutants/python/2026-10-10/messages/submission-count-ignored.log"
+    },
+    {
+      "id": "queried-closure-coverage-ignored",
+      "source": "tests/test_messages_trace.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages_trace.MessageTraceContracts.test_actual_async_messages_ownership_and_damaged_traces",
+      "log": ".mutants/python/2026-10-10/messages/queried-closure-coverage-ignored.log"
+    },
+    {
+      "id": "census-from-self-state",
+      "source": "examples/reference_messages.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages_census.MessageCensusContracts.test_actual_procfs_census_rejects_fake_counts_and_damaged_traces",
+      "log": ".mutants/zig/2026-10-10/messages/census-from-self-state.log"
+    },
+    {
+      "id": "census-delta-check-ignored",
+      "source": "tests/test_messages_census.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages_census.MessageCensusContracts.test_actual_procfs_census_rejects_fake_counts_and_damaged_traces",
+      "log": ".mutants/python/2026-10-10/messages/census-delta-check-ignored.log"
+    },
+    {
+      "id": "census-byte-count-ignored",
+      "source": "tests/test_messages_census.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_messages_census.MessageCensusContracts.test_actual_procfs_census_rejects_fake_counts_and_damaged_traces",
+      "log": ".mutants/python/2026-10-10/messages/census-byte-count-ignored.log"
+    }
+  ],
+  "restored_byte_exactly": true,
+  "rebuilt_three_test_baseline_passed": true,
+  "spec_first_tests_and_fixtures_unchanged": true,
+  "rebuilt_four_test_baseline_passed": true,
+  "log_whitespace_normalization": {
+    "paths": [
+      ".mutants/python/2026-10-10/messages/census-byte-count-ignored-build.log",
+      ".mutants/python/2026-10-10/messages/census-delta-check-ignored-build.log",
+      ".mutants/python/2026-10-10/messages/queried-closure-coverage-ignored-build.log",
+      ".mutants/python/2026-10-10/messages/submission-count-ignored-build.log",
+      ".mutants/zig/2026-10-10/messages/census-from-self-state-build.log",
+      ".mutants/zig/2026-10-10/messages/descriptor-close-omitted-build.log",
+      ".mutants/zig/2026-10-10/messages/full-datagram-result-flag-omitted-build.log",
+      ".mutants/zig/2026-10-10/messages/passed-file-read-is-nop-build.log",
+      ".mutants/zig/2026-10-10/messages/receive-vector-offset-reset-build.log",
+      ".mutants/zig/2026-10-10/messages/received-cloexec-omitted-build.log",
+      ".mutants/zig/2026-10-10/messages/rights-control-space-omitted-build.log",
+      ".mutants/zig/2026-10-10/messages/rights-type-is-credentials-build.log",
+      ".mutants/zig/2026-10-10/messages/send-vector-offset-reset-build.log",
+      ".mutants/zig/2026-10-10/messages/truncated-rights-buffer-present-build.log"
+    ],
+    "scope": "Trailing spaces/tabs/CR and terminal blank lines only; all substantive outcomes unchanged."
+  }
+}

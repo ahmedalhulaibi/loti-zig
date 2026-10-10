@@ -369,9 +369,9 @@
     {
       "original": "io_uring_prep_recvmsg",
       "zig": "std.os.linux.IoUring.recvmsg",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/reference_messages.zig",
+      "verification_scope": "constructed and submitted; two-vector private UNIX datagrams, zero-size records, data/control truncation, SCM_RIGHTS lifetime/CMSG_CLOEXEC, exact bytes/flags and selected negative CQEs/queried cleanup checked; not TCP/UDP, addresses, all ancillary types, concurrency/cancellation or all failure paths",
+      "semantic_difference": "Uses mutable linux.msghdr with output flags/control length; MSG_TRUNC can return a datagram length greater than initialized storage, and zero can be a consumed record rather than EOF. Received SCM_RIGHTS descriptors require ownership/close.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn recvmsg(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    msg: *linux.msghdr,\n    flags: u32,\n) !*linux.io_uring_sqe"
     },
@@ -396,9 +396,9 @@
     {
       "original": "io_uring_prep_sendmsg",
       "zig": "std.os.linux.IoUring.sendmsg",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/reference_messages.zig",
+      "verification_scope": "constructed and submitted; two-vector private UNIX datagrams, zero-size records, data/control truncation, SCM_RIGHTS lifetime/CMSG_CLOEXEC, exact bytes/flags and selected negative CQEs/queried cleanup checked; not TCP/UDP, addresses, all ancillary types, concurrency/cancellation or all failure paths",
+      "semantic_difference": "Uses linux.msghdr_const and stable nested iovecs/control bytes; operation flags go in SQE rw_flags, not SQE flags or the header's ignored input flags. This example retains nested storage through CQE and uses NOSIGNAL/DONTWAIT.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn sendmsg(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    msg: *const linux.msghdr_const,\n    flags: u32,\n) !*linux.io_uring_sqe"
     },

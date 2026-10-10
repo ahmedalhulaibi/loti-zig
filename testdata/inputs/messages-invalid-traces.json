@@ -1,0 +1,51 @@
+[
+  {
+    "name": "missing_submit",
+    "old": "io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteMessageSubmissionTrace"
+  },
+  {
+    "name": "missing_close",
+    "old": "close(4) = 0\n",
+    "new": "",
+    "count": 1,
+    "error": "MessageCloseNotObservedBeforeQuery"
+  },
+  {
+    "name": "missing_badf",
+    "old": "fcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteMessageOwnershipTrace"
+  },
+  {
+    "name": "missing_cloexec",
+    "old": "fcntl(3, F_GETFD) = 0x1 (flags FD_CLOEXEC)\n",
+    "new": "",
+    "count": 1,
+    "error": "IncompleteMessageOwnershipTrace"
+  },
+  {
+    "name": "wrong_socket_type",
+    "old": "SOCK_DGRAM",
+    "new": "SOCK_STREAM",
+    "count": 1,
+    "error": "IncompleteMessageSubmissionTrace"
+  },
+  {
+    "name": "synchronous_send",
+    "old": "io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "sendmsg(4, NULL, 0) = -1 EFAULT (Bad address)\n",
+    "count": 1,
+    "error": "SynchronousMessageOperationDetected"
+  },
+  {
+    "name": "synchronous_receive",
+    "old": "io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "recvmsg(5, NULL, 0) = -1 EFAULT (Bad address)\n",
+    "count": 1,
+    "error": "SynchronousMessageOperationDetected"
+  }
+]
