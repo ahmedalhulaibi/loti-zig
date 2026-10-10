@@ -144,6 +144,52 @@ Exact native declarations
 
 .. include:: _api/submission.inc
 
+Submitted file-operation reference
+----------------------------------
+
+``reference-files INPUT NEW_OUTPUT`` executes ``OPENAT``, ``READV``, ``WRITEV``,
+``FALLOCATE``, ``STATX``, both ``FSYNC`` flag modes and ``CLOSE``. Input must be
+regular; output is created with ``CREAT | EXCL`` and must not exist. ``NOFOLLOW``
+rejects final-component symlinks; this is not directory confinement. Existing
+files, same-path output and symlink output are rejected without byte changes.
+
+Two stable vectors span 1,024 and 3,072 bytes. Each read CQE bounds initialized
+bytes; writes use only those bytes and advance offset/progress. The final read
+really returns zero, and an empty input also executes a zero-length ``WRITEV``.
+Vector count is two, **not** 4,096. Storage remains alive through each CQE.
+
+After writes complete, mode-zero allocation adds a 4,096-byte zero-filled tail.
+Actual ``STATX`` on ``AT.EMPTY_PATH`` checks returned TYPE/SIZE mask bits and
+new size. Full/data-only fsyncs follow those completed operations, with observed
+opcode/flags and correlated zero CQEs. Output and input close asynchronously;
+``fcntl(GETFD)`` then returns ``EBADF``. A new async open reads the whole output
+again and hashes actual bytes, before its own close. This proves observable
+content/ownership and successful sync requests, **not crash or physical-media
+durability**, metadata copying or atomic replacement. Allocation mode/filesystem
+support is specific to the execution environment.
+
+Seven separate invalid-descriptor requests return correlated ``-EBADF`` CQEs.
+A negative CQE is an operation error, not a constructor failure. Requests are
+submitted/drained separately, not as the incompatible mixed batch below.
+The source detects size changes, but it is not a concurrent-input snapshot.
+A later failure can leave its newly created partial output; it never overwrites
+an existing destination. Forced short writes remain unverified.
+
+.. code-block:: console
+
+   zig build
+   zig-out/bin/reference-files input.bin new-output.bin
+
+.. literalinclude:: ../examples/reference_files.zig
+   :language: zig
+   :caption: Submitted file operations, exact metadata and descriptor ownership
+
+``tests/test_file_operations.py`` generates binary inputs across vector/buffer
+boundaries. It compares the whole report, unchanged source, exact output plus
+zero tail and independent full SHA-256. A committed 4,097-byte fixture has a
+literal report with GNU ``sha256sum`` digest; path/argument matrices check
+exact errors and retained files. These author checks are not independent review.
+
 Runnable constructor reference
 ------------------------------
 

@@ -1,0 +1,265 @@
+{
+  "scope": "Current-kernel/filesystem async OPENAT, READV/WRITEV, mode-zero FALLOCATE, EMPTY_PATH STATX, full/data-only FSYNC and CLOSE execution on owned temporary files. No forced short-write, other allocation modes/stat fields, cross-kernel/architecture/filesystem, physical/crash durability or independent-review claim.",
+  "compiler": "0.17.0",
+  "kernel": "7.2.3-arch1-3",
+  "architecture": "x86_64",
+  "command": "zig-out/bin/reference-files INPUT NEW_OUTPUT",
+  "report": {
+    "opens": [
+      true,
+      true,
+      true
+    ],
+    "closed": [
+      true,
+      true,
+      true
+    ],
+    "input_size": 4097,
+    "readv": {
+      "vectors": 2,
+      "results": [
+        4096,
+        1,
+        0
+      ]
+    },
+    "writev": {
+      "vectors": 2,
+      "results": [
+        4096,
+        1
+      ]
+    },
+    "allocation": {
+      "offset": 4097,
+      "length": 4096,
+      "mode": 0,
+      "result": 0
+    },
+    "statx": {
+      "requested_mask": 513,
+      "size_present": true,
+      "type_present": true,
+      "regular": true,
+      "size": 8193
+    },
+    "fsync": [
+      {
+        "operation": "FSYNC",
+        "tag": 20,
+        "flags": 0,
+        "result": 0
+      },
+      {
+        "operation": "FSYNC",
+        "tag": 21,
+        "flags": 1,
+        "result": 0
+      }
+    ],
+    "reopened": {
+      "bytes": 8193,
+      "sha256": "4e0c56fa0915b1e69815b3a0aa7aeeee739a6e312e13969e98747de165b29860"
+    },
+    "invalid_descriptors": [
+      {
+        "operation": "OPENAT",
+        "tag": 50,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "READV",
+        "tag": 51,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "WRITEV",
+        "tag": 52,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "FALLOCATE",
+        "tag": 53,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "STATX",
+        "tag": 54,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "FSYNC",
+        "tag": 55,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "CLOSE",
+        "tag": 56,
+        "result": -9,
+        "flags": 0
+      }
+    ]
+  },
+  "expected_literal": {
+    "opens": [
+      true,
+      true,
+      true
+    ],
+    "closed": [
+      true,
+      true,
+      true
+    ],
+    "input_size": 4097,
+    "readv": {
+      "vectors": 2,
+      "results": [
+        4096,
+        1,
+        0
+      ]
+    },
+    "writev": {
+      "vectors": 2,
+      "results": [
+        4096,
+        1
+      ]
+    },
+    "allocation": {
+      "offset": 4097,
+      "length": 4096,
+      "mode": 0,
+      "result": 0
+    },
+    "statx": {
+      "requested_mask": 513,
+      "size_present": true,
+      "type_present": true,
+      "regular": true,
+      "size": 8193
+    },
+    "fsync": [
+      {
+        "operation": "FSYNC",
+        "tag": 20,
+        "flags": 0,
+        "result": 0
+      },
+      {
+        "operation": "FSYNC",
+        "tag": 21,
+        "flags": 1,
+        "result": 0
+      }
+    ],
+    "reopened": {
+      "bytes": 8193,
+      "sha256": "4e0c56fa0915b1e69815b3a0aa7aeeee739a6e312e13969e98747de165b29860"
+    },
+    "invalid_descriptors": [
+      {
+        "operation": "OPENAT",
+        "tag": 50,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "READV",
+        "tag": 51,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "WRITEV",
+        "tag": 52,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "FALLOCATE",
+        "tag": 53,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "STATX",
+        "tag": 54,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "FSYNC",
+        "tag": 55,
+        "result": -9,
+        "flags": 0
+      },
+      {
+        "operation": "CLOSE",
+        "tag": 56,
+        "result": -9,
+        "flags": 0
+      }
+    ]
+  },
+  "independent_gnu_sha256sum": "4e0c56fa0915b1e69815b3a0aa7aeeee739a6e312e13969e98747de165b29860",
+  "independent_gnu_stat_size": 8193,
+  "exact_output_sha256": "4e0c56fa0915b1e69815b3a0aa7aeeee739a6e312e13969e98747de165b29860",
+  "input_sha256": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
+  "source_unchanged": true,
+  "path_negative_cases": 6,
+  "argument_negative_cases": 3,
+  "invalid_descriptor_cqes": 7,
+  "property": {
+    "test": "test_file_operations.FileOperationContracts.test_file_operation_effects_and_correlated_failures",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  },
+  "source_sha256": {
+    "build.zig": "c33a4a171b2d84f53ae24974f90e46ea666b518e11b79f4cad2020cbe4e37427",
+    "examples/reference_files.zig": "4f2792ef1cd99f2191f242f040ca4a90d4af376a3dfb955cd0e04167f139f65f",
+    "tests/test_file_operations.py": "11a70eafa618fa1246fcae50baa7f6ffd91c3bfd43174812c79ca7531fdbb186",
+    "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
+    "testdata/inputs/file-operations-report.json": "82215f932bf6622b6c5362d08c9035a33e24d3d5bd83e5f8cb3fce59466facd1",
+    "testdata/inputs/file-operations-invalid-arguments.json": "95a3fe47a3473a059f6d5b4ca47cbcb298ce14d6c0d8ec8874e201824f218de6",
+    "tools/reference_map.py": "2e3bb2e7448d7586a80ee6c331f3a892871abae18639f77b4d3b3fe0dc65087d",
+    "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1"
+  },
+  "sdk_source_sha256": {
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf",
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
+  },
+  "mutation_report": "conversion/mutation-file-operations.json",
+  "native_mutants_compiled_and_killed": 8,
+  "oracle_scope": "Author property oracle plus separate literal whole report and GNU byte/size oracles; not mandatory independent agent review.",
+  "navigation_evidence": "Fabric transitive-call tools unavailable; cached graph stale. Current bodies and explicit build/test/map/book/README consumers inspected; active LSP probes used.",
+  "change_boundary": "One native file-operation reference across explicit consumer folders, not separate domain modules.",
+  "spec_before_implementation": "Public tests first failed because the new CLI did not exist; later passing tests do not alter historical constructor-only evidence.",
+  "regression_input": {
+    "path": "testdata/inputs/file-operations-write-offset-regression.bin",
+    "size": 4100,
+    "origin": "Actual failing explicit WRITEV-offset mutant example, now a committed binary consumed by the same example decorator. Not a generated/shrunk counterexample; bytes unchanged."
+  }
+}

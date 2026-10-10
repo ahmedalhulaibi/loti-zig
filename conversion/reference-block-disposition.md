@@ -90,16 +90,16 @@ every operand field or execute the opcode. Original spelling errors
 | `ref-liburing/submission.rst:114` | `ring.nop` | P/E; NOP batches/personality/async notification, no data-I/O claim |
 | `ref-liburing/submission.rst:127` | `ring.read(.buffer)`: mutable slice carries length; u64 value offset | P/E in copy/raw references; actual count may be short |
 | `ref-liburing/submission.rst:148` | `ring.write`: const slice carries length and offset | P/E in copy/link/fixed examples |
-| `ref-liburing/submission.rst:169` | `ring.read(.iovecs)`: vectored read with stable iovecs and buffers | P/E in both io_uring readers; whole binary bytes checked |
+| `ref-liburing/submission.rst:169` | `ring.read(.iovecs)`: vectored read with stable iovecs and buffers | P/E in readers and reference-files; two vectors with 1024/3072 bytes, observed EOF zero result, full output/hash and -EBADF CQE checked |
 | `ref-liburing/submission.rst:190` | `read_fixed`: registered range/index, not implicit registration | P/E; four registered-buffer operations |
-| `ref-liburing/submission.rst:213` | `writev`: const iovec slice and offset; vector count is not byte count | P; constructor only; copy now uses scalar WRITE, so vectored-write effect unverified |
+| `ref-liburing/submission.rst:213` | `writev`: const iovec slice and offset; vector count is not byte count | P/E; reference-files executes two vectors, exact binary output/reopen hash and correlated -EBADF; scalar copy remains separate; forced short writes unverified |
 | `ref-liburing/submission.rst:234` | `write_fixed`: write from registered range/index; original mistaken read prose corrected | P/E; successful fixed write/readback |
-| `ref-liburing/submission.rst:259` | `fsync`: flags 0/data-only; earlier submissions need link/drain/completion ordering | P only; no submitted FSYNC example; physical durability/crash outcome not attested |
-| `ref-liburing/submission.rst:283` | `close`: successful CQE consumes process descriptor ownership | P/E in link; prevent subsequent double-close |
-| `ref-liburing/submission.rst:300` | `openat`: sentinel path, native O flags/mode; CQE returns owned descriptor | P only; HTTP uses synchronous confined openat2, not evidence for this SQE |
+| `ref-liburing/submission.rst:259` | `fsync`: flags 0/data-only; earlier submissions need link/drain/completion ordering | P/E; full/data-only FSYNC actually submitted after completed writes/allocation; captured opcode/flags and correlated zero CQEs/-EBADF; physical/crash durability not attested |
+| `ref-liburing/submission.rst:283` | `close`: successful CQE consumes process descriptor ownership | P/E in link/reference-files; prevent double-close; three actual CLOSE CQEs followed by F_GETFD/-EBADF; reopened descriptor has distinct ownership |
+| `ref-liburing/submission.rst:300` | `openat`: sentinel path, native O flags/mode; CQE returns owned descriptor | P/E; real input/exclusive-output/reopen descriptors, byte content and close ownership checked; -EBADF bad-relative-dirfd CQE and exact path failures; HTTP openat2 remains distinct |
 | `ref-liburing/submission.rst:321` | `raw_ops.openat2`: native three-u64 OpenHow and SQE encoding | P/E; actual async open and exact file prefix |
-| `ref-liburing/submission.rst:341` | `fallocate`: mode/offset/u64 length preserved; filesystem-specific support | P only; allocation/deallocation effect unverified |
-| `ref-liburing/submission.rst:361` | `statx`: sentinel path, native mask and stable output storage; directory/path flags explained | P only; synchronous file stat is not asynchronous STATX evidence |
+| `ref-liburing/submission.rst:341` | `fallocate`: mode/offset/u64 length preserved; filesystem-specific support | P/E; mode-zero allocation extends output by 4096, preserves payload and yields actual zero tail/size/reopen hash; -EBADF checked; other modes/deallocation/filesystems unverified |
+| `ref-liburing/submission.rst:361` | `statx`: sentinel path, native mask and stable output storage; directory/path flags explained | P/E; actual async EMPTY_PATH STATX checks returned TYPE/SIZE bits, regular kind and source/extended-output sizes; -EBADF checked; other fields/path flags unverified |
 | `ref-liburing/submission.rst:380` | `raw_ops.fadvise`: file descriptor/range/advice SQE, not synchronous substitute | P/E for successful CQE; advisory performance outcome not claimed |
 | `ref-liburing/submission.rst:399` | `raw_ops.madvise`: memory range/advice SQE and Linux alignment | P/E; owned-page MADV_DONTNEED zeroing checked |
 | `ref-liburing/submission.rst:418` | `splice`: value offsets with all-ones sentinel; at least one pipe; rw_flags set after prep | P only; original pointer-offset prose corrected; actual transfer unverified |

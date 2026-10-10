@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 16 native executables; exact compiler gate; 33/33 build steps; 26 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 17 native executables; exact compiler gate; 35/35 build steps; 29 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -256,15 +256,64 @@ consumers were inspected. This is one signal-wait concern across consumer
 folders, not separate domain modules. Independent review remains blocked; no
 unsupported-host retry or replacement reviewer was launched.
 
+## Submitted file-operation effects
+
+`d07ede7` records seven passing constructors, not operation effects. Public tests
+for new `reference-files INPUT NEW_OUTPUT` first fail with the CLI absent.
+The implementation now submits real OPENAT, READV/WRITEV, mode-zero FALLOCATE,
+EMPTY_PATH STATX, full/data-only FSYNC and CLOSE requests. Existing output,
+same-path output, final symlinks, missing input and non-regular input are rejected.
+Tests retain exact original files and reject all invalid argument counts.
+
+Two stable 1024/3072-byte vectors copy every initialized byte, including observed
+EOF/empty-input requests. Allocation appends 4096 actual zero bytes; returned
+STATX TYPE/SIZE bits and size are checked. Write/allocation CQEs are consumed
+before FSYNC; observed opcode/flags distinguish FSYNC from a successful NOP.
+Async CLOSE plus F_GETFD/-EBADF checks descriptor ownership before reuse. Reopen
+reads/hash the whole output again. Seven separate invalid-descriptor operations
+produce exact correlated -EBADF CQEs, not constructor errors.
+
+`file-operations-verification.json` pins whole report/source/fixture/SDK hashes,
+400 generated binary cases, independent GNU size/digest and unchanged source.
+The 4097-byte literal fixture uses explicit chunk/CQE/flag fields and a GNU
+sha256sum digest, separate from the property oracle. The map now points those
+seven preparers at actual execution, keeping constructor/effect scope explicit.
+The actual failing 4100-byte explicit WRITEV-offset example is retained as a
+binary fixture and consumed by its existing example decorator, with identical
+bytes. It is not labelled as a generated or shrunk counterexample. The complete
+suite was rerun after moving that input from inline bytes to the committed file.
+
+Eight compiled mutants die: existing output accepted, WRITEV offset reset,
+FALLOCATE KEEP_SIZE, missing DATASYNC flag, FSYNC replaced by NOP, wrong STATX
+FD, CLOSE replaced by NOP and READV reduced to one vector. Exact restored source
+and rebuilt passing baseline are recorded in `mutation-file-operations.json`.
+There are now 41 bounded valid kills (38 native exercises, three index-tool);
+this is not whole-port/SDK assurance. Earlier compile failures remain unassessed.
+
+Current complete gates pass: exact Zig 0.17.0, 35 build steps, 37 tests/zero skips,
+seven properties each generating 400 valid cases, full strict HTML/EPUB,
+109 source-faithful literals and clean EPUBCheck. The VM block receipt was
+regenerated because the build target list changed; signal report was replayed
+in 25 fresh processes before refreshing consumer fingerprints.
+
+Scope: current kernel/filesystem, sequential owned regular files, allocation
+mode zero and TYPE/SIZE fields only. No physical/crash durability, forced short
+writes, other allocation modes, concurrent snapshot or atomic replacement claim.
+A later failure can leave the new partial output; existing files are not replaced.
+Fabric navigation is unavailable/stale; direct bodies and explicit build/test/
+map/book consumers were inspected and active LSP probes used. This is one
+reference concern across consumer folders, not separate domain modules.
+Independent review remains blocked; no new reviewer launch/fallback occurred.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **33/33**. Current complete suite: **34 passed**
-  (26 native + one VM + two publication + three inventory + two line-index tests), zero skips,
+- Compiler: **0.17.0**. Build: **35/35**. Current complete suite: **37 passed**
+  (29 native + one VM + two publication + three inventory + two line-index tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
-- Six reference executables: `reference-setup`, `reference-completion`,
-  `reference-signals`, `reference-registration`, `reference-submission`, `reference-raw`.
+- Seven reference executables: `reference-setup`, `reference-completion`,
+  `reference-signals`, `reference-files`, `reference-registration`, `reference-submission`, `reference-raw`.
 - Readers/copy: whole binary bytes, argument order, empty/boundary-size inputs,
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs;
@@ -272,7 +321,7 @@ unsupported-host retry or replacement reviewer was launched.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  six properties**, source hashes, 34 passing tests and zero skips. These remain
+  seven properties**, source hashes, 37 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -312,7 +361,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **107 current literal blocks** match Sphinx's source, independently of the
+- **109 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.

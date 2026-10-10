@@ -1,0 +1,8 @@
+test_file_operation_effects_and_correlated_failures (tests.test_file_operations.FileOperationContracts.test_file_operation_effects_and_correlated_failures) ... ok
+test_file_operation_reference_rejects_argument_counts (tests.test_file_operations.FileOperationContracts.test_file_operation_reference_rejects_argument_counts) ... ok
+test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.882s
+
+OK

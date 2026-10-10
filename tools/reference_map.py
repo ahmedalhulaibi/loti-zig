@@ -13,6 +13,7 @@ SETUP = "examples/reference_setup.zig"
 COMPLETE = "examples/reference_completion.zig"
 REGISTER = "examples/reference_registration.zig"
 PREPARE = "examples/reference_submission.zig"
+FILES = "examples/reference_files.zig"
 RAW = "examples/reference_raw.zig"
 
 PREPARERS = {
@@ -157,6 +158,9 @@ def generate():
                     difference = "No ring.readv method: call ring.read with ReadBuffer.iovecs."
                 elif method == "splice":
                     difference = "Offsets are u64 values, not pointers; maxInt(u64) means current position. Set splice flags in SQE rw_flags. One descriptor must be a pipe."
+                if method in {"readv", "writev", "fsync", "close", "openat", "fallocate", "statx"}:
+                    example = FILES
+                    scope = "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence"
         elif original in OTHER:
             native_name, example, difference = OTHER[original]
             native_source = "os/linux/IoUring.zig"

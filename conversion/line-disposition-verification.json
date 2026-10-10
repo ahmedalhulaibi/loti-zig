@@ -13,11 +13,11 @@
     },
     {
       "name": "reference-block-disposition.md",
-      "sha256": "131d33ee0aea77b0ea32d4cf40d2c7f74b723d62e1dc308584fc83ddf243a3a1"
+      "sha256": "9a7743f929976b82f6c4a348a4f61cf2e6b502443311db1d312aec16ecfa4cd7"
     },
     {
       "name": "prose-line-disposition.md",
-      "sha256": "46d07f68645bb4d6c1f7bc32765cfeeae9d70149192f7548b15088883ee970f3"
+      "sha256": "c6e1d8391747dd5121d354eb3d2b03a7ddea786b13fac5a86d314bc45e924619"
     }
   ],
   "target_sha256": {
@@ -36,7 +36,7 @@
     "ref-zig/index.rst": "796748b6db63b46962d4a596f258cd3ceecc3e4c7e6f3a19105a71568a0cd849",
     "ref-zig/setup_teardown.rst": "cca94ae1afcfc71d1a1f8fe845805f8e56e5dfeb195561ecfc0a6c7c73924e62",
     "ref-zig/sqe.rst": "e93b2d66aa339084a6dc0307fd1e500fada6badccbf5cf4caab12533da8913c4",
-    "ref-zig/submission.rst": "d5c5bf086532e3507c3240270e002bcbfaa8337375e79949db6de28e8494707d",
+    "ref-zig/submission.rst": "f7b279cad90adc6592e22e983e3ab7834bc95d1fb8596845719b9d2c40a90b2c",
     "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
     "tutorial/cat.rst": "98eb3485361b25130e5792720bf99b4f39617f67bb902b83a946fc481d83c7f6",
     "tutorial/cp.rst": "07c89cf5bf678b5e2b22ac97e710aee7111c69b7d643821484408e0efd301bf3",

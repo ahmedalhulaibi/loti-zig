@@ -198,8 +198,8 @@
     {
       "original": "io_uring_prep_close",
       "zig": "std.os.linux.IoUring.close",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "example": "examples/reference_files.zig",
+      "verification_scope": "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence",
       "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn close(self: *IoUring, user_data: u64, fd: linux.fd_t) !*linux.io_uring_sqe"
@@ -234,8 +234,8 @@
     {
       "original": "io_uring_prep_fallocate",
       "zig": "std.os.linux.IoUring.fallocate",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "example": "examples/reference_files.zig",
+      "verification_scope": "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence",
       "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn fallocate(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    mode: i32,\n    offset: u64,\n    len: u64,\n) !*linux.io_uring_sqe"
@@ -252,8 +252,8 @@
     {
       "original": "io_uring_prep_fsync",
       "zig": "std.os.linux.IoUring.fsync",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "example": "examples/reference_files.zig",
+      "verification_scope": "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence",
       "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn fsync(self: *IoUring, user_data: u64, fd: linux.fd_t, flags: u32) !*linux.io_uring_sqe"
@@ -288,8 +288,8 @@
     {
       "original": "io_uring_prep_openat",
       "zig": "std.os.linux.IoUring.openat",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "example": "examples/reference_files.zig",
+      "verification_scope": "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence",
       "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn openat(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    path: [*:0]const u8,\n    flags: linux.O,\n    mode: posix.mode_t,\n) !*linux.io_uring_sqe"
@@ -351,8 +351,8 @@
     {
       "original": "io_uring_prep_readv",
       "zig": "std.os.linux.IoUring.read",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "example": "examples/reference_files.zig",
+      "verification_scope": "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence",
       "semantic_difference": "No ring.readv method: call ring.read with ReadBuffer.iovecs.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn read(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: ReadBuffer,\n    offset: u64,\n) !*linux.io_uring_sqe"
@@ -414,8 +414,8 @@
     {
       "original": "io_uring_prep_statx",
       "zig": "std.os.linux.IoUring.statx",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "example": "examples/reference_files.zig",
+      "verification_scope": "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence",
       "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn statx(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    path: [:0]const u8,\n    flags: u32,\n    mask: linux.STATX,\n    buf: *linux.Statx,\n) !*linux.io_uring_sqe"
@@ -459,8 +459,8 @@
     {
       "original": "io_uring_prep_writev",
       "zig": "std.os.linux.IoUring.writev",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "example": "examples/reference_files.zig",
+      "verification_scope": "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence",
       "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn writev(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    iovecs: []const posix.iovec_const,\n    offset: u64,\n) !*linux.io_uring_sqe"

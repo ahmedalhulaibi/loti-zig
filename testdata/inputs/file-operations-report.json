@@ -1,0 +1,103 @@
+{
+  "opens": [
+    true,
+    true,
+    true
+  ],
+  "closed": [
+    true,
+    true,
+    true
+  ],
+  "input_size": 4097,
+  "readv": {
+    "vectors": 2,
+    "results": [
+      4096,
+      1,
+      0
+    ]
+  },
+  "writev": {
+    "vectors": 2,
+    "results": [
+      4096,
+      1
+    ]
+  },
+  "allocation": {
+    "offset": 4097,
+    "length": 4096,
+    "mode": 0,
+    "result": 0
+  },
+  "statx": {
+    "requested_mask": 513,
+    "size_present": true,
+    "type_present": true,
+    "regular": true,
+    "size": 8193
+  },
+  "fsync": [
+    {
+      "operation": "FSYNC",
+      "tag": 20,
+      "flags": 0,
+      "result": 0
+    },
+    {
+      "operation": "FSYNC",
+      "tag": 21,
+      "flags": 1,
+      "result": 0
+    }
+  ],
+  "reopened": {
+    "bytes": 8193,
+    "sha256": "4e0c56fa0915b1e69815b3a0aa7aeeee739a6e312e13969e98747de165b29860"
+  },
+  "invalid_descriptors": [
+    {
+      "operation": "OPENAT",
+      "tag": 50,
+      "result": -9,
+      "flags": 0
+    },
+    {
+      "operation": "READV",
+      "tag": 51,
+      "result": -9,
+      "flags": 0
+    },
+    {
+      "operation": "WRITEV",
+      "tag": 52,
+      "result": -9,
+      "flags": 0
+    },
+    {
+      "operation": "FALLOCATE",
+      "tag": 53,
+      "result": -9,
+      "flags": 0
+    },
+    {
+      "operation": "STATX",
+      "tag": 54,
+      "result": -9,
+      "flags": 0
+    },
+    {
+      "operation": "FSYNC",
+      "tag": 55,
+      "result": -9,
+      "flags": 0
+    },
+    {
+      "operation": "CLOSE",
+      "tag": 56,
+      "result": -9,
+      "flags": 0
+    }
+  ]
+}

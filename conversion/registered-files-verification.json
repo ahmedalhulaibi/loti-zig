@@ -11,7 +11,7 @@
   "source_sha256": {
     "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
-    "tools/reference_map.py": "541fbdbd857fa7f06c978caa262fcff590f5864d539187a7da4b028400cfbb24"
+    "tools/reference_map.py": "2e3bb2e7448d7586a80ee6c331f3a892871abae18639f77b4d3b3fe0dc65087d"
   },
   "input_sha256": {
     "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
@@ -181,5 +181,6 @@
     "review_graph": "stale; not relied on",
     "fallback": "Direct source bodies plus explicit CLI callers, README commands and RST literalinclude inspected."
   },
-  "change_boundary": "One registered-file CLI teaching example across implementation, test, fixture and publication consumers; no shared-helper API changed."
+  "change_boundary": "One registered-file CLI teaching example across implementation, test, fixture and publication consumers; no shared-helper API changed.",
+  "current_source_replay": "Whole fixture report replayed with unchanged inputs after file-operation preparer map updates; registration native source unchanged."
 }

@@ -164,11 +164,11 @@
   },
   "fresh_process_executions": 25,
   "source_sha256": {
-    "build.zig": "53ec335fb1024eea53d3fde047fdfcb08a26b2a959cde63c864d307d09de0b8b",
+    "build.zig": "c33a4a171b2d84f53ae24974f90e46ea666b518e11b79f4cad2020cbe4e37427",
     "examples/reference_signals.zig": "b895a7413d564d6b185cfe9eee7b67f252b123dde2920457e9c2b0d2ff2bc44c",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
-    "tests/test_publication.py": "59ba89156726bbc16c71127a7968612b229ad4efc54cf438fcdac66b3b348f28",
+    "tests/test_publication.py": "2a1d4ea9f908cb0a36bf5a0d5389c9bd09dc8f9ac15e06ffc6fd60b433051905",
     "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
     "testdata/inputs/signal-invalid-arguments.json": "6ef7a293b412e6da43cd05f57b81c26b34a6bde8631879e8dce77fce6018c55c"
   },
@@ -180,5 +180,6 @@
   "change_boundary": "New native reference with build/test/book/README consumers; one signal-wait concern, not separate domain modules.",
   "navigation_evidence": "Fabric transitive-call tools unavailable and cached graph stale; current source bodies and explicit consumers inspected, active LSP probes used.",
   "environment_correction": "An initial standalone Python check lacked Hypothesis; the required .venv interpreter was used. No native execution failed in that check.",
-  "publication_count_correction": "The first full suite rejected stale expected literal count 105. Verifier independently reported 107 after the new signal console/source literals; the exact publication contract was updated and this complete suite passed."
+  "publication_count_correction": "The first full suite rejected stale expected literal count 105. Verifier independently reported 107 after the new signal console/source literals; the exact publication contract was updated and this complete suite passed.",
+  "current_source_replay": "25 fresh executions after the new file-reference build target and publication-consumer update; full report unchanged."
 }

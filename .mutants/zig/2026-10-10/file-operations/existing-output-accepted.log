@@ -1,0 +1,68 @@
+test_file_operation_effects_and_correlated_failures (tests.test_file_operations.FileOperationContracts.test_file_operation_effects_and_correlated_failures) ... ok
+test_file_operation_reference_rejects_argument_counts (tests.test_file_operations.FileOperationContracts.test_file_operation_reference_rejects_argument_counts) ... ok
+test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) ...
+  test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='existing') ... FAIL
+  test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='same_file') ... FAIL
+  test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='symlink_output') ... FAIL
+  test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='missing_source') ... FAIL
+  test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='device_source') ... FAIL
+  test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='symlink_source') ... FAIL
+
+======================================================================
+FAIL: test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='existing')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_file_operations.py", line 72, in test_literal_oracle_and_rejected_paths_preserve_files
+    self.assertEqual(result.returncode, 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='same_file')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_file_operations.py", line 72, in test_literal_oracle_and_rejected_paths_preserve_files
+    self.assertEqual(result.returncode, 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='symlink_output')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_file_operations.py", line 75, in test_literal_oracle_and_rejected_paths_preserve_files
+    self.assertEqual(source.read_bytes(), before_source)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'\x0[11756 chars]f\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\[16339 chars]\x00' != b'\x0[11756 chars]f\xff'
+
+======================================================================
+FAIL: test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='missing_source')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_file_operations.py", line 75, in test_literal_oracle_and_rejected_paths_preserve_files
+    self.assertEqual(source.read_bytes(), before_source)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'\x0[11756 chars]f\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\[16339 chars]\x00' != b'\x0[11756 chars]f\xff'
+
+======================================================================
+FAIL: test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='device_source')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_file_operations.py", line 75, in test_literal_oracle_and_rejected_paths_preserve_files
+    self.assertEqual(source.read_bytes(), before_source)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'\x0[11756 chars]f\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\[16339 chars]\x00' != b'\x0[11756 chars]f\xff'
+
+======================================================================
+FAIL: test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) (case='symlink_source')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_file_operations.py", line 75, in test_literal_oracle_and_rejected_paths_preserve_files
+    self.assertEqual(source.read_bytes(), before_source)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'\x0[11756 chars]f\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\[16339 chars]\x00' != b'\x0[11756 chars]f\xff'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.796s
+
+FAILED (failures=6)

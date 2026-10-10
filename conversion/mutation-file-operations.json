@@ -1,0 +1,638 @@
+{
+  "scope": "Eight compiled native file-reference mutations on current kernel/filesystem, with temporary owned files. Not forced short-write, whole-port/SDK, crash-durability or independent-review assurance.",
+  "source": "examples/reference_files.zig",
+  "source_sha256": "4f2792ef1cd99f2191f242f040ca4a90d4af376a3dfb955cd0e04167f139f65f",
+  "mutants": [
+    {
+      "mutant": "existing-output-accepted",
+      "compiled": true,
+      "source_sha256": "2c3d7c75ba9ad56c909278ea8ee6a5aff3217d8cfe397215d9f429926cb2270c",
+      "test_command": "LOTI_TEST_CASES=40 .venv/bin/python -m unittest tests.test_file_operations -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/file-operations/existing-output-accepted.log",
+      "observation": {
+        "exit_status": 0,
+        "stdout": {
+          "opens": [
+            true,
+            true,
+            true
+          ],
+          "closed": [
+            true,
+            true,
+            true
+          ],
+          "input_size": 4097,
+          "readv": {
+            "vectors": 2,
+            "results": [
+              4096,
+              1,
+              0
+            ]
+          },
+          "writev": {
+            "vectors": 2,
+            "results": [
+              4096,
+              1
+            ]
+          },
+          "allocation": {
+            "offset": 4097,
+            "length": 4096,
+            "mode": 0,
+            "result": 0
+          },
+          "statx": {
+            "requested_mask": 513,
+            "size_present": true,
+            "type_present": true,
+            "regular": true,
+            "size": 8193
+          },
+          "fsync": [
+            {
+              "operation": "FSYNC",
+              "tag": 20,
+              "flags": 0,
+              "result": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 21,
+              "flags": 1,
+              "result": 0
+            }
+          ],
+          "reopened": {
+            "bytes": 8193,
+            "sha256": "4e0c56fa0915b1e69815b3a0aa7aeeee739a6e312e13969e98747de165b29860"
+          },
+          "invalid_descriptors": [
+            {
+              "operation": "OPENAT",
+              "tag": 50,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "READV",
+              "tag": 51,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "WRITEV",
+              "tag": 52,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FALLOCATE",
+              "tag": 53,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "STATX",
+              "tag": 54,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 55,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "CLOSE",
+              "tag": 56,
+              "result": -9,
+              "flags": 0
+            }
+          ]
+        },
+        "stderr_first_line": null
+      }
+    },
+    {
+      "mutant": "writev-offset-reset",
+      "compiled": true,
+      "source_sha256": "e4a80e2516acb6ac5635644ff42d811e3f316d1054fc161667b78483b80f6b4f",
+      "test_command": "LOTI_TEST_CASES=40 .venv/bin/python -m unittest tests.test_file_operations -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/file-operations/writev-offset-reset.log",
+      "observation": {
+        "exit_status": 0,
+        "stdout": {
+          "opens": [
+            true,
+            true,
+            true
+          ],
+          "closed": [
+            true,
+            true,
+            true
+          ],
+          "input_size": 4097,
+          "readv": {
+            "vectors": 2,
+            "results": [
+              4096,
+              1,
+              0
+            ]
+          },
+          "writev": {
+            "vectors": 2,
+            "results": [
+              4096,
+              1
+            ]
+          },
+          "allocation": {
+            "offset": 4097,
+            "length": 4096,
+            "mode": 0,
+            "result": 0
+          },
+          "statx": {
+            "requested_mask": 513,
+            "size_present": true,
+            "type_present": true,
+            "regular": true,
+            "size": 8193
+          },
+          "fsync": [
+            {
+              "operation": "FSYNC",
+              "tag": 20,
+              "flags": 0,
+              "result": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 21,
+              "flags": 1,
+              "result": 0
+            }
+          ],
+          "reopened": {
+            "bytes": 8193,
+            "sha256": "091b7a7addeaad6a85144fe5556243ba50e7d84fe23b45c59941dcc78912288c"
+          },
+          "invalid_descriptors": [
+            {
+              "operation": "OPENAT",
+              "tag": 50,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "READV",
+              "tag": 51,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "WRITEV",
+              "tag": 52,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FALLOCATE",
+              "tag": 53,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "STATX",
+              "tag": 54,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 55,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "CLOSE",
+              "tag": 56,
+              "result": -9,
+              "flags": 0
+            }
+          ]
+        },
+        "stderr_first_line": null
+      }
+    },
+    {
+      "mutant": "fallocate-keeps-size",
+      "compiled": true,
+      "source_sha256": "e5406131759040ed52ee3b874d925c00de2f472222c396ce22720987ca0cf4c1",
+      "test_command": "LOTI_TEST_CASES=40 .venv/bin/python -m unittest tests.test_file_operations -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/file-operations/fallocate-keeps-size.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: FileAllocationSizeMismatch"
+      }
+    },
+    {
+      "mutant": "datasync-flag-omitted",
+      "compiled": true,
+      "source_sha256": "1a6bd250b41b173cddc99bf6ea8ad92f38c6321430e18829f4940cae1efc0d11",
+      "test_command": "LOTI_TEST_CASES=40 .venv/bin/python -m unittest tests.test_file_operations -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/file-operations/datasync-flag-omitted.log",
+      "observation": {
+        "exit_status": 0,
+        "stdout": {
+          "opens": [
+            true,
+            true,
+            true
+          ],
+          "closed": [
+            true,
+            true,
+            true
+          ],
+          "input_size": 4097,
+          "readv": {
+            "vectors": 2,
+            "results": [
+              4096,
+              1,
+              0
+            ]
+          },
+          "writev": {
+            "vectors": 2,
+            "results": [
+              4096,
+              1
+            ]
+          },
+          "allocation": {
+            "offset": 4097,
+            "length": 4096,
+            "mode": 0,
+            "result": 0
+          },
+          "statx": {
+            "requested_mask": 513,
+            "size_present": true,
+            "type_present": true,
+            "regular": true,
+            "size": 8193
+          },
+          "fsync": [
+            {
+              "operation": "FSYNC",
+              "tag": 20,
+              "flags": 0,
+              "result": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 21,
+              "flags": 0,
+              "result": 0
+            }
+          ],
+          "reopened": {
+            "bytes": 8193,
+            "sha256": "4e0c56fa0915b1e69815b3a0aa7aeeee739a6e312e13969e98747de165b29860"
+          },
+          "invalid_descriptors": [
+            {
+              "operation": "OPENAT",
+              "tag": 50,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "READV",
+              "tag": 51,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "WRITEV",
+              "tag": 52,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FALLOCATE",
+              "tag": 53,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "STATX",
+              "tag": 54,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 55,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "CLOSE",
+              "tag": 56,
+              "result": -9,
+              "flags": 0
+            }
+          ]
+        },
+        "stderr_first_line": null
+      }
+    },
+    {
+      "mutant": "fsync-is-nop",
+      "compiled": true,
+      "source_sha256": "8ed521b786aba8a03a235572a6e60a208e866568ae1c6df4c22e0e704c6e36c0",
+      "test_command": "LOTI_TEST_CASES=40 .venv/bin/python -m unittest tests.test_file_operations -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/file-operations/fsync-is-nop.log",
+      "observation": {
+        "exit_status": 0,
+        "stdout": {
+          "opens": [
+            true,
+            true,
+            true
+          ],
+          "closed": [
+            true,
+            true,
+            true
+          ],
+          "input_size": 4097,
+          "readv": {
+            "vectors": 2,
+            "results": [
+              4096,
+              1,
+              0
+            ]
+          },
+          "writev": {
+            "vectors": 2,
+            "results": [
+              4096,
+              1
+            ]
+          },
+          "allocation": {
+            "offset": 4097,
+            "length": 4096,
+            "mode": 0,
+            "result": 0
+          },
+          "statx": {
+            "requested_mask": 513,
+            "size_present": true,
+            "type_present": true,
+            "regular": true,
+            "size": 8193
+          },
+          "fsync": [
+            {
+              "operation": "NOP",
+              "tag": 20,
+              "flags": 0,
+              "result": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 21,
+              "flags": 1,
+              "result": 0
+            }
+          ],
+          "reopened": {
+            "bytes": 8193,
+            "sha256": "4e0c56fa0915b1e69815b3a0aa7aeeee739a6e312e13969e98747de165b29860"
+          },
+          "invalid_descriptors": [
+            {
+              "operation": "OPENAT",
+              "tag": 50,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "READV",
+              "tag": 51,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "WRITEV",
+              "tag": 52,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FALLOCATE",
+              "tag": 53,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "STATX",
+              "tag": 54,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 55,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "CLOSE",
+              "tag": 56,
+              "result": -9,
+              "flags": 0
+            }
+          ]
+        },
+        "stderr_first_line": null
+      }
+    },
+    {
+      "mutant": "statx-wrong-file",
+      "compiled": true,
+      "source_sha256": "8e77504cb11681f17047ba41d81eb05680e254f2f7dabda1a4ece20a06060d9d",
+      "test_command": "LOTI_TEST_CASES=40 .venv/bin/python -m unittest tests.test_file_operations -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/file-operations/statx-wrong-file.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: FileAllocationSizeMismatch"
+      }
+    },
+    {
+      "mutant": "close-is-nop",
+      "compiled": true,
+      "source_sha256": "bb4c3caefc7ba8de1bc58989c19e56873781e5f81c5595ca41508934b1b6c88d",
+      "test_command": "LOTI_TEST_CASES=40 .venv/bin/python -m unittest tests.test_file_operations -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/file-operations/close-is-nop.log",
+      "observation": {
+        "exit_status": 1,
+        "stdout": null,
+        "stderr_first_line": "error: ClosedDescriptorStillOpen"
+      }
+    },
+    {
+      "mutant": "readv-single-vector",
+      "compiled": true,
+      "source_sha256": "2e2b9a3e114a014a2053cf5ff67e0215999ba3a91dc06e7a734f550cc3ecd89c",
+      "test_command": "LOTI_TEST_CASES=40 .venv/bin/python -m unittest tests.test_file_operations -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/file-operations/readv-single-vector.log",
+      "observation": {
+        "exit_status": 0,
+        "stdout": {
+          "opens": [
+            true,
+            true,
+            true
+          ],
+          "closed": [
+            true,
+            true,
+            true
+          ],
+          "input_size": 4097,
+          "readv": {
+            "vectors": 1,
+            "results": [
+              1024,
+              1024,
+              1024,
+              1024,
+              1,
+              0
+            ]
+          },
+          "writev": {
+            "vectors": 2,
+            "results": [
+              1024,
+              1024,
+              1024,
+              1024,
+              1
+            ]
+          },
+          "allocation": {
+            "offset": 4097,
+            "length": 4096,
+            "mode": 0,
+            "result": 0
+          },
+          "statx": {
+            "requested_mask": 513,
+            "size_present": true,
+            "type_present": true,
+            "regular": true,
+            "size": 8193
+          },
+          "fsync": [
+            {
+              "operation": "FSYNC",
+              "tag": 20,
+              "flags": 0,
+              "result": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 21,
+              "flags": 1,
+              "result": 0
+            }
+          ],
+          "reopened": {
+            "bytes": 8193,
+            "sha256": "4e0c56fa0915b1e69815b3a0aa7aeeee739a6e312e13969e98747de165b29860"
+          },
+          "invalid_descriptors": [
+            {
+              "operation": "OPENAT",
+              "tag": 50,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "READV",
+              "tag": 51,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "WRITEV",
+              "tag": 52,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FALLOCATE",
+              "tag": 53,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "STATX",
+              "tag": 54,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "FSYNC",
+              "tag": 55,
+              "result": -9,
+              "flags": 0
+            },
+            {
+              "operation": "CLOSE",
+              "tag": 56,
+              "result": -9,
+              "flags": 0
+            }
+          ]
+        },
+        "stderr_first_line": null
+      }
+    }
+  ],
+  "exact_source_restored": true,
+  "restored_test_exit_status": 0,
+  "log_normalization": "Trailing whitespace and final empty lines removed; substantive output unchanged."
+}

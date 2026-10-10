@@ -4,7 +4,7 @@
 
 Native Zig adaptation of [Shuveb Hussain's guide](https://github.com/shuveb/loti).
 All 26 original documents have rewritten counterparts; `license.rst` adds the
-unchanged MIT licence. Ten tutorial and six reference programs live here, using
+unchanged MIT licence. Ten tutorial and seven reference programs live here, using
 `std.os.linux.IoUring` and native syscalls without libc or an external ring library.
 Original attribution and illustrations remain.
 
@@ -39,7 +39,7 @@ virtio block support. The VM verifier accepts `--kernel` and `--busybox` paths;
 recorded lab: QEMU 11.1.1/Linux 7.2.3-arch1-3. All disks are generated files,
 attached read-only. No host storage device or root host operation is used.
 
-Publication checks verify all 27 chapters in reading order/navigation, 107 literal
+Publication checks verify all 27 chapters in reading order/navigation, 109 literal
 blocks against Sphinx source, five byte-identical illustrations, licence and local
 links. Negative tests reject nine damaged-archive classes. These checks **do not**
 prove semantic completeness or satisfy independent review.
@@ -85,6 +85,7 @@ zig-out/bin/reference-setup input.txt --separate-mappings
 zig-out/bin/reference-completion
 zig-out/bin/reference-completion 0 1 3 8 1
 zig-out/bin/reference-signals
+zig-out/bin/reference-files input.txt new-output.bin
 zig-out/bin/reference-registration input.txt replacement.txt
 zig-out/bin/reference-submission input.txt
 zig-out/bin/reference-raw input.txt
@@ -105,6 +106,14 @@ total capacity to drain eight NOP CQEs. The default is `0 1 3 8 1`. The referenc
 checks full-SQ rejection/state preservation, populated zero/singleton/batch
 nonblocking consumption, and CQ physical wrap. Model-based tests check exact
 head/readiness transitions; u32 wrap, overflow and concurrent consumers remain open.
+
+`reference-files INPUT NEW_OUTPUT` submits actual OPENAT, READV/WRITEV,
+FALLOCATE, STATX, full/data-only FSYNC and CLOSE requests. It rejects existing
+output, copies exact input bytes, adds 4,096 zero bytes, checks async metadata,
+closes/checks FD ownership, reopens/hashes actual output, and receives seven
+invalid-descriptor CQEs. Source must be regular; final symlinks are rejected.
+No physical/crash durability or atomic replacement is claimed. A later failure
+can leave its newly created partial output; forced short writes remain open.
 
 `reference-signals` owns SIGUSR1 in a fresh process. It pre-queues a blocked
 thread-directed signal, checks real interrupted/blocked/null-mask waits, exact
