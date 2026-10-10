@@ -1,0 +1,102 @@
+{
+  "scope": "Browser reflow only, not Supernote-device verification, semantic acceptance or independent review. Three syscall headings overflow their content box at 320 CSS pixels; register also overflows the viewport.",
+  "source_commit": "1f5579b62a9b9fa529e06713d67033a3c12de4fa",
+  "chromium": "Chromium 152.0.7977.82 Arch Linux",
+  "playwright_version": "1.64.0",
+  "chapters": 27,
+  "viewports": [
+    320,
+    600,
+    800
+  ],
+  "cases": 81,
+  "overflow_cases": [
+    {
+      "chapter": "ref-iouring/io_uring_setup.xhtml",
+      "width": 320,
+      "scroll": 320,
+      "bad": [
+        {
+          "kind": "heading",
+          "index": 0,
+          "left": 8,
+          "right": 312,
+          "width": 304,
+          "scroll": 312,
+          "client": 304,
+          "white_space": "normal",
+          "wrap": "normal",
+          "text": "linux.io_uring_setup"
+        }
+      ],
+      "counts": {
+        "pre": 4,
+        "table": 0,
+        "image": 0,
+        "heading": 6,
+        "figure": 0
+      }
+    },
+    {
+      "chapter": "ref-iouring/io_uring_enter.xhtml",
+      "width": 320,
+      "scroll": 320,
+      "bad": [
+        {
+          "kind": "heading",
+          "index": 0,
+          "left": 8,
+          "right": 312,
+          "width": 304,
+          "scroll": 312,
+          "client": 304,
+          "white_space": "normal",
+          "wrap": "normal",
+          "text": "linux.io_uring_enter"
+        }
+      ],
+      "counts": {
+        "pre": 1,
+        "table": 1,
+        "image": 0,
+        "heading": 6,
+        "figure": 0
+      }
+    },
+    {
+      "chapter": "ref-iouring/io_uring_register.xhtml",
+      "width": 320,
+      "scroll": 367,
+      "bad": [
+        {
+          "kind": "heading",
+          "index": 0,
+          "left": 8,
+          "right": 312,
+          "width": 304,
+          "scroll": 359,
+          "client": 304,
+          "white_space": "normal",
+          "wrap": "normal",
+          "text": "linux.io_uring_register"
+        }
+      ],
+      "counts": {
+        "pre": 1,
+        "table": 0,
+        "image": 0,
+        "heading": 6,
+        "figure": 0
+      }
+    }
+  ],
+  "screenshot": "conversion/reader-layout-before.png",
+  "source_sha256": {
+    "_static/ebook.css": "a8bb896ecfcf444a0f767ca76f6b0d5e18498b5e7aa175cc1f24e0bae772d1b2",
+    "_build/epub/Lord-of-the-io_uring-Zig-0.17.0.epub": "14d603a5e8bb25f3643ea9533d9856993eae3a925f8d9fdba4f362c937c7f092",
+    "conversion/reader-layout-before.png": "8b87531a66190284853702a1d4bcb15b086b6c02f55b5d6d0b786d424ce77d93"
+  },
+  "measurement_log": "/tmp/loti-layout-initial.json",
+  "probe": "/tmp/loti-layout-probe.cjs",
+  "tooling_note": "An external Chromium dump-dom/iframe prototype stalled before all image decode promises finished; not accepted as a complete sweep. Playwright completed all 81 direct-page cases."
+}
