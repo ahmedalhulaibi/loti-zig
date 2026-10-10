@@ -1,0 +1,26 @@
+76 original API symbols; 99 total native bindings; Zig 0.17.0
+test_mapping_and_fork_bindings_describe_all_owned_regions (tests.test_mapping_bindings.MappingBindingContracts.test_mapping_and_fork_bindings_describe_all_owned_regions) ...
+  test_mapping_and_fork_bindings_describe_all_owned_regions (tests.test_mapping_bindings.MappingBindingContracts.test_mapping_and_fork_bindings_describe_all_owned_regions) (original='io_uring_ring_dontfork') ... FAIL
+
+======================================================================
+FAIL: test_mapping_and_fork_bindings_describe_all_owned_regions (tests.test_mapping_bindings.MappingBindingContracts.test_mapping_and_fork_bindings_describe_all_owned_regions) (original='io_uring_ring_dontfork')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_mapping_bindings.py", line 22, in test_mapping_and_fork_bindings_describe_all_owned_regions
+    self.assertEqual(bindings[original], {
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+        "original": original, "zig": native, "example": "examples/reference_setup.zig",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "verification_scope": scope, "semantic_difference": difference,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "declaration_source": "examples/raw_cat.zig", "zig_signature": signature,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+AssertionError: {'ori[282 chars]K to both mapped ranges; compiled and invoked.[101 chars]oid'} != {'ori[282 chars]K to every owned SQ/CQ/SQE region; excludes me[134 chars]oid'}
+Diff is 675 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

@@ -1,0 +1,77 @@
+{
+  "scope": "Five native exercise mutations and two syscall-oracle mutations only; SDK unchanged. Not whole-port assurance or independent review.",
+  "source_sha256": {
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/mapping_fault.zig": "3d09d44feeee352a3c6a6dd7660a16c803489ef86fe0b6e801ecd03fd08c1e91",
+    "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0"
+  },
+  "mutants": [
+    {
+      "id": "shared-unwind-omitted",
+      "kind": "zig",
+      "compiled": true,
+      "outcome": "killed",
+      "test_exit": 1,
+      "build_log": ".mutants/zig/2026-10-10/mapping-failures/shared-unwind-omitted-build.log",
+      "test_log": ".mutants/zig/2026-10-10/mapping-failures/shared-unwind-omitted.log"
+    },
+    {
+      "id": "completion-unwind-omitted",
+      "kind": "zig",
+      "compiled": true,
+      "outcome": "killed",
+      "test_exit": 1,
+      "build_log": ".mutants/zig/2026-10-10/mapping-failures/completion-unwind-omitted-build.log",
+      "test_log": ".mutants/zig/2026-10-10/mapping-failures/completion-unwind-omitted.log"
+    },
+    {
+      "id": "partial-unmap-length",
+      "kind": "zig",
+      "compiled": true,
+      "outcome": "killed",
+      "test_exit": 1,
+      "build_log": ".mutants/zig/2026-10-10/mapping-failures/partial-unmap-length-build.log",
+      "test_log": ".mutants/zig/2026-10-10/mapping-failures/partial-unmap-length.log"
+    },
+    {
+      "id": "closes-caller-descriptor",
+      "kind": "zig",
+      "compiled": true,
+      "outcome": "killed",
+      "test_exit": 1,
+      "build_log": ".mutants/zig/2026-10-10/mapping-failures/closes-caller-descriptor-build.log",
+      "test_log": ".mutants/zig/2026-10-10/mapping-failures/closes-caller-descriptor.log"
+    },
+    {
+      "id": "wrong-denied-offset",
+      "kind": "zig",
+      "compiled": true,
+      "outcome": "killed",
+      "test_exit": 1,
+      "build_log": ".mutants/zig/2026-10-10/mapping-failures/wrong-denied-offset-build.log",
+      "test_log": ".mutants/zig/2026-10-10/mapping-failures/wrong-denied-offset.log"
+    },
+    {
+      "id": "missing-unwind-accepted",
+      "kind": "python",
+      "compiled": true,
+      "outcome": "killed",
+      "test_exit": 1,
+      "build_log": ".mutants/python/2026-10-10/mapping-failures/missing-unwind-accepted-build.log",
+      "test_log": ".mutants/python/2026-10-10/mapping-failures/missing-unwind-accepted.log"
+    },
+    {
+      "id": "tuple-identity-ignored",
+      "kind": "python",
+      "compiled": true,
+      "outcome": "killed",
+      "test_exit": 1,
+      "build_log": ".mutants/python/2026-10-10/mapping-failures/tuple-identity-ignored-build.log",
+      "test_log": ".mutants/python/2026-10-10/mapping-failures/tuple-identity-ignored.log"
+    }
+  ],
+  "restored_byte_exactly": true,
+  "restored_build_exit": 0,
+  "restored_test_exit": 0,
+  "log_normalization": "Only trailing spaces/tabs/CR and terminal empty lines removed; substantive output unchanged."
+}

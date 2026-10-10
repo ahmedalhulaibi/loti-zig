@@ -510,8 +510,8 @@
       "original": "io_uring_queue_mmap",
       "zig": "RawRing.map",
       "example": "examples/reference_setup.zig",
-      "verification_scope": "compiled and executed",
-      "semantic_difference": "Accepts an existing setup descriptor; transfers ownership on success. Requires SINGLE_MMAP.",
+      "verification_scope": "compiled; both mapping strategies execute; five private-descriptor x86_64 seccomp mmap failures verify partial unwind and caller FD ownership",
+      "semantic_difference": "Accepts an existing setup descriptor; owns it only on success. Selects shared SQ/CQ or separate SQ/CQ plus SQEs by SINGLE_MMAP; failure unmaps partial regions but leaves the FD to the caller.",
       "declaration_source": "examples/raw_cat.zig",
       "zig_signature": "pub fn map(fd: linux.fd_t, params: linux.io_uring_params) !RawRing"
     },
@@ -591,8 +591,8 @@
       "original": "io_uring_ring_dontfork",
       "zig": "RawRing.dontFork",
       "example": "examples/reference_setup.zig",
-      "verification_scope": "compiled and executed",
-      "semantic_difference": "Applies MADV_DONTFORK to both mapped ranges; compiled and invoked.",
+      "verification_scope": "compiled; per-page mincore in child verifies all owned regions excluded, while fcntl verifies FD inheritance",
+      "semantic_difference": "Applies MADV_DONTFORK to every owned SQ/CQ/SQE region; excludes memory, not descriptor inheritance.",
       "declaration_source": "examples/raw_cat.zig",
       "zig_signature": "pub fn dontFork(self: *RawRing) !void"
     },

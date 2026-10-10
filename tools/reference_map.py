@@ -85,8 +85,8 @@ SPECIAL = {
     "io_uring_enter": ("std.os.linux.io_uring_enter", "os/linux.zig", "examples/raw_cat.zig", "io_uring_enter", "Publishes submitted entries or waits according to flags; decode the raw usize result with linux.errno."),
     "io_ring_get_sqe": ("std.os.linux.IoUring.get_sqe", "os/linux/IoUring.zig", PREPARE, "get_sqe", "Corrects an original prose typo; no function named io_ring_get_sqe exists."),
     "io_uring_set_sqe_data": ("sqe.user_data = tag", None, PREPARE, None, "Corrects an original prose typo; use the native tag field."),
-    "io_uring_queue_mmap": ("RawRing.map", "examples/raw_cat.zig", SETUP, "map", "Accepts an existing setup descriptor; transfers ownership on success. Requires SINGLE_MMAP."),
-    "io_uring_ring_dontfork": ("RawRing.dontFork", "examples/raw_cat.zig", SETUP, "dontFork", "Applies MADV_DONTFORK to both mapped ranges; compiled and invoked."),
+    "io_uring_queue_mmap": ("RawRing.map", "examples/raw_cat.zig", SETUP, "map", "Accepts an existing setup descriptor; owns it only on success. Selects shared SQ/CQ or separate SQ/CQ plus SQEs by SINGLE_MMAP; failure unmaps partial regions but leaves the FD to the caller."),
+    "io_uring_ring_dontfork": ("RawRing.dontFork", "examples/raw_cat.zig", SETUP, "dontFork", "Applies MADV_DONTFORK to every owned SQ/CQ/SQE region; excludes memory, not descriptor inheritance."),
     "io_uring_sqe_set_data": ("sqe.user_data = tag", None, PREPARE, None, "u64 tags are copied unchanged into CQEs; avoid borrowed application pointers."),
     "io_uring_sqe_set_flags": ("sqe.flags = flags / sqe.flags |= flags", None, PREPARE, None, "Assignment replaces flags; |= adds bits without clearing preparer-set flags. Native flags fit u8."),
     "io_uring_cqe_get_data": ("cqe.user_data", None, COMPLETE, None, "Read the u64 correlation tag directly."),
@@ -186,6 +186,10 @@ def generate():
                 difference = "ENTER_EXT_ARG relative deadline (Linux 5.11+), optional signal mask; no hidden SQE, implicit submission or CQ consumption. Submit first, then copy available CQEs."
         else:
             target, native_source, example, native_name, difference = SPECIAL[original]
+            if original == "io_uring_queue_mmap":
+                scope = "compiled; both mapping strategies execute; five private-descriptor x86_64 seccomp mmap failures verify partial unwind and caller FD ownership"
+            elif original == "io_uring_ring_dontfork":
+                scope = "compiled; per-page mincore in child verifies all owned regions excluded, while fcntl verifies FD inheritance"
         if not (ROOT / example).is_file():
             raise ValueError(f"Missing executable source: {example}")
         item = {"original": original, "zig": target, "example": example, "verification_scope": scope, "semantic_difference": difference}

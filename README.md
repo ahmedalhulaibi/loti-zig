@@ -39,7 +39,7 @@ virtio block support. The VM verifier accepts `--kernel` and `--busybox` paths;
 recorded lab: QEMU 11.1.1/Linux 7.2.3-arch1-3. All disks are generated files,
 attached read-only. No host storage device or root host operation is used.
 
-Publication checks verify all 27 chapters in reading order/navigation, 111 literal
+Publication checks verify all 27 chapters in reading order/navigation, 112 literal
 blocks against Sphinx source, five byte-identical illustrations, licence and local
 links. Negative tests reject nine damaged-archive classes. These checks **do not**
 prove semantic completeness or satisfy independent review.
@@ -63,6 +63,9 @@ disks. Streaming stdout also preserves chunks when redirected to a regular file.
 The raw mapper now selects shared or separate SQ/CQ mappings. The reference
 exercises both strategies with actual I/O, fork exclusion and page/descriptor
 teardown checks. Forced separate mode is not a historical-kernel attestation.
+Five private-descriptor seccomp mmap failures also check partial unwind and
+caller FD ownership against procfs and independent syscall traces. This optional
+mode requires native x86_64/procfs/seccomp; its tests require strace.
 
 ## Run examples
 
@@ -82,6 +85,7 @@ zig-out/bin/probe --snapshot probe.bin
 zig-out/bin/webserver public 8080
 zig-out/bin/reference-setup input.txt
 zig-out/bin/reference-setup input.txt --separate-mappings
+zig-out/bin/reference-setup --mapping-failure separate-sqes
 zig-out/bin/reference-completion
 zig-out/bin/reference-completion 0 1 3 8 1
 zig-out/bin/reference-signals

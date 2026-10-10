@@ -1,0 +1,215 @@
+{
+  "scope": "Five private-descriptor mmap ENOMEM injection cases, both raw mapping strategies, partial unwind and caller ownership; not physical OOM, all errno/SDK failures, historical/cross-architecture assurance or independent review.",
+  "compiler": "0.17.0",
+  "kernel": "7.2.3-arch1-3",
+  "architecture": "x86_64",
+  "strace": "strace -- version 7.0",
+  "cases": [
+    {
+      "stage": "shared-sq",
+      "command": [
+        "zig-out/bin/reference-setup",
+        "--mapping-failure",
+        "shared-sq"
+      ],
+      "report": {
+        "stage": "shared-sq",
+        "single_mapping": true,
+        "failed_offset": 0,
+        "mapping_error": "OutOfMemory",
+        "before": 0,
+        "after": 0,
+        "fd_retained": true,
+        "fd_closed": true,
+        "no_new_privs": true
+      },
+      "independent_syscall_oracle": {
+        "successful_offsets": [],
+        "failed_offset": 0,
+        "unmapped_count": 0,
+        "reverse_unwind": true
+      },
+      "trace": "conversion/mapping-failure-shared-sq.trace",
+      "trace_sha256": "7e254f6b0da82039bb3ae6f60d777864ed3b4ea6ff2f01ace25718b142cce02b"
+    },
+    {
+      "stage": "shared-sqes",
+      "command": [
+        "zig-out/bin/reference-setup",
+        "--mapping-failure",
+        "shared-sqes"
+      ],
+      "report": {
+        "stage": "shared-sqes",
+        "single_mapping": true,
+        "failed_offset": 268435456,
+        "mapping_error": "OutOfMemory",
+        "before": 0,
+        "after": 0,
+        "fd_retained": true,
+        "fd_closed": true,
+        "no_new_privs": true
+      },
+      "independent_syscall_oracle": {
+        "successful_offsets": [
+          0
+        ],
+        "failed_offset": 268435456,
+        "unmapped_count": 1,
+        "reverse_unwind": true
+      },
+      "trace": "conversion/mapping-failure-shared-sqes.trace",
+      "trace_sha256": "02338f936ce466f6b6a6c3f7605340c99ab0602a3e289b7bd7f3f2d372a79025"
+    },
+    {
+      "stage": "separate-sq",
+      "command": [
+        "zig-out/bin/reference-setup",
+        "--mapping-failure",
+        "separate-sq"
+      ],
+      "report": {
+        "stage": "separate-sq",
+        "single_mapping": false,
+        "failed_offset": 0,
+        "mapping_error": "OutOfMemory",
+        "before": 0,
+        "after": 0,
+        "fd_retained": true,
+        "fd_closed": true,
+        "no_new_privs": true
+      },
+      "independent_syscall_oracle": {
+        "successful_offsets": [],
+        "failed_offset": 0,
+        "unmapped_count": 0,
+        "reverse_unwind": true
+      },
+      "trace": "conversion/mapping-failure-separate-sq.trace",
+      "trace_sha256": "9d46b127657918f85ce886f69c3e3e9d911582e73aacacc39869ac507ac3c78c"
+    },
+    {
+      "stage": "separate-cq",
+      "command": [
+        "zig-out/bin/reference-setup",
+        "--mapping-failure",
+        "separate-cq"
+      ],
+      "report": {
+        "stage": "separate-cq",
+        "single_mapping": false,
+        "failed_offset": 134217728,
+        "mapping_error": "OutOfMemory",
+        "before": 0,
+        "after": 0,
+        "fd_retained": true,
+        "fd_closed": true,
+        "no_new_privs": true
+      },
+      "independent_syscall_oracle": {
+        "successful_offsets": [
+          0
+        ],
+        "failed_offset": 134217728,
+        "unmapped_count": 1,
+        "reverse_unwind": true
+      },
+      "trace": "conversion/mapping-failure-separate-cq.trace",
+      "trace_sha256": "4407eb4ba10bbf6289d6eeb94d63c2fd810c92ea80a94d76b0fdf52ad97df04f"
+    },
+    {
+      "stage": "separate-sqes",
+      "command": [
+        "zig-out/bin/reference-setup",
+        "--mapping-failure",
+        "separate-sqes"
+      ],
+      "report": {
+        "stage": "separate-sqes",
+        "single_mapping": false,
+        "failed_offset": 268435456,
+        "mapping_error": "OutOfMemory",
+        "before": 0,
+        "after": 0,
+        "fd_retained": true,
+        "fd_closed": true,
+        "no_new_privs": true
+      },
+      "independent_syscall_oracle": {
+        "successful_offsets": [
+          0,
+          134217728
+        ],
+        "failed_offset": 268435456,
+        "unmapped_count": 2,
+        "reverse_unwind": true
+      },
+      "trace": "conversion/mapping-failure-separate-sqes.trace",
+      "trace_sha256": "ceb65285227499ed11e36dc720ddda83a35cba1bf1a664ca0867083ad478b364"
+    }
+  ],
+  "negative_cases": 2,
+  "damaged_traces_rejected": 7,
+  "source_sha256": {
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/reference_setup.zig": "c601487b9e78fd81aec3eabde091353b17b5f87251641b3443d1b302e3518ae7",
+    "examples/mapping_fault.zig": "3d09d44feeee352a3c6a6dd7660a16c803489ef86fe0b6e801ecd03fd08c1e91",
+    "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0",
+    "tests/test_mapping_bindings.py": "654cfafd142536ef82c7a86f877ed6b80d834c3e11fa429b4fb6dfa533fad84d",
+    "tools/reference_map.py": "0b3442b9d8afb169fd769db3c8dd3b4dcbc6afa660fca9582127079a9ef8465f",
+    "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a"
+  },
+  "sdk_source_sha256": {
+    "posix.zig": "73e710180ab3c8979a9055386efd0fb94176e84f2e5fd371858335511206a55b",
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "os/linux/seccomp.zig": "741b302e182ad4549eeafb62debb8ef111a221840fe0b9ac7db6867ac97d2e9f",
+    "os/linux/bpf.zig": "dfb19b089a2fa4b2b47e55362c0f6a96e83ccbea7a4a1d8035eb89404f4aeb0d"
+  },
+  "spec_before_implementation": {
+    "reproduction": "conversion/mapping-failure-reproduction.json",
+    "red_log": "/tmp/loti-mapping-fault-spec-red.log"
+  },
+  "corrected_stale_bindings": {
+    "previous_map_difference": "Accepts an existing setup descriptor; transfers ownership on success. Requires SINGLE_MMAP.",
+    "previous_dontfork_difference": "Applies MADV_DONTFORK to both mapped ranges; compiled and invoked.",
+    "gate_limitation": "A deterministic --check accepted those stale semantic descriptions. Whole-binding regression tests and two valid producer mutations now check the corrected entries."
+  },
+  "mutation_reports": [
+    "conversion/mutation-mapping-failures.json",
+    "conversion/mutation-mapping-bindings.json"
+  ],
+  "navigation_evidence": "Cached module/call graphs stale; Fabric unavailable. Current bodies and explicit main/build/test/map/README/RST consumers inspected directly; active LSP probes used. Independent reviewer host remains blocked; no retry/fallback.",
+  "development_corrections": [
+    "Zig defer assignment requires a block; errno widened to u32 before OR. These were development compile errors, not mutants.",
+    "Initial trace parser used incorrect capture positions and missed strace alignment whitespace; corrected before accepting evidence.",
+    "Strict Sphinx rejected a short title underline; fixed and full gates rerun."
+  ],
+  "gates": {
+    "zig_version": "0.17.0",
+    "build_steps_passed": 37,
+    "executables": 18,
+    "tests_passed": 44,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 8,
+    "generated_valid_cases_per_property": 400,
+    "chapters": 27,
+    "literal_blocks": 112,
+    "epubcheck_fatals_errors_warnings_infos": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "diagnostics": {
+    "active_paths_checked": 6,
+    "substantive_findings": 0,
+    "reported_false_positives": [
+      "tests/test_publication.py:38 and :50: content.opf is the real package extension, not the word of. Disposition recorded; auxiliary re-probe still reports those notices."
+    ],
+    "suppressed_findings_disclosed": 1,
+    "limit": "Not an unconditional clean verdict for suppressed locations."
+  }
+}

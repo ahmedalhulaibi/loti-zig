@@ -168,7 +168,7 @@
     "examples/reference_signals.zig": "b895a7413d564d6b185cfe9eee7b67f252b123dde2920457e9c2b0d2ff2bc44c",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
-    "tests/test_publication.py": "e1151863e8986d08a50e1d7a0b7d1acfd503be3e1a3de110280a4cd42b7e8bec",
+    "tests/test_publication.py": "f450c1cde9ab9386cfa4c1ec7fc0bd2f7a9501c9a579ac5049592c9e084e90b2",
     "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
     "testdata/inputs/signal-invalid-arguments.json": "6ef7a293b412e6da43cd05f57b81c26b34a6bde8631879e8dce77fce6018c55c"
   },
@@ -181,5 +181,5 @@
   "navigation_evidence": "Fabric transitive-call tools unavailable and cached graph stale; current source bodies and explicit consumers inspected, active LSP probes used.",
   "environment_correction": "An initial standalone Python check lacked Hypothesis; the required .venv interpreter was used. No native execution failed in that check.",
   "publication_count_correction": "The first full suite rejected stale expected literal count 105. Verifier independently reported 107 after the new signal console/source literals; the exact publication contract was updated and this complete suite passed.",
-  "current_source_replay": "25 fresh complete reports replayed after provided-buffer build/publication consumer changes; native signal code unchanged."
+  "current_source_replay": "25 fresh whole-report executions match after publication-consumer literal count changed; native signal code unchanged."
 }

@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 18 native executables; exact compiler gate; 37/37 build steps; 32 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 18 native executables; exact compiler gate; 37/37 build steps; 34 native CLI/TCP/reference tests plus two mapping-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -130,8 +130,8 @@ failure logs. Source/test hashes are restored exactly and the rebuilt boundary
 passes. LSP supports the three changed source/test files with no diagnostics;
 RST is unsupported, so the clean Sphinx/EPUB gates provide document checks.
 
-This evidence does **not** verify historical-kernel boot compatibility, injected
-mapping-construction failures, u32 counter wraparound/interleaving, whole-port
+At that checkpoint, evidence did **not** verify historical-kernel boot compatibility,
+injected mapping failures, u32 counter wraparound/interleaving, whole-port
 mutation coverage or the blocked independent agent review.
 
 ## Registered-file effects
@@ -337,20 +337,51 @@ The actual shrunk cleanup counterexample (one zero byte, choices [0,1]) is
 retained as `provided-buffer-cleanup-regression.json` and replayed explicitly;
 the whole current suite was rerun after adding that input.
 `mutation-provided-buffers.json` records exact restored source and rebuilt passing
-baseline; native SDK was not modified. There are now 49 bounded valid kills
+baseline; native SDK was not modified. That checkpoint had 49 bounded valid kills
 (46 native exercises, three index-tool), not whole-port/SDK assurance.
 
-Latest complete gates pass: exact Zig 0.17.0, 37 build steps, 40 tests/zero skips,
+At the provided-buffer checkpoint, gates passed: exact Zig 0.17.0, 37 build steps, 40 tests/zero skips,
 eight 400-case properties, strict full HTML/EPUB, 111 literal blocks and clean
 EPUBCheck. Explicit consumers span build/test/map/book folders, not separate
 domain modules. Fabric navigation remains unavailable and cached graph stale;
 current bodies/consumers and installed declarations were inspected with active
 LSP probes. Independent review remains blocked; no retry/fallback was launched.
 
+## Partial-construction failure evidence
+
+`reference-setup --mapping-failure STAGE` now executes five private-descriptor
+cases: shared SQ/SQEs and separate SQ/CQ/SQEs. Native x86_64 seccomp denies one
+selected mmap with ENOMEM; no privileged operation or host device is used.
+Earlier successful mappings are real. Device/inode-matched procfs counts return
+to zero; fcntl proves the caller still owns the FD, then proves its explicit
+close. Independent strace parsing checks exact syscall order and reverse
+address/length unwind pairs. Seven damaged traces are rejected. The filter is
+thread-local and permanent for that disposable process, not a security sandbox.
+This does not attest physical OOM, all errno paths, SDK construction failures or
+other architectures/kernels. `mapping-failure-verification.json` pins the five
+reports, actual traces and versions. The absent CLI and spec-red results are
+recorded separately; no historical mapping leak is claimed.
+
+Source comparison also found two actual stale generated-reference claims:
+SINGLE_MMAP-only mapping and DONTFORK on only two ranges. Both contradicted the
+current helper despite a green `reference_map.py --check`. The generator and
+whole-binding regression checks now describe all regions and correct ownership.
+Two syntactically valid producer regressions are killed. Five compiled native
+mutants (omitted SQ/CQ unwind, short unmap, caller FD closure, wrong fault offset)
+and two syntax-valid trace-parser mutants are killed; exact restored source and
+passing baseline are recorded. Current bounded total: **58** (51 native exercise,
+three line-index, two trace-parser, two binding-generator), not whole-port/SDK
+assurance or independent review. No reviewer retry/fallback was attempted.
+
+Current gates: Zig 0.17.0, 37/37 build steps, 44 tests/zero skips, eight properties
+with 400 generated valid cases each, strict HTML/EPUB, 112 source-faithful
+literals and clean EPUBCheck. Current-source hashes are refreshed only after
+replaying affected success reports; they pin versions, not correctness.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **37/37**. Current complete suite: **40 passed**
-  (32 native + one VM + two publication + three inventory + two line-index tests), zero skips,
+- Compiler: **0.17.0**. Build: **37/37**. Current complete suite: **44 passed**
+  (34 native + one VM + two publication + three inventory + two line-index + two mapping-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -363,7 +394,7 @@ LSP probes. Independent review remains blocked; no retry/fallback was launched.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  eight properties**, source hashes, 40 passing tests and zero skips. These remain
+  eight properties**, source hashes, 44 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

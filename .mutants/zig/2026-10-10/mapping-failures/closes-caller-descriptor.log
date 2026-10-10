@@ -1,0 +1,108 @@
+test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) ...
+  test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='shared-sq') ... FAIL
+  test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='shared-sqes') ... FAIL
+  test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='separate-sq') ... FAIL
+  test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='separate-cq') ... FAIL
+  test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='separate-sqes') ... FAIL
+test_mapping_failure_mode_rejects_missing_or_unknown_stage (tests.test_mapping_failures.MappingFailureContracts.test_mapping_failure_mode_rejects_missing_or_unknown_stage) ... ok
+test_trace_oracle_rejects_incomplete_or_false_unwind (tests.test_mapping_failures.MappingFailureContracts.test_trace_oracle_rejects_incomplete_or_false_unwind) ... ok
+
+======================================================================
+FAIL: test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='shared-sq')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_mapping_failures.py", line 95, in test_denied_mapping_calls_unwind_and_retain_caller_descriptor
+    self.assertEqual(result.returncode, 0, result.stderr.decode())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : error: CallerDescriptorNotRetained
+Ran out of memory loading debug info, trace may be incomplete
+
+???:?:?: 0x11f04d9 in ??? (/home/ahmed/workspace/va/loti-zig/zig-out/bin/reference-setup)
+Ran out of memory loading debug info, trace may be incomplete
+
+???:?:?: 0x11f10b1 in ??? (/home/ahmed/workspace/va/loti-zig/zig-out/bin/reference-setup)
+Ran out of memory loading debug info, trace may be incomplete
+
+???:?:?: 0x11f141c in ??? (/home/ahmed/workspace/va/loti-zig/zig-out/bin/reference-setup)
+
+
+======================================================================
+FAIL: test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='shared-sqes')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_mapping_failures.py", line 95, in test_denied_mapping_calls_unwind_and_retain_caller_descriptor
+    self.assertEqual(result.returncode, 0, result.stderr.decode())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : error: CallerDescriptorNotRetained
+/home/ahmed/workspace/va/loti-zig/examples/mapping_fault.zig:102:69: 0x11f04d9 in observe (reference_setup.zig)
+    if (linux.errno(linux.fcntl(fd, linux.F.GETFD, 0)) != .SUCCESS) return error.CallerDescriptorNotRetained;
+                                                                    ^
+/home/ahmed/workspace/va/loti-zig/examples/mapping_fault.zig:127:9: 0x11f10b1 in run (reference_setup.zig)
+        return observe(init, stage);
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_setup.zig:45:9: 0x11f141c in main (reference_setup.zig)
+        return @import("mapping_fault.zig").run(init, args[2]);
+        ^
+
+
+======================================================================
+FAIL: test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='separate-sq')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_mapping_failures.py", line 95, in test_denied_mapping_calls_unwind_and_retain_caller_descriptor
+    self.assertEqual(result.returncode, 0, result.stderr.decode())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : error: CallerDescriptorNotRetained
+Ran out of memory loading debug info, trace may be incomplete
+
+???:?:?: 0x11f04d9 in ??? (/home/ahmed/workspace/va/loti-zig/zig-out/bin/reference-setup)
+Ran out of memory loading debug info, trace may be incomplete
+
+???:?:?: 0x11f10b1 in ??? (/home/ahmed/workspace/va/loti-zig/zig-out/bin/reference-setup)
+Ran out of memory loading debug info, trace may be incomplete
+
+???:?:?: 0x11f141c in ??? (/home/ahmed/workspace/va/loti-zig/zig-out/bin/reference-setup)
+
+
+======================================================================
+FAIL: test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='separate-cq')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_mapping_failures.py", line 95, in test_denied_mapping_calls_unwind_and_retain_caller_descriptor
+    self.assertEqual(result.returncode, 0, result.stderr.decode())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : error: CallerDescriptorNotRetained
+/home/ahmed/workspace/va/loti-zig/examples/mapping_fault.zig:102:69: 0x11f04d9 in observe (reference_setup.zig)
+    if (linux.errno(linux.fcntl(fd, linux.F.GETFD, 0)) != .SUCCESS) return error.CallerDescriptorNotRetained;
+                                                                    ^
+/home/ahmed/workspace/va/loti-zig/examples/mapping_fault.zig:127:9: 0x11f10b1 in run (reference_setup.zig)
+        return observe(init, stage);
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_setup.zig:45:9: 0x11f141c in main (reference_setup.zig)
+        return @import("mapping_fault.zig").run(init, args[2]);
+        ^
+
+
+======================================================================
+FAIL: test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) (stage='separate-sqes')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_mapping_failures.py", line 95, in test_denied_mapping_calls_unwind_and_retain_caller_descriptor
+    self.assertEqual(result.returncode, 0, result.stderr.decode())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : error: CallerDescriptorNotRetained
+/home/ahmed/workspace/va/loti-zig/examples/mapping_fault.zig:102:69: 0x11f04d9 in observe (reference_setup.zig)
+    if (linux.errno(linux.fcntl(fd, linux.F.GETFD, 0)) != .SUCCESS) return error.CallerDescriptorNotRetained;
+                                                                    ^
+/home/ahmed/workspace/va/loti-zig/examples/mapping_fault.zig:127:9: 0x11f10b1 in run (reference_setup.zig)
+        return observe(init, stage);
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_setup.zig:45:9: 0x11f141c in main (reference_setup.zig)
+        return @import("mapping_fault.zig").run(init, args[2]);
+        ^
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.317s
+
+FAILED (failures=5)

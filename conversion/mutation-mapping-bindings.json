@@ -1,0 +1,26 @@
+{
+  "scope": "Two generated-reference description regressions only; not semantic acceptance of other entries or independent review.",
+  "source": "tools/reference_map.py",
+  "source_sha256": "0b3442b9d8afb169fd769db3c8dd3b4dcbc6afa660fca9582127079a9ef8465f",
+  "mutants": [
+    {
+      "id": "stale-single-mapping-description",
+      "compiled": true,
+      "generated": true,
+      "outcome": "killed",
+      "test_exit": 1,
+      "log": ".mutants/python/2026-10-10/mapping-bindings/stale-single-mapping-description.log"
+    },
+    {
+      "id": "stale-two-region-fork-description",
+      "compiled": true,
+      "generated": true,
+      "outcome": "killed",
+      "test_exit": 1,
+      "log": ".mutants/python/2026-10-10/mapping-bindings/stale-two-region-fork-description.log"
+    }
+  ],
+  "restored_byte_exactly": true,
+  "restored_generated_manifest_test_exit": 0,
+  "log_normalization": "Only trailing spaces/tabs/CR and terminal empty lines removed; substantive output unchanged."
+}

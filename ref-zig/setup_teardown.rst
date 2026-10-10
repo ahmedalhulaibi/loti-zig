@@ -35,8 +35,8 @@ There is no public ``IoUring.queue_mmap`` method. The repository's
 ownership on success. The caller must close it on mapping failure. This teaching
 helper selects two or three mappings from ``IORING_FEAT_SINGLE_MMAP``; the SDK
 wrapper still requires the bit. ``RawRing.dontFork`` applies ``MADV_DONTFORK`` to
-every owned ring and SQE
-mappings. It does not prevent descriptor inheritance or make shared-ring use
+every owned SQ, CQ and SQE region. It does not prevent descriptor inheritance
+or make shared-ring use
 after a fork safe. See :ref:`low_level` for its complete implementation.
 
 Executable reference
@@ -67,5 +67,30 @@ waits for it and verifies descriptor closure after teardown.
 Forced separate mode changes only local feature metadata; all mappings and I/O
 are real. Current kernels can share physical backing between these distinct
 virtual regions, so CQ pointer-origin checks also reject accidental SQ-base
-aliases. This tests the strategy, not historical-kernel compatibility or injected
-partial-construction failures. Mapping/fork permissions can differ by host.
+aliases. This tests the strategy, not historical-kernel compatibility.
+Mapping/fork permissions can differ by host.
+
+Controlled construction failures
+--------------------------------
+
+``reference-setup --mapping-failure STAGE`` accepts ``shared-sq``,
+``shared-sqes``, ``separate-sq``, ``separate-cq`` or ``separate-sqes``. It creates
+its own ring, then installs a thread-local seccomp filter that returns ENOMEM
+for the selected mmap offset on that descriptor. It sets ``no_new_privs``;
+no privilege or host device is required. Run each case in a new process because
+the filter cannot be removed. This mode requires native x86_64, procfs and
+kernel seccomp support. It is fault injection, not a security sandbox or
+physical memory-exhaustion test.
+
+The kernel accepts all preceding mappings. ``RawRing.map`` returns
+``error.OutOfMemory``; ``errdefer`` releases preceding regions in reverse order.
+Device/inode-matched procfs counts return to zero. ``F_GETFD`` confirms the FD
+remains caller-owned; explicit close is followed by EBADF. An independent
+strace parser checks the exact successful offsets, denied call and every
+address/length unmap pair. Tests also reject seven damaged traces. These five
+cases do not verify every errno, interrupted syscall, SDK constructor or
+historical kernel.
+
+.. literalinclude:: ../examples/mapping_fault.zig
+   :language: zig
+   :caption: Private-descriptor mmap failure injection and ownership checks

@@ -243,7 +243,7 @@
     "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
     "testdata/inputs/file-operations-report.json": "82215f932bf6622b6c5362d08c9035a33e24d3d5bd83e5f8cb3fce59466facd1",
     "testdata/inputs/file-operations-invalid-arguments.json": "95a3fe47a3473a059f6d5b4ca47cbcb298ce14d6c0d8ec8874e201824f218de6",
-    "tools/reference_map.py": "a89ac9bb7720e577c1c668659015c0e5b2992e7244b2f691adc268b46360c53a",
+    "tools/reference_map.py": "0b3442b9d8afb169fd769db3c8dd3b4dcbc6afa660fca9582127079a9ef8465f",
     "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1"
   },
   "sdk_source_sha256": {
@@ -262,5 +262,5 @@
     "size": 4100,
     "origin": "Actual failing explicit WRITEV-offset mutant example, now a committed binary consumed by the same example decorator. Not a generated/shrunk counterexample; bytes unchanged."
   },
-  "current_source_replay": "Whole fixture, exact source/output bytes, GNU size/digest replayed after provided-buffer build/map updates; native file code unchanged."
+  "current_source_replay": "Literal file report, exact bytes and GNU size/digest replayed unchanged after correcting unrelated mapping-binding text."
 }

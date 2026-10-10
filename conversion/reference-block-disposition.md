@@ -24,7 +24,7 @@ evidence: `raw-mapping-verification.json`. Prefixes below are repository paths.
 | `ref-liburing/setup_teardown.rst:47` | SDK CQ storage/head/tail/mask replace obsolete wrapper layout | S/E; copy and manual acknowledgement use separate batches |
 | `ref-liburing/setup_teardown.rst:63` | `IoUring.init(entries, flags)`: error union and nonzero power-of-two u16 depth | S/E; narrower SDK input contract stated, raw syscall remains u32 |
 | `ref-liburing/setup_teardown.rst:80` | `init_params`: zero reserved fields; CQ sizing added to original flags/CPU/idle inputs | S/E; SQ 8/CQ 32 actually created |
-| `ref-liburing/setup_teardown.rst:90` | `RawRing.map(fd, params)`, not an invented SDK method; ownership transfers only on success | E; shared/separate real mappings; injected construction failures open |
+| `ref-liburing/setup_teardown.rst:90` | `RawRing.map(fd, params)`, not an invented SDK method; ownership transfers only on success | E; shared/separate real mappings; five private-descriptor x86_64 seccomp mmap failures also verify partial unwind/caller FD ownership; not every errno or kernel |
 | `ref-liburing/setup_teardown.rst:104` | `RawRing.dontFork` applies advice to every owned region; does not stop FD inheritance | E; actual child checks absent pages and inherited descriptor |
 | `ref-liburing/setup_teardown.rst:118` | `deinit` releases mappings and ring FD; application files/operands remain separate | E; per-page mincore and closed-FD fcntl checks after normal teardown |
 
@@ -136,6 +136,6 @@ Implicit includes/layout snippets are already in `implicit-literal-disposition.m
   and ordinary-enter delivered-signal paths remain unverified.
   Populated nonblocking CQ and full-SQ rejection now have boundary/model checks;
   u32 wrap, CQ overflow and concurrent/SQPOLL interleavings remain open. Ordinary
-  teardown does not prove cleanup after every partial-construction failure.
+  teardown alone is not failure cleanup evidence; five injected mmap ENOMEM paths now execute, not every errno/SDK constructor.
 - This document does not close the all-line/prose semantic audit, state model,
   whole-port mutation assessment, mandatory independent review or delivery push.

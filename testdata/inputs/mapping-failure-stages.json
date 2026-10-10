@@ -1,0 +1,7 @@
+{
+  "shared-sq": {"single_mapping": true, "failed_offset": 0, "successful_offsets": []},
+  "shared-sqes": {"single_mapping": true, "failed_offset": 268435456, "successful_offsets": [0]},
+  "separate-sq": {"single_mapping": false, "failed_offset": 0, "successful_offsets": []},
+  "separate-cq": {"single_mapping": false, "failed_offset": 134217728, "successful_offsets": [0]},
+  "separate-sqes": {"single_mapping": false, "failed_offset": 268435456, "successful_offsets": [0, 134217728]}
+}

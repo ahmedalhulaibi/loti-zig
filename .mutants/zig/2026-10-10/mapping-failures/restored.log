@@ -1,0 +1,8 @@
+test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) ... ok
+test_mapping_failure_mode_rejects_missing_or_unknown_stage (tests.test_mapping_failures.MappingFailureContracts.test_mapping_failure_mode_rejects_missing_or_unknown_stage) ... ok
+test_trace_oracle_rejects_incomplete_or_false_unwind (tests.test_mapping_failures.MappingFailureContracts.test_trace_oracle_rejects_incomplete_or_false_unwind) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.178s
+
+OK

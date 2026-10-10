@@ -40,6 +40,10 @@ fn verifyForkExclusion(regions: [3]?Mapping, fd: linux.fd_t, page_size: usize) !
 pub fn main(init: std.process.Init) !void {
     const args = try init.minimal.args.toSlice(init.arena.allocator());
     if (args.len < 2 or args.len > 3) return error.ExpectedInputFile;
+    if (std.mem.eql(u8, args[1], "--mapping-failure")) {
+        if (args.len != 3) return error.ExpectedMappingFailureStage;
+        return @import("mapping_fault.zig").run(init, args[2]);
+    }
     const separate = args.len == 3;
     if (separate and !std.mem.eql(u8, args[2], "--separate-mappings")) return error.UnknownMappingMode;
     const file = try std.Io.Dir.cwd().openFile(init.io, args[1], .{});

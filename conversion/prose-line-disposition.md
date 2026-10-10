@@ -76,7 +76,7 @@ constructor-only and unverified scopes remain in `reference-block-disposition.md
 | Original range | Current target | Disposition / semantic comparison |
 |---|---|---|
 | `ref-liburing/index.rst:1-7` | `ref-zig/index.rst` | Exact-version native reference/toctree; generated declarations versus runnable sources, constructor versus operation and helpers versus SDK explicitly separated |
-| `ref-liburing/setup_teardown.rst:7-7` | `ref-zig/setup_teardown.rst` | Native setup/mapping/teardown responsibilities retained; value/error/ownership differences described with complete reference program |
+| `ref-liburing/setup_teardown.rst:7-7` | `ref-zig/setup_teardown.rst` | Native setup/mapping/teardown responsibilities retained; value/error/ownership differences described with complete reference program; five private-FD x86_64 ENOMEM injection cases check partial mappings and retained caller ownership |
 | `ref-liburing/sqe.rst:5-11` | `ref-zig/sqe.rst` | Native extern request type and supported operations replace foreign header/struct references; actual installed ABI used |
 | `ref-liburing/cqe.rst:8-10` | `ref-zig/cqe.rst` | Native extern result type replaces foreign header/struct reference; tag/result/flag rules and stride qualify newer modes |
 | `ref-liburing/supported_caps.rst:62-62` | `ref-zig/supported_caps.rst` | Link to complete native probe tutorial and existing/temporary/raw probe variants; independent raw flags now cover all 59 named results; synthetic flags/header bounds use an independent ABI encoder; no operand-success claim |
