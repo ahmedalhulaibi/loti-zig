@@ -1,0 +1,209 @@
+[
+  {
+    "name": "language-c",
+    "kind": "source",
+    "language": "c",
+    "render": "c",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: c"
+  },
+  {
+    "name": "language-cpp",
+    "kind": "source",
+    "language": "cpp",
+    "render": "cpp",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: cpp"
+  },
+  {
+    "name": "language-c++",
+    "kind": "source",
+    "language": "c++",
+    "render": "c++",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: c++"
+  },
+  {
+    "name": "language-C",
+    "kind": "source",
+    "language": "C",
+    "render": "C",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: C"
+  },
+  {
+    "name": "language-c89",
+    "kind": "source",
+    "language": "c89",
+    "render": "c89",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: c89"
+  },
+  {
+    "name": "language-c99",
+    "kind": "source",
+    "language": "c99",
+    "render": "c99",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: c99"
+  },
+  {
+    "name": "language-rust",
+    "kind": "source",
+    "language": "rust",
+    "render": "rust",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: rust"
+  },
+  {
+    "name": "language-python",
+    "kind": "source",
+    "language": "python",
+    "render": "python",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: python"
+  },
+  {
+    "name": "language-None",
+    "kind": "source",
+    "language": null,
+    "render": "None",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: None"
+  },
+  {
+    "name": "language-default",
+    "kind": "source",
+    "language": "default",
+    "render": "default",
+    "index": 1,
+    "text": "fn main() void {}",
+    "error": "Unsupported literal language in tutorial/cat.rst: default"
+  },
+  {
+    "name": "gcc",
+    "kind": "source",
+    "language": "console",
+    "render": "console",
+    "index": 0,
+    "text": "gcc cat.c -luring -o cat",
+    "error": "Legacy literal marker in tutorial/cat.rst"
+  },
+  {
+    "name": "clang",
+    "kind": "source",
+    "language": "console",
+    "render": "console",
+    "index": 0,
+    "text": "clang cat.c -o cat",
+    "error": "Legacy literal marker in tutorial/cat.rst"
+  },
+  {
+    "name": "cc",
+    "kind": "source",
+    "language": "console",
+    "render": "console",
+    "index": 0,
+    "text": "cc cat.c -o cat",
+    "error": "Legacy literal marker in tutorial/cat.rst"
+  },
+  {
+    "name": "luring",
+    "kind": "source",
+    "language": "console",
+    "render": "console",
+    "index": 0,
+    "text": "zig build-exe cat.zig -luring",
+    "error": "Legacy literal marker in tutorial/cat.rst"
+  },
+  {
+    "name": "cimport",
+    "kind": "source",
+    "language": "zig",
+    "render": "zig",
+    "index": 1,
+    "text": "const c = @cImport({});",
+    "error": "Legacy literal marker in tutorial/cat.rst"
+  },
+  {
+    "name": "cinclude",
+    "kind": "source",
+    "language": "zig",
+    "render": "zig",
+    "index": 1,
+    "text": "const c = @cInclude(\"liburing.h\");",
+    "error": "Legacy literal marker in tutorial/cat.rst"
+  },
+  {
+    "name": "include",
+    "kind": "source",
+    "language": "zig",
+    "render": "zig",
+    "index": 1,
+    "text": "#include <liburing.h>",
+    "error": "Legacy literal marker in tutorial/cat.rst"
+  },
+  {
+    "name": "wrapper",
+    "kind": "source",
+    "language": "zig",
+    "render": "zig",
+    "index": 1,
+    "text": "io_uring_queue_init(8, &ring, 0);",
+    "error": "Legacy literal marker in tutorial/cat.rst"
+  },
+  {
+    "name": "c-main",
+    "kind": "source",
+    "language": "zig",
+    "render": "zig",
+    "index": 1,
+    "text": "int main(void) { return 0; }",
+    "error": "Legacy literal marker in tutorial/cat.rst"
+  },
+  {
+    "name": "render-cpp",
+    "kind": "render",
+    "language": "zig",
+    "render": "cpp",
+    "index": 1,
+    "text": null,
+    "error": "Rendered literal language differs in tutorial/cat.rst"
+  },
+  {
+    "name": "render-console",
+    "kind": "render",
+    "language": "zig",
+    "render": "console",
+    "index": 1,
+    "text": null,
+    "error": "Rendered literal language differs in tutorial/cat.rst"
+  },
+  {
+    "name": "render-missing",
+    "kind": "render",
+    "language": "zig",
+    "render": "missing",
+    "index": 1,
+    "text": null,
+    "error": "Rendered literal language differs in tutorial/cat.rst"
+  },
+  {
+    "name": "render-duplicate",
+    "kind": "render",
+    "language": "zig",
+    "render": "duplicate",
+    "index": 1,
+    "text": null,
+    "error": "Rendered literal language differs in tutorial/cat.rst"
+  }
+]

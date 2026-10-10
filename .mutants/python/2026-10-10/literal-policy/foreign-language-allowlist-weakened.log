@@ -1,0 +1,297 @@
+test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) ...
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-cpp') ... FAIL
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c++') ... FAIL
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-C') ... FAIL
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c89') ... FAIL
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c99') ... FAIL
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-rust') ... FAIL
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-python') ... FAIL
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-None') ... FAIL
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-default') ... FAIL
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-cpp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 80, in check_cases
+    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : {
+  "scope": "Publication structure and source fidelity; not semantic or independent review.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "book_sha256": "8d2f81ced8a13e4bbf6e504a57a354ceb6bd844ddaf5653024fa22a4af8e8309",
+  "original_chapters": 26,
+  "edition_chapters": 27,
+  "literal_blocks": 120,
+  "byte_identical_illustrations": 5,
+  "literal_policy": {
+    "language_counts": {
+      "zig": 97,
+      "console": 18,
+      "json": 2,
+      "text": 2,
+      "cpp": 1
+    },
+    "rendered_languages_match": true,
+    "bounded_legacy_markers_absent": true
+  },
+  "licence_exact": true,
+  "local_links_valid": true,
+  "drm_absent": true,
+  "javascript_absent": true
+}
+
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c++')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 80, in check_cases
+    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : {
+  "scope": "Publication structure and source fidelity; not semantic or independent review.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "book_sha256": "edb976ecb05b3983722b5953da91bc8d2b1884c710753ae450c6a68168cd880a",
+  "original_chapters": 26,
+  "edition_chapters": 27,
+  "literal_blocks": 120,
+  "byte_identical_illustrations": 5,
+  "literal_policy": {
+    "language_counts": {
+      "zig": 97,
+      "console": 18,
+      "json": 2,
+      "text": 2,
+      "c++": 1
+    },
+    "rendered_languages_match": true,
+    "bounded_legacy_markers_absent": true
+  },
+  "licence_exact": true,
+  "local_links_valid": true,
+  "drm_absent": true,
+  "javascript_absent": true
+}
+
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-C')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 80, in check_cases
+    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : {
+  "scope": "Publication structure and source fidelity; not semantic or independent review.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "book_sha256": "4beb59a9acb8875545a4fd78242ddf27b1cefcf797751d598343bf6ce123668d",
+  "original_chapters": 26,
+  "edition_chapters": 27,
+  "literal_blocks": 120,
+  "byte_identical_illustrations": 5,
+  "literal_policy": {
+    "language_counts": {
+      "zig": 97,
+      "console": 18,
+      "json": 2,
+      "text": 2,
+      "C": 1
+    },
+    "rendered_languages_match": true,
+    "bounded_legacy_markers_absent": true
+  },
+  "licence_exact": true,
+  "local_links_valid": true,
+  "drm_absent": true,
+  "javascript_absent": true
+}
+
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c89')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 80, in check_cases
+    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : {
+  "scope": "Publication structure and source fidelity; not semantic or independent review.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "book_sha256": "1dec74dbf082e4dccaa72f5277f97df87d220c4b7191305c8a62b39350aae890",
+  "original_chapters": 26,
+  "edition_chapters": 27,
+  "literal_blocks": 120,
+  "byte_identical_illustrations": 5,
+  "literal_policy": {
+    "language_counts": {
+      "zig": 97,
+      "console": 18,
+      "json": 2,
+      "text": 2,
+      "c89": 1
+    },
+    "rendered_languages_match": true,
+    "bounded_legacy_markers_absent": true
+  },
+  "licence_exact": true,
+  "local_links_valid": true,
+  "drm_absent": true,
+  "javascript_absent": true
+}
+
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c99')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 80, in check_cases
+    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : {
+  "scope": "Publication structure and source fidelity; not semantic or independent review.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "book_sha256": "0052832e98b37c978d4a7a3d8308179fde1b07bf8e3fc25bd262f0a7f1a02d55",
+  "original_chapters": 26,
+  "edition_chapters": 27,
+  "literal_blocks": 120,
+  "byte_identical_illustrations": 5,
+  "literal_policy": {
+    "language_counts": {
+      "zig": 97,
+      "console": 18,
+      "json": 2,
+      "text": 2,
+      "c99": 1
+    },
+    "rendered_languages_match": true,
+    "bounded_legacy_markers_absent": true
+  },
+  "licence_exact": true,
+  "local_links_valid": true,
+  "drm_absent": true,
+  "javascript_absent": true
+}
+
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-rust')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 80, in check_cases
+    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : {
+  "scope": "Publication structure and source fidelity; not semantic or independent review.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "book_sha256": "545993cb88dd90a1bd512e3e541e508408b955dd387c6729a620766e4157ca13",
+  "original_chapters": 26,
+  "edition_chapters": 27,
+  "literal_blocks": 120,
+  "byte_identical_illustrations": 5,
+  "literal_policy": {
+    "language_counts": {
+      "zig": 97,
+      "console": 18,
+      "json": 2,
+      "text": 2,
+      "rust": 1
+    },
+    "rendered_languages_match": true,
+    "bounded_legacy_markers_absent": true
+  },
+  "licence_exact": true,
+  "local_links_valid": true,
+  "drm_absent": true,
+  "javascript_absent": true
+}
+
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-python')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 80, in check_cases
+    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : {
+  "scope": "Publication structure and source fidelity; not semantic or independent review.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "book_sha256": "9d0acd4e9b982cd3378178141a4da6e231365af653609bfcf278efab27be0b9c",
+  "original_chapters": 26,
+  "edition_chapters": 27,
+  "literal_blocks": 120,
+  "byte_identical_illustrations": 5,
+  "literal_policy": {
+    "language_counts": {
+      "zig": 97,
+      "console": 18,
+      "json": 2,
+      "text": 2,
+      "python": 1
+    },
+    "rendered_languages_match": true,
+    "bounded_legacy_markers_absent": true
+  },
+  "licence_exact": true,
+  "local_links_valid": true,
+  "drm_absent": true,
+  "javascript_absent": true
+}
+
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-None')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "event": "loti.epub.verification.failed", "error": case["error"]})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'eve[41 chars]ror': 'Rendered literal language differs in tutorial/cat.rst'} != {'eve[41 chars]ror': 'Unsupported literal language in tutorial/cat.rst: None'}
+- {'error': 'Rendered literal language differs in tutorial/cat.rst',
+?            ^^ ^^                     --------
+
++ {'error': 'Unsupported literal language in tutorial/cat.rst: None',
+?            ^ ^^^^^ +                                       ++++++
+
+   'event': 'loti.epub.verification.failed'}
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-default')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 80, in check_cases
+    self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : {
+  "scope": "Publication structure and source fidelity; not semantic or independent review.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "book_sha256": "1b58ed61634956418556502eacf1334347d0d8bc73ed212a9433f10addb94d0a",
+  "original_chapters": 26,
+  "edition_chapters": 27,
+  "literal_blocks": 120,
+  "byte_identical_illustrations": 5,
+  "literal_policy": {
+    "language_counts": {
+      "zig": 97,
+      "console": 18,
+      "json": 2,
+      "text": 2,
+      "default": 1
+    },
+    "rendered_languages_match": true,
+    "bounded_legacy_markers_absent": true
+  },
+  "licence_exact": true,
+  "local_links_valid": true,
+  "drm_absent": true,
+  "javascript_absent": true
+}
+
+
+----------------------------------------------------------------------
+Ran 1 test in 4.701s
+
+FAILED (failures=9)

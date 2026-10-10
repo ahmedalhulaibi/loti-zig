@@ -1,0 +1,9 @@
+test_packaged_literal_languages_must_match_the_source (tests.test_literal_policy.LiteralPolicyContracts.test_packaged_literal_languages_must_match_the_source) ... ok
+test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) ... ok
+test_complete_source_fidelity_report (tests.test_publication.PublicationContract.test_complete_source_fidelity_report) ... ok
+test_damaged_artifacts_are_rejected (tests.test_publication.PublicationContract.test_damaged_artifacts_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 6.701s
+
+OK

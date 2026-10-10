@@ -1,0 +1,169 @@
+test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) ...
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-cpp') ... ERROR
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c++') ... ERROR
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-C') ... ERROR
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c89') ... ERROR
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c99') ... ERROR
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-rust') ... ERROR
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-python') ... ERROR
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-None') ... FAIL
+  test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-default') ... ERROR
+
+======================================================================
+ERROR: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-cpp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c++')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-C')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c89')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-c99')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-rust')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-python')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-default')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+FAIL: test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) (case='language-None')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_literal_policy.py", line 82, in check_cases
+    self.assertEqual(json.loads(result.stderr), {
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "event": "loti.epub.verification.failed", "error": case["error"]})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'eve[41 chars]ror': 'Rendered literal language differs in tutorial/cat.rst'} != {'eve[41 chars]ror': 'Unsupported literal language in tutorial/cat.rst: None'}
+- {'error': 'Rendered literal language differs in tutorial/cat.rst',
+?            ^^ ^^                     --------
+
++ {'error': 'Unsupported literal language in tutorial/cat.rst: None',
+?            ^ ^^^^^ +                                       ++++++
+
+   'event': 'loti.epub.verification.failed'}
+
+----------------------------------------------------------------------
+Ran 1 test in 4.147s
+
+FAILED (failures=1, errors=8)

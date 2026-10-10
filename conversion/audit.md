@@ -834,8 +834,8 @@ See `rwf-{spec-sha256,verification}.json`, `mutation-rwf.json`, live trace/fixtu
 Native source/SDK/build/CLI/test/map/book consumers inspected; stale graph/Fabric
 gaps are not complete-callgraph or independent semantic acceptance evidence.
 
-Current bounded total: **179** (135 native, three line-index, twenty-eight trace-parser,
-seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+RWF checkpoint bounded total: **179** (135 native, three line-index, twenty-eight trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). Checkpoint gates:
 Zig0.17.0/51 build steps; 77 tests/zero failures/errors/skips; fifteen attributed
 400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/120 literals,
 81 browser cases/360 code blocks/333 headings without violations. Zero visible
@@ -843,10 +843,44 @@ primary diagnostics, three suppressed/two existing OPF spelling infos disclosed,
 not unconditional clean. Browser not device/pagination/font overrides. Mandatory
 review remains blocked, no retry/fallback/push. Semantic acceptance/delivery open.
 
+## Published literal policy: faithful stale artifacts
+
+`literal-policy-reproduction.json` records four real accepted damaged local
+archive/doctree pairs: C text under `cpp`, a GCC/liburing build command, a Zig
+C-import declaration, and a mismatched packaged language label. Source-text
+fidelity, chapter counts and green EPUB structure were insufficient. No original
+native/kernel defect or externally supplied pickle is asserted.
+
+The publication CLI now requires explicit Zig/console/JSON/text labels and exact
+packaged/source language correspondence. Bounded markers reject representative
+C imports/includes/prototypes, wrapper helpers and compiler/library commands.
+Two new CLI contracts challenge 19 source-policy and four rendered-language
+cases, including source/archive text changed together. Current 120 literals:
+98 Zig, 18 console, two JSON, two text (poem/licence preserved). These counts
+are not 98 runnable examples or proof that every declaration is complete.
+
+Original author specs/fixtures retained. A transparent pre-mutation amendment
+uses marker-free Zig text under foreign labels, so marker rejection cannot mask
+missing language checks; case counts/errors and the separate C-main case stay
+exact. This is unsealed author work, not independent verifier acceptance.
+Six syntax-valid policy-tool mutants fail substantive CLI assertions; the initial
+alias variant produced eight unittest decode errors after a count-dictionary
+KeyError and is excluded. Its revised variant makes aggregation dynamic, exposing
+actual accepted aliases. Source/spec restoration and four-test baseline verified.
+
+`literal-policy-verification.json` and `mutation-literal-policy.json` bind scope,
+inputs and current evidence. Current bounded total **185**: 135 native, three
+line-index, 28 trace-parser, seven historical binding-producer, three CSS, three
+layout-oracle, six publication-policy. Exact Zig0.17.0/51 build steps, **79 tests**,
+zero failures/errors/skips, fifteen attributed 400-case properties. Primary LSP
+on three changed Python paths: zero findings. Independent review remains blocked;
+no retry/fallback, remote push or goal completion. Pattern checks are not arbitrary
+language parsing, prose/link semantics, all original-purpose acceptance or review.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **77 passed**
-  (56 native + one VM + four publication + three inventory + two line-index + eleven binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **79 passed**
+  (56 native + one VM + six publication + three inventory + two line-index + eleven binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.

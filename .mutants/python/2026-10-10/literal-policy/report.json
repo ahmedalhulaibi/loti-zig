@@ -1,0 +1,101 @@
+{
+  "scope": "Six syntax-valid publication-policy verifier mutations killed through public CLI assertions; no native/kernel/whole-port or independent-review claim. Owned locally generated doctrees/archive pairs only.",
+  "mutants": [
+    {
+      "id": "foreign-language-allowlist-weakened",
+      "compiled": true,
+      "mutation_sha256": "cd24ae217c62d81af2c0c30ce4a2fc0452e1cce6f0bb462e6435c78187362ff2",
+      "status": "killed",
+      "failures": 9,
+      "errors": 0,
+      "skips": 0,
+      "log": ".mutants/python/2026-10-10/literal-policy/foreign-language-allowlist-weakened.log",
+      "compile_log": ".mutants/python/2026-10-10/literal-policy/foreign-language-allowlist-weakened-compile.log"
+    },
+    {
+      "id": "legacy-marker-check-omitted",
+      "compiled": true,
+      "mutation_sha256": "ddd4f4f51c8d01685c5bcec1b565aa4a81866dc10b20978748b98b6962750736",
+      "status": "killed",
+      "failures": 9,
+      "errors": 0,
+      "skips": 0,
+      "log": ".mutants/python/2026-10-10/literal-policy/legacy-marker-check-omitted.log",
+      "compile_log": ".mutants/python/2026-10-10/literal-policy/legacy-marker-check-omitted-compile.log"
+    },
+    {
+      "id": "console-marker-check-omitted",
+      "compiled": true,
+      "mutation_sha256": "5e43b7b8592fa746a10fc7fb647857212b35d0612c21940805fd9e075a2a0d6c",
+      "status": "killed",
+      "failures": 4,
+      "errors": 0,
+      "skips": 0,
+      "log": ".mutants/python/2026-10-10/literal-policy/console-marker-check-omitted.log",
+      "compile_log": ".mutants/python/2026-10-10/literal-policy/console-marker-check-omitted-compile.log"
+    },
+    {
+      "id": "c-import-markers-ignored",
+      "compiled": true,
+      "mutation_sha256": "e35c92f3fe53c636d9576fd587baf37b0415626788f361500067413e223e692a",
+      "status": "killed",
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "log": ".mutants/python/2026-10-10/literal-policy/c-import-markers-ignored.log",
+      "compile_log": ".mutants/python/2026-10-10/literal-policy/c-import-markers-ignored-compile.log"
+    },
+    {
+      "id": "rendered-language-values-ignored",
+      "compiled": true,
+      "mutation_sha256": "34171f31716f02c4bf960ae71b2a1be586a028661c2e251803d85f1a54a5c14e",
+      "status": "killed",
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "log": ".mutants/python/2026-10-10/literal-policy/rendered-language-values-ignored.log",
+      "compile_log": ".mutants/python/2026-10-10/literal-policy/rendered-language-values-ignored-compile.log"
+    },
+    {
+      "id": "rendered-language-policy-bypassed",
+      "compiled": true,
+      "mutation_sha256": "9887c60ac7647b70ca6b1a967aa4376cc9c64f2ba9577563ff5668c1c4d972c8",
+      "status": "killed",
+      "failures": 4,
+      "errors": 0,
+      "skips": 0,
+      "log": ".mutants/python/2026-10-10/literal-policy/rendered-language-policy-bypassed.log",
+      "compile_log": ".mutants/python/2026-10-10/literal-policy/rendered-language-policy-bypassed-compile.log"
+    }
+  ],
+  "exact_restoration": true,
+  "source_sha256": {
+    "tools/verify_epub.py": "91e2f6a7349eefb41ea0988aa7de300d15cd28ce31f275c9723fcbe5c8974117"
+  },
+  "baseline": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "log": ".mutants/python/2026-10-10/literal-policy/restored.log"
+  },
+  "containment": "Sequential systemd user scope4GiB/no swap/TasksMax128.",
+  "excluded_initial": {
+    "id": "foreign-language-allowlist-weakened",
+    "reason": "Initial one-line variant hit KeyError in the fixed language-count dictionary, yielding8 unittest JSON-decode errors; no kill accepted. Revised variant also makes count aggregation dynamic, so unsafe labels can reach an actual CLI success. All six IDs assessed once in the final report.",
+    "log": ".mutants/python/2026-10-10/literal-policy/initial-alias-unittest-error.log",
+    "initial_empty_report": ".mutants/python/2026-10-10/literal-policy/initial-empty-report.json"
+  },
+  "log_normalization": {
+    "scope": "Trailing spaces/tabs/CR and terminal empty lines only; substantive observations unchanged.",
+    "files": [
+      ".mutants/python/2026-10-10/literal-policy/foreign-language-allowlist-weakened.log",
+      ".mutants/python/2026-10-10/literal-policy/initial-alias-unittest-error.log",
+      ".mutants/python/2026-10-10/literal-policy/legacy-marker-check-omitted.log",
+      ".mutants/python/2026-10-10/literal-policy/console-marker-check-omitted.log",
+      ".mutants/python/2026-10-10/literal-policy/c-import-markers-ignored.log",
+      ".mutants/python/2026-10-10/literal-policy/rendered-language-values-ignored.log",
+      ".mutants/python/2026-10-10/literal-policy/rendered-language-policy-bypassed.log"
+    ]
+  }
+}

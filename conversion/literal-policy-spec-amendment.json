@@ -1,0 +1,7 @@
+{
+  "scope": "Unsealed author fixture strengthening before mutation assessment, not independent verifier or ACL acceptance. Original snapshot and initial fixture bytes retained.",
+  "reason": "Language-alias fixtures originally also contained a separately banned C-main marker, which could mask missing language rejection. Use marker-free Zig text under foreign labels, keeping all19+4 cases/error expectations; C-main-in-Zig has its own case. Tests now isolate language from marker policy.",
+  "amended_sha256": {
+    "testdata/inputs/literal-policy-damages.json": "0be602e17560f2f43fdc362b98500181827725de2094cc1485359b18bfa4fd78"
+  }
+}

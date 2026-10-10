@@ -1,0 +1,7 @@
+{
+  "scope": "Author preimplementation fixture/CLI contract snapshot, not ACL seal/independent verifier acceptance. 19 source-policy +4 render-policy damaged local artifact pairs; exact case counts prevent vacuous success.",
+  "sha256": {
+    "tests/test_literal_policy.py": "11253e4b9ed50b9cd1b46875f1bad51c72fc1d65dc4182ac92e7fd6417e5f9e6",
+    "testdata/inputs/literal-policy-damages.json": "4916416f2a203c8ef7a4f06b1b23b771ae5117553cea4b6dabe5d4078f94bf18"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "Initial aborted assessment; zero accepted mutants. Scope wording corrected transparently; original draft said six while mutants list was empty.",
+  "mutants": [],
+  "exact_restoration": true,
+  "source_sha256": {
+    "tools/verify_epub.py": "91e2f6a7349eefb41ea0988aa7de300d15cd28ce31f275c9723fcbe5c8974117"
+  },
+  "baseline": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "log": ".mutants/python/2026-10-10/literal-policy/restored.log"
+  },
+  "containment": "Sequential systemd user scope4GiB/no swap/TasksMax128.",
+  "partial": true,
+  "excluded": "Eight unittest errors in first alias variant; see final revised assessment."
+}

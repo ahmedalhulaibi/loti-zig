@@ -51,6 +51,39 @@ def page_name(source):
     return str(Path(source).with_suffix(".xhtml"))
 
 
+def check_literal_policy(document, source_literals, page):
+    """Bounded migration policy, not a language parser or semantic review."""
+    allowed = {"zig", "console", "json", "text"}
+    legacy = re.compile(
+        r"@c(?:Import|Include|Define|Undef)\s*\("
+        r"|^\s*#\s*include\b"
+        r"|^\s*(?:\$\s*)?(?:gcc|g\+\+|clang(?:\+\+)?|cc)(?:\s|$)"
+        r"|(?:^|\s)-luring(?:\s|$)"
+        r"|\bio_uring_(?:prep_\w+|queue_init\w*|queue_exit|get_sqe|submit(?:_and_wait)?)\s*\("
+        r"|^\s*(?:int|void|ssize_t)\s+[A-Za-z_]\w*\s*\(", re.MULTILINE)
+    languages = []
+    for node in source_literals:
+        language = node.get("language")
+        require(language in allowed, f"Unsupported literal language in {document}: {language}")
+        require(legacy.search(node.astext()) is None, f"Legacy literal marker in {document}")
+        languages.append(language)
+    parents = {child: parent for parent in page.iter() for child in parent}
+    rendered = []
+    for pre in page.findall(".//x:pre", NS):
+        parent = pre
+        labels = []
+        while parent is not None:
+            labels = [name.removeprefix("highlight-") for name in parent.get("class", "").split()
+                      if name.startswith("highlight-")]
+            if labels:
+                break
+            parent = parents.get(parent)
+        require(len(labels) == 1, f"Rendered literal language differs in {document}")
+        rendered.append(labels[0])
+    require(rendered == languages, f"Rendered literal language differs in {document}")
+    return languages
+
+
 def verify(book, doctrees):
     mapping = json.loads((ROOT / "conversion/chapter-map.json").read_text())
     commit = mapping["source_commit"]
@@ -77,6 +110,7 @@ def verify(book, doctrees):
     require(set(documents) == source_documents, "Unmapped or missing edition document")
     expected_pages = [page_name(name) for name in documents]
     literal_count = image_count = 0
+    language_counts = {language: 0 for language in ("zig", "console", "json", "text")}
     with ZipFile(book) as archive:
         require(archive.testzip() is None, "Archive CRC failure")
         members = archive.namelist()
@@ -134,12 +168,13 @@ def verify(book, doctrees):
             # Only load locally generated Sphinx artifacts, never untrusted pickles.
             with (doctrees / Path(document).with_suffix(".doctree")).open("rb") as stream:
                 tree = pickle.load(stream)
-            expected = [node.astext().rstrip("\n") for node in tree.findall(nodes.literal_block)]
+            source_literals = list(tree.findall(nodes.literal_block))
+            for language in check_literal_policy(document, source_literals, page):
+                language_counts[language] += 1
+            expected = [node.astext().rstrip("\n") for node in source_literals]
             actual = ["".join(element.itertext()).rstrip("\n") for element in page.findall(".//x:pre", NS)]
             require(actual == expected, f"Literal source differs in {document}")
             literal_count += len(actual)
-            for node in tree.findall(nodes.literal_block):
-                require(node.get("language") != "c", f"Foreign-language code in {document}")
             entry = next((entry for entry in chapters if entry["zig"] == document), None)
             if entry is None:
                 continue
@@ -162,6 +197,8 @@ def verify(book, doctrees):
         "source_commit": commit, "book_sha256": hashlib.sha256(book.read_bytes()).hexdigest(),
         "original_chapters": len(chapters), "edition_chapters": len(documents),
         "literal_blocks": literal_count, "byte_identical_illustrations": image_count,
+        "literal_policy": {"language_counts": language_counts,
+                           "rendered_languages_match": True, "bounded_legacy_markers_absent": True},
         "licence_exact": True, "local_links_valid": True, "drm_absent": True, "javascript_absent": True,
     }
 

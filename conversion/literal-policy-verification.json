@@ -1,0 +1,75 @@
+{
+  "scope": "Publication literal-language/representative legacy-marker policy only; not arbitrary language parsing, all prose/link semantics, compilation of every displayed declaration, original-purpose acceptance, independent review or device acceptance.",
+  "reproduction": "literal-policy-reproduction.json",
+  "core": "literal-policy-spec-sha256.json",
+  "transparent_amendment": "literal-policy-spec-amendment.json",
+  "initial_fixture": "literal-policy-damages-initial.json",
+  "contracts": {
+    "tests": 2,
+    "source_damages": 19,
+    "render_damages": 4,
+    "literal_counts": {
+      "zig": 98,
+      "console": 18,
+      "json": 2,
+      "text": 2
+    },
+    "licensed_text_preserved": true,
+    "scope": "Language labels and bounded representative markers; JSON/text/console remain outputs or commands, not native runnable examples."
+  },
+  "mutations": "mutation-literal-policy.json",
+  "source_sha256": {
+    "tools/verify_epub.py": "91e2f6a7349eefb41ea0988aa7de300d15cd28ce31f275c9723fcbe5c8974117",
+    "tests/test_literal_policy.py": "11253e4b9ed50b9cd1b46875f1bad51c72fc1d65dc4182ac92e7fd6417e5f9e6",
+    "tests/test_publication.py": "f49601c9eaab1016441bfcd838fbb95a369681b301a00d35ae38f51b110ce6ca",
+    "testdata/inputs/literal-policy-damages.json": "0be602e17560f2f43fdc362b98500181827725de2094cc1485359b18bfa4fd78",
+    "conversion/literal-policy-spec-sha256.json": "cfe306a7937d296e057950d134f56b850e2700efedc9c529e6fee692a39f7651",
+    "conversion/literal-policy-spec-amendment.json": "f3b73bc0ddd3c79c0c21a8674067da7f428dbe679c536d42ed82c0563bbe961a",
+    "conversion/literal-policy-damages-initial.json": "4916416f2a203c8ef7a4f06b1b23b771ae5117553cea4b6dabe5d4078f94bf18",
+    "README.md": "a2f1fcf776ac399185700cd4b8a121dc22cb0eebcc105c8725e78785a5291c0b",
+    "testing.md": "d4f37631e3b6a27c41d11c5c4596d91c13aafa23f8fa349808c2c4b39b3b0516"
+  },
+  "diagnostics": {
+    "scope": "Active primary LSP on three changed Python paths; no cache-only cleanliness claim. Existing OPF spelling infos/other-feature suppressions stay disclosed in their own receipts.",
+    "checked": [
+      "tools/verify_epub.py",
+      "tests/test_literal_policy.py",
+      "tests/test_publication.py"
+    ],
+    "visible_primary": 0
+  },
+  "gates": {
+    "zig": "0.17.0",
+    "build_steps": 51,
+    "executables": 25,
+    "tests": 79,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 15,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 146.2,
+    "strict_html": true,
+    "strict_epub": true,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "chapters": 27,
+    "literals": 120,
+    "reader": {
+      "cases": 81,
+      "code_blocks": 360,
+      "tables": 6,
+      "images": 15,
+      "headings": 333,
+      "figures": 0,
+      "violations": 0
+    },
+    "book_sha256": "643aac576f2dc2d60f16d3f1c5b5c7e2efc8aec6714455b32953f9adb69a499a",
+    "scope": "Final publication/EPUBCheck/layout followed aggregate suite. Not semantic/independent-review or reader-device acceptance."
+  }
+}
