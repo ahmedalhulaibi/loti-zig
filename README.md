@@ -18,6 +18,7 @@ python3 -m venv .venv
 python3 tools/inventory.py --check
 python3 tools/reference_map.py --check
 python3 tools/reference_docs.py --check
+python3 tools/check_line_dispositions.py --check
 LOTI_TEST_CASES=400 .venv/bin/python -m unittest discover
 make html
 make epub
@@ -54,7 +55,8 @@ broader failure/state checks, bounded source mutation verification and independe
 review remain open. See `conversion/audit.md` and `conversion/review-blocker.md`.
 The goal is not complete; final converted commits have not been pushed.
 
-Author notes cover 53/128 original blocks, not all lines. Native `cp` now sizes
+Author notes index all 128 blocks and 3,618 matched lines; this is not semantic
+acceptance. Native `cp` now sizes
 read-only block-device input with `BLKGETSIZE64`; output must remain a regular
 file. An isolated VM checks all three readers and copy against four disposable
 disks. Streaming stdout also preserves chunks when redirected to a regular file.
@@ -79,10 +81,15 @@ zig-out/bin/webserver public 8080
 zig-out/bin/reference-setup input.txt
 zig-out/bin/reference-setup input.txt --separate-mappings
 zig-out/bin/reference-completion
-zig-out/bin/reference-registration input.txt
+zig-out/bin/reference-registration input.txt replacement.txt
 zig-out/bin/reference-submission input.txt
 zig-out/bin/reference-raw input.txt
 ```
+
+`reference-registration` takes two regular input files. It checks sparse/fixed
+slot reads, replacement after closing the application descriptor, asynchronous
+restoration and removal/unregistration failures. It reports the first 64 bytes;
+this is not a full-file reader or concurrent table-update model.
 
 `reference-submission` executes constructors but deliberately does not submit its
 incompatible mixed operands. Other reference/tutorial programs provide separate

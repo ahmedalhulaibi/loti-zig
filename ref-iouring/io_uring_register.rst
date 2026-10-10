@@ -46,6 +46,9 @@ where supported. ``REGISTER_FILES_UPDATE`` takes a native
 its own CQE. Table references and process descriptor ownership are different;
 closing a process descriptor is not the same as unregistering a table entry.
 Release resources only after their dependent requests finish.
+The :ref:`registration reference <advanced_usage>` demonstrates both update paths,
+fixed reads after closing the replacement process descriptor, sparse removal and
+table unregistration. Its asynchronous update returns a CQE count of one.
 
 Eventfd
 -------

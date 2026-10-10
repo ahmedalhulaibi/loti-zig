@@ -24,6 +24,20 @@ range synchronously; ``unregister_files`` releases the table. This is distinct
 from an asynchronous SQE ``prep_files_update``. Finish dependent requests before
 releasing or repurposing their resources. See :ref:`sq_poll` for fixed-file I/O.
 
+The reference below reads up to 64 bytes from table slot 1. Slot 0 is sparse and
+returns ``-EBADF``. A synchronous update replaces slot 1 with the second file;
+closing that process descriptor does not release its registered reference.
+``F_GETFD`` confirms closure, and a subsequent fixed-file read returns the second
+file's bytes. These are normal read buffers with ``IOSQE_FIXED_FILE``, not
+registered-buffer ``read_fixed`` requests.
+
+An asynchronous ``prep_files_update`` restores the original descriptor. Its
+separate CQE reports **one updated entry**, not zero. Only after that CQE does the
+next read use the restored entry. Replacing slot 1 with ``-1`` and unregistering
+the table each make later fixed-file reads fail with ``-EBADF``. The JSON report
+contains actual tags/results/flags and byte arrays, not padded buffers. This
+sequential example does not establish safety for racing table updates and I/O.
+
 Event notification
 ------------------
 
@@ -55,7 +69,7 @@ Executable reference
 .. code-block:: console
 
    zig build
-   zig-out/bin/reference-registration input.bin
+   zig-out/bin/reference-registration original.bin replacement.bin
 
 .. literalinclude:: ../examples/reference_registration.zig
    :language: zig

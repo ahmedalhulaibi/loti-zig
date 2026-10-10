@@ -146,7 +146,9 @@ def generate():
                 target = "sqe.prep_files_update"
                 native_source = "os/linux/io_uring_sqe.zig"
                 native_name = "prep_files_update"
-                difference = "Use get_sqe then the native SQE preparer; not synchronous register_files_update."
+                example = REGISTER
+                scope = "constructed and submitted separately; correlated updated-entry count and subsequent fixed-file bytes checked"
+                difference = "Use get_sqe then the native SQE preparer; keep the descriptor array alive through its CQE. Distinct from synchronous register_files_update."
             else:
                 native_name = PREPARERS[method]
                 native_source = "os/linux/IoUring.zig"

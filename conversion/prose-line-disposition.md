@@ -126,7 +126,7 @@ reference sources. DONE markers are not reused as verification evidence.
 | `delme.c:74-87` | `ref-zig/submission.rst` | Native submit/submit_and_wait/get_sqe and tag/flag assignment; counts/ownership/error unions stated |
 | `delme.c:88-175` | `ref-zig/submission.rst` | Every listed preparer has a native constructor or explicit raw helper, with actual declarations and 33-constructor source; construction is not operation execution |
 | `delme.c:176-204` | `ref-zig/advanced_usage.rst` | Buffer/file/update/eventfd/personality methods/helpers; probe raw helper also in supported_caps; distinguish captured credentials and application resource ownership |
-| `delme.c:205-212` | `ref-zig/submission.rst` | Async table update and provide/remove selected buffers preserved; stable arrays/groups, native signatures and constructor cases; not fixed-buffer registration |
+| `delme.c:205-212` | `ref-zig/submission.rst` | Async table update now submitted separately with count-one CQE and restored fixed-read bytes; provide/remove selected buffers retain constructor-only evidence; stable arrays/groups, not fixed-buffer registration |
 | `delme.c:213-216` | `ref-zig/submission.rst` | sq_ready plus native array-capacity-minus-ready free-space expression; not completed-I/O count, single-producer discipline |
 | `delme.c:217-226` | `ref-zig/submission.rst` | Native timeout/timeout_remove/cancel/link_timeout and timespec/tag/flags contracts; cancellation races and separate target CQEs retained |
 
@@ -137,9 +137,10 @@ reference sources. DONE markers are not reused as verification evidence.
   nonzero-RWF operation effects are not attested by this document.
 - The catalog is fully accounted for, including helpers absent from original
   reference declarations. Constructor-only coverage is still constructor-only.
-- Sparse-table removal/replacement and changed-descriptor use, full probe-flag
-  truth, delivered signals/restoration/interruption and forced partial-I/O/state
-  paths need further checks. Retained conceptual text is not runtime evidence.
+- Sequential sparse/removal/replacement, closed application FD, async restore and
+  unregistered-table effects now have exact fixed-read/CQE checks. Concurrent or
+  partial multi-entry updates, full probe flags, delivered signals/restoration
+  and forced partial-I/O/state paths still need checks.
 - All-line author note coverage closes the bookkeeping omission, not semantic
   acceptance. Independent review remains blocked; no review report exists.
   Whole-port mutation assessment, final review/fix/rebuild and fork push remain.

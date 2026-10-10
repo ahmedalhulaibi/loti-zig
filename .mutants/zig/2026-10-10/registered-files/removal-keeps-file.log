@@ -1,0 +1,72 @@
+test_registration_helpers_and_async_notification (tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification) ... ERROR
+
+======================================================================
+ERROR: test_registration_helpers_and_async_notification (tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification)
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 64, in test_registration_helpers_and_async_notification
+  |     @given(original=st.binary(max_size=8193), replacement=st.binary(max_size=8193))
+  |                ^^^^^^^
+  |   File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1779, in wrapped_test
+  |     _raise_to_user(errors, state.settings, [], " in explicit examples")
+  |     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1474, in _raise_to_user
+  |     raise the_error_hypothesis_found
+  | ExceptionGroup: Hypothesis found 3 distinct failures in explicit examples. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 75, in test_registration_helpers_and_async_notification
+    |     self.assertEqual(json.loads(run("reference-registration", first, second).stdout), {
+    |                                 ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 22, in run
+    |     raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+    | AssertionError: reference-registration exited 1: error: RemovedEntryReadDidNotFail
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_registration.zig:87:51: 0x11f0ec6 in main (reference_registration.zig)
+    |     if (removed.completion.res != bad_descriptor) return error.RemovedEntryReadDidNotFail;
+    |                                                   ^
+    |
+    | Falsifying explicit example: test_registration_helpers_and_async_notification(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_registration_helpers_and_async_notification>,
+    |     original=b'original registered file\n',
+    |     replacement=b'replacement registered file\n',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 75, in test_registration_helpers_and_async_notification
+    |     self.assertEqual(json.loads(run("reference-registration", first, second).stdout), {
+    |                                 ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 22, in run
+    |     raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+    | AssertionError: reference-registration exited 1: error: RemovedEntryReadDidNotFail
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_registration.zig:87:51: 0x11f0ec6 in main (reference_registration.zig)
+    |     if (removed.completion.res != bad_descriptor) return error.RemovedEntryReadDidNotFail;
+    |                                                   ^
+    |
+    | Falsifying explicit example: test_registration_helpers_and_async_notification(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_registration_helpers_and_async_notification>,
+    |     original=b'',
+    |     replacement=b'replacement registered file\n',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 75, in test_registration_helpers_and_async_notification
+    |     self.assertEqual(json.loads(run("reference-registration", first, second).stdout), {
+    |                                 ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 22, in run
+    |     raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+    | AssertionError: reference-registration exited 1: error: RemovedEntryReadDidNotFail
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_registration.zig:87:51: 0x11f0ec6 in main (reference_registration.zig)
+    |     if (removed.completion.res != bad_descriptor) return error.RemovedEntryReadDidNotFail;
+    |                                                   ^
+    |
+    | Falsifying explicit example: test_registration_helpers_and_async_notification(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_registration_helpers_and_async_notification>,
+    |     original=b'original registered file\n',
+    |     replacement=b'',
+    | )
+    +------------------------------------
+
+----------------------------------------------------------------------
+Ran 1 test in 0.179s
+
+FAILED (errors=1)

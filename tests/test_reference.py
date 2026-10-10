@@ -10,6 +10,10 @@ from hypothesis import example, given, settings, strategies as st
 
 from tests.test_examples import CASES, run
 
+ROOT = Path(__file__).resolve().parent.parent
+ORIGINAL_FIXTURE = (ROOT / "testdata/inputs/registration-original.txt").read_bytes()
+REPLACEMENT_FIXTURE = (ROOT / "testdata/inputs/registration-replacement.txt").read_bytes()
+
 
 class ReferenceContracts(unittest.TestCase):
     @settings(max_examples=CASES, deadline=None)
@@ -56,19 +60,45 @@ class ReferenceContracts(unittest.TestCase):
             "drained": 0, "timed_out": True, "timer_result": -62,
         })
 
-    def test_registration_helpers_and_async_notification(self):
+    @settings(max_examples=CASES, deadline=None)
+    @given(original=st.binary(max_size=8193), replacement=st.binary(max_size=8193))
+    @example(original=ORIGINAL_FIXTURE, replacement=REPLACEMENT_FIXTURE)
+    @example(original=b"", replacement=REPLACEMENT_FIXTURE)
+    @example(original=ORIGINAL_FIXTURE, replacement=b"")
+    def test_registration_helpers_and_async_notification(self, original, replacement):
         with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "input"
-            path.write_bytes((Path(__file__).resolve().parent.parent / "testdata/inputs/registration-original.txt").read_bytes())
-            self.assertEqual(json.loads(run("reference-registration", path).stdout), {
+            first = Path(directory) / "original"
+            second = Path(directory) / "replacement"
+            first.write_bytes(original)
+            second.write_bytes(replacement)
+            before, after = original[:64], replacement[:64]
+            self.assertEqual(json.loads(run("reference-registration", first, second).stdout), {
                 "buffers": True, "files_updated": True, "async_notifications": 1,
                 "personality_result": 0, "probe_nop": True, "standalone_probe_nop": True,
+                "fixed_files": {
+                    "before": {"tag": 10, "slot": 1, "res": len(before), "flags": 0, "bytes": list(before)},
+                    "sparse": {"tag": 11, "slot": 0, "res": -9, "flags": 0, "bytes": []},
+                    "after_sync_update": {"tag": 12, "slot": 1, "res": len(after), "flags": 0, "bytes": list(after)},
+                    "replacement_fd_closed": True,
+                    "async_update": {"tag": 13, "res": 1, "flags": 0},
+                    "after_async_update": {"tag": 14, "slot": 1, "res": len(before), "flags": 0, "bytes": list(before)},
+                    "removed": {"tag": 15, "slot": 1, "res": -9, "flags": 0, "bytes": []},
+                    "unregistered": {"tag": 16, "slot": 1, "res": -9, "flags": 0, "bytes": []},
+                },
             })
-            replacement = Path(directory) / "replacement"
-            replacement.write_bytes((Path(__file__).resolve().parent.parent / "testdata/inputs/registration-replacement.txt").read_bytes())
-            rejected = run("reference-registration", path, replacement, success=False)
-            self.assertEqual(rejected.returncode, 1)
-            self.assertEqual(rejected.stderr.decode().splitlines()[0], "error: ExpectedInputFile")
+            self.assertEqual(first.read_bytes(), original)
+            self.assertEqual(second.read_bytes(), replacement)
+
+    def test_registration_rejects_missing_or_extra_inputs(self):
+        first = ROOT / "testdata/inputs/registration-original.txt"
+        second = ROOT / "testdata/inputs/registration-replacement.txt"
+        cases = {"none": (), "single": (first,), "extra": (first, second, "extra")}
+        for name, args in cases.items():
+            with self.subTest(case=name):
+                result = run("reference-registration", *args, success=False)
+                self.assertEqual(result.returncode, 1)
+                self.assertEqual(result.stdout, b"")
+                self.assertEqual(result.stderr.decode().splitlines()[0], "error: ExpectedTwoInputFiles")
 
     def test_every_preparation_has_the_expected_opcode_and_correlation_tag(self):
         expected = [

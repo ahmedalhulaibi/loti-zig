@@ -243,9 +243,9 @@
     {
       "original": "io_uring_prep_files_update",
       "zig": "sqe.prep_files_update",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Use get_sqe then the native SQE preparer; not synchronous register_files_update.",
+      "example": "examples/reference_registration.zig",
+      "verification_scope": "constructed and submitted separately; correlated updated-entry count and subsequent fixed-file bytes checked",
+      "semantic_difference": "Use get_sqe then the native SQE preparer; keep the descriptor array alive through its CQE. Distinct from synchronous register_files_update.",
       "declaration_source": "os/linux/io_uring_sqe.zig",
       "zig_signature": "pub fn prep_files_update(\n        sqe: *linux.io_uring_sqe,\n        fds: []const linux.fd_t,\n        offset: u32,\n    ) void"
     },

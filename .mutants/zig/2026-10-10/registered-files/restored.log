@@ -1,0 +1,7 @@
+test_registration_helpers_and_async_notification (tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification) ... ok
+test_registration_rejects_missing_or_extra_inputs (tests.test_reference.ReferenceContracts.test_registration_rejects_missing_or_extra_inputs) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.478s
+
+OK

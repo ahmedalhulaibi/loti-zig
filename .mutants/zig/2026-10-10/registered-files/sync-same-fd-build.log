@@ -1,0 +1,13 @@
+install
++- install reference-registration
+   +- compile exe reference-registration debug native 1 errors
+examples/reference_registration.zig:59:11: error: unused local constant
+    const replacement_files = [_]linux.fd_t{replacement.handle};
+          ^~~~~~~~~~~~~~~~~
+error: 1 compilation errors
+failed command: /home/ahmed/.local/share/mise/installs/zig/0.17.0/zig build-exe -Odebug -Mroot=examples/reference_registration.zig --cache-dir .zig-cache --global-cache-dir /home/ahmed/.cache/zig --build-root . --name reference-registration --zig-lib-dir /home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/ --listen=-
+
+Build Summary: 28/31 steps succeeded (1 failed)
+install transitive failure
++- install reference-registration transitive failure
+   +- compile exe reference-registration debug native 1 errors

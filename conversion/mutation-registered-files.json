@@ -1,0 +1,370 @@
+{
+  "scope": "Five compiled, bounded registered-file example mutations; not whole-port assessment or independent review. Two initially uncompilable variants remain explicitly not assessed.",
+  "source": "examples/reference_registration.zig",
+  "source_sha256": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
+  "mutants": [
+    {
+      "mutant": "sync-same-fd-initializer",
+      "compiled": true,
+      "source_sha256": "cad3ba4c82928bfa8140e330e012e97294083b4b2d75ab5fbbba726385c363c8",
+      "command": "LOTI_TEST_CASES=32 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/registered-files/sync-same-fd-initializer.log",
+      "fixture_observation": {
+        "exit_status": 0,
+        "report": {
+          "buffers": true,
+          "files_updated": true,
+          "fixed_files": {
+            "before": {
+              "tag": 10,
+              "slot": 1,
+              "res": 25,
+              "flags": 0,
+              "bytes": [
+                111,
+                114,
+                105,
+                103,
+                105,
+                110,
+                97,
+                108,
+                32,
+                114,
+                101,
+                103,
+                105,
+                115,
+                116,
+                101,
+                114,
+                101,
+                100,
+                32,
+                102,
+                105,
+                108,
+                101,
+                10
+              ]
+            },
+            "sparse": {
+              "tag": 11,
+              "slot": 0,
+              "res": -9,
+              "flags": 0,
+              "bytes": []
+            },
+            "after_sync_update": {
+              "tag": 12,
+              "slot": 1,
+              "res": 25,
+              "flags": 0,
+              "bytes": [
+                111,
+                114,
+                105,
+                103,
+                105,
+                110,
+                97,
+                108,
+                32,
+                114,
+                101,
+                103,
+                105,
+                115,
+                116,
+                101,
+                114,
+                101,
+                100,
+                32,
+                102,
+                105,
+                108,
+                101,
+                10
+              ]
+            },
+            "replacement_fd_closed": true,
+            "async_update": {
+              "tag": 13,
+              "res": 1,
+              "flags": 0
+            },
+            "after_async_update": {
+              "tag": 14,
+              "slot": 1,
+              "res": 25,
+              "flags": 0,
+              "bytes": [
+                111,
+                114,
+                105,
+                103,
+                105,
+                110,
+                97,
+                108,
+                32,
+                114,
+                101,
+                103,
+                105,
+                115,
+                116,
+                101,
+                114,
+                101,
+                100,
+                32,
+                102,
+                105,
+                108,
+                101,
+                10
+              ]
+            },
+            "removed": {
+              "tag": 15,
+              "slot": 1,
+              "res": -9,
+              "flags": 0,
+              "bytes": []
+            },
+            "unregistered": {
+              "tag": 16,
+              "slot": 1,
+              "res": -9,
+              "flags": 0,
+              "bytes": []
+            }
+          },
+          "async_notifications": 1,
+          "personality_result": 0,
+          "probe_nop": true,
+          "standalone_probe_nop": true
+        },
+        "error": null
+      }
+    },
+    {
+      "mutant": "async-wrong-slot",
+      "compiled": true,
+      "source_sha256": "9c1fc24ffd0e8fb6189786370ffbe651258a4eb5b902b89830207f8fbd463fc2",
+      "command": "LOTI_TEST_CASES=32 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/registered-files/async-wrong-slot.log",
+      "fixture_observation": {
+        "exit_status": 0,
+        "report": {
+          "buffers": true,
+          "files_updated": true,
+          "fixed_files": {
+            "before": {
+              "tag": 10,
+              "slot": 1,
+              "res": 25,
+              "flags": 0,
+              "bytes": [
+                111,
+                114,
+                105,
+                103,
+                105,
+                110,
+                97,
+                108,
+                32,
+                114,
+                101,
+                103,
+                105,
+                115,
+                116,
+                101,
+                114,
+                101,
+                100,
+                32,
+                102,
+                105,
+                108,
+                101,
+                10
+              ]
+            },
+            "sparse": {
+              "tag": 11,
+              "slot": 0,
+              "res": -9,
+              "flags": 0,
+              "bytes": []
+            },
+            "after_sync_update": {
+              "tag": 12,
+              "slot": 1,
+              "res": 28,
+              "flags": 0,
+              "bytes": [
+                114,
+                101,
+                112,
+                108,
+                97,
+                99,
+                101,
+                109,
+                101,
+                110,
+                116,
+                32,
+                114,
+                101,
+                103,
+                105,
+                115,
+                116,
+                101,
+                114,
+                101,
+                100,
+                32,
+                102,
+                105,
+                108,
+                101,
+                10
+              ]
+            },
+            "replacement_fd_closed": true,
+            "async_update": {
+              "tag": 13,
+              "res": 1,
+              "flags": 0
+            },
+            "after_async_update": {
+              "tag": 14,
+              "slot": 1,
+              "res": 28,
+              "flags": 0,
+              "bytes": [
+                114,
+                101,
+                112,
+                108,
+                97,
+                99,
+                101,
+                109,
+                101,
+                110,
+                116,
+                32,
+                114,
+                101,
+                103,
+                105,
+                115,
+                116,
+                101,
+                114,
+                101,
+                100,
+                32,
+                102,
+                105,
+                108,
+                101,
+                10
+              ]
+            },
+            "removed": {
+              "tag": 15,
+              "slot": 1,
+              "res": -9,
+              "flags": 0,
+              "bytes": []
+            },
+            "unregistered": {
+              "tag": 16,
+              "slot": 1,
+              "res": -9,
+              "flags": 0,
+              "bytes": []
+            }
+          },
+          "async_notifications": 1,
+          "personality_result": 0,
+          "probe_nop": true,
+          "standalone_probe_nop": true
+        },
+        "error": null
+      }
+    },
+    {
+      "mutant": "missing-fixed-file-flag",
+      "compiled": true,
+      "source_sha256": "98ef7ce50ff2674d6bc4aba2228b368039eb510d8b9329d6f6b50f28cb72b66a",
+      "command": "LOTI_TEST_CASES=32 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/registered-files/missing-fixed-file-flag.log",
+      "fixture_observation": {
+        "exit_status": 1,
+        "report": null,
+        "error": "error: OriginalFixedReadFailed"
+      }
+    },
+    {
+      "mutant": "application-close-guarded-off",
+      "compiled": true,
+      "source_sha256": "c8e7e4adc64a2fb98aacd10e2f6c5c24a8d02379bda5d542d4d718618b2d70ba",
+      "command": "LOTI_TEST_CASES=32 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/registered-files/application-close-guarded-off.log",
+      "fixture_observation": {
+        "exit_status": 1,
+        "report": null,
+        "error": "error: ReplacementDescriptorNotClosed"
+      }
+    },
+    {
+      "mutant": "removal-keeps-file",
+      "compiled": true,
+      "source_sha256": "7942ff840901800b903de60e64f9e8707ef0048a267cab6f687ffe5e588cea9e",
+      "command": "LOTI_TEST_CASES=32 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/registered-files/removal-keeps-file.log",
+      "fixture_observation": {
+        "exit_status": 1,
+        "report": null,
+        "error": "error: RemovedEntryReadDidNotFail"
+      }
+    }
+  ],
+  "uncompilable_attempts": [
+    {
+      "mutant": "sync-same-fd",
+      "compiled": false,
+      "outcome": "not_assessed",
+      "build_exit_status": 1
+    },
+    {
+      "mutant": "application-fd-left-open",
+      "compiled": false,
+      "outcome": "not_assessed",
+      "build_exit_status": 1
+    }
+  ],
+  "exact_source_restored": true,
+  "restored_test_exit_status": 0,
+  "log_normalization": "Trailing whitespace and final empty lines removed; substantive command output unchanged."
+}

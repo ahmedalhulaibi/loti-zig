@@ -52,7 +52,7 @@ evidence: `raw-mapping-verification.json`. Prefixes below are repository paths.
 | `ref-liburing/advanced_usage.rst:31` | `unregister_buffers`; application allocation remains owned | S/E; unregister after tutorial completions |
 | `ref-liburing/advanced_usage.rst:51` | `register_files([]const linux.fd_t)`; fixed SQE descriptor is table index | S/E; SQPOLL fixed-file reads/writes |
 | `ref-liburing/advanced_usage.rst:73` | `unregister_files` releases table references, not application ownership | S/E; completion-before-unregister discipline |
-| `ref-liburing/advanced_usage.rst:93` | `register_files_update(offset, fds)`; synchronous table update distinguished from SQE update | S; successful idempotent same-FD update executed; changed-descriptor use not yet verified |
+| `ref-liburing/advanced_usage.rst:93` | `register_files_update(offset, fds)`; synchronous table update distinguished from SQE update | S/E; slot 1 changes to a distinct FD, stays readable after application close, restores via async update, then rejects removal/unregistered reads; exact prefixes/CQEs checked |
 | `ref-liburing/advanced_usage.rst:115` | `register_eventfd`: counter notification, not request identity or I/O success | S/E; threaded tutorial notification plus actual read bytes |
 | `ref-liburing/advanced_usage.rst:135` | `register_eventfd_async`: omit inline completion notifications | E; IOSQE_ASYNC NOP forces an async notification; inline omission case open |
 | `ref-liburing/advanced_usage.rst:155` | `unregister_eventfd`; one attached counter per ring | S/E; detach called; later no-notification behaviour not separately checked |
@@ -127,9 +127,9 @@ Implicit includes/layout snippets are already in `implicit-literal-disposition.m
 
 - Some reference declarations have only constructor evidence. Their native text
   is translated, but stronger operand/effect/failure verification remains open.
-- File-table update currently replaces an entry with the same FD; that does not
-  prove subsequent fixed-file I/O uses a changed descriptor. Add a distinct-FD
-  boundary case. Probe flags need an independent complete oracle.
+- File-table replacement now has changed-FD fixed-read effects and asynchronous
+  restore/removal/unregistration checks. Concurrent updates, partial multi-entry
+  failure and complete probe-flag truth still need independent checks.
 - Delivered signals, mask restoration/interruption, populated nonblocking CQ
   paths and full-capacity errors need boundary checks. Ordinary successful ring
   teardown does not prove cleanup after every partial-construction failure.

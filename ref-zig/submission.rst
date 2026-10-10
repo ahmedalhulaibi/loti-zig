@@ -73,6 +73,8 @@ filesystem space operations. Filesystem support is operation-specific.
 the SQE and set its tag separately. This differs from synchronous
 ``ring.register_files_update``. Keep the supplied descriptor array alive through
 the CQE.
+The :ref:`registration reference <advanced_usage>` submits this request separately,
+checks its updated-entry count and then reads through the changed fixed-file slot.
 
 Zig 0.17.0 has no corresponding ring methods for ``openat2``, ``fadvise``,
 ``madvise`` or ``sync_file_range``. Repository ``raw_ops`` helpers encode actual

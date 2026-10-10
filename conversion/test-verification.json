@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 27,
+  "tests_run": 28,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -36,13 +36,31 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 86
+          "overrun": 89
         }
       },
       "stopped_because": "settings.max_examples=400"
     },
     {
       "test": "test_reference.ReferenceContracts.test_raw_sqe_bindings_execute_and_memory_advice_changes_memory",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    },
+    {
+      "test": "test_reference.ReferenceContracts.test_registration_helpers_and_async_notification",
       "phases": {
         "reuse-phase": {
           "valid": 0,
@@ -72,7 +90,7 @@
     "examples/readv.zig": "5e374ec56283d7f5994c83e3cb8fcd88f88b44a138fdf1c4bfab0316ad34c824",
     "examples/reference_completion.zig": "e71cf2ec2939af6838c9a541928a4617d3cff22a598bc775bb41bbb72332c966",
     "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
-    "examples/reference_registration.zig": "0e1ea84655116300a0519bb4c30758942d931c810a22bcbfde859977190e8f33",
+    "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
     "examples/reference_setup.zig": "08686998a5fe2df08d28a8567e793e5bc108e7a950a747859e179270d8ab574f",
     "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
     "examples/register_eventfd.zig": "3e59de2ec80f68917de35bb901729e37f0966acdb6295c4bf46dbc31d9e9bd6c",
@@ -89,9 +107,10 @@
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
     "tests/test_inventory.py": "89b2b5ea10a208810d264088b935cc66f9308336a858528dd5a399724661eec5",
     "tests/test_publication.py": "8f1268c139d3518f8c00e6d28993000cf0888fc63beae81eb8b38f481538df86",
-    "tests/test_reference.py": "41e49bffcb809a218c5718d2c1a8976a68a3e15bcb1644bce26b430687e62bd7",
+    "tests/test_reference.py": "d86e21a7057da63a487249e705bc2cc8096b034d83e150a95e0069e791da1b85",
     "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e",
-    "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9"
+    "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
+    "tools/reference_map.py": "541fbdbd857fa7f06c978caa262fcff590f5864d539187a7da4b028400cfbb24"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."
 }

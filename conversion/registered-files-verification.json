@@ -1,0 +1,185 @@
+{
+  "scope": "Author-executed sequential single-entry registered-file transitions and bounded fixed-read prefixes; not concurrent/multi-entry update semantics or independent review.",
+  "compiler": "0.17.0",
+  "kernel": "7.2.3-arch1-3",
+  "architecture": "x86_64",
+  "command": [
+    "zig-out/bin/reference-registration",
+    "testdata/inputs/registration-original.txt",
+    "testdata/inputs/registration-replacement.txt"
+  ],
+  "source_sha256": {
+    "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
+    "tests/test_reference.py": "d86e21a7057da63a487249e705bc2cc8096b034d83e150a95e0069e791da1b85",
+    "tools/reference_map.py": "541fbdbd857fa7f06c978caa262fcff590f5864d539187a7da4b028400cfbb24"
+  },
+  "input_sha256": {
+    "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
+    "testdata/inputs/registration-replacement.txt": "5f52cf151d72e08fb506215edf9498de680819fd2d5ed87c7daf59ca7765bcf0"
+  },
+  "inputs_unchanged": true,
+  "report": {
+    "buffers": true,
+    "files_updated": true,
+    "fixed_files": {
+      "before": {
+        "tag": 10,
+        "slot": 1,
+        "res": 25,
+        "flags": 0,
+        "bytes": [
+          111,
+          114,
+          105,
+          103,
+          105,
+          110,
+          97,
+          108,
+          32,
+          114,
+          101,
+          103,
+          105,
+          115,
+          116,
+          101,
+          114,
+          101,
+          100,
+          32,
+          102,
+          105,
+          108,
+          101,
+          10
+        ]
+      },
+      "sparse": {
+        "tag": 11,
+        "slot": 0,
+        "res": -9,
+        "flags": 0,
+        "bytes": []
+      },
+      "after_sync_update": {
+        "tag": 12,
+        "slot": 1,
+        "res": 28,
+        "flags": 0,
+        "bytes": [
+          114,
+          101,
+          112,
+          108,
+          97,
+          99,
+          101,
+          109,
+          101,
+          110,
+          116,
+          32,
+          114,
+          101,
+          103,
+          105,
+          115,
+          116,
+          101,
+          114,
+          101,
+          100,
+          32,
+          102,
+          105,
+          108,
+          101,
+          10
+        ]
+      },
+      "replacement_fd_closed": true,
+      "async_update": {
+        "tag": 13,
+        "res": 1,
+        "flags": 0
+      },
+      "after_async_update": {
+        "tag": 14,
+        "slot": 1,
+        "res": 25,
+        "flags": 0,
+        "bytes": [
+          111,
+          114,
+          105,
+          103,
+          105,
+          110,
+          97,
+          108,
+          32,
+          114,
+          101,
+          103,
+          105,
+          115,
+          116,
+          101,
+          114,
+          101,
+          100,
+          32,
+          102,
+          105,
+          108,
+          101,
+          10
+        ]
+      },
+      "removed": {
+        "tag": 15,
+        "slot": 1,
+        "res": -9,
+        "flags": 0,
+        "bytes": []
+      },
+      "unregistered": {
+        "tag": 16,
+        "slot": 1,
+        "res": -9,
+        "flags": 0,
+        "bytes": []
+      }
+    },
+    "async_notifications": 1,
+    "personality_result": 0,
+    "probe_nop": true,
+    "standalone_probe_nop": true
+  },
+  "property": {
+    "test": "test_reference.ReferenceContracts.test_registration_helpers_and_async_notification",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  },
+  "navigation_evidence": {
+    "fabric_transitive_calls": "tool unavailable in this session",
+    "zig_call_hierarchy": "prepareCallHierarchy unsupported by server; not proof of no callers",
+    "review_graph": "stale; not relied on",
+    "fallback": "Direct source bodies plus explicit CLI callers, README commands and RST literalinclude inspected."
+  },
+  "change_boundary": "One registered-file CLI teaching example across implementation, test, fixture and publication consumers; no shared-helper API changed."
+}
