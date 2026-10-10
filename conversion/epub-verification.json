@@ -1,7 +1,7 @@
 {
   "scope": "Publication structure and source fidelity; not semantic or independent review.",
   "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
-  "book_sha256": "8bb54b7bb485ab94db17a8d428988670ab3f7a4af0b2751104fb5602493c8dde",
+  "book_sha256": "d2810a71c818d6205dc45a98a632a12a5758e782d91981ff09fdaf6a404d8306",
   "original_chapters": 26,
   "edition_chapters": 27,
   "literal_blocks": 105,
