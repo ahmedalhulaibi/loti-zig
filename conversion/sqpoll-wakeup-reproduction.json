@@ -1,0 +1,21 @@
+{
+  "base_commit": "0b80f68c896648079b2744a9473784f211c0134b",
+  "scope": "SQPOLL bytes already execute; 50ms pause does not attest IORING_SQ_NEED_WAKEUP or real enter wakeup. Missing bounded observation mode, not native/kernel defect.",
+  "original_selectors": [
+    "tutorial/sq_poll.rst:8",
+    "tutorial/sq_poll.rst:20",
+    "tutorial/sq_poll.rst:180",
+    "tutorial/sq_poll.rst:212"
+  ],
+  "actual_cli": {
+    "arguments": [
+      "OWNED_OUTPUT",
+      "--observe"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "first_stderr": "error: ExpectedOutputPath",
+    "existing_output_preserved": true
+  },
+  "needed": "Bounded acquire-load observation of private-ring sleep/empty queue before three registered-file requests, genuine CQEs/file bytes and actual SQ_WAKEUP calls; default byte interface unchanged. Timing/syscall count alone not proof of flag state; no awake/no-enter, multi-producer, all-interleaving or physical durability claim."
+}
