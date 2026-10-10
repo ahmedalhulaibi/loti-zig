@@ -16,6 +16,18 @@ pub fn openat2(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, path: [*:0]const 
     return sqe;
 }
 
+pub const sync_wait_before: u32 = 1;
+pub const sync_write: u32 = 2;
+pub const sync_wait_after: u32 = 4;
+
+pub fn sync_file_range(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, offset: u64, length: u32, flags: u32) !*linux.io_uring_sqe {
+    const sqe = try ring.get_sqe();
+    sqe.prep_rw(.SYNC_FILE_RANGE, fd, 0, length, offset);
+    sqe.rw_flags = flags;
+    sqe.user_data = tag;
+    return sqe;
+}
+
 pub fn fadvise(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, offset: u64, length: u32, advice: u32) !*linux.io_uring_sqe {
     const sqe = try ring.get_sqe();
     sqe.prep_rw(.FADVISE, fd, 0, length, offset);

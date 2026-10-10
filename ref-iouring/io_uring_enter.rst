@@ -76,7 +76,7 @@ and complete constructor/raw-operation programs.
    * - EPOLL_CTL
      - ``ring.epoll_ctl``; modifies an epoll interest list
    * - SYNC_FILE_RANGE
-     - ``linux.IORING_OP.SYNC_FILE_RANGE``; descriptor, offset, length and range flags in an SQE; not durable fsync
+     - ``raw_ops.sync_file_range``; descriptor, offset, length and range flags; correlated CQEs, not durable fsync
    * - SENDMSG / RECVMSG
      - ``ring.sendmsg`` / ``recvmsg``; stable native message headers and nested storage
    * - SEND / RECV

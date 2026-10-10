@@ -78,6 +78,7 @@ pub fn main(init: std.process.Init) !void {
     cancel.flags |= linux.IOSQE_IO_LINK;
     try emit(out, cancel);
     try emit(out, try ring.link_timeout(32, &duration, 0));
-    if (ring.sq_ready() != 32) return error.PreparedRequestCountInvalid;
+    try emit(out, try raw.sync_file_range(&ring, 33, file.handle, 8192, 4096, raw.sync_wait_before | raw.sync_write | raw.sync_wait_after));
+    if (ring.sq_ready() != 33) return error.PreparedRequestCountInvalid;
     try stdout.interface.flush();
 }

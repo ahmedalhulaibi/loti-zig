@@ -115,7 +115,7 @@ def generate():
     stdlib = Path(match[1])
     sources = {path: (stdlib / path).read_text() for path in ["os/linux/IoUring.zig", "os/linux/io_uring_sqe.zig", "os/linux.zig"]}
     inventory = json.loads((ROOT / "conversion/source-inventory.json").read_text())
-    symbols = set(inventory["c_api_symbols"]) | set(TYPES) | {"io_uring_setup", "io_uring_enter", "io_ring_get_sqe", "io_uring_set_sqe_data"}
+    symbols = set(inventory["c_api_symbols"]) | set(TYPES) | {"io_uring_setup", "io_uring_enter", "io_ring_get_sqe", "io_uring_set_sqe_data", "IORING_OP_SYNC_FILE_RANGE"}
     entries = []
     for original in sorted(symbols):
         native_name = None
@@ -126,6 +126,10 @@ def generate():
             example = PREPARE if original not in {"io_uring", "io_uring_sq", "io_uring_cq", "io_uring_params", "io_sqring_offsets", "io_cqring_offsets"} else SETUP
             difference = "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
             scope = "compiled type usage; runtime ABI-size checks where applicable"
+        elif original == "IORING_OP_SYNC_FILE_RANGE":
+            target, native_source, native_name, example = "raw_ops.sync_file_range", "examples/raw_ops.zig", "sync_file_range", RAW
+            scope = "constructed and submitted; valid range and invalid flags/descriptor CQEs checked; not crash-durability evidence"
+            difference = "Original opcode reference, not an inventoried C helper declaration. Encodes fd/off/len/rw_flags; no metadata or disk-cache durability guarantee."
         elif original.startswith("io_uring_prep_"):
             method = original.removeprefix("io_uring_prep_")
             example = PREPARE

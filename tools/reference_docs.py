@@ -63,7 +63,7 @@ def generate():
     groups["submission"] = {
         entry["original"] for entry in signatures
         if entry["original"].startswith("io_uring_prep_")
-    } | {"io_uring_get_sqe", "io_uring_submit", "io_uring_submit_and_wait", "io_uring_sq_ready"}
+    } | {"io_uring_get_sqe", "io_uring_submit", "io_uring_submit_and_wait", "io_uring_sq_ready", "IORING_OP_SYNC_FILE_RANGE"}
     for group, originals in groups.items():
         selected = {entry["zig"]: entry for entry in signatures if entry["original"] in originals}
         covered = {entry["original"] for entry in signatures if entry["original"] in originals}

@@ -31,7 +31,7 @@ errors. Output: `_build/html/index.html` and
 `_build/epub/Lord-of-the-io_uring-Zig-0.17.0.epub`. The EPUB needs no Calibre,
 external fonts, JavaScript or DRM. Code reflows on small displays.
 
-Publication checks verify all 27 chapters in reading order/navigation, 104 literal
+Publication checks verify all 27 chapters in reading order/navigation, 105 literal
 blocks against Sphinx source, five byte-identical illustrations, licence and local
 links. Negative tests reject nine damaged-archive classes. These checks **do not**
 prove semantic completeness or satisfy independent review.
@@ -41,11 +41,16 @@ prove semantic completeness or satisfy independent review.
 This includes 16 unlabelled syscall C literals missed by the first scanner;
 `tests/test_inventory.py` cross-checks all implicit literals with Docutils and
 checks every captured line against the immutable source. `reference-map.json`
-maps 98 native bindings;
+maps 99 native bindings;
 `chapter-map.json` maps original/new paths. Line/block semantic disposition,
 broader failure/state checks, bounded source mutation verification and independent
 review remain open. See `conversion/audit.md` and `conversion/review-blocker.md`.
 The goal is not complete; final converted commits have not been pushed.
+
+Author notes cover 53/128 original blocks, not all lines. They identify missing
+original block-device input support in `cp`; current copy accepts regular files
+only. The raw mapper also excludes the older separate-mapping fallback. These
+limits are not hidden by compilation or publication checks.
 
 ## Run examples
 

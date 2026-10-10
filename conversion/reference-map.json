@@ -9,6 +9,15 @@
   },
   "entries": [
     {
+      "original": "IORING_OP_SYNC_FILE_RANGE",
+      "zig": "raw_ops.sync_file_range",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; valid range and invalid flags/descriptor CQEs checked; not crash-durability evidence",
+      "semantic_difference": "Original opcode reference, not an inventoried C helper declaration. Encodes fd/off/len/rw_flags; no metadata or disk-cache durability guarantee.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn sync_file_range(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, offset: u64, length: u32, flags: u32) !*linux.io_uring_sqe"
+    },
+    {
       "original": "__kernel_timespec",
       "zig": "std.os.linux.kernel_timespec",
       "example": "examples/reference_submission.zig",

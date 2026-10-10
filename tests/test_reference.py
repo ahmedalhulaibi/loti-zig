@@ -5,22 +5,30 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from tests.test_examples import run
+from hypothesis import example, given, settings, strategies as st
+
+from tests.test_examples import CASES, run
 
 
 class ReferenceContracts(unittest.TestCase):
-    def test_raw_sqe_bindings_execute_and_memory_advice_changes_memory(self):
+    @settings(max_examples=CASES, deadline=None)
+    @given(payload=st.binary(max_size=8193))
+    @example(payload=b"")
+    @example(payload=bytes(range(128)))
+    def test_raw_sqe_bindings_execute_and_memory_advice_changes_memory(self, payload):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "input"
-            payload = bytes(range(128))
             path.write_bytes(payload)
             header, separator, body = run("reference-raw", path).stdout.partition(b"\n")
             self.assertEqual(separator, b"\n")
             self.assertEqual(json.loads(header), {
                 "openat2": True, "fadvise_result": 0, "madvise_result": 0,
-                "memory_zeroed": True, "read_result": 64,
+                "memory_zeroed": True, "read_result": min(64, len(payload)),
+                "sync_range": {"offset": 0, "length": 4096, "flags": 7, "result": 0},
+                "sync_failures": [-22, -9],
             })
             self.assertEqual(body, payload[:64])
+            self.assertEqual(path.read_bytes(), payload)
 
     def test_mapping_sizes_dontfork_and_actual_raw_read(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -54,14 +62,15 @@ class ReferenceContracts(unittest.TestCase):
             "CONNECT", "RECV", "SEND", "RECVMSG", "SENDMSG", "EPOLL_CTL", "POLL_ADD",
             "POLL_REMOVE", "READ_FIXED", "WRITE_FIXED", "FILES_UPDATE", "PROVIDE_BUFFERS",
             "REMOVE_BUFFERS", "TIMEOUT", "TIMEOUT_REMOVE", "ASYNC_CANCEL", "LINK_TIMEOUT",
+            "SYNC_FILE_RANGE",
         ]
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "input"
             path.write_bytes(b"constructor reference\n")
             records = [json.loads(line) for line in run("reference-submission", path).stdout.splitlines()]
             self.assertEqual([row["operation"] for row in records], expected)
-            self.assertEqual([row["tag"] for row in records], list(range(1, 33)))
-            self.assertEqual([row["flags"] for row in records], [4] + [0] * 29 + [4, 0])
+            self.assertEqual([row["tag"] for row in records], list(range(1, 34)))
+            self.assertEqual([row["flags"] for row in records], [4] + [0] * 29 + [4, 0, 0])
             for row in records:
                 self.assertEqual(set(row), {"tag", "operation", "length", "flags", "buffer_index"})
             for index in [1, 2, 11, 12, 13, 16, 17, 23, 24]:
@@ -72,6 +81,10 @@ class ReferenceContracts(unittest.TestCase):
             self.assertEqual(records[25]["length"], 1)
             self.assertEqual(records[26]["buffer_index"], 1)
             self.assertEqual(records[27]["buffer_index"], 1)
+            self.assertEqual(records[32], {
+                "tag": 33, "operation": "SYNC_FILE_RANGE", "length": 4096,
+                "flags": 0, "buffer_index": 0,
+            })
 
 
 if __name__ == "__main__":

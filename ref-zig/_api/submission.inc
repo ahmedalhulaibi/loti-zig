@@ -18,6 +18,12 @@
 
    pub fn openat2(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, path: [*:0]const u8, how: *const OpenHow) !*linux.io_uring_sqe
 
+.. rubric:: raw_ops.sync_file_range
+
+.. code-block:: zig
+
+   pub fn sync_file_range(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, offset: u64, length: u32, flags: u32) !*linux.io_uring_sqe
+
 .. rubric:: sqe.prep_files_update
 
 .. code-block:: zig

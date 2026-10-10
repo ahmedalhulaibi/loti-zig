@@ -8,9 +8,9 @@ independent review or a disposition of all 3,618 lines/128 blocks.
 | Original block ID | Zig replacement | Contract/evidence scope |
 |---|---|---|
 | `ref-iouring/io_uring_enter.rst:11` | `examples/raw_cat.zig` imports `std.os.linux`; native declaration in `ref-iouring/_api/io_uring_enter.inc` | Foreign header removed; native syscall used by `RawRing.readv` |
-| `ref-iouring/io_uring_enter.rst:58` | Signal-mask explanation in `ref-iouring/io_uring_enter.rst`; `raw_ops.wait_with_timeout` in `examples/raw_ops.zig` | Ordinary mask and EXT_ARG layouts distinguished; helper compiled, only null-mask wait exercised |
-| `ref-iouring/io_uring_enter.rst:64` | Atomic-mask explanation in `ref-iouring/io_uring_enter.rst` | Separate set/wait/restore calls identified as racy, not recreated as recommended code; non-null mask and delivered-signal behaviour remain untested |
-| `ref-iouring/io_uring_enter.rst:76` | `ref-zig/_api/sqe.inc`, included by `ref-zig/sqe.rst` | Exact installed extern layout; `reference-setup` checks 64-byte ordinary stride; 32 constructors exercised separately |
+| `ref-iouring/io_uring_enter.rst:58` | Signal-mask explanation in `ref-iouring/io_uring_enter.rst`; `raw_ops.wait_with_timeout` in `examples/raw_ops.zig` | Ordinary mask and EXT_ARG layouts distinguished; a non-null empty mask is exercised by the expiring reference wait |
+| `ref-iouring/io_uring_enter.rst:64` | Atomic-mask explanation in `ref-iouring/io_uring_enter.rst` | Separate set/wait/restore calls identified as racy, not recreated as recommended code; delivered-signal/mask-restoration behaviour remains untested |
+| `ref-iouring/io_uring_enter.rst:76` | `ref-zig/_api/sqe.inc`, included by `ref-zig/sqe.rst` | Exact installed extern layout; `reference-setup` checks 64-byte ordinary stride; 33 constructors exercised separately |
 | `ref-iouring/io_uring_enter.rst:425` | `ref-zig/_api/cqe.inc`, included by `ref-zig/cqe.rst` | Exact installed extern layout; 16-byte stride checked; flags corrected from reserved to meaningful; copied/borrowed acknowledgement tested separately |
 | `ref-iouring/io_uring_register.rst:11` | Native declaration in `ref-iouring/_api/io_uring_register.inc`; `examples/raw_ops.zig` | Foreign header removed; probe and personality registrations execute through native syscall |
 | `ref-iouring/io_uring_setup.rst:11` | Native declaration in `ref-iouring/_api/io_uring_setup.inc`; `examples/raw_cat.zig` | Foreign header removed; setup succeeds before mapping; errno-encoded result checked |
@@ -26,12 +26,12 @@ independent review or a disposition of all 3,618 lines/128 blocks.
 
 Inventory regression history: `ca7b34e` records the bug (all 16 missing despite
 `--check` passing). The fix adds those blocks, seven implicit output literals
-and the HTTP directory-output block. Every implicit block is cross-checked by
+and the HTTP build/output block. Every implicit block is cross-checked by
 Docutils; each captured line is compared with the immutable source. An
 independent parser is not an independent **agent** review.
 
-Still open: all other line/block dispositions; non-null signal mask/interruption
-execution; queue-state/wraparound checks; bounded source mutation assessment;
-independent semantic review. The SYNC_FILE_RANGE opcode has native prose but no
-compiled constructor or operation-effect example; inspect this coverage gap in
-the complete operation audit. Do not use publication fidelity to close it.
+Still open: all other line/block dispositions; delivered-signal/interruption and
+mask-restoration execution; queue-state/wraparound checks; bounded source mutation
+assessment; independent semantic review. The SYNC_FILE_RANGE gap now has a native
+helper, constructor and actual success/invalid-flags/invalid-descriptor CQEs.
+Neither CQ success nor publication fidelity proves physical write-out/durability.

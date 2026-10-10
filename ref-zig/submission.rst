@@ -40,8 +40,17 @@ memory implicitly. See :ref:`fixed_buffers`.
 ``fsync`` uses zero flags for full file integrity or ``IORING_FSYNC_DATASYNC``
 for data-only sync. A write submitted before an fsync can still run concurrently
 with it. Wait for dependent writes or establish a link/drain dependency before
-claiming durability. ``sync_file_range`` is a distinct Linux opcode and is not a
-substitute for durable fsync semantics.
+claiming durability. ``raw_ops.sync_file_range`` prepares the distinct Linux
+``SYNC_FILE_RANGE`` opcode: descriptor, u64 offset, u32 length and range flags.
+Length zero selects the remainder of the file. Use ``raw_ops.sync_wait_before``,
+``sync_write`` and ``sync_wait_after`` for the three supported bits. They occupy
+SQE ``rw_flags``, not the SQE's u8 dependency flags.
+
+This range operation does not sync metadata or flush volatile disk caches; it
+is **not** a substitute for fsync or proof of crash durability. Flags zero are
+a permitted no-op. The reference uses all three bits (value 7), then separately
+executes invalid-flags and invalid-descriptor requests. Each failure arrives in
+its own correlated CQE, not as a constructor error. See :man:`sync_file_range(2)`.
 
 Files, paths and advice
 -----------------------
@@ -60,8 +69,9 @@ the SQE and set its tag separately. This differs from synchronous
 ``ring.register_files_update``. Keep the supplied descriptor array alive through
 the CQE.
 
-Zig 0.17.0 has no corresponding ring methods for ``openat2``, ``fadvise`` or
-``madvise``. Repository ``raw_ops`` helpers encode actual Linux SQEs. ``OpenHow``
+Zig 0.17.0 has no corresponding ring methods for ``openat2``, ``fadvise``,
+``madvise`` or ``sync_file_range``. Repository ``raw_ops`` helpers encode actual
+Linux SQEs. ``OpenHow``
 contains three u64 fields: flags, mode and resolution constraints. File advice
 specifies a descriptor/range/access pattern; memory advice specifies an address
 range/advice value and needs suitable page alignment where Linux requires it.
@@ -133,18 +143,20 @@ Runnable constructor reference
 
 .. literalinclude:: ../examples/reference_submission.zig
    :language: zig
-   :caption: 32 executed constructors; requests deliberately not submitted
+   :caption: 33 executed constructors; requests deliberately not submitted
 
 ``tests/test_reference.py`` verifies prepared opcode/tag/flags and selected
 length/group fields. The deliberately incompatible mixed descriptor operands
 above are **not submitted**. This tests API preparation, not all filesystem and
 network operation effects. Tutorial programs separately execute their actual
-operations. The raw reference submits the three missing-wrapper operations and
-checks an opened file's bytes and ``MADV_DONTNEED`` page zeroing:
+operations. The raw reference submits the four missing-wrapper operations and
+checks an opened file's exact prefix, unchanged input, ``MADV_DONTNEED`` page
+zeroing and range CQEs (success, ``-EINVAL``, ``-EBADF``). Its successful range
+result is not evidence of physical write-out or crash durability:
 
 .. literalinclude:: ../examples/reference_raw.zig
    :language: zig
-   :caption: Submitted OPENAT2, FADVISE and MADVISE requests
+   :caption: Submitted OPENAT2, FADVISE, MADVISE and SYNC_FILE_RANGE requests
 
 Shared native helper implementation:
 

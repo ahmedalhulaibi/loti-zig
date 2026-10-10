@@ -13,8 +13,8 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 |---|---|---|
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | Semantic disposition for each inventoried line/block |
-| 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/98 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 17 native CLI/TCP/reference tests | Broader failure paths, generated queue-state checks, bounded source mutation assessment, independent review |
+| 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
+| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 17 native CLI/TCP/reference tests; 37 tutorial-block dispositions | Restore original copy's block-device input support; inspect other declared conversion limits; broader failure paths/state checks, source mutation assessment, independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -30,7 +30,7 @@ tests, **not** the outstanding source-code mutation gate.
 The first scanner counted 3,447 lines/104 blocks but omitted implicit RST C
 literals. `ca7b34e` records the omission. The corrected inventory adds 171 lines
 and 24 blocks: 16 implicit C literals, seven implicit output literals and one
-explicit directory-output block. Existing source IDs/text and all 76 API
+explicit HTTP build/output block. Existing source IDs/text and all 76 API
 symbols remain. Current totals: 3,618 lines; 120 C blocks/declarations + eight
 output literals. The immutable upstream commit is unchanged.
 
@@ -42,6 +42,21 @@ Python files supported and clean. `implicit-literal-disposition.md` records
 these 16 conversions and their limits; other dispositions remain open. This
 parser check is not the blocked independent agent review.
 
+## Current semantic comparison
+
+`tutorial-block-disposition.md` compares all 37 low-level/tutorial blocks
+(29 C/eight build-output literals). With the 16 implicit-literal notes, **53/128**
+blocks have explicit author comparison notes; the remaining 75 reference blocks
+and complete line-level disposition remain open. These notes are not a green
+conversion attestation: they identify an actual missing original feature.
+
+The original copy program uses `BLKGETSIZE64` for block-device input. Native
+`cp` currently accepts only regular files. **This feature is not recreated.**
+Restore native support and verify it without destructive system-device tests.
+Raw mapping's old separate-mapping fallback is also excluded; its restriction is
+documented, not silently claimed as ported. Reader block-device execution,
+complete probe-flag oracle and forced short-I/O/state checks remain unverified.
+
 ## Native execution evidence
 
 - Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **22 passed**
@@ -52,6 +67,10 @@ parser check is not the blocked independent agent review.
   `reference-registration`, `reference-submission`, `reference-raw`.
 - Readers/copy: whole binary bytes, argument order, empty/boundary-size inputs,
   hard-link safety; two Hypothesis properties use 400 generated cases each.
+  A third property checks raw-operation prefix/input preservation and range CQEs
+  over arbitrary binary files. `test-verification.json` records **400 passing
+  generated cases for each of all three properties**, source hashes, 22 passing
+  tests and zero skips; this remains author-run evidence, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
 - HTTP: real loopback TCP; binary/empty bodies, MIME/length, queries/indexes,
@@ -61,8 +80,12 @@ parser check is not the blocked independent agent review.
   copy/consume versus separate manual acknowledgement; EXT_ARG wait expires and a
   submitted timer returns `-ETIME`. Async-only eventfd and credential NOP execute;
   both probe paths query the kernel.
-- `OPENAT2`, `FADVISE` and `MADVISE` are submitted; opened bytes and owned-page
-  zeroing are checked. The separate **32-constructor** mixed reference is never
+- `OPENAT2`, `FADVISE`, `MADVISE` and `SYNC_FILE_RANGE` are submitted; opened bytes
+  and owned-page zeroing are checked. Range flags 7 yield a successful CQE;
+  invalid flags 8 and descriptor -1 yield separate correlated `-EINVAL`/`-EBADF`
+  CQEs. SQE offset/length/range flags are checked against literal expected values.
+  This does not establish physical write-out or crash durability.
+  The separate **33-constructor** mixed reference is never
   submitted: its metadata checks are not filesystem/network operation evidence.
 - SDK signatures/hashes are retained. Compiler/runtime gates are authoritative;
   earlier clean LSP output missed an obsolete allocator method.
@@ -85,7 +108,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **104 current literal blocks** match Sphinx's source, independently of the
+- **105 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.

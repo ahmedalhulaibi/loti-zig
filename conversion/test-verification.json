@@ -1,0 +1,88 @@
+{
+  "scope": "Author-run native/publication/inventory suite; not independent review or complete conversion disposition.",
+  "tests_run": 22,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "property_statistics": [
+    {
+      "test": "test_examples.ExampleContracts.test_copy_preserves_bytes_across_buffer_boundaries",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    },
+    {
+      "test": "test_examples.ExampleContracts.test_readers_preserve_concatenated_bytes",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 96
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    },
+    {
+      "test": "test_reference.ReferenceContracts.test_raw_sqe_bindings_execute_and_memory_advice_changes_memory",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    }
+  ],
+  "source_sha256": {
+    "build.zig": "9885ee266f5d47ebbce93cbe8bfb3f73e38b1967d1623aad27a78339f66b4e1e",
+    "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
+    "examples/cp.zig": "4a10f5bd3d0740a33bdeea9d54bdded809a70820c901c8b51d6efa8bef4df5c8",
+    "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
+    "examples/link.zig": "bf09728b29ec21d439e97473e2daf57febe42550eed9b00274091fddf21a1f61",
+    "examples/probe.zig": "b62ddc468392a71419749807bfc21d6fc1570ad7c631e9be247f4ee01869737f",
+    "examples/raw_cat.zig": "307c21c59d7308774d1574f78445da51d7c7645cecb73a987152d0d2e7c3e01f",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/readv.zig": "5e374ec56283d7f5994c83e3cb8fcd88f88b44a138fdf1c4bfab0316ad34c824",
+    "examples/reference_completion.zig": "e71cf2ec2939af6838c9a541928a4617d3cff22a598bc775bb41bbb72332c966",
+    "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
+    "examples/reference_registration.zig": "0e1ea84655116300a0519bb4c30758942d931c810a22bcbfde859977190e8f33",
+    "examples/reference_setup.zig": "368891576e83a60a774290531f518b6fa3d0607cc77acfa17470658d2df48174",
+    "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
+    "examples/register_eventfd.zig": "3e59de2ec80f68917de35bb901729e37f0966acdb6295c4bf46dbc31d9e9bd6c",
+    "examples/sq_poll.zig": "3c7d2d3149ebbf3ebeb7a57ef438f424f8bfe7d7ab820f088b3b449bc64c80b1",
+    "examples/support.zig": "86b71670986b77da77240c6f8ed1e3934749af6c5ce71a8db8916d8ee3d82db8",
+    "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
+    "tests/test_examples.py": "be1e4fe27cd6098feca29d5d9c55daeb0f13fcb50437dd3ed63650f86b7af561",
+    "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
+    "tests/test_inventory.py": "89b2b5ea10a208810d264088b935cc66f9308336a858528dd5a399724661eec5",
+    "tests/test_publication.py": "8f1268c139d3518f8c00e6d28993000cf0888fc63beae81eb8b38f481538df86",
+    "tests/test_reference.py": "04c137bcb819ba57c53b183c039842d752c0b1f2e8cb7407c20651fa014f35eb"
+  }
+}
