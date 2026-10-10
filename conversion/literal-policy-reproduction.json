@@ -1,0 +1,39 @@
+{
+  "base_commit": "e3efc20d67edd1b4165a8aff22690e8b86ca9983",
+  "scope": "Actual publication verifier blind spots, not native/kernel defects. Locally generated owned doctrees/archive altered together; source fidelity stays equal but edition has C alias/old build command/C import or mismatched rendered label. No untrusted external pickle loaded.",
+  "cases": [
+    {
+      "case": "c_alias",
+      "language": "cpp",
+      "literal": "int main(void) { return 0; }",
+      "returncode": 0,
+      "stderr": "",
+      "accepted": true
+    },
+    {
+      "case": "legacy_command",
+      "language": "console",
+      "literal": "gcc cat.c -luring -o cat",
+      "returncode": 0,
+      "stderr": "",
+      "accepted": true
+    },
+    {
+      "case": "c_import",
+      "language": "zig",
+      "literal": "const c = @cImport({ @cInclude(\"liburing.h\"); });",
+      "returncode": 0,
+      "stderr": "",
+      "accepted": true
+    },
+    {
+      "case": "render_label",
+      "language": "cpp",
+      "literal": null,
+      "returncode": 0,
+      "stderr": "",
+      "accepted": true
+    }
+  ],
+  "missing": "Literal language allowlist, packaged/source language correspondence, representative stale compiler/liburing/import rejection. Not arbitrary semantic parsing or independent reviewer acceptance."
+}
