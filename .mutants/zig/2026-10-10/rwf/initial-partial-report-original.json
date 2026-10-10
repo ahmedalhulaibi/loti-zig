@@ -1,0 +1,96 @@
+{
+  "scope": "Nine compiled per-I/O append/offset/flags/bytes/ownership variants + four syntax-valid syscall parsers. Owned private memfd and read-only input; no external output, physical durability or all filesystems/races. Not whole-port/SDK/kernel assurance or independent review.",
+  "mutants": [
+    {
+      "id": "append-flag-omitted",
+      "source": "examples/reference_rwf.zig",
+      "mutation_sha256": "818ef6d57e0197aadc4515d2c14194590c4842cd9b9e97f69a42e4cfdf3218ef",
+      "compiled": true,
+      "test": "tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "status": "killed",
+      "build_log": ".mutants/zig/2026-10-10/rwf/append-flag-omitted-build.log",
+      "log": ".mutants/zig/2026-10-10/rwf/append-flag-omitted.log"
+    },
+    {
+      "id": "rwf-in-dependency-flags",
+      "source": "examples/reference_rwf.zig",
+      "mutation_sha256": "a9ed71ce15c3f6ae35ab54c01f61730a5741017dfae45b74c6cbf3618b6e5df3",
+      "compiled": true,
+      "test": "tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "status": "killed",
+      "build_log": ".mutants/zig/2026-10-10/rwf/rwf-in-dependency-flags-build.log",
+      "log": ".mutants/zig/2026-10-10/rwf/rwf-in-dependency-flags.log"
+    },
+    {
+      "id": "explicit-offset-is-current",
+      "source": "examples/reference_rwf.zig",
+      "mutation_sha256": "d45ae79b927b8a7755ea32f00caf45c05d1167cd274eac01e69bc17d10fc52eb",
+      "compiled": true,
+      "test": "tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "status": "killed",
+      "build_log": ".mutants/zig/2026-10-10/rwf/explicit-offset-is-current-build.log",
+      "log": ".mutants/zig/2026-10-10/rwf/explicit-offset-is-current.log"
+    },
+    {
+      "id": "append-sticks-to-next-request",
+      "source": "examples/reference_rwf.zig",
+      "mutation_sha256": "3f70d4ed8d382e95ea7246c750a37d6146df0f4224ab543c186ff98a67db3916",
+      "compiled": true,
+      "test": "tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "status": "killed",
+      "build_log": ".mutants/zig/2026-10-10/rwf/append-sticks-to-next-request-build.log",
+      "log": ".mutants/zig/2026-10-10/rwf/append-sticks-to-next-request.log"
+    },
+    {
+      "id": "current-offset-is-explicit",
+      "source": "examples/reference_rwf.zig",
+      "mutation_sha256": "f063144560d909e62ea060a731e23aeeade62889fdd983e315d0c90f892f79b3",
+      "compiled": true,
+      "test": "tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "status": "killed",
+      "build_log": ".mutants/zig/2026-10-10/rwf/current-offset-is-explicit-build.log",
+      "log": ".mutants/zig/2026-10-10/rwf/current-offset-is-explicit.log"
+    },
+    {
+      "id": "unsupported-flags-omitted",
+      "source": "examples/reference_rwf.zig",
+      "mutation_sha256": "62047fce8d431fdc8f220940593efaa98aad76832c691c18276d559cb189557b",
+      "compiled": true,
+      "test": "tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output",
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "status": "killed",
+      "build_log": ".mutants/zig/2026-10-10/rwf/unsupported-flags-omitted-build.log",
+      "log": ".mutants/zig/2026-10-10/rwf/unsupported-flags-omitted.log"
+    }
+  ],
+  "source_sha256": {
+    "examples/reference_rwf.zig": "103e568c2fc2486eb241038202d7bd772c1be509df2b56ff2bf910822db3709b",
+    "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e"
+  },
+  "exact_restoration": true,
+  "rebuilt_baseline": {
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "log": ".mutants/zig/2026-10-10/rwf/restored.log"
+  },
+  "containment": "Sequential systemd user scope MemoryMax4G/MemorySwapMax0/TasksMax128; baseline rebuilt after every native/source restoration, including before Python-only cases."
+}

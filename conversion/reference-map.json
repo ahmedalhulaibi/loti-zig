@@ -334,7 +334,7 @@
       "original": "io_uring_prep_read",
       "zig": "std.os.linux.IoUring.read",
       "example": "examples/cp.zig",
-      "verification_scope": "constructed and submitted; mutable scalar buffer fills before dependent copy writes, exact regular/block bytes and unchanged source; diagnostic invalid-FD READ restores process limits before typed error; not forced short READ or every race/failure",
+      "verification_scope": "constructed and submitted; mutable scalar buffer fills before dependent copy writes, exact regular/block bytes and unchanged source; diagnostic invalid-FD READ restores process limits before typed error; not forced short READ or every race/failure; additional examples/reference_rwf.zig checks unsupported READ flags/read poison and FD cleanup",
       "semantic_difference": "Acquires/prepares an SQE and stores the slot tag; completed count, not requested length, advances both the retained slice and u64 file offset. Regular scalar slices here; ReadBuffer.iovecs is separate.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn read(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: ReadBuffer,\n    offset: u64,\n) !*linux.io_uring_sqe"
@@ -442,7 +442,7 @@
       "original": "io_uring_prep_write",
       "zig": "std.os.linux.IoUring.write",
       "example": "examples/cp.zig",
-      "verification_scope": "constructed and submitted; exact regular/block copy bytes; controlled positive short scalar WRITE independently checks buffer/file-offset progress, slot retirement and process-limit restoration on success; single bounded regular slot, not forced vector writes, physical ENOSPC or multi-slot partial/race assurance",
+      "verification_scope": "constructed and submitted; exact regular/block copy bytes; controlled positive short scalar WRITE independently checks buffer/file-offset progress, slot retirement and process-limit restoration on success; single bounded regular slot, not forced vector writes, physical ENOSPC or multi-slot partial/race assurance; additional examples/reference_rwf.zig checks actual RWF_APPEND bytes/explicit-current cursors, ordinary overwrite/non-sticky O_APPEND, unsupported flags and FD cleanup on private memfd; not other RWF/filesystem/atomicity/durability/races",
       "semantic_difference": "Acquires/prepares an SQE and stores the slot tag; completed count, not requested length, advances both the retained slice and u64 file offset. Regular scalar slices here; ReadBuffer.iovecs is separate.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn write(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: []const u8,\n    offset: u64,\n) !*linux.io_uring_sqe"

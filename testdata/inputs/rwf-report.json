@@ -1,0 +1,163 @@
+{
+  "seed": {
+    "request": {
+      "operation": "WRITE",
+      "tag": 1,
+      "descriptor": "memory",
+      "length": 2,
+      "offset": 0,
+      "flags": 0,
+      "operation_flags": 0
+    },
+    "cqe": {
+      "user_data": 1,
+      "result": 2,
+      "flags": 0
+    },
+    "after": {
+      "position": 0,
+      "size": 2,
+      "bytes_hex": "a55a",
+      "append": false
+    }
+  },
+  "explicit_append": {
+    "request": {
+      "operation": "WRITE",
+      "tag": 2,
+      "descriptor": "memory",
+      "length": 5,
+      "offset": 0,
+      "flags": 0,
+      "operation_flags": 16
+    },
+    "cqe": {
+      "user_data": 2,
+      "result": 5,
+      "flags": 0
+    },
+    "after": {
+      "position": 1,
+      "size": 7,
+      "bytes_hex": "a55a00ff5a6967",
+      "append": false
+    }
+  },
+  "ordinary": {
+    "request": {
+      "operation": "WRITE",
+      "tag": 3,
+      "descriptor": "memory",
+      "length": 5,
+      "offset": 0,
+      "flags": 0,
+      "operation_flags": 0
+    },
+    "cqe": {
+      "user_data": 3,
+      "result": 5,
+      "flags": 0
+    },
+    "after": {
+      "position": 1,
+      "size": 7,
+      "bytes_hex": "00ff5a69676967",
+      "append": false
+    }
+  },
+  "current_append": {
+    "request": {
+      "operation": "WRITE",
+      "tag": 4,
+      "descriptor": "memory",
+      "length": 5,
+      "offset": 18446744073709551615,
+      "flags": 0,
+      "operation_flags": 16
+    },
+    "cqe": {
+      "user_data": 4,
+      "result": 5,
+      "flags": 0
+    },
+    "after": {
+      "position": 12,
+      "size": 12,
+      "bytes_hex": "00ff5a6967696700ff5a6967",
+      "append": false
+    }
+  },
+  "failures": [
+    {
+      "request": {
+        "operation": "WRITE",
+        "tag": 10,
+        "descriptor": "memory",
+        "length": 5,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 2147483648
+      },
+      "cqe": {
+        "user_data": 10,
+        "result": -95,
+        "flags": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "READ",
+        "tag": 11,
+        "descriptor": "memory",
+        "length": 9,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 2147483648
+      },
+      "cqe": {
+        "user_data": 11,
+        "result": -95,
+        "flags": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "WRITE",
+        "tag": 12,
+        "descriptor": "invalid",
+        "length": 5,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 16
+      },
+      "cqe": {
+        "user_data": 12,
+        "result": -9,
+        "flags": 0
+      }
+    }
+  ],
+  "failed_read_storage": [
+    165,
+    165,
+    165,
+    165,
+    165,
+    165,
+    165,
+    165,
+    165
+  ],
+  "after_failures": {
+    "position": 12,
+    "size": 12,
+    "bytes_hex": "00ff5a6967696700ff5a6967",
+    "append": false
+  },
+  "cleanup": {
+    "memory_cloexec": true,
+    "source_closed": true,
+    "memory_closed": true,
+    "ring_still_open": true
+  }
+}

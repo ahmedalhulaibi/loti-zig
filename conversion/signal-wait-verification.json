@@ -164,11 +164,11 @@
   },
   "fresh_process_executions": 25,
   "source_sha256": {
-    "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
+    "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
     "examples/reference_signals.zig": "a2cc003381be3903aecfa65d7c7e719e4c0c45817f1ff976dcb6fd3fa54e9382",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
-    "tests/test_publication.py": "13bac0577bb2d8227df29269bc75482acf10427105dc062792fb75476a7400fe",
+    "tests/test_publication.py": "a37fc9560a1725e0f8940555478abd2b0c09ab9a2ff6809f98f1885dcfb725e8",
     "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
     "testdata/inputs/signal-invalid-arguments.json": "6ef7a293b412e6da43cd05f57b81c26b34a6bde8631879e8dce77fce6018c55c"
   },
@@ -243,5 +243,13 @@
     ],
     "suite": "74 tests/zero failures/errors/skips; fourteen attributed properties x400 generated valid cases; ordinary2/default2, original CLI/reference/model/binding/VM/publication contracts replayed.",
     "scope": "Historical mutations retain tested-version scope, not retroactively reassessed. No independent reviewer acceptance."
+  },
+  "replay_after_rwf": {
+    "changed_source_consumers": [
+      "build.zig",
+      "tests/test_publication.py"
+    ],
+    "suite": "77 tests/zero failures/errors/skips; fifteen attributed properties x400 generated valid cases; per-I/O flags/native/model/CLI/VM/binding/publication contracts replayed.",
+    "scope": "Historical mutations retain tested-version scope, no retroactive reassessment/independent reviewer acceptance."
   }
 }

@@ -9,10 +9,10 @@
     "examples/reference_accept.zig": "65e864abebfd4f762906a9504614542da93da7e1aaadd383c31996ad8abf8dd4",
     "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
     "tests/test_accept_flags.py": "be6adee86c57e9b3046dd3139a55957c9285ce6c0fb180422c2fa37ba622a45f",
-    "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
-    "tools/reference_map.py": "4732c894e9f1f9065f945d032adf1a87728dd0ffc35cbb9d624c022e45cff643",
-    "ref-zig/submission.rst": "1507474161e9a727f0076d16cb122e40a02032cce47d28c33ff4ccce7243f5ce",
-    "conversion/reference-map.json": "e98c560a0020aefc41c19b530fc4cf5ec82afe9e0fc683236733e760db20155e",
+    "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
+    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
+    "ref-zig/submission.rst": "12a293b5bc15a32069283691713d726b7e9962786b18f668eba3e2aa8be65192",
+    "conversion/reference-map.json": "7293b7d485946ba967dd446a6cf37c0b7e991adf6ceb14d6a06ae93746ea409f",
     "conversion/accept.trace": "b2362e9935b3439679b6535e85a3832f1f0cac424ae6cc070843970822033db2",
     "conversion/accept-spec-sha256.json": "6d999cc73fee3ee0a523b5f7362629ee8a39f58127aceec07120e6a36624ff19",
     "conversion/accept-spec-initial-sha256.json": "30034c7f1083356ee166a4606076f1d06ba4b022182f42e702259e1b03ba4a74",
@@ -381,5 +381,15 @@
     ],
     "suite": "74 tests/zero failures/errors/skips; fourteen attributed properties x400 generated valid cases; ordinary2/default2, original CLI/reference/model/binding/VM/publication contracts replayed.",
     "scope": "Historical mutations retain tested-version scope, not retroactively reassessed. No independent reviewer acceptance."
+  },
+  "replay_after_rwf": {
+    "changed_source_consumers": [
+      "build.zig",
+      "tools/reference_map.py",
+      "ref-zig/submission.rst",
+      "conversion/reference-map.json"
+    ],
+    "suite": "77 tests/zero failures/errors/skips; fifteen attributed properties x400 generated valid cases; per-I/O flags/native/model/CLI/VM/binding/publication contracts replayed.",
+    "scope": "Historical mutations retain tested-version scope, no retroactive reassessment/independent reviewer acceptance."
   }
 }

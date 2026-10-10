@@ -4,7 +4,7 @@
 
 Native Zig adaptation of [Shuveb Hussain's guide](https://github.com/shuveb/loti).
 All 26 original documents have rewritten counterparts; `license.rst` adds the
-unchanged MIT licence. Ten tutorial and eight reference programs live here, using
+unchanged MIT licence. Tutorial and reference programs live here, using
 `std.os.linux.IoUring` and native syscalls without libc or an external ring library.
 Original attribution and illustrations remain.
 
@@ -47,7 +47,7 @@ virtio block support. The VM verifier accepts `--kernel` and `--busybox` paths;
 recorded lab: QEMU 11.1.1/Linux 7.2.3-arch1-3. All disks are generated files,
 attached read-only. No host storage device or root host operation is used.
 
-Publication checks verify all 27 chapters in reading order/navigation, 119 literal
+Publication checks verify all 27 chapters in reading order/navigation, 120 literal
 blocks against Sphinx source, five byte-identical illustrations, licence and local
 links. Negative tests reject nine damaged-archive classes. These checks **do not**
 prove semantic completeness or satisfy independent review.
@@ -103,6 +103,7 @@ zig-out/bin/reference-completion 0 1 3 8 1
 zig-out/bin/reference-signals
 zig-out/bin/reference-signals --ordinary
 zig-out/bin/reference-files input.txt new-output.bin
+zig-out/bin/reference-rwf input.bin
 zig-out/bin/reference-splice input.txt
 zig-out/bin/reference-poll
 zig-out/bin/reference-poll arm write wait drain arm cancel missing quiet
@@ -141,6 +142,12 @@ ownership. Nonempty regular input is read at offset zero into 64-byte slots.
 Model-based command tests verify flags/IDs, exhaustion, group isolation,
 recycling, actual removal counts and final cleanup. Selected groups contain one
 buffer each; EOF, concurrency, multishot and cancellation races remain open.
+
+`reference-rwf INPUT` uses a private memfd: actual RWF_APPEND bytes and explicit/
+current cursor behavior, ordinary overwrite proving flags are not sticky,
+unsupported READ/WRITE flags, unchanged read poison and queried FD ownership.
+Regular input is 1–4097 bytes; no external output, physical durability or other
+RWF/filesystem/concurrency assurance. Only installed SDK constants are named.
 
 `reference-files INPUT NEW_OUTPUT` submits actual OPENAT, READV/WRITEV,
 FALLOCATE, STATX, full/data-only FSYNC and CLOSE requests. It rejects existing

@@ -14,9 +14,9 @@
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
-    "build.zig": "793774f038632a335b69812c9e76d7cc676994342b351d077b9a82e82ca1ea33",
-    "tools/reference_map.py": "4732c894e9f1f9065f945d032adf1a87728dd0ffc35cbb9d624c022e45cff643",
-    "conversion/reference-map.json": "e98c560a0020aefc41c19b530fc4cf5ec82afe9e0fc683236733e760db20155e",
+    "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
+    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
+    "conversion/reference-map.json": "7293b7d485946ba967dd446a6cf37c0b7e991adf6ceb14d6a06ae93746ea409f",
     "ref-zig/completion.rst": "1e1a954707004567b6092f1d8cbf812600f34f25b2be9942e833df998cce0a3f",
     "ref-iouring/io_uring_enter.rst": "8f56f691c9d6812e9562651828d416c3a5bcaeeec998ae5f358625d77e6ccc43",
     "conversion/ordinary-signal.trace": "3116b1eefa5b3421b68df05367e0edf71b46475417d6bf52fee9018d42abe518",
@@ -195,5 +195,14 @@
     }
   },
   "review": "Mandatory supported independent host unchanged (nested npm package Oct7 predates Oct10 blocker); no retry/fallback/child report.",
-  "delivery": "Goal incomplete; no push; full semantic/state/failure acceptance and remote delivery remain required."
+  "delivery": "Goal incomplete; no push; full semantic/state/failure acceptance and remote delivery remain required.",
+  "replay_after_rwf": {
+    "changed_source_consumers": [
+      "build.zig",
+      "tools/reference_map.py",
+      "conversion/reference-map.json"
+    ],
+    "suite": "77 tests/zero failures/errors/skips; fifteen attributed properties x400 generated valid cases; per-I/O flags/native/model/CLI/VM/binding/publication contracts replayed.",
+    "scope": "Historical mutations retain tested-version scope, no retroactive reassessment/independent reviewer acceptance."
+  }
 }

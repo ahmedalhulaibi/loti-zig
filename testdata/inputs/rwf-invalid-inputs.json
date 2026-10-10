@@ -1,0 +1,57 @@
+[
+  {
+    "name": "no_args",
+    "arguments": [],
+    "error": "ExpectedRwfInput"
+  },
+  {
+    "name": "extra",
+    "arguments": [
+      "$valid",
+      "extra"
+    ],
+    "error": "ExpectedRwfInput"
+  },
+  {
+    "name": "empty",
+    "arguments": [
+      "$empty"
+    ],
+    "error": "RwfInputEmpty"
+  },
+  {
+    "name": "large",
+    "arguments": [
+      "$large"
+    ],
+    "error": "RwfInputTooLarge"
+  },
+  {
+    "name": "missing",
+    "arguments": [
+      "$missing"
+    ],
+    "error": "RwfInputOpenFailed"
+  },
+  {
+    "name": "symlink",
+    "arguments": [
+      "$symlink"
+    ],
+    "error": "RwfInputOpenFailed"
+  },
+  {
+    "name": "directory",
+    "arguments": [
+      "$directory"
+    ],
+    "error": "ExpectedRegularRwfInput"
+  },
+  {
+    "name": "character",
+    "arguments": [
+      "/dev/null"
+    ],
+    "error": "ExpectedRegularRwfInput"
+  }
+]

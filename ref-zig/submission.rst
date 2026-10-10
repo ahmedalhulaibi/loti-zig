@@ -62,6 +62,37 @@ a permitted no-op. The reference uses all three bits (value 7), then separately
 executes invalid-flags and invalid-descriptor requests. Each failure arrives in
 its own correlated CQE, not as a constructor error. See :man:`sync_file_range(2)`.
 
+Executed per-I/O append flags
+-----------------------------
+
+``zig-out/bin/reference-rwf INPUT`` accepts a stable regular file of 1–4097
+bytes and creates only a private CLOEXEC memfd. It writes a two-byte marker,
+then uses ``linux.RWF.APPEND`` with explicit offset zero. The payload goes to
+EOF, but the descriptor cursor stays at one. An ordinary zero-flag write next
+overwrites the prefix: APPEND did not become persistent ``O_APPEND``. A final
+APPEND with the all-ones current-position offset appends again and advances the
+cursor to the completed end. Positional reads and stat queries observe exact
+bytes, size and cursor after each CQE without changing the cursor.
+
+SQE metadata records ``rw_flags`` separately from the u8 dependency flags. Two
+unknown-bit READ/WRITE requests produce ``-EOPNOTSUPP``; an invalid-FD APPEND
+produces ``-EBADF``. Failures preserve memfd bytes/cursor and the failed-read
+poison buffer. Input stays unchanged. Memory/source descriptors close and are
+queried before exit; the caller ring remains open. No external output path.
+
+``tests/test_rwf.py`` compares whole reports with a generated binary/byte-cursor
+model and a separately pinned literal. Eight invalid input plans preserve files;
+an actual syscall oracle checks seven submissions, five non-append status
+queries, CLOEXEC/queried closure and no synchronous memfd-write substitute.
+Eight damaged traces must fail. This covers current sequential memfd APPEND,
+not regular-filesystem atomicity/durability, partial-write/race/cancellation or
+other RWF flags. Zig 0.17.0's ``linux.RWF`` namespace has HIPRI/DSYNC/SYNC/NOWAIT/
+APPEND, not the newer NOAPPEND/ATOMIC/DONTCACHE constants. Do not invent SDK names.
+
+.. literalinclude:: ../examples/reference_rwf.zig
+   :language: zig
+   :caption: Per-request APPEND bytes, explicit/current cursors and flag failures
+
 Files, paths and advice
 -----------------------
 

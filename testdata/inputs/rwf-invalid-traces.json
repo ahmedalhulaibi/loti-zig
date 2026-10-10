@@ -1,0 +1,58 @@
+[
+  {
+    "name": "missing submission",
+    "old": "io_uring_enter(5, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "",
+    "error": "IncompleteRwfSubmissionTrace",
+    "count": 1
+  },
+  {
+    "name": "synchronous write",
+    "old": "close(5) = 0",
+    "new": "pwrite64(4, \"X\", 1, 0) = 1\nclose(5) = 0",
+    "error": "SynchronousRwfWriteDetected",
+    "count": 1
+  },
+  {
+    "name": "no CLOEXEC creation",
+    "old": "MFD_CLOEXEC",
+    "new": "0",
+    "error": "InvalidRwfMemoryFileTrace",
+    "count": 1
+  },
+  {
+    "name": "missing status",
+    "old": "fcntl(4, F_GETFL) = 0x8002 (flags O_RDWR|O_LARGEFILE)\n",
+    "new": "",
+    "error": "IncompleteRwfStatusTrace",
+    "count": 1
+  },
+  {
+    "name": "sticky O_APPEND",
+    "old": "0x8002 (flags O_RDWR|O_LARGEFILE)",
+    "new": "0x8402 (flags O_RDWR|O_APPEND|O_LARGEFILE)",
+    "error": "StickyRwfAppendDetected",
+    "count": 1
+  },
+  {
+    "name": "close omitted",
+    "old": "close(4) = 0\n",
+    "new": "",
+    "error": "RwfCloseNotObservedBeforeQuery",
+    "count": 1
+  },
+  {
+    "name": "closed query omitted",
+    "old": "fcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\n",
+    "new": "",
+    "error": "IncompleteRwfOwnershipTrace",
+    "count": 1
+  },
+  {
+    "name": "ring CLOEXEC missing",
+    "old": "fcntl(5, F_GETFD) = 0x1 (flags FD_CLOEXEC)\n",
+    "new": "",
+    "error": "IncompleteRwfOwnershipTrace",
+    "count": 1
+  }
+]

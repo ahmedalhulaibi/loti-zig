@@ -1,0 +1,8 @@
+test_actual_async_memory_file_flags_and_ownership_and_damaged_traces (tests.test_rwf.RwfContracts.test_actual_async_memory_file_flags_and_ownership_and_damaged_traces) ... ok
+test_append_and_ordinary_writes_follow_per_request_byte_and_cursor_model (tests.test_rwf.RwfContracts.test_append_and_ordinary_writes_follow_per_request_byte_and_cursor_model) ... ok
+test_literal_and_invalid_inputs_preserve_source_and_create_no_output (tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 4.369s
+
+OK

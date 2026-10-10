@@ -60,7 +60,7 @@ constructor-only and unverified scopes remain in `reference-block-disposition.md
 | `ref-iouring/io_uring_enter.rst:253-317` | `ref-zig/submission.rst` | Connect, allocation/advice, open/close/statx and scalar I/O retain typed operands/lifetimes; SDK preparers avoid obsolete handwritten overlapping-field encodings |
 | `ref-iouring/io_uring_enter.rst:321-335` | `ref-zig/submission.rst` | Splice requires a pipe and value offsets, not pointers; asynchronous FILES_UPDATE borrows descriptor array until its CQE, unlike synchronous registration |
 | `ref-iouring/io_uring_enter.rst:346-379` | `ref-iouring/io_uring_enter.rst` | SQE flags: fixed index, drain, soft/hard links and forced async retained; independent chains stay independent; short-result cancellation and submission-failure caveat retained |
-| `ref-iouring/io_uring_enter.rst:392-414` | `ref-zig/sqe.rst` | Native operand-dependent storage, vector count versus bytes, fixed range/index, flags and personality. Submission chapter also restores linux.RWF/rw_flags guidance and fsync/data-only distinction |
+| `ref-iouring/io_uring_enter.rst:392-414` | `ref-zig/sqe.rst` | Native operand-dependent storage, vector count versus bytes, fixed range/index, flags and personality. Submission chapter also restores linux.RWF/rw_flags guidance, executed per-request APPEND bytes/cursors versus ordinary overwrite, unsupported flags/poison/FD cleanup and fsync/data-only distinction; other RWF/file atomicity/durability/races unverified |
 | `ref-iouring/io_uring_enter.rst:420-449` | `ref-iouring/io_uring_enter.rst` | Publication/lifetimes and raw submission return separated from correlated CQE results; modern CQE flags are meaningful, not reserved |
 | `ref-iouring/io_uring_enter.rst:476-538` | `ref-iouring/io_uring_enter.rst` | Errors and recovery: distinguish invalid ring syscall failure from request descriptor/range/opcode/flag CQE errors, resource-pressure retry and interrupted waits; obsolete blanket IOPOLL/fixed-buffer prohibitions not repeated |
 | `ref-iouring/io_uring_register.rst:1-27` | `ref-iouring/io_uring_register.rst` | Native ring/typed opcode/optional arg/opcode-specific count; long-lived references do not transfer application ownership |
@@ -133,8 +133,9 @@ reference sources. DONE markers are not reused as verification evidence.
 ## Findings and remaining acceptance gates
 
 - Restored missing per-I/O `linux.RWF` / `sqe.rw_flags` prose in submission.
-  This is distinct from SQE u8 dependency flags. SDK constants were inspected;
-  nonzero-RWF operation effects are not attested by this document.
+  This is distinct from SQE u8 dependency flags. RWF_APPEND now has private-memfd
+  bytes/cursor/non-sticky effects, unsupported READ/WRITE flags and poison/ownership
+  checks in reference-rwf; other RWF flags/filesystems/races remain unattested.
 - The catalog is fully accounted for, including helpers absent from original
   reference declarations. Constructor-only coverage is still constructor-only.
 - Sequential sparse/removal/replacement, closed application FD, async restore and

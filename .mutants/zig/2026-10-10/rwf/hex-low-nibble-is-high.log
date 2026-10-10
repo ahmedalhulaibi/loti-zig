@@ -1,0 +1,16 @@
+test_literal_and_invalid_inputs_preserve_source_and_create_no_output (tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output) ... FAIL
+
+======================================================================
+FAIL: test_literal_and_invalid_inputs_preserve_source_and_create_no_output (tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_rwf.py", line 120, in test_literal_and_invalid_inputs_preserve_source_and_create_no_output
+    self.assertEqual(json.loads(run("reference-rwf", source).stdout), literal)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'see[230 chars]': 'aa55', 'append': False}}, 'explicit_append[1729 chars]rue}} != {'see[230 chars]': 'a55a', 'append': False}}, 'explicit_append[1729 chars]rue}}
+Diff is 4853 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.017s
+
+FAILED (failures=1)

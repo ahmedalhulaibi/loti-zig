@@ -1,0 +1,265 @@
+{
+  "scope": "Actual private-memfd per-request RWF_APPEND bytes/explicit-current cursors, ordinary overwrite/non-sticky O_APPEND, unsupported READ/WRITE flags/-EOPNOTSUPP, invalid descriptor/-EBADF, retained failed-read poison and queried FD ownership. Stable nonempty1\u20134097 regular input. Not other RWF flags/filesystems/atomicity/durability, forced partial I/O/concurrency/cancellation/all failure unwinding, other kernels/architectures or independent verifier acceptance.",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64"
+  },
+  "command": [
+    "zig-out/bin/reference-rwf",
+    "testdata/inputs/rwf-input.bin"
+  ],
+  "source_sha256": {
+    "examples/reference_rwf.zig": "103e568c2fc2486eb241038202d7bd772c1be509df2b56ff2bf910822db3709b",
+    "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e",
+    "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
+    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
+    "conversion/reference-map.json": "7293b7d485946ba967dd446a6cf37c0b7e991adf6ceb14d6a06ae93746ea409f",
+    "ref-zig/submission.rst": "12a293b5bc15a32069283691713d726b7e9962786b18f668eba3e2aa8be65192",
+    "conversion/rwf.trace": "a9aff6312f7cb0a6fc2765852a3959257fb2f525cc1eb78ff4aa2119da039acf",
+    "conversion/rwf-spec-sha256.json": "1c12594eb638a544ccd831f95c666bac8b2c0fc6eae526a57ef08a6f32ccf64e",
+    "testdata/inputs/rwf-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/rwf-invalid-inputs.json": "c9f94cf2272f7e20e5c9777d491d8392c7b4f0475af8e26225261ef03ce91f48",
+    "testdata/inputs/rwf-invalid-traces.json": "6d1135c18744dec81a54f9a031de8fa50ed00c234dc27ac703db92239b12c888",
+    "testdata/inputs/rwf-report.json": "c93ffe5a6583ebdffdf2effd68510e92e79a8d1735f3153d4eb851d4f07cc1d0",
+    "testdata/inputs/rwf.trace": "2aa10df51c50bdf7c5b2ed1db38108ce45ff7dadcfa182c1e5657c9581bd0916"
+  },
+  "sdk_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/Io/File.zig": "46cebd746382c5fdb04613be4fd2c98533731c9385fb70425897cfcafc27ce9c"
+  },
+  "manual_sha256": {
+    "/home/ahmed/workspace/va/man-qmd/build/docs/linux-man-pages/man/man2/preadv2.2.txt": "92cd8b87fd783842958a7503ea61977cf90bf8bac758521ea9681d6094d655d5"
+  },
+  "actual_whole_report": {
+    "seed": {
+      "request": {
+        "operation": "WRITE",
+        "tag": 1,
+        "descriptor": "memory",
+        "length": 2,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 0
+      },
+      "cqe": {
+        "user_data": 1,
+        "result": 2,
+        "flags": 0
+      },
+      "after": {
+        "position": 0,
+        "size": 2,
+        "bytes_hex": "a55a",
+        "append": false
+      }
+    },
+    "explicit_append": {
+      "request": {
+        "operation": "WRITE",
+        "tag": 2,
+        "descriptor": "memory",
+        "length": 5,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 16
+      },
+      "cqe": {
+        "user_data": 2,
+        "result": 5,
+        "flags": 0
+      },
+      "after": {
+        "position": 1,
+        "size": 7,
+        "bytes_hex": "a55a00ff5a6967",
+        "append": false
+      }
+    },
+    "ordinary": {
+      "request": {
+        "operation": "WRITE",
+        "tag": 3,
+        "descriptor": "memory",
+        "length": 5,
+        "offset": 0,
+        "flags": 0,
+        "operation_flags": 0
+      },
+      "cqe": {
+        "user_data": 3,
+        "result": 5,
+        "flags": 0
+      },
+      "after": {
+        "position": 1,
+        "size": 7,
+        "bytes_hex": "00ff5a69676967",
+        "append": false
+      }
+    },
+    "current_append": {
+      "request": {
+        "operation": "WRITE",
+        "tag": 4,
+        "descriptor": "memory",
+        "length": 5,
+        "offset": 18446744073709551615,
+        "flags": 0,
+        "operation_flags": 16
+      },
+      "cqe": {
+        "user_data": 4,
+        "result": 5,
+        "flags": 0
+      },
+      "after": {
+        "position": 12,
+        "size": 12,
+        "bytes_hex": "00ff5a6967696700ff5a6967",
+        "append": false
+      }
+    },
+    "failures": [
+      {
+        "request": {
+          "operation": "WRITE",
+          "tag": 10,
+          "descriptor": "memory",
+          "length": 5,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 2147483648
+        },
+        "cqe": {
+          "user_data": 10,
+          "result": -95,
+          "flags": 0
+        }
+      },
+      {
+        "request": {
+          "operation": "READ",
+          "tag": 11,
+          "descriptor": "memory",
+          "length": 9,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 2147483648
+        },
+        "cqe": {
+          "user_data": 11,
+          "result": -95,
+          "flags": 0
+        }
+      },
+      {
+        "request": {
+          "operation": "WRITE",
+          "tag": 12,
+          "descriptor": "invalid",
+          "length": 5,
+          "offset": 0,
+          "flags": 0,
+          "operation_flags": 16
+        },
+        "cqe": {
+          "user_data": 12,
+          "result": -9,
+          "flags": 0
+        }
+      }
+    ],
+    "failed_read_storage": [
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165
+    ],
+    "after_failures": {
+      "position": 12,
+      "size": 12,
+      "bytes_hex": "00ff5a6967696700ff5a6967",
+      "append": false
+    },
+    "cleanup": {
+      "memory_cloexec": true,
+      "source_closed": true,
+      "memory_closed": true,
+      "ring_still_open": true
+    }
+  },
+  "actual_syscall_oracle": {
+    "memory_files": 1,
+    "rings": 1,
+    "submissions": 7,
+    "nonappend_status_queries": 5,
+    "queried_closures": 2,
+    "queried_cloexec": 2,
+    "synchronous_memory_writes": 0
+  },
+  "typed_invalid_inputs": 8,
+  "damaged_traces_rejected": 8,
+  "property": "tests.test_rwf.RwfContracts.test_append_and_ordinary_writes_follow_per_request_byte_and_cursor_model: 400 valid generated binaries plus explicit1/4097 boundaries, independent Python byte model and separate manual whole five-byte literal. No output file created/source unchanged.",
+  "spec": "Core author preimplementation hashes/fixtures byte-exact, not verifier-agent/ACL seal or independent acceptance.",
+  "mutation": "Nine compiled native/four syntax-valid syscall variants killed by substantive assertions; exact restoration and rebuilt three-test baseline, source rebuilt after every native variant/before Python-only variants. Fake close observations specifically killed by real pre-exit syscall oracle, not JSON/exit cleanup.",
+  "excluded": "Initial failed-read-poison array-multiplication variant did not compile on Zig0.17; build log/partial report retained, revised typed @splat compiled and all13 ids reassessed/unique kills once. Missing File.flags field in initial implementation fixed during development, not prior defect/mutation.",
+  "regression_provenance": "Literal/trace damages are deterministic explicit regressions, not shrunk failures.",
+  "diagnostics": {
+    "paths": 6,
+    "visible_primary": 0,
+    "auxiliary_infos": 2,
+    "suppressed": 3,
+    "scope": "Active restored-source probe, existing .opf packaging spelling findings remain false-positive/disclosed. Not unconditional clean; RST strict Sphinx checked."
+  },
+  "navigation": "Current cached graph has no new native node, stale graph/Fabric unavailable not caller proof. Explicit source/SDK/build/CLI/test/map/book consumers inspected.",
+  "gates": {
+    "zig": "0.17.0",
+    "build_steps": 51,
+    "executables": 25,
+    "tests": 77,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties_with_400_valid_generated_cases": 15,
+    "strict_html_epub": true,
+    "epubcheck": "5.2.1 zero fatal/error/warning/info",
+    "chapters": 27,
+    "literals": 120,
+    "browser_cases": 81,
+    "browser_elements": {
+      "pre": 360,
+      "table": 6,
+      "image": 15,
+      "heading": 333,
+      "figure": 0
+    }
+  },
+  "review": "Mandatory supported independent host blocked; no retry/fallback/child attestation.",
+  "delivery": "Goal remains incomplete, no push; independent semantic acceptance and final fork delivery open.",
+  "property_statistics": {
+    "test": "test_rwf.RwfContracts.test_append_and_ordinary_writes_follow_per_request_byte_and_cursor_model",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  }
+}

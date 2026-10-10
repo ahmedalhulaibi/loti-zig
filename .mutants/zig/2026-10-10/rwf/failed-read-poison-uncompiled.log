@@ -1,0 +1,13 @@
+install
++- install reference-rwf
+   +- compile exe reference-rwf debug native 1 errors
+examples/reference_rwf.zig:133:41: error: binary operator '*' has whitespace on one side, but not the other
+        .failed_read_storage = [_]u8{0} ** 9,
+                                        ^
+error: 1 compilation errors
+failed command: /home/ahmed/.local/share/mise/installs/zig/0.17.0/zig build-exe -Odebug -Mroot=examples/reference_rwf.zig --cache-dir .zig-cache --global-cache-dir /home/ahmed/.cache/zig --build-root . --name reference-rwf --zig-lib-dir /home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/ --listen=-
+
+Build Summary: 48/51 steps succeeded (1 failed)
+install transitive failure
++- install reference-rwf transitive failure
+   +- compile exe reference-rwf debug native 1 errors

@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 24 native executables; exact compiler gate; 49/49 build steps; 54 native CLI/TCP/reference tests plus ten binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 56 native CLI/TCP/reference tests plus eleven binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -783,8 +783,8 @@ architectures. If scheduling misses the intermediate timer-CQ plan, test fails;
 no passing skip, no global timing guarantee. Author runs are not independent
 verifier/ACL seal or semantic acceptance of every indexed original purpose.
 
-Current bounded total: **166** (126 native, three line-index, twenty-four trace-parser,
-seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+Ordinary-signal checkpoint bounded total: **166** (126 native, three line-index, twenty-four trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). Ordinary-signal checkpoint gates:
 Zig0.17.0/49 build steps; 74 tests/zero failures/errors/skips; fourteen attributed
 400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/119 literals,
 81 browser cases/357 code blocks/330 headings without violations. Diagnostics
@@ -792,17 +792,68 @@ disclosed, not unconditional clean; browser not device/pagination/font overrides
 Mandatory review host unchanged (installed nested package predates blocker), no
 retry/fallback/push. Semantic/state/failure acceptance and delivery remain open.
 
+## Nonzero per-I/O APPEND flags
+
+`rwf-reproduction.json` records unexecuted nonzero-RWF guidance, not a native/
+kernel defect. New `reference-rwf INPUT` accepts stable regular1–4097 bytes,
+creates only an owned CLOEXEC memfd, never an external output. Source validation
+precedes memfd/ring creation; final-component symlinks/nonregular/empty/oversize
+inputs rejected. A marker seeds memory. Explicit offset0 +RWF_APPEND appends
+payload while cursor1 stays unchanged. Next zero-flag positional write actually
+overwrites the prefix, proving per-request APPEND did not become O_APPEND.
+All-ones current-position APPEND appends again and advances to completed EOF.
+Positional reads/stat/CUR queries capture independent whole bytes/size/cursor
+snapshots without advancing position. Unsupported high-bit READ/WRITE return
+-EOPNOTSUPP; invalid-FD APPEND -EBADF. Failed-read poison and final bytes/cursor
+unchanged. Memory/source close then F_GETFD/-EBADF; caller ring remains open.
+
+Three core contracts: 400 generated binary cases plus explicit1/4097 examples,
+separate manually pinned five-byte whole literal/two fresh runs, eight typed
+input negatives preserving input/files/symlink. Actual trace requires seven
+submissions, private CLOEXEC creation, five non-O_APPEND GETFL observations,
+queried ownership, no synchronous memfd-write substitute; eight damages fail.
+Core author preimplementation snapshot/fixtures stayed exact, no ACL seal or
+independent verifier claim. Nine compiled native/four syntax-valid trace variants
+fail through assertions, zero accepted errors/skips. Fake close observations
+would preserve JSON; live trace rejects the missing real closes/queries before
+exit. Exact restoration and rebuilt three-test baseline. Sequential4GiB/no-swap
+scope; baseline rebuilt after every native variant and before Python variants.
+Initial array-multiplication mutant did not compile on0.17: excluded, retained
+log/partial report, replaced with typed @splat and all ids reassessed once.
+No shrinking claim; literal/damaged traces produce deterministic regressions.
+
+SDK File wrapper initially lacked its required flags field; corrected to actual
+source NONBLOCK/memfd blocking flags during development, not old defect/kill.
+Installed RWF namespace has only HIPRI/DSYNC/SYNC/NOWAIT/APPEND: newer NOAPPEND/
+ATOMIC/DONTCACHE SDK names are not invented. Those flags, other filesystems,
+append atomicity/concurrent writers, physical durability, forced partial I/O,
+cancellation/all unwinding/architectures/historical kernels remain unattested.
+One stale README eight-reference-program count was found and replaced with
+count-free prose; build target list is inspected/current, not semantic proof.
+See `rwf-{spec-sha256,verification}.json`, `mutation-rwf.json`, live trace/fixtures.
+Native source/SDK/build/CLI/test/map/book consumers inspected; stale graph/Fabric
+gaps are not complete-callgraph or independent semantic acceptance evidence.
+
+Current bounded total: **179** (135 native, three line-index, twenty-eight trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). Current gates:
+Zig0.17.0/51 build steps; 77 tests/zero failures/errors/skips; fifteen attributed
+400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/120 literals,
+81 browser cases/360 code blocks/333 headings without violations. Zero visible
+primary diagnostics, three suppressed/two existing OPF spelling infos disclosed,
+not unconditional clean. Browser not device/pagination/font overrides. Mandatory
+review remains blocked, no retry/fallback/push. Semantic acceptance/delivery open.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **49/49**. Current complete suite: **74 passed**
-  (54 native + one VM + four publication + three inventory + two line-index + ten binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **77 passed**
+  (56 native + one VM + four publication + three inventory + two line-index + eleven binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
-- Fourteen reference executables: `reference-setup`, `reference-completion`,
+- Fifteen reference executables: `reference-setup`, `reference-completion`,
   `reference-signals`, `reference-files`, `reference-buffers`, `reference-splice`,
   `reference-poll`, `reference-epoll`, `reference-connect`, `reference-registration`,
-  `reference-messages`, `reference-accept`, `reference-submission`, `reference-raw`.
+  `reference-messages`, `reference-accept`, `reference-rwf`, `reference-submission`, `reference-raw`.
 - Readers/copy: whole binary bytes, argument order, empty/boundary-size inputs,
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs;
@@ -810,7 +861,7 @@ retry/fallback/push. Semantic/state/failure acceptance and delivery remain open.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  fourteen properties**, source hashes, 74 passing tests and zero skips. These remain
+  fifteen properties**, source hashes, 77 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -850,7 +901,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **119 current literal blocks** match Sphinx's source, independently of the
+- **120 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.
@@ -867,7 +918,7 @@ git diff --check
 ## Next work
 
 1. Obtain semantic acceptance of the author line/block comparisons; inspect
-   operation/lifetime gaps, including nonzero RWF/restart/IOPOLL, queue state and forced socket/vector/short-read I/O.
+   operation/lifetime gaps, including other RWF/restart/IOPOLL, queue state and forced socket/vector/short-read I/O.
 2. Extend failure/state checks and execute bounded source mutation verification.
 3. Obtain independent review and resolve findings; do not substitute parent checks.
 4. Rebuild/audit final artifacts, push only the personal fork, verify remote state.

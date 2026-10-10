@@ -1,0 +1,16 @@
+test_actual_async_memory_file_flags_and_ownership_and_damaged_traces (tests.test_rwf.RwfContracts.test_actual_async_memory_file_flags_and_ownership_and_damaged_traces) ...
+  test_actual_async_memory_file_flags_and_ownership_and_damaged_traces (tests.test_rwf.RwfContracts.test_actual_async_memory_file_flags_and_ownership_and_damaged_traces) (case='sticky O_APPEND') ... FAIL
+
+======================================================================
+FAIL: test_actual_async_memory_file_flags_and_ownership_and_damaged_traces (tests.test_rwf.RwfContracts.test_actual_async_memory_file_flags_and_ownership_and_damaged_traces) (case='sticky O_APPEND')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_rwf.py", line 160, in test_actual_async_memory_file_flags_and_ownership_and_damaged_traces
+    with self.assertRaises(ValueError) as raised:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (failures=1)
