@@ -17,6 +17,23 @@ Parent compilation and execution checks remain useful, but are **not** an
 independent review. The document rewrite can continue; completion/publication
 audit must stay open.
 
+## Current retry
+
+- Time: `2026-10-10T04:34:18-04:00`.
+- Protocol: native async `reviewer`, fresh context, read-only; executable agent
+  capability listing completed before launch. No alternative execution mode.
+- Run: `6dd6e2d7-779a-47d9-8ac1-7289d252e283`.
+- Repo/cwd: `/home/ahmed/workspace/va/loti-zig`; branch `master`.
+- Base: `66cdcd4a5930724cdf7c308c87c4a3733e0defd8`; worktree clean before
+  launch and after failure. Scope: all native programs, full manuscript and
+  repaired immutable-source inventory.
+- Failure: “Background children require a supported standalone Pi host or the
+  installed npm package (@earendil-works/pi-coding-agent); neither is available.”
+- Exact-run status: “Async run not found.” No child started; expected artifact
+  `conversion/independent-review-66cdcd4.md` does not exist.
+- Result: independent review remains blocked. No findings, review attestation,
+  foreground/CLI fallback or goal-completion claim was produced.
+
 Next input: provide a supported Pi child host, or authorize another independent
-review mechanism. Then inspect the code milestone, resolve findings, and repeat
+review mechanism. Then inspect the current edition, resolve findings, and repeat
 the final verification gates.
