@@ -1,0 +1,19 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_literal_and_fixed_plans (tests.test_epoll.EpollContracts.test_literal_and_fixed_plans)
+Kills shared-model blindness, fake ctl success, optional-event misuse and exit-only cleanup. ... FAIL
+
+======================================================================
+FAIL: test_literal_and_fixed_plans (tests.test_epoll.EpollContracts.test_literal_and_fixed_plans)
+Kills shared-model blindness, fake ctl success, optional-event misuse and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_epoll.py", line 108, in test_literal_and_fixed_plans
+    self.assertEqual(json.loads(result.stdout), literal)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'fai[2808 chars]sk': 1, 'token': 72623859790382856, 'queued': [3279 chars]True} != {'fai[2808 chars]sk': 4, 'token': 18364758544493064720, 'queued[3339 chars]True}
+Diff is 15090 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.026s
+
+FAILED (failures=1)

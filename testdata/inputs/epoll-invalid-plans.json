@@ -1,0 +1,135 @@
+[
+  {
+    "name": "unknown",
+    "commands": [
+      "unknown"
+    ],
+    "error": "UnknownEpollCommand"
+  },
+  {
+    "name": "too_long",
+    "commands": [
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait"
+    ],
+    "error": "EpollPlanTooLong"
+  },
+  {
+    "name": "write_after_close",
+    "commands": [
+      "close",
+      "write"
+    ],
+    "error": "EpollCommandNeedsOpenPipe"
+  },
+  {
+    "name": "drain_empty",
+    "commands": [
+      "drain"
+    ],
+    "error": "EpollDrainNeedsData"
+  },
+  {
+    "name": "close_twice",
+    "commands": [
+      "close",
+      "close"
+    ],
+    "error": "EpollPipeAlreadyClosed"
+  },
+  {
+    "name": "add_after_close",
+    "commands": [
+      "close",
+      "add"
+    ],
+    "error": "EpollCommandNeedsOpenPipe"
+  },
+  {
+    "name": "modify_after_close",
+    "commands": [
+      "close",
+      "modify"
+    ],
+    "error": "EpollCommandNeedsOpenPipe"
+  },
+  {
+    "name": "delete_after_close",
+    "commands": [
+      "close",
+      "delete"
+    ],
+    "error": "EpollCommandNeedsOpenPipe"
+  },
+  {
+    "name": "drain_after_close",
+    "commands": [
+      "close",
+      "drain"
+    ],
+    "error": "EpollCommandNeedsOpenPipe"
+  }
+]

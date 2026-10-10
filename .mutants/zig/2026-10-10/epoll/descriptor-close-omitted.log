@@ -1,0 +1,26 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_literal_and_fixed_plans (tests.test_epoll.EpollContracts.test_literal_and_fixed_plans)
+Kills shared-model blindness, fake ctl success, optional-event misuse and exit-only cleanup. ... FAIL
+
+======================================================================
+FAIL: test_literal_and_fixed_plans (tests.test_epoll.EpollContracts.test_literal_and_fixed_plans)
+Kills shared-model blindness, fake ctl success, optional-event misuse and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_epoll.py", line 105, in test_literal_and_fixed_plans
+    result = run("reference-epoll", *commands)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-epoll exited 1: error: EpollDescriptorStillOpen
+/home/ahmed/workspace/va/loti-zig/examples/reference_epoll.zig:121:66: 0x1204d50 in close (reference_epoll.zig)
+    if (linux.errno(linux.fcntl(fd, linux.F.GETFD, 0)) != .BADF) return error.EpollDescriptorStillOpen;
+                                                                 ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_epoll.zig:154:28: 0x1207e77 in main (reference_epoll.zig)
+    const retired_closed = try close(retired, &retired_owned);
+                           ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.065s
+
+FAILED (failures=1)

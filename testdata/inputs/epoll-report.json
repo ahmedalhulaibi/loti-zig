@@ -1,0 +1,489 @@
+{
+  "failures": [
+    {
+      "request": {
+        "operation": "EPOLL_CTL",
+        "tag": 1000000,
+        "epoll_descriptor": "invalid",
+        "target_descriptor": "pipe",
+        "control_operation": 1,
+        "flags": 0,
+        "event": {
+          "mask": 1,
+          "token": 72623859790382856
+        }
+      },
+      "cqe": {
+        "tag": 1000000,
+        "result": -9,
+        "flags": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "EPOLL_CTL",
+        "tag": 1000001,
+        "epoll_descriptor": "epoll",
+        "target_descriptor": "retired",
+        "control_operation": 1,
+        "flags": 0,
+        "event": {
+          "mask": 1,
+          "token": 72623859790382856
+        }
+      },
+      "cqe": {
+        "tag": 1000001,
+        "result": -9,
+        "flags": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "EPOLL_CTL",
+        "tag": 1000002,
+        "epoll_descriptor": "pipe",
+        "target_descriptor": "pipe",
+        "control_operation": 1,
+        "flags": 0,
+        "event": {
+          "mask": 1,
+          "token": 72623859790382856
+        }
+      },
+      "cqe": {
+        "tag": 1000002,
+        "result": -22,
+        "flags": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "EPOLL_CTL",
+        "tag": 1000003,
+        "epoll_descriptor": "epoll",
+        "target_descriptor": "pipe",
+        "control_operation": 99,
+        "flags": 0,
+        "event": {
+          "mask": 1,
+          "token": 72623859790382856
+        }
+      },
+      "cqe": {
+        "tag": 1000003,
+        "result": -22,
+        "flags": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "EPOLL_CTL",
+        "tag": 1000004,
+        "epoll_descriptor": "epoll",
+        "target_descriptor": "epoll",
+        "control_operation": 1,
+        "flags": 0,
+        "event": {
+          "mask": 1,
+          "token": 72623859790382856
+        }
+      },
+      "cqe": {
+        "tag": 1000004,
+        "result": -22,
+        "flags": 0
+      }
+    },
+    {
+      "request": {
+        "operation": "EPOLL_CTL",
+        "tag": 1000005,
+        "epoll_descriptor": "epoll",
+        "target_descriptor": "pipe",
+        "control_operation": 1,
+        "flags": 0,
+        "event": null
+      },
+      "cqe": {
+        "tag": 1000005,
+        "result": -14,
+        "flags": 0
+      }
+    }
+  ],
+  "steps": [
+    {
+      "command": "add",
+      "tag": 1,
+      "before": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 0,
+        "closed": false
+      },
+      "after": {
+        "registered": true,
+        "mask": 1,
+        "token": 72623859790382856,
+        "queued": 0,
+        "closed": false
+      },
+      "control": {
+        "request": {
+          "operation": "EPOLL_CTL",
+          "tag": 1,
+          "epoll_descriptor": "epoll",
+          "target_descriptor": "pipe",
+          "control_operation": 1,
+          "flags": 0,
+          "event": {
+            "mask": 1,
+            "token": 72623859790382856
+          }
+        },
+        "cqe": {
+          "tag": 1,
+          "result": 0,
+          "flags": 0
+        }
+      },
+      "read": null,
+      "write": [],
+      "events": null
+    },
+    {
+      "command": "write",
+      "tag": 2,
+      "before": {
+        "registered": true,
+        "mask": 1,
+        "token": 72623859790382856,
+        "queued": 0,
+        "closed": false
+      },
+      "after": {
+        "registered": true,
+        "mask": 1,
+        "token": 72623859790382856,
+        "queued": 1,
+        "closed": false
+      },
+      "control": null,
+      "read": null,
+      "write": [
+        1
+      ],
+      "events": null
+    },
+    {
+      "command": "wait",
+      "tag": 3,
+      "before": {
+        "registered": true,
+        "mask": 1,
+        "token": 72623859790382856,
+        "queued": 1,
+        "closed": false
+      },
+      "after": {
+        "registered": true,
+        "mask": 1,
+        "token": 72623859790382856,
+        "queued": 1,
+        "closed": false
+      },
+      "control": null,
+      "read": null,
+      "write": [],
+      "events": [
+        {
+          "mask": 1,
+          "token": 72623859790382856
+        }
+      ]
+    },
+    {
+      "command": "modify",
+      "tag": 4,
+      "before": {
+        "registered": true,
+        "mask": 1,
+        "token": 72623859790382856,
+        "queued": 1,
+        "closed": false
+      },
+      "after": {
+        "registered": true,
+        "mask": 4,
+        "token": 18364758544493064720,
+        "queued": 1,
+        "closed": false
+      },
+      "control": {
+        "request": {
+          "operation": "EPOLL_CTL",
+          "tag": 4,
+          "epoll_descriptor": "epoll",
+          "target_descriptor": "pipe",
+          "control_operation": 3,
+          "flags": 0,
+          "event": {
+            "mask": 4,
+            "token": 18364758544493064720
+          }
+        },
+        "cqe": {
+          "tag": 4,
+          "result": 0,
+          "flags": 0
+        }
+      },
+      "read": null,
+      "write": [],
+      "events": null
+    },
+    {
+      "command": "wait",
+      "tag": 5,
+      "before": {
+        "registered": true,
+        "mask": 4,
+        "token": 18364758544493064720,
+        "queued": 1,
+        "closed": false
+      },
+      "after": {
+        "registered": true,
+        "mask": 4,
+        "token": 18364758544493064720,
+        "queued": 1,
+        "closed": false
+      },
+      "control": null,
+      "read": null,
+      "write": [],
+      "events": []
+    },
+    {
+      "command": "modify",
+      "tag": 6,
+      "before": {
+        "registered": true,
+        "mask": 4,
+        "token": 18364758544493064720,
+        "queued": 1,
+        "closed": false
+      },
+      "after": {
+        "registered": true,
+        "mask": 1,
+        "token": 18364758544493064720,
+        "queued": 1,
+        "closed": false
+      },
+      "control": {
+        "request": {
+          "operation": "EPOLL_CTL",
+          "tag": 6,
+          "epoll_descriptor": "epoll",
+          "target_descriptor": "pipe",
+          "control_operation": 3,
+          "flags": 0,
+          "event": {
+            "mask": 1,
+            "token": 18364758544493064720
+          }
+        },
+        "cqe": {
+          "tag": 6,
+          "result": 0,
+          "flags": 0
+        }
+      },
+      "read": null,
+      "write": [],
+      "events": null
+    },
+    {
+      "command": "wait",
+      "tag": 7,
+      "before": {
+        "registered": true,
+        "mask": 1,
+        "token": 18364758544493064720,
+        "queued": 1,
+        "closed": false
+      },
+      "after": {
+        "registered": true,
+        "mask": 1,
+        "token": 18364758544493064720,
+        "queued": 1,
+        "closed": false
+      },
+      "control": null,
+      "read": null,
+      "write": [],
+      "events": [
+        {
+          "mask": 1,
+          "token": 18364758544493064720
+        }
+      ]
+    },
+    {
+      "command": "delete",
+      "tag": 8,
+      "before": {
+        "registered": true,
+        "mask": 1,
+        "token": 18364758544493064720,
+        "queued": 1,
+        "closed": false
+      },
+      "after": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 1,
+        "closed": false
+      },
+      "control": {
+        "request": {
+          "operation": "EPOLL_CTL",
+          "tag": 8,
+          "epoll_descriptor": "epoll",
+          "target_descriptor": "pipe",
+          "control_operation": 2,
+          "flags": 0,
+          "event": null
+        },
+        "cqe": {
+          "tag": 8,
+          "result": 0,
+          "flags": 0
+        }
+      },
+      "read": null,
+      "write": [],
+      "events": null
+    },
+    {
+      "command": "wait",
+      "tag": 9,
+      "before": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 1,
+        "closed": false
+      },
+      "after": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 1,
+        "closed": false
+      },
+      "control": null,
+      "read": null,
+      "write": [],
+      "events": []
+    },
+    {
+      "command": "drain",
+      "tag": 10,
+      "before": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 1,
+        "closed": false
+      },
+      "after": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 0,
+        "closed": false
+      },
+      "control": null,
+      "read": {
+        "request": {
+          "operation": "READ",
+          "tag": 10,
+          "length": 1,
+          "offset": 18446744073709551615,
+          "flags": 0
+        },
+        "cqe": {
+          "tag": 10,
+          "result": 1,
+          "flags": 0
+        },
+        "data": [
+          1
+        ]
+      },
+      "write": [],
+      "events": null
+    },
+    {
+      "command": "close",
+      "tag": 11,
+      "before": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 0,
+        "closed": false
+      },
+      "after": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 0,
+        "closed": true
+      },
+      "control": null,
+      "read": null,
+      "write": [],
+      "events": null
+    },
+    {
+      "command": "wait",
+      "tag": 12,
+      "before": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 0,
+        "closed": true
+      },
+      "after": {
+        "registered": false,
+        "mask": 0,
+        "token": null,
+        "queued": 0,
+        "closed": true
+      },
+      "control": null,
+      "read": null,
+      "write": [],
+      "events": []
+    }
+  ],
+  "cleanup": {
+    "control": null,
+    "read": null,
+    "events": [],
+    "pipe_closed": [
+      true,
+      true
+    ],
+    "epoll_closed": true
+  },
+  "retired_descriptor_closed": true
+}

@@ -1,0 +1,17 @@
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+epoll_pwait(5, [{events=EPOLLIN, data=0x102030405060708}], 1, 0, NULL, 8) = 1
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+epoll_pwait(5, [], 1, 0, NULL, 8)       = 0
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+epoll_pwait(5, [{events=EPOLLIN, data=0xfedcba9876543210}], 1, 0, NULL, 8) = 1
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+epoll_pwait(5, [], 1, 0, NULL, 8)       = 0
+io_uring_enter(6, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+epoll_pwait(5, [], 1, 0, NULL, 8)       = 0
+epoll_pwait(5, [], 1, 0, NULL, 8)       = 0

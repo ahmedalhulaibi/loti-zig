@@ -1,0 +1,197 @@
+{
+  "scope": "Ten compiled native EPOLL_CTL teaching regressions plus two syntax-valid independent syscall-oracle variants; not whole-port/SDK, all descriptors/masks/flags, races or independent-review assurance.",
+  "source_sha256": {
+    "examples/reference_epoll.zig": "1aab395c92e951f58c5ebd8deba5c0704efae8e42bfbf447fd09f80f0cc42a3f",
+    "tests/test_epoll_trace.py": "59f8a49cd5ca6cf31372c18d39b338a0eef88cdf8219479fe4e3258fcdad59d9"
+  },
+  "mutants": [
+    {
+      "id": "add-is-modify",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "log": ".mutants/zig/2026-10-10/epoll/add-is-modify.log"
+    },
+    {
+      "id": "modify-is-add",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "log": ".mutants/zig/2026-10-10/epoll/modify-is-add.log"
+    },
+    {
+      "id": "delete-is-modify",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "log": ".mutants/zig/2026-10-10/epoll/delete-is-modify.log"
+    },
+    {
+      "id": "mask-change-omitted",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "log": ".mutants/zig/2026-10-10/epoll/mask-change-omitted.log"
+    },
+    {
+      "id": "opaque-token-truncated",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "log": ".mutants/zig/2026-10-10/epoll/opaque-token-truncated.log"
+    },
+    {
+      "id": "modify-event-omitted",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "log": ".mutants/zig/2026-10-10/epoll/modify-event-omitted.log"
+    },
+    {
+      "id": "read-is-nop",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "log": ".mutants/zig/2026-10-10/epoll/read-is-nop.log"
+    },
+    {
+      "id": "read-bytes-corrupted",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "log": ".mutants/zig/2026-10-10/epoll/read-bytes-corrupted.log"
+    },
+    {
+      "id": "readiness-from-self-state",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll_trace.EpollTraceContracts.test_actual_waits_async_controls_and_damaged_traces",
+      "log": ".mutants/zig/2026-10-10/epoll/readiness-from-self-state.log"
+    },
+    {
+      "id": "descriptor-close-omitted",
+      "source": "examples/reference_epoll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "log": ".mutants/zig/2026-10-10/epoll/descriptor-close-omitted.log"
+    },
+    {
+      "id": "readiness-sequence-ignored",
+      "source": "tests/test_epoll_trace.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll_trace.EpollTraceContracts.test_actual_waits_async_controls_and_damaged_traces",
+      "log": ".mutants/python/2026-10-10/epoll/readiness-sequence-ignored.log"
+    },
+    {
+      "id": "submission-count-ignored",
+      "source": "tests/test_epoll_trace.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_epoll_trace.EpollTraceContracts.test_actual_waits_async_controls_and_damaged_traces",
+      "log": ".mutants/python/2026-10-10/epoll/submission-count-ignored.log"
+    }
+  ],
+  "restored_byte_exactly": true,
+  "rebuilt_four_test_baseline_passed": true,
+  "spec_corrections": "conversion/epoll-spec-amendment.json: helper failure policy and strace hex rendering, no expected behavior/fixture change.",
+  "log_normalization": {
+    "scope": "Only trailing spaces/tabs/CR and terminal blank lines; substantive observations unchanged.",
+    "files": [
+      ".mutants/zig/2026-10-10/epoll/add-is-modify-build.log",
+      ".mutants/zig/2026-10-10/epoll/modify-is-add-build.log",
+      ".mutants/zig/2026-10-10/epoll/delete-is-modify-build.log",
+      ".mutants/zig/2026-10-10/epoll/mask-change-omitted-build.log",
+      ".mutants/zig/2026-10-10/epoll/opaque-token-truncated-build.log",
+      ".mutants/zig/2026-10-10/epoll/modify-event-omitted-build.log",
+      ".mutants/zig/2026-10-10/epoll/read-is-nop-build.log",
+      ".mutants/zig/2026-10-10/epoll/read-bytes-corrupted-build.log",
+      ".mutants/zig/2026-10-10/epoll/readiness-from-self-state-build.log",
+      ".mutants/zig/2026-10-10/epoll/descriptor-close-omitted-build.log",
+      ".mutants/python/2026-10-10/epoll/readiness-sequence-ignored-build.log",
+      ".mutants/python/2026-10-10/epoll/submission-count-ignored-build.log"
+    ]
+  }
+}

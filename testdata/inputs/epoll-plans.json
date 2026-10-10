@@ -1,0 +1,135 @@
+[
+  {
+    "name": "default",
+    "commands": []
+  },
+  {
+    "name": "registration_failures",
+    "commands": [
+      "add",
+      "add",
+      "delete",
+      "delete",
+      "modify",
+      "wait"
+    ]
+  },
+  {
+    "name": "mask_changes",
+    "commands": [
+      "add",
+      "write",
+      "wait",
+      "modify",
+      "wait",
+      "modify",
+      "wait",
+      "drain",
+      "wait"
+    ]
+  },
+  {
+    "name": "cleanup_pending",
+    "commands": [
+      "add",
+      "write",
+      "wait"
+    ]
+  },
+  {
+    "name": "closed_removal",
+    "commands": [
+      "add",
+      "write",
+      "close",
+      "wait"
+    ]
+  },
+  {
+    "name": "no_members",
+    "commands": [
+      "write",
+      "wait",
+      "drain",
+      "wait"
+    ]
+  },
+  {
+    "name": "maximum",
+    "commands": [
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait",
+      "wait"
+    ]
+  },
+  {
+    "name": "mask_empty",
+    "commands": [
+      "add",
+      "modify",
+      "wait",
+      "delete"
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+test_commands_follow_interest_list_and_fifo_model (tests.test_epoll.EpollContracts.test_commands_follow_interest_list_and_fifo_model)
+Kills wrong ADD/MOD/DEL state, mask/tag truncation, stale readiness, discarded/lost FIFO bytes. ... ok
+test_invalid_plans_are_typed (tests.test_epoll.EpollContracts.test_invalid_plans_are_typed)
+Kills late validation, FD-use-after-close, empty drains and unbounded command plans. ... ok
+test_literal_and_fixed_plans (tests.test_epoll.EpollContracts.test_literal_and_fixed_plans)
+Kills shared-model blindness, fake ctl success, optional-event misuse and exit-only cleanup. ... ok
+test_actual_waits_async_controls_and_damaged_traces (tests.test_epoll_trace.EpollTraceContracts.test_actual_waits_async_controls_and_damaged_traces)
+Kills fabricated readiness, synchronous ctl substitutions, truncated event tags and vacuous traces. ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.017s
+
+OK

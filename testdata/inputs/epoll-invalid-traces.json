@@ -1,0 +1,51 @@
+[
+  {
+    "name": "missing_wait",
+    "old": "epoll_pwait(5, [{events=EPOLLIN, data={u32=84281096, u64=72623859790382856}}], 1, 0, NULL, 8) = 1\n",
+    "new": "",
+    "count": 1,
+    "error": "WrongEpollReadinessSequence"
+  },
+  {
+    "name": "blocking_wait",
+    "old": ", 1, 0, NULL, 8)",
+    "new": ", 1, -1, NULL, 8)",
+    "count": 6,
+    "error": "InvalidEpollWaitArguments"
+  },
+  {
+    "name": "wrong_count",
+    "old": "epoll_pwait(5, [{events=EPOLLIN, data={u32=84281096, u64=72623859790382856}}], 1, 0, NULL, 8) = 1\n",
+    "new": "epoll_pwait(5, [{events=EPOLLIN, data={u32=84281096, u64=72623859790382856}}], 1, 0, NULL, 8) = 0\n",
+    "count": 1,
+    "error": "InvalidEpollWaitEvent"
+  },
+  {
+    "name": "truncated_token",
+    "old": "18364758544493064720",
+    "new": "1985229328",
+    "count": 1,
+    "error": "WrongEpollReadinessSequence"
+  },
+  {
+    "name": "wrong_low_union",
+    "old": "u32=84281096",
+    "new": "u32=0",
+    "count": 1,
+    "error": "InvalidEpollWaitEvent"
+  },
+  {
+    "name": "missing_submit",
+    "old": "io_uring_enter(7, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "",
+    "count": 1,
+    "error": "WrongEpollSubmissionCount"
+  },
+  {
+    "name": "synchronous_control",
+    "old": "io_uring_enter(7, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "epoll_ctl(5, EPOLL_CTL_ADD, 3, {events=EPOLLIN, data={u64=1}}) = 0\n",
+    "count": 1,
+    "error": "SynchronousEpollControlDetected"
+  }
+]

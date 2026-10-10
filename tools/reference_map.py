@@ -17,6 +17,7 @@ FILES = "examples/reference_files.zig"
 BUFFERS = "examples/reference_buffers.zig"
 SPLICE = "examples/reference_splice.zig"
 POLL = "examples/reference_poll.zig"
+EPOLL = "examples/reference_epoll.zig"
 RAW = "examples/reference_raw.zig"
 
 PREPARERS = {
@@ -180,6 +181,10 @@ def generate():
                     example = POLL
                     scope = "constructed and submitted; validated command-state model, one-shot IN/rearm, two cancellation CQEs, missing target/invalid FD, HUP/EOF and before-exit pipe closure; independent syscall oracle checks deadline guards; no readiness/cancel race or multishot assurance"
                     difference = "Native u32 mask encoded little-endian; default one-shot returns an event bitmask, not bytes. HUP can be reported without requesting it." if method == "poll_add" else "Target is the original u64 tag, not a foreign pointer; target and remover have distinct CQEs. Sequential pending cancellation returns -ECANCELED/0; absent targets return -ENOENT."
+                elif method == "epoll_ctl":
+                    example = EPOLL
+                    scope = "constructed and submitted; ADD/MOD/DEL outcomes, IN/OUT mask changes and opaque u64 data independently observed via epoll_wait; duplicate/missing and six negative CQEs, last-owned-FD removal/teardown checked; sequential level-triggered pipe only"
+                    difference = "Completion zero means interest-list mutation, not readiness; event storage stays alive through the CQE, then epoll stores its mask/data. DEL accepts null. SDK target-FD cast requires a nonnegative value; retired positive owned FD exercises EBADF."
         elif original in OTHER:
             native_name, example, difference = OTHER[original]
             native_source = "os/linux/IoUring.zig"

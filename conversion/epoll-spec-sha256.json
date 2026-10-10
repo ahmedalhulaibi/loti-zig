@@ -1,0 +1,14 @@
+{
+  "scope": "Author spec-first tests/fixtures snapshot, not independent agent verification or an ACL seal. No native implementation yet.",
+  "sha256": {
+    "tests/test_epoll.py": "7cd34b24d55ae810cb2cf678617f903adff2a40df35874b502bbb21cf4a9bf50",
+    "tests/test_epoll_trace.py": "00a0bc908b68af2e293a65d10aa3f655e974f9f5aa9e3a4b68aba7a7e53c74c2",
+    "testdata/inputs/epoll-default-plan.json": "e5e4841248106c640a837accaea4ab30ce9b03d493dc50fe926f8b41162f3720",
+    "testdata/inputs/epoll-invalid-plans.json": "756cf2ae47776dda177520170f1ce6ed159cf74f2944824f3dcca23171649bf3",
+    "testdata/inputs/epoll-invalid-traces.json": "f3850dcb3635ead4849ac1c6c78acae38c3889b669ee5f4df13d5ad9b5a3530f",
+    "testdata/inputs/epoll-literal-plan.json": "ff918d21051ee19e1a13f4445c19ce24eef858b6acffd50106aa85f442949d97",
+    "testdata/inputs/epoll-plans.json": "14e1535180dbea22339e7d63fb818c4dd1af7d78bcb3f273964e678f481d0f08",
+    "testdata/inputs/epoll-report.json": "d5cb3880e7628be09c73535d205f09ba62a72a1b3923ec34f85e7eea3ec9cea4",
+    "testdata/inputs/epoll.trace": "2c79ec3e225044ff949fb35bf83b71834910222f4a9ebe8089906b02afea691d"
+  }
+}

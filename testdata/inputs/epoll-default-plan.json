@@ -1,0 +1,23 @@
+[
+  "wait",
+  "add",
+  "add",
+  "write",
+  "wait",
+  "wait",
+  "modify",
+  "wait",
+  "modify",
+  "wait",
+  "delete",
+  "wait",
+  "delete",
+  "modify",
+  "add",
+  "wait",
+  "drain",
+  "wait",
+  "write",
+  "close",
+  "wait"
+]

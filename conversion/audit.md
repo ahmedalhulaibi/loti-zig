@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 20 native executables; exact compiler gate; 41/41 build steps; 39 native CLI/TCP/reference tests plus four binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 21 native executables; exact compiler gate; 43/43 build steps; 42 native CLI/TCP/reference tests plus five binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -485,22 +485,60 @@ syntax-valid trace-parser variants. One initial typed trace rejection was classi
 as a unittest error; assertion classification was made explicit before reassessment.
 Every stop restored/rebuilt the baseline. No compile failures are counted.
 
-Current bounded total: **88** (68 native, three line-index, four trace-parser,
+Poll checkpoint bounded total: **88** (68 native, three line-index, four trace-parser,
 seven historical binding-producer, three CSS, three layout-oracle). These do not
 attest all kernel operations, every mask/descriptor, readiness/cancel races,
 multishot/SQPOLL/concurrency or whole-port assurance. Mandatory independent review
 remains blocked; no launcher retry/fallback or push occurred.
 
-Current gates: Zig 0.17.0/41 build steps; 53 tests/zero skips; ten attributed
+Poll checkpoint gates: Zig 0.17.0/41 build steps; 53 tests/zero skips; ten attributed
 400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/114 literals and 81
 browser cases/342 code blocks/312 headings without violations. Source fingerprints
 refresh only after corresponding replay. Browser rendering is not device/pagination
 or font-override assurance. See `poll-verification.json` and `mutation-poll.json`.
 
+## Submitted epoll interest-list effects
+
+`epoll-reproduction.json` records constructor-only original line 544, not a
+kernel defect. `reference-epoll` now submits ADD/MOD/DEL, correlates distinct
+control CQEs, and observes actual readiness through native epoll_wait. MOD changes
+IN/OUT plus opaque u64 tokens while bytes remain unread; duplicate/missing
+operations fail without changing membership. Repeated IN waits show level readiness.
+READ drains exact FIFO bytes; closing the last owned read FD removes membership.
+Cleanup removes/drains remaining state and queries pipe/epoll/retired FD closure
+before exit. Six negative CQEs cover invalid FD/type/op/self/null-ADD storage.
+
+The SDK's target-FD @intCast cannot encode a negative value; a positive owned
+retired duplicate provides EBADF without reuse. This is not a production helper
+fix. Independent literal transitions/eight fixed plans/nine typed invalid plans
+and a 400-case state property check complete reports. A syscall oracle checks 11
+separate ring submissions, six actual nonblocking readiness calls/u64 tokens and
+no synchronous epoll_ctl substitution; seven damaged traces fail. Ten compiled
+native/two syntax-valid parser mutants are killed, without errors/skips or counted
+compile failures. Sources restored byte-exactly; rebuilt four-test baseline passed.
+
+The author pre-implementation snapshot is retained, not an ACL seal or independent
+agent proof. Two test-only corrections were required: success=False exposes
+expected CLI failures; strace 7.0 prints hexadecimal data instead of a decimal
+union. Expected behavior and all fixtures stayed exact; amendment pins both
+versions. One development anonymous/named request-type mismatch was fixed before
+green build; it is not a runtime mutant. Independent acceptance remains open.
+
+Current bounded total: **100** (78 native, three line-index, six trace-parser,
+seven historical binding-producer, three CSS, three layout-oracle). No whole-port,
+SDK, every descriptor/flag, ET/ONESHOT/EXCLUSIVE, duplicate-lifetime, race/concurrency
+or independent-review assurance. Current gates: Zig 0.17.0/43 build steps; 57 tests,
+zero skips; eleven attributed 400-case properties; strict publication/EPUBCheck;
+27 chapters/115 literals, 81 browser cases/345 code blocks/315 headings, no layout
+violations. Browser evidence is not device/pagination/font-override assurance.
+See `epoll-verification.json`, `epoll-spec-amendment.json`, `mutation-epoll.json`.
+Remaining message/CONNECT effects, other required state/failure semantics,
+mandatory blocked review and personal-fork delivery keep the goal incomplete.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **41/41**. Current complete suite: **53 passed**
-  (39 native + one VM + four publication + three inventory + two line-index + four binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **43/43**. Current complete suite: **57 passed**
+  (42 native + one VM + four publication + three inventory + two line-index + five binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -513,7 +551,7 @@ or font-override assurance. See `poll-verification.json` and `mutation-poll.json
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  ten properties**, source hashes, 53 passing tests and zero skips. These remain
+  eleven properties**, source hashes, 57 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

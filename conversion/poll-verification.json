@@ -7,14 +7,14 @@
     "strace": "strace -- version 7.0"
   },
   "source_sha256": {
-    "build.zig": "130adacd6bf6b9256b0eee82e76ee1d65980e77d829e59297b7f680b175555bc",
+    "build.zig": "99d7847a68511080071fe23e155ee4297ff93b3edeb5291e5b81a1b7b286ab03",
     "examples/reference_poll.zig": "5996d0502a155f8d7ed5c1d6f1e4db10233f16e6b1ee32d81de4e2a0b1e14a5d",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
-    "tools/reference_map.py": "4fba32d835a678fda7470c6ec743184ee385f1d451ca2608baed9bf1edf9cf81",
-    "conversion/reference-map.json": "01d33a1bb57a90e6751c1503aba45ddcd60418f77da70c51ab5cde4c539186ab",
-    "ref-zig/submission.rst": "f6fb92c737448c091ee0f00410b2402b4c1e2602a5071e2d8283e784af4aecc5",
+    "tools/reference_map.py": "d97a9793ca11c37501138ae42412c4bfe6ffb97592bd6c7e6594b54ba4dae2e5",
+    "conversion/reference-map.json": "603665c4c2fc566314407e0add5374253b5c3486ebd17482935275d01b2bbe52",
+    "ref-zig/submission.rst": "04a43057817a0e541633bf5950ee3442b84c5f184b4bbdcab80c04f6cccaf65c",
     "conversion/poll-spec-sha256.json": "25f95439286a15890ff0249e0ec14d6b9dd521ea3c8f9e35f37c4a07930817a7",
     "testdata/inputs/poll-deadline.trace": "276b53fa38940bab91a1663190ca5fcb009af25b4b6fcbe128b3f6879db87bec",
     "testdata/inputs/poll-invalid-plans.json": "b26c9eb8d121029785b8621ddecc5ff4458847fad765b2ed90679192c5d81e17",
@@ -304,5 +304,15 @@
     "reader_cases": 81,
     "epubcheck": "5.2.1: zero fatals/errors/warnings/infos"
   },
-  "remaining": "Independent host blocked; EPOLL_CTL/CONNECT/message effects, other required state/failure paths, semantic acceptance and personal-fork push remain open."
+  "remaining": "Independent host blocked; EPOLL_CTL/CONNECT/message effects, other required state/failure paths, semantic acceptance and personal-fork push remain open.",
+  "replay_after_epoll": {
+    "scope": "Relevant execution/binding consumers replayed in complete 57-test/eleven400-case suite before fingerprint refresh. Historical mutation pins unchanged; no new mutation or independent-review claim.",
+    "refreshed_paths": [
+      "build.zig",
+      "tools/reference_map.py",
+      "conversion/reference-map.json",
+      "ref-zig/submission.rst"
+    ],
+    "suite_receipt": "conversion/test-verification.json"
+  }
 }

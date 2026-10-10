@@ -1,0 +1,26 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_literal_and_fixed_plans (tests.test_epoll.EpollContracts.test_literal_and_fixed_plans)
+Kills shared-model blindness, fake ctl success, optional-event misuse and exit-only cleanup. ... FAIL
+
+======================================================================
+FAIL: test_literal_and_fixed_plans (tests.test_epoll.EpollContracts.test_literal_and_fixed_plans)
+Kills shared-model blindness, fake ctl success, optional-event misuse and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_epoll.py", line 105, in test_literal_and_fixed_plans
+    result = run("reference-epoll", *commands)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-epoll exited 1: error: EpollPipeReadIncomplete
+/home/ahmed/workspace/va/loti-zig/examples/reference_epoll.zig:114:30: 0x11eee3c in read (reference_epoll.zig)
+    if (cqe.result != count) return error.EpollPipeReadIncomplete;
+                             ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_epoll.zig:196:29: 0x11f1b6f in main (reference_epoll.zig)
+                step.read = try read(allocator, &ring, pipe[0], tag, queued);
+                            ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.063s
+
+FAILED (failures=1)

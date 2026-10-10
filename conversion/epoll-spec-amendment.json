@@ -1,0 +1,18 @@
+{
+  "scope": "Author correction of unsealed tests, not independent verification. Original pre-implementation snapshot retained unchanged; all input/golden/damaged fixtures remain byte-exact. Mandatory independent acceptance is open.",
+  "corrections": [
+    "Invalid-plan runner must use success=False to expose intentional exit 1; otherwise helper raises before contract assertions. Expected error names/exit/stdout values unchanged.",
+    "strace 7.0 renders epoll event data as hexadecimal u64, not decimal union. Accept both full renderings; expected numeric masks/tokens/wait sequence/submissions unchanged."
+  ],
+  "source_sha256": {
+    "tests/test_epoll.py": {
+      "original_sha256": "7cd34b24d55ae810cb2cf678617f903adff2a40df35874b502bbb21cf4a9bf50",
+      "current_sha256": "16c5648faf1b43d5ac969441c23fdf1f942798f6af1182942ed40916b35a97b5"
+    },
+    "tests/test_epoll_trace.py": {
+      "original_sha256": "00a0bc908b68af2e293a65d10aa3f655e974f9f5aa9e3a4b68aba7a7e53c74c2",
+      "current_sha256": "59f8a49cd5ca6cf31372c18d39b338a0eef88cdf8219479fe4e3258fcdad59d9"
+    }
+  },
+  "reproduction_log": "/tmp/loti-epoll-green-tests.log"
+}

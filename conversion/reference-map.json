@@ -216,9 +216,9 @@
     {
       "original": "io_uring_prep_epoll_ctl",
       "zig": "std.os.linux.IoUring.epoll_ctl",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/reference_epoll.zig",
+      "verification_scope": "constructed and submitted; ADD/MOD/DEL outcomes, IN/OUT mask changes and opaque u64 data independently observed via epoll_wait; duplicate/missing and six negative CQEs, last-owned-FD removal/teardown checked; sequential level-triggered pipe only",
+      "semantic_difference": "Completion zero means interest-list mutation, not readiness; event storage stays alive through the CQE, then epoll stores its mask/data. DEL accepts null. SDK target-FD cast requires a nonnegative value; retired positive owned FD exercises EBADF.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn epoll_ctl(\n    self: *IoUring,\n    user_data: u64,\n    epfd: linux.fd_t,\n    fd: linux.fd_t,\n    op: u32,\n    ev: ?*linux.epoll_event,\n) !*linux.io_uring_sqe"
     },

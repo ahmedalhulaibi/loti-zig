@@ -148,6 +148,46 @@ readiness for a descriptor/mask; submit again to observe later events.
 ``poll_remove`` identifies an outstanding poll by its submission tag. Removal
 and the target request have distinct completions; races can yield ``NOENT``.
 
+Executed epoll interest-list changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``reference-epoll`` uses one epoll instance and one owned nonblocking pipe.
+Optional commands are ``add modify delete write wait drain close``; the entire
+plan (at most 64 commands) is validated before setup. ADD monitors IN with an
+opaque 64-bit token. MOD switches IN/OUT and replaces that token; unread bytes
+stay in the pipe, but OUT does not report their readability. DEL uses a null
+event pointer. Duplicate ADD returns ``-EEXIST``; absent MOD/DEL return
+``-ENOENT``. Neither changes an existing registration after failure.
+
+An EPOLL_CTL CQE of zero means that the interest-list operation succeeded, not
+that a descriptor is ready. Native ``epoll_wait`` (zero timeout, maxevents one)
+observes actual readiness separately; io_uring READ drains the actual FIFO bytes.
+Repeated waits show level-triggered IN until the bytes are consumed. The event
+storage stays alive through the control CQE; the kernel then retains a copy of
+its mask/data, not a userspace pointer. Returned opaque tokens are not dereferenced.
+
+Six correlated failures cover invalid epoll/retired-target descriptors, wrong
+epoll descriptor type, invalid operation, self-monitoring and null ADD storage.
+The Zig 0.17.0 preparer casts the target FD with ``@intCast``: a negative target
+would trap. The example retires an owned positive duplicate after ring setup to
+obtain a stable invalid target without descriptor reuse. The epoll FD itself can
+be negative for its failure case.
+
+``close`` closes the monitored read end; with no duplicates left, the kernel
+removes its interest entry. Closing one duplicate does not guarantee removal;
+see :man:`epoll(7)`. Remaining entries/bytes are removed/drained during cleanup.
+Pipe and epoll closure are checked before exit. An independent syscall trace
+checks actual readiness calls and separate ring submissions, and rejects a
+synchronous epoll_ctl substitution or fabricated observation.
+
+Scope: sequential, ordinary level-triggered pipe IN/OUT, numeric mask/data,
+ADD/MOD/DEL and bounded errors. ET, ONESHOT, EXCLUSIVE, duplicate-FD lifetimes,
+concurrent consumers, races and other descriptor types are not verified.
+
+.. literalinclude:: ../examples/reference_epoll.zig
+   :language: zig
+   :caption: Submitted epoll control and independent readiness observations
+
 Executed poll ownership
 ~~~~~~~~~~~~~~~~~~~~~~~
 

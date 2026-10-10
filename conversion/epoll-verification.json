@@ -1,0 +1,729 @@
+{
+  "scope": "Sequential level-triggered IN/OUT interest-list effects on an owned nonblocking pipe. Not all descriptor types/flags, ET/ONESHOT/EXCLUSIVE, duplicated lifetimes, concurrency/races, historical kernels/other architectures, whole-port/SDK or independent-review assurance.",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64",
+    "strace": "strace -- version 7.0"
+  },
+  "source_sha256": {
+    "build.zig": "99d7847a68511080071fe23e155ee4297ff93b3edeb5291e5b81a1b7b286ab03",
+    "examples/reference_epoll.zig": "1aab395c92e951f58c5ebd8deba5c0704efae8e42bfbf447fd09f80f0cc42a3f",
+    "tests/test_epoll.py": "16c5648faf1b43d5ac969441c23fdf1f942798f6af1182942ed40916b35a97b5",
+    "tests/test_epoll_trace.py": "59f8a49cd5ca6cf31372c18d39b338a0eef88cdf8219479fe4e3258fcdad59d9",
+    "tools/reference_map.py": "d97a9793ca11c37501138ae42412c4bfe6ffb97592bd6c7e6594b54ba4dae2e5",
+    "conversion/reference-map.json": "603665c4c2fc566314407e0add5374253b5c3486ebd17482935275d01b2bbe52",
+    "ref-zig/submission.rst": "04a43057817a0e541633bf5950ee3442b84c5f184b4bbdcab80c04f6cccaf65c",
+    "conversion/epoll-spec-sha256.json": "bea2067df042453e93da52729f0356333cd71a711dafb7c8f4c7e624ae3f4200",
+    "conversion/epoll-spec-amendment.json": "79d3043c93fe153eecd8d2a8b67f97f71a047407f1f20a3c855f301cfc1055d1",
+    "testdata/inputs/epoll-default-plan.json": "e5e4841248106c640a837accaea4ab30ce9b03d493dc50fe926f8b41162f3720",
+    "testdata/inputs/epoll-invalid-plans.json": "756cf2ae47776dda177520170f1ce6ed159cf74f2944824f3dcca23171649bf3",
+    "testdata/inputs/epoll-invalid-traces.json": "f3850dcb3635ead4849ac1c6c78acae38c3889b669ee5f4df13d5ad9b5a3530f",
+    "testdata/inputs/epoll-literal-plan.json": "ff918d21051ee19e1a13f4445c19ce24eef858b6acffd50106aa85f442949d97",
+    "testdata/inputs/epoll-plans.json": "14e1535180dbea22339e7d63fb818c4dd1af7d78bcb3f273964e678f481d0f08",
+    "testdata/inputs/epoll-report.json": "d5cb3880e7628be09c73535d205f09ba62a72a1b3923ec34f85e7eea3ec9cea4",
+    "testdata/inputs/epoll.trace": "2c79ec3e225044ff949fb35bf83b71834910222f4a9ebe8089906b02afea691d"
+  },
+  "sdk_sha256": {
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "reference_sources": [
+    {
+      "path": "/home/ahmed/workspace/va/man-qmd/build/docs/linux-man-pages/man/man2/epoll_ctl.2.txt",
+      "headings": [
+        "DESCRIPTION",
+        "ERRORS",
+        "BUGS"
+      ]
+    },
+    {
+      "path": "/home/ahmed/workspace/va/man-qmd/build/docs/linux-man-pages/man/man7/epoll.7.txt",
+      "heading": "Questions and answers: closing descriptors removes interest only after all corresponding descriptions are closed"
+    },
+    {
+      "path": "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_enter.2.txt",
+      "heading": "IORING_OP_EPOLL_CTL"
+    }
+  ],
+  "valid_plans": [
+    {
+      "plan": "default",
+      "commands": 21,
+      "whole_model_match": true,
+      "report_sha256": "3693655a81ab468a6fbb358e587b033ecef934f2707712331685b7288f7eb706",
+      "control_results": [
+        0,
+        -17,
+        0,
+        0,
+        0,
+        -2,
+        -2,
+        0
+      ],
+      "readiness": [
+        [
+          1,
+          []
+        ],
+        [
+          5,
+          [
+            {
+              "mask": 1,
+              "token": 72623859790382856
+            }
+          ]
+        ],
+        [
+          6,
+          [
+            {
+              "mask": 1,
+              "token": 72623859790382856
+            }
+          ]
+        ],
+        [
+          8,
+          []
+        ],
+        [
+          10,
+          [
+            {
+              "mask": 1,
+              "token": 18364758544493064720
+            }
+          ]
+        ],
+        [
+          12,
+          []
+        ],
+        [
+          16,
+          [
+            {
+              "mask": 1,
+              "token": 72623859790382856
+            }
+          ]
+        ],
+        [
+          18,
+          []
+        ],
+        [
+          21,
+          []
+        ]
+      ],
+      "cleanup": {
+        "control": null,
+        "read": null,
+        "events": [],
+        "pipe_closed": [
+          true,
+          true
+        ],
+        "epoll_closed": true
+      },
+      "retired_closed": true
+    },
+    {
+      "plan": "registration_failures",
+      "commands": 6,
+      "whole_model_match": true,
+      "report_sha256": "75f75a8073ef7b9a00b56b483b59271dc0d02b93f02fb70401a0079d843a8377",
+      "control_results": [
+        0,
+        -17,
+        0,
+        -2,
+        -2
+      ],
+      "readiness": [
+        [
+          6,
+          []
+        ]
+      ],
+      "cleanup": {
+        "control": null,
+        "read": null,
+        "events": [],
+        "pipe_closed": [
+          true,
+          true
+        ],
+        "epoll_closed": true
+      },
+      "retired_closed": true
+    },
+    {
+      "plan": "mask_changes",
+      "commands": 9,
+      "whole_model_match": true,
+      "report_sha256": "d192b8385144d0ff754884f63d47dca6b9bc521cf250c9b0e4350879f0feb4d9",
+      "control_results": [
+        0,
+        0,
+        0
+      ],
+      "readiness": [
+        [
+          3,
+          [
+            {
+              "mask": 1,
+              "token": 72623859790382856
+            }
+          ]
+        ],
+        [
+          5,
+          []
+        ],
+        [
+          7,
+          [
+            {
+              "mask": 1,
+              "token": 18364758544493064720
+            }
+          ]
+        ],
+        [
+          9,
+          []
+        ]
+      ],
+      "cleanup": {
+        "control": {
+          "request": {
+            "operation": "EPOLL_CTL",
+            "tag": 1000010,
+            "epoll_descriptor": "epoll",
+            "target_descriptor": "pipe",
+            "control_operation": 2,
+            "flags": 0,
+            "event": null
+          },
+          "cqe": {
+            "tag": 1000010,
+            "result": 0,
+            "flags": 0
+          }
+        },
+        "read": null,
+        "events": [],
+        "pipe_closed": [
+          true,
+          true
+        ],
+        "epoll_closed": true
+      },
+      "retired_closed": true
+    },
+    {
+      "plan": "cleanup_pending",
+      "commands": 3,
+      "whole_model_match": true,
+      "report_sha256": "6f1d070070c22c6c929e55ca2bef23d0d7b672d7b59a14faa6e2979219968458",
+      "control_results": [
+        0
+      ],
+      "readiness": [
+        [
+          3,
+          [
+            {
+              "mask": 1,
+              "token": 72623859790382856
+            }
+          ]
+        ]
+      ],
+      "cleanup": {
+        "control": {
+          "request": {
+            "operation": "EPOLL_CTL",
+            "tag": 1000010,
+            "epoll_descriptor": "epoll",
+            "target_descriptor": "pipe",
+            "control_operation": 2,
+            "flags": 0,
+            "event": null
+          },
+          "cqe": {
+            "tag": 1000010,
+            "result": 0,
+            "flags": 0
+          }
+        },
+        "read": {
+          "request": {
+            "operation": "READ",
+            "tag": 1000011,
+            "length": 1,
+            "offset": 18446744073709551615,
+            "flags": 0
+          },
+          "cqe": {
+            "tag": 1000011,
+            "result": 1,
+            "flags": 0
+          },
+          "data": [
+            1
+          ]
+        },
+        "events": [],
+        "pipe_closed": [
+          true,
+          true
+        ],
+        "epoll_closed": true
+      },
+      "retired_closed": true
+    },
+    {
+      "plan": "closed_removal",
+      "commands": 4,
+      "whole_model_match": true,
+      "report_sha256": "cbdd1ec2b57a291a26cbe9a1692b1d015ed333ac3be45252c789d338c3d130eb",
+      "control_results": [
+        0
+      ],
+      "readiness": [
+        [
+          4,
+          []
+        ]
+      ],
+      "cleanup": {
+        "control": null,
+        "read": null,
+        "events": [],
+        "pipe_closed": [
+          true,
+          true
+        ],
+        "epoll_closed": true
+      },
+      "retired_closed": true
+    },
+    {
+      "plan": "no_members",
+      "commands": 4,
+      "whole_model_match": true,
+      "report_sha256": "8efe8964c1e6b45edb290cd558822c1f4ce4fc672c22000f11d943f4622e3c86",
+      "control_results": [],
+      "readiness": [
+        [
+          2,
+          []
+        ],
+        [
+          4,
+          []
+        ]
+      ],
+      "cleanup": {
+        "control": null,
+        "read": null,
+        "events": [],
+        "pipe_closed": [
+          true,
+          true
+        ],
+        "epoll_closed": true
+      },
+      "retired_closed": true
+    },
+    {
+      "plan": "maximum",
+      "commands": 64,
+      "whole_model_match": true,
+      "report_sha256": "83623ec8001a601f2031bdf84c3ea33353aff212e658922c42ef4fcc3173acd1",
+      "control_results": [],
+      "readiness": [
+        [
+          1,
+          []
+        ],
+        [
+          2,
+          []
+        ],
+        [
+          3,
+          []
+        ],
+        [
+          4,
+          []
+        ],
+        [
+          5,
+          []
+        ],
+        [
+          6,
+          []
+        ],
+        [
+          7,
+          []
+        ],
+        [
+          8,
+          []
+        ],
+        [
+          9,
+          []
+        ],
+        [
+          10,
+          []
+        ],
+        [
+          11,
+          []
+        ],
+        [
+          12,
+          []
+        ],
+        [
+          13,
+          []
+        ],
+        [
+          14,
+          []
+        ],
+        [
+          15,
+          []
+        ],
+        [
+          16,
+          []
+        ],
+        [
+          17,
+          []
+        ],
+        [
+          18,
+          []
+        ],
+        [
+          19,
+          []
+        ],
+        [
+          20,
+          []
+        ],
+        [
+          21,
+          []
+        ],
+        [
+          22,
+          []
+        ],
+        [
+          23,
+          []
+        ],
+        [
+          24,
+          []
+        ],
+        [
+          25,
+          []
+        ],
+        [
+          26,
+          []
+        ],
+        [
+          27,
+          []
+        ],
+        [
+          28,
+          []
+        ],
+        [
+          29,
+          []
+        ],
+        [
+          30,
+          []
+        ],
+        [
+          31,
+          []
+        ],
+        [
+          32,
+          []
+        ],
+        [
+          33,
+          []
+        ],
+        [
+          34,
+          []
+        ],
+        [
+          35,
+          []
+        ],
+        [
+          36,
+          []
+        ],
+        [
+          37,
+          []
+        ],
+        [
+          38,
+          []
+        ],
+        [
+          39,
+          []
+        ],
+        [
+          40,
+          []
+        ],
+        [
+          41,
+          []
+        ],
+        [
+          42,
+          []
+        ],
+        [
+          43,
+          []
+        ],
+        [
+          44,
+          []
+        ],
+        [
+          45,
+          []
+        ],
+        [
+          46,
+          []
+        ],
+        [
+          47,
+          []
+        ],
+        [
+          48,
+          []
+        ],
+        [
+          49,
+          []
+        ],
+        [
+          50,
+          []
+        ],
+        [
+          51,
+          []
+        ],
+        [
+          52,
+          []
+        ],
+        [
+          53,
+          []
+        ],
+        [
+          54,
+          []
+        ],
+        [
+          55,
+          []
+        ],
+        [
+          56,
+          []
+        ],
+        [
+          57,
+          []
+        ],
+        [
+          58,
+          []
+        ],
+        [
+          59,
+          []
+        ],
+        [
+          60,
+          []
+        ],
+        [
+          61,
+          []
+        ],
+        [
+          62,
+          []
+        ],
+        [
+          63,
+          []
+        ],
+        [
+          64,
+          []
+        ]
+      ],
+      "cleanup": {
+        "control": null,
+        "read": null,
+        "events": [],
+        "pipe_closed": [
+          true,
+          true
+        ],
+        "epoll_closed": true
+      },
+      "retired_closed": true
+    },
+    {
+      "plan": "mask_empty",
+      "commands": 4,
+      "whole_model_match": true,
+      "report_sha256": "eaae2f09c4007fd53d0bab151ed75e4c451904eeb6914b0581ad35bf11a22e0b",
+      "control_results": [
+        0,
+        0,
+        0
+      ],
+      "readiness": [
+        [
+          3,
+          []
+        ]
+      ],
+      "cleanup": {
+        "control": null,
+        "read": null,
+        "events": [],
+        "pipe_closed": [
+          true,
+          true
+        ],
+        "epoll_closed": true
+      },
+      "retired_closed": true
+    }
+  ],
+  "literal": "Hand-assembled explicit transitions, not obtained by executing the model or implementation; two fresh subprocesses checked in suite.",
+  "invalid_plans_rejected": 9,
+  "property": {
+    "test": "test_epoll.EpollContracts.test_commands_follow_interest_list_and_fifo_model",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 52
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  },
+  "syscall_trace": {
+    "path": "conversion/epoll.trace",
+    "sha256": "89e69bcf1dacf510bf151933accbc3b0e707ccfb5b251101c8268d875fc5ea19",
+    "observed": {
+      "rings": 1,
+      "submissions": 11,
+      "waits": [
+        [
+          {
+            "mask": 1,
+            "token": 72623859790382856
+          }
+        ],
+        [],
+        [
+          {
+            "mask": 1,
+            "token": 18364758544493064720
+          }
+        ],
+        [],
+        [],
+        []
+      ],
+      "synchronous_controls": 0
+    },
+    "damaged_traces_rejected": 7,
+    "scope": "Actual zero-timeout epoll_pwait observations and ring submissions/no synchronous epoll_ctl; not a concurrent arrival or performance oracle."
+  },
+  "spec_provenance": "Original author pre-implementation hash snapshot retained, not an ACL seal or verifier-agent artifact. Two unsealed test corrections explicitly pin both versions; all fixtures/expected behavior unchanged.",
+  "spec_amendment": "conversion/epoll-spec-amendment.json",
+  "sdk_limit": "Target FD prep uses @intCast, so an owned positive descriptor is retired after ring setup to provoke EBADF without negative-target trap/reuse. epfd=-1 remains usable. SDK unchanged.",
+  "mutation_report": "conversion/mutation-epoll.json",
+  "compiled_native_kills": 10,
+  "syntax_valid_parser_kills": 2,
+  "development": "One anonymous/named ReadRequest type mismatch fixed before green compilation. Tests needed helper success=False and actual strace hex formatting, not semantic-expectation weakening. No compile failures/errors/skips counted as kills; byte-exact restoration/rebuilt baseline passed.",
+  "diagnostics": {
+    "paths_checked": 5,
+    "visible": 0,
+    "suppressed_disclosed": 1,
+    "scope": "Active LSP, not an unconditional clean verdict for disposed/suppressed locations."
+  },
+  "navigation": "Current SDK/ABI, original block, manuals and direct source/build/CLI/model/map/book/disposition consumers inspected. Fabric unavailable and graph stale; no complete transitive-call or independent-review claim.",
+  "change_boundary": "One epoll teaching concern; cross-directory wiring of existing source/build/test/map/book/receipts, not unrelated architecture changes. Other native examples and SDK unchanged.",
+  "gates": {
+    "build_steps": 43,
+    "tests": 57,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "properties": 11,
+    "generated_valid_each": 400,
+    "epub_literals": 115,
+    "reader_cases": 81,
+    "epubcheck": "5.2.1: zero fatals/errors/warnings/infos"
+  },
+  "remaining": "Message/CONNECT effects, other required state/failure semantics, independent host review and personal-fork delivery remain open. No child-host retry/fallback/push."
+}

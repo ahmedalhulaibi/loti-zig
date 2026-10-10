@@ -164,11 +164,11 @@
   },
   "fresh_process_executions": 25,
   "source_sha256": {
-    "build.zig": "130adacd6bf6b9256b0eee82e76ee1d65980e77d829e59297b7f680b175555bc",
+    "build.zig": "99d7847a68511080071fe23e155ee4297ff93b3edeb5291e5b81a1b7b286ab03",
     "examples/reference_signals.zig": "b895a7413d564d6b185cfe9eee7b67f252b123dde2920457e9c2b0d2ff2bc44c",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
-    "tests/test_publication.py": "082a615a9f65cd822fd28d0a73fd6b28c6d9e879e13fd9cca114a5cc235335ad",
+    "tests/test_publication.py": "794fe2ba1a1460dbb073161b31c744c176d7169d0190d74902e601657f00ed2b",
     "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
     "testdata/inputs/signal-invalid-arguments.json": "6ef7a293b412e6da43cd05f57b81c26b34a6bde8631879e8dce77fce6018c55c"
   },
@@ -192,6 +192,14 @@
   },
   "replay_after_poll": {
     "scope": "Relevant execution/binding consumers replayed in complete 53-test/ten400-case suite before fingerprint refresh. Historical mutation pins unchanged; no new mutation or independent-review claim.",
+    "refreshed_paths": [
+      "build.zig",
+      "tests/test_publication.py"
+    ],
+    "suite_receipt": "conversion/test-verification.json"
+  },
+  "replay_after_epoll": {
+    "scope": "Relevant execution/binding consumers replayed in complete 57-test/eleven400-case suite before fingerprint refresh. Historical mutation pins unchanged; no new mutation or independent-review claim.",
     "refreshed_paths": [
       "build.zig",
       "tests/test_publication.py"
