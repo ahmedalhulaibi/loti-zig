@@ -1,0 +1,7 @@
+{
+  "unknown": {"commands": ["unknown"], "error": "UnknownBufferCommand"},
+  "already_available": {"commands": ["provide"], "error": "BufferAlreadyProvided"},
+  "remove_empty": {"commands": ["read", "remove"], "error": "NoBufferToRemove"},
+  "remove_twice": {"commands": ["remove", "remove"], "error": "NoBufferToRemove"},
+  "reprovide_twice": {"commands": ["read", "provide", "provide"], "error": "BufferAlreadyProvided"}
+}

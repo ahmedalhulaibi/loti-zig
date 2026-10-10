@@ -1,0 +1,42 @@
+test_invalid_plans_and_inputs_are_rejected (tests.test_provided_buffers.ProvidedBufferContracts.test_invalid_plans_and_inputs_are_rejected) ... ok
+test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures) ...
+  test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures) (plan='cleanup_available') ... FAIL
+test_selected_buffers_follow_ownership_model (tests.test_provided_buffers.ProvidedBufferContracts.test_selected_buffers_follow_ownership_model) ... FAIL
+
+======================================================================
+FAIL: test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures) (plan='cleanup_available')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffers.py", line 78, in test_literal_default_and_all_plan_fixtures
+    self.assertEqual(json.loads(run("reference-buffers", source, *commands).stdout), model(source.read_bytes(), commands))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'mul[2710 chars]up': None, 'final_available': True} != {'mul[2710 chars]up': {'tag': 200, 'result': 1, 'flags': 0, 'bu[65 chars]alse}
+Diff is 13034 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_selected_buffers_follow_ownership_model (tests.test_provided_buffers.ProvidedBufferContracts.test_selected_buffers_follow_ownership_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffers.py", line 61, in test_selected_buffers_follow_ownership_model
+    @given(payload=st.binary(min_size=1, max_size=1025),
+               ^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1839, in wrapped_test
+    raise the_error_hypothesis_found
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffers.py", line 69, in test_selected_buffers_follow_ownership_model
+    self.assertEqual(json.loads(run("reference-buffers", source, *commands).stdout), model(payload, commands))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'mul[2852 chars]up': None, 'final_available': True} != {'mul[2852 chars]up': {'tag': 200, 'result': 1, 'flags': 0, 'bu[65 chars]alse}
+Diff is 13176 characters long. Set self.maxDiff to None to see it.
+Falsifying example: test_selected_buffers_follow_ownership_model(
+    self=<tests.test_provided_buffers.ProvidedBufferContracts testMethod=test_selected_buffers_follow_ownership_model>,
+    payload=b'\x00',  # or any other generated value
+    choices=[0, 1],
+)
+Explanation:
+    These lines were always and only run by failing examples:
+        /home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py:1201
+
+----------------------------------------------------------------------
+Ran 3 tests in 4.986s
+
+FAILED (failures=2)

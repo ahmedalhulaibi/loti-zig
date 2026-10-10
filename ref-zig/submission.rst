@@ -137,6 +137,54 @@ group and first ID. ``remove_buffers`` removes a count from a group. Selected
 receive/read requests set ``IOSQE_BUFFER_SELECT``; decode the selected ID from
 CQE flags and do not reuse its storage while still owned by an operation.
 Provided buffers and fixed registered buffers are different mechanisms.
+
+.. _provided_buffers:
+
+Provided-buffer ownership
+-------------------------
+
+``reference-buffers INPUT [COMMAND ...]`` submits real provide/remove requests
+and selected reads. Input must be a nonempty regular file; each read requests
+its first 64 bytes. Up to 32 ``read``, ``provide`` or ``remove`` commands are
+accepted. Invalid ownership transitions are rejected before any SQE is issued.
+With no commands, the default plan consumes, exhausts, recycles and removes.
+
+A selected read consumes the one available buffer in group 7. Its CQE carries
+``IORING_CQE_F_BUFFER`` and ID 257 in the upper 16 bits. Only after that CQE may
+the application reset/re-provide the same storage. Exhaustion returns
+``-ENOBUFS`` without a selected ID or memory change. ``provide`` restores an
+application-owned buffer, while ``remove`` returns its available storage.
+
+Separate requests prove group isolation with group 9/ID 513. A two-buffer group
+is supplied and then removed with a request for three: the CQE returns **two**,
+the actual removed count, not zero success or the requested count. The read
+following removal returns ``-ENOBUFS``. Non-selected CQEs exercise
+``buffer_id()``'s ``error.NoBufferSelected`` path; see :ref:`cqe`.
+
+Storage snapshots distinguish kernel-written prefixes from untouched 0xa5 tails.
+Snapshots are owned copies, not slices into subsequently recycled memory. All
+requests are drained before reuse; an available final buffer is explicitly
+removed before pool lifetime ends. These are provided buffers, **not fixed
+registered buffers**. The selected groups each hold one buffer, so no kernel
+multi-buffer selection order is assumed. EOF/zero-result ownership, concurrent
+or multishot receive and cancellation races remain unverified.
+
+.. code-block:: console
+
+   zig build
+   zig-out/bin/reference-buffers input.bin
+   zig-out/bin/reference-buffers input.bin read read provide read
+
+.. literalinclude:: ../examples/reference_buffers.zig
+   :language: zig
+   :caption: Provided-buffer selection, IDs, exhaustion, recycling and removal
+
+``tests/test_provided_buffers.py`` compares every command/CQE/state/storage with
+an independent model over generated binary inputs and valid command sequences.
+A separate literal whole-report fixture pins flags/IDs/counts without that model.
+Plan/input failures have exact error contracts. These author checks do not
+replace independent review.
+
 ``nop`` performs no data I/O and is useful for queue/completion experiments.
 
 Exact native declarations

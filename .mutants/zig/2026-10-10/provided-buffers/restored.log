@@ -1,0 +1,8 @@
+test_invalid_plans_and_inputs_are_rejected (tests.test_provided_buffers.ProvidedBufferContracts.test_invalid_plans_and_inputs_are_rejected) ... ok
+test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures) ... ok
+test_selected_buffers_follow_ownership_model (tests.test_provided_buffers.ProvidedBufferContracts.test_selected_buffers_follow_ownership_model) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.928s
+
+OK

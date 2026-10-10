@@ -1,0 +1,57 @@
+test_invalid_plans_and_inputs_are_rejected (tests.test_provided_buffers.ProvidedBufferContracts.test_invalid_plans_and_inputs_are_rejected) ... ok
+test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures) ... FAIL
+test_selected_buffers_follow_ownership_model (tests.test_provided_buffers.ProvidedBufferContracts.test_selected_buffers_follow_ownership_model) ... FAIL
+
+======================================================================
+FAIL: test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffers.py", line 75, in test_literal_default_and_all_plan_fixtures
+    self.assertEqual(json.loads(run("reference-buffers", source).stdout), literal)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-buffers exited 1: error: UnexpectedPlainBufferCompletion
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:22:9: 0x11eda57 in expectPlain (reference_buffers.zig)
+        return error.UnexpectedPlainBufferCompletion;
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:80:5: 0x11ef08e in main (reference_buffers.zig)
+    try expectPlain(multiple_remove, 2);
+    ^
+
+
+======================================================================
+FAIL: test_selected_buffers_follow_ownership_model (tests.test_provided_buffers.ProvidedBufferContracts.test_selected_buffers_follow_ownership_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffers.py", line 61, in test_selected_buffers_follow_ownership_model
+    @given(payload=st.binary(min_size=1, max_size=1025),
+               ^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1779, in wrapped_test
+    _raise_to_user(errors, state.settings, [], " in explicit examples")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1474, in _raise_to_user
+    raise the_error_hypothesis_found
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffers.py", line 69, in test_selected_buffers_follow_ownership_model
+    self.assertEqual(json.loads(run("reference-buffers", source, *commands).stdout), model(payload, commands))
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-buffers exited 1: error: UnexpectedPlainBufferCompletion
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:22:9: 0x11eda57 in expectPlain (reference_buffers.zig)
+        return error.UnexpectedPlainBufferCompletion;
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:80:5: 0x11ef08e in main (reference_buffers.zig)
+    try expectPlain(multiple_remove, 2);
+    ^
+
+Falsifying explicit example: test_selected_buffers_follow_ownership_model(
+    self=<tests.test_provided_buffers.ProvidedBufferContracts testMethod=test_selected_buffers_follow_ownership_model>,
+    payload=b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./0123456789:;<=>?',
+    choices=[0, 0, 1, 0, 1, 2, 0],
+)
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.600s
+
+FAILED (failures=2)

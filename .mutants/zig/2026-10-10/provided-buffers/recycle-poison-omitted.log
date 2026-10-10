@@ -1,0 +1,41 @@
+test_invalid_plans_and_inputs_are_rejected (tests.test_provided_buffers.ProvidedBufferContracts.test_invalid_plans_and_inputs_are_rejected) ... ok
+test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures) ... FAIL
+test_selected_buffers_follow_ownership_model (tests.test_provided_buffers.ProvidedBufferContracts.test_selected_buffers_follow_ownership_model) ... FAIL
+
+======================================================================
+FAIL: test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffers.py", line 75, in test_literal_default_and_all_plan_fixtures
+    self.assertEqual(json.loads(run("reference-buffers", source).stdout), literal)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'mul[2772 chars]e': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[2628 chars]alse} != {'mul[2772 chars]e': [165, 165, 165, 165, 165, 165, 165, 165, 1[2998 chars]alse}
+Diff is 46313 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_selected_buffers_follow_ownership_model (tests.test_provided_buffers.ProvidedBufferContracts.test_selected_buffers_follow_ownership_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffers.py", line 61, in test_selected_buffers_follow_ownership_model
+    @given(payload=st.binary(min_size=1, max_size=1025),
+               ^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1779, in wrapped_test
+    _raise_to_user(errors, state.settings, [], " in explicit examples")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1474, in _raise_to_user
+    raise the_error_hypothesis_found
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffers.py", line 69, in test_selected_buffers_follow_ownership_model
+    self.assertEqual(json.loads(run("reference-buffers", source, *commands).stdout), model(payload, commands))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'mul[2772 chars]e': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[1832 chars]alse} != {'mul[2772 chars]e': [165, 165, 165, 165, 165, 165, 165, 165, 1[2128 chars]alse}
+Diff is 38286 characters long. Set self.maxDiff to None to see it.
+Falsifying explicit example: test_selected_buffers_follow_ownership_model(
+    self=<tests.test_provided_buffers.ProvidedBufferContracts testMethod=test_selected_buffers_follow_ownership_model>,
+    payload=b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./0123456789:;<=>?',
+    choices=[0, 0, 1, 0, 1, 2, 0],
+)
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.698s
+
+FAILED (failures=2)

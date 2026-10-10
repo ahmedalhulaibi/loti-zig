@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 17 native executables; exact compiler gate; 35/35 build steps; 29 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 18 native executables; exact compiler gate; 37/37 build steps; 32 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -290,7 +290,7 @@ and rebuilt passing baseline are recorded in `mutation-file-operations.json`.
 There are now 41 bounded valid kills (38 native exercises, three index-tool);
 this is not whole-port/SDK assurance. Earlier compile failures remain unassessed.
 
-Current complete gates pass: exact Zig 0.17.0, 35 build steps, 37 tests/zero skips,
+At the file-reference checkpoint, gates passed: exact Zig 0.17.0, 35 build steps, 37 tests/zero skips,
 seven properties each generating 400 valid cases, full strict HTML/EPUB,
 109 source-faithful literals and clean EPUBCheck. The VM block receipt was
 regenerated because the build target list changed; signal report was replayed
@@ -305,15 +305,57 @@ map/book consumers were inspected and active LSP probes used. This is one
 reference concern across consumer folders, not separate domain modules.
 Independent review remains blocked; no new reviewer launch/fallback occurred.
 
+## Provided-buffer ownership and CQE flags
+
+`a9d3f4c` records provide/remove preparation without selected-buffer execution.
+Those original declarations came from retired `delme.c`, not a missed runnable
+upstream tutorial. Three spec-first CLI contracts failed before implementation.
+`reference-buffers INPUT [COMMAND ...]` now executes actual provide/remove and
+positive selected reads against owned, nonempty regular input.
+
+Two unused buffers are provided to group 12. Removing three returns **two**;
+subsequent selection fails with -ENOBUFS and unchanged storage. Group 9/ID 513
+survives a wrong-group read, then is consumed exactly once. Group 7/ID 257 follows
+valid read/provide/remove commands; every CQE, flags/ID, availability and owned
+storage snapshot matches an independent model. Re-provision resets app-owned
+storage before reuse; prefixes and untouched 0xa5 tails are exact. A final
+available buffer is removed before pool lifetime ends. Plain/failed CQEs really
+exercise NoBufferSelected; selected flags encode IDs in the upper 16 bits.
+
+`provided-buffers-verification.json` pins six actual plan reports, the separate
+literal report and current source/fixture/SDK hashes. The new model property
+executes 400 valid generated binary/command cases; nine plan/input negatives
+have exact typed errors. Selected groups contain one buffer, avoiding any claim
+about multi-buffer selection order. Input bytes are unchanged; only first 64
+bytes are read. EOF/zero-result, multishot, concurrent arrival and cancellation
+ownership remain unverified, as do broader state/failure paths.
+
+Eight compiled mutants die: missing BUFFER_SELECT, wrong group, ID decoded from
+low bits, invented unselected ID, changed recycled ID, requested removal count
+reported instead of actual count, skipped poison reset and omitted final cleanup.
+The actual shrunk cleanup counterexample (one zero byte, choices [0,1]) is
+retained as `provided-buffer-cleanup-regression.json` and replayed explicitly;
+the whole current suite was rerun after adding that input.
+`mutation-provided-buffers.json` records exact restored source and rebuilt passing
+baseline; native SDK was not modified. There are now 49 bounded valid kills
+(46 native exercises, three index-tool), not whole-port/SDK assurance.
+
+Latest complete gates pass: exact Zig 0.17.0, 37 build steps, 40 tests/zero skips,
+eight 400-case properties, strict full HTML/EPUB, 111 literal blocks and clean
+EPUBCheck. Explicit consumers span build/test/map/book folders, not separate
+domain modules. Fabric navigation remains unavailable and cached graph stale;
+current bodies/consumers and installed declarations were inspected with active
+LSP probes. Independent review remains blocked; no retry/fallback was launched.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **35/35**. Current complete suite: **37 passed**
-  (29 native + one VM + two publication + three inventory + two line-index tests), zero skips,
+- Compiler: **0.17.0**. Build: **37/37**. Current complete suite: **40 passed**
+  (32 native + one VM + two publication + three inventory + two line-index tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
-- Seven reference executables: `reference-setup`, `reference-completion`,
-  `reference-signals`, `reference-files`, `reference-registration`, `reference-submission`, `reference-raw`.
+- Eight reference executables: `reference-setup`, `reference-completion`,
+  `reference-signals`, `reference-files`, `reference-buffers`, `reference-registration`, `reference-submission`, `reference-raw`.
 - Readers/copy: whole binary bytes, argument order, empty/boundary-size inputs,
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs;
@@ -321,7 +363,7 @@ Independent review remains blocked; no new reviewer launch/fallback occurred.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  seven properties**, source hashes, 37 passing tests and zero skips. These remain
+  eight properties**, source hashes, 40 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -361,7 +403,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **109 current literal blocks** match Sphinx's source, independently of the
+- **111 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.

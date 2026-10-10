@@ -1,0 +1,8 @@
+{
+  "default": ["read", "read", "provide", "read", "provide", "remove", "read", "provide", "read"],
+  "consume": ["read"],
+  "remove_and_reuse": ["remove", "read", "provide", "read"],
+  "cleanup_available": ["read", "provide"],
+  "repeated_exhaustion": ["read", "read", "read", "read"],
+  "recycle_twice": ["read", "provide", "read", "provide", "read"]
+}

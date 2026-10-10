@@ -42,7 +42,7 @@ evidence: `raw-mapping-verification.json`. Prefixes below are repository paths.
 | `ref-liburing/completion.rst:134` | Direct `cqe.user_data` u64 tag replaces foreign pointer extraction | E; correlation tags checked; tag does not extend operand lifetime |
 | `ref-liburing/completion.rst:148` | `cqe_seen` only for a borrowed entry; never after copy methods | E; separate manual batch uses one seen plus advance-three |
 | `ref-liburing/completion.rst:159` | `cq_ready` completes original TODO with acquire/readiness semantics | S/E; four ready, then zero after acknowledgement |
-| `ref-liburing/cqe.rst:12` | Exact `linux.io_uring_cqe`; signed result and meaningful flags retained | S/E; ordinary 16-byte stride; original universal one-SQE/one-CQE assertion corrected for multishot/notifications |
+| `ref-liburing/cqe.rst:12` | Exact `linux.io_uring_cqe`; signed result and meaningful flags retained | S/E; ordinary stride; selected IDs 257/513 and no-buffer helper outcomes now real; flags decoded independently; universal one-SQE/one-CQE assertion corrected; multishot/notifications unverified |
 
 ## Registration — `ref-zig/advanced_usage.rst`
 

@@ -237,13 +237,13 @@
     "stopped_because": "settings.max_examples=400"
   },
   "source_sha256": {
-    "build.zig": "c33a4a171b2d84f53ae24974f90e46ea666b518e11b79f4cad2020cbe4e37427",
+    "build.zig": "2ec0a4f3d4f6c1d844fd4e0dc3229e36998694ac4a655af4a63470c8aa5dacd9",
     "examples/reference_files.zig": "4f2792ef1cd99f2191f242f040ca4a90d4af376a3dfb955cd0e04167f139f65f",
     "tests/test_file_operations.py": "11a70eafa618fa1246fcae50baa7f6ffd91c3bfd43174812c79ca7531fdbb186",
     "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
     "testdata/inputs/file-operations-report.json": "82215f932bf6622b6c5362d08c9035a33e24d3d5bd83e5f8cb3fce59466facd1",
     "testdata/inputs/file-operations-invalid-arguments.json": "95a3fe47a3473a059f6d5b4ca47cbcb298ce14d6c0d8ec8874e201824f218de6",
-    "tools/reference_map.py": "2e3bb2e7448d7586a80ee6c331f3a892871abae18639f77b4d3b3fe0dc65087d",
+    "tools/reference_map.py": "a89ac9bb7720e577c1c668659015c0e5b2992e7244b2f691adc268b46360c53a",
     "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1"
   },
   "sdk_source_sha256": {
@@ -261,5 +261,6 @@
     "path": "testdata/inputs/file-operations-write-offset-regression.bin",
     "size": 4100,
     "origin": "Actual failing explicit WRITEV-offset mutant example, now a committed binary consumed by the same example decorator. Not a generated/shrunk counterexample; bytes unchanged."
-  }
+  },
+  "current_source_replay": "Whole fixture, exact source/output bytes, GNU size/digest replayed after provided-buffer build/map updates; native file code unchanged."
 }

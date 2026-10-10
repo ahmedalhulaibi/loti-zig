@@ -82,8 +82,8 @@
     {
       "original": "io_uring_cqe",
       "zig": "std.os.linux.io_uring_cqe",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "example": "examples/reference_buffers.zig",
+      "verification_scope": "compiled type usage; actual selected/unselected flags and buffer-ID helper outcomes; no CQE32 or multishot assurance",
       "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
     },
     {
@@ -324,8 +324,8 @@
     {
       "original": "io_uring_prep_provide_buffers",
       "zig": "std.os.linux.IoUring.provide_buffers",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "example": "examples/reference_buffers.zig",
+      "verification_scope": "constructed and submitted; selected bytes/flags, exhaustion, group isolation, recycling and actual removal counts checked; sequential nonempty regular-file reads only",
       "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn provide_buffers(\n    self: *IoUring,\n    user_data: u64,\n    buffers: [*]u8,\n    buffer_size: usize,\n    buffers_count: usize,\n    group_id: usize,\n    buffer_id: usize,\n) !*linux.io_uring_sqe"
@@ -378,8 +378,8 @@
     {
       "original": "io_uring_prep_remove_buffers",
       "zig": "std.os.linux.IoUring.remove_buffers",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "example": "examples/reference_buffers.zig",
+      "verification_scope": "constructed and submitted; selected bytes/flags, exhaustion, group isolation, recycling and actual removal counts checked; sequential nonempty regular-file reads only",
       "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn remove_buffers(\n    self: *IoUring,\n    user_data: u64,\n    buffers_count: usize,\n    group_id: usize,\n) !*linux.io_uring_sqe"

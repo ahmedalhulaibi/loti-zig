@@ -25,6 +25,7 @@ pub fn build(b: *std.Build) void {
         .{ "reference-completion", "reference_completion" },
         .{ "reference-signals", "reference_signals" },
         .{ "reference-files", "reference_files" },
+        .{ "reference-buffers", "reference_buffers" },
         .{ "reference-registration", "reference_registration" },
         .{ "reference-submission", "reference_submission" },
         .{ "reference-raw", "reference_raw" },

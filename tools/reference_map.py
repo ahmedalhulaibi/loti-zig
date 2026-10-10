@@ -14,6 +14,7 @@ COMPLETE = "examples/reference_completion.zig"
 REGISTER = "examples/reference_registration.zig"
 PREPARE = "examples/reference_submission.zig"
 FILES = "examples/reference_files.zig"
+BUFFERS = "examples/reference_buffers.zig"
 RAW = "examples/reference_raw.zig"
 
 PREPARERS = {
@@ -127,6 +128,9 @@ def generate():
             example = PREPARE if original not in {"io_uring", "io_uring_sq", "io_uring_cq", "io_uring_params", "io_sqring_offsets", "io_cqring_offsets"} else SETUP
             difference = "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
             scope = "compiled type usage; runtime ABI-size checks where applicable"
+            if original == "io_uring_cqe":
+                example = BUFFERS
+                scope = "compiled type usage; actual selected/unselected flags and buffer-ID helper outcomes; no CQE32 or multishot assurance"
         elif original == "IORING_OP_SYNC_FILE_RANGE":
             target, native_source, native_name, example = "raw_ops.sync_file_range", "examples/raw_ops.zig", "sync_file_range", RAW
             scope = "constructed and submitted; valid range and invalid flags/descriptor CQEs checked; not crash-durability evidence"
@@ -161,6 +165,9 @@ def generate():
                 if method in {"readv", "writev", "fsync", "close", "openat", "fallocate", "statx"}:
                     example = FILES
                     scope = "constructed and submitted on owned regular files; exact bytes/size, flags, invalid-descriptor CQEs and FD ownership checked; not crash-durability evidence"
+                elif method in {"provide_buffers", "remove_buffers"}:
+                    example = BUFFERS
+                    scope = "constructed and submitted; selected bytes/flags, exhaustion, group isolation, recycling and actual removal counts checked; sequential nonempty regular-file reads only"
         elif original in OTHER:
             native_name, example, difference = OTHER[original]
             native_source = "os/linux/IoUring.zig"
