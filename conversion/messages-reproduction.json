@@ -1,0 +1,42 @@
+{
+  "source_commit": "8856421ea03cd6929e02a6eb5412371cbc63d10f",
+  "scope": "Original RECVMSG/SENDMSG declarations have constructor-only reference evidence; not a reproduced native/kernel defect. HTTP sends separately exist, but no datagram/ancillary contract.",
+  "original_blocks": [
+    "ref-liburing/submission.rst:442",
+    "ref-liburing/submission.rst:461"
+  ],
+  "constructors": [
+    {
+      "tag": 19,
+      "operation": "RECVMSG",
+      "length": 1,
+      "flags": 0,
+      "buffer_index": 0
+    },
+    {
+      "tag": 20,
+      "operation": "SENDMSG",
+      "length": 1,
+      "flags": 0,
+      "buffer_index": 0
+    }
+  ],
+  "missing_executable": true,
+  "planned_boundary": "reference-messages INPUT CAPACITY: owned UNIX datagram socketpair; two scatter/gather vectors, zero-size datagrams, data/control truncation, MSG_TRUNC result versus initialized capacity, SCM_RIGHTS/CMSG_CLOEXEC descriptor ownership/cleanup and selected negative CQEs. Regular input<=4097/capacity0..4097; no externally visible destination or network address.",
+  "missing_verification": [
+    "mutable header output flags/control length",
+    "actual message bytes/record consumption",
+    "nested vector/control lifetime",
+    "received FD survives sender close and reads original file",
+    "discarded ancillary descriptors do not leak",
+    "negative descriptors/types/malformed ancillary input"
+  ],
+  "review": "Supported independent host still blocked; no retry/fallback; author checks do not satisfy verifier-agent acceptance.",
+  "source_sha256": {
+    "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
+    "build.zig": "472b4062e830580e779a1a186903cbe153d214b77239e56edd0dbf6f0898e8dc",
+    "tools/reference_map.py": "d94f0f76f7d0639654251fa7868f6aa37608c026134330690f3c9655a669ebc8",
+    "ref-zig/submission.rst": "56896fb5a6c414d216ba34dbc1da1cfd07b5616a1c6cce937a8972980fd62659",
+    "conversion/reference-block-disposition.md": "3b2725b390b758a9ee06e87e12e65f6fcb28bbcf8532a65768ebfd305920179c"
+  }
+}
