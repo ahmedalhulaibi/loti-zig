@@ -1,0 +1,31 @@
+{
+  "source_commit": "8b735dc85302ae22fa3ae78c8e341e8536c83e02",
+  "scope": "Original EPOLL_CTL reference has constructor-only evidence, not a reproduced kernel defect.",
+  "original_block": "ref-liburing/submission.rst:544",
+  "constructor": {
+    "tag": 21,
+    "operation": "EPOLL_CTL",
+    "length": 1,
+    "flags": 0,
+    "buffer_index": 0
+  },
+  "missing_executable": true,
+  "missing_effects": [
+    "ADD/MOD/DEL interest-list changes",
+    "opaque u64 event data round trip",
+    "mask change versus unchanged unread bytes",
+    "separate ctl CQEs versus epoll readiness",
+    "duplicate/missing/error outcomes",
+    "automatic last-FD close removal and pre-exit ownership"
+  ],
+  "planned_boundary": "Owned nonblocking pipe, one epoll instance, <=64 validated commands; native io_uring EPOLL_CTL followed by independent native epoll_wait observations. Sequential IN/OUT masks only; not ET/ONESHOT/EXCLUSIVE, duplication lifetimes, races/concurrent consumers, every descriptor or independent review.",
+  "sdk_constraint": "prep_epoll_ctl casts target FD with @intCast; use an owned positive retired descriptor for EBADF, not a negative target that would panic. epfd=-1 is representable.",
+  "source_sha256": {
+    "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
+    "build.zig": "130adacd6bf6b9256b0eee82e76ee1d65980e77d829e59297b7f680b175555bc",
+    "tools/reference_map.py": "4fba32d835a678fda7470c6ec743184ee385f1d451ca2608baed9bf1edf9cf81",
+    "ref-zig/submission.rst": "f6fb92c737448c091ee0f00410b2402b4c1e2602a5071e2d8283e784af4aecc5",
+    "conversion/reference-block-disposition.md": "2a9ad4442120bdc68d3e1f1bab32980d6d9510fbb885d88782a78e09c3c32649"
+  },
+  "review": "Supported child host remains blocked. No retry/fallback or independent-review artifact."
+}
