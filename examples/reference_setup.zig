@@ -5,7 +5,9 @@ const support = @import("support.zig");
 
 pub fn main(init: std.process.Init) !void {
     const args = try init.minimal.args.toSlice(init.arena.allocator());
-    if (args.len != 2) return error.ExpectedInputFile;
+    if (args.len < 2 or args.len > 3) return error.ExpectedInputFile;
+    const separate = args.len == 3;
+    if (separate and !std.mem.eql(u8, args[2], "--separate-mappings")) return error.UnknownMappingMode;
     const file = try std.Io.Dir.cwd().openFile(init.io, args[1], .{});
     defer file.close(init.io);
     var params = std.mem.zeroInit(linux.io_uring_params, .{ .cq_entries = 32, .flags = linux.IORING_SETUP_CQSIZE });
@@ -17,6 +19,7 @@ pub fn main(init: std.process.Init) !void {
     const opened = linux.io_uring_setup(8, &raw_params);
     if (linux.errno(opened) != .SUCCESS) return error.RingSetupFailed;
     const fd: linux.fd_t = @intCast(opened);
+    if (separate) raw_params.features &= ~@as(u32, linux.IORING_FEAT_SINGLE_MMAP);
     var mapped = RawRing.map(fd, raw_params) catch |err| {
         _ = linux.close(fd);
         return err;

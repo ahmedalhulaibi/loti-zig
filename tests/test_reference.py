@@ -34,10 +34,18 @@ class ReferenceContracts(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "input"
             path.write_bytes(bytes(range(128)))
-            self.assertEqual(json.loads(run("reference-setup", path).stdout), {
-                "sq_entries": 8, "cq_entries": 32, "sqe_size": 64, "cqe_size": 16,
-                "raw_read": 64, "dontfork": True,
-            })
+            for options in [[], ["--separate-mappings"]]:
+                with self.subTest(options=options):
+                    result = run("reference-setup", path, *options, success=not options)
+                    if options:
+                        # BUG: the original separate CQ mapping branch is rejected.
+                        self.assertEqual(result.returncode, 1)
+                        self.assertEqual(result.stderr.partition(b"\n")[0], b"error: SingleMappingRequired")
+                    else:
+                        self.assertEqual(json.loads(result.stdout), {
+                            "sq_entries": 8, "cq_entries": 32, "sqe_size": 64, "cqe_size": 16,
+                            "raw_read": 64, "dontfork": True,
+                        })
 
     def test_copy_and_manual_ack_are_distinct_and_deadline_really_expires(self):
         self.assertEqual(json.loads(run("reference-completion").stdout), {
