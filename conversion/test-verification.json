@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 45,
+  "tests_run": 47,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -54,7 +54,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 79
+          "overrun": 109
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -90,7 +90,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 102
+          "overrun": 157
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -108,7 +108,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 53
+          "overrun": 38
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -212,7 +212,11 @@
     "tests/test_mapping_bindings.py": "654cfafd142536ef82c7a86f877ed6b80d834c3e11fa429b4fb6dfa533fad84d",
     "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
-    "testdata/inputs/reference-semantics-bindings.json": "bd87f6f4e06670f52ac4dc0610c8d1dbfeae4fe7b49fee2cf1a44ea41faf951c"
+    "testdata/inputs/reference-semantics-bindings.json": "bd87f6f4e06670f52ac4dc0610c8d1dbfeae4fe7b49fee2cf1a44ea41faf951c",
+    "tests/test_reader_layout.py": "19b054bb0f761f2f57c90b0db7252ac0ec1ca88b7c31a523dfda5219666a541f",
+    "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
+    "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
+    "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."
 }

@@ -31,6 +31,7 @@ read-only disk files; no host block device, mount or privileged host syscall.
 | Docs | All original chapter topics migrated; no stale domains/snippets/build commands; code inclusions refer to compiled sources | Inventory mapping + independent semantic review; Sphinx warnings-as-errors |
 | EPUB | Chapter order, navigation, local images, attribution, licence, no DRM | EPUBCheck + archive/content audit |
 | Publication verifier CLI | Valid edition returns the whole fidelity report; damaged chapter/spine/title/navigation/literals/images/DRM/script classes fail with exact structured reasons | One table-driven subprocess test over nine damaged archives plus exact successful report; not source-code mutation verification |
+| Reader layout | Code, tables, illustrations and headings fit 320/600/800 CSS viewports across the complete EPUB spine | Sandboxed offline Chromium + pinned Node 26.8.1/Playwright 1.64.0; 81 cases, exact coverage counts and four damaged-style and three malformed-metadata classes. Not device/pagination or semantic acceptance |
 
 Hypothesis uses shrinking and retains discovered cases. Static inventories are
 coverage indexes, not proof of semantic conversion. Native compiler checks and

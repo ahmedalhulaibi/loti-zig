@@ -1,0 +1,27 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0, "successful": false}
+test_published_spine_reflows_without_horizontal_loss (tests.test_reader_layout.ReaderLayoutContracts.test_published_spine_reflows_without_horizontal_loss) ... FAIL
+
+======================================================================
+FAIL: test_published_spine_reflows_without_horizontal_loss (tests.test_reader_layout.ReaderLayoutContracts.test_published_spine_reflows_without_horizontal_loss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reader_layout.py", line 25, in test_published_spine_reflows_without_horizontal_loss
+    self.assertEqual((result.returncode, result.stderr), (0, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, '') != (0, '')
+
+First differing element 0:
+1
+0
+
+- (1, '')
+?  ^
+
++ (0, '')
+?  ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 4.617s
+
+FAILED (failures=1)

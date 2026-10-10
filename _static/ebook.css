@@ -1,4 +1,7 @@
 /* Reflow code on small e-ink displays; no external fonts or scripts. */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: anywhere;
+}
 pre {
   white-space: pre-wrap;
   overflow-wrap: anywhere;

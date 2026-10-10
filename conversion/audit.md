@@ -16,7 +16,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
 | 4. Recreate every example | 18 native executables; exact compiler gate; 37/37 build steps; 34 native CLI/TCP/reference tests plus three binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
-| Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
+| Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
 | Independent verification | Failed launcher/run recorded in `review-blocker.md`; no reviewer report exists | Working child host or owner-authorised independent mechanism |
 
@@ -393,19 +393,47 @@ present; no false finding was created. Native code did not change.
 green freshness gate; the red commit tests that state as-is. The correction flips
 five full-shape binding fixtures. Five syntax-valid producer regressions die in
 the exact contract test while generation and `--check` still pass. Restoration
-and results are in `mutation-reference-semantics.json`. Current bounded total:
+and results are in `mutation-reference-semantics.json`. That checkpoint had
 **63** (51 native exercise, three line-index, two trace-parser, seven binding
 producer), not whole-port/SDK assurance or independent semantic acceptance.
 
-Current gates: 45 author tests/zero skips, eight 400-case properties, Zig 0.17.0,
+At the API-claim checkpoint: 45 author tests/zero skips, eight 400-case properties, Zig 0.17.0,
 37/37 build steps, strict full HTML/EPUB, 112 literals and clean EPUBCheck. The
 selected report and affected source receipts are refreshed after relevant replay.
 The mandatory review host is still blocked; no retry/fallback or push occurred.
 
+## Reader-facing reflow correction
+
+`reader-layout-reproduction.json` and `reader-layout-before.png` record three
+syscall heading overflows at 320 CSS pixels; `linux.io_uring_register` was visibly
+cut off. Heading `overflow-wrap:anywhere` fixes this without changing chapter
+text, literal code or illustrations. `reader-layout-verification.json` measures
+all 27 spine documents at 320/600/800: 81 cases, 336 code blocks, six tables,
+15 images and 306 headings, with no horizontal loss. Counts include three views
+of each element. It is Chromium evidence, not Supernote/pagination acceptance.
+
+The two public contracts assert the whole successful summary and reject four
+CSS and three malformed-metadata classes. Active diagnostics found optional
+package-node handling; explicit validation fixes it and rejects an empty spine
+rather than accepting a zero-case sweep. Both existing tool mutants were
+re-assessed after this change; unchanged CSS mutants were not repeated.
+Three valid CSS regressions and three syntax-valid coverage/false-clean/empty-
+spine oracle regressions are killed; exact restoration and rebuilt baseline are
+in `mutation-reader-layout.json`. Current bounded total: **69** (51 native,
+three line-index, two trace-parser, seven binding-producer, three CSS, three layout
+oracle). Historical hashes pin tested versions; this is not whole-port assurance.
+
+Current gates: 47 tests/zero skips, eight 400-case properties, 37/37 Zig build
+steps, strict HTML/EPUB and clean EPUBCheck. Reader tooling pins Node 26.8.1 and
+Playwright 1.64.0; Chromium sandbox stays enabled, documents have JavaScript
+and network disabled. The script lives outside the EPUB. Mandatory independent
+review and remaining semantic/effect acceptance are still open; no push or
+reviewer retry/fallback occurred.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **37/37**. Current complete suite: **45 passed**
-  (34 native + one VM + two publication + three inventory + two line-index + three binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **37/37**. Current complete suite: **47 passed**
+  (34 native + one VM + four publication + three inventory + two line-index + three binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -418,7 +446,7 @@ The mandatory review host is still blocked; no retry/fallback or push occurred.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  eight properties**, source hashes, 45 passing tests and zero skips. These remain
+  eight properties**, source hashes, 47 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

@@ -23,9 +23,17 @@ LOTI_TEST_CASES=400 .venv/bin/python -m unittest discover
 make html
 make epub
 .venv/bin/python tools/verify_epub.py --report conversion/epub-verification.json
+.venv/bin/python tools/check_reader_layout.py --report conversion/reader-layout-verification.json
 java -jar "$EPUBCHECK_JAR" _build/epub/Lord-of-the-io_uring-Zig-0.17.0.epub
 python3 tools/check_block_devices.py --report conversion/block-device-verification.json
 ```
+
+Reader-layout tests also need Node **26.8.1**, npm Playwright **1.64.0** and system
+Chromium. Install exact tooling with `mise install node@26.8.1 npm:playwright@1.64.0`;
+`--playwright-module PACKAGE_DIR` and `--browser EXECUTABLE` select explicit paths.
+The driver keeps Chromium's sandbox enabled, disables document JavaScript and
+network access, and measures all spine documents at 320/600/800 CSS pixels. This
+is browser reflow evidence, **not Supernote-device or paginated-reader assurance**.
 
 Use [EPUBCheck 5.2.1](https://github.com/w3c/epubcheck/releases/tag/v5.2.1);
 set `EPUBCHECK_JAR` to its installed jar. The full Sphinx builds use warnings as

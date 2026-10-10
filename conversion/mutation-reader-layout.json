@@ -1,0 +1,98 @@
+{
+  "scope": "Three EPUB CSS regressions and two layout-oracle regressions; not device compatibility, all renderer behavior, semantic completeness or independent review.",
+  "mutants": [
+    {
+      "id": "heading-wrap-omitted",
+      "source": "_static/ebook.css",
+      "compiled_or_built": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "log": ".mutants/publication/2026-10-10/reader-layout/heading-wrap-omitted.log"
+    },
+    {
+      "id": "code-wrap-omitted",
+      "source": "_static/ebook.css",
+      "compiled_or_built": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "log": ".mutants/publication/2026-10-10/reader-layout/code-wrap-omitted.log"
+    },
+    {
+      "id": "image-width-unbounded",
+      "source": "_static/ebook.css",
+      "compiled_or_built": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "log": ".mutants/publication/2026-10-10/reader-layout/image-width-unbounded.log"
+    },
+    {
+      "id": "heading-measurement-omitted",
+      "source": "tools/reader_layout.cjs",
+      "compiled_or_built": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "log": ".mutants/publication/2026-10-10/reader-layout/heading-measurement-omitted.log"
+    },
+    {
+      "id": "violations-hidden",
+      "source": "tools/check_reader_layout.py",
+      "compiled_or_built": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 4,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "log": ".mutants/publication/2026-10-10/reader-layout/violations-hidden.log"
+    },
+    {
+      "id": "empty-spine-accepted",
+      "source": "tools/check_reader_layout.py",
+      "compiled_or_built": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "successful": false
+      },
+      "log": ".mutants/publication/2026-10-10/reader-layout/empty-spine-accepted.log"
+    }
+  ],
+  "restored_byte_exactly": true,
+  "rebuilt_baseline_passed": true,
+  "source_sha256": {
+    "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
+    "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
+    "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1"
+  },
+  "followup": "After active diagnostics found optional package-node handling, added typed package validation and three damaged-metadata cases. Re-assessed both tool mutants and new empty-spine mutant; three unchanged CSS kills retained, not repeated.",
+  "log_normalization": "Only trailing spaces/tabs/CR and terminal empty lines removed; substantive output unchanged."
+}
