@@ -156,7 +156,7 @@
     "examples/mapping_fault.zig": "3d09d44feeee352a3c6a6dd7660a16c803489ef86fe0b6e801ecd03fd08c1e91",
     "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0",
     "tests/test_mapping_bindings.py": "654cfafd142536ef82c7a86f877ed6b80d834c3e11fa429b4fb6dfa533fad84d",
-    "tools/reference_map.py": "0b3442b9d8afb169fd769db3c8dd3b4dcbc6afa660fca9582127079a9ef8465f",
+    "tools/reference_map.py": "ee733cffa308e1196508fc363450cf8f4db529341d04595ea7f56cd80868e1d9",
     "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a"
   },
   "sdk_source_sha256": {
@@ -188,7 +188,7 @@
     "zig_version": "0.17.0",
     "build_steps_passed": 37,
     "executables": 18,
-    "tests_passed": 44,
+    "tests_passed": 45,
     "failures": 0,
     "errors": 0,
     "skips": 0,
@@ -211,5 +211,6 @@
     ],
     "suppressed_findings_disclosed": 1,
     "limit": "Not an unconditional clean verdict for suppressed locations."
-  }
+  },
+  "current_source_replay": "Current complete 45-test suite re-executed this native contract after unrelated API-description corrections. Native source, fixtures and existing contract test bytes are unchanged; retained literal reports/traces remain pinned. Only generator-source fingerprint changed."
 }

@@ -55,7 +55,7 @@ TYPES = {
 }
 
 OTHER = {
-    "io_uring_queue_init": ("init", SETUP, "Returns an owned value through a Zig error union; power-of-two u16 entries."),
+    "io_uring_queue_init": ("init", "examples/cat.zig", "Returns an owned value through a Zig error union; power-of-two u16 entries."),
     "io_uring_queue_init_params": ("init_params", SETUP, "Caller supplies zeroed native parameters; returned fields describe actual mappings."),
     "io_uring_queue_exit": ("deinit", SETUP, "Closes the descriptor and unmaps memory; complete or cancel-and-drain outstanding requests before destroying their operands."),
     "io_uring_get_sqe": ("get_sqe", PREPARE, "Queue exhaustion is SubmissionQueueFull, not a null pointer."),
@@ -82,7 +82,7 @@ OTHER = {
 
 SPECIAL = {
     "io_uring_setup": ("std.os.linux.io_uring_setup", "os/linux.zig", SETUP, "io_uring_setup", "Raw setup returns errno-encoded usize and fills native parameters; successful result owns a descriptor."),
-    "io_uring_enter": ("std.os.linux.io_uring_enter", "os/linux.zig", "examples/raw_cat.zig", "io_uring_enter", "Publishes submitted entries or waits according to flags; decode the raw usize result with linux.errno."),
+    "io_uring_enter": ("std.os.linux.io_uring_enter", "os/linux.zig", "examples/raw_cat.zig", "io_uring_enter", "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Decode the raw usize result with linux.errno."),
     "io_ring_get_sqe": ("std.os.linux.IoUring.get_sqe", "os/linux/IoUring.zig", PREPARE, "get_sqe", "Corrects an original prose typo; no function named io_ring_get_sqe exists."),
     "io_uring_set_sqe_data": ("sqe.user_data = tag", None, PREPARE, None, "Corrects an original prose typo; use the native tag field."),
     "io_uring_queue_mmap": ("RawRing.map", "examples/raw_cat.zig", SETUP, "map", "Accepts an existing setup descriptor; owns it only on success. Selects shared SQ/CQ or separate SQ/CQ plus SQEs by SINGLE_MMAP; failure unmaps partial regions but leaves the FD to the caller."),
@@ -145,7 +145,11 @@ def generate():
                 native_source = "examples/raw_ops.zig"
                 native_name = method
                 example = RAW
-                scope = "constructed and submitted; correlated CQEs and actual read/memory effects checked"
+                scope = {
+                    "openat2": "constructed and submitted; returned descriptor and exact regular-file input prefix checked; RDONLY/RESOLVE_NO_SYMLINKS path only",
+                    "fadvise": "constructed and submitted; NORMAL-advice success CQE checked; no cache-residency or performance assurance",
+                    "madvise": "constructed and submitted; DONTNEED success CQE and exact zeroed anonymous page checked; not other advice or mapping types",
+                }[method]
                 difference = "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE."
             elif method == "files_update":
                 target = "sqe.prep_files_update"

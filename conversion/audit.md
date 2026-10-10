@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 18 native executables; exact compiler gate; 37/37 build steps; 34 native CLI/TCP/reference tests plus two mapping-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 18 native executables; exact compiler gate; 37/37 build steps; 34 native CLI/TCP/reference tests plus three binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -369,19 +369,43 @@ whole-binding regression checks now describe all regions and correct ownership.
 Two syntactically valid producer regressions are killed. Five compiled native
 mutants (omitted SQ/CQ unwind, short unmap, caller FD closure, wrong fault offset)
 and two syntax-valid trace-parser mutants are killed; exact restored source and
-passing baseline are recorded. Current bounded total: **58** (51 native exercise,
+passing baseline are recorded. That checkpoint had **58** bounded kills (51 native exercise,
 three line-index, two trace-parser, two binding-generator), not whole-port/SDK
 assurance or independent review. No reviewer retry/fallback was attempted.
 
-Current gates: Zig 0.17.0, 37/37 build steps, 44 tests/zero skips, eight properties
+At the partial-construction checkpoint, gates passed: Zig 0.17.0, 37/37 build steps, 44 tests/zero skips, eight properties
 with 400 generated valid cases each, strict HTML/EPUB, 112 source-faithful
 literals and clean EPUBCheck. Current-source hashes are refreshed only after
 replaying affected success reports; they pin versions, not correctness.
 
+## Selected API-claim corrections
+
+`reference-claim-audit.md` records a selected body-to-description audit after
+reading all 99 generated descriptions. Enter consumes already-published SQEs;
+it does not publish the userspace tail. Default `IoUring.init` now points to the
+cat tutorial that calls it, not the init_params-only setup reference. Three raw
+operation scopes now separate OPENAT2 descriptor/prefix, FADVISE hint-acceptance
+CQE and MADVISE anonymous-page zeroing; cache/performance and untested modes are
+not claimed. The suspected unused normal-eventfd call was inspected and found
+present; no false finding was created. Native code did not change.
+
+`reference-semantics-reproduction.json` records the defective descriptions and
+green freshness gate; the red commit tests that state as-is. The correction flips
+five full-shape binding fixtures. Five syntax-valid producer regressions die in
+the exact contract test while generation and `--check` still pass. Restoration
+and results are in `mutation-reference-semantics.json`. Current bounded total:
+**63** (51 native exercise, three line-index, two trace-parser, seven binding
+producer), not whole-port/SDK assurance or independent semantic acceptance.
+
+Current gates: 45 author tests/zero skips, eight 400-case properties, Zig 0.17.0,
+37/37 build steps, strict full HTML/EPUB, 112 literals and clean EPUBCheck. The
+selected report and affected source receipts are refreshed after relevant replay.
+The mandatory review host is still blocked; no retry/fallback or push occurred.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **37/37**. Current complete suite: **44 passed**
-  (34 native + one VM + two publication + three inventory + two line-index + two mapping-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **37/37**. Current complete suite: **45 passed**
+  (34 native + one VM + two publication + three inventory + two line-index + three binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -394,7 +418,7 @@ replaying affected success reports; they pin versions, not correctness.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  eight properties**, source hashes, 44 passing tests and zero skips. These remain
+  eight properties**, source hashes, 45 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

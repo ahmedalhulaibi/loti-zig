@@ -20,6 +20,9 @@ wrapper takes a nonzero power-of-two ``u16`` queue size. ``init_params`` accepts
 caller-owned ``linux.io_uring_params`` so flags, SQ thread configuration and
 CQ sizing can be supplied. Zero reserved fields. The kernel fills actual queue
 sizes, features and mapping offsets. See :ref:`io_uring_setup` for those fields.
+The :doc:`cat tutorial <../tutorial/cat>` calls ``IoUring.init(8, 0)`` directly.
+The setup reference below uses ``init_params`` for its larger CQ. The SDK's
+``init`` calls ``init_params`` internally, not the reverse.
 
 Use ``defer ring.deinit()`` after successful setup. Teardown unmaps queues and
 closes the ring descriptor. It does not release your application-owned files or

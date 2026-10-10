@@ -46,6 +46,8 @@ Publication and lifetimes
 -------------------------
 
 Fill an SQE, place its index in the SQ array, then release-publish the new tail.
+This publication is a userspace action; ``io_uring_enter`` does not publish the
+tail for you. Enter asks the kernel to consume already-published entries.
 The kernel acquire-observes it, consumes the request and updates head. Consumption
 makes the SQE slot reusable; it does not complete I/O or release buffer ownership.
 For CQ processing, acquire-observe tail before reading entries and release-publish

@@ -11,7 +11,7 @@
   "source_sha256": {
     "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
-    "tools/reference_map.py": "0b3442b9d8afb169fd769db3c8dd3b4dcbc6afa660fca9582127079a9ef8465f"
+    "tools/reference_map.py": "ee733cffa308e1196508fc363450cf8f4db529341d04595ea7f56cd80868e1d9"
   },
   "input_sha256": {
     "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
@@ -182,5 +182,5 @@
     "fallback": "Direct source bodies plus explicit CLI callers, README commands and RST literalinclude inspected."
   },
   "change_boundary": "One registered-file CLI teaching example across implementation, test, fixture and publication consumers; no shared-helper API changed.",
-  "current_source_replay": "Whole registration report replayed; both inputs unchanged after correcting unrelated mapping-binding text."
+  "current_source_replay": "Current complete 45-test suite re-executed this native contract after unrelated API-description corrections. Native source, fixtures and existing contract test bytes are unchanged; retained literal reports/traces remain pinned. Only generator-source fingerprint changed."
 }

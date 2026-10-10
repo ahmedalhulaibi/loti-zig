@@ -120,7 +120,7 @@ Implicit includes/layout snippets are already in `implicit-literal-disposition.m
 | Original block ID | Native replacement and semantic comparison | Evidence / limit |
 |---|---|---|
 | `ref-iouring/io_uring_setup.rst:15` | `linux.io_uring_setup(entries, params)`; errno-encoded usize and owned FD | S/E; real raw setup and mappings; parameter input/output roles updated |
-| `ref-iouring/io_uring_enter.rst:15` | `linux.io_uring_enter`: counts submissions, does not consume CQEs; mask size supplied by SDK | S/E; raw reader; EXT_ARG uses explicit syscall6/different structure; EXT_ARG pending-signal delivery/restore now executed; ordinary-enter signal delivery and IOPOLL remain unverified |
+| `ref-iouring/io_uring_enter.rst:15` | `linux.io_uring_enter`: consumes already-published SQEs and counts submissions; caller release-publishes tail first; no CQ consumption; mask size supplied by SDK | S/E; raw reader; EXT_ARG uses explicit syscall6/different structure; EXT_ARG pending-signal delivery/restore now executed; ordinary-enter signal delivery and IOPOLL remain unverified |
 | `ref-iouring/io_uring_register.rst:15` | `linux.io_uring_register`: typed opcode, optional argument, opcode-specific count/result | S/E; buffers/files/eventfd/probe/personality; returned ID/count distinguished from zero success |
 
 ## Audit observations

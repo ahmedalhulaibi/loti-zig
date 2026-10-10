@@ -1,0 +1,7 @@
+{"tests": 1, "failures": [], "errors": 0, "skips": 0, "success": true}
+test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK

@@ -1,0 +1,19 @@
+76 original API symbols; 99 total native bindings; Zig 0.17.0
+{"tests": 1, "failures": [{"original": "io_uring_prep_fadvise"}], "errors": 0, "skips": 0, "success": false}
+test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) ...
+  test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) (original='io_uring_prep_fadvise') ... FAIL
+
+======================================================================
+FAIL: test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) (original='io_uring_prep_fadvise')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference_semantics.py", line 14, in test_selected_reference_claims_match_whole_binding_contract
+    self.assertEqual(actual[row["original"]], row)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'ori[145 chars]ted; DONTNEED success CQE and exact zeroed ano[351 chars]sqe'} != {'ori[145 chars]ted; NORMAL-advice success CQE checked; no cac[334 chars]sqe'}
+Diff is 1014 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

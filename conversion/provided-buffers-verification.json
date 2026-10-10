@@ -4531,7 +4531,7 @@
     "build.zig": "2ec0a4f3d4f6c1d844fd4e0dc3229e36998694ac4a655af4a63470c8aa5dacd9",
     "examples/reference_buffers.zig": "a44155312b4f0c382b0c29126516f2ae3dad874ae84d37b9e29790ee5fa5e13a",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tools/reference_map.py": "0b3442b9d8afb169fd769db3c8dd3b4dcbc6afa660fca9582127079a9ef8465f",
+    "tools/reference_map.py": "ee733cffa308e1196508fc363450cf8f4db529341d04595ea7f56cd80868e1d9",
     "testdata/inputs/provided-buffer-plans.json": "d50e0ed4acc123babeba111df163ae802d034cd9695c859f9bf5813d74332199",
     "testdata/inputs/provided-buffer-invalid-plans.json": "6c7749c1f127f3e155dd3d56aee2003ac0d25755431737e2921eb070c564cd59",
     "testdata/inputs/provided-buffer-input.bin": "fdeab9acf3710362bd2658cdc9a29e8f9c757fcf9811603a8c447cd1d9151108",
@@ -4553,5 +4553,5 @@
     "path": "testdata/inputs/provided-buffer-cleanup-regression.json",
     "origin": "Actual Hypothesis-shrunk cleanup-omitted mutant counterexample: payload byte 0, choices [0,1]. Replayed as explicit example."
   },
-  "current_source_replay": "All six whole plan reports replayed with unchanged input after correcting unrelated mapping-binding text."
+  "current_source_replay": "Current complete 45-test suite re-executed this native contract after unrelated API-description corrections. Native source, fixtures and existing contract test bytes are unchanged; retained literal reports/traces remain pinned. Only generator-source fingerprint changed."
 }

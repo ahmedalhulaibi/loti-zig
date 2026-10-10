@@ -1,0 +1,144 @@
+{
+  "scope": "Selected body-to-description author audit. Five whole generated bindings corrected; not independent review, complete semantic acceptance of all 99 entries, or expanded native effect assurance.",
+  "compiler": "0.17.0",
+  "kernel": "7.2.3-arch1-3",
+  "architecture": "x86_64",
+  "total_descriptions_inspected": 99,
+  "selected_bindings": [
+    {
+      "original": "io_uring_enter",
+      "zig": "std.os.linux.io_uring_enter",
+      "example": "examples/raw_cat.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Decode the raw usize result with linux.errno.",
+      "declaration_source": "os/linux.zig",
+      "zig_signature": "pub fn io_uring_enter(fd: fd_t, to_submit: u32, min_complete: u32, flags: u32, sig: ?*sigset_t) usize"
+    },
+    {
+      "original": "io_uring_prep_fadvise",
+      "zig": "raw_ops.fadvise",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; NORMAL-advice success CQE checked; no cache-residency or performance assurance",
+      "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn fadvise(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, offset: u64, length: u32, advice: u32) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_madvise",
+      "zig": "raw_ops.madvise",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; DONTNEED success CQE and exact zeroed anonymous page checked; not other advice or mapping types",
+      "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn madvise(ring: *linux.IoUring, tag: u64, memory: []u8, advice: u32) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_openat2",
+      "zig": "raw_ops.openat2",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; returned descriptor and exact regular-file input prefix checked; RDONLY/RESOLVE_NO_SYMLINKS path only",
+      "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn openat2(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, path: [*:0]const u8, how: *const OpenHow) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_queue_init",
+      "zig": "std.os.linux.IoUring.init",
+      "example": "examples/cat.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Returns an owned value through a Zig error union; power-of-two u16 entries.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn init(entries: u16, flags: u32) !IoUring"
+    }
+  ],
+  "additional_body_check": "Normal eventfd register/unregister is present in reference_registration.main; suspected absence was disproved, not recorded as a defect.",
+  "actual_native_replay": {
+    "cat": {
+      "bytes": 128,
+      "sha256": "471fb943aa23c511f6f72f8d1652d9c880cfa392ad80503120547703e56a2be5",
+      "exact": true
+    },
+    "reference_raw": {
+      "report": {
+        "openat2": true,
+        "fadvise_result": 0,
+        "madvise_result": 0,
+        "memory_zeroed": true,
+        "read_result": 64,
+        "sync_range": {
+          "offset": 0,
+          "length": 4096,
+          "flags": 7,
+          "result": 0
+        },
+        "sync_failures": [
+          -22,
+          -9
+        ]
+      },
+      "prefix_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "input_unchanged": true
+    }
+  },
+  "source_sha256": {
+    "tools/reference_map.py": "ee733cffa308e1196508fc363450cf8f4db529341d04595ea7f56cd80868e1d9",
+    "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
+    "testdata/inputs/reference-semantics-bindings.json": "bd87f6f4e06670f52ac4dc0610c8d1dbfeae4fe7b49fee2cf1a44ea41faf951c",
+    "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/reference_setup.zig": "c601487b9e78fd81aec3eabde091353b17b5f87251641b3443d1b302e3518ae7",
+    "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
+    "conversion/reference-claim-audit.md": "a27ae9d7bdb58c838ef3931e11f576f25620f8de68d68083a07842d43c20b36a",
+    "ref-iouring/io_uring_enter.rst": "889fb3351be04956766022e68925065a9da202b9be6152a857a6454543c78904",
+    "ref-zig/setup_teardown.rst": "8cfb07794f25aaab05b111f3f8dab8685f1d78994b71509ee6b95fdb73a1e6f7",
+    "ref-zig/submission.rst": "91cc49515bdf7c822b9adad5ee635ed3c4ca58d2654d2a9041549eb2c55938fb"
+  },
+  "sdk_source_sha256": {
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3"
+  },
+  "external_ordering_reference": {
+    "path": "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring.7.txt",
+    "heading": "EXAMPLES",
+    "release_store_line": 623,
+    "enter_line": 631,
+    "limit": "ABI documentation, not independent agent review."
+  },
+  "native_sources_unchanged": true,
+  "reproduction": "conversion/reference-semantics-reproduction.json",
+  "mutation_report": "conversion/mutation-reference-semantics.json",
+  "producer_mutants_compiled_and_killed": 5,
+  "mutation_scope": "Incorrect publication responsibility, wrong init example and three cross-operation effect attributions. All generated artifacts still passed --check; exact semantic fixture rejected them with no test errors/skips.",
+  "navigation_evidence": "Fabric unavailable; module graph stale. Current selected symbol bodies, main/generator/test/manifest/book/disposition consumers and installed SDK functions read directly. No all-entry call-graph coverage or independent review claimed.",
+  "change_boundary": "One reference-semantic concern across generator, artifact, contract fixtures, book prose and evidence; no native behavior change.",
+  "gates": {
+    "build_steps": 37,
+    "executables": 18,
+    "tests": 45,
+    "skips": 0,
+    "properties": 8,
+    "valid_generated_cases_each": 400,
+    "chapters": 27,
+    "literals": 112,
+    "epubcheck_fatals_errors_warnings_infos": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "diagnostics": {
+    "active_paths": 2,
+    "visible_findings": 0,
+    "suppressed_findings_disclosed": 1,
+    "limit": "Not an unconditional clean verdict for the suppressed location."
+  },
+  "historical_mutation_note": {
+    "report": "conversion/mutation-mapping-bindings.json",
+    "baseline_commit": "866c10c",
+    "baseline_sha256_verified": true,
+    "scope": "Earlier two mapping-description kills remain historical. Unrelated metadata edits changed the whole producer fingerprint; those old kills are not presented as a new current-file assessment. Current five semantic mutations cover the modified claims."
+  }
+}

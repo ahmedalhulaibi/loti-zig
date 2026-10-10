@@ -1,0 +1,31 @@
+76 original API symbols; 99 total native bindings; Zig 0.17.0
+{"tests": 1, "failures": [{"original": "io_uring_queue_init"}], "errors": 0, "skips": 0, "success": false}
+test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) ...
+  test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) (original='io_uring_queue_init') ... FAIL
+
+======================================================================
+FAIL: test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) (original='io_uring_queue_init')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference_semantics.py", line 14, in test_selected_reference_claims_match_whole_binding_contract
+    self.assertEqual(actual[row["original"]], row)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'ori[83 chars]ples/reference_setup.zig', 'verification_scope[237 chars]ing'} != {'ori[83 chars]ples/cat.zig', 'verification_scope': 'compiled[225 chars]ing'}
+  {'declaration_source': 'os/linux/IoUring.zig',
+-  'example': 'examples/reference_setup.zig',
+?                       ------- ^^^^ --
+
++  'example': 'examples/cat.zig',
+?                        ^
+
+   'original': 'io_uring_queue_init',
+   'semantic_difference': 'Returns an owned value through a Zig error union; '
+                          'power-of-two u16 entries.',
+   'verification_scope': 'compiled and executed',
+   'zig': 'std.os.linux.IoUring.init',
+   'zig_signature': 'pub fn init(entries: u16, flags: u32) !IoUring'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

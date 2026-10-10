@@ -1,0 +1,105 @@
+{
+  "scope": "Five generated-binding semantic regressions only; not SDK/effect mutations, all-entry semantic acceptance or independent review.",
+  "source": "tools/reference_map.py",
+  "source_sha256": "ee733cffa308e1196508fc363450cf8f4db529341d04595ea7f56cd80868e1d9",
+  "mutants": [
+    {
+      "id": "enter-publishes-tail",
+      "compiled": true,
+      "generated": true,
+      "freshness_check_exit": 0,
+      "oracle": {
+        "tests": 1,
+        "failures": [
+          {
+            "original": "io_uring_enter"
+          }
+        ],
+        "errors": 0,
+        "skips": 0,
+        "success": false
+      },
+      "outcome": "killed",
+      "log": ".mutants/python/2026-10-10/reference-semantics/enter-publishes-tail.log"
+    },
+    {
+      "id": "init-example-does-not-call-init",
+      "compiled": true,
+      "generated": true,
+      "freshness_check_exit": 0,
+      "oracle": {
+        "tests": 1,
+        "failures": [
+          {
+            "original": "io_uring_queue_init"
+          }
+        ],
+        "errors": 0,
+        "skips": 0,
+        "success": false
+      },
+      "outcome": "killed",
+      "log": ".mutants/python/2026-10-10/reference-semantics/init-example-does-not-call-init.log"
+    },
+    {
+      "id": "file-advice-claims-page-zeroing",
+      "compiled": true,
+      "generated": true,
+      "freshness_check_exit": 0,
+      "oracle": {
+        "tests": 1,
+        "failures": [
+          {
+            "original": "io_uring_prep_fadvise"
+          }
+        ],
+        "errors": 0,
+        "skips": 0,
+        "success": false
+      },
+      "outcome": "killed",
+      "log": ".mutants/python/2026-10-10/reference-semantics/file-advice-claims-page-zeroing.log"
+    },
+    {
+      "id": "memory-advice-claims-open-descriptor",
+      "compiled": true,
+      "generated": true,
+      "freshness_check_exit": 0,
+      "oracle": {
+        "tests": 1,
+        "failures": [
+          {
+            "original": "io_uring_prep_madvise"
+          }
+        ],
+        "errors": 0,
+        "skips": 0,
+        "success": false
+      },
+      "outcome": "killed",
+      "log": ".mutants/python/2026-10-10/reference-semantics/memory-advice-claims-open-descriptor.log"
+    },
+    {
+      "id": "open-claims-file-advice-outcome",
+      "compiled": true,
+      "generated": true,
+      "freshness_check_exit": 0,
+      "oracle": {
+        "tests": 1,
+        "failures": [
+          {
+            "original": "io_uring_prep_openat2"
+          }
+        ],
+        "errors": 0,
+        "skips": 0,
+        "success": false
+      },
+      "outcome": "killed",
+      "log": ".mutants/python/2026-10-10/reference-semantics/open-claims-file-advice-outcome.log"
+    }
+  ],
+  "restored_byte_exactly": true,
+  "restored_manifest_contract_passed": true,
+  "log_normalization": "Only trailing spaces/tabs/CR and terminal empty lines removed; substantive output unchanged."
+}

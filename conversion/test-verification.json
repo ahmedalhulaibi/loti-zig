@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 44,
+  "tests_run": 45,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -54,7 +54,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 84
+          "overrun": 79
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -90,7 +90,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 161
+          "overrun": 102
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -108,7 +108,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 46
+          "overrun": 53
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -205,12 +205,14 @@
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
     "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e",
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
-    "tools/reference_map.py": "0b3442b9d8afb169fd769db3c8dd3b4dcbc6afa660fca9582127079a9ef8465f",
+    "tools/reference_map.py": "ee733cffa308e1196508fc363450cf8f4db529341d04595ea7f56cd80868e1d9",
     "testdata/inputs/provided-buffer-cleanup-regression.json": "bd9bded8128e337206c07f718ed53d8293edcdd91422b562030f389703138556",
     "examples/mapping_fault.zig": "3d09d44feeee352a3c6a6dd7660a16c803489ef86fe0b6e801ecd03fd08c1e91",
     "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0",
     "tests/test_mapping_bindings.py": "654cfafd142536ef82c7a86f877ed6b80d834c3e11fa429b4fb6dfa533fad84d",
-    "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a"
+    "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a",
+    "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
+    "testdata/inputs/reference-semantics-bindings.json": "bd87f6f4e06670f52ac4dc0610c8d1dbfeae4fe7b49fee2cf1a44ea41faf951c"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."
 }

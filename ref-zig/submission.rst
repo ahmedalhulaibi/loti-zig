@@ -88,6 +88,11 @@ contains three u64 fields: flags, mode and resolution constraints. File advice
 specifies a descriptor/range/access pattern; memory advice specifies an address
 range/advice value and needs suitable page alignment where Linux requires it.
 The helpers do not silently call synchronous substitutes.
+In the submitted reference below, FADVISE uses NORMAL advice and checks its
+success CQE only; no cache or performance outcome is measured. The separate
+MADVISE request checks DONTNEED zeroing on owned anonymous pages. OPENAT2 returns
+the descriptor used for the independently checked file prefix. Do not attribute
+one operation's byte or memory effects to another operation's success CQE.
 
 ``splice`` transfers between descriptors, at least one of which must be a pipe.
 Its Zig offsets are **values**, not pointer arguments. Use the all-ones sentinel
