@@ -1,0 +1,29 @@
+{
+  "source_commit": "6a4119ba5969f3d18c6590b48f9af91f7f22944c",
+  "scope": "Original CONNECT block has constructor-only evidence; not a reproduced native/kernel defect.",
+  "original_block": "ref-liburing/submission.rst:525",
+  "constructor": {
+    "tag": 16,
+    "operation": "CONNECT",
+    "length": 0,
+    "flags": 0,
+    "buffer_index": 0
+  },
+  "missing_executable": true,
+  "missing_effects": [
+    "actual asynchronous client-side TCP connection",
+    "input peer/value length and network byte order",
+    "external listener independently observes local/remote endpoint identity",
+    "typed invalid FD/type/address/family/refusal/reconnect CQEs",
+    "fresh failed sockets and before-exit owned FD cleanup"
+  ],
+  "planned_boundary": "reference-connect PORT: fixed127.0.0.1, native client to caller-owned listener, private bound-but-not-listening refusal endpoint; no arbitrary external network, payload/TLS/DNS/IPv6/datagram/cancellation/architecture/review assurance. Invalid ports rejected before setup.",
+  "source_sha256": {
+    "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
+    "build.zig": "99d7847a68511080071fe23e155ee4297ff93b3edeb5291e5b81a1b7b286ab03",
+    "tools/reference_map.py": "d97a9793ca11c37501138ae42412c4bfe6ffb97592bd6c7e6594b54ba4dae2e5",
+    "ref-zig/submission.rst": "04a43057817a0e541633bf5950ee3442b84c5f184b4bbdcab80c04f6cccaf65c",
+    "conversion/reference-block-disposition.md": "9b69e5c73edd5517290434d9e7f9fae58522666fc9733b5f7bcbb3e7256a4987"
+  },
+  "review": "Mandatory independent host remains unavailable. No retry/fallback or verifier-agent artifact."
+}
