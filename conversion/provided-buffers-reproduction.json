@@ -1,0 +1,27 @@
+{
+  "scope": "Provided-buffer preparation exists; selected-read, CQE buffer-ID and remove-count execution were not established by constructor output. The new CLI is absent. These declarations came from retired delme.c, not an omitted runnable upstream tutorial.",
+  "source_commit": "0f98bcbabdb1a42f71d856884a9e15d693f40a99",
+  "compiler": "0.17.0",
+  "constructors": [
+    {
+      "tag": 27,
+      "operation": "PROVIDE_BUFFERS",
+      "length": 4096,
+      "flags": 0,
+      "buffer_index": 1
+    },
+    {
+      "tag": 28,
+      "operation": "REMOVE_BUFFERS",
+      "length": 0,
+      "flags": 0,
+      "buffer_index": 1
+    }
+  ],
+  "cli_exists": false,
+  "source_sha256": {
+    "examples/reference_submission.zig": "8468dc3bd283bbe5844a641ea04fc03f6d769863dfdca9f6c468f6e0635df24b",
+    "conversion/reference-map.json": "76e0c35e70dd1e86d3eb59ffe61f414ff5d145a093c88ead2f2d19e2c22dfd0f",
+    "ref-zig/cqe.rst": "e7408176b9b6c280ead49e80d432f2e135f467514abe95c687abb292b8433e81"
+  }
+}
