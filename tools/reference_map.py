@@ -16,6 +16,7 @@ PREPARE = "examples/reference_submission.zig"
 FILES = "examples/reference_files.zig"
 BUFFERS = "examples/reference_buffers.zig"
 SPLICE = "examples/reference_splice.zig"
+POLL = "examples/reference_poll.zig"
 RAW = "examples/reference_raw.zig"
 
 PREPARERS = {
@@ -175,6 +176,10 @@ def generate():
                 elif method in {"provide_buffers", "remove_buffers"}:
                     example = BUFFERS
                     scope = "constructed and submitted; selected bytes/flags, exhaustion, group isolation, recycling and actual removal counts checked; sequential nonempty regular-file reads only"
+                elif method in {"poll_add", "poll_remove"}:
+                    example = POLL
+                    scope = "constructed and submitted; validated command-state model, one-shot IN/rearm, two cancellation CQEs, missing target/invalid FD, HUP/EOF and before-exit pipe closure; independent syscall oracle checks deadline guards; no readiness/cancel race or multishot assurance"
+                    difference = "Native u32 mask encoded little-endian; default one-shot returns an event bitmask, not bytes. HUP can be reported without requesting it." if method == "poll_add" else "Target is the original u64 tag, not a foreign pointer; target and remover have distinct CQEs. Sequential pending cancellation returns -ECANCELED/0; absent targets return -ENOENT."
         elif original in OTHER:
             native_name, example, difference = OTHER[original]
             native_source = "os/linux/IoUring.zig"

@@ -1,0 +1,9 @@
+[
+  {"name": "missing_wait", "old": " = -1 ETIME (Timer expired)", "new": " = 0", "count": 1, "error": "WrongPollDeadlineCount"},
+  {"name": "wrong_duration", "old": "tv_nsec=1000000", "new": "tv_nsec=2000000", "count": 4, "error": "WrongPollDeadlineArguments"},
+  {"name": "wrong_minimum", "old": "0, 1, IORING_ENTER_GETEVENTS", "new": "0, 0, IORING_ENTER_GETEVENTS", "count": 4, "error": "WrongPollDeadlineArguments"},
+  {"name": "wrong_mask_size", "old": "sigmask_sz=0", "new": "sigmask_sz=8", "count": 4, "error": "WrongPollDeadlineArguments"},
+  {"name": "wrong_errno", "old": "ETIME (Timer expired)", "new": "EAGAIN (Resource temporarily unavailable)", "count": 4, "error": "InvalidPollDeadlineTrace"},
+  {"name": "wrong_flags", "old": "IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG", "new": "IORING_ENTER_GETEVENTS", "count": 4, "error": "WrongPollDeadlineArguments"},
+  {"name": "wrong_submission", "old": "5, 1, 0, 0, NULL, 8", "new": "5, 0, 0, 0, NULL, 8", "count": 1, "error": "InvalidPollSubmissionTrace"}
+]

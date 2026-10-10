@@ -237,13 +237,13 @@
     "stopped_because": "settings.max_examples=400"
   },
   "source_sha256": {
-    "build.zig": "1d227767b9a5b206e403bb8c410b0d22ed64e75832b568bfe90b2774875c72ab",
+    "build.zig": "130adacd6bf6b9256b0eee82e76ee1d65980e77d829e59297b7f680b175555bc",
     "examples/reference_files.zig": "4f2792ef1cd99f2191f242f040ca4a90d4af376a3dfb955cd0e04167f139f65f",
     "tests/test_file_operations.py": "11a70eafa618fa1246fcae50baa7f6ffd91c3bfd43174812c79ca7531fdbb186",
     "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
     "testdata/inputs/file-operations-report.json": "82215f932bf6622b6c5362d08c9035a33e24d3d5bd83e5f8cb3fce59466facd1",
     "testdata/inputs/file-operations-invalid-arguments.json": "95a3fe47a3473a059f6d5b4ca47cbcb298ce14d6c0d8ec8874e201824f218de6",
-    "tools/reference_map.py": "8a26f2ea91523da319f624c3b056b370df66b22098d85bfbeef2f6da5844b134",
+    "tools/reference_map.py": "4fba32d835a678fda7470c6ec743184ee385f1d451ca2608baed9bf1edf9cf81",
     "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1"
   },
   "sdk_source_sha256": {
@@ -265,6 +265,14 @@
   "current_source_replay": "Current complete 45-test suite re-executed this native contract after unrelated API-description corrections. Native source, fixtures and existing contract test bytes are unchanged; retained literal reports/traces remain pinned. Only generator-source fingerprint changed.",
   "replay_after_splice": {
     "scope": "Affected execution/binding consumers replayed in complete 49-test/nine400-case suite before version-pin refresh. Historical mutation source pins remain unchanged; no new mutation or independent-review claim.",
+    "refreshed_paths": [
+      "build.zig",
+      "tools/reference_map.py"
+    ],
+    "suite_receipt": "conversion/test-verification.json"
+  },
+  "replay_after_poll": {
+    "scope": "Relevant execution/binding consumers replayed in complete 53-test/ten400-case suite before fingerprint refresh. Historical mutation pins unchanged; no new mutation or independent-review claim.",
     "refreshed_paths": [
       "build.zig",
       "tools/reference_map.py"

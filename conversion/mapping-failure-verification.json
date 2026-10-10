@@ -156,7 +156,7 @@
     "examples/mapping_fault.zig": "3d09d44feeee352a3c6a6dd7660a16c803489ef86fe0b6e801ecd03fd08c1e91",
     "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0",
     "tests/test_mapping_bindings.py": "654cfafd142536ef82c7a86f877ed6b80d834c3e11fa429b4fb6dfa533fad84d",
-    "tools/reference_map.py": "8a26f2ea91523da319f624c3b056b370df66b22098d85bfbeef2f6da5844b134",
+    "tools/reference_map.py": "4fba32d835a678fda7470c6ec743184ee385f1d451ca2608baed9bf1edf9cf81",
     "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a"
   },
   "sdk_source_sha256": {
@@ -215,6 +215,13 @@
   "current_source_replay": "Current complete 45-test suite re-executed this native contract after unrelated API-description corrections. Native source, fixtures and existing contract test bytes are unchanged; retained literal reports/traces remain pinned. Only generator-source fingerprint changed.",
   "replay_after_splice": {
     "scope": "Affected execution/binding consumers replayed in complete 49-test/nine400-case suite before version-pin refresh. Historical mutation source pins remain unchanged; no new mutation or independent-review claim.",
+    "refreshed_paths": [
+      "tools/reference_map.py"
+    ],
+    "suite_receipt": "conversion/test-verification.json"
+  },
+  "replay_after_poll": {
+    "scope": "Relevant execution/binding consumers replayed in complete 53-test/ten400-case suite before fingerprint refresh. Historical mutation pins unchanged; no new mutation or independent-review claim.",
     "refreshed_paths": [
       "tools/reference_map.py"
     ],

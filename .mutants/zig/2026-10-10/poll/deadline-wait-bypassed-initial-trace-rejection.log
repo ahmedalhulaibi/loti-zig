@@ -1,0 +1,19 @@
+{"tests": 1, "failures": 0, "errors": 1, "skips": 0}
+test_native_deadline_waits_and_damaged_traces (tests.test_poll_waits.PollDeadlineContracts.test_native_deadline_waits_and_damaged_traces)
+Kills bypassed/fabricated empty checks and weak timeout/count/mask trace parsing. ... ERROR
+
+======================================================================
+ERROR: test_native_deadline_waits_and_damaged_traces (tests.test_poll_waits.PollDeadlineContracts.test_native_deadline_waits_and_damaged_traces)
+Kills bypassed/fabricated empty checks and weak timeout/count/mask trace parsing.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll_waits.py", line 60, in test_native_deadline_waits_and_damaged_traces
+    observed = inspect_deadlines(trace.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll_waits.py", line 37, in inspect_deadlines
+    raise ValueError("WrongPollDeadlineCount")
+ValueError: WrongPollDeadlineCount
+
+----------------------------------------------------------------------
+Ran 1 test in 0.021s
+
+FAILED (errors=1)

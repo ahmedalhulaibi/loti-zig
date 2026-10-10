@@ -4528,10 +4528,10 @@
   },
   "negative_cases": 9,
   "source_sha256": {
-    "build.zig": "1d227767b9a5b206e403bb8c410b0d22ed64e75832b568bfe90b2774875c72ab",
+    "build.zig": "130adacd6bf6b9256b0eee82e76ee1d65980e77d829e59297b7f680b175555bc",
     "examples/reference_buffers.zig": "a44155312b4f0c382b0c29126516f2ae3dad874ae84d37b9e29790ee5fa5e13a",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tools/reference_map.py": "8a26f2ea91523da319f624c3b056b370df66b22098d85bfbeef2f6da5844b134",
+    "tools/reference_map.py": "4fba32d835a678fda7470c6ec743184ee385f1d451ca2608baed9bf1edf9cf81",
     "testdata/inputs/provided-buffer-plans.json": "d50e0ed4acc123babeba111df163ae802d034cd9695c859f9bf5813d74332199",
     "testdata/inputs/provided-buffer-invalid-plans.json": "6c7749c1f127f3e155dd3d56aee2003ac0d25755431737e2921eb070c564cd59",
     "testdata/inputs/provided-buffer-input.bin": "fdeab9acf3710362bd2658cdc9a29e8f9c757fcf9811603a8c447cd1d9151108",
@@ -4556,6 +4556,14 @@
   "current_source_replay": "Current complete 45-test suite re-executed this native contract after unrelated API-description corrections. Native source, fixtures and existing contract test bytes are unchanged; retained literal reports/traces remain pinned. Only generator-source fingerprint changed.",
   "replay_after_splice": {
     "scope": "Affected execution/binding consumers replayed in complete 49-test/nine400-case suite before version-pin refresh. Historical mutation source pins remain unchanged; no new mutation or independent-review claim.",
+    "refreshed_paths": [
+      "build.zig",
+      "tools/reference_map.py"
+    ],
+    "suite_receipt": "conversion/test-verification.json"
+  },
+  "replay_after_poll": {
+    "scope": "Relevant execution/binding consumers replayed in complete 53-test/ten400-case suite before fingerprint refresh. Historical mutation pins unchanged; no new mutation or independent-review claim.",
     "refreshed_paths": [
       "build.zig",
       "tools/reference_map.py"

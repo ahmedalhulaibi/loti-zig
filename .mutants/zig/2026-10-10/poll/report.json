@@ -1,0 +1,185 @@
+{
+  "scope": "Nine compiled poll-exercise and two syntax-valid independent trace-oracle regressions, not whole-port/SDK, concurrency, every descriptor/mask or independent-review assurance.",
+  "source_sha256": {
+    "examples/reference_poll.zig": "5996d0502a155f8d7ed5c1d6f1e4db10233f16e6b1ee32d81de4e2a0b1e14a5d",
+    "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810"
+  },
+  "mutants": [
+    {
+      "id": "deadline-wait-bypassed",
+      "source": "examples/reference_poll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll_waits.PollDeadlineContracts.test_native_deadline_waits_and_damaged_traces",
+      "log": ".mutants/zig/2026-10-10/poll/deadline-wait-bypassed.log"
+    },
+    {
+      "id": "wrong-readiness-mask",
+      "source": "examples/reference_poll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans",
+      "log": ".mutants/zig/2026-10-10/poll/wrong-readiness-mask.log"
+    },
+    {
+      "id": "wrong-cancellation-target",
+      "source": "examples/reference_poll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 3,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans",
+      "log": ".mutants/zig/2026-10-10/poll/wrong-cancellation-target.log"
+    },
+    {
+      "id": "multishot-instead-of-one-shot",
+      "source": "examples/reference_poll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans",
+      "log": ".mutants/zig/2026-10-10/poll/multishot-instead-of-one-shot.log"
+    },
+    {
+      "id": "canceled-cqe-result-hidden",
+      "source": "examples/reference_poll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 3,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans",
+      "log": ".mutants/zig/2026-10-10/poll/canceled-cqe-result-hidden.log"
+    },
+    {
+      "id": "pipe-read-offset-explicit",
+      "source": "examples/reference_poll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans",
+      "log": ".mutants/zig/2026-10-10/poll/pipe-read-offset-explicit.log"
+    },
+    {
+      "id": "eof-zero-length-proxy",
+      "source": "examples/reference_poll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans",
+      "log": ".mutants/zig/2026-10-10/poll/eof-zero-length-proxy.log"
+    },
+    {
+      "id": "read-bytes-corrupted",
+      "source": "examples/reference_poll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans",
+      "log": ".mutants/zig/2026-10-10/poll/read-bytes-corrupted.log"
+    },
+    {
+      "id": "pipe-close-omitted",
+      "source": "examples/reference_poll.zig",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans",
+      "log": ".mutants/zig/2026-10-10/poll/pipe-close-omitted.log"
+    },
+    {
+      "id": "missing-deadline-count-accepted",
+      "source": "tests/test_poll_waits.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll_waits.PollDeadlineContracts.test_native_deadline_waits_and_damaged_traces",
+      "log": ".mutants/python/2026-10-10/poll/missing-deadline-count-accepted.log"
+    },
+    {
+      "id": "deadline-arguments-ignored",
+      "source": "tests/test_poll_waits.py",
+      "compiled_or_syntax_valid": true,
+      "outcome": "killed",
+      "oracle": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "test": "tests.test_poll_waits.PollDeadlineContracts.test_native_deadline_waits_and_damaged_traces",
+      "log": ".mutants/python/2026-10-10/poll/deadline-arguments-ignored.log"
+    }
+  ],
+  "initial_survivor": "deadline-wait-bypassed passed original three model/literal/state tests. Independent strace deadline oracle now kills it; no production defect claimed. Original core tests/fixtures preserved byte-exactly.",
+  "restored_byte_exactly": true,
+  "rebuilt_four_test_baseline_passed": true,
+  "development_note": "Initial live-trace rejection was a specific WrongPollDeadlineCount ValueError, not a launch/compile issue; supplemental test now classifies it as assertion. Source restored/rebuilt baseline before reassessment.",
+  "log_normalization": {
+    "scope": "Only trailing spaces/tabs/CR and terminal blank lines; substantive observations unchanged.",
+    "files": [
+      ".mutants/zig/2026-10-10/poll/deadline-wait-bypassed-build.log",
+      ".mutants/zig/2026-10-10/poll/wrong-readiness-mask-build.log",
+      ".mutants/zig/2026-10-10/poll/wrong-cancellation-target-build.log",
+      ".mutants/zig/2026-10-10/poll/wrong-cancellation-target.log",
+      ".mutants/zig/2026-10-10/poll/multishot-instead-of-one-shot-build.log",
+      ".mutants/zig/2026-10-10/poll/canceled-cqe-result-hidden-build.log",
+      ".mutants/zig/2026-10-10/poll/canceled-cqe-result-hidden.log",
+      ".mutants/zig/2026-10-10/poll/pipe-read-offset-explicit-build.log",
+      ".mutants/zig/2026-10-10/poll/eof-zero-length-proxy-build.log",
+      ".mutants/zig/2026-10-10/poll/read-bytes-corrupted-build.log",
+      ".mutants/zig/2026-10-10/poll/pipe-close-omitted-build.log",
+      ".mutants/python/2026-10-10/poll/missing-deadline-count-accepted-build.log",
+      ".mutants/python/2026-10-10/poll/deadline-arguments-ignored-build.log"
+    ]
+  }
+}

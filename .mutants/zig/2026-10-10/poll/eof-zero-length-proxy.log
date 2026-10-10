@@ -1,0 +1,19 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans)
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... FAIL
+
+======================================================================
+FAIL: test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans)
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll.py", line 97, in test_literal_oracle_and_valid_plans
+    self.assertEqual(json.loads(run("reference-poll", *commands).stdout), literal)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'ste[1744 chars]th': 0, 'offset': 18446744073709551615, 'flags[121 chars]True} != {'ste[1744 chars]th': 1, 'offset': 18446744073709551615, 'flags[121 chars]True}
+Diff is 3833 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.022s
+
+FAILED (failures=1)

@@ -1,0 +1,71 @@
+{"tests": 1, "failures": 3, "errors": 0, "skips": 0}
+test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans)
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ...
+  test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='default')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... FAIL
+  test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='cancel_empty')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... FAIL
+  test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='multiple_cancel')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... FAIL
+
+======================================================================
+FAIL: test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='default')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll.py", line 101, in test_literal_oracle_and_valid_plans
+    self.assertEqual(json.loads(run("reference-poll", *args).stdout), expected_report(args or DEFAULT))
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-poll exited 1: error: UnexpectedPollCompletion
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:89:82: 0x1207663 in expect (reference_poll.zig)
+    if (observed.tag != tag or observed.result != result or observed.flags != 0) return error.UnexpectedPollCompletion;
+                                                                                 ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:152:17: 0x120a328 in main (reference_poll.zig)
+                try expect(step.cqes[0], target, -@as(i32, @backingInt(linux.E.CANCELED)));
+                ^
+
+
+======================================================================
+FAIL: test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='cancel_empty')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll.py", line 101, in test_literal_oracle_and_valid_plans
+    self.assertEqual(json.loads(run("reference-poll", *args).stdout), expected_report(args or DEFAULT))
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-poll exited 1: error: UnexpectedPollCompletion
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:89:82: 0x1207663 in expect (reference_poll.zig)
+    if (observed.tag != tag or observed.result != result or observed.flags != 0) return error.UnexpectedPollCompletion;
+                                                                                 ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:152:17: 0x120a328 in main (reference_poll.zig)
+                try expect(step.cqes[0], target, -@as(i32, @backingInt(linux.E.CANCELED)));
+                ^
+
+
+======================================================================
+FAIL: test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='multiple_cancel')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll.py", line 101, in test_literal_oracle_and_valid_plans
+    self.assertEqual(json.loads(run("reference-poll", *args).stdout), expected_report(args or DEFAULT))
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-poll exited 1: error: UnexpectedPollCompletion
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:89:82: 0x1207663 in expect (reference_poll.zig)
+    if (observed.tag != tag or observed.result != result or observed.flags != 0) return error.UnexpectedPollCompletion;
+                                                                                 ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:152:17: 0x120a328 in main (reference_poll.zig)
+                try expect(step.cqes[0], target, -@as(i32, @backingInt(linux.E.CANCELED)));
+                ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.329s
+
+FAILED (failures=3)

@@ -148,6 +148,40 @@ readiness for a descriptor/mask; submit again to observe later events.
 ``poll_remove`` identifies an outstanding poll by its submission tag. Removal
 and the target request have distinct completions; races can yield ``NOENT``.
 
+Executed poll ownership
+~~~~~~~~~~~~~~~~~~~~~~~
+
+``reference-poll`` uses an owned nonblocking pipe; operands are optional command
+names: ``arm write wait cancel drain missing quiet``. The full plan (at most 64
+commands) is validated before setup. ``arm`` submits a one-shot ``POLL.IN``;
+``write`` creates input with one byte; ``wait`` consumes that poll's CQE but not
+the pipe data. ``drain`` reads the bytes. Each emitted step records the original
+tag, unconsumed poll ownership, byte count, actual request/CQEs and FIFO data.
+
+Completed one-shot requests produce no more notifications. A new ``arm`` while
+the bytes remain unread completes again; a later write without rearm does not.
+An empty pending poll can be cancelled: the target receives ``-ECANCELED`` and
+the separate remover receives zero. Both CQEs must be consumed. Output sorts
+these two by tag, not arrival order. ``missing`` removes a nonexistent numeric
+tag and receives ``-ENOENT``. Removal after readiness is a race, not this
+example's deterministic cancellation path.
+
+The final checks submit an invalid-FD poll, then close the pipe's write end.
+``POLL.HUP`` is delivered although only ``POLL.IN`` was requested; a subsequent
+positive-length READ returns zero for EOF. Pipe closure is queried before exit.
+``quiet`` and empty-arm/HUP guards use real bounded EXT_ARG waits (Linux 5.11+).
+An independent syscall trace checks the waits, since a reported timeout boolean
+alone cannot prove them. No sleeps or concurrent sender are used.
+
+Scope: ordinary one-shot pipes, IN/HUP and sequential ownership. Other masks,
+descriptors, multishot, readiness/cancel races, SQPOLL and concurrent consumers
+are not verified. The helper accepts a u32 mask and encodes it little-endian;
+poll event results are bitmasks, not transferred byte counts.
+
+.. literalinclude:: ../examples/reference_poll.zig
+   :language: zig
+   :caption: One-shot readiness, rearm, cancellation and HUP/EOF
+
 Timers, cancellation and selected buffers
 -----------------------------------------
 

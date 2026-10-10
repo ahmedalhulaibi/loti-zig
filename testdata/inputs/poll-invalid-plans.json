@@ -1,0 +1,165 @@
+[
+  {
+    "name": "unknown",
+    "commands": [
+      "bogus"
+    ],
+    "error": "UnknownPollCommand"
+  },
+  {
+    "name": "empty_command",
+    "commands": [
+      ""
+    ],
+    "error": "UnknownPollCommand"
+  },
+  {
+    "name": "wait_unarmed",
+    "commands": [
+      "wait"
+    ],
+    "error": "PollWaitNeedsArmedReadyInput"
+  },
+  {
+    "name": "wait_empty",
+    "commands": [
+      "arm",
+      "wait"
+    ],
+    "error": "PollWaitNeedsArmedReadyInput"
+  },
+  {
+    "name": "cancel_unarmed",
+    "commands": [
+      "cancel"
+    ],
+    "error": "PollCancelNeedsArmedEmptyInput"
+  },
+  {
+    "name": "cancel_ready",
+    "commands": [
+      "arm",
+      "write",
+      "cancel"
+    ],
+    "error": "PollCancelNeedsArmedEmptyInput"
+  },
+  {
+    "name": "drain_empty",
+    "commands": [
+      "drain"
+    ],
+    "error": "PollDrainNeedsUnarmedData"
+  },
+  {
+    "name": "drain_armed",
+    "commands": [
+      "write",
+      "arm",
+      "drain"
+    ],
+    "error": "PollDrainNeedsUnarmedData"
+  },
+  {
+    "name": "duplicate_arm",
+    "commands": [
+      "arm",
+      "arm"
+    ],
+    "error": "PollAlreadyArmed"
+  },
+  {
+    "name": "outstanding",
+    "commands": [
+      "arm"
+    ],
+    "error": "PollPlanLeavesOutstandingPoll"
+  },
+  {
+    "name": "quiet_armed",
+    "commands": [
+      "arm",
+      "quiet"
+    ],
+    "error": "PollQuietNeedsNoPoll"
+  },
+  {
+    "name": "missing_armed",
+    "commands": [
+      "arm",
+      "missing"
+    ],
+    "error": "PollRemoveMissingNeedsNoPoll"
+  },
+  {
+    "name": "too_long",
+    "commands": [
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet"
+    ],
+    "error": "PollPlanTooLong"
+  }
+]

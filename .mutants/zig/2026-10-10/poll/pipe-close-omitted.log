@@ -1,0 +1,27 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans)
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... FAIL
+
+======================================================================
+FAIL: test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans)
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll.py", line 97, in test_literal_oracle_and_valid_plans
+    self.assertEqual(json.loads(run("reference-poll", *commands).stdout), literal)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-poll exited 1: error: PollPipeDescriptorStillOpen
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:104:66: 0x12084b0 in close (reference_poll.zig)
+    if (linux.errno(linux.fcntl(fd, linux.F.GETFD, 0)) != .BADF) return error.PollPipeDescriptorStillOpen;
+                                                                 ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:187:26: 0x120cfcb in main (reference_poll.zig)
+    const write_closed = try close(pipe[1], &owned[1]);
+                         ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.067s
+
+FAILED (failures=1)

@@ -1,0 +1,11 @@
+test_invalid_command_states_are_rejected_before_execution (tests.test_poll.PollContracts.test_invalid_command_states_are_rejected_before_execution)
+Kills weakened state/length/name validation and pending-poll leaks on invalid plans. ... ok
+test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans)
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... ok
+test_poll_commands_follow_ownership_and_one_shot_model (tests.test_poll.PollContracts.test_poll_commands_follow_ownership_and_one_shot_model)
+Kills wrong masks/tags, stale one-shot CQEs, lost FIFO bytes and double acknowledgement. ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.476s
+
+OK

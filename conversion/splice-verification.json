@@ -6,12 +6,12 @@
     "architecture": "x86_64"
   },
   "source_sha256": {
-    "build.zig": "1d227767b9a5b206e403bb8c410b0d22ed64e75832b568bfe90b2774875c72ab",
+    "build.zig": "130adacd6bf6b9256b0eee82e76ee1d65980e77d829e59297b7f680b175555bc",
     "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
-    "tools/reference_map.py": "8a26f2ea91523da319f624c3b056b370df66b22098d85bfbeef2f6da5844b134",
-    "conversion/reference-map.json": "aa784c59f10e26d032ad1ed0e2fec9c8991ccb1c38a33d2724a746aae4e8f803",
-    "ref-zig/submission.rst": "632d7708cce7649038eecbfb966da051e9a04226c54ba395d0e26fc0e47643e2",
+    "tools/reference_map.py": "4fba32d835a678fda7470c6ec743184ee385f1d451ca2608baed9bf1edf9cf81",
+    "conversion/reference-map.json": "01d33a1bb57a90e6751c1503aba45ddcd60418f77da70c51ab5cde4c539186ab",
+    "ref-zig/submission.rst": "f6fb92c737448c091ee0f00410b2402b4c1e2602a5071e2d8283e784af4aecc5",
     "testdata/inputs/splice-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
     "testdata/inputs/splice-partial.bin": "7456c2d90a90f290eef60a9724d811da38d479f5a6441990d9b41c4e94b634bb",
     "testdata/inputs/splice-report.json": "c6dd5af2ff11234fc659be050b94eac5a934cc9a008ca0b31e3f47ba088285a8"
@@ -162,5 +162,15 @@
     "browser_cases": 81,
     "epubcheck": "5.2.1: zero fatals/errors/warnings/infos"
   },
-  "remaining": "Independent review host blocked; remaining original operations/state paths/semantic acceptance and personal-fork push still open."
+  "remaining": "Independent review host blocked; remaining original operations/state paths/semantic acceptance and personal-fork push still open.",
+  "replay_after_poll": {
+    "scope": "Relevant execution/binding consumers replayed in complete 53-test/ten400-case suite before fingerprint refresh. Historical mutation pins unchanged; no new mutation or independent-review claim.",
+    "refreshed_paths": [
+      "build.zig",
+      "tools/reference_map.py",
+      "conversion/reference-map.json",
+      "ref-zig/submission.rst"
+    ],
+    "suite_receipt": "conversion/test-verification.json"
+  }
 }

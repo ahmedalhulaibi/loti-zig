@@ -1,0 +1,46 @@
+{
+  "steps": [
+    {
+      "command": "arm", "tag": 1, "poll_before": null, "poll_after": 1,
+      "queued_before": 0, "queued_after": 0,
+      "request": {"operation": "POLL_ADD", "tag": 1, "mask": 1, "target": null, "length": 0, "offset": 0, "flags": 0},
+      "cqes": [], "data": [], "empty_timeout": true
+    },
+    {
+      "command": "write", "tag": 2, "poll_before": 1, "poll_after": 1,
+      "queued_before": 0, "queued_after": 1,
+      "request": null, "cqes": [], "data": [1], "empty_timeout": false
+    },
+    {
+      "command": "wait", "tag": 3, "poll_before": 1, "poll_after": null,
+      "queued_before": 1, "queued_after": 1,
+      "request": null, "cqes": [{"tag": 1, "result": 1, "flags": 0}], "data": [], "empty_timeout": false
+    },
+    {
+      "command": "quiet", "tag": 4, "poll_before": null, "poll_after": null,
+      "queued_before": 1, "queued_after": 1,
+      "request": null, "cqes": [], "data": [], "empty_timeout": true
+    }
+  ],
+  "cleanup": {
+    "request": {"operation": "READ", "tag": 1000002, "mask": null, "target": null, "length": 1, "offset": 18446744073709551615, "flags": 0},
+    "cqes": [{"tag": 1000002, "result": 1, "flags": 0}], "data": [1]
+  },
+  "invalid_descriptor": {
+    "request": {"operation": "POLL_ADD", "tag": 1000000, "mask": 1, "target": null, "length": 0, "offset": 0, "flags": 0},
+    "cqe": {"tag": 1000000, "result": -9, "flags": 0}
+  },
+  "absent_target": {
+    "request": {"operation": "POLL_REMOVE", "tag": 1000001, "mask": null, "target": 18446744073709551615, "length": 0, "offset": 0, "flags": 0},
+    "cqe": {"tag": 1000001, "result": -2, "flags": 0}
+  },
+  "hup": {
+    "request": {"operation": "POLL_ADD", "tag": 1000003, "mask": 1, "target": null, "length": 0, "offset": 0, "flags": 0},
+    "empty_timeout": true, "cqe": {"tag": 1000003, "result": 16, "flags": 0},
+    "eof": {
+      "request": {"operation": "READ", "tag": 1000004, "mask": null, "target": null, "length": 1, "offset": 18446744073709551615, "flags": 0},
+      "cqe": {"tag": 1000004, "result": 0, "flags": 0}, "data": []
+    }
+  },
+  "pipe_closed": [true, true], "final_queue_empty": true
+}

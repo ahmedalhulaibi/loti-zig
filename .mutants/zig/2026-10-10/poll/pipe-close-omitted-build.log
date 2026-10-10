@@ -1,0 +1,42 @@
+Build Summary: 41/41 steps succeeded
+install success
++- install readv cached
+|  +- compile exe readv debug native cached 6ms MaxRSS:40M
++- install raw-cat cached
+|  +- compile exe raw-cat debug native cached 5ms MaxRSS:38M
++- install cat cached
+|  +- compile exe cat debug native cached 7ms MaxRSS:40M
++- install cp cached
+|  +- compile exe cp debug native cached 6ms MaxRSS:34M
++- install probe cached
+|  +- compile exe probe debug native cached 5ms MaxRSS:36M
++- install link cached
+|  +- compile exe link debug native cached 5ms MaxRSS:41M
++- install fixed-buffers cached
+|  +- compile exe fixed-buffers debug native cached 7ms MaxRSS:40M
++- install sq-poll cached
+|  +- compile exe sq-poll debug native cached 8ms MaxRSS:40M
++- install register-eventfd cached
+|  +- compile exe register-eventfd debug native cached 7ms MaxRSS:39M
++- install webserver cached
+|  +- compile exe webserver debug native cached 7ms MaxRSS:39M
++- install reference-setup cached
+|  +- compile exe reference-setup debug native cached 6ms MaxRSS:41M
++- install reference-completion cached
+|  +- compile exe reference-completion debug native cached 5ms MaxRSS:39M
++- install reference-signals cached
+|  +- compile exe reference-signals debug native cached 8ms MaxRSS:41M
++- install reference-files cached
+|  +- compile exe reference-files debug native cached 10ms MaxRSS:40M
++- install reference-buffers cached
+|  +- compile exe reference-buffers debug native cached 4ms MaxRSS:40M
++- install reference-splice cached
+|  +- compile exe reference-splice debug native cached 5ms MaxRSS:40M
++- install reference-poll success
+|  +- compile exe reference-poll debug native success 515ms MaxRSS:163M
++- install reference-registration cached
+|  +- compile exe reference-registration debug native cached 5ms MaxRSS:36M
++- install reference-submission cached
+|  +- compile exe reference-submission debug native cached 5ms MaxRSS:40M
++- install reference-raw cached
+   +- compile exe reference-raw debug native cached 4ms MaxRSS:34M

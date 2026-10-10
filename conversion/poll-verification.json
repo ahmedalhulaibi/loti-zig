@@ -1,0 +1,308 @@
+{
+  "scope": "Sequential one-shot poll ownership on owned nonblocking pipes. Not readiness/cancellation races, multishot, every mask/descriptor, concurrent consumers, historical kernels/other architectures, whole-port or independent review.",
+  "environment": {
+    "zig": "0.17.0",
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64",
+    "strace": "strace -- version 7.0"
+  },
+  "source_sha256": {
+    "build.zig": "130adacd6bf6b9256b0eee82e76ee1d65980e77d829e59297b7f680b175555bc",
+    "examples/reference_poll.zig": "5996d0502a155f8d7ed5c1d6f1e4db10233f16e6b1ee32d81de4e2a0b1e14a5d",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
+    "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
+    "tools/reference_map.py": "4fba32d835a678fda7470c6ec743184ee385f1d451ca2608baed9bf1edf9cf81",
+    "conversion/reference-map.json": "01d33a1bb57a90e6751c1503aba45ddcd60418f77da70c51ab5cde4c539186ab",
+    "ref-zig/submission.rst": "f6fb92c737448c091ee0f00410b2402b4c1e2602a5071e2d8283e784af4aecc5",
+    "conversion/poll-spec-sha256.json": "25f95439286a15890ff0249e0ec14d6b9dd521ea3c8f9e35f37c4a07930817a7",
+    "testdata/inputs/poll-deadline.trace": "276b53fa38940bab91a1663190ca5fcb009af25b4b6fcbe128b3f6879db87bec",
+    "testdata/inputs/poll-invalid-plans.json": "b26c9eb8d121029785b8621ddecc5ff4458847fad765b2ed90679192c5d81e17",
+    "testdata/inputs/poll-invalid-traces.json": "d4a806a95beca5179e1c2051df09341fa49b4c079292bcddffc7d35bceee82d6",
+    "testdata/inputs/poll-literal-plan.json": "3cd700972b600fc9b9170226f80a16323ffdb1f8728e0ffecbc0668b5cc85732",
+    "testdata/inputs/poll-plans.json": "8a74a53ce3e9b84248dfdf59213f7b5e7aeb4c000a3a85161adcc518bafe8bd4",
+    "testdata/inputs/poll-report.json": "9a815acb9f4954286b85ebc40a92e9cbf51e3f9cad9bba9c8e564f4495055831"
+  },
+  "sdk_sha256": {
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "valid_plans": [
+    {
+      "plan": "default",
+      "commands": 12,
+      "whole_model_match": true,
+      "report_sha256": "0ea9ffcdebb7d857bb02c4f80f4a0454827d68ec062c46dfb4dbe2df3ad964ff",
+      "cancellation_cqes": [
+        [
+          {
+            "tag": 9,
+            "result": -125,
+            "flags": 0
+          },
+          {
+            "tag": 10,
+            "result": 0,
+            "flags": 0
+          }
+        ]
+      ],
+      "hup_result": 16,
+      "eof_result": 0,
+      "pipe_closed": [
+        true,
+        true
+      ]
+    },
+    {
+      "plan": "pending_readiness",
+      "commands": 5,
+      "whole_model_match": true,
+      "report_sha256": "391084fafbd7c114042acbe27d5bc8cdd5b0f48c02c9d5c85b8242b200c99c7f",
+      "cancellation_cqes": [],
+      "hup_result": 16,
+      "eof_result": 0,
+      "pipe_closed": [
+        true,
+        true
+      ]
+    },
+    {
+      "plan": "cancel_empty",
+      "commands": 4,
+      "whole_model_match": true,
+      "report_sha256": "9662b20ca00b89d899db87615d0c3fee898193e5afdefd1cafeb7ab26f06fbd1",
+      "cancellation_cqes": [
+        [
+          {
+            "tag": 1,
+            "result": -125,
+            "flags": 0
+          },
+          {
+            "tag": 2,
+            "result": 0,
+            "flags": 0
+          }
+        ]
+      ],
+      "hup_result": 16,
+      "eof_result": 0,
+      "pipe_closed": [
+        true,
+        true
+      ]
+    },
+    {
+      "plan": "ready_rearm",
+      "commands": 7,
+      "whole_model_match": true,
+      "report_sha256": "31a6d5711765d9931e84d7a5a0376ea9314069e1208d1bae71febf8b155dacd1",
+      "cancellation_cqes": [],
+      "hup_result": 16,
+      "eof_result": 0,
+      "pipe_closed": [
+        true,
+        true
+      ]
+    },
+    {
+      "plan": "cleanup_leftovers",
+      "commands": 3,
+      "whole_model_match": true,
+      "report_sha256": "af8dae400e814483b4d34c051ce3d622bfc50851ebe54ac1f4c1b2768d348c5b",
+      "cancellation_cqes": [],
+      "hup_result": 16,
+      "eof_result": 0,
+      "pipe_closed": [
+        true,
+        true
+      ]
+    },
+    {
+      "plan": "multiple_cancel",
+      "commands": 5,
+      "whole_model_match": true,
+      "report_sha256": "f349dfdf763516e2d5497486f3a12c581eb121ac49ea847c6f9ce80af37a9af5",
+      "cancellation_cqes": [
+        [
+          {
+            "tag": 1,
+            "result": -125,
+            "flags": 0
+          },
+          {
+            "tag": 2,
+            "result": 0,
+            "flags": 0
+          }
+        ],
+        [
+          {
+            "tag": 3,
+            "result": -125,
+            "flags": 0
+          },
+          {
+            "tag": 4,
+            "result": 0,
+            "flags": 0
+          }
+        ]
+      ],
+      "hup_result": 16,
+      "eof_result": 0,
+      "pipe_closed": [
+        true,
+        true
+      ]
+    },
+    {
+      "plan": "no_poll",
+      "commands": 2,
+      "whole_model_match": true,
+      "report_sha256": "2d751535625fac2bb25e4eb76ff7bc57a4439068e2013e208bcf1deb5594b2ed",
+      "cancellation_cqes": [],
+      "hup_result": 16,
+      "eof_result": 0,
+      "pipe_closed": [
+        true,
+        true
+      ]
+    },
+    {
+      "plan": "maximum",
+      "commands": 64,
+      "whole_model_match": true,
+      "report_sha256": "28be775586f906d287ccca28765247d5a301ff184c02853a9b60e59a18984eb1",
+      "cancellation_cqes": [],
+      "hup_result": 16,
+      "eof_result": 0,
+      "pipe_closed": [
+        true,
+        true
+      ]
+    }
+  ],
+  "literal_oracle": "testdata/inputs/poll-report.json: independently handwritten expected complete report; two fresh subprocesses checked in suite.",
+  "invalid_plans_rejected": 13,
+  "property": {
+    "test": "test_poll.PollContracts.test_poll_commands_follow_ownership_and_one_shot_model",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 73
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  },
+  "deadline_trace": {
+    "path": "conversion/poll-deadline.trace",
+    "sha256": "bb02f45f08e6ad22aec655e028af8fb8d34e8c1f63019d675f6a5b8be3799b1d",
+    "observed": {
+      "rings": 1,
+      "submissions": 6,
+      "deadline_waits": [
+        {
+          "submitted": 0,
+          "minimum": 1,
+          "flags": [
+            "IORING_ENTER_EXT_ARG",
+            "IORING_ENTER_GETEVENTS"
+          ],
+          "mask": "NULL",
+          "mask_size": 0,
+          "minimum_time": 0,
+          "seconds": 0,
+          "nanoseconds": 1000000,
+          "size": 24,
+          "errno": "ETIME"
+        },
+        {
+          "submitted": 0,
+          "minimum": 1,
+          "flags": [
+            "IORING_ENTER_EXT_ARG",
+            "IORING_ENTER_GETEVENTS"
+          ],
+          "mask": "NULL",
+          "mask_size": 0,
+          "minimum_time": 0,
+          "seconds": 0,
+          "nanoseconds": 1000000,
+          "size": 24,
+          "errno": "ETIME"
+        },
+        {
+          "submitted": 0,
+          "minimum": 1,
+          "flags": [
+            "IORING_ENTER_EXT_ARG",
+            "IORING_ENTER_GETEVENTS"
+          ],
+          "mask": "NULL",
+          "mask_size": 0,
+          "minimum_time": 0,
+          "seconds": 0,
+          "nanoseconds": 1000000,
+          "size": 24,
+          "errno": "ETIME"
+        },
+        {
+          "submitted": 0,
+          "minimum": 1,
+          "flags": [
+            "IORING_ENTER_EXT_ARG",
+            "IORING_ENTER_GETEVENTS"
+          ],
+          "mask": "NULL",
+          "mask_size": 0,
+          "minimum_time": 0,
+          "seconds": 0,
+          "nanoseconds": 1000000,
+          "size": 24,
+          "errno": "ETIME"
+        }
+      ]
+    },
+    "damaged_traces_rejected": 7,
+    "scope": "Actual EXT_ARG/ETIME deadline guards, not a clock-performance or concurrent readiness/cancel oracle."
+  },
+  "spec_first_core_unchanged": true,
+  "seal_scope": "Author spec-first snapshot, not independent verifier or ACL seal. Implementation must preserve these boundary tests and fixtures.",
+  "mutation_report": "conversion/mutation-poll.json",
+  "compiled_native_kills": 9,
+  "syntax_valid_parser_kills": 2,
+  "initial_survivor_closed": "Deadline-bypass passed three model/literal/state tests; independent syscall oracle now rejects missing actual waits.",
+  "development": "Initial live-trace ValueError was a semantic count rejection but unittest classified it as an error; supplemental trace test now exposes it as an assertion. Core spec tests unchanged. Every mutation stop restored/rebuilt baseline; no compile failures counted.",
+  "diagnostics": {
+    "paths_checked": 5,
+    "visible": 0,
+    "suppressed_disclosed": 1,
+    "scope": "Active LSP; disposed/suppressed locations are not an unconditional clean verdict."
+  },
+  "navigation": "Current SDK bodies and direct source/build/CLI/model/map/book/disposition consumers inspected. Fabric unavailable and review graph old; no complete transitive-call or independent-review claim.",
+  "change_boundary": "One poll ownership teaching concern wired through implementation/build/test/map/book/evidence. Existing native sources/SDK unchanged.",
+  "gates": {
+    "build_steps": 41,
+    "tests": 53,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "properties": 10,
+    "generated_valid_each": 400,
+    "epub_literals": 114,
+    "reader_cases": 81,
+    "epubcheck": "5.2.1: zero fatals/errors/warnings/infos"
+  },
+  "remaining": "Independent host blocked; EPOLL_CTL/CONNECT/message effects, other required state/failure paths, semantic acceptance and personal-fork push remain open."
+}

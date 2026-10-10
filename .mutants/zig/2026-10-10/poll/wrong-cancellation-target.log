@@ -1,0 +1,80 @@
+{"tests": 1, "failures": 3, "errors": 0, "skips": 0}
+test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans)
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ...
+  test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='default')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... FAIL
+  test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='cancel_empty')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... FAIL
+  test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='multiple_cancel')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... FAIL
+
+======================================================================
+FAIL: test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='default')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll.py", line 101, in test_literal_oracle_and_valid_plans
+    self.assertEqual(json.loads(run("reference-poll", *args).stdout), expected_report(args or DEFAULT))
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-poll exited 1: error: WaitTimedOut
+/home/ahmed/workspace/va/loti-zig/examples/raw_ops.zig:81:18: 0x1206aed in wait_with_timeout (reference_poll.zig)
+        .TIME => return error.WaitTimedOut,
+                 ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:74:9: 0x1207293 in take (reference_poll.zig)
+        try raw.wait_with_timeout(ring, 1, &timeout, null);
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:151:29: 0x120a0fd in main (reference_poll.zig)
+                step.cqes = try take(allocator, &ring, 2);
+                            ^
+
+
+======================================================================
+FAIL: test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='cancel_empty')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll.py", line 101, in test_literal_oracle_and_valid_plans
+    self.assertEqual(json.loads(run("reference-poll", *args).stdout), expected_report(args or DEFAULT))
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-poll exited 1: error: WaitTimedOut
+/home/ahmed/workspace/va/loti-zig/examples/raw_ops.zig:81:18: 0x1206aed in wait_with_timeout (reference_poll.zig)
+        .TIME => return error.WaitTimedOut,
+                 ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:74:9: 0x1207293 in take (reference_poll.zig)
+        try raw.wait_with_timeout(ring, 1, &timeout, null);
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:151:29: 0x120a0fd in main (reference_poll.zig)
+                step.cqes = try take(allocator, &ring, 2);
+                            ^
+
+
+======================================================================
+FAIL: test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans) (case='multiple_cancel')
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_poll.py", line 101, in test_literal_oracle_and_valid_plans
+    self.assertEqual(json.loads(run("reference-poll", *args).stdout), expected_report(args or DEFAULT))
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-poll exited 1: error: WaitTimedOut
+/home/ahmed/workspace/va/loti-zig/examples/raw_ops.zig:81:18: 0x1206aed in wait_with_timeout (reference_poll.zig)
+        .TIME => return error.WaitTimedOut,
+                 ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:74:9: 0x1207293 in take (reference_poll.zig)
+        try raw.wait_with_timeout(ring, 1, &timeout, null);
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_poll.zig:151:29: 0x120a0fd in main (reference_poll.zig)
+                step.cqes = try take(allocator, &ring, 2);
+                            ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 3.332s
+
+FAILED (failures=3)

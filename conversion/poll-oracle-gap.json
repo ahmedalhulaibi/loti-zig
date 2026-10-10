@@ -1,0 +1,10 @@
+{
+  "id": "deadline-wait-bypassed",
+  "compiled": true,
+  "initial_outcome": "survived",
+  "initial_suite": "tests.test_poll: three tests passed; self-reported empty_timeout cannot prove an actual deadline wait.",
+  "source_sha256": "5996d0502a155f8d7ed5c1d6f1e4db10233f16e6b1ee32d81de4e2a0b1e14a5d",
+  "next_action": "Add independent public-CLI syscall deadline oracle, then reassess; no production defect claimed.",
+  "final_outcome": "killed",
+  "closure": "tests.test_poll_waits: actual syscall count/arguments reject the deadline-bypass mutant; original core tests remain exact."
+}

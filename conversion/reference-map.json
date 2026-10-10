@@ -306,18 +306,18 @@
     {
       "original": "io_uring_prep_poll_add",
       "zig": "std.os.linux.IoUring.poll_add",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/reference_poll.zig",
+      "verification_scope": "constructed and submitted; validated command-state model, one-shot IN/rearm, two cancellation CQEs, missing target/invalid FD, HUP/EOF and before-exit pipe closure; independent syscall oracle checks deadline guards; no readiness/cancel race or multishot assurance",
+      "semantic_difference": "Native u32 mask encoded little-endian; default one-shot returns an event bitmask, not bytes. HUP can be reported without requesting it.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn poll_add(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    poll_mask: u32,\n) !*linux.io_uring_sqe"
     },
     {
       "original": "io_uring_prep_poll_remove",
       "zig": "std.os.linux.IoUring.poll_remove",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/reference_poll.zig",
+      "verification_scope": "constructed and submitted; validated command-state model, one-shot IN/rearm, two cancellation CQEs, missing target/invalid FD, HUP/EOF and before-exit pipe closure; independent syscall oracle checks deadline guards; no readiness/cancel race or multishot assurance",
+      "semantic_difference": "Target is the original u64 tag, not a foreign pointer; target and remover have distinct CQEs. Sequential pending cancellation returns -ECANCELED/0; absent targets return -ENOENT.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn poll_remove(\n    self: *IoUring,\n    user_data: u64,\n    target_user_data: u64,\n) !*linux.io_uring_sqe"
     },

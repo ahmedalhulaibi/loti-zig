@@ -1,0 +1,131 @@
+[
+  {
+    "name": "default",
+    "commands": []
+  },
+  {
+    "name": "pending_readiness",
+    "commands": [
+      "arm",
+      "write",
+      "wait",
+      "drain",
+      "quiet"
+    ]
+  },
+  {
+    "name": "cancel_empty",
+    "commands": [
+      "arm",
+      "cancel",
+      "quiet",
+      "missing"
+    ]
+  },
+  {
+    "name": "ready_rearm",
+    "commands": [
+      "write",
+      "arm",
+      "wait",
+      "arm",
+      "wait",
+      "drain",
+      "quiet"
+    ]
+  },
+  {
+    "name": "cleanup_leftovers",
+    "commands": [
+      "write",
+      "write",
+      "quiet"
+    ]
+  },
+  {
+    "name": "multiple_cancel",
+    "commands": [
+      "arm",
+      "cancel",
+      "arm",
+      "cancel",
+      "missing"
+    ]
+  },
+  {
+    "name": "no_poll",
+    "commands": [
+      "quiet",
+      "missing"
+    ]
+  },
+  {
+    "name": "maximum",
+    "commands": [
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet",
+      "quiet"
+    ]
+  }
+]

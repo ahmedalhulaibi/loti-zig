@@ -1,0 +1,10 @@
+{
+  "scope": "Author spec-first snapshot, not independent verifier or ACL seal. Implementation must preserve these boundary tests and fixtures.",
+  "sha256": {
+    "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
+    "testdata/inputs/poll-invalid-plans.json": "b26c9eb8d121029785b8621ddecc5ff4458847fad765b2ed90679192c5d81e17",
+    "testdata/inputs/poll-literal-plan.json": "3cd700972b600fc9b9170226f80a16323ffdb1f8728e0ffecbc0668b5cc85732",
+    "testdata/inputs/poll-plans.json": "8a74a53ce3e9b84248dfdf59213f7b5e7aeb4c000a3a85161adcc518bafe8bd4",
+    "testdata/inputs/poll-report.json": "9a815acb9f4954286b85ebc40a92e9cbf51e3f9cad9bba9c8e564f4495055831"
+  }
+}

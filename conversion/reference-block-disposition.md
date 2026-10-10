@@ -110,8 +110,8 @@ every operand field or execute the opcode. Original spelling errors
 | `ref-liburing/submission.rst:505` | `accept`: optional address/length outputs and accept flags; CQE owns new FD | P/E; real loopback HTTP accept; supplied peer-address output not independently checked |
 | `ref-liburing/submission.rst:525` | `connect`: peer pointer plus value length; original listener/value-result mistakes corrected | P only; actual async connect unverified |
 | `ref-liburing/submission.rst:544` | `epoll_ctl`: interest-list operation, not readiness wait; optional event storage | P only; actual ADD/MOD/DEL effects unverified |
-| `ref-liburing/submission.rst:565` | `poll_add`: one-shot readiness mask, not modifying a global poll list | P only; rearm/readiness effect unverified |
-| `ref-liburing/submission.rst:583` | `poll_remove`: target u64 tag; remover/target CQEs distinct, races possible | P only; actual cancellation/race effects unverified |
+| `ref-liburing/submission.rst:565` | `poll_add`: one-shot readiness mask, not modifying a global poll list | P/E; owned-pipe IN/rearm and HUP bitmasks, absent later one-shot CQEs, invalid-FD error and EOF bytes checked; sequential command model, not multishot or every mask/descriptor |
+| `ref-liburing/submission.rst:583` | `poll_remove`: target u64 tag; remover/target CQEs distinct, races possible | P/E; pending empty-pipe target -ECANCELED and remover 0 CQEs correlated separately; absent target -ENOENT checked; readiness/cancel races remain unverified |
 
 ## Raw syscall declarations
 
