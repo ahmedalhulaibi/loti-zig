@@ -1,0 +1,47 @@
+[
+  {
+    "original": "io_uring_enter",
+    "zig": "std.os.linux.io_uring_enter",
+    "example": "examples/raw_cat.zig",
+    "verification_scope": "compiled and executed",
+    "semantic_difference": "Publishes submitted entries or waits according to flags; decode the raw usize result with linux.errno.",
+    "declaration_source": "os/linux.zig",
+    "zig_signature": "pub fn io_uring_enter(fd: fd_t, to_submit: u32, min_complete: u32, flags: u32, sig: ?*sigset_t) usize"
+  },
+  {
+    "original": "io_uring_prep_fadvise",
+    "zig": "raw_ops.fadvise",
+    "example": "examples/reference_raw.zig",
+    "verification_scope": "constructed and submitted; correlated CQEs and actual read/memory effects checked",
+    "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+    "declaration_source": "examples/raw_ops.zig",
+    "zig_signature": "pub fn fadvise(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, offset: u64, length: u32, advice: u32) !*linux.io_uring_sqe"
+  },
+  {
+    "original": "io_uring_prep_madvise",
+    "zig": "raw_ops.madvise",
+    "example": "examples/reference_raw.zig",
+    "verification_scope": "constructed and submitted; correlated CQEs and actual read/memory effects checked",
+    "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+    "declaration_source": "examples/raw_ops.zig",
+    "zig_signature": "pub fn madvise(ring: *linux.IoUring, tag: u64, memory: []u8, advice: u32) !*linux.io_uring_sqe"
+  },
+  {
+    "original": "io_uring_prep_openat2",
+    "zig": "raw_ops.openat2",
+    "example": "examples/reference_raw.zig",
+    "verification_scope": "constructed and submitted; correlated CQEs and actual read/memory effects checked",
+    "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+    "declaration_source": "examples/raw_ops.zig",
+    "zig_signature": "pub fn openat2(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, path: [*:0]const u8, how: *const OpenHow) !*linux.io_uring_sqe"
+  },
+  {
+    "original": "io_uring_queue_init",
+    "zig": "std.os.linux.IoUring.init",
+    "example": "examples/reference_setup.zig",
+    "verification_scope": "compiled and executed",
+    "semantic_difference": "Returns an owned value through a Zig error union; power-of-two u16 entries.",
+    "declaration_source": "os/linux/IoUring.zig",
+    "zig_signature": "pub fn init(entries: u16, flags: u32) !IoUring"
+  }
+]

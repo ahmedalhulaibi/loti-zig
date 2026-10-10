@@ -1,0 +1,76 @@
+{
+  "scope": "Author comparison found incorrect or overstated claims in five generated bindings. A successful freshness check did not establish these semantics. Not independent review or acceptance of all 99 bindings.",
+  "source_commit": "866c10c233fcbefb275e2945f6d426ec93b14b2d",
+  "bindings_as_is": [
+    {
+      "original": "io_uring_enter",
+      "zig": "std.os.linux.io_uring_enter",
+      "example": "examples/raw_cat.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Publishes submitted entries or waits according to flags; decode the raw usize result with linux.errno.",
+      "declaration_source": "os/linux.zig",
+      "zig_signature": "pub fn io_uring_enter(fd: fd_t, to_submit: u32, min_complete: u32, flags: u32, sig: ?*sigset_t) usize"
+    },
+    {
+      "original": "io_uring_prep_fadvise",
+      "zig": "raw_ops.fadvise",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; correlated CQEs and actual read/memory effects checked",
+      "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn fadvise(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, offset: u64, length: u32, advice: u32) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_madvise",
+      "zig": "raw_ops.madvise",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; correlated CQEs and actual read/memory effects checked",
+      "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn madvise(ring: *linux.IoUring, tag: u64, memory: []u8, advice: u32) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_openat2",
+      "zig": "raw_ops.openat2",
+      "example": "examples/reference_raw.zig",
+      "verification_scope": "constructed and submitted; correlated CQEs and actual read/memory effects checked",
+      "semantic_difference": "No corresponding IoUring wrapper in Zig 0.17.0; helper encodes the actual Linux SQE.",
+      "declaration_source": "examples/raw_ops.zig",
+      "zig_signature": "pub fn openat2(ring: *linux.IoUring, tag: u64, fd: linux.fd_t, path: [*:0]const u8, how: *const OpenHow) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_queue_init",
+      "zig": "std.os.linux.IoUring.init",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Returns an owned value through a Zig error union; power-of-two u16 entries.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn init(entries: u16, flags: u32) !IoUring"
+    }
+  ],
+  "passing_freshness_check": {
+    "command": [
+      "python3",
+      "tools/reference_map.py",
+      "--check"
+    ],
+    "exit": 0,
+    "stdout": "76 original API symbols; 99 total native bindings; Zig 0.17.0\n"
+  },
+  "findings": {
+    "io_uring_enter": "RawRing release-publishes the SQ tail before calling the syscall; the syscall consumes already-published entries, it does not publish them.",
+    "io_uring_queue_init": "The designated reference-setup executable calls IoUring.init_params, not IoUring.init; the SDK dependency is init -> init_params, not the reverse. The cat tutorial directly calls init.",
+    "io_uring_prep_fadvise": "The reference checks a successful NORMAL-advice CQE. Subsequent file reads and anonymous-page zeroing cannot be attributed to FADVISE.",
+    "io_uring_prep_madvise": "The generic read/memory-effect scope needs the actual DONTNEED anonymous-page zeroing boundary.",
+    "io_uring_prep_openat2": "The generic read/memory-effect scope needs the actual descriptor/regular-file-prefix boundary."
+  },
+  "source_sha256": {
+    "tools/reference_map.py": "0b3442b9d8afb169fd769db3c8dd3b4dcbc6afa660fca9582127079a9ef8465f",
+    "examples/reference_setup.zig": "c601487b9e78fd81aec3eabde091353b17b5f87251641b3443d1b302e3518ae7",
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
+    "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca"
+  },
+  "red_contract": "tests/test_reference_semantics.py records the defective generated bindings as-is. The correction flips the full-shape fixture in the next commit."
+}
