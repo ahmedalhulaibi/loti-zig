@@ -1,0 +1,24 @@
+{
+  "base_commit": "50cf44e1b65586d5a6c22220257df6f7da051467",
+  "scope": "Nonzero RWF operation effects were explicitly unverified; no native/kernel defect alleged. Existing per-I/O flag guidance distinguishes rw_flags from u8 SQE flags, but normal writes use zero flags.",
+  "original_prose_range": "ref-iouring/io_uring_enter.rst:392-414",
+  "source_sha256": {
+    "ref-zig/submission.rst": "1507474161e9a727f0076d16cb122e40a02032cce47d28c33ff4ccce7243f5ce",
+    "conversion/prose-line-disposition.md": "76a9885679045ff334e3059652bccf1322a247c672541208d837a1ea7a6757df",
+    "examples/cp.zig": "07fc47895c3b43fd704ecd17a06ca789ddf929fdadf7330ad916ed7a1e3e58d1",
+    "examples/reference_files.zig": "4f2792ef1cd99f2191f242f040ca4a90d4af376a3dfb955cd0e04167f139f65f"
+  },
+  "sdk_rwf": {
+    "HIPRI": 1,
+    "DSYNC": 2,
+    "SYNC": 4,
+    "NOWAIT": 8,
+    "APPEND": 16,
+    "note": "Exact installed Zig0.17.0 namespace lacks newer NOAPPEND/ATOMIC/DONTCACHE; do not fabricate those SDK constants."
+  },
+  "binary_exists": false,
+  "observed_shell_error": "/usr/bin/bash: line 1: zig-out/bin/reference-rwf: No such file or directory\n",
+  "missing": "Actual per-request APPEND (explicit/current offset), not sticky file O_APPEND; unsupported flags preserve bytes/cursor/read poison; actual SQE flags/operation flags/CQEs and private-memfd ownership.",
+  "safety": "Private memfd only; no external output file, host storage, physical durability, O_DIRECT/IOPOLL or concurrency claims.",
+  "review": "Supported independent child host blocked; author evidence is not reviewer acceptance."
+}
