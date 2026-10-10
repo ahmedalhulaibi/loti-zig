@@ -17,6 +17,11 @@ after it. Constructors already take a u64 tag. ``sq_ready`` counts outstanding
 SQ entries; free capacity is ``ring.sq.sqes.len - ring.sq_ready()`` under the
 wrapper's single-producer discipline. Neither count describes completed I/O.
 
+The :ref:`completion reference <completion>` fills all eight slots, checks that
+a ninth NOP returns ``SubmissionQueueFull`` without changing pending count or
+local tail, then submits and consumes all eight. This is an executed capacity
+failure, not merely a constructor signature. It uses one producer without SQPOLL.
+
 ``submit`` publishes queued entries and returns a submission count through a
 Zig error union. ``submit_and_wait(wait_nr)`` also requests a completion wait,
 but its returned number still counts submissions. SQPOLL can consume entries

@@ -1,0 +1,14 @@
+{
+  "invalid_number": {"args": ["x"], "error": "InvalidCompletionCapacity"},
+  "negative": {"args": ["-1"], "error": "InvalidCompletionCapacity"},
+  "integer_overflow": {"args": ["4294967296"], "error": "InvalidCompletionCapacity"},
+  "capacity_overflow": {"args": ["9"], "error": "CompletionCapacityOutOfRange"},
+  "zero_progress": {"args": ["0"], "error": "CompletionPlanDoesNotDrain"},
+  "partial_progress": {"args": ["7"], "error": "CompletionPlanDoesNotDrain"},
+  "too_many": {
+    "args": ["8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8",
+             "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8",
+             "8", "8", "8", "8", "8", "8", "8", "8", "8", "8", "8"],
+    "error": "ExpectedCompletionCapacities"
+  }
+}

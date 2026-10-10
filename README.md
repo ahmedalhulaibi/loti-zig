@@ -83,6 +83,7 @@ zig-out/bin/webserver public 8080
 zig-out/bin/reference-setup input.txt
 zig-out/bin/reference-setup input.txt --separate-mappings
 zig-out/bin/reference-completion
+zig-out/bin/reference-completion 0 1 3 8 1
 zig-out/bin/reference-registration input.txt replacement.txt
 zig-out/bin/reference-submission input.txt
 zig-out/bin/reference-raw input.txt
@@ -97,6 +98,12 @@ this is not a full-file reader or concurrent table-update model.
 incompatible mixed operands. Other reference/tutorial programs provide separate
 operation-effect evidence. The HTTP server is loopback-only and is not production
 software. Consult each chapter for capabilities, lifetimes and limits.
+
+Completion operands are at most 32 destination capacities (0–8), with enough
+total capacity to drain eight NOP CQEs. The default is `0 1 3 8 1`. The reference
+checks full-SQ rejection/state preservation, populated zero/singleton/batch
+nonblocking consumption, and CQ physical wrap. Model-based tests check exact
+head/readiness transitions; u32 wrap, overflow and concurrent consumers remain open.
 
 Probe raw output is a 2,064-byte native-endian ABI snapshot, not JSON. Snapshot
 listing uses the same SDK lookup as the live listing. Independent raw decoding

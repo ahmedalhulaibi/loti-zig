@@ -1,0 +1,135 @@
+test_copy_and_manual_ack_are_distinct_and_deadline_really_expires (tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires) ... FAIL
+test_nonblocking_completion_capacities_follow_queue_model (tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model) ... ERROR
+
+======================================================================
+ERROR: test_nonblocking_completion_capacities_follow_queue_model (tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model)
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 103, in test_nonblocking_completion_capacities_follow_queue_model
+  |     @given(capacities=st.lists(st.integers(min_value=0, max_value=8), max_size=30)
+  |                ^^^^^^^
+  |   File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1779, in wrapped_test
+  |     _raise_to_user(errors, state.settings, [], " in explicit examples")
+  |     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1474, in _raise_to_user
+  |     raise the_error_hypothesis_found
+  | ExceptionGroup: Hypothesis found 5 distinct failures in explicit examples. (5 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 111, in test_nonblocking_completion_capacities_follow_queue_model
+    |     observed = json.loads(run("reference-completion", *map(str, capacities)).stdout)
+    |                           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    |     raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+    | AssertionError: reference-completion exited 1: error: FullQueueRejectionChangedState
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:49:9: 0x11eda03 in nonblocking (reference_completion.zig)
+    |         return error.FullQueueRejectionChangedState;
+    |         ^
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:165:19: 0x11effe7 in main (reference_completion.zig)
+    |     const queue = try nonblocking(&ring, capacities, &steps);
+    |                   ^
+    |
+    | Falsifying explicit example: test_nonblocking_completion_capacities_follow_queue_model(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_nonblocking_completion_capacities_follow_queue_model>,
+    |     capacities=[0, 1, 3, 8, 1],
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 111, in test_nonblocking_completion_capacities_follow_queue_model
+    |     observed = json.loads(run("reference-completion", *map(str, capacities)).stdout)
+    |                           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    |     raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+    | AssertionError: reference-completion exited 1: error: FullQueueRejectionChangedState
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:49:9: 0x11eda03 in nonblocking (reference_completion.zig)
+    |         return error.FullQueueRejectionChangedState;
+    |         ^
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:165:19: 0x11effe7 in main (reference_completion.zig)
+    |     const queue = try nonblocking(&ring, capacities, &steps);
+    |                   ^
+    |
+    | Falsifying explicit example: test_nonblocking_completion_capacities_follow_queue_model(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_nonblocking_completion_capacities_follow_queue_model>,
+    |     capacities=[8],
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 111, in test_nonblocking_completion_capacities_follow_queue_model
+    |     observed = json.loads(run("reference-completion", *map(str, capacities)).stdout)
+    |                           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    |     raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+    | AssertionError: reference-completion exited 1: error: FullQueueRejectionChangedState
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:49:9: 0x11eda03 in nonblocking (reference_completion.zig)
+    |         return error.FullQueueRejectionChangedState;
+    |         ^
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:165:19: 0x11effe7 in main (reference_completion.zig)
+    |     const queue = try nonblocking(&ring, capacities, &steps);
+    |                   ^
+    |
+    | Falsifying explicit example: test_nonblocking_completion_capacities_follow_queue_model(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_nonblocking_completion_capacities_follow_queue_model>,
+    |     capacities=[1, 1, 1, 1, 1, 1, 1, 1, 0],
+    | )
+    +---------------- 4 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 111, in test_nonblocking_completion_capacities_follow_queue_model
+    |     observed = json.loads(run("reference-completion", *map(str, capacities)).stdout)
+    |                           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    |     raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+    | AssertionError: reference-completion exited 1: error: FullQueueRejectionChangedState
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:49:9: 0x11eda03 in nonblocking (reference_completion.zig)
+    |         return error.FullQueueRejectionChangedState;
+    |         ^
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:165:19: 0x11effe7 in main (reference_completion.zig)
+    |     const queue = try nonblocking(&ring, capacities, &steps);
+    |                   ^
+    |
+    | Falsifying explicit example: test_nonblocking_completion_capacities_follow_queue_model(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_nonblocking_completion_capacities_follow_queue_model>,
+    |     capacities=[0, 0, 8, 0, 0],
+    | )
+    +---------------- 5 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 111, in test_nonblocking_completion_capacities_follow_queue_model
+    |     observed = json.loads(run("reference-completion", *map(str, capacities)).stdout)
+    |                           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    |     raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+    | AssertionError: reference-completion exited 1: error: FullQueueRejectionChangedState
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:49:9: 0x11eda03 in nonblocking (reference_completion.zig)
+    |         return error.FullQueueRejectionChangedState;
+    |         ^
+    | /home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:165:19: 0x11effe7 in main (reference_completion.zig)
+    |     const queue = try nonblocking(&ring, capacities, &steps);
+    |                   ^
+    |
+    | Falsifying explicit example: test_nonblocking_completion_capacities_follow_queue_model(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_nonblocking_completion_capacities_follow_queue_model>,
+    |     capacities=[5, 2, 1, 0],
+    | )
+    +------------------------------------
+
+======================================================================
+FAIL: test_copy_and_manual_ack_are_distinct_and_deadline_really_expires (tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 82, in test_copy_and_manual_ack_are_distinct_and_deadline_really_expires
+    self.assertEqual(json.loads(run("reference-completion").stdout), {
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-completion exited 1: error: FullQueueRejectionChangedState
+/home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:49:9: 0x11eda03 in nonblocking (reference_completion.zig)
+        return error.FullQueueRejectionChangedState;
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_completion.zig:165:19: 0x11effe7 in main (reference_completion.zig)
+    const queue = try nonblocking(&ring, capacities, &steps);
+                  ^
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.357s
+
+FAILED (failures=1, errors=1)

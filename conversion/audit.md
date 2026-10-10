@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 22 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 24 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -73,9 +73,10 @@ The comparison found missing per-I/O `linux.RWF` / `sqe.rw_flags` guidance;
 `ref-zig/submission.rst` now distinguishes it from u8 dependency flags. Constructor
 rows still separate preparation from effects. Changed-descriptor registered-file
 reads now have actual sync replacement/async restore and ownership checks.
-Probe listing flags/bounds now have an independent oracle. Delivered signals/mask
-restoration, populated nonblocking CQ
-and capacity/failure/state checks remain open.
+Probe listing flags/bounds now have an independent oracle. Full-SQ rejection and
+populated nonblocking CQ now have bounded exact/model checks. Delivered signals,
+mask restoration, u32 wrap, CQ overflow and broader failure/interleaving checks
+remain open.
 
 The original copy's `BLKGETSIZE64` input feature is now recreated and executed
 against disposable read-only virtual disks. Native `cp` accepts regular or block
@@ -189,10 +190,41 @@ Fabric call-graph tooling is unavailable; direct bodies/consumers and current
 active LSP diagnostics were used, not the stale cached graph. Review remains
 blocked; no unsupported-host retry or alternative reviewer launch occurred.
 
+## Full-SQ rejection and nonblocking CQ model
+
+`4fde86c` reproduces an ignored capacity plan and absent execution paths. The
+completion CLI now fills eight SQEs and observes ninth-request rejection without
+changing pending count/local tail, then submits/waits for all eight CQEs. Default
+zero/singleton/batch capacities `0 1 3 8 1` yield counts `0 1 3 4 0` and CQ head
+`9 9 10 13 17 17`; all tags 10–17 are consumed once. A literal full-report oracle
+pins these values independently of the pure drain model.
+
+Model-based Hypothesis generates destination-capacity command sequences. Its
+separate model uses `min(capacity, remaining)` and advances head by that count;
+no native encoder/helper is reused. Five input plans and seven rejected argument
+cases are committed. `nonblocking-completion-verification.json` records complete
+fixture reports, current hashes and 400 generated passing command sequences.
+Head 9→17 across a 16-entry CQ proves physical wrap, not u32 counter overflow.
+The CQ is stable after the submit/wait barrier: no concurrency/SQPOLL claim.
+
+Seven compiled native exercise mutants die: ignored capacity, double ack,
+zero-capacity consumption, incomplete fill, changed tail after rejection,
+repeated batch tag and a blocking peek. The last produces the boundary's actual
+10-second `TimeoutExpired`. A runner duplicate-anchor assertion stopped before
+mutant six; source restoration/rebuilt baseline were checked, completed five
+were not repeated, and unique context resumed the remaining two. This runner
+error is not a compile-failing mutant. Reports/logs retain the limitation;
+installed SDK sources were not mutated. Baseline source is byte-exact restored.
+
+Current active LSP probes find no changed-source/test diagnostics. Fabric graph
+navigation is unavailable/stale; direct bodies and CLI/test/book consumers were
+inspected. One CLI crosses consumer folders, not domain modules. Author checks
+remain separate from blocked independent review; no reviewer retry occurred.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **30 passed**
-  (22 native + one VM + two publication + three inventory + two line-index tests), zero skips,
+- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **32 passed**
+  (24 native + one VM + two publication + three inventory + two line-index tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -202,9 +234,10 @@ blocked; no unsupported-host retry or alternative reviewer launch occurred.
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs;
   a fourth checks registered-file replacement/restore and unchanged binary inputs.
-  A fifth checks probe lookup across generated header bounds/flags.
+  A fifth checks probe lookup across generated header bounds/flags; a sixth
+  models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  five properties**, source hashes, 30 passing tests and zero skips. These remain
+  six properties**, source hashes, 32 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

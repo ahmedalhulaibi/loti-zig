@@ -1,0 +1,79 @@
+{
+  "scope": "Seven compiled, bounded native completion exercise mutations; the installed Zig SDK was not modified. Not whole-port/SDK mutation assurance, concurrent-consumer/SQPOLL/CQ-overflow coverage or independent review.",
+  "source": "examples/reference_completion.zig",
+  "source_sha256": "68cb89d6f08ffc80f4d9fe356b3328e00f3675732262b59221d3e0c13bd0fcc6",
+  "mutants": [
+    {
+      "mutant": "capacity-ignored",
+      "compiled": true,
+      "source_sha256": "28edd3f050d6ef425069f96ccc22f4b750023fb1e1afc140d8e17ed9c8c05858",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/nonblocking-completion/capacity-ignored.log",
+      "evidence": "Completed before runner duplicate-anchor assertion; exact compiled-and-killed receipts inspected."
+    },
+    {
+      "mutant": "double-acknowledgement",
+      "compiled": true,
+      "source_sha256": "cffd87e39f9367df491349a14ca3db57b59cd9783d8bf0078239a6446c232d5e",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/nonblocking-completion/double-acknowledgement.log",
+      "evidence": "Completed before runner duplicate-anchor assertion; exact compiled-and-killed receipts inspected."
+    },
+    {
+      "mutant": "zero-capacity-consumes",
+      "compiled": true,
+      "source_sha256": "655718f61271afeaa76bba4feb89e20b6862fc96103cbb0d71fb0e1c88c9e5dc",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/nonblocking-completion/zero-capacity-consumes.log",
+      "evidence": "Completed before runner duplicate-anchor assertion; exact compiled-and-killed receipts inspected."
+    },
+    {
+      "mutant": "incomplete-full-sq",
+      "compiled": true,
+      "source_sha256": "695deca8ca87d15c91150c90820eb37e9d7ed8dcf8ab57205be3fb20231a082b",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/nonblocking-completion/incomplete-full-sq.log",
+      "evidence": "Completed before runner duplicate-anchor assertion; exact compiled-and-killed receipts inspected."
+    },
+    {
+      "mutant": "rejection-tail-changed",
+      "compiled": true,
+      "source_sha256": "75a1f8e554d3b597533531cf1f6a6a5d96842461ad74f198122cf63583e5990d",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/nonblocking-completion/rejection-tail-changed.log",
+      "evidence": "Completed before runner duplicate-anchor assertion; exact compiled-and-killed receipts inspected."
+    },
+    {
+      "mutant": "batch-tag-repeated",
+      "compiled": true,
+      "source_sha256": "7350083532e2a2d2437272289a5d0b2178566781509471f713faba3771132e0f",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/nonblocking-completion/batch-tag-repeated.log"
+    },
+    {
+      "mutant": "blocking-peek",
+      "compiled": true,
+      "source_sha256": "6e1f8d548a89c32b19ede4e1ddc40cc04dcf2364f979a11536e5fe71568db40c",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/nonblocking-completion/blocking-peek.log"
+    }
+  ],
+  "runner_error": "Initial runner stopped before sixth mutation: duplicate text anchor tags[used] = cqe.user_data; (two occurrences). Source restored; baseline rebuilt/tested; unique context used; five completed mutants were not repeated. This is not a compile-failing mutant.",
+  "exact_source_restored": true,
+  "restored_test_exit_status": 0,
+  "log_normalization": "Trailing whitespace and final empty lines removed; substantive output unchanged."
+}

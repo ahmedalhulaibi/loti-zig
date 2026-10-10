@@ -67,12 +67,31 @@ Executable reference
 
    zig build
    zig-out/bin/reference-completion
+   zig-out/bin/reference-completion 0 1 3 8 1
+
+Optional operands are nonblocking destination capacities: at most 32 values,
+each 0–8, with enough total capacity to drain eight completions. With no operands
+the sequence is ``0, 1, 3, 8, 1``. The reference first fills all eight SQ slots;
+a ninth NOP must return ``SubmissionQueueFull`` without changing pending count
+or local SQ tail. After submission/wait makes all eight CQEs available, each
+copy uses ``wait_nr = 0``. A zero-capacity copy must preserve a populated CQ.
+The singleton and batch copies consume only their returned counts.
+
+The JSON records actual readiness/head transitions and sorted copied tags
+10–17, not an assumed CQ completion order. The first nine CQEs were already
+consumed by earlier phases. The new phase therefore crosses the physical end
+of the 16-entry CQ (head 9 to 17). This is **physical ring wrap**, not a proof
+of u32 counter overflow. No producer remains active during the drain model.
 
 .. literalinclude:: ../examples/reference_completion.zig
    :language: zig
-   :caption: Copied CQEs, separately borrowed CQEs and both timeout models
+   :caption: Copied/borrowed CQEs, both timeout models and nonblocking drain
 
-``tests/test_reference.py`` checks an empty nonblocking read, pending SQ count,
-tags 1–4 copied/consumed, tags 5–8 manually acknowledged, an empty final CQ, an
-expired enter deadline, and the actual timer CQE result ``-62`` (``-ETIME``).
-The check does not establish multishot, CQ overflow or concurrent-consumer safety.
+``tests/test_reference.py`` checks the complete default report against literal
+values: copied tags 1–4, separately acknowledged tags 5–8, expired enter deadline,
+and timer CQE ``-62``. Model-based Hypothesis commands then vary the nonblocking
+capacity sequence: ``count = min(capacity, remaining)``, readiness falls by that
+count, and CQ head rises exactly once. Full-SQ rejection preserves pending/tail
+state; all tags 10–17 are consumed exactly once. Invalid plans have exact errors.
+These checks do not establish delivered signals/mask restoration, u32 counter
+wrap, multishot, CQ overflow, SQPOLL interleavings or concurrent-consumer safety.

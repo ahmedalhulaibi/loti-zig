@@ -1,0 +1,606 @@
+{
+  "scope": "Current-kernel single-producer full-SQ rejection and stable populated CQ drain model; includes physical CQ wrap, not u32 wrap, CQ overflow, SQPOLL/concurrent interleavings, delivered signals, whole-port mutation assessment or independent review.",
+  "compiler": "0.17.0",
+  "kernel": "7.2.3-arch1-3",
+  "architecture": "x86_64",
+  "default_report": {
+    "empty": 0,
+    "pending": 4,
+    "space": 4,
+    "copied": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "manual": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "drained": 0,
+    "timed_out": true,
+    "timer_result": -62,
+    "nonblocking": {
+      "sq_capacity": 8,
+      "cq_capacity": 16,
+      "pending_before": 8,
+      "full_rejected": true,
+      "pending_after": 8,
+      "sq_tail_before": 17,
+      "sq_tail_after": 17,
+      "submitted": 8,
+      "sq_after_submit": 0,
+      "cq_before": 8,
+      "head_before": 9,
+      "steps": [
+        {
+          "capacity": 0,
+          "before": 8,
+          "count": 0,
+          "after": 8,
+          "head_before": 9,
+          "head_after": 9
+        },
+        {
+          "capacity": 1,
+          "before": 8,
+          "count": 1,
+          "after": 7,
+          "head_before": 9,
+          "head_after": 10
+        },
+        {
+          "capacity": 3,
+          "before": 7,
+          "count": 3,
+          "after": 4,
+          "head_before": 10,
+          "head_after": 13
+        },
+        {
+          "capacity": 8,
+          "before": 4,
+          "count": 4,
+          "after": 0,
+          "head_before": 13,
+          "head_after": 17
+        },
+        {
+          "capacity": 1,
+          "before": 0,
+          "count": 0,
+          "after": 0,
+          "head_before": 17,
+          "head_after": 17
+        }
+      ],
+      "copied": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "drained": 0,
+      "head_after": 17
+    }
+  },
+  "fixture_cases": [
+    {
+      "name": "default",
+      "capacities": [
+        0,
+        1,
+        3,
+        8,
+        1
+      ],
+      "report": {
+        "empty": 0,
+        "pending": 4,
+        "space": 4,
+        "copied": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "manual": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "drained": 0,
+        "timed_out": true,
+        "timer_result": -62,
+        "nonblocking": {
+          "sq_capacity": 8,
+          "cq_capacity": 16,
+          "pending_before": 8,
+          "full_rejected": true,
+          "pending_after": 8,
+          "sq_tail_before": 17,
+          "sq_tail_after": 17,
+          "submitted": 8,
+          "sq_after_submit": 0,
+          "cq_before": 8,
+          "head_before": 9,
+          "steps": [
+            {
+              "capacity": 0,
+              "before": 8,
+              "count": 0,
+              "after": 8,
+              "head_before": 9,
+              "head_after": 9
+            },
+            {
+              "capacity": 1,
+              "before": 8,
+              "count": 1,
+              "after": 7,
+              "head_before": 9,
+              "head_after": 10
+            },
+            {
+              "capacity": 3,
+              "before": 7,
+              "count": 3,
+              "after": 4,
+              "head_before": 10,
+              "head_after": 13
+            },
+            {
+              "capacity": 8,
+              "before": 4,
+              "count": 4,
+              "after": 0,
+              "head_before": 13,
+              "head_after": 17
+            },
+            {
+              "capacity": 1,
+              "before": 0,
+              "count": 0,
+              "after": 0,
+              "head_before": 17,
+              "head_after": 17
+            }
+          ],
+          "copied": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "drained": 0,
+          "head_after": 17
+        }
+      }
+    },
+    {
+      "name": "all_at_once",
+      "capacities": [
+        8
+      ],
+      "report": {
+        "empty": 0,
+        "pending": 4,
+        "space": 4,
+        "copied": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "manual": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "drained": 0,
+        "timed_out": true,
+        "timer_result": -62,
+        "nonblocking": {
+          "sq_capacity": 8,
+          "cq_capacity": 16,
+          "pending_before": 8,
+          "full_rejected": true,
+          "pending_after": 8,
+          "sq_tail_before": 17,
+          "sq_tail_after": 17,
+          "submitted": 8,
+          "sq_after_submit": 0,
+          "cq_before": 8,
+          "head_before": 9,
+          "steps": [
+            {
+              "capacity": 8,
+              "before": 8,
+              "count": 8,
+              "after": 0,
+              "head_before": 9,
+              "head_after": 17
+            }
+          ],
+          "copied": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "drained": 0,
+          "head_after": 17
+        }
+      }
+    },
+    {
+      "name": "singletons",
+      "capacities": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "report": {
+        "empty": 0,
+        "pending": 4,
+        "space": 4,
+        "copied": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "manual": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "drained": 0,
+        "timed_out": true,
+        "timer_result": -62,
+        "nonblocking": {
+          "sq_capacity": 8,
+          "cq_capacity": 16,
+          "pending_before": 8,
+          "full_rejected": true,
+          "pending_after": 8,
+          "sq_tail_before": 17,
+          "sq_tail_after": 17,
+          "submitted": 8,
+          "sq_after_submit": 0,
+          "cq_before": 8,
+          "head_before": 9,
+          "steps": [
+            {
+              "capacity": 1,
+              "before": 8,
+              "count": 1,
+              "after": 7,
+              "head_before": 9,
+              "head_after": 10
+            },
+            {
+              "capacity": 1,
+              "before": 7,
+              "count": 1,
+              "after": 6,
+              "head_before": 10,
+              "head_after": 11
+            },
+            {
+              "capacity": 1,
+              "before": 6,
+              "count": 1,
+              "after": 5,
+              "head_before": 11,
+              "head_after": 12
+            },
+            {
+              "capacity": 1,
+              "before": 5,
+              "count": 1,
+              "after": 4,
+              "head_before": 12,
+              "head_after": 13
+            },
+            {
+              "capacity": 1,
+              "before": 4,
+              "count": 1,
+              "after": 3,
+              "head_before": 13,
+              "head_after": 14
+            },
+            {
+              "capacity": 1,
+              "before": 3,
+              "count": 1,
+              "after": 2,
+              "head_before": 14,
+              "head_after": 15
+            },
+            {
+              "capacity": 1,
+              "before": 2,
+              "count": 1,
+              "after": 1,
+              "head_before": 15,
+              "head_after": 16
+            },
+            {
+              "capacity": 1,
+              "before": 1,
+              "count": 1,
+              "after": 0,
+              "head_before": 16,
+              "head_after": 17
+            },
+            {
+              "capacity": 0,
+              "before": 0,
+              "count": 0,
+              "after": 0,
+              "head_before": 17,
+              "head_after": 17
+            }
+          ],
+          "copied": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "drained": 0,
+          "head_after": 17
+        }
+      }
+    },
+    {
+      "name": "zeros",
+      "capacities": [
+        0,
+        0,
+        8,
+        0,
+        0
+      ],
+      "report": {
+        "empty": 0,
+        "pending": 4,
+        "space": 4,
+        "copied": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "manual": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "drained": 0,
+        "timed_out": true,
+        "timer_result": -62,
+        "nonblocking": {
+          "sq_capacity": 8,
+          "cq_capacity": 16,
+          "pending_before": 8,
+          "full_rejected": true,
+          "pending_after": 8,
+          "sq_tail_before": 17,
+          "sq_tail_after": 17,
+          "submitted": 8,
+          "sq_after_submit": 0,
+          "cq_before": 8,
+          "head_before": 9,
+          "steps": [
+            {
+              "capacity": 0,
+              "before": 8,
+              "count": 0,
+              "after": 8,
+              "head_before": 9,
+              "head_after": 9
+            },
+            {
+              "capacity": 0,
+              "before": 8,
+              "count": 0,
+              "after": 8,
+              "head_before": 9,
+              "head_after": 9
+            },
+            {
+              "capacity": 8,
+              "before": 8,
+              "count": 8,
+              "after": 0,
+              "head_before": 9,
+              "head_after": 17
+            },
+            {
+              "capacity": 0,
+              "before": 0,
+              "count": 0,
+              "after": 0,
+              "head_before": 17,
+              "head_after": 17
+            },
+            {
+              "capacity": 0,
+              "before": 0,
+              "count": 0,
+              "after": 0,
+              "head_before": 17,
+              "head_after": 17
+            }
+          ],
+          "copied": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "drained": 0,
+          "head_after": 17
+        }
+      }
+    },
+    {
+      "name": "wrap_boundary",
+      "capacities": [
+        5,
+        2,
+        1,
+        0
+      ],
+      "report": {
+        "empty": 0,
+        "pending": 4,
+        "space": 4,
+        "copied": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "manual": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "drained": 0,
+        "timed_out": true,
+        "timer_result": -62,
+        "nonblocking": {
+          "sq_capacity": 8,
+          "cq_capacity": 16,
+          "pending_before": 8,
+          "full_rejected": true,
+          "pending_after": 8,
+          "sq_tail_before": 17,
+          "sq_tail_after": 17,
+          "submitted": 8,
+          "sq_after_submit": 0,
+          "cq_before": 8,
+          "head_before": 9,
+          "steps": [
+            {
+              "capacity": 5,
+              "before": 8,
+              "count": 5,
+              "after": 3,
+              "head_before": 9,
+              "head_after": 14
+            },
+            {
+              "capacity": 2,
+              "before": 3,
+              "count": 2,
+              "after": 1,
+              "head_before": 14,
+              "head_after": 16
+            },
+            {
+              "capacity": 1,
+              "before": 1,
+              "count": 1,
+              "after": 0,
+              "head_before": 16,
+              "head_after": 17
+            },
+            {
+              "capacity": 0,
+              "before": 0,
+              "count": 0,
+              "after": 0,
+              "head_before": 17,
+              "head_after": 17
+            }
+          ],
+          "copied": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "drained": 0,
+          "head_after": 17
+        }
+      }
+    }
+  ],
+  "physical_cq_wrap": {
+    "head_before": 9,
+    "head_after": 17,
+    "entries": 16,
+    "crossed": true
+  },
+  "source_sha256": {
+    "examples/reference_completion.zig": "68cb89d6f08ffc80f4d9fe356b3328e00f3675732262b59221d3e0c13bd0fcc6",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
+    "testdata/inputs/completion-plans.json": "bb81a1461aea4ba4a95040894310a881b146a2b106971ca5f870943397350ed6",
+    "testdata/inputs/completion-invalid-plans.json": "20a857a64b64164cfbc6cdd99c335987b8af52e207740798e3ce9fc6f0d7997d"
+  },
+  "sdk_source_sha256": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+  "property": {
+    "test": "test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 37
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  },
+  "negative_cases": 7,
+  "mutation_report": "conversion/mutation-nonblocking-completion.json",
+  "navigation_evidence": "Cached graph is stale and Fabric transitive-call tooling unavailable; direct source bodies and explicit test/book/README consumers inspected. Active LSP checked changed source/test paths.",
+  "change_boundary": "One completion CLI plus consumer tests/publication; not separate domain modules."
+}

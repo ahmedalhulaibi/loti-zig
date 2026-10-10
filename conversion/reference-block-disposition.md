@@ -37,8 +37,8 @@ evidence: `raw-mapping-verification.json`. Prefixes below are repository paths.
 | `ref-liburing/completion.rst:60` | `copy_cqes(destination, wait_nr)`: actual count, not guaranteed exact batch size | S/E; loop gathers tags 1–4; no borrowed pointer return |
 | `ref-liburing/completion.rst:76` | `raw_ops.wait_with_timeout`: EXT_ARG relative deadline and optional atomic mask | E for expiry/empty non-null mask; explicit submission required; no hidden SQE/reserved tag; delivered signals/restoration open |
 | `ref-liburing/completion.rst:97` | Same helper with minimum 1/null mask replaces timeout-only convenience | S; null and non-null masks expressible; expiry execution uses empty non-null mask |
-| `ref-liburing/completion.rst:103` | One-element `copy_cqes(..., 0)` replaces nonblocking peek and consumes returned value | S; empty nonblocking result executed; successful singleton nonblocking case not separately attested |
-| `ref-liburing/completion.rst:118` | `copy_cqes(..., 0)` for batch; borrowed alternative documented with `cq_ready`/mask | S/E for copied batches; nonblocking populated batch not separately attested |
+| `ref-liburing/completion.rst:103` | One-element `copy_cqes(..., 0)` replaces nonblocking peek and consumes returned value | S/E; zero-capacity/populated singleton/empty singleton paths executed; count/head/readiness and once-only tag consumption checked |
+| `ref-liburing/completion.rst:118` | `copy_cqes(..., 0)` for batch; borrowed alternative documented with `cq_ready`/mask | S/E; destination-bounded populated nonblocking copies and physical CQ wrap executed; generated capacity commands checked against independent drain model; not u32 wrap or concurrency |
 | `ref-liburing/completion.rst:134` | Direct `cqe.user_data` u64 tag replaces foreign pointer extraction | E; correlation tags checked; tag does not extend operand lifetime |
 | `ref-liburing/completion.rst:148` | `cqe_seen` only for a borrowed entry; never after copy methods | E; separate manual batch uses one seen plus advance-three |
 | `ref-liburing/completion.rst:159` | `cq_ready` completes original TODO with acquire/readiness semantics | S/E; four ready, then zero after acknowledgement |
@@ -82,7 +82,7 @@ every operand field or execute the opcode. Original spelling errors
 | Original block ID | Native replacement and semantic comparison | Evidence / limit |
 |---|---|---|
 | `ref-liburing/submission.rst:12` | `ring.read(tag, fd, .iovecs, offset)` plus `submit`; acquisition/preparation combined, correlation remains explicit | E in cat/copy; construction alone does not issue I/O |
-| `ref-liburing/submission.rst:32` | `get_sqe` returns slot/error.SubmissionQueueFull, not nullable pointer | S/P; multiple slots prepared; full-capacity failure oracle open |
+| `ref-liburing/submission.rst:32` | `get_sqe` returns slot/error.SubmissionQueueFull, not nullable pointer | S/E; eight slots filled, ninth returns exact error, pending/tail stay unchanged; subsequent eight CQEs consumed with exact tags and state; single producer without SQPOLL |
 | `ref-liburing/submission.rst:51` | Assign `sqe.user_data` after low-level prep; constructors accept u64 tag | P/E; tag correlation; foreign pointer ownership not reproduced |
 | `ref-liburing/submission.rst:62` | Assign u8 `sqe.flags` to replace, or |= to preserve constructor bits | P/E for soft-link/async/fixed flags; all flag combinations not verified |
 | `ref-liburing/submission.rst:73` | `submit` returns submitted count/error, not completion count | S/E; batches, SQPOLL consumption caveat stated |
@@ -131,8 +131,9 @@ Implicit includes/layout snippets are already in `implicit-literal-disposition.m
   restore/removal/unregistration checks. Concurrent updates, partial multi-entry
   failure still need checks. Probe listing/lookup now has complete named-flag and
   synthetic-bounds oracles; independent agent review remains blocked.
-- Delivered signals, mask restoration/interruption, populated nonblocking CQ
-  paths and full-capacity errors need boundary checks. Ordinary successful ring
+- Delivered signals and mask restoration/interruption still need checks.
+  Populated nonblocking CQ and full-SQ rejection now have boundary/model checks;
+  u32 wrap, CQ overflow and concurrent/SQPOLL interleavings remain open. Ordinary
   teardown does not prove cleanup after every partial-construction failure.
 - This document does not close the all-line/prose semantic audit, state model,
   whole-port mutation assessment, mandatory independent review or delivery push.

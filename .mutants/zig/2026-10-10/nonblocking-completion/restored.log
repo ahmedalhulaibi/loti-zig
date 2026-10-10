@@ -1,0 +1,8 @@
+test_copy_and_manual_ack_are_distinct_and_deadline_really_expires (tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires) ... ok
+test_nonblocking_completion_capacities_follow_queue_model (tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model) ... ok
+test_completion_rejects_invalid_capacity_plans (tests.test_reference.ReferenceContracts.test_completion_rejects_invalid_capacity_plans) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.808s
+
+OK

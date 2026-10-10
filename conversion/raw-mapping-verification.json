@@ -51,7 +51,7 @@
   "source_sha256": {
     "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
     "examples/reference_setup.zig": "08686998a5fe2df08d28a8567e793e5bc108e7a950a747859e179270d8ab574f",
-    "tests/test_reference.py": "cb0101dbc5d1b1c4616a4a48d28c28a575c30267267359ade4d88247929a3073"
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e"
   },
   "source_mutants": [
     {

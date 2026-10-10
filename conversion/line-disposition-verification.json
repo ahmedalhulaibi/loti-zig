@@ -13,11 +13,11 @@
     },
     {
       "name": "reference-block-disposition.md",
-      "sha256": "4e9696bd863dbe151a1268610d2f6745f04709bc561994ed3b5a27a19f97b376"
+      "sha256": "ebe53e696ed8c463a180bf316a883cdffcc1da86f19e88c7958e260068afd259"
     },
     {
       "name": "prose-line-disposition.md",
-      "sha256": "4d0c00f1ab1c614ff5aee6b652a4e9b07f37b5b4b09ccb14da99250df7b0b729"
+      "sha256": "639dfcd413a6e1835f1c7d3372956056f5fe06fa60f6144b2243194e626eb78a"
     }
   ],
   "target_sha256": {
@@ -31,12 +31,12 @@
     "ref-iouring/io_uring_register.rst": "91e0bc0059d062312351677a72b6ff65c41b250bac4a66c7a3c90c7ff5e13adb",
     "ref-iouring/io_uring_setup.rst": "fbaa239e902e9dc6976c3a251f7535938603d946fea57349ea8f73a16e06de5e",
     "ref-zig/advanced_usage.rst": "1269025f689aad53ed289ccc601cf92af5332d7213768f3a0189bebfe27e5590",
-    "ref-zig/completion.rst": "ad6978c1b94e6097128a2e5acf301ec3080e0c9d28c185857674d16b376e3c3b",
+    "ref-zig/completion.rst": "7e1e442ddb09be202073734b8a7d9cf5a262b2cad9769a7d43a4aebc86225fa1",
     "ref-zig/cqe.rst": "e7408176b9b6c280ead49e80d432f2e135f467514abe95c687abb292b8433e81",
     "ref-zig/index.rst": "796748b6db63b46962d4a596f258cd3ceecc3e4c7e6f3a19105a71568a0cd849",
     "ref-zig/setup_teardown.rst": "cca94ae1afcfc71d1a1f8fe845805f8e56e5dfeb195561ecfc0a6c7c73924e62",
     "ref-zig/sqe.rst": "e93b2d66aa339084a6dc0307fd1e500fada6badccbf5cf4caab12533da8913c4",
-    "ref-zig/submission.rst": "04936585212eb7c43739cf73727395ca3772799be32c4b2d3709ff2139c99e3e",
+    "ref-zig/submission.rst": "d5c5bf086532e3507c3240270e002bcbfaa8337375e79949db6de28e8494707d",
     "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
     "tutorial/cat.rst": "98eb3485361b25130e5792720bf99b4f39617f67bb902b83a946fc481d83c7f6",
     "tutorial/cp.rst": "07c89cf5bf678b5e2b22ac97e710aee7111c69b7d643821484408e0efd301bf3",

@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 31,
+  "tests_run": 32,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -54,7 +54,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 111
+          "overrun": 62
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -72,7 +72,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 56
+          "overrun": 37
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -124,7 +124,7 @@
     "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "examples/readv.zig": "5e374ec56283d7f5994c83e3cb8fcd88f88b44a138fdf1c4bfab0316ad34c824",
-    "examples/reference_completion.zig": "e71cf2ec2939af6838c9a541928a4617d3cff22a598bc775bb41bbb72332c966",
+    "examples/reference_completion.zig": "68cb89d6f08ffc80f4d9fe356b3328e00f3675732262b59221d3e0c13bd0fcc6",
     "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
     "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
     "examples/reference_setup.zig": "08686998a5fe2df08d28a8567e793e5bc108e7a950a747859e179270d8ab574f",
@@ -133,6 +133,7 @@
     "examples/sq_poll.zig": "3c7d2d3149ebbf3ebeb7a57ef438f424f8bfe7d7ab820f088b3b449bc64c80b1",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
+    "testdata/inputs/completion-invalid-plans.json": "20a857a64b64164cfbc6cdd99c335987b8af52e207740798e3ce9fc6f0d7997d",
     "testdata/inputs/completion-plans.json": "bb81a1461aea4ba4a95040894310a881b146a2b106971ca5f870943397350ed6",
     "testdata/inputs/probe-mixed-big.bin": "9e282304bfe34e1fe5c6d112d0ba545f29830808de4df2e209887cbf0ed3cbf6",
     "testdata/inputs/probe-mixed-little.bin": "e346d81b4a7297a2fb586603151703054e6bb16f59ccae7f57253bb6aa395b2e",
@@ -149,7 +150,7 @@
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
     "tests/test_inventory.py": "89b2b5ea10a208810d264088b935cc66f9308336a858528dd5a399724661eec5",
     "tests/test_publication.py": "8f1268c139d3518f8c00e6d28993000cf0888fc63beae81eb8b38f481538df86",
-    "tests/test_reference.py": "4756e813b1ad8e63a42506788c0da9ddecdb2dfc588bb172cf74899c70ac326e",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e",
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/reference_map.py": "541fbdbd857fa7f06c978caa262fcff590f5864d539187a7da4b028400cfbb24"

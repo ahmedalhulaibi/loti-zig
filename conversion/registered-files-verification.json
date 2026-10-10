@@ -10,7 +10,7 @@
   ],
   "source_sha256": {
     "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
-    "tests/test_reference.py": "d86e21a7057da63a487249e705bc2cc8096b034d83e150a95e0069e791da1b85",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tools/reference_map.py": "541fbdbd857fa7f06c978caa262fcff590f5864d539187a7da4b028400cfbb24"
   },
   "input_sha256": {

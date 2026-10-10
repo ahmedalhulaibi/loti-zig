@@ -121,7 +121,7 @@ reference sources. DONE markers are not reused as verification evidence.
 |---|---|---|
 | `delme.c:1-10` | `ref-zig/supported_caps.rst` | Probe/get-probe/opcode-supported catalog maps to native existing/temporary ring and bool support methods; no caller heap free |
 | `delme.c:11-27` | `ref-zig/setup_teardown.rst` | init/init_params/deinit plus explicit RawRing.map/dontFork; no invented SDK mmap/dontfork methods |
-| `delme.c:28-59` | `ref-zig/completion.rst` | Tag field, copied nonblocking/waiting batches and raw deadline helper; pointer-output/error conventions replaced, acknowledgement semantics explicit |
+| `delme.c:28-59` | `ref-zig/completion.rst` | Tag field, copied nonblocking/waiting batches and raw deadline helper; pointer-output/error conventions replaced, acknowledgement explicit; populated single/batch/zero-capacity paths now have exact head/readiness/tag models |
 | `delme.c:60-73` | `ref-zig/completion.rst` | for-each macro replaced by acquired readiness/head/mask iteration; native cq_advance/cqe_seen/cq_ready; manual reference actually executes this batch |
 | `delme.c:74-87` | `ref-zig/submission.rst` | Native submit/submit_and_wait/get_sqe and tag/flag assignment; counts/ownership/error unions stated |
 | `delme.c:88-175` | `ref-zig/submission.rst` | Every listed preparer has a native constructor or explicit raw helper, with actual declarations and 33-constructor source; construction is not operation execution |

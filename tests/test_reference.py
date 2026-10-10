@@ -16,6 +16,30 @@ REPLACEMENT_FIXTURE = (ROOT / "testdata/inputs/registration-replacement.txt").re
 COMPLETION_PLANS = json.loads((ROOT / "testdata/inputs/completion-plans.json").read_text())
 
 
+def completion_model(capacities):
+    remaining, head = 8, 9
+    steps = []
+    for capacity in capacities:
+        count = min(capacity, remaining)
+        steps.append({"capacity": capacity, "before": remaining, "count": count,
+                      "after": remaining - count, "head_before": head, "head_after": head + count})
+        remaining -= count
+        head += count
+    return {
+        "empty": 0, "pending": 4, "space": 4,
+        "copied": [1, 2, 3, 4], "manual": [5, 6, 7, 8],
+        "drained": 0, "timed_out": True, "timer_result": -62,
+        "nonblocking": {
+            "sq_capacity": 8, "cq_capacity": 16,
+            "pending_before": 8, "full_rejected": True, "pending_after": 8,
+            "sq_tail_before": 17, "sq_tail_after": 17,
+            "submitted": 8, "sq_after_submit": 0, "cq_before": 8, "head_before": 9,
+            "steps": steps, "copied": [10, 11, 12, 13, 14, 15, 16, 17],
+            "drained": remaining, "head_after": head,
+        },
+    }
+
+
 class ReferenceContracts(unittest.TestCase):
     @settings(max_examples=CASES, deadline=None)
     @given(payload=st.binary(max_size=8193))
@@ -59,6 +83,20 @@ class ReferenceContracts(unittest.TestCase):
             "empty": 0, "pending": 4, "space": 4,
             "copied": [1, 2, 3, 4], "manual": [5, 6, 7, 8],
             "drained": 0, "timed_out": True, "timer_result": -62,
+            "nonblocking": {
+                "sq_capacity": 8, "cq_capacity": 16,
+                "pending_before": 8, "full_rejected": True, "pending_after": 8,
+                "sq_tail_before": 17, "sq_tail_after": 17,
+                "submitted": 8, "sq_after_submit": 0, "cq_before": 8, "head_before": 9,
+                "steps": [
+                    {"capacity": 0, "before": 8, "count": 0, "after": 8, "head_before": 9, "head_after": 9},
+                    {"capacity": 1, "before": 8, "count": 1, "after": 7, "head_before": 9, "head_after": 10},
+                    {"capacity": 3, "before": 7, "count": 3, "after": 4, "head_before": 10, "head_after": 13},
+                    {"capacity": 8, "before": 4, "count": 4, "after": 0, "head_before": 13, "head_after": 17},
+                    {"capacity": 1, "before": 0, "count": 0, "after": 0, "head_before": 17, "head_after": 17},
+                ],
+                "copied": [10, 11, 12, 13, 14, 15, 16, 17], "drained": 0, "head_after": 17,
+            },
         })
 
     @settings(max_examples=CASES, deadline=None)
@@ -71,11 +109,16 @@ class ReferenceContracts(unittest.TestCase):
     @example(capacities=COMPLETION_PLANS["wrap_boundary"])
     def test_nonblocking_completion_capacities_follow_queue_model(self, capacities):
         observed = json.loads(run("reference-completion", *map(str, capacities)).stdout)
-        self.assertEqual(observed, {
-            "empty": 0, "pending": 4, "space": 4,
-            "copied": [1, 2, 3, 4], "manual": [5, 6, 7, 8],
-            "drained": 0, "timed_out": True, "timer_result": -62,
-        })
+        self.assertEqual(observed, completion_model(capacities))
+
+    def test_completion_rejects_invalid_capacity_plans(self):
+        cases = json.loads((ROOT / "testdata/inputs/completion-invalid-plans.json").read_text())
+        for name, case in cases.items():
+            with self.subTest(case=name):
+                result = run("reference-completion", *case["args"], success=False)
+                self.assertEqual(result.returncode, 1)
+                self.assertEqual(result.stdout, b"")
+                self.assertEqual(result.stderr.decode().splitlines()[0], f"error: {case['error']}")
 
     @settings(max_examples=CASES, deadline=None)
     @given(original=st.binary(max_size=8193), replacement=st.binary(max_size=8193))

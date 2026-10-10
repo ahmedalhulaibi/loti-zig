@@ -1,0 +1,115 @@
+test_copy_and_manual_ack_are_distinct_and_deadline_really_expires (tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires) ... FAIL
+test_nonblocking_completion_capacities_follow_queue_model (tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model) ... ERROR
+
+======================================================================
+ERROR: test_nonblocking_completion_capacities_follow_queue_model (tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model)
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 103, in test_nonblocking_completion_capacities_follow_queue_model
+  |     @given(capacities=st.lists(st.integers(min_value=0, max_value=8), max_size=30)
+  |                ^^^^^^^
+  |   File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1779, in wrapped_test
+  |     _raise_to_user(errors, state.settings, [], " in explicit examples")
+  |     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1474, in _raise_to_user
+  |     raise the_error_hypothesis_found
+  | ExceptionGroup: Hypothesis found 4 distinct failures in explicit examples. (4 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 112, in test_nonblocking_completion_capacities_follow_queue_model
+    |     self.assertEqual(observed, completion_model(capacities))
+    |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 907, in assertEqual
+    |     assertion_func(first, second, msg=msg)
+    |     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 1206, in assertDictEqual
+    |     self.fail(self._formatMessage(msg, standardMsg))
+    |     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 732, in fail
+    |     raise self.failureException(msg)
+    | AssertionError: {'emp[844 chars], 11, 11, 11, 14, 14, 14, 14], 'drained': 0, 'head_after': 17}} != {'emp[844 chars], 11, 12, 13, 14, 15, 16, 17], 'drained': 0, 'head_after': 17}}
+    | Diff is 2258 characters long. Set self.maxDiff to None to see it.
+    | Falsifying explicit example: test_nonblocking_completion_capacities_follow_queue_model(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_nonblocking_completion_capacities_follow_queue_model>,
+    |     capacities=[0, 1, 3, 8, 1],
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 112, in test_nonblocking_completion_capacities_follow_queue_model
+    |     self.assertEqual(observed, completion_model(capacities))
+    |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 907, in assertEqual
+    |     assertion_func(first, second, msg=msg)
+    |     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 1206, in assertDictEqual
+    |     self.fail(self._formatMessage(msg, standardMsg))
+    |     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 732, in fail
+    |     raise self.failureException(msg)
+    | AssertionError: {'emp[480 chars]10, 10, 10, 10, 10, 10, 10, 10], 'drained': 0,[14 chars] 17}} != {'emp[480 chars]10, 11, 12, 13, 14, 15, 16, 17], 'drained': 0,[14 chars] 17}}
+    | Diff is 1180 characters long. Set self.maxDiff to None to see it.
+    | Falsifying explicit example: test_nonblocking_completion_capacities_follow_queue_model(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_nonblocking_completion_capacities_follow_queue_model>,
+    |     capacities=[8],
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 112, in test_nonblocking_completion_capacities_follow_queue_model
+    |     self.assertEqual(observed, completion_model(capacities))
+    |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 907, in assertEqual
+    |     assertion_func(first, second, msg=msg)
+    |     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 1206, in assertDictEqual
+    |     self.fail(self._formatMessage(msg, standardMsg))
+    |     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 732, in fail
+    |     raise self.failureException(msg)
+    | AssertionError: {'emp[840 chars]10, 10, 10, 10, 10, 10, 10, 10], 'drained': 0,[14 chars] 17}} != {'emp[840 chars]10, 11, 12, 13, 14, 15, 16, 17], 'drained': 0,[14 chars] 17}}
+    | Diff is 2256 characters long. Set self.maxDiff to None to see it.
+    | Falsifying explicit example: test_nonblocking_completion_capacities_follow_queue_model(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_nonblocking_completion_capacities_follow_queue_model>,
+    |     capacities=[0, 0, 8, 0, 0],
+    | )
+    +---------------- 4 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 112, in test_nonblocking_completion_capacities_follow_queue_model
+    |     self.assertEqual(observed, completion_model(capacities))
+    |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 907, in assertEqual
+    |     assertion_func(first, second, msg=msg)
+    |     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 1206, in assertDictEqual
+    |     self.fail(self._formatMessage(msg, standardMsg))
+    |     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py", line 732, in fail
+    |     raise self.failureException(msg)
+    | AssertionError: {'emp[753 chars]10, 10, 10, 10, 10, 15, 15, 17], 'drained': 0,[14 chars] 17}} != {'emp[753 chars]10, 11, 12, 13, 14, 15, 16, 17], 'drained': 0,[14 chars] 17}}
+    | Diff is 1982 characters long. Set self.maxDiff to None to see it.
+    | Falsifying explicit example: test_nonblocking_completion_capacities_follow_queue_model(
+    |     self=<tests.test_reference.ReferenceContracts testMethod=test_nonblocking_completion_capacities_follow_queue_model>,
+    |     capacities=[5, 2, 1, 0],
+    | )
+    +------------------------------------
+
+======================================================================
+FAIL: test_copy_and_manual_ack_are_distinct_and_deadline_really_expires (tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference.py", line 82, in test_copy_and_manual_ack_are_distinct_and_deadline_really_expires
+    self.assertEqual(json.loads(run("reference-completion").stdout), {
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "empty": 0, "pending": 4, "space": 4,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<15 lines>...
+        },
+        ^^
+    })
+    ^^
+AssertionError: {'emp[844 chars], 11, 11, 11, 14, 14, 14, 14], 'drained': 0, 'head_after': 17}} != {'emp[844 chars], 11, 12, 13, 14, 15, 16, 17], 'drained': 0, 'head_after': 17}}
+Diff is 2258 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.090s
+
+FAILED (failures=1, errors=1)
