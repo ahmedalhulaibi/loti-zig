@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 20 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 15 native executables; exact compiler gate; 31/31 build steps; 22 native CLI/TCP/reference tests plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests | Final rebuild/audit after semantic/review fixes; reader-device layout not inspected |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -73,14 +73,15 @@ The comparison found missing per-I/O `linux.RWF` / `sqe.rw_flags` guidance;
 `ref-zig/submission.rst` now distinguishes it from u8 dependency flags. Constructor
 rows still separate preparation from effects. Changed-descriptor registered-file
 reads now have actual sync replacement/async restore and ownership checks.
-Full probe flags, delivered signals/mask restoration, populated nonblocking CQ
+Probe listing flags/bounds now have an independent oracle. Delivered signals/mask
+restoration, populated nonblocking CQ
 and capacity/failure/state checks remain open.
 
 The original copy's `BLKGETSIZE64` input feature is now recreated and executed
 against disposable read-only virtual disks. Native `cp` accepts regular or block
 input; output is explicitly restricted to regular files. Raw mapping now restores
 the separate SQ/CQ strategy; forced-mode evidence is not an older-kernel boot.
-Complete probe-flag oracle and forced short-I/O/state checks remain unverified.
+Forced short-I/O/state checks remain unverified; see the bounded probe oracle below.
 
 ## Reader/copy repair and bounded mutation evidence
 
@@ -161,10 +162,37 @@ This single CLI change crosses implementation/test/publication consumer folders,
 not separate domain modules. Active LSP probes found no new diagnostics; one
 existing disposition was suppressed. No blocked reviewer retry was attempted.
 
+## Complete named probe-flag oracle
+
+`95faeec` pins all 59 SDK names and reproduces ignored raw/snapshot arguments.
+All named opcodes advertise support on this kernel: live-only checks could not
+kill constant-true listing. Native `--raw` now queries an unmapped ring into ABI
+bytes; Python independently decodes literal header/entry offsets and all returned
+flags. Default SDK output must agree exactly for every named opcode.
+
+Mixed/native-endian snapshots check absent/unrelated support bits. The new binary
+snapshot property covers both u8 bounds and 256 u16 flag entries; three explicit
+bounds cases and an actual shrunk high-flag counterexample are retained/replayed.
+The negative CLI matrix rejects wrong arity and short/long snapshots.
+`probe-verification.json` records exact output, kernel header/flags and hashes.
+
+Five valid compiled mutants die: constant support, any-nonzero flag, omitted
+last-op bound, omitted count bound and truncated raw capacity. An initial literal
+true variant failed compilation and is **not assessed**. Exact source restoration
+and passing baseline are in `mutation-probe-oracle.json` and committed logs.
+This is not whole-port mutation coverage, operation-effect proof, historical
+kernel attestation or independent review. Only native little-endian execution
+was performed; big-endian fixtures were independently decoded, not executed.
+
+This single CLI change crosses source/test/book consumers, not domain modules.
+Fabric call-graph tooling is unavailable; direct bodies/consumers and current
+active LSP diagnostics were used, not the stale cached graph. Review remains
+blocked; no unsupported-host retry or alternative reviewer launch occurred.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **28 passed**
-  (20 native + one VM + two publication + three inventory + two line-index tests), zero skips,
+- Compiler: **0.17.0**. Build: **31/31**. Current complete suite: **30 passed**
+  (22 native + one VM + two publication + three inventory + two line-index tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -174,8 +202,9 @@ existing disposition was suppressed. No blocked reviewer retry was attempted.
   hard-link safety; two Hypothesis properties use 400 generated cases each.
   A third property checks raw-operation prefix/input preservation and range CQEs;
   a fourth checks registered-file replacement/restore and unchanged binary inputs.
+  A fifth checks probe lookup across generated header bounds/flags.
   `test-verification.json` records **400 generated passing cases for each of all
-  four properties**, source hashes, 28 passing tests and zero skips. These remain
+  five properties**, source hashes, 30 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -232,7 +261,7 @@ git diff --check
 ## Next work
 
 1. Obtain semantic acceptance of the author line/block comparisons; inspect
-   operation/lifetime gaps, including signals, complete probe flags and queue state.
+   operation/lifetime gaps, including signals, queue state and forced short-I/O.
 2. Extend failure/state checks and execute bounded source mutation verification.
 3. Obtain independent review and resolve findings; do not substitute parent checks.
 4. Rebuild/audit final artifacts, push only the personal fork, verify remote state.

@@ -35,3 +35,10 @@ The :ref:`probe tutorial <probing_zig>` includes the complete listing program.
 ``reference-registration`` also executes the caller-owned and temporary-ring
 probe paths and checks NOP support. Their sources are compiled by ``zig build``
 and consumed by boundary tests. Probe results vary legitimately by kernel.
+
+The tutorial's ``--raw`` path queries a separate unmapped ring into byte storage,
+not ``linux.io_uring_probe``. Boundary tests independently decode its header and
+all returned opcode/flag entries, then compare every listed SDK opcode. Snapshot
+fixtures/PBT also cover false support bits, unrelated flags, and both header
+bounds. These validate the listing/lookup contract, not successful operation
+execution or every possible kernel policy.

@@ -1,12 +1,30 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 28,
+  "tests_run": 30,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "property_statistics": [
     {
       "test": "test_examples.ExampleContracts.test_copy_preserves_bytes_across_buffer_boundaries",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    },
+    {
+      "test": "test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit",
       "phases": {
         "reuse-phase": {
           "valid": 0,
@@ -36,7 +54,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 83
+          "overrun": 71
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -84,7 +102,7 @@
     "examples/cp.zig": "aff42b0e603561762593cc262cabf1b38c45a8c47ed1e0ef3c2c96116299f4d5",
     "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
     "examples/link.zig": "bf09728b29ec21d439e97473e2daf57febe42550eed9b00274091fddf21a1f61",
-    "examples/probe.zig": "b62ddc468392a71419749807bfc21d6fc1570ad7c631e9be247f4ee01869737f",
+    "examples/probe.zig": "f7a10ca0cefce3d68d40814c88d4ce206b2f90a6722df71b0c28d6019482eaa7",
     "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "examples/readv.zig": "5e374ec56283d7f5994c83e3cb8fcd88f88b44a138fdf1c4bfab0316ad34c824",
@@ -100,13 +118,15 @@
     "testdata/inputs/probe-mixed-big.bin": "9e282304bfe34e1fe5c6d112d0ba545f29830808de4df2e209887cbf0ed3cbf6",
     "testdata/inputs/probe-mixed-little.bin": "e346d81b4a7297a2fb586603151703054e6bb16f59ccae7f57253bb6aa395b2e",
     "testdata/inputs/probe-opcodes.json": "77e7993b0b234164d3a248e8e14a7bd19b1988d868f207181ac657b861416132",
+    "testdata/inputs/probe-regression-high-flag-big.bin": "17b95007ab44bc471e96e4d6186f55df60550b491ea28b583102606b21a87ae4",
+    "testdata/inputs/probe-regression-high-flag-little.bin": "867fa329e8168f57da861d7cfddca5a66d08500214420bd5ce217d88e16d200f",
     "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
     "testdata/inputs/registration-replacement.txt": "5f52cf151d72e08fb506215edf9498de680819fd2d5ed87c7daf59ca7765bcf0",
     "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
     "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
     "tests/test_block_devices.py": "18857ffc40a06b68a695a879c45328566abd271fc86ab8c9716bdb5f86bcd5d6",
     "tests/test_dispositions.py": "8d0ed94c868b5e4285b774a900f4e3f55bf1fb0c4d9695daa2301323bbeb02e6",
-    "tests/test_examples.py": "6e988f20de4a1576865025e35c1eb7ac58b15331c002c6f3d9e236dc592406e5",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
     "tests/test_inventory.py": "89b2b5ea10a208810d264088b935cc66f9308336a858528dd5a399724661eec5",
     "tests/test_publication.py": "8f1268c139d3518f8c00e6d28993000cf0888fc63beae81eb8b38f481538df86",

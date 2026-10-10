@@ -1,0 +1,64 @@
+test_probe_emits_kernel_report_for_every_known_opcode (tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode) ... FAIL
+test_probe_snapshot_support_respects_both_bounds_and_flag_bit (tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit) ... FAIL
+
+======================================================================
+FAIL: test_probe_emits_kernel_report_for_every_known_opcode (tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 159, in test_probe_emits_kernel_report_for_every_known_opcode
+    self.assertEqual(mixed, [
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+        {"opcode": opcode, "name": name, "supported": cycle[opcode % 6]}
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        for opcode, name in enumerate(PROBE_NAMES)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ])
+    ^^
+AssertionError: Lists differ: [{'op[137 chars]ed': True}, {'opcode': 3, 'name': 'FSYNC', 'su[3061 chars]rue}] != [{'op[137 chars]ed': False}, {'opcode': 3, 'name': 'FSYNC', 's[3081 chars]lse}]
+
+First differing element 2:
+{'opcode': 2, 'name': 'WRITEV', 'supported': True}
+{'opcode': 2, 'name': 'WRITEV', 'supported': False}
+
+Diff is 6883 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_probe_snapshot_support_respects_both_bounds_and_flag_bit (tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 165, in test_probe_snapshot_support_respects_both_bounds_and_flag_bit
+    @given(last=st.integers(min_value=0, max_value=255),
+               ^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/.venv/lib/python3.13/site-packages/hypothesis/core.py", line 1839, in wrapped_test
+    raise the_error_hypothesis_found
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 181, in test_probe_snapshot_support_respects_both_bounds_and_flag_bit
+    self.assertEqual(records, [
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+        {"opcode": opcode, "name": name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        for opcode, name in enumerate(PROBE_NAMES)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ])
+    ^^
+AssertionError: Lists differ: [{'op[33 chars]ed': True}, {'opcode': 1, 'name': 'READV', 'su[3213 chars]lse}] != [{'op[33 chars]ed': False}, {'opcode': 1, 'name': 'READV', 's[3214 chars]lse}]
+
+First differing element 0:
+{'opcode': 0, 'name': 'NOP', 'supported': True}
+{'opcode': 0, 'name': 'NOP', 'supported': False}
+
+Diff is 3633 characters long. Set self.maxDiff to None to see it.
+Falsifying example: test_probe_snapshot_support_respects_both_bounds_and_flag_bit(
+    self=<tests.test_examples.ExampleContracts testMethod=test_probe_snapshot_support_respects_both_bounds_and_flag_bit>,
+    last=0,  # or any other generated value
+    length=1,
+    flags=b'\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
+)
+Explanation:
+    These lines were always and only run by failing examples:
+        /home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/unittest/case.py:1041
+
+----------------------------------------------------------------------
+Ran 2 tests in 8.165s
+
+FAILED (failures=2)

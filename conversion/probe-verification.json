@@ -1,0 +1,628 @@
+{
+  "scope": "Complete current-kernel named-opcode support comparison and offline SDK lookup bounds/flag semantics; not operation effects, cross-kernel attestation, big-endian execution or independent review.",
+  "compiler": "0.17.0",
+  "kernel": "7.2.3-arch1-3",
+  "architecture": "x86_64",
+  "byteorder": "little",
+  "raw_header": {
+    "last_op": 64,
+    "ops_len": 65,
+    "reserved": 0,
+    "reserved_words": [
+      0,
+      0,
+      0
+    ]
+  },
+  "raw_operations": [
+    {
+      "opcode": 0,
+      "flags": 1
+    },
+    {
+      "opcode": 1,
+      "flags": 1
+    },
+    {
+      "opcode": 2,
+      "flags": 1
+    },
+    {
+      "opcode": 3,
+      "flags": 1
+    },
+    {
+      "opcode": 4,
+      "flags": 1
+    },
+    {
+      "opcode": 5,
+      "flags": 1
+    },
+    {
+      "opcode": 6,
+      "flags": 1
+    },
+    {
+      "opcode": 7,
+      "flags": 1
+    },
+    {
+      "opcode": 8,
+      "flags": 1
+    },
+    {
+      "opcode": 9,
+      "flags": 1
+    },
+    {
+      "opcode": 10,
+      "flags": 1
+    },
+    {
+      "opcode": 11,
+      "flags": 1
+    },
+    {
+      "opcode": 12,
+      "flags": 1
+    },
+    {
+      "opcode": 13,
+      "flags": 1
+    },
+    {
+      "opcode": 14,
+      "flags": 1
+    },
+    {
+      "opcode": 15,
+      "flags": 1
+    },
+    {
+      "opcode": 16,
+      "flags": 1
+    },
+    {
+      "opcode": 17,
+      "flags": 1
+    },
+    {
+      "opcode": 18,
+      "flags": 1
+    },
+    {
+      "opcode": 19,
+      "flags": 1
+    },
+    {
+      "opcode": 20,
+      "flags": 1
+    },
+    {
+      "opcode": 21,
+      "flags": 1
+    },
+    {
+      "opcode": 22,
+      "flags": 1
+    },
+    {
+      "opcode": 23,
+      "flags": 1
+    },
+    {
+      "opcode": 24,
+      "flags": 1
+    },
+    {
+      "opcode": 25,
+      "flags": 1
+    },
+    {
+      "opcode": 26,
+      "flags": 1
+    },
+    {
+      "opcode": 27,
+      "flags": 1
+    },
+    {
+      "opcode": 28,
+      "flags": 1
+    },
+    {
+      "opcode": 29,
+      "flags": 1
+    },
+    {
+      "opcode": 30,
+      "flags": 1
+    },
+    {
+      "opcode": 31,
+      "flags": 1
+    },
+    {
+      "opcode": 32,
+      "flags": 1
+    },
+    {
+      "opcode": 33,
+      "flags": 1
+    },
+    {
+      "opcode": 34,
+      "flags": 1
+    },
+    {
+      "opcode": 35,
+      "flags": 1
+    },
+    {
+      "opcode": 36,
+      "flags": 1
+    },
+    {
+      "opcode": 37,
+      "flags": 1
+    },
+    {
+      "opcode": 38,
+      "flags": 1
+    },
+    {
+      "opcode": 39,
+      "flags": 1
+    },
+    {
+      "opcode": 40,
+      "flags": 1
+    },
+    {
+      "opcode": 41,
+      "flags": 1
+    },
+    {
+      "opcode": 42,
+      "flags": 1
+    },
+    {
+      "opcode": 43,
+      "flags": 1
+    },
+    {
+      "opcode": 44,
+      "flags": 1
+    },
+    {
+      "opcode": 45,
+      "flags": 1
+    },
+    {
+      "opcode": 46,
+      "flags": 1
+    },
+    {
+      "opcode": 47,
+      "flags": 1
+    },
+    {
+      "opcode": 48,
+      "flags": 1
+    },
+    {
+      "opcode": 49,
+      "flags": 1
+    },
+    {
+      "opcode": 50,
+      "flags": 1
+    },
+    {
+      "opcode": 51,
+      "flags": 1
+    },
+    {
+      "opcode": 52,
+      "flags": 1
+    },
+    {
+      "opcode": 53,
+      "flags": 1
+    },
+    {
+      "opcode": 54,
+      "flags": 1
+    },
+    {
+      "opcode": 55,
+      "flags": 1
+    },
+    {
+      "opcode": 56,
+      "flags": 1
+    },
+    {
+      "opcode": 57,
+      "flags": 1
+    },
+    {
+      "opcode": 58,
+      "flags": 1
+    },
+    {
+      "opcode": 59,
+      "flags": 1
+    },
+    {
+      "opcode": 60,
+      "flags": 1
+    },
+    {
+      "opcode": 61,
+      "flags": 1
+    },
+    {
+      "opcode": 62,
+      "flags": 1
+    },
+    {
+      "opcode": 63,
+      "flags": 1
+    },
+    {
+      "opcode": 64,
+      "flags": 1
+    }
+  ],
+  "sdk_records": [
+    {
+      "opcode": 0,
+      "name": "NOP",
+      "supported": true
+    },
+    {
+      "opcode": 1,
+      "name": "READV",
+      "supported": true
+    },
+    {
+      "opcode": 2,
+      "name": "WRITEV",
+      "supported": true
+    },
+    {
+      "opcode": 3,
+      "name": "FSYNC",
+      "supported": true
+    },
+    {
+      "opcode": 4,
+      "name": "READ_FIXED",
+      "supported": true
+    },
+    {
+      "opcode": 5,
+      "name": "WRITE_FIXED",
+      "supported": true
+    },
+    {
+      "opcode": 6,
+      "name": "POLL_ADD",
+      "supported": true
+    },
+    {
+      "opcode": 7,
+      "name": "POLL_REMOVE",
+      "supported": true
+    },
+    {
+      "opcode": 8,
+      "name": "SYNC_FILE_RANGE",
+      "supported": true
+    },
+    {
+      "opcode": 9,
+      "name": "SENDMSG",
+      "supported": true
+    },
+    {
+      "opcode": 10,
+      "name": "RECVMSG",
+      "supported": true
+    },
+    {
+      "opcode": 11,
+      "name": "TIMEOUT",
+      "supported": true
+    },
+    {
+      "opcode": 12,
+      "name": "TIMEOUT_REMOVE",
+      "supported": true
+    },
+    {
+      "opcode": 13,
+      "name": "ACCEPT",
+      "supported": true
+    },
+    {
+      "opcode": 14,
+      "name": "ASYNC_CANCEL",
+      "supported": true
+    },
+    {
+      "opcode": 15,
+      "name": "LINK_TIMEOUT",
+      "supported": true
+    },
+    {
+      "opcode": 16,
+      "name": "CONNECT",
+      "supported": true
+    },
+    {
+      "opcode": 17,
+      "name": "FALLOCATE",
+      "supported": true
+    },
+    {
+      "opcode": 18,
+      "name": "OPENAT",
+      "supported": true
+    },
+    {
+      "opcode": 19,
+      "name": "CLOSE",
+      "supported": true
+    },
+    {
+      "opcode": 20,
+      "name": "FILES_UPDATE",
+      "supported": true
+    },
+    {
+      "opcode": 21,
+      "name": "STATX",
+      "supported": true
+    },
+    {
+      "opcode": 22,
+      "name": "READ",
+      "supported": true
+    },
+    {
+      "opcode": 23,
+      "name": "WRITE",
+      "supported": true
+    },
+    {
+      "opcode": 24,
+      "name": "FADVISE",
+      "supported": true
+    },
+    {
+      "opcode": 25,
+      "name": "MADVISE",
+      "supported": true
+    },
+    {
+      "opcode": 26,
+      "name": "SEND",
+      "supported": true
+    },
+    {
+      "opcode": 27,
+      "name": "RECV",
+      "supported": true
+    },
+    {
+      "opcode": 28,
+      "name": "OPENAT2",
+      "supported": true
+    },
+    {
+      "opcode": 29,
+      "name": "EPOLL_CTL",
+      "supported": true
+    },
+    {
+      "opcode": 30,
+      "name": "SPLICE",
+      "supported": true
+    },
+    {
+      "opcode": 31,
+      "name": "PROVIDE_BUFFERS",
+      "supported": true
+    },
+    {
+      "opcode": 32,
+      "name": "REMOVE_BUFFERS",
+      "supported": true
+    },
+    {
+      "opcode": 33,
+      "name": "TEE",
+      "supported": true
+    },
+    {
+      "opcode": 34,
+      "name": "SHUTDOWN",
+      "supported": true
+    },
+    {
+      "opcode": 35,
+      "name": "RENAMEAT",
+      "supported": true
+    },
+    {
+      "opcode": 36,
+      "name": "UNLINKAT",
+      "supported": true
+    },
+    {
+      "opcode": 37,
+      "name": "MKDIRAT",
+      "supported": true
+    },
+    {
+      "opcode": 38,
+      "name": "SYMLINKAT",
+      "supported": true
+    },
+    {
+      "opcode": 39,
+      "name": "LINKAT",
+      "supported": true
+    },
+    {
+      "opcode": 40,
+      "name": "MSG_RING",
+      "supported": true
+    },
+    {
+      "opcode": 41,
+      "name": "FSETXATTR",
+      "supported": true
+    },
+    {
+      "opcode": 42,
+      "name": "SETXATTR",
+      "supported": true
+    },
+    {
+      "opcode": 43,
+      "name": "FGETXATTR",
+      "supported": true
+    },
+    {
+      "opcode": 44,
+      "name": "GETXATTR",
+      "supported": true
+    },
+    {
+      "opcode": 45,
+      "name": "SOCKET",
+      "supported": true
+    },
+    {
+      "opcode": 46,
+      "name": "URING_CMD",
+      "supported": true
+    },
+    {
+      "opcode": 47,
+      "name": "SEND_ZC",
+      "supported": true
+    },
+    {
+      "opcode": 48,
+      "name": "SENDMSG_ZC",
+      "supported": true
+    },
+    {
+      "opcode": 49,
+      "name": "READ_MULTISHOT",
+      "supported": true
+    },
+    {
+      "opcode": 50,
+      "name": "WAITID",
+      "supported": true
+    },
+    {
+      "opcode": 51,
+      "name": "FUTEX_WAIT",
+      "supported": true
+    },
+    {
+      "opcode": 52,
+      "name": "FUTEX_WAKE",
+      "supported": true
+    },
+    {
+      "opcode": 53,
+      "name": "FUTEX_WAITV",
+      "supported": true
+    },
+    {
+      "opcode": 54,
+      "name": "FIXED_FD_INSTALL",
+      "supported": true
+    },
+    {
+      "opcode": 55,
+      "name": "FTRUNCATE",
+      "supported": true
+    },
+    {
+      "opcode": 56,
+      "name": "BIND",
+      "supported": true
+    },
+    {
+      "opcode": 57,
+      "name": "LISTEN",
+      "supported": true
+    },
+    {
+      "opcode": 58,
+      "name": "RECV_ZC",
+      "supported": true
+    }
+  ],
+  "raw_artifact": "conversion/probe-kernel.bin",
+  "raw_sha256": "e858235576ae9ffccdcf7df97ad0e22ce515be493c26096d1124336f23c33c47",
+  "fixtures": [
+    {
+      "path": "testdata/inputs/probe-mixed-little.bin",
+      "sha256": "e346d81b4a7297a2fb586603151703054e6bb16f59ccae7f57253bb6aa395b2e",
+      "native_execution": true,
+      "independent_decoding": true
+    },
+    {
+      "path": "testdata/inputs/probe-mixed-big.bin",
+      "sha256": "9e282304bfe34e1fe5c6d112d0ba545f29830808de4df2e209887cbf0ed3cbf6",
+      "native_execution": false,
+      "independent_decoding": true
+    },
+    {
+      "path": "testdata/inputs/probe-regression-high-flag-little.bin",
+      "sha256": "867fa329e8168f57da861d7cfddca5a66d08500214420bd5ce217d88e16d200f",
+      "native_execution": true,
+      "independent_decoding": true
+    },
+    {
+      "path": "testdata/inputs/probe-regression-high-flag-big.bin",
+      "sha256": "17b95007ab44bc471e96e4d6186f55df60550b491ea28b583102606b21a87ae4",
+      "native_execution": false,
+      "independent_decoding": true
+    }
+  ],
+  "snapshot_property": {
+    "test": "test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit",
+    "phases": {
+      "reuse-phase": {
+        "valid": 0,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      },
+      "generate-phase": {
+        "valid": 400,
+        "interesting": 0,
+        "invalid": 0,
+        "overrun": 0
+      }
+    },
+    "stopped_because": "settings.max_examples=400"
+  },
+  "source_sha256": {
+    "examples/probe.zig": "f7a10ca0cefce3d68d40814c88d4ce206b2f90a6722df71b0c28d6019482eaa7",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "testdata/inputs/probe-opcodes.json": "77e7993b0b234164d3a248e8e14a7bd19b1988d868f207181ac657b861416132"
+  },
+  "snapshot_regression_source": ".mutants/zig/2026-10-10/probe-oracle/any-nonzero-flag.log"
+}

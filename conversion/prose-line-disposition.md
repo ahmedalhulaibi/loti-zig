@@ -79,7 +79,7 @@ constructor-only and unverified scopes remain in `reference-block-disposition.md
 | `ref-liburing/setup_teardown.rst:7-7` | `ref-zig/setup_teardown.rst` | Native setup/mapping/teardown responsibilities retained; value/error/ownership differences described with complete reference program |
 | `ref-liburing/sqe.rst:5-11` | `ref-zig/sqe.rst` | Native extern request type and supported operations replace foreign header/struct references; actual installed ABI used |
 | `ref-liburing/cqe.rst:8-10` | `ref-zig/cqe.rst` | Native extern result type replaces foreign header/struct reference; tag/result/flag rules and stride qualify newer modes |
-| `ref-liburing/supported_caps.rst:62-62` | `ref-zig/supported_caps.rst` | Link to complete native probe tutorial and existing/temporary/raw probe variants; full independent support-flag oracle remains open |
+| `ref-liburing/supported_caps.rst:62-62` | `ref-zig/supported_caps.rst` | Link to complete native probe tutorial and existing/temporary/raw probe variants; independent raw flags now cover all 59 named results; synthetic flags/header bounds use an independent ABI encoder; no operand-success claim |
 | `ref-liburing/submission.rst:24-28` | `ref-zig/submission.rst` | Cat/copy references; combined native constructors and explicit tags/flags/submit replace misspelled C helper names; SQPOLL link supplied |
 | `ref-liburing/submission.rst:107-107` | `ref-zig/submission.rst` | READV illustration points to compiled cat source; native .iovecs variant replaces old snippet anchor |
 | `ref-liburing/completion.rst:9-40` | `ref-zig/completion.rst` | Wait/tag/result/short-read/ownership responsibilities retained; copied values already consumed, borrowed entries acknowledged exactly once; u64 replaces pointer extraction |
@@ -139,7 +139,7 @@ reference sources. DONE markers are not reused as verification evidence.
   reference declarations. Constructor-only coverage is still constructor-only.
 - Sequential sparse/removal/replacement, closed application FD, async restore and
   unregistered-table effects now have exact fixed-read/CQE checks. Concurrent or
-  partial multi-entry updates, full probe flags, delivered signals/restoration
+  partial multi-entry updates, delivered signals/restoration
   and forced partial-I/O/state paths still need checks.
 - All-line author note coverage closes the bookkeeping omission, not semantic
   acceptance. Independent review remains blocked; no review report exists.

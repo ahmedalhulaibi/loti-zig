@@ -33,7 +33,7 @@ sources, not separate handwritten copies. Tests/limits follow the table.
 | `tutorial/link_liburing.rst:112` | `link.main --fail-read` | Write-only descriptor produces failed read; option does not invent an error result |
 | `tutorial/link_liburing.rst:118` | Linked CLI failure case | Real read `-EBADF` and dependent close `-ECANCELED`; expected JSON `[15,-9,-125]`, file bytes preserved |
 | `tutorial/probe_liburing.rst:7` | `examples/probe.zig` | Native fixed-capacity probe value; enum reflection replaces manually maintained name array; no heap probe/free |
-| `tutorial/probe_liburing.rst:74` | `tutorial/probe.rst`, probe CLI test | Target-kernel JSON replaces stale kernel 5.6 sample; tests check stream shape/numeric identity/NOP, **not an independent oracle for every support flag** |
+| `tutorial/probe_liburing.rst:74` | `tutorial/probe.rst`, probe CLI test | Target-kernel JSON replaces stale kernel 5.6 sample; all 59 names/results checked against independent raw ABI flags; mixed snapshots and generated bounds/flags prevent live-kernel constant-true blind spots; not operation-effect proof |
 | `tutorial/register_eventfd.rst:9` | `examples/register_eventfd.zig` | Native 64-bit counter and joined listener; one bounded 512-byte read; notifications are hints, CQE is separate; retained counter removes sleep-based ordering |
 | `tutorial/sq_poll.rst:20` | `examples/sq_poll.zig` | Native setup parameters, registered index 0/FIXED_FILE, writes and read; 10-ms idle/50-ms pause; actual CQ counts replace submission-count assumptions |
 | `tutorial/sq_poll.rst:180` | `tutorial/sq_poll.rst`, polling CLI test | Native invocation/bytes replace root/password/ps/poem transcript; no thread-name detection; timing does not prove poller slept on every run |

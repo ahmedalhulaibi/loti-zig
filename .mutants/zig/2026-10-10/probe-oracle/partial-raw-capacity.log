@@ -1,0 +1,16 @@
+test_probe_emits_kernel_report_for_every_known_opcode (tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode) ... FAIL
+test_probe_snapshot_support_respects_both_bounds_and_flag_bit (tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit) ... ok
+
+======================================================================
+FAIL: test_probe_emits_kernel_report_for_every_known_opcode (tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 143, in test_probe_emits_kernel_report_for_every_known_opcode
+    self.assertEqual(length, last + 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: 32 != 65
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.240s
+
+FAILED (failures=1)

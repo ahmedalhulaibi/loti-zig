@@ -77,6 +77,8 @@ zig-out/bin/fixed-buffers fixed.txt
 zig-out/bin/sq-poll polling.txt
 zig-out/bin/register-eventfd input.txt
 zig-out/bin/probe
+zig-out/bin/probe --raw > probe.bin
+zig-out/bin/probe --snapshot probe.bin
 zig-out/bin/webserver public 8080
 zig-out/bin/reference-setup input.txt
 zig-out/bin/reference-setup input.txt --separate-mappings
@@ -95,3 +97,8 @@ this is not a full-file reader or concurrent table-update model.
 incompatible mixed operands. Other reference/tutorial programs provide separate
 operation-effect evidence. The HTTP server is loopback-only and is not production
 software. Consult each chapter for capabilities, lifetimes and limits.
+
+Probe raw output is a 2,064-byte native-endian ABI snapshot, not JSON. Snapshot
+listing uses the same SDK lookup as the live listing. Independent raw decoding
+checks all named support flags; mixed/generated snapshots check false bits and
+both header bounds. A supported opcode still does not guarantee operand success.

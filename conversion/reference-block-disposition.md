@@ -66,10 +66,10 @@ evidence: `raw-mapping-verification.json`. Prefixes below are repository paths.
 | `ref-liburing/supported_caps.rst:7` | `linux.io_uring_probe` | S; owned return value replaces allocated pointer |
 | `ref-liburing/supported_caps.rst:8` | SDK header/reserved fields plus fixed-capacity 256-op array; ops_len bounds valid results | S/E; kernel query, not a redeclared flexible-array allocation |
 | `ref-liburing/supported_caps.rst:20` | `linux.io_uring_probe_op` | S; opcode and support flags remain native ABI |
-| `ref-liburing/supported_caps.rst:21` | SDK probe-op layout; no foreign allocation/free | S; independent full-flag oracle remains open |
-| `ref-liburing/supported_caps.rst:35` | `ring.get_probe()` on existing ring returns value/error | S/E; kernel query; NOP checked, not every support flag independently |
+| `ref-liburing/supported_caps.rst:21` | SDK probe-op layout; no foreign allocation/free | S/E; independent literal-offset decoding of all raw kernel entries; every named support bit checked; mixed/unrelated flags and bounds exercised |
+| `ref-liburing/supported_caps.rst:35` | `ring.get_probe()` on existing ring returns value/error | S/E; all 59 named results match raw registration on a separate ring; raw ABI decoding does not use the SDK probe type |
 | `ref-liburing/supported_caps.rst:51` | `raw_ops.probe()` owns and tears down a temporary ring | E; standalone kernel query; no caller ring/foreign free needed |
-| `ref-liburing/supported_caps.rst:69` | `probe.is_supported(native_opcode)` returns bool bounded by reported metadata and flag | S/E for listing shape/NOP; complete independent flag truth check open |
+| `ref-liburing/supported_caps.rst:69` | `probe.is_supported(native_opcode)` returns bool bounded by reported metadata and flag | S/E; complete named flag comparison plus independently encoded binary/header PBT; both header limits and bit-0-only semantics checked; not operand success |
 | `ref-liburing/supported_caps.rst:85` | `raw_ops.register_probe` zeroes caller storage; nr_args is operation-array capacity | E; raw query on existing ring; helper, not an SDK ring method |
 | `ref-liburing/sqe.rst:13` | Exact `linux.io_uring_sqe` replaces old union/padding copy; operation-specific overlapping fields explained | S/E; 64-byte ordinary stride and P for constructors; SQE128 excluded explicitly |
 
@@ -129,7 +129,8 @@ Implicit includes/layout snippets are already in `implicit-literal-disposition.m
   is translated, but stronger operand/effect/failure verification remains open.
 - File-table replacement now has changed-FD fixed-read effects and asynchronous
   restore/removal/unregistration checks. Concurrent updates, partial multi-entry
-  failure and complete probe-flag truth still need independent checks.
+  failure still need checks. Probe listing/lookup now has complete named-flag and
+  synthetic-bounds oracles; independent agent review remains blocked.
 - Delivered signals, mask restoration/interruption, populated nonblocking CQ
   paths and full-capacity errors need boundary checks. Ordinary successful ring
   teardown does not prove cleanup after every partial-construction failure.

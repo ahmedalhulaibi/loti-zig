@@ -1,0 +1,318 @@
+{
+  "scope": "Five compiled, bounded probe listing/raw-query mutations; not whole-port mutation assessment, operation-effect proof or independent agent review.",
+  "source": "examples/probe.zig",
+  "source_sha256": "f7a10ca0cefce3d68d40814c88d4ce206b2f90a6722df71b0c28d6019482eaa7",
+  "mutants": [
+    {
+      "mutant": "constant-supported",
+      "compiled": true,
+      "source_sha256": "86fdfd91a9765a5ed6ec496cdbb2896afdd6101656e74449865ff0bcaf043bda",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/probe-oracle/constant-supported.log",
+      "mixed_fixture_first_six": [
+        {
+          "opcode": 0,
+          "name": "NOP",
+          "supported": true
+        },
+        {
+          "opcode": 1,
+          "name": "READV",
+          "supported": true
+        },
+        {
+          "opcode": 2,
+          "name": "WRITEV",
+          "supported": true
+        },
+        {
+          "opcode": 3,
+          "name": "FSYNC",
+          "supported": true
+        },
+        {
+          "opcode": 4,
+          "name": "READ_FIXED",
+          "supported": true
+        },
+        {
+          "opcode": 5,
+          "name": "WRITE_FIXED",
+          "supported": true
+        }
+      ],
+      "raw_header_bytes": [
+        64,
+        65,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "raw_size": 2064
+    },
+    {
+      "mutant": "any-nonzero-flag",
+      "compiled": true,
+      "source_sha256": "3b85634080e750819a56d632600090aa422248bf73f6cfccbdd688af3eef50c7",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/probe-oracle/any-nonzero-flag.log",
+      "mixed_fixture_first_six": [
+        {
+          "opcode": 0,
+          "name": "NOP",
+          "supported": false
+        },
+        {
+          "opcode": 1,
+          "name": "READV",
+          "supported": true
+        },
+        {
+          "opcode": 2,
+          "name": "WRITEV",
+          "supported": true
+        },
+        {
+          "opcode": 3,
+          "name": "FSYNC",
+          "supported": true
+        },
+        {
+          "opcode": 4,
+          "name": "READ_FIXED",
+          "supported": true
+        },
+        {
+          "opcode": 5,
+          "name": "WRITE_FIXED",
+          "supported": true
+        }
+      ],
+      "raw_header_bytes": [
+        64,
+        65,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "raw_size": 2064
+    },
+    {
+      "mutant": "ignore-last-op",
+      "compiled": true,
+      "source_sha256": "69c9281fbffdf07e475160aca846d71e52fe6c012fbe18b99cc2baa09a7796f4",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/probe-oracle/ignore-last-op.log",
+      "mixed_fixture_first_six": [
+        {
+          "opcode": 0,
+          "name": "NOP",
+          "supported": false
+        },
+        {
+          "opcode": 1,
+          "name": "READV",
+          "supported": true
+        },
+        {
+          "opcode": 2,
+          "name": "WRITEV",
+          "supported": false
+        },
+        {
+          "opcode": 3,
+          "name": "FSYNC",
+          "supported": true
+        },
+        {
+          "opcode": 4,
+          "name": "READ_FIXED",
+          "supported": false
+        },
+        {
+          "opcode": 5,
+          "name": "WRITE_FIXED",
+          "supported": true
+        }
+      ],
+      "raw_header_bytes": [
+        64,
+        65,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "raw_size": 2064
+    },
+    {
+      "mutant": "ignore-ops-len",
+      "compiled": true,
+      "source_sha256": "f493cccacb50db29a90cfeb312a7d68e1448e50d4a893f43f143bd522b53844a",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/probe-oracle/ignore-ops-len.log",
+      "mixed_fixture_first_six": [
+        {
+          "opcode": 0,
+          "name": "NOP",
+          "supported": false
+        },
+        {
+          "opcode": 1,
+          "name": "READV",
+          "supported": true
+        },
+        {
+          "opcode": 2,
+          "name": "WRITEV",
+          "supported": false
+        },
+        {
+          "opcode": 3,
+          "name": "FSYNC",
+          "supported": true
+        },
+        {
+          "opcode": 4,
+          "name": "READ_FIXED",
+          "supported": false
+        },
+        {
+          "opcode": 5,
+          "name": "WRITE_FIXED",
+          "supported": true
+        }
+      ],
+      "raw_header_bytes": [
+        64,
+        65,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "raw_size": 2064
+    },
+    {
+      "mutant": "partial-raw-capacity",
+      "compiled": true,
+      "source_sha256": "2d25fef10aa020bfbc12af076b78bfcc7c56d84aacef8d6e248f19c9771e7c32",
+      "test_command": "LOTI_TEST_CASES=20 .venv/bin/python -m unittest tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit -v",
+      "exit_status": 1,
+      "outcome": "killed",
+      "log": ".mutants/zig/2026-10-10/probe-oracle/partial-raw-capacity.log",
+      "mixed_fixture_first_six": [
+        {
+          "opcode": 0,
+          "name": "NOP",
+          "supported": false
+        },
+        {
+          "opcode": 1,
+          "name": "READV",
+          "supported": true
+        },
+        {
+          "opcode": 2,
+          "name": "WRITEV",
+          "supported": false
+        },
+        {
+          "opcode": 3,
+          "name": "FSYNC",
+          "supported": true
+        },
+        {
+          "opcode": 4,
+          "name": "READ_FIXED",
+          "supported": false
+        },
+        {
+          "opcode": 5,
+          "name": "WRITE_FIXED",
+          "supported": true
+        }
+      ],
+      "raw_header_bytes": [
+        64,
+        32,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "raw_size": 2064
+    }
+  ],
+  "uncompilable_attempts": [
+    {
+      "mutant": "literal-true-unused-probe",
+      "compiled": false,
+      "outcome": "not_assessed",
+      "log": ".mutants/zig/2026-10-10/probe-oracle/constant-supported-uncompilable-build.log"
+    }
+  ],
+  "exact_source_restored": true,
+  "restored_test_exit_status": 0,
+  "log_normalization": "Trailing whitespace and final empty lines removed; substantive output unchanged."
+}

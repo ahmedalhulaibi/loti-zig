@@ -1,0 +1,8 @@
+test_probe_emits_kernel_report_for_every_known_opcode (tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode) ... ok
+test_probe_snapshot_support_respects_both_bounds_and_flag_bit (tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit) ... ok
+test_probe_rejects_invalid_arguments_and_snapshot_sizes (tests.test_examples.ExampleContracts.test_probe_rejects_invalid_arguments_and_snapshot_sizes) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.574s
+
+OK
