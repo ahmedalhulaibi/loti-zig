@@ -1,0 +1,53 @@
+{
+  "base_commit": "946f5817c8caaa1b574a80a5930a93ba0a94ac61",
+  "scope": "Author-detected stale SQPOLL return-count claims and actual unverified packaged prose. Not native/kernel defect or independent review.",
+  "counts_claims": [
+    {
+      "original": "io_uring_submit",
+      "zig": "std.os.linux.IoUring.submit",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Returns submitted SQEs, not completed operations; SQPOLL counts are not completion proof.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn submit(self: *IoUring) !u32"
+    },
+    {
+      "original": "io_uring_submit_and_wait",
+      "zig": "std.os.linux.IoUring.submit_and_wait",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "compiled and executed",
+      "semantic_difference": "Publishes requests and waits; the return value still counts submissions.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn submit_and_wait(self: *IoUring, wait_nr: u32) !u32"
+    }
+  ],
+  "authoritative_sdk_contract": "Zig0.17.0 submit delegates to submit_and_wait(0); under SQPOLL success count may be higher/lower/zero rather than actual submitted count. Raw enter under SQPOLL generally returns to_submit rather than an observed consumption count. CQEs, not counts, prove completion.",
+  "damaged_epubs": [
+    {
+      "case": "stale-language-text",
+      "accepted": true,
+      "verifier_exit": 0
+    },
+    {
+      "case": "changed-result-meaning",
+      "accepted": true,
+      "verifier_exit": 0
+    },
+    {
+      "case": "duplicate-paragraph",
+      "accepted": true,
+      "verifier_exit": 0
+    },
+    {
+      "case": "paragraph-order",
+      "accepted": true,
+      "verifier_exit": 0
+    }
+  ],
+  "coverage_gap": "Existing verifier checks exact literals, not narrative paragraph sequence. Four damaged archive variants retained all code/navigation/images and passed. Resolved Sphinx tree comparison prototype matches all355 narrative paragraphs across27 chapters; not independent semantic acceptance.",
+  "development_exclusion": "Initial reproduction driver wrongly assumed first two paragraphs share a parent. Fixed cross-parent swap; all4 variants reassessed, initial driver assertion not a mutant kill.",
+  "source_sha256": {
+    "tools/verify_epub.py": "91e2f6a7349eefb41ea0988aa7de300d15cd28ce31f275c9723fcbe5c8974117",
+    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de"
+  }
+}
