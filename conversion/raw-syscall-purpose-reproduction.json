@@ -1,0 +1,44 @@
+{
+  "scope": "Author reproduction of stale excluded testing-plan cardinality found during full raw-syscall chapter comparison; not a native bug, mutant kill or independent review.",
+  "base_commit": "44cf3a12f900ec12b2a16ce18582fe0bec475018",
+  "path": "testing.md",
+  "line": 44,
+  "original_source_sha256": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+  "original_git_blob": "45f0ab50f4bdaca338146405963e8cbc525cfaa3",
+  "observed_whole_row": "| Narrative / submission counts | Ordered365 resolved source paragraphs match packaged prose; only formatting whitespace normalized; ordinary/SQPOLL wrapper/raw-enter meanings separated | Six archive narrative damages + whitespace-positive; three whole binding rows and two separately authored whole reader paragraphs. Three producer/four fidelity/two source-prose mutants. Publisher resolution shared with Sphinx: fidelity, not independent semantic acceptance; structural TOC/rubric/caption scope excluded |",
+  "expected_whole_row": "| Narrative / submission counts | Ordered368 resolved source paragraphs match packaged prose; only formatting whitespace normalized; ordinary/SQPOLL wrapper/raw-enter meanings separated | Six archive narrative damages + whitespace-positive; three whole binding rows and two separately authored whole reader paragraphs. Three producer/four fidelity/two source-prose mutants. Publisher resolution shared with Sphinx: fidelity, not independent semantic acceptance; structural TOC/rubric/caption scope excluded |",
+  "publication_checked_now": {
+    "scope": "Publication structure and source fidelity; not semantic or independent review.",
+    "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "original_chapters": 26,
+    "edition_chapters": 27,
+    "literal_blocks": 121,
+    "byte_identical_illustrations": 5,
+    "narrative_paragraphs": 368,
+    "narrative_source_matches": true,
+    "literal_policy": {
+      "language_counts": {
+        "zig": 99,
+        "console": 18,
+        "json": 2,
+        "text": 2
+      },
+      "rendered_languages_match": true,
+      "bounded_legacy_markers_absent": true
+    },
+    "licence_exact": true,
+    "local_links_valid": true,
+    "drm_absent": true,
+    "javascript_absent": true
+  },
+  "red_contract": {
+    "observed_count": 365,
+    "current_fidelity_count": 368,
+    "whole_row_matches_expected": false,
+    "bug_as_is_assertion_passed": true,
+    "new_public_test": false
+  },
+  "repair_boundary": "Only Ordered365 -> Ordered368 in this one testing-plan row; preserve every other byte. No native/manuscript/public-test/producer change or make epub.",
+  "review": "Still blocked; no retry/fallback/report; acceptance/delivery/goal stay open."
+}
