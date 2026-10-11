@@ -1,0 +1,250 @@
+[
+  {
+    "program": "reference-setup",
+    "plan": 0,
+    "scope": "Finite owned file versus pipe stdout, no arbitrary position/sink/PBT assurance.",
+    "stdout_bytes": 387,
+    "stdout_sha256": "f9ef2e2967f16588471c1308ef0dae6d4739fefe0b394a734b3acb763e68dba8",
+    "stdout_hex": "7b2273715f656e7472696573223a382c2263715f656e7472696573223a33322c227371655f73697a65223a36342c226371655f73697a65223a31362c227261775f72656164223a36342c227265616473223a313032352c227261775f6279746573223a34383730342c227261775f736861323536223a2266636262393537323561643263333334343331613639623734363662373433376163393331393633326536663632393863653337623231656334383431646565222c227261775f63715f656e7472696573223a3531322c226d617070696e675f636f756e74223a322c2263715f726567696f6e5f6d617463686573223a747275652c22646f6e74666f726b223a747275652c22666f726b5f6578636c75646564223a747275652c2266645f696e68657269746564223a747275652c2272656c6561736564223a747275657d0a000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+    "report": {
+      "sq_entries": 8,
+      "cq_entries": 32,
+      "sqe_size": 64,
+      "cqe_size": 16,
+      "raw_read": 64,
+      "reads": 1025,
+      "raw_bytes": 48704,
+      "raw_sha256": "fcbb95725ad2c334431a69b7466b7437ac9319632e6f6298ce37b21ec4841dee",
+      "raw_cq_entries": 512,
+      "mapping_count": 2,
+      "cq_region_matches": true,
+      "dontfork": true,
+      "fork_excluded": true,
+      "fd_inherited": true,
+      "released": true
+    },
+    "empty_stderr": true,
+    "input_unchanged": true
+  },
+  {
+    "program": "reference-setup",
+    "plan": 1,
+    "scope": "Finite owned file versus pipe stdout, no arbitrary position/sink/PBT assurance.",
+    "stdout_bytes": 387,
+    "stdout_sha256": "3547884bb2e7a311a492b54c07830c408c19e63e76cffd2ee6150d94cd6b09b2",
+    "stdout_hex": "7b2273715f656e7472696573223a382c2263715f656e7472696573223a33322c227371655f73697a65223a36342c226371655f73697a65223a31362c227261775f72656164223a36342c227265616473223a313032352c227261775f6279746573223a34383730342c227261775f736861323536223a2266636262393537323561643263333334343331613639623734363662373433376163393331393633326536663632393863653337623231656334383431646565222c227261775f63715f656e7472696573223a3531322c226d617070696e675f636f756e74223a332c2263715f726567696f6e5f6d617463686573223a747275652c22646f6e74666f726b223a747275652c22666f726b5f6578636c75646564223a747275652c2266645f696e68657269746564223a747275652c2272656c6561736564223a747275657d0a000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+    "report": {
+      "sq_entries": 8,
+      "cq_entries": 32,
+      "sqe_size": 64,
+      "cqe_size": 16,
+      "raw_read": 64,
+      "reads": 1025,
+      "raw_bytes": 48704,
+      "raw_sha256": "fcbb95725ad2c334431a69b7466b7437ac9319632e6f6298ce37b21ec4841dee",
+      "raw_cq_entries": 512,
+      "mapping_count": 3,
+      "cq_region_matches": true,
+      "dontfork": true,
+      "fork_excluded": true,
+      "fd_inherited": true,
+      "released": true
+    },
+    "empty_stderr": true,
+    "input_unchanged": true
+  },
+  {
+    "program": "reference-completion",
+    "plan": 0,
+    "scope": "Finite owned file versus pipe stdout, no arbitrary position/sink/PBT assurance.",
+    "stdout_bytes": 795,
+    "stdout_sha256": "9a8db68ad3d305527d0dbbdcfc788ffae5e65fc6bb472b962687d5b524d005ad",
+    "stdout_hex": "7b22656d707479223a302c2270656e64696e67223a342c227370616365223a342c22636f70696564223a5b312c322c332c345d2c226d616e75616c223a5b352c362c372c385d2c22647261696e6564223a302c2274696d65645f6f7574223a747275652c2274696d65725f726573756c74223a2d36322c226e6f6e626c6f636b696e67223a7b2273715f6361706163697479223a382c2263715f6361706163697479223a31362c2270656e64696e675f6265666f7265223a382c2266756c6c5f72656a6563746564223a747275652c2270656e64696e675f6166746572223a382c2273715f7461696c5f6265666f7265223a31372c2273715f7461696c5f6166746572223a31372c227375626d6974746564223a382c2273715f61667465725f7375626d6974223a302c2263715f6265666f7265223a382c22686561645f6265666f7265223a392c227374657073223a5b7b226361706163697479223a302c226265666f7265223a382c22636f756e74223a302c226166746572223a382c22686561645f6265666f7265223a392c22686561645f6166746572223a397d2c7b226361706163697479223a312c226265666f7265223a382c22636f756e74223a312c226166746572223a372c22686561645f6265666f7265223a392c22686561645f6166746572223a31307d2c7b226361706163697479223a332c226265666f7265223a372c22636f756e74223a332c226166746572223a342c22686561645f6265666f7265223a31302c22686561645f6166746572223a31337d2c7b226361706163697479223a382c226265666f7265223a342c22636f756e74223a342c226166746572223a302c22686561645f6265666f7265223a31332c22686561645f6166746572223a31377d2c7b226361706163697479223a312c226265666f7265223a302c22636f756e74223a302c226166746572223a302c22686561645f6265666f7265223a31372c22686561645f6166746572223a31377d5d2c22636f70696564223a5b31302c31312c31322c31332c31342c31352c31362c31375d2c22647261696e6564223a302c22686561645f6166746572223a31377d7d0a",
+    "report": {
+      "empty": 0,
+      "pending": 4,
+      "space": 4,
+      "copied": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "manual": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "drained": 0,
+      "timed_out": true,
+      "timer_result": -62,
+      "nonblocking": {
+        "sq_capacity": 8,
+        "cq_capacity": 16,
+        "pending_before": 8,
+        "full_rejected": true,
+        "pending_after": 8,
+        "sq_tail_before": 17,
+        "sq_tail_after": 17,
+        "submitted": 8,
+        "sq_after_submit": 0,
+        "cq_before": 8,
+        "head_before": 9,
+        "steps": [
+          {
+            "capacity": 0,
+            "before": 8,
+            "count": 0,
+            "after": 8,
+            "head_before": 9,
+            "head_after": 9
+          },
+          {
+            "capacity": 1,
+            "before": 8,
+            "count": 1,
+            "after": 7,
+            "head_before": 9,
+            "head_after": 10
+          },
+          {
+            "capacity": 3,
+            "before": 7,
+            "count": 3,
+            "after": 4,
+            "head_before": 10,
+            "head_after": 13
+          },
+          {
+            "capacity": 8,
+            "before": 4,
+            "count": 4,
+            "after": 0,
+            "head_before": 13,
+            "head_after": 17
+          },
+          {
+            "capacity": 1,
+            "before": 0,
+            "count": 0,
+            "after": 0,
+            "head_before": 17,
+            "head_after": 17
+          }
+        ],
+        "copied": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "drained": 0,
+        "head_after": 17
+      }
+    },
+    "empty_stderr": true,
+    "input_unchanged": true
+  },
+  {
+    "program": "reference-completion",
+    "plan": 1,
+    "scope": "Finite owned file versus pipe stdout, no arbitrary position/sink/PBT assurance.",
+    "stdout_bytes": 795,
+    "stdout_sha256": "9a8db68ad3d305527d0dbbdcfc788ffae5e65fc6bb472b962687d5b524d005ad",
+    "stdout_hex": "7b22656d707479223a302c2270656e64696e67223a342c227370616365223a342c22636f70696564223a5b312c322c332c345d2c226d616e75616c223a5b352c362c372c385d2c22647261696e6564223a302c2274696d65645f6f7574223a747275652c2274696d65725f726573756c74223a2d36322c226e6f6e626c6f636b696e67223a7b2273715f6361706163697479223a382c2263715f6361706163697479223a31362c2270656e64696e675f6265666f7265223a382c2266756c6c5f72656a6563746564223a747275652c2270656e64696e675f6166746572223a382c2273715f7461696c5f6265666f7265223a31372c2273715f7461696c5f6166746572223a31372c227375626d6974746564223a382c2273715f61667465725f7375626d6974223a302c2263715f6265666f7265223a382c22686561645f6265666f7265223a392c227374657073223a5b7b226361706163697479223a302c226265666f7265223a382c22636f756e74223a302c226166746572223a382c22686561645f6265666f7265223a392c22686561645f6166746572223a397d2c7b226361706163697479223a312c226265666f7265223a382c22636f756e74223a312c226166746572223a372c22686561645f6265666f7265223a392c22686561645f6166746572223a31307d2c7b226361706163697479223a332c226265666f7265223a372c22636f756e74223a332c226166746572223a342c22686561645f6265666f7265223a31302c22686561645f6166746572223a31337d2c7b226361706163697479223a382c226265666f7265223a342c22636f756e74223a342c226166746572223a302c22686561645f6265666f7265223a31332c22686561645f6166746572223a31377d2c7b226361706163697479223a312c226265666f7265223a302c22636f756e74223a302c226166746572223a302c22686561645f6265666f7265223a31372c22686561645f6166746572223a31377d5d2c22636f70696564223a5b31302c31312c31322c31332c31342c31352c31362c31375d2c22647261696e6564223a302c22686561645f6166746572223a31377d7d0a",
+    "report": {
+      "empty": 0,
+      "pending": 4,
+      "space": 4,
+      "copied": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "manual": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "drained": 0,
+      "timed_out": true,
+      "timer_result": -62,
+      "nonblocking": {
+        "sq_capacity": 8,
+        "cq_capacity": 16,
+        "pending_before": 8,
+        "full_rejected": true,
+        "pending_after": 8,
+        "sq_tail_before": 17,
+        "sq_tail_after": 17,
+        "submitted": 8,
+        "sq_after_submit": 0,
+        "cq_before": 8,
+        "head_before": 9,
+        "steps": [
+          {
+            "capacity": 0,
+            "before": 8,
+            "count": 0,
+            "after": 8,
+            "head_before": 9,
+            "head_after": 9
+          },
+          {
+            "capacity": 1,
+            "before": 8,
+            "count": 1,
+            "after": 7,
+            "head_before": 9,
+            "head_after": 10
+          },
+          {
+            "capacity": 3,
+            "before": 7,
+            "count": 3,
+            "after": 4,
+            "head_before": 10,
+            "head_after": 13
+          },
+          {
+            "capacity": 8,
+            "before": 4,
+            "count": 4,
+            "after": 0,
+            "head_before": 13,
+            "head_after": 17
+          },
+          {
+            "capacity": 1,
+            "before": 0,
+            "count": 0,
+            "after": 0,
+            "head_before": 17,
+            "head_after": 17
+          }
+        ],
+        "copied": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "drained": 0,
+        "head_after": 17
+      }
+    },
+    "empty_stderr": true,
+    "input_unchanged": true
+  }
+]

@@ -1,0 +1,19 @@
+test_mapping_sizes_dontfork_and_actual_raw_read (tests.test_reference.ReferenceContracts.test_mapping_sizes_dontfork_and_actual_raw_read) ... ok
+test_copy_and_manual_ack_are_distinct_and_deadline_really_expires (tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires) ... ok
+test_nonblocking_completion_capacities_follow_queue_model (tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model) ... ok
+test_completion_rejects_invalid_capacity_plans (tests.test_reference.ReferenceContracts.test_completion_rejects_invalid_capacity_plans) ... ok
+test_pending_signal_delivery_and_wait_mask_restoration (tests.test_signals.SignalContracts.test_pending_signal_delivery_and_wait_mask_restoration) ... ok
+test_signal_reference_rejects_arguments (tests.test_signals.SignalContracts.test_signal_reference_rejects_arguments) ... ok
+test_actual_basic_abi_delivery_and_damaged_traces (tests.test_ordinary_signals.OrdinarySignalContracts.test_actual_basic_abi_delivery_and_damaged_traces) ... ok
+test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) ... ok
+test_denied_mapping_calls_unwind_and_retain_caller_descriptor (tests.test_mapping_failures.MappingFailureContracts.test_denied_mapping_calls_unwind_and_retain_caller_descriptor) ... ok
+test_mapping_failure_mode_rejects_missing_or_unknown_stage (tests.test_mapping_failures.MappingFailureContracts.test_mapping_failure_mode_rejects_missing_or_unknown_stage) ... ok
+test_trace_oracle_rejects_incomplete_or_false_unwind (tests.test_mapping_failures.MappingFailureContracts.test_trace_oracle_rejects_incomplete_or_false_unwind) ... ok
+test_literal_and_invalid_modes_keep_the_default_contract (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract)
+Kills fabricated zero-result report, broad flags/error acceptance and default CLI drift. ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 12.001s
+
+OK
+12 selected contracts passed;one attributed property x400 generated valid cases;full99 receipt not overwritten

@@ -1,0 +1,418 @@
+{
+  "scope": "Author full-chapter purpose comparison of original setup/completion/CQE22 blocks, not independent acceptance/new implementation.",
+  "base_commit": "0049a3439959abeb26954c427fb429b5e4a2ca5d",
+  "original_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "original_chapter_sha256": {
+    "ref-liburing/setup_teardown.rst": "f707b3b288149a5774fcc0ee3c797072561d1996c290fcb4d520e09072e2c461",
+    "ref-liburing/completion.rst": "9e2bed04a76bdfb1cf2a13412a2097d6b232ab557acbae69f0f2dcc14faeeb36",
+    "ref-liburing/cqe.rst": "90eab2ff2cf389255bffb7bf60ce255508442fef1e7107c2fe1ffc5ccbf17953"
+  },
+  "original_block_ids": [
+    "ref-liburing/completion.rst:11",
+    "ref-liburing/completion.rst:45",
+    "ref-liburing/completion.rst:60",
+    "ref-liburing/completion.rst:76",
+    "ref-liburing/completion.rst:97",
+    "ref-liburing/completion.rst:103",
+    "ref-liburing/completion.rst:118",
+    "ref-liburing/completion.rst:134",
+    "ref-liburing/completion.rst:148",
+    "ref-liburing/completion.rst:159",
+    "ref-liburing/cqe.rst:12",
+    "ref-liburing/setup_teardown.rst:9",
+    "ref-liburing/setup_teardown.rst:10",
+    "ref-liburing/setup_teardown.rst:24",
+    "ref-liburing/setup_teardown.rst:25",
+    "ref-liburing/setup_teardown.rst:46",
+    "ref-liburing/setup_teardown.rst:47",
+    "ref-liburing/setup_teardown.rst:63",
+    "ref-liburing/setup_teardown.rst:80",
+    "ref-liburing/setup_teardown.rst:90",
+    "ref-liburing/setup_teardown.rst:104",
+    "ref-liburing/setup_teardown.rst:118"
+  ],
+  "surrounding_prose": "Complete original/current chapters, init_params TODO, cat/raw/syscall/advice links, borrowed-pointer/result/error/signal/hidden-timeout expectations and universal one-to-one claim compared with actual native bodies.",
+  "author_decision": "No required conversion/example-purpose gap found in this subset; value ownership/copy consumption and no hidden SQE/implicit submit are necessary native differences, not renamed C behaviour. Does not accept all originals, unclaimed modes or independent review.",
+  "selected_replay": {
+    "tests": 12,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "selected_tests": [
+      "tests.test_reference.ReferenceContracts.test_mapping_sizes_dontfork_and_actual_raw_read",
+      "tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires",
+      "tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model",
+      "tests.test_reference.ReferenceContracts.test_completion_rejects_invalid_capacity_plans",
+      "tests.test_signals",
+      "tests.test_ordinary_signals",
+      "tests.test_mapping_failures",
+      "tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract"
+    ],
+    "property_statistics": [
+      {
+        "test": "tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model",
+        "phases": {
+          "reuse-phase": {
+            "valid": 0,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          },
+          "generate-phase": {
+            "valid": 400,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 55
+          }
+        },
+        "stopped_because": "settings.max_examples=400"
+      }
+    ]
+  },
+  "seconds": 12.001,
+  "finite_sink_cases": [
+    {
+      "program": "reference-setup",
+      "plan": 0,
+      "scope": "Finite owned file versus pipe stdout, no arbitrary position/sink/PBT assurance.",
+      "stdout_bytes": 387,
+      "stdout_sha256": "f9ef2e2967f16588471c1308ef0dae6d4739fefe0b394a734b3acb763e68dba8",
+      "stdout_hex": "7b2273715f656e7472696573223a382c2263715f656e7472696573223a33322c227371655f73697a65223a36342c226371655f73697a65223a31362c227261775f72656164223a36342c227265616473223a313032352c227261775f6279746573223a34383730342c227261775f736861323536223a2266636262393537323561643263333334343331613639623734363662373433376163393331393633326536663632393863653337623231656334383431646565222c227261775f63715f656e7472696573223a3531322c226d617070696e675f636f756e74223a322c2263715f726567696f6e5f6d617463686573223a747275652c22646f6e74666f726b223a747275652c22666f726b5f6578636c75646564223a747275652c2266645f696e68657269746564223a747275652c2272656c6561736564223a747275657d0a000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "report": {
+        "sq_entries": 8,
+        "cq_entries": 32,
+        "sqe_size": 64,
+        "cqe_size": 16,
+        "raw_read": 64,
+        "reads": 1025,
+        "raw_bytes": 48704,
+        "raw_sha256": "fcbb95725ad2c334431a69b7466b7437ac9319632e6f6298ce37b21ec4841dee",
+        "raw_cq_entries": 512,
+        "mapping_count": 2,
+        "cq_region_matches": true,
+        "dontfork": true,
+        "fork_excluded": true,
+        "fd_inherited": true,
+        "released": true
+      },
+      "empty_stderr": true,
+      "input_unchanged": true
+    },
+    {
+      "program": "reference-setup",
+      "plan": 1,
+      "scope": "Finite owned file versus pipe stdout, no arbitrary position/sink/PBT assurance.",
+      "stdout_bytes": 387,
+      "stdout_sha256": "3547884bb2e7a311a492b54c07830c408c19e63e76cffd2ee6150d94cd6b09b2",
+      "stdout_hex": "7b2273715f656e7472696573223a382c2263715f656e7472696573223a33322c227371655f73697a65223a36342c226371655f73697a65223a31362c227261775f72656164223a36342c227265616473223a313032352c227261775f6279746573223a34383730342c227261775f736861323536223a2266636262393537323561643263333334343331613639623734363662373433376163393331393633326536663632393863653337623231656334383431646565222c227261775f63715f656e7472696573223a3531322c226d617070696e675f636f756e74223a332c2263715f726567696f6e5f6d617463686573223a747275652c22646f6e74666f726b223a747275652c22666f726b5f6578636c75646564223a747275652c2266645f696e68657269746564223a747275652c2272656c6561736564223a747275657d0a000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "report": {
+        "sq_entries": 8,
+        "cq_entries": 32,
+        "sqe_size": 64,
+        "cqe_size": 16,
+        "raw_read": 64,
+        "reads": 1025,
+        "raw_bytes": 48704,
+        "raw_sha256": "fcbb95725ad2c334431a69b7466b7437ac9319632e6f6298ce37b21ec4841dee",
+        "raw_cq_entries": 512,
+        "mapping_count": 3,
+        "cq_region_matches": true,
+        "dontfork": true,
+        "fork_excluded": true,
+        "fd_inherited": true,
+        "released": true
+      },
+      "empty_stderr": true,
+      "input_unchanged": true
+    },
+    {
+      "program": "reference-completion",
+      "plan": 0,
+      "scope": "Finite owned file versus pipe stdout, no arbitrary position/sink/PBT assurance.",
+      "stdout_bytes": 795,
+      "stdout_sha256": "9a8db68ad3d305527d0dbbdcfc788ffae5e65fc6bb472b962687d5b524d005ad",
+      "stdout_hex": "7b22656d707479223a302c2270656e64696e67223a342c227370616365223a342c22636f70696564223a5b312c322c332c345d2c226d616e75616c223a5b352c362c372c385d2c22647261696e6564223a302c2274696d65645f6f7574223a747275652c2274696d65725f726573756c74223a2d36322c226e6f6e626c6f636b696e67223a7b2273715f6361706163697479223a382c2263715f6361706163697479223a31362c2270656e64696e675f6265666f7265223a382c2266756c6c5f72656a6563746564223a747275652c2270656e64696e675f6166746572223a382c2273715f7461696c5f6265666f7265223a31372c2273715f7461696c5f6166746572223a31372c227375626d6974746564223a382c2273715f61667465725f7375626d6974223a302c2263715f6265666f7265223a382c22686561645f6265666f7265223a392c227374657073223a5b7b226361706163697479223a302c226265666f7265223a382c22636f756e74223a302c226166746572223a382c22686561645f6265666f7265223a392c22686561645f6166746572223a397d2c7b226361706163697479223a312c226265666f7265223a382c22636f756e74223a312c226166746572223a372c22686561645f6265666f7265223a392c22686561645f6166746572223a31307d2c7b226361706163697479223a332c226265666f7265223a372c22636f756e74223a332c226166746572223a342c22686561645f6265666f7265223a31302c22686561645f6166746572223a31337d2c7b226361706163697479223a382c226265666f7265223a342c22636f756e74223a342c226166746572223a302c22686561645f6265666f7265223a31332c22686561645f6166746572223a31377d2c7b226361706163697479223a312c226265666f7265223a302c22636f756e74223a302c226166746572223a302c22686561645f6265666f7265223a31372c22686561645f6166746572223a31377d5d2c22636f70696564223a5b31302c31312c31322c31332c31342c31352c31362c31375d2c22647261696e6564223a302c22686561645f6166746572223a31377d7d0a",
+      "report": {
+        "empty": 0,
+        "pending": 4,
+        "space": 4,
+        "copied": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "manual": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "drained": 0,
+        "timed_out": true,
+        "timer_result": -62,
+        "nonblocking": {
+          "sq_capacity": 8,
+          "cq_capacity": 16,
+          "pending_before": 8,
+          "full_rejected": true,
+          "pending_after": 8,
+          "sq_tail_before": 17,
+          "sq_tail_after": 17,
+          "submitted": 8,
+          "sq_after_submit": 0,
+          "cq_before": 8,
+          "head_before": 9,
+          "steps": [
+            {
+              "capacity": 0,
+              "before": 8,
+              "count": 0,
+              "after": 8,
+              "head_before": 9,
+              "head_after": 9
+            },
+            {
+              "capacity": 1,
+              "before": 8,
+              "count": 1,
+              "after": 7,
+              "head_before": 9,
+              "head_after": 10
+            },
+            {
+              "capacity": 3,
+              "before": 7,
+              "count": 3,
+              "after": 4,
+              "head_before": 10,
+              "head_after": 13
+            },
+            {
+              "capacity": 8,
+              "before": 4,
+              "count": 4,
+              "after": 0,
+              "head_before": 13,
+              "head_after": 17
+            },
+            {
+              "capacity": 1,
+              "before": 0,
+              "count": 0,
+              "after": 0,
+              "head_before": 17,
+              "head_after": 17
+            }
+          ],
+          "copied": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "drained": 0,
+          "head_after": 17
+        }
+      },
+      "empty_stderr": true,
+      "input_unchanged": true
+    },
+    {
+      "program": "reference-completion",
+      "plan": 1,
+      "scope": "Finite owned file versus pipe stdout, no arbitrary position/sink/PBT assurance.",
+      "stdout_bytes": 795,
+      "stdout_sha256": "9a8db68ad3d305527d0dbbdcfc788ffae5e65fc6bb472b962687d5b524d005ad",
+      "stdout_hex": "7b22656d707479223a302c2270656e64696e67223a342c227370616365223a342c22636f70696564223a5b312c322c332c345d2c226d616e75616c223a5b352c362c372c385d2c22647261696e6564223a302c2274696d65645f6f7574223a747275652c2274696d65725f726573756c74223a2d36322c226e6f6e626c6f636b696e67223a7b2273715f6361706163697479223a382c2263715f6361706163697479223a31362c2270656e64696e675f6265666f7265223a382c2266756c6c5f72656a6563746564223a747275652c2270656e64696e675f6166746572223a382c2273715f7461696c5f6265666f7265223a31372c2273715f7461696c5f6166746572223a31372c227375626d6974746564223a382c2273715f61667465725f7375626d6974223a302c2263715f6265666f7265223a382c22686561645f6265666f7265223a392c227374657073223a5b7b226361706163697479223a302c226265666f7265223a382c22636f756e74223a302c226166746572223a382c22686561645f6265666f7265223a392c22686561645f6166746572223a397d2c7b226361706163697479223a312c226265666f7265223a382c22636f756e74223a312c226166746572223a372c22686561645f6265666f7265223a392c22686561645f6166746572223a31307d2c7b226361706163697479223a332c226265666f7265223a372c22636f756e74223a332c226166746572223a342c22686561645f6265666f7265223a31302c22686561645f6166746572223a31337d2c7b226361706163697479223a382c226265666f7265223a342c22636f756e74223a342c226166746572223a302c22686561645f6265666f7265223a31332c22686561645f6166746572223a31377d2c7b226361706163697479223a312c226265666f7265223a302c22636f756e74223a302c226166746572223a302c22686561645f6265666f7265223a31372c22686561645f6166746572223a31377d5d2c22636f70696564223a5b31302c31312c31322c31332c31342c31352c31362c31375d2c22647261696e6564223a302c22686561645f6166746572223a31377d7d0a",
+      "report": {
+        "empty": 0,
+        "pending": 4,
+        "space": 4,
+        "copied": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "manual": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "drained": 0,
+        "timed_out": true,
+        "timer_result": -62,
+        "nonblocking": {
+          "sq_capacity": 8,
+          "cq_capacity": 16,
+          "pending_before": 8,
+          "full_rejected": true,
+          "pending_after": 8,
+          "sq_tail_before": 17,
+          "sq_tail_after": 17,
+          "submitted": 8,
+          "sq_after_submit": 0,
+          "cq_before": 8,
+          "head_before": 9,
+          "steps": [
+            {
+              "capacity": 0,
+              "before": 8,
+              "count": 0,
+              "after": 8,
+              "head_before": 9,
+              "head_after": 9
+            },
+            {
+              "capacity": 1,
+              "before": 8,
+              "count": 1,
+              "after": 7,
+              "head_before": 9,
+              "head_after": 10
+            },
+            {
+              "capacity": 3,
+              "before": 7,
+              "count": 3,
+              "after": 4,
+              "head_before": 10,
+              "head_after": 13
+            },
+            {
+              "capacity": 8,
+              "before": 4,
+              "count": 4,
+              "after": 0,
+              "head_before": 13,
+              "head_after": 17
+            },
+            {
+              "capacity": 1,
+              "before": 0,
+              "count": 0,
+              "after": 0,
+              "head_before": 17,
+              "head_after": 17
+            }
+          ],
+          "copied": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "drained": 0,
+          "head_after": 17
+        }
+      },
+      "empty_stderr": true,
+      "input_unchanged": true
+    }
+  ],
+  "observations": {
+    "copy_wait_threshold": "Available entries may return before threshold; actual destination-bounded count. No second acknowledgement after copies.",
+    "overflow": "SDK may enter kernel to flush overflow even at wait_nr0; stable-CQ drain evidence not overflow/concurrency acceptance.",
+    "wait_fastpath": "Helper returns when readiness already meets minimum; no mask installation without actual enter.",
+    "raw_mapping": "2/3 real virtual regions, caller FD on failure, reverse partial unwind; fork excludes pages but retains FD.",
+    "signal_and_timer": "Signal invokes handler, no CQE; timer and canceler have separate results. Enter deadline differs from timer expiration.",
+    "stdout_suspicion": "Non-streaming writer in reference-setup was inspected; file/pipe comparisons retain exact387 bytes in both modes, completion exact795. No demonstrated defect or arbitrary-offset assurance."
+  },
+  "source_sha256": {
+    "conversion/setup-completion-purpose-audit.md": "05dc58083aa93cf2442a2d52cf11089fd9b21c25c9426459fad8360f01d2ab1b",
+    "conversion/source-inventory.json": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+    "conversion/chapter-map.json": "1d95f62c232872ec0a8c1466a9f395c9523241cac7e2a75a79cc3c81b17f6309",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
+    "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
+    "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
+    "conversion/line-disposition-verification.json": "3c616b5bde7685abbaff6321fe0b995151da510bfe47ac235ee4f93e22cb3e05",
+    "conversion/disposition-note-unchanged-publication.json": "6889426b092fa2b660983433af941d9efa36d9b7a1a05f1cb86729e25a43f9df",
+    "conversion/type-binding-verification.json": "13c05be532375277628102ae0d9d6393c29aa31b65b727c880c1d07da99f1d65",
+    "conversion/test-verification.json": "ecd50a1acf4a7c915baac14791b6b97f9210a1aa210551ba96c8c19a2ad5ba7c",
+    "ref-zig/setup_teardown.rst": "8cfb07794f25aaab05b111f3f8dab8685f1d78994b71509ee6b95fdb73a1e6f7",
+    "ref-zig/completion.rst": "1e1a954707004567b6092f1d8cbf812600f34f25b2be9942e833df998cce0a3f",
+    "ref-zig/cqe.rst": "91278cb1975342e8a59afacce499e5af3218f9bdb3219007dc4ad15d35f67992",
+    "ref-zig/_api/setup_teardown.inc": "61b59db64996a1a3fbbdfd09d5c891eb254731af954ba6a7af27fb0b5656bc37",
+    "ref-zig/_api/completion.inc": "b1a78ce5dcd0fd5c01aa0f682dc08b4f5f557a39542f386137988afd8485b5aa",
+    "ref-zig/_api/cqe.inc": "a9db4338d02732a01989eef52d60a7c11a784d0d411a0f49a85bf5120b319eea",
+    "examples/reference_setup.zig": "c601487b9e78fd81aec3eabde091353b17b5f87251641b3443d1b302e3518ae7",
+    "examples/reference_completion.zig": "68cb89d6f08ffc80f4d9fe356b3328e00f3675732262b59221d3e0c13bd0fcc6",
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/reference_signals.zig": "a2cc003381be3903aecfa65d7c7e719e4c0c45817f1ff976dcb6fd3fa54e9382",
+    "examples/mapping_fault.zig": "3d09d44feeee352a3c6a6dd7660a16c803489ef86fe0b6e801ecd03fd08c1e91",
+    "examples/reference_buffers.zig": "a53c67f6ed7cd7e42666176ab7306ad491fc5482ea79bf318b537b5be984d53c",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
+    "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
+    "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23",
+    "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0",
+    "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c",
+    "testdata/inputs/completion-plans.json": "bb81a1461aea4ba4a95040894310a881b146a2b106971ca5f870943397350ed6",
+    "testdata/inputs/completion-invalid-plans.json": "20a857a64b64164cfbc6cdd99c335987b8af52e207740798e3ce9fc6f0d7997d",
+    "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
+    "testdata/inputs/ordinary-signal-report.json": "591be65f688ef67060d08579890673e9f673ba747a68f7e5ef7c0e849fbdc443",
+    "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a",
+    "testdata/inputs/provided-buffer-zero-report.json": "c982c21651dc0fd412ec874e9d541006f52061cdf90af2b6bdd1b76bbbfbab3c",
+    "testdata/inputs/provided-buffer-report.json": "1ddf000940bcf1eaeac3d43c142e8035fbbda8a28e398c4cbe5e01441e3c4c60"
+  },
+  "sdk_source_sha256": {
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
+  },
+  "artifact_sha256": {
+    "conversion/setup-completion-purpose-tests.log": "e631a96fa486e6c2f9c89ff84edaa6d90b62ef75139d394e7b26a67870c2d978",
+    "conversion/setup-completion-purpose-tests.json": "3ca15e49ef00fe51cd888b0b6397decb20432c9f28a1dc606b3e06d547aa7c3f",
+    "conversion/setup-completion-purpose-sinks.json": "9345f2a71c4c601b34e92fa7458eb169a3e4447651501b13cdf0883c60280d93",
+    "conversion/setup-completion-purpose-run.py": "c9f81652efa3211309c0594d4738cd25ca956f59044c4463d163ce40d45dff41"
+  },
+  "native_binary_sha256": {
+    "reference-setup": "df60ef4e27b10638a01779b12165301af03b39d395bbeaae483aa094341c95df",
+    "reference-completion": "fa57739c06462e388dbe6722eedf3c45f7457d7eeb717ac971e3fc3dda859c81",
+    "reference-signals": "60a3aa7c76c8d1a639ab384b22bac46c486f34acf1e86fd18e3b493cff26e997",
+    "reference-buffers": "50543a31e3249ed46344ccf6ba0d728c83a01195cfb66ebf60655c6947f87b41"
+  },
+  "historical_gates": {
+    "full_tests": 99,
+    "new_full_suite_run": false,
+    "build_rerun": false,
+    "strict_publication_rerun": false,
+    "reader_rerun": false,
+    "epubcheck_rerun": false,
+    "unchanged_native_publication_tool_inputs": 93,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "scope": "Only excluded author-audit/runner artifacts added. No native/manuscript/test/producer changes, make epub or new build; historical99/strict/reader/EPUBCheck evidence retained."
+  },
+  "new_mutant_claims": 0,
+  "navigation": "Actual SDK/helper/consumer bodies read; stale cached graph/Fabric unavailable not absence/caller/acceptance proof.",
+  "diagnostics": {
+    "source": "active all-server changed-path probe",
+    "paths": [
+      "conversion/setup-completion-purpose-audit.md",
+      "conversion/setup-completion-purpose-run.py"
+    ],
+    "clean": 2,
+    "findings": 0,
+    "unsupported": 0,
+    "unavailable": 0,
+    "failed": 0,
+    "inconclusive": 0,
+    "wait_ms": 10000,
+    "scope": "Two changed paths, not whole-workspace or semantic acceptance; historical dispositions unchanged."
+  },
+  "review": "Supported-host blocker unchanged; no unsupported retry/fallback/review artifact.",
+  "completion": {
+    "goal_complete": false,
+    "delivered": false,
+    "open": "Other original-purpose comparisons, mandatory independent review/findings/final audit and personal-fork delivery."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "tests": 12,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "selected_tests": [
+    "tests.test_reference.ReferenceContracts.test_mapping_sizes_dontfork_and_actual_raw_read",
+    "tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires",
+    "tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model",
+    "tests.test_reference.ReferenceContracts.test_completion_rejects_invalid_capacity_plans",
+    "tests.test_signals",
+    "tests.test_ordinary_signals",
+    "tests.test_mapping_failures",
+    "tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract"
+  ],
+  "property_statistics": [
+    {
+      "test": "tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 55
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    }
+  ]
+}
