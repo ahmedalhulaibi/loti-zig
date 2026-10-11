@@ -1,0 +1,209 @@
+{
+  "stages": [
+    {
+      "name": "expired",
+      "requests": [
+        {
+          "tag": 10,
+          "operation": "READ",
+          "descriptor": "pipe",
+          "length": 1,
+          "offset": 18446744073709551615,
+          "flags": 4,
+          "rw_flags": 0,
+          "address_present": true,
+          "timeout": null
+        },
+        {
+          "tag": 11,
+          "operation": "LINK_TIMEOUT",
+          "descriptor": "unused",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "rw_flags": 0,
+          "address_present": true,
+          "timeout": {
+            "sec": 0,
+            "nsec": 20000000
+          }
+        }
+      ],
+      "completions": [
+        {
+          "user_data": 10,
+          "res": -125,
+          "flags": 0
+        },
+        {
+          "user_data": 11,
+          "res": -62,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    },
+    {
+      "name": "ready",
+      "requests": [
+        {
+          "tag": 20,
+          "operation": "READ",
+          "descriptor": "pipe",
+          "length": 1,
+          "offset": 18446744073709551615,
+          "flags": 4,
+          "rw_flags": 0,
+          "address_present": true,
+          "timeout": null
+        },
+        {
+          "tag": 21,
+          "operation": "LINK_TIMEOUT",
+          "descriptor": "unused",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "rw_flags": 0,
+          "address_present": true,
+          "timeout": {
+            "sec": 1,
+            "nsec": 0
+          }
+        }
+      ],
+      "completions": [
+        {
+          "user_data": 20,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 21,
+          "res": -125,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        90,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    },
+    {
+      "name": "failed",
+      "requests": [
+        {
+          "tag": 30,
+          "operation": "READ",
+          "descriptor": "invalid",
+          "length": 1,
+          "offset": 18446744073709551615,
+          "flags": 4,
+          "rw_flags": 0,
+          "address_present": true,
+          "timeout": null
+        },
+        {
+          "tag": 31,
+          "operation": "LINK_TIMEOUT",
+          "descriptor": "unused",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "rw_flags": 0,
+          "address_present": true,
+          "timeout": {
+            "sec": 1,
+            "nsec": 0
+          }
+        }
+      ],
+      "completions": [
+        {
+          "user_data": 30,
+          "res": -9,
+          "flags": 0
+        },
+        {
+          "user_data": 31,
+          "res": -125,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    },
+    {
+      "name": "orphan",
+      "requests": [
+        {
+          "tag": 40,
+          "operation": "LINK_TIMEOUT",
+          "descriptor": "unused",
+          "length": 1,
+          "offset": 0,
+          "flags": 0,
+          "rw_flags": 0,
+          "address_present": true,
+          "timeout": {
+            "sec": 1,
+            "nsec": 0
+          }
+        }
+      ],
+      "completions": [
+        {
+          "user_data": 40,
+          "res": -22,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    }
+  ],
+  "pipe_closed": [
+    true,
+    true
+  ],
+  "ring_retained": true
+}

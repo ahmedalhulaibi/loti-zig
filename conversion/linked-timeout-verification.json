@@ -1,0 +1,188 @@
+{
+  "scope": "Author-run bounded linked-deadline execution/operand/CQE/pipe-retirement contracts, not verifier-agent acceptance, whole-port/kernel/race/device assurance or final delivery.",
+  "reproduction": "linked-timeout-reproduction.json",
+  "core": "linked-timeout-spec-sha256.json",
+  "initial_core": "linked-timeout-spec-initial-sha256.json",
+  "amendment": "linked-timeout-spec-amendment.json",
+  "narrative_amendment": "submission-prose-cardinality-linked-timeout.json",
+  "mutation": "mutation-linked-timeout.json",
+  "contracts": {
+    "finite_cases": [
+      "empty-pipe linked deadline",
+      "prewritten-byte target success",
+      "invalid-FD target failure",
+      "lone linked timer rejection"
+    ],
+    "fresh_process_repetitions": 20,
+    "new_tests": 2,
+    "trace_damages": 11,
+    "generated_property_claim": false,
+    "default_constructor_body_exact": true,
+    "borrowed_operands": "Both CQEs consumed and validated before next stage/byte reset; one timespec per stage retained through both completions; target storage retained."
+  },
+  "actual_oracle": {
+    "rings": 1,
+    "pipes": 1,
+    "submitted_sqes": 7,
+    "submission_batches": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "completion_guards": 1,
+    "stimulus_writes": 1,
+    "synchronous_pipe_reads": 0,
+    "queried_pipe_closures": 2,
+    "caller_ring_retained": true
+  },
+  "native_host": {
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64"
+  },
+  "diagnostics": {
+    "source": "Active primary LSP",
+    "changed_source_paths": 5,
+    "findings": 0,
+    "scope": "Prior suppressed findings/OPF infos remain disclosed; not an unconditional workspace-clean claim."
+  },
+  "navigation": {
+    "fabric": "Unavailable in current tool surface/PATH",
+    "graph": "Cached989c85c0/reportedHEAD2f4b15a7 stale; not complete callers. Inspected current main/request/completion/cleanup bodies, exact SDK wrappers and explicit map/book/default/new test consumers.",
+    "churn": {
+      "coverage": {
+        "binary_files": 386,
+        "failed_commits": 0,
+        "indexed_commits": 2,
+        "loaded_commits": 60,
+        "requested_commits": 60,
+        "skipped_merge_commits": 0,
+        "status": "complete",
+        "timestamp_anomalies": 0
+      },
+      "metric_version": 1,
+      "query": {
+        "attribution_mode": "commit-author",
+        "group_by": [],
+        "mode": "complete",
+        "period": "total",
+        "revision": "HEAD",
+        "since_utc": "2026-10-10T00:51:20Z",
+        "threshold_seconds": 2592000,
+        "timezone": "UTC",
+        "until_utc": "2026-10-11T00:51:20Z",
+        "week_start": "monday"
+      },
+      "replacement_policy": "positional-hunk-v1",
+      "rows": [
+        {
+          "additions": 126558,
+          "change_units": 131404,
+          "copied_lines": 2786,
+          "deletions": 7654,
+          "keys": {},
+          "new_work": 123750,
+          "refactor": 5233,
+          "replacements": 2808,
+          "rework": 2421
+        }
+      ]
+    },
+    "churn_scope": "Preimplementation committed-history60/60 coverage; not current-code or review acceptance."
+  },
+  "source_sha256": {
+    "README.md": "5120b6e6ab86fb10fc3d88a9273ca7cbfaa8cc45218d6370db8801832c2a928a",
+    "conversion/audit.md": "bd45a78d4d912cbcc63a215187fbf150bf0f0b7e69c67ab274fb6b87c0945baf",
+    "conversion/prose-line-disposition.md": "6456023c284f561d3b82b5610b91f8811c4938c9be0976dafd4e5a12d2f1dc3c",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/reference_submission.zig": "3f18550a211b1f2d812d4ab3dc045c1696eb6a6eeda86da961ac0710f16a07c8",
+    "ref-zig/submission.rst": "2fd28c9a6d14e72d908ea3fadb119aa4d12b8773faafdd848f4f8bb7c4c4e47a",
+    "testdata/inputs/linked-timeout-invalid-traces.json": "7601ed66a619914d4e00c69c455d15a051538747d96503942cd65f73160a0fae",
+    "testdata/inputs/linked-timeout-report.json": "9853a18738bbaec1e9decffab2bef3f884e28791a1ddee43502ae467c14f267c",
+    "testdata/inputs/linked-timeout.trace": "c04463253cd513caab5a1140ae402c313e38295e6ec0077a55417c71bc52521d",
+    "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
+    "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
+    "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
+    "testing.md": "616c8cf0e39d88b5216edf634864bf8e32161c2dbb4ab9cd805fccb3c8f2c124",
+    "tests/test_linked_timeout.py": "bef445b63a28e96d3151c933249f9b073d30f78eb7e368b3ee1a5b97a207d972",
+    "tests/test_publication.py": "64dce303cfc86c83da6fbfa6360f3a29c9a796a479b22986b69bab5be21e0bc6",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
+    "tests/test_submission_prose.py": "4508e0e100c4601573197a3b38ea735c8253a7bda022a942947b62853bbb4002",
+    "tools/reference_map.py": "47ec8fedee43c56eeb7675eb1c8ef5a23125ca32098597049a52fa3084fada18"
+  },
+  "reference_sha256": {
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_prep_link_timeout.3.txt": "4d07afc303d70fa14c30ad3834b53e9f19c7b3bed0baf3dcbc1c87a1adc1bd14",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_cancelation.7.txt": "45d61a01fb58d806c29415aba6318ea72370fcf1ee83813c0ed5d4f56c381510",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "replayed_consumers": [
+    "accept-verification.json",
+    "connect-verification.json",
+    "copy-short-verification.json",
+    "epoll-verification.json",
+    "file-operations-verification.json",
+    "literal-policy-verification.json",
+    "mapping-failure-verification.json",
+    "messages-verification.json",
+    "ordinary-signal-verification.json",
+    "poll-verification.json",
+    "provided-buffers-verification.json",
+    "reference-semantics-verification.json",
+    "registered-files-verification.json",
+    "rwf-verification.json",
+    "signal-wait-verification.json",
+    "splice-verification.json",
+    "sqpoll-wakeup-verification.json",
+    "submission-prose-verification.json",
+    "provided-buffer-zero-verification.json"
+  ],
+  "gates": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.907,
+    "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
+    "narrative_paragraphs": 362,
+    "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance.",
+    "zig": "0.17.0",
+    "executables": 25,
+    "build_steps": 51,
+    "strict_html": true,
+    "strict_epub": true,
+    "chapters": 27,
+    "literals": 120,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "reader": {
+      "cases": 81,
+      "element_counts": {
+        "pre": 360,
+        "table": 6,
+        "image": 15,
+        "heading": 333,
+        "figure": 0
+      },
+      "violations": 0
+    }
+  },
+  "completion": {
+    "goal_complete": false,
+    "independent_review": "Blocked; host unchanged, no retry/fallback/reviewer report. Current HEAD still requires review.",
+    "fork_delivery": "Not pushed; final requirement-to-artifact semantic audit and review resolution remain open.",
+    "unverified_scope": "Other deadline clocks/flags/operations/cancellation races/all error-unwind paths, other kernels/architectures and independent semantic/device acceptance."
+  },
+  "metadata_generation_correction": {
+    "error": "Receipt helper initially lacked repository sys.path; ModuleNotFoundError: No module named tests. Failed before any writes.",
+    "correction": "Inserted explicit current-repository path before imports; successful receipt generation followed completed gates. Not a native/test/mutation or independent-review result.",
+    "log": ".mutants/linked-timeout/2026-10-10/receipt-helper-startup-error.log"
+  }
+}

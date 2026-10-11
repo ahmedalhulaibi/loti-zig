@@ -1,0 +1,16 @@
+test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) ... FAIL
+
+======================================================================
+FAIL: test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 122, in test_actual_submission_stimulus_guards_and_before_exit_retirement
+    self.assertEqual(json.loads(stdout), EXPECTED)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'sta[1074 chars]': [91, 165, 165, 165, 165, 165, 165, 165], 's[1002 chars]True} != {'sta[1074 chars]': [90, 165, 165, 165, 165, 165, 165, 165], 's[1002 chars]True}
+Diff is 4414 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.045s
+
+FAILED (failures=1)

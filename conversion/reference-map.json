@@ -262,8 +262,8 @@
       "original": "io_uring_prep_link_timeout",
       "zig": "std.os.linux.IoUring.link_timeout",
       "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "verification_scope": "INPUT mode constructs only; separate --linked-timeout submits empty/ready/invalid-FD one-byte pipe READs and lone timer: tag-sorted -ECANCELED/-ETIME, 1/-ECANCELED, -EBADF/-ECANCELED and -EINVAL; exact bytes/poison, queue drain and queried pipe retirement; sequential current-kernel evidence, not all deadline races/clocks/flags",
+      "semantic_difference": "Attach after an IOSQE_IO_LINK target; not a general CQ wait. Retain timespec and target storage through both separately tagged CQEs. Successful/failed targets cancel the timer; expiry attempts target cancellation. Do not infer CQ arrival order or operation completion from submit count.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn link_timeout(\n    self: *IoUring,\n    user_data: u64,\n    ts: *const linux.kernel_timespec,\n    flags: u32,\n) !*linux.io_uring_sqe"
     },

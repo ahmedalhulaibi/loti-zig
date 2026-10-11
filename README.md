@@ -130,6 +130,7 @@ zig-out/bin/reference-buffers input.txt --zero-result
 zig-out/bin/reference-buffers input.txt --zero-result --fail-eof
 zig-out/bin/reference-registration input.txt replacement.txt
 zig-out/bin/reference-submission input.txt
+zig-out/bin/reference-submission --linked-timeout
 zig-out/bin/reference-raw input.txt
 ```
 
@@ -138,8 +139,12 @@ slot reads, replacement after closing the application descriptor, asynchronous
 restoration and removal/unregistration failures. It reports the first 64 bytes;
 this is not a full-file reader or concurrent table-update model.
 
-`reference-submission` executes constructors but deliberately does not submit its
-incompatible mixed operands. Other reference/tutorial programs provide separate
+`reference-submission INPUT` constructs 33 incompatible operands without submitting
+that batch. Its separate `--linked-timeout` mode needs no path: four private-pipe
+cases check deadline expiry, ready/failed targets, a lone timer, both tagged CQEs,
+exact bytes/poison and queried pipe closure before ring retirement. One-second
+completion guards and external process bounds contain failures; broader deadline
+races/clocks/flags remain unverified. Other reference/tutorial programs provide separate
 operation-effect evidence. The HTTP server is loopback-only and is not production
 software. Consult each chapter for capabilities, lifetimes and limits.
 

@@ -13,9 +13,9 @@
     "examples/reference_rwf.zig": "103e568c2fc2486eb241038202d7bd772c1be509df2b56ff2bf910822db3709b",
     "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
-    "tools/reference_map.py": "2ab05db26e7c51b3b4dedcb67bff6bbb35853fd87fa394bcb97917434a680234",
-    "conversion/reference-map.json": "028d54813461b75cd24f57506d383dcce5287ef860f1087dac689dd465da096f",
-    "ref-zig/submission.rst": "c3e0ad7424e64879bc10c33a683d2c76a8624636a3390f145a0ba1bff7f15604",
+    "tools/reference_map.py": "47ec8fedee43c56eeb7675eb1c8ef5a23125ca32098597049a52fa3084fada18",
+    "conversion/reference-map.json": "533d9f44587e6cb951e52e4290338821943351a2d60d1ae4c4fc72f5e67b046f",
+    "ref-zig/submission.rst": "2fd28c9a6d14e72d908ea3fadb119aa4d12b8773faafdd848f4f8bb7c4c4e47a",
     "conversion/rwf.trace": "a9aff6312f7cb0a6fc2765852a3959257fb2f525cc1eb78ff4aa2119da039acf",
     "conversion/rwf-spec-sha256.json": "1c12594eb638a544ccd831f95c666bac8b2c0fc6eae526a57ef08a6f32ccf64e",
     "testdata/inputs/rwf-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
@@ -277,5 +277,17 @@
       "conversion/reference-map.json",
       "ref-zig/submission.rst"
     ]
+  },
+  "replay_after_linked_timeout": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.907,
+    "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
+    "narrative_paragraphs": 362,
+    "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance."
   }
 }

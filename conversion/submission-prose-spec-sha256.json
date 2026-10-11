@@ -1,11 +1,12 @@
 {
   "scope": "Author preimplementation whole binding/prose CLI contracts, not sealed verifier-agent or independent acceptance. Three exact complete binding rows and six damaged narrative cases plus one positive whitespace-formatting variant. Whole report counts355 resolved narrative paragraphs; document titles/TOC compact paragraphs/rubrics/captions are separate scope.",
   "source_sha256": {
-    "tests/test_submission_prose.py": "71eb1c7ba1fd26f9c28486fdc44143da11fda895d5cd3f7071e7691184ef8036",
+    "tests/test_submission_prose.py": "4508e0e100c4601573197a3b38ea735c8253a7bda022a942947b62853bbb4002",
     "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
     "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
     "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77"
   },
   "amendment": "submission-prose-spec-amendment.json",
-  "edition_cardinality_amendment": "submission-prose-cardinality-buffer-zero.json"
+  "edition_cardinality_amendment": "submission-prose-cardinality-buffer-zero.json",
+  "linked_deadline_cardinality_amendment": "submission-prose-cardinality-linked-timeout.json"
 }

@@ -1,0 +1,15 @@
+test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) ... ok
+test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) ... ok
+test_completion_rejects_invalid_capacity_plans (tests.test_reference.ReferenceContracts.test_completion_rejects_invalid_capacity_plans) ... ok
+test_copy_and_manual_ack_are_distinct_and_deadline_really_expires (tests.test_reference.ReferenceContracts.test_copy_and_manual_ack_are_distinct_and_deadline_really_expires) ... ok
+test_every_preparation_has_the_expected_opcode_and_correlation_tag (tests.test_reference.ReferenceContracts.test_every_preparation_has_the_expected_opcode_and_correlation_tag) ... ok
+test_mapping_sizes_dontfork_and_actual_raw_read (tests.test_reference.ReferenceContracts.test_mapping_sizes_dontfork_and_actual_raw_read) ... ok
+test_nonblocking_completion_capacities_follow_queue_model (tests.test_reference.ReferenceContracts.test_nonblocking_completion_capacities_follow_queue_model) ... ok
+test_raw_sqe_bindings_execute_and_memory_advice_changes_memory (tests.test_reference.ReferenceContracts.test_raw_sqe_bindings_execute_and_memory_advice_changes_memory) ... ok
+test_registration_helpers_and_async_notification (tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification) ... ok
+test_registration_rejects_missing_or_extra_inputs (tests.test_reference.ReferenceContracts.test_registration_rejects_missing_or_extra_inputs) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 13.138s
+
+OK

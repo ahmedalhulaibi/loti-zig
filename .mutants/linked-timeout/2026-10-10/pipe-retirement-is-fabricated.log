@@ -1,0 +1,24 @@
+test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) ... FAIL
+
+======================================================================
+FAIL: test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 124, in test_actual_submission_stimulus_guards_and_before_exit_retirement
+    observed = inspect_trace(trace.read_text())
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 74, in inspect_trace
+    raise ValueError("IncompleteLinkedTimeoutRetirement")
+ValueError: IncompleteLinkedTimeoutRetirement
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 126, in test_actual_submission_stimulus_guards_and_before_exit_retirement
+    self.fail(f"Invalid public linked-timeout syscall trace: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public linked-timeout syscall trace: IncompleteLinkedTimeoutRetirement
+
+----------------------------------------------------------------------
+Ran 1 test in 0.042s
+
+FAILED (failures=1)

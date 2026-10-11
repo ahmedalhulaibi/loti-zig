@@ -1,0 +1,19 @@
+{
+  "phase": "Before native implementation/mutation",
+  "correction": "Enter parser restricted flags to a comma-free field; its greedy initial capture consumed EXT_ARG structure fields. No native expectation, fixture or damage changed.",
+  "original_snapshot": "linked-timeout-spec-initial-sha256.json",
+  "initial_draft": "linked-timeout-test-initial.txt",
+  "development_log": "/tmp/loti-linked-timeout-spec-red.log",
+  "excluded": "Initial synthetic-positive WrongLinkedTimeoutGuard unittest error is not missing teaching coverage, a shrink or a killed mutant.",
+  "live_trace_correction": {
+    "prior_snapshot": "linked-timeout-spec-before-strace-sha256.json",
+    "prior_draft": "linked-timeout-test-before-strace.txt",
+    "changes": [
+      "Normalize only syscall-result alignment before matching",
+      "Accept exact equivalent fcntl CLOEXEC results 1 (FD_CLOEXEC) and 0x1 (flags FD_CLOEXEC)"
+    ],
+    "excluded": "First-green InvalidLinkedTimeoutSetup harness failure; native whole report already matched. Original expectations and ten damages retained.",
+    "development_log": "/tmp/loti-linked-timeout-live-parser-development.log"
+  },
+  "pre_mutation_strengthening": "Added missing-orphan-batch to isolate submission count from the separate stimulus-order check; original ten damage cases unchanged."
+}

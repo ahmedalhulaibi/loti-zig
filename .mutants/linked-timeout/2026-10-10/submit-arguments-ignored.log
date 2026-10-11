@@ -1,0 +1,26 @@
+test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) ...
+  test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) (damage='implicit-wait') ... FAIL
+  test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) (damage='wrong-mask-size') ... FAIL
+
+======================================================================
+FAIL: test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) (damage='implicit-wait')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 115, in test_actual_submission_stimulus_guards_and_before_exit_retirement
+    self.fail("Damaged linked-timeout syscall contract was accepted")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Damaged linked-timeout syscall contract was accepted
+
+======================================================================
+FAIL: test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) (damage='wrong-mask-size')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 115, in test_actual_submission_stimulus_guards_and_before_exit_retirement
+    self.fail("Damaged linked-timeout syscall contract was accepted")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Damaged linked-timeout syscall contract was accepted
+
+----------------------------------------------------------------------
+Ran 1 test in 0.035s
+
+FAILED (failures=2)

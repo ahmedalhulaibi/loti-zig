@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/tmp/loti-linked-timeout-receipts.py", line 3, in <module>
+    from tests.test_linked_timeout import inspect_trace,EXPECTED
+ModuleNotFoundError: No module named 'tests'

@@ -1,0 +1,61 @@
+install
++- install reference-submission
+   +- compile exe reference-submission debug native 1 errors
+examples/reference_submission.zig:88:11: error: invalid left-hand side to assignment
+    defer if (read_open) _ = linux.close(pipes[0]);
+          ^~~~~~~~~~~~~~~~
+error: 1 compilation errors
+failed command: /home/ahmed/.local/share/mise/installs/zig/0.17.0/zig build-exe -Odebug -Mroot=examples/reference_submission.zig --cache-dir .zig-cache --global-cache-dir /home/ahmed/.cache/zig --build-root . --name reference-submission --zig-lib-dir /home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/ --listen=-
+
+Build Summary: 48/51 steps succeeded (1 failed)
+install transitive failure
++- install readv cached
+|  +- compile exe readv debug native cached 6ms MaxRSS:39M
++- install raw-cat cached
+|  +- compile exe raw-cat debug native cached 9ms MaxRSS:41M
++- install cat cached
+|  +- compile exe cat debug native cached 6ms MaxRSS:36M
++- install cp cached
+|  +- compile exe cp debug native cached 7ms MaxRSS:40M
++- install probe cached
+|  +- compile exe probe debug native cached 7ms MaxRSS:40M
++- install link cached
+|  +- compile exe link debug native cached 6ms MaxRSS:37M
++- install fixed-buffers cached
+|  +- compile exe fixed-buffers debug native cached 7ms MaxRSS:36M
++- install sq-poll cached
+|  +- compile exe sq-poll debug native cached 8ms MaxRSS:38M
++- install register-eventfd cached
+|  +- compile exe register-eventfd debug native cached 7ms MaxRSS:40M
++- install webserver cached
+|  +- compile exe webserver debug native cached 6ms MaxRSS:40M
++- install reference-setup cached
+|  +- compile exe reference-setup debug native cached 8ms MaxRSS:38M
++- install reference-completion cached
+|  +- compile exe reference-completion debug native cached 7ms MaxRSS:40M
++- install reference-signals cached
+|  +- compile exe reference-signals debug native cached 7ms MaxRSS:41M
++- install reference-files cached
+|  +- compile exe reference-files debug native cached 7ms MaxRSS:40M
++- install reference-rwf cached
+|  +- compile exe reference-rwf debug native cached 7ms MaxRSS:40M
++- install reference-buffers cached
+|  +- compile exe reference-buffers debug native cached 6ms MaxRSS:38M
++- install reference-splice cached
+|  +- compile exe reference-splice debug native cached 8ms MaxRSS:41M
++- install reference-poll cached
+|  +- compile exe reference-poll debug native cached 9ms MaxRSS:41M
++- install reference-epoll cached
+|  +- compile exe reference-epoll debug native cached 6ms MaxRSS:40M
++- install reference-connect cached
+|  +- compile exe reference-connect debug native cached 6ms MaxRSS:36M
++- install reference-accept cached
+|  +- compile exe reference-accept debug native cached 9ms MaxRSS:38M
++- install reference-messages cached
+|  +- compile exe reference-messages debug native cached 8ms MaxRSS:39M
++- install reference-registration cached
+|  +- compile exe reference-registration debug native cached 8ms MaxRSS:41M
++- install reference-submission transitive failure
+|  +- compile exe reference-submission debug native 1 errors
++- install reference-raw cached
+   +- compile exe reference-raw debug native cached 7ms MaxRSS:38M

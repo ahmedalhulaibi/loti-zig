@@ -1,6 +1,6 @@
 {
   "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review.",
-  "book_sha256": "6c4e3ac195a38a1f08d3143b4fdac60c7929661cc5d254e54616856770ef5e72",
+  "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
   "renderer": {
     "node": "v26.8.1",
     "playwright": "1.64.0",
@@ -7740,5 +7740,17 @@
   "replay_after_literal_policy": "Full79-test/fifteen400-case suite and strict rebuild followed by final81-case sandboxed/offline/JS-disabled browser sweep; old screenshots and historical mutation assessments remain historical, not repeated.",
   "replay_after_sqpoll_wakeup": "Full81-test/fifteen400-case suite; strict final archive rebuilt afterward; final81-case browser sweep. Old screenshots and historical mutation evidence remain historical.",
   "replay_after_submission_prose": "Full84-test suite followed by final strict EPUB/source/narrative verifier/browser/EPUBCheck. Historical screenshots and mutation/diagnostic evidence retained, not a device/review claim.",
-  "replay_after_provided_buffer_zero": "Full88-test/sixteen400-case suite followed by strict final HTML/EPUB/narrative verifier/browser/EPUBCheck. Current final book/measurements refreshed; historical screenshots and mutations/diagnostics retained; not device/review acceptance."
+  "replay_after_provided_buffer_zero": "Full88-test/sixteen400-case suite followed by strict final HTML/EPUB/narrative verifier/browser/EPUBCheck. Current final book/measurements refreshed; historical screenshots and mutations/diagnostics retained; not device/review acceptance.",
+  "replay_after_linked_timeout": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.907,
+    "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
+    "narrative_paragraphs": 362,
+    "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance."
+  }
 }

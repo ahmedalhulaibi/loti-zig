@@ -421,6 +421,24 @@ or already-running results are possible. ``link_timeout`` is attached to a
 linked request, not a general CQ wait. Expiration can attempt to cancel that
 request; normal target completion cancels the link timer. See :ref:`link_zig`.
 
+Optional ``reference-submission --linked-timeout`` executes four private-pipe
+cases without an input or output path. An empty one-byte READ has a relative
+20-ms linked deadline: its target returns ``-ECANCELED`` and its timer returns
+``-ETIME``. A prewritten byte lets the READ return one and cancels its timer.
+An invalid-FD READ returns ``-EBADF`` and cancels its timer. A lone linked timer
+without a target returns ``-EINVAL``.
+
+Each pair retains its byte storage and timespec until both tagged CQEs have
+been consumed. Results are sorted by tag, not arrival order. Only the ready
+READ changes the first byte; the seven guard bytes and failed-read storage
+remain unchanged. Queue checks precede reuse, and both pipe ends are closed
+and queried while the caller still owns the ring.
+
+This is bounded sequential current-kernel pipe evidence, not every deadline
+race, operation, clock, flag or cancellation path. One-second EXT_ARG waits
+bound missing completions; an external process bound contains native/trace
+failures. The mode does not submit the incompatible 33-constructor batch.
+
 ``provide_buffers`` supplies a contiguous allocation, per-buffer size/count,
 group and first ID. ``remove_buffers`` removes a count from a group. Selected
 receive/read requests set ``IOSQE_BUFFER_SELECT``; decode the selected ID from
@@ -568,7 +586,7 @@ Runnable constructor reference
 
 .. literalinclude:: ../examples/reference_submission.zig
    :language: zig
-   :caption: 33 executed constructors; requests deliberately not submitted
+   :caption: 33 unsubmitted constructors; separate linked-deadline mode
 
 ``tests/test_reference.py`` verifies prepared opcode/tag/flags and selected
 length/group fields. The deliberately incompatible mixed descriptor operands

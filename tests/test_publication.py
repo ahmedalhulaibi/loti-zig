@@ -82,7 +82,7 @@ class PublicationContract(unittest.TestCase):
             "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
             "book_sha256": hashlib.sha256(BOOK.read_bytes()).hexdigest(),
             "original_chapters": 26, "edition_chapters": 27, "literal_blocks": 120,
-            "narrative_paragraphs": 359, "narrative_source_matches": True,
+            "narrative_paragraphs": 362, "narrative_source_matches": True,
             "literal_policy": {"language_counts": {"zig": 98, "console": 18, "json": 2, "text": 2},
                                "rendered_languages_match": True, "bounded_legacy_markers_absent": True},
             "byte_identical_illustrations": 5, "licence_exact": True,

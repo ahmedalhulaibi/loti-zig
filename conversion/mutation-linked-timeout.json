@@ -1,0 +1,271 @@
+{
+  "scope": "Nine compiled native/three syntax-valid syscall-oracle variants; exact whole reports and eleven damaged traces. Four finite pipe cases, not generated PBT or whole-port/kernel/race/independent-review assurance.",
+  "mutants": [
+    {
+      "id": "read-link-omitted",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "95e574251ba46004022f66f80f7b5729617ff92c3378029ef194af67a0ff3203",
+      "log": ".mutants/linked-timeout/2026-10-10/read-link-omitted.log"
+    },
+    {
+      "id": "zero-length-read-proxy",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "feb8bfe5324ab52c763362f2c85dbcdb848fc7cc6654d7315eadb08dbb52a1bb",
+      "log": ".mutants/linked-timeout/2026-10-10/zero-length-read-proxy.log"
+    },
+    {
+      "id": "pipe-offset-is-explicit",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "99c832ef0f888e560057acd12302e9a8ee6f07f87c2d390c834590b961551e50",
+      "log": ".mutants/linked-timeout/2026-10-10/pipe-offset-is-explicit.log"
+    },
+    {
+      "id": "deadline-duration-is-zero",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "fee2c60a218b025e539c8e85c05ee66b883ddb25c96b7eda551fb28bd101adf3",
+      "log": ".mutants/linked-timeout/2026-10-10/deadline-duration-is-zero.log"
+    },
+    {
+      "id": "ready-stimulus-byte-wrong",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "a28c16114460dd4899c1a0b415d7da5e3ba32b7bae98116b94b3e24081b80e73",
+      "log": ".mutants/linked-timeout/2026-10-10/ready-stimulus-byte-wrong.log"
+    },
+    {
+      "id": "completions-are-fabricated",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "eb621025fd6abe7f979e092e55b20b18d4877a1eaecd4b35799ded64471b99db",
+      "log": ".mutants/linked-timeout/2026-10-10/completions-are-fabricated.log"
+    },
+    {
+      "id": "completion-tags-inverted",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "bcb7687fc6264ffc56d447c91329bdc79946966965d3d7ec33ee249fb4c16371",
+      "log": ".mutants/linked-timeout/2026-10-10/completion-tags-inverted.log"
+    },
+    {
+      "id": "snapshot-is-poison",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "5ab74f1aeb101a5b4d9cadd9173e15cedb33ed5fbc5fb2b4dce93cc8eeabf67f",
+      "log": ".mutants/linked-timeout/2026-10-10/snapshot-is-poison.log"
+    },
+    {
+      "id": "pipe-retirement-is-fabricated",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "720866358b1826f5d3471ee32532fbed88ad55cd1aff75540f81e4c4f7c779b1",
+      "log": ".mutants/linked-timeout/2026-10-10/pipe-retirement-is-fabricated.log"
+    },
+    {
+      "id": "submission-count-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "90a32054655f76d94021f169d9f7ce1fc2dff168b247abb99a49735f159531b4",
+      "log": ".mutants/linked-timeout/2026-10-10/submission-count-ignored.log"
+    },
+    {
+      "id": "submit-arguments-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "a038372a38f5dbd93a507320fceef8643cc4612f9da62520d87e60f89359ed73",
+      "log": ".mutants/linked-timeout/2026-10-10/submit-arguments-ignored.log"
+    },
+    {
+      "id": "retirement-order-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "9204947254b64a51df2f1302bd2f3f3d3eb70d2787c43d0cf480d66a9ab71ea9",
+      "log": ".mutants/linked-timeout/2026-10-10/retirement-order-ignored.log"
+    }
+  ],
+  "restored_source_sha256": {
+    "examples/reference_submission.zig": "3f18550a211b1f2d812d4ab3dc045c1696eb6a6eeda86da961ac0710f16a07c8",
+    "tests/test_linked_timeout.py": "bef445b63a28e96d3151c933249f9b073d30f78eb7e368b3ee1a5b97a207d972"
+  },
+  "spec_exact": true,
+  "baseline": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "log": ".mutants/linked-timeout/2026-10-10/restored.log"
+  },
+  "containment": "Sequential 4GiB/no-swap/TasksMax128 user scope; CLI and strace use owned process groups/10-second external bounds. Native restored/rebuilt before every parser variant and final baseline.",
+  "log_normalization": {
+    "scope": "Only trailing ASCII spaces/tabs/CR and terminal blank lines; no substantive observation rewritten.",
+    "changed": [
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/completion-tags-inverted-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/completions-are-fabricated-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/deadline-duration-is-zero-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/native-development-uncompiled.log",
+        "original_sha256": "b266d5ecfbca4a98003e53c3c2d75b2987e362c6bd9b44a7dd6f20c37679b4df",
+        "normalized_sha256": "0caa2a7e7486c4dee90c2548fd54708af04d12c42f6e7b4274a8a6e40f8ae313"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/pipe-offset-is-explicit-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/pipe-retirement-is-fabricated-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/read-link-omitted-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/ready-stimulus-byte-wrong-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/restored-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/retirement-order-ignored-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/retirement-order-ignored-restored-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/retirement-order-ignored.log",
+        "original_sha256": "296204691732f4530697c8ff1c364d130bc9227f89c7dca6e093510608de728d",
+        "normalized_sha256": "9adc99fa288433f95a775a97f2fc6651ec729aa7333dab4718641831c9a40018"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/snapshot-is-poison-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/strict-epub.log",
+        "original_sha256": "2b896fbf1dee79a2610ad1342057a850309149d8b2bd0cc1136576fc25328277",
+        "normalized_sha256": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/strict-html.log",
+        "original_sha256": "145cd0d480e02bf25c88b80343915c06fdcc3031325c1371e2ea6d03721fdec9",
+        "normalized_sha256": "8dd8ff3153e9e93e7fba214505bbb99713a6dc3c5eefc5511dddf4bd79a41a62"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/submission-count-ignored-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/submission-count-ignored-restored-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/submission-count-ignored.log",
+        "original_sha256": "4bbdd5162c5d618a2e6a852cfca17720ac03426bc0d4bd3b0f2136e4f6d4dc67",
+        "normalized_sha256": "5fcf4f4e854d871eedfd4c189ca0dbe2b09dff1f2f26809ee3c4169be06cd320"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/submit-arguments-ignored-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/submit-arguments-ignored-restored-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/submit-arguments-ignored.log",
+        "original_sha256": "cb29e0d6e69d39942ffb790f4f02556c0c87a7dca68ca9699905a38972aaeeb8",
+        "normalized_sha256": "88a3b40613e5e71be6e86d20c02cc65dd8af4a9bfa1e7ceb5bf290c3efce271a"
+      },
+      {
+        "file": ".mutants/linked-timeout/2026-10-10/zero-length-read-proxy-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      }
+    ]
+  },
+  "exclusions": {
+    "initial_synthetic_parser_error": "Retained initial preimplementation draft/hash; greedy flags capture consumed EXT_ARG fields. Not a native defect or kill.",
+    "native_development_compile_error": "Conditional defer needed a block; uncompiled implementation, not a mutant. Original build log retained.",
+    "live_trace_harness_error": "Strace result alignment and exact equivalent CLOEXEC format corrected transparently; prior draft/hash retained.",
+    "initial_aggregate": "90 tests/one stale duplicate narrative-count failure/168.560s; not a mutation kill or native defect. Corrected90-test full replay retained."
+  }
+}

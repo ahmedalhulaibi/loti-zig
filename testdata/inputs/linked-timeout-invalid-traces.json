@@ -1,0 +1,57 @@
+[
+  {
+    "id": "missing-batch",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "WrongLinkedTimeoutSubmissionSequence"
+  },
+  {
+    "id": "wrong-ring",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(4, 1, 0, 0, NULL, 8) = 1\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "WrongLinkedTimeoutEnterOwner"
+  },
+  {
+    "id": "implicit-wait",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "WrongLinkedTimeoutSubmitArguments"
+  },
+  {
+    "id": "wrong-mask-size",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 1, 0, 0, NULL, 128) = 1\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "WrongLinkedTimeoutSubmitArguments"
+  },
+  {
+    "id": "guard-not-one-second",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=0, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "WrongLinkedTimeoutGuard"
+  },
+  {
+    "id": "wrong-stimulus-byte",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5b\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "WrongLinkedTimeoutStimulus"
+  },
+  {
+    "id": "no-close-query",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nclose(3) = 0\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "IncompleteLinkedTimeoutRetirement"
+  },
+  {
+    "id": "ring-already-closed",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(5) = 0\n",
+    "error": "WrongLinkedTimeoutRetainedRing"
+  },
+  {
+    "id": "synchronous-read",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nread(3, \"\\x5a\", 1) = 1\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "SynchronousLinkedTimeoutRead"
+  },
+  {
+    "id": "early-pipe-close",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nclose(3) = 0\nio_uring_enter(5, 1, 0, 0, NULL, 8) = 1\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "WrongLinkedTimeoutRetirementOrder"
+  },
+  {
+    "id": "missing-orphan-batch",
+    "trace": "pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0\nio_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 5\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0\nwrite(4, \"\\x5a\", 1) = 1\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nio_uring_enter(5, 2, 0, 0, NULL, 8) = 2\nclose(3) = 0\nfcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(4) = 0\nfcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)\nfcntl(5, F_GETFD) = 1 (FD_CLOEXEC)\nclose(5) = 0\n",
+    "error": "WrongLinkedTimeoutSubmissionSequence"
+  }
+]

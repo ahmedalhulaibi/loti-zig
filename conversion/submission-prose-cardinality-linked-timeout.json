@@ -1,0 +1,29 @@
+{
+  "scope": "Add three reader paragraphs for executed linked deadlines; narrative fidelity is not native/independent semantic acceptance.",
+  "previous": "submission-prose-spec-before-linked-timeout.json",
+  "changed_expectation": {
+    "narrative_paragraphs": [
+      359,
+      362
+    ]
+  },
+  "unchanged": [
+    "Three whole binding expectations",
+    "Two separately authored whole semantic reader paragraphs",
+    "Six narrative damage cases",
+    "Whitespace-only positive and ordered source-fidelity comparison"
+  ],
+  "original_core": "submission-prose-spec-initial-sha256.json",
+  "development_gate_correction": {
+    "omission": "First90-test run missed the duplicate narrative count in tests/test_publication.py.",
+    "observed": {
+      "tests": 90,
+      "failures": 1,
+      "errors": 0,
+      "seconds": 168.56
+    },
+    "correction": "Changed only its whole-report cardinality359\u2192362; previous file SHA retained with the existing narrative contract.",
+    "log": "/tmp/loti-linked-timeout-final-tests.log",
+    "scope": "Harness/cardinality repair, not a native defect, shrink or mutant kill; require full new replay before repinning."
+  }
+}

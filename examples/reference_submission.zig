@@ -8,9 +8,159 @@ fn emit(writer: *std.Io.Writer, sqe: *const linux.io_uring_sqe) !void {
     });
 }
 
+const DeadlineName = enum { expired, ready, failed, orphan };
+const DeadlineDescriptor = enum { pipe, invalid, unused };
+const DeadlineTime = struct { sec: i64, nsec: i64 };
+const DeadlineRequest = struct {
+    tag: u64,
+    operation: linux.IORING_OP,
+    descriptor: DeadlineDescriptor,
+    length: u32,
+    offset: u64,
+    flags: u8,
+    rw_flags: u32,
+    address_present: bool,
+    timeout: ?DeadlineTime,
+};
+const DeadlineStage = struct {
+    name: DeadlineName,
+    requests: []const DeadlineRequest,
+    completions: []const linux.io_uring_cqe,
+    storage: [8]u8,
+    sq_ready: u32,
+    cq_ready: u32,
+};
+
+fn deadlineRequest(sqe: *const linux.io_uring_sqe, pipe: linux.fd_t) !DeadlineRequest {
+    const descriptor: DeadlineDescriptor = switch (sqe.opcode) {
+        .READ => if (sqe.fd == pipe) .pipe else if (sqe.fd == -1) .invalid else return error.InvalidDeadlineReadDescriptor,
+        .LINK_TIMEOUT => if (sqe.fd == -1) .unused else return error.InvalidDeadlineTimerDescriptor,
+        else => return error.UnexpectedDeadlineOperation,
+    };
+    const time: ?DeadlineTime = if (sqe.opcode == .LINK_TIMEOUT) blk: {
+        if (sqe.addr == 0) return error.MissingDeadlineTimespec;
+        const ts: *const linux.kernel_timespec = @ptrFromInt(sqe.addr);
+        break :blk .{ .sec = ts.sec, .nsec = ts.nsec };
+    } else null;
+    return .{
+        .tag = sqe.user_data,
+        .operation = sqe.opcode,
+        .descriptor = descriptor,
+        .length = sqe.len,
+        .offset = sqe.off,
+        .flags = sqe.flags,
+        .rw_flags = sqe.rw_flags,
+        .address_present = sqe.addr != 0,
+        .timeout = time,
+    };
+}
+
+fn deadlineCompletions(ring: *linux.IoUring, first_tag: u64, results: []linux.io_uring_cqe) !void {
+    const guard: linux.kernel_timespec = .{ .sec = 1, .nsec = 0 };
+    var seen = [_]bool{ false, false };
+    for (results) |_| {
+        try raw.wait_with_timeout(ring, 1, &guard, null);
+        const cqe = try ring.copy_cqe();
+        if (cqe.user_data < first_tag or cqe.user_data - first_tag >= results.len)
+            return error.UnexpectedDeadlineCompletion;
+        const index: usize = @intCast(cqe.user_data - first_tag);
+        if (seen[index]) return error.DuplicateDeadlineCompletion;
+        if (cqe.flags != 0) return error.UnexpectedDeadlineCompletionFlags;
+        seen[index] = true;
+        results[index] = cqe;
+    }
+    if (ring.sq_ready() != 0 or ring.cq_ready() != 0) return error.DeadlineQueueNotDrained;
+}
+
+fn deadlineClose(fd: linux.fd_t, open: *bool) !bool {
+    if (linux.errno(linux.close(fd)) != .SUCCESS) return error.DeadlinePipeCloseFailed;
+    open.* = false;
+    if (linux.errno(linux.fcntl(fd, linux.F.GETFD, 0)) != .BADF) return error.DeadlinePipeStillOpen;
+    return true;
+}
+
+fn linkedTimeout(io: std.Io) !void {
+    var pipes: [2]linux.fd_t = undefined;
+    if (linux.errno(linux.pipe2(&pipes, .{ .NONBLOCK = true, .CLOEXEC = true })) != .SUCCESS)
+        return error.DeadlinePipeCreationFailed;
+    var read_open = true;
+    var write_open = true;
+    defer if (read_open) {
+        _ = linux.close(pipes[0]);
+    };
+    defer if (write_open) {
+        _ = linux.close(pipes[1]);
+    };
+    var ring = try linux.IoUring.init(8, 0);
+    defer ring.deinit();
+    var stages: [4]DeadlineStage = undefined;
+    var requests: [4][2]DeadlineRequest = undefined;
+    var completions: [4][2]linux.io_uring_cqe = undefined;
+    const names = [_]DeadlineName{ .expired, .ready, .failed, .orphan };
+    for (names, 0..) |name, index| {
+        var data: [8]u8 = @splat(165);
+        const duration: linux.kernel_timespec = if (name == .expired)
+            .{ .sec = 0, .nsec = 20_000_000 }
+        else
+            .{ .sec = 1, .nsec = 0 };
+        const tag: u64 = 10 + index * 10;
+        const count: usize = if (name == .orphan) 1 else 2;
+        if (name == .ready) {
+            const stimulus = [_]u8{90};
+            const written = linux.write(pipes[1], &stimulus, stimulus.len);
+            if (linux.errno(written) != .SUCCESS or written != stimulus.len)
+                return error.DeadlineStimulusFailed;
+        }
+        if (name != .orphan) {
+            const read = try ring.read(tag, if (name == .failed) -1 else pipes[0], .{ .buffer = data[0..1] }, std.math.maxInt(u64));
+            read.flags |= linux.IOSQE_IO_LINK;
+            requests[index][0] = try deadlineRequest(read, pipes[0]);
+        }
+        const timer = try ring.link_timeout(if (name == .orphan) tag else tag + 1, &duration, 0);
+        requests[index][count - 1] = try deadlineRequest(timer, pipes[0]);
+        if (try ring.submit() != count) return error.UnexpectedDeadlineSubmissionCount;
+        try deadlineCompletions(&ring, tag, completions[index][0..count]);
+        const target_result: i32 = switch (name) {
+            .expired => -@as(i32, @backingInt(linux.E.CANCELED)),
+            .ready => 1,
+            .failed => -@as(i32, @backingInt(linux.E.BADF)),
+            .orphan => -@as(i32, @backingInt(linux.E.INVAL)),
+        };
+        if (completions[index][0].res != target_result) return error.UnexpectedDeadlineTargetResult;
+        if (name != .orphan) {
+            const timer_result: i32 = if (name == .expired)
+                -@as(i32, @backingInt(linux.E.TIME))
+            else
+                -@as(i32, @backingInt(linux.E.CANCELED));
+            if (completions[index][1].res != timer_result) return error.UnexpectedLinkedTimerResult;
+        }
+        stages[index] = .{
+            .name = name,
+            .requests = requests[index][0..count],
+            .completions = completions[index][0..count],
+            .storage = data,
+            .sq_ready = ring.sq_ready(),
+            .cq_ready = ring.cq_ready(),
+        };
+    }
+    const read_closed = try deadlineClose(pipes[0], &read_open);
+    const write_closed = try deadlineClose(pipes[1], &write_open);
+    if (linux.errno(linux.fcntl(ring.fd, linux.F.GETFD, 0)) != .SUCCESS) return error.DeadlineClosedCallerRing;
+    var buffer: [8192]u8 = undefined;
+    var stdout = std.Io.File.stdout().writerStreaming(io, &buffer);
+    try std.json.Stringify.value(.{
+        .stages = stages,
+        .pipe_closed = [_]bool{ read_closed, write_closed },
+        .ring_retained = true,
+    }, .{ .emit_strings_as_arrays = true }, &stdout.interface);
+    try stdout.interface.writeByte('\n');
+    try stdout.interface.flush();
+}
+
 pub fn main(init: std.process.Init) !void {
     const args = try init.minimal.args.toSlice(init.arena.allocator());
     if (args.len != 2) return error.ExpectedInputFile;
+    if (std.mem.eql(u8, args[1], "--linked-timeout")) return linkedTimeout(init.io);
     const path = try init.arena.allocator().dupeSentinel(u8, args[1], 0);
     const file = try std.Io.Dir.cwd().openFile(init.io, args[1], .{});
     defer file.close(init.io);

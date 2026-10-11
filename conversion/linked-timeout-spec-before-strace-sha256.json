@@ -1,0 +1,9 @@
+{
+  "scope": "Author preimplementation public contracts; not verifier-agent acceptance or ACL sealing. Four finite cases; twenty repetitions are not PBT.",
+  "files": {
+    "tests/test_linked_timeout.py": "e05731e2a137af02b4aa7cb218c41d0de4355ab7199061251e15be549b9bb701",
+    "testdata/inputs/linked-timeout.trace": "c04463253cd513caab5a1140ae402c313e38295e6ec0077a55417c71bc52521d",
+    "testdata/inputs/linked-timeout-report.json": "9853a18738bbaec1e9decffab2bef3f884e28791a1ddee43502ae467c14f267c",
+    "testdata/inputs/linked-timeout-invalid-traces.json": "bed409b955b92b51540900f2af63b5d5965950de357a40f6156ca118b00519f5"
+  }
+}

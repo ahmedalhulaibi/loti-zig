@@ -1,0 +1,10 @@
+{
+  "scope": "Existing narrative contract before adding three linked-deadline paragraphs; current prior cardinality359",
+  "source_sha256": {
+    "tests/test_submission_prose.py": "71eb1c7ba1fd26f9c28486fdc44143da11fda895d5cd3f7071e7691184ef8036",
+    "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
+    "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
+    "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
+    "tests/test_publication.py": "d0ccb35431c588d7729597552fa1e4badcfa75cee5b039ac833a487285c8f792"
+  }
+}

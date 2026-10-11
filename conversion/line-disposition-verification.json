@@ -17,7 +17,7 @@
     },
     {
       "name": "prose-line-disposition.md",
-      "sha256": "06773bac5549760c5bc4e7e158cc161b4b418291463a04fb8e73213d523a8b2c"
+      "sha256": "6456023c284f561d3b82b5610b91f8811c4938c9be0976dafd4e5a12d2f1dc3c"
     }
   ],
   "target_sha256": {
@@ -36,7 +36,7 @@
     "ref-zig/index.rst": "796748b6db63b46962d4a596f258cd3ceecc3e4c7e6f3a19105a71568a0cd849",
     "ref-zig/setup_teardown.rst": "8cfb07794f25aaab05b111f3f8dab8685f1d78994b71509ee6b95fdb73a1e6f7",
     "ref-zig/sqe.rst": "e93b2d66aa339084a6dc0307fd1e500fada6badccbf5cf4caab12533da8913c4",
-    "ref-zig/submission.rst": "c3e0ad7424e64879bc10c33a683d2c76a8624636a3390f145a0ba1bff7f15604",
+    "ref-zig/submission.rst": "2fd28c9a6d14e72d908ea3fadb119aa4d12b8773faafdd848f4f8bb7c4c4e47a",
     "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
     "tutorial/cat.rst": "98eb3485361b25130e5792720bf99b4f39617f67bb902b83a946fc481d83c7f6",
     "tutorial/cp.rst": "ae113b0656c6cca42094d74d713a5ea2d30ad967ae9046e0dc3d75d1c74801da",

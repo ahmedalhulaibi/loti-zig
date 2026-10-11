@@ -1,0 +1,316 @@
+EFFFFFFFFFFFFFFFFFFFF
+======================================================================
+ERROR: test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 107, in test_actual_submission_stimulus_guards_and_before_exit_retirement
+    self.assertEqual(inspect_trace((INPUTS / "linked-timeout.trace").read_text()), oracle)
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 57, in inspect_trace
+    raise ValueError("WrongLinkedTimeoutGuard")
+ValueError: WrongLinkedTimeoutGuard
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=10)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=11)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=13)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=14)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=15)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=16)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=17)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=18)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) (iteration=19)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_linked_timeout.py", line 94, in test_deadline_success_failure_and_orphan_have_distinct_tagged_results
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: FileNotFound\n/home/ahmed/.lo[606 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 726 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.162s
+
+FAILED (failures=20, errors=1)

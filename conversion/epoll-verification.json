@@ -11,9 +11,9 @@
     "examples/reference_epoll.zig": "1aab395c92e951f58c5ebd8deba5c0704efae8e42bfbf447fd09f80f0cc42a3f",
     "tests/test_epoll.py": "16c5648faf1b43d5ac969441c23fdf1f942798f6af1182942ed40916b35a97b5",
     "tests/test_epoll_trace.py": "59f8a49cd5ca6cf31372c18d39b338a0eef88cdf8219479fe4e3258fcdad59d9",
-    "tools/reference_map.py": "2ab05db26e7c51b3b4dedcb67bff6bbb35853fd87fa394bcb97917434a680234",
-    "conversion/reference-map.json": "028d54813461b75cd24f57506d383dcce5287ef860f1087dac689dd465da096f",
-    "ref-zig/submission.rst": "c3e0ad7424e64879bc10c33a683d2c76a8624636a3390f145a0ba1bff7f15604",
+    "tools/reference_map.py": "47ec8fedee43c56eeb7675eb1c8ef5a23125ca32098597049a52fa3084fada18",
+    "conversion/reference-map.json": "533d9f44587e6cb951e52e4290338821943351a2d60d1ae4c4fc72f5e67b046f",
+    "ref-zig/submission.rst": "2fd28c9a6d14e72d908ea3fadb119aa4d12b8773faafdd848f4f8bb7c4c4e47a",
     "conversion/epoll-spec-sha256.json": "bea2067df042453e93da52729f0356333cd71a711dafb7c8f4c7e624ae3f4200",
     "conversion/epoll-spec-amendment.json": "79d3043c93fe153eecd8d2a8b67f97f71a047407f1f20a3c855f301cfc1055d1",
     "testdata/inputs/epoll-default-plan.json": "e5e4841248106c640a837accaea4ab30ce9b03d493dc50fe926f8b41162f3720",
@@ -804,5 +804,17 @@
       "conversion/reference-map.json",
       "ref-zig/submission.rst"
     ]
+  },
+  "replay_after_linked_timeout": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.907,
+    "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
+    "narrative_paragraphs": 362,
+    "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance."
   }
 }

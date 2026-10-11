@@ -1,0 +1,134 @@
+"""Public linked-deadline effects; CQ tags, not arrival order, own operands."""
+
+import json
+import os
+from pathlib import Path
+import re
+import signal
+import subprocess
+import tempfile
+import unittest
+
+ROOT = Path(__file__).resolve().parent.parent
+INPUTS = ROOT / "testdata/inputs"
+EXPECTED = json.loads((INPUTS / "linked-timeout-report.json").read_text())
+
+
+def execute(arguments, timeout=10):
+    process = subprocess.Popen(arguments, cwd=ROOT, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE, start_new_session=True)
+    try:
+        stdout, stderr = process.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid, signal.SIGKILL)
+        process.communicate()
+        raise
+    return process.returncode, stdout, stderr
+
+
+def inspect_trace(text):
+    lines = text.splitlines()
+    pipe = [(i, re.fullmatch(r"pipe2\(\[(\d+), (\d+)\], O_NONBLOCK\|O_CLOEXEC\) = 0", line))
+            for i, line in enumerate(lines) if line.startswith("pipe2(")]
+    setups = [(i, re.fullmatch(r"io_uring_setup\(8, .*flags=0,.*\) = (\d+)", line))
+              for i, line in enumerate(lines) if line.startswith("io_uring_setup(")]
+    if len(pipe) != 1 or pipe[0][1] is None or len(setups) != 1 or setups[0][1] is None:
+        raise ValueError("InvalidLinkedTimeoutSetup")
+    read_fd, write_fd = map(int, pipe[0][1].groups())
+    ring = int(setups[0][1][1])
+    if len({read_fd, write_fd, ring}) != 3 or pipe[0][0] >= setups[0][0]:
+        raise ValueError("WrongLinkedTimeoutOwnership")
+    submissions, guards = [], []
+    for i, line in enumerate(lines):
+        if line.startswith("io_uring_enter("):
+            match = re.fullmatch(r"io_uring_enter\((\d+), (\d+), (\d+), (.*), (.*), (\d+)\) = (\d+)", line)
+            if match is None:
+                raise ValueError("InvalidLinkedTimeoutEnter")
+            fd, count, minimum, flags, argument, size, result = match.groups()
+            if int(fd) != ring:
+                raise ValueError("WrongLinkedTimeoutEnterOwner")
+            if int(count) != 0:
+                if (int(minimum), flags, argument, int(size), int(result)) != (0, "0", "NULL", 8, int(count)):
+                    raise ValueError("WrongLinkedTimeoutSubmitArguments")
+                submissions.append((i, int(count)))
+            else:
+                guard = re.fullmatch(r"\{sigmask=NULL, sigmask_sz=0, (?:min_wait_usec|min_time)=0, ts=\{tv_sec=1, tv_nsec=0\}\}", argument)
+                if (int(minimum), flags, int(size), int(result)) != (1, "IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG", 24, 0) or guard is None:
+                    raise ValueError("WrongLinkedTimeoutGuard")
+                guards.append(i)
+        synchronous = re.match(r"(?:read|readv|pread64|preadv)\((-?\d+),", line)
+        if synchronous is not None and int(synchronous[1]) == read_fd:
+            raise ValueError("SynchronousLinkedTimeoutRead")
+    if [count for _, count in submissions] != [2, 2, 2, 1]:
+        raise ValueError("WrongLinkedTimeoutSubmissionSequence")
+    if len(guards) > 7 or any(i < submissions[0][0] for i in guards):
+        raise ValueError("WrongLinkedTimeoutGuardOrder")
+    stimulus = [(i, line) for i, line in enumerate(lines) if line.startswith(f"write({write_fd},")]
+    if len(stimulus) != 1 or stimulus[0][1] != f'write({write_fd}, "\\x5a", 1) = 1' or not submissions[0][0] < stimulus[0][0] < submissions[1][0]:
+        raise ValueError("WrongLinkedTimeoutStimulus")
+    retirement = []
+    for fd in (read_fd, write_fd):
+        closes = [i for i, line in enumerate(lines) if line == f"close({fd}) = 0"]
+        queries = [i for i, line in enumerate(lines) if re.fullmatch(rf"fcntl\({fd}, F_GETFD\) = -1 EBADF \(Bad file descriptor\)", line)]
+        if len(closes) != 1 or len(queries) != 1:
+            raise ValueError("IncompleteLinkedTimeoutRetirement")
+        if not submissions[-1][0] < closes[0] < queries[0] or any(i >= closes[0] for i in guards):
+            raise ValueError("WrongLinkedTimeoutRetirementOrder")
+        retirement.append(queries[0])
+    ring_query = [i for i, line in enumerate(lines) if line == f"fcntl({ring}, F_GETFD) = 1 (FD_CLOEXEC)"]
+    ring_close = [i for i, line in enumerate(lines) if line == f"close({ring}) = 0"]
+    if len(ring_query) != 1 or len(ring_close) != 1 or not max(retirement) < ring_query[0] < ring_close[0]:
+        raise ValueError("WrongLinkedTimeoutRetainedRing")
+    return {"rings": 1, "pipes": 1, "submitted_sqes": 7, "submission_batches": [2, 2, 2, 1],
+            "completion_guards": len(guards), "stimulus_writes": 1, "synchronous_pipe_reads": 0,
+            "queried_pipe_closures": 2, "caller_ring_retained": True}
+
+
+class LinkedTimeoutContracts(unittest.TestCase):
+    def test_deadline_success_failure_and_orphan_have_distinct_tagged_results(self):
+        # Kills missing links, zero-length READ proxies, wrong cancellation tags,
+        # fabricated bytes/results and premature operand reuse.
+        for iteration in range(20):
+            with self.subTest(iteration=iteration):
+                code, stdout, stderr = execute(["zig-out/bin/reference-submission", "--linked-timeout"])
+                self.assertEqual((code, stderr), (0, b""))
+                self.assertEqual(json.loads(stdout), EXPECTED)
+        for arguments in ([], ["--linked-timeout", "extra"]):
+            with self.subTest(arguments=arguments):
+                code, stdout, stderr = execute(["zig-out/bin/reference-submission", *arguments])
+                self.assertEqual((code, stdout), (1, b""))
+                self.assertEqual(stderr.splitlines()[0], b"error: ExpectedInputFile")
+
+    def test_actual_submission_stimulus_guards_and_before_exit_retirement(self):
+        # Kills report-only deadlines/cleanup; damages challenge the syscall oracle.
+        oracle = {"rings": 1, "pipes": 1, "submitted_sqes": 7, "submission_batches": [2, 2, 2, 1],
+                  "completion_guards": 1, "stimulus_writes": 1, "synchronous_pipe_reads": 0,
+                  "queried_pipe_closures": 2, "caller_ring_retained": True}
+        self.assertEqual(inspect_trace((INPUTS / "linked-timeout.trace").read_text()), oracle)
+        for damage in json.loads((INPUTS / "linked-timeout-invalid-traces.json").read_text()):
+            with self.subTest(damage=damage["id"]):
+                try:
+                    inspect_trace(damage["trace"])
+                except ValueError as error:
+                    self.assertEqual(str(error), damage["error"])
+                else:
+                    self.fail("Damaged linked-timeout syscall contract was accepted")
+        with tempfile.TemporaryDirectory() as directory:
+            trace = Path(directory) / "syscalls.trace"
+            code, stdout, stderr = execute(["strace", "-qq", "-xx", "-s", "512", "-o", str(trace),
+                                           "-e", "trace=pipe2,io_uring_setup,io_uring_enter,read,readv,pread64,preadv,write,close,fcntl",
+                                           "zig-out/bin/reference-submission", "--linked-timeout"])
+            self.assertEqual((code, stderr), (0, b""))
+            self.assertEqual(json.loads(stdout), EXPECTED)
+            try:
+                observed = inspect_trace(trace.read_text())
+            except ValueError as error:
+                self.fail(f"Invalid public linked-timeout syscall trace: {error}")
+            guards = observed.pop("completion_guards")
+            self.assertLessEqual(guards, 7)
+            oracle.pop("completion_guards")
+            self.assertEqual(observed, oracle)
+
+
+if __name__ == "__main__":
+    unittest.main()

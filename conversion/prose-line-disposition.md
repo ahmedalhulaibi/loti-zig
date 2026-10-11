@@ -128,7 +128,7 @@ reference sources. DONE markers are not reused as verification evidence.
 | `delme.c:176-204` | `ref-zig/advanced_usage.rst` | Buffer/file/update/eventfd/personality methods/helpers; probe raw helper also in supported_caps; distinguish captured credentials and application resource ownership |
 | `delme.c:205-212` | `ref-zig/submission.rst` | Async table update now submitted separately with count-one CQE and restored fixed-read bytes; provided-buffer reads now expose selected IDs/bytes, exhaustion, group isolation, re-provision/removal counts and model-based ownership transitions; stable arrays/groups, not fixed-buffer registration; optional EOF result0 still carries BUFFER/ID257 and consumes (remove0/exhaustion); requestedlen0 at offset0 reads legacy64-byte capacity, then final remove1/poison/cursor checks; not pbuf-ring or concurrent/multishot/cancellation assurance |
 | `delme.c:213-216` | `ref-zig/submission.rst` | sq_ready plus native array-capacity-minus-ready free-space expression; not completed-I/O count, single-producer discipline |
-| `delme.c:217-226` | `ref-zig/submission.rst` | Native timeout/timeout_remove/cancel/link_timeout and timespec/tag/flags contracts; cancellation races and separate target CQEs retained |
+| `delme.c:217-226` | `ref-zig/submission.rst` | Native timeout/timeout_remove/cancel/link_timeout and timespec/tag/flags contracts; separate --linked-timeout mode now executes expiration (-ECANCELED/-ETIME), ready/failing targets (timer -ECANCELED), lone-timer -EINVAL, exact bytes/poison and queried pipe retirement; timespec/storage retained through both tagged CQEs, sorted not arrival-ordered; broader cancellation races remain unverified |
 
 ## Findings and remaining acceptance gates
 
