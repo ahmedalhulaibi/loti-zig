@@ -1,0 +1,220 @@
+{
+  "scope": "Author body-level comparison of all19 remaining generic type rows. Current primaries compile many real types, but the blanket ABI-size phrase does not identify evidence; signed-offset and kernel-mask references need specific typed consumers. Not a native implementation defect or independent/all-original-purpose acceptance.",
+  "before": [
+    {
+      "original": "__kernel_timespec",
+      "zig": "std.os.linux.kernel_timespec",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_cqring_offsets",
+      "zig": "std.os.linux.io_cqring_offsets",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_sqring_offsets",
+      "zig": "std.os.linux.io_sqring_offsets",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring",
+      "zig": "std.os.linux.IoUring",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_cq",
+      "zig": "std.os.linux.IoUring.CompletionQueue",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_params",
+      "zig": "std.os.linux.io_uring_params",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_sq",
+      "zig": "std.os.linux.IoUring.SubmissionQueue",
+      "example": "examples/reference_setup.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_sqe",
+      "zig": "std.os.linux.io_uring_sqe",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "iovec",
+      "zig": "std.posix.iovec / std.posix.iovec_const",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "loff_t",
+      "zig": "i64; SQE offsets use u64 with the current-offset sentinel",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "mode_t",
+      "zig": "std.posix.mode_t",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "msghdr",
+      "zig": "std.os.linux.msghdr / std.os.linux.msghdr_const",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "off_t",
+      "zig": "i64; SQE offsets use u64 with the current-offset sentinel",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "open_how",
+      "zig": "raw_ops.OpenHow",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "sigset_t",
+      "zig": "std.os.linux.sigset_t",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "size_t",
+      "zig": "usize",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "sockaddr",
+      "zig": "std.os.linux.sockaddr",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "socklen_t",
+      "zig": "std.os.linux.socklen_t",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "statx",
+      "zig": "std.os.linux.Statx",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    }
+  ],
+  "source_sha256": {
+    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
+    "conversion/type-binding-reflection.zig": "395af52e12ba1745014714ccc3a589435571622185aac398f7a220d53334fd06",
+    "examples/reference_submission.zig": "caed7d975ccadc60c08ee62e8681159764ccdd1698ebd8bc5a42704d77de22b3",
+    "examples/reference_setup.zig": "c601487b9e78fd81aec3eabde091353b17b5f87251641b3443d1b302e3518ae7",
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/reference_signals.zig": "a2cc003381be3903aecfa65d7c7e719e4c0c45817f1ff976dcb6fd3fa54e9382",
+    "examples/reference_rwf.zig": "103e568c2fc2486eb241038202d7bd772c1be509df2b56ff2bf910822db3709b",
+    "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
+    "examples/reference_files.zig": "4f2792ef1cd99f2191f242f040ca4a90d4af376a3dfb955cd0e04167f139f65f",
+    "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
+    "examples/reference_messages.zig": "4e29206d6b45dbe42ccac3135a586970f0016b58868efb9ae938ee927549ea76",
+    "examples/reference_connect.zig": "222ea4bb96e82e33f6ac52aeafa1d60e6387877a844f9a88c2f54cb2c4b9e909",
+    "examples/reference_accept.zig": "65e864abebfd4f762906a9504614542da93da7e1aaadd383c31996ad8abf8dd4",
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04"
+  },
+  "findings": [
+    "Setup checks actual returned queues/mappings and prints SQE/CQE sizes, not C-library wrapper ABI layouts. Native ring/sq/cq are auto-layout owned SDK objects, not kernel or liburing structs to cast.",
+    "Default mixed constructor mode prepares33 incompatible SQEs without submission; types there must not imply executed operation or individual ABI-size acceptance.",
+    "reference_rwf.position explicitly accepts linux.off_t=i64; SPLICE takes u64 value bit-pattern offsets, not loff_t pointers; -1 sentinel is operation-specific.",
+    "reference_signals actually retains/restores kernel masks: native x86_64 linux.sigset_t is8bytes, unlike1024-bit glibc/musl signal-set ABI; not a128-byte kernel argument.",
+    "mode_t is u32, Statx.mode is u16, OpenHow.mode is u64; byte widths matching in some fields do not collapse these semantic boundaries. File tests currently assert bytes/size, not mode bits; no new permissions-effect claim.",
+    "Raw Linux msghdr uses usize iovlen/controllen on current target; do not assume every POSIX/musl libc header layout matches.",
+    "Pointer mutability, byte storage versus retained nested vector metadata, size_t versus u32 SQE len and sockaddr input versus socklen_t value-result output need separate scopes."
+  ],
+  "reflection": {
+    "command": "zig run --dep raw_ops -Mroot=conversion/type-binding-reflection.zig -Mraw_ops=examples/raw_ops.zig",
+    "report": {
+      "target": {
+        "os": "linux",
+        "arch": "x86_64",
+        "word_bits": 64,
+        "libc": false
+      },
+      "layouts": {
+        "ring": "auto",
+        "sq": "auto",
+        "cq": "auto"
+      },
+      "sizes": {
+        "params": 120,
+        "sq_offsets": 40,
+        "cq_offsets": 40,
+        "sqe": 64,
+        "cqe": 16,
+        "timespec": 16,
+        "sigset": 8,
+        "iovec": 16,
+        "iovec_const": 16,
+        "msghdr": 56,
+        "msghdr_const": 56,
+        "sockaddr": 16,
+        "ipv4": 16,
+        "socklen": 4,
+        "statx": 256,
+        "open_how": 24
+      },
+      "integers": {
+        "off_t": "i64",
+        "mode_t": "u32",
+        "statx_mode": "u16",
+        "sqe_offset": "u64",
+        "sqe_length": "u32",
+        "socklen": "u32",
+        "timespec_sec": "i64",
+        "timespec_nsec": "i64",
+        "vector_length": "usize"
+      },
+      "constness": {
+        "read_bytes": false,
+        "write_bytes": true,
+        "receive_vectors": false,
+        "send_vectors": true
+      },
+      "current_offset_bits": 18446744073709551615
+    },
+    "scope": "Stateless compiler/type diagnostic, not an installed26th example, kernel execution, portable ABI or independent review.",
+    "development_failure": "Initial reflection used obsolete pointer.is_const; exact0.17 compiler rejected it. Read std/lang.zig Pointer.attrs.const and corrected only diagnostic reflection; excluded, not mutant kill/native defect."
+  },
+  "next": "Author whole19-row semantic fixture and literal current-target reflection expectation before producer changes; preserve all80 unselected rows and99 identity/signature fields; selected valid producer damages plus exact restoration; remaining all-original-purpose/independent review and delivery open."
+}

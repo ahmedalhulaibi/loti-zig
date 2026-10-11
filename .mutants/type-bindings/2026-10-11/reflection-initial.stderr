@@ -1,0 +1,11 @@
+conversion/type-binding-reflection.zig:46:82: error: no field named 'is_const' in struct 'lang.Type.Pointer'
+            .read_bytes = @typeInfo(@FieldType(std.posix.iovec, "base")).pointer.is_const,
+                                                                                 ^~~~~~~~
+/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/lang.zig:682:25: note: struct declared here
+    pub const Pointer = struct {
+                        ^~~~~~
+referenced by:
+    callMain [inlined]: /home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/start.zig:827:30
+    callMainWithArgs [inlined]: /home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/start.zig:729:20
+    posixCallMainAndExit: /home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/start.zig:681:38
+    2 reference(s) hidden; use '-freference-trace=5' to see all references
