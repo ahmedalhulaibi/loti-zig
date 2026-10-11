@@ -7,7 +7,7 @@ The :ref:`reader <cat_zig>` has one outstanding request. A copy can overlap a
 read for one range with a write for another. This example keeps two stable
 16-KiB slots and submits a batch when work is available. Its origin is Shuveb
 Hussain's tutorial, based on the
-`fio copying example <https://github.com/axboe/fio/blob/master/t/io_uring.c>`_.
+`fio io_uring program <https://github.com/axboe/fio/blob/master/t/io_uring.c>`_.
 The implementation here is native Zig 0.17.0.
 
 .. code-block:: console

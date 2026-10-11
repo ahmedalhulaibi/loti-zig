@@ -14,17 +14,18 @@ adds18 complete native bodies, nine chapter pairs and16 supplemental lexical
 rows persisted in `source-inventory-supplement.json`. Current-body reach is30/30; original-purpose
 classification and independent acceptance remain distinct, unresolved gates.
 
-Latest author checkpoint: `pending-teardown-audit.md` and reproduction JSON.
-Two observed HTTP fatal stdout failures,one on an isolated exact0.17 source
-build,unwind with idle RECV/next ACCEPT previously consumed. Ring closes before
-client storage release;this is not a retirement barrier or demonstrated UAF.
-Exact SDK synchronous cancellation retires private pipe READs;ALL after retirement
-returns0. Unknown flag fails−22 and targets remain pending. Finite author evidence,
-not all HTTP READ/SEND/cancellation/race coverage. No native/book/test edit.
-Need independent runtime-capable verifier/qualifying owner-approved alternative
-before design-heavy cleanup repair. Existing read-only reviewer cannot be bypassed.
-Last affected6/publication is021e98e;full103/cold25 remain44d9b32 history.
-292 kills unchanged;completeness/final exact-HEAD acceptance/delivery open;no push.
+Latest author checkpoint: `fork-source-links-audit.md`/verification JSON.
+Fresh public personal fork identity/API+SSH masterc9ee2424/actual original tree
+confirmed. Converted examples directory404/30 native files absent. Local-link
+publication checks do not cover this external source-delivery requirement.
+CP label now generic fio io_uring program,matching original credit without copier
+claim. Native/tests/fixtures unchanged;only CP differs within prior226 inputs.
+Affected3 tests/5.915s,current strict publication/81 reflows/EPUBCheck pass;
+archive04c4e128…;prior217ae9e5 historical. Supplement not repinned,fresh16 slices.
+Fatal HTTP retirement from pending-teardown audit remains unverified;need approved
+independent runtime verifier/qualifying alternative before design-heavy repair.
+Full103/cold25 remain44d9b32;292 kills unchanged;complete meaning/final acceptance/
+personal-fork delivery open. No push/reviewer/PR/release/completion.
 
 ## Contract
 

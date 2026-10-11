@@ -7,23 +7,23 @@ preserved purpose/order/attribution/licence/images; verified accepted delivery.
 
 | Requirement/surface | Concrete evidence | Current disposition |
 |---|---|---|
-| 1. Fork/location | `.git/config`, origin personal SSH URL, immutable upstreamc9ee2424, fresh `frontmatter-fork-verification.json` API/SSH fork-parent/master evidence; checkout `/home/ahmed/workspace/va/loti-zig` | Created/cloned; refresh remote/API and verify delivered commit at final gate. Nothing pushed. |
+| 1. Fork/location | Fresh fork-source-links-before/verification API+SSH:public ahmedalhulaibi fork,parent shuveb/loti,master/MIT;remote c9ee2424;exact checkout/remotes | Created/cloned. Converted30 native files absent on complete remote tree;packaged examples directory404. Accepted push/exact remote/source availability gate not done. |
 | 2. Every C/io_uring line/block | `conversion/source-inventory.json`, inventory/check_line_dispositions checks:3618 lines/128 blocks/567 outside lines; `source-inventory-supplement.json` persists16 exact original rows/current target slices | Canonical keyword/block policy and index freshness checked; broader copyright/navigation/article/SQE-flag matches separately enumerated/disposed. Neither census nor author classification establishes independent completeness/meaning acceptance. |
 | 3. Update references | `tools/reference_map.py --check`:76 original symbols/99 native bindings; reference_docs13 includes;22 type scopes/reflection and actual native consumers | All26 original chapters now have whole-body author comparison; source/local-package links inspected. Final independent meaning and post-push source-link checks remain, not just fresh maps. |
 | 4. Recreate every example | `build.zig`,25 native executables, exact compiler guard, prior51/51 build; compiled literalincludes | Native conversion exists; seven author purpose reports128/128 blocks. No purpose-census substitute for final semantic/independent acceptance. |
-| 4. Update relevant text | Whole26 author comparisons plus latest sqe-flag-audit.md:LINK boundary/HARDLINK validation-initialization clarified in raw reference/tutorial | Finite19-plan native probes support scoped correction;no native/test edit. Independent meaning acceptance remains open. |
-| Publication fidelity | sqe-flag-verification.json:strict HTML/EPUB;actual27 chapters/121 literals/368 paragraphs;four whole corrected flag paragraphs | Current217ae9e5… archive checked;prior consumer d0e95c7b…/main8126d69d… receipts remain history. Fidelity is not semantics. |
-| Native/public/tool contracts | Last44d9b32 cold25 build/full103/16×400/175.449s;latest affected6/10.046s and4 source CLIs pass | Native/tests/fixtures exact;no new full/build promotion.226 selected pins change only2 manuscripts;historical supplement not repinned,fresh16 live slices captured. |
+| 4. Update relevant text | Whole26 author comparisons plus flags/CONNECT/payload/constructor fixes;latest CP origin label matches original generic fio-program credit | Shuveb/fio citation retained;native implementation unchanged. Whole current paragraph checked;independent meaning acceptance remains open. |
+| Publication fidelity | fork-source-links-verification.json:strict HTML/EPUB;27 chapters/121 literals/368 paragraphs;whole CP origin paragraph/four GitHub anchors | Current04c4e128… archive checked. GitHub source directory404 is outside local-link verifier scope. Prior receipts stay historical;fidelity is not semantics. |
+| Native/public/tool contracts | Last44d9b32 cold25/full103/16×400;latest affected3/5.915s and4 source CLIs pass | Native/tests/fixtures exact;only CP changes within prior226 selected pins;historical supplement kept,fresh16 slices/five historical differences captured. No full/build promotion. |
 | Fatal IO lifetime | pending-teardown-reproduction.json:idle RECV+next ACCEPT consumed before observer WriteFailed;ring/client closes follow;SDK sync-cancel pipe targets retire | No demonstrated UAF or all HTTP I/O retirement. Verifier-authored boundary tests/barrier design needed;native code unchanged. |
 | Verify verifier strength | `mutation-frontmatter.json`:three valid README source-prose kills; cumulative292 bounded valid mutants | Literal/narrative stale claims and canonical-output overwrite caught; restored1. Author hashes are not ACL seals, comprehensive mutation assessment or independent acceptance. |
-| Reader suitability | Latest sqe-flag receipt:81 Chromium reflows/zero violations;EPUBCheck5.2.1 zero messages | Actual current archive;sweeps not added;no Supernote/device pagination/font-override or Calibre claim. |
+| Reader suitability | Latest fork-source-links receipt:81 Chromium reflows/zero violations;EPUBCheck5.2.1 zero messages | Actual04c4e128 archive;sweeps not added;no Supernote/device pagination/font-override or Calibre claim. |
 | Attribution/licence/images | Current publication verifier plus unchanged original `LICENSE`, licence.rst, five illustrations/logo and Shuveb/Ahmed credits | Byte/structure checks retained; final prompt audit must inspect actual artefacts. |
 | Mandatory independent review | `conversion/review-blocker.md`, handoff, `independent-review-fd9025d.md`; native async c27be9dc completed | BLOCK: partial source inspection only; no independent complete purpose census or runtime/publication validation. Parent direct review is not independent acceptance. |
 | Final delivery/completion | Final current-HEAD review/findings, affected/full gates, personal-fork push and remote hash verification | Not done. No PR/release requested; do not push/complete before acceptance. |
 
-Latest exploration: `pending-teardown-audit.md`/`pending-teardown-reproduction.json`.
-Fatal HTTP cleanup reproduced;pipe cancellation candidate checked;no native/book/test
-edit or new full/publication replay. Last affected6/publication021e98e;full10344d9b32.
+Latest direct gates: `fork-source-links-audit.md`/verification JSON.
+Fresh fork identity/current remote original/source directory404;CP caption fixed.
+Affected3/current publication checked;fatal cleanup/independent acceptance unchanged.
 Native/tests/fixtures/expectations and historical receipts remain unchanged.
 Owner prefers direct review; independent-acceptance boundary remains open.
 
