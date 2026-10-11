@@ -152,7 +152,7 @@
     "conversion/sqpoll-wakeup-spec-sha256.json": "0da3f9445d645cd528f3afae0de3e8a7f31d43994aa87968dabcf0f66f2011e0",
     "conversion/sqpoll-wakeup-test-initial.txt": "b85c31b1fb2fdfa89a60a5065442a5143a190ab06b218a3428ba1c74bed7f475",
     "conversion/sqpoll-wakeup.trace": "78e2ac710236a30c4db9fcd9cca1a6250099fbcd97cde078227295e85c5e4333",
-    "conversion/tutorial-block-disposition.md": "2fb6eeea4772400b5a3a6d01b1dd7fe0a95a7feb4183771eff7d8ef639683d45",
+    "conversion/tutorial-block-disposition.md": "6a4c9c9578760f38ce7913462fa7b0f621786975fe944ee50320da30b332926f",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "examples/sq_poll.zig": "38902d98ddfeb80423222129543a23fce78c130b9216c5e92346cb1a0bb710d4",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
@@ -313,5 +313,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_disposition_notes": {
+    "scope": "Excluded author-note/index changes only. Fourteen relevant signal/mapping/index/HTTP-SEND/SQPOLL/note contracts replayed;93 publication/native/tool inputs byte-identical. Full99/build51/strict publication/81 reader/EPUBCheck remain historical, not rerun or independent acceptance. No make epub invoked; current archive independently rechecked.",
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 7.481,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "full_suite_rerun": false,
+    "native_build_rerun": false,
+    "strict_publication_build_rerun": false,
+    "new_mutant_claims": 0
   }
 }

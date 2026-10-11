@@ -1,0 +1,98 @@
+{
+  "scope": "Author-disposition evidence reconciliation, not native implementation correction, all-original-purpose or independent acceptance.",
+  "base_commit": "15e8062efd6c44e11a8a51bd1c2d229027b081d7",
+  "changes": {
+    "implicit_signal_rows": [
+      "ref-iouring/io_uring_enter.rst:58",
+      "ref-iouring/io_uring_enter.rst:64"
+    ],
+    "assessment": "Outside-line index existence vs semantics; bounded signal/restoration and selected queue/mutation checks;25/51 historical native count;five scoped injected mapping-failure paths. Broader limits retained.",
+    "block_rows": {
+      "implicit-literal-disposition.md": 16,
+      "tutorial-block-disposition.md": 37,
+      "reference-block-disposition.md": 75
+    },
+    "line_note_index_unchanged": true,
+    "other126_rows_unchanged": true,
+    "only_note_digests_changed": [
+      "implicit-literal-disposition.md",
+      "tutorial-block-disposition.md"
+    ]
+  },
+  "verification": {
+    "scope": "Excluded author-note/index changes only. Fourteen relevant signal/mapping/index/HTTP-SEND/SQPOLL/note contracts replayed;93 publication/native/tool inputs byte-identical. Full99/build51/strict publication/81 reader/EPUBCheck remain historical, not rerun or independent acceptance. No make epub invoked; current archive independently rechecked.",
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 7.481,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "full_suite_rerun": false,
+    "native_build_rerun": false,
+    "strict_publication_build_rerun": false,
+    "new_mutant_claims": 0
+  },
+  "source_sha256": {
+    "conversion/implicit-literal-disposition.md": "56dac28fc15e6423f2763a312b69bcc4a75cd4c93ec6e27707980b190b210478",
+    "conversion/tutorial-block-disposition.md": "6a4c9c9578760f38ce7913462fa7b0f621786975fe944ee50320da30b332926f",
+    "conversion/line-disposition-verification.json": "3c616b5bde7685abbaff6321fe0b995151da510bfe47ac235ee4f93e22cb3e05",
+    "conversion/disposition-note-reproduction.json": "529966166224b3f3a40e1af8f63e859ce1d300acf90923c153f761099b4bb361",
+    "conversion/disposition-note-unchanged-publication.json": "6889426b092fa2b660983433af941d9efa36d9b7a1a05f1cb86729e25a43f9df",
+    "conversion/type-binding-verification.json": "13c05be532375277628102ae0d9d6393c29aa31b65b727c880c1d07da99f1d65",
+    "conversion/test-verification.json": "ecd50a1acf4a7c915baac14791b6b97f9210a1aa210551ba96c8c19a2ad5ba7c",
+    "conversion/signal-wait-verification.json": "406a584c24df0401b63cb7f54e66ff73a17c679a0c2e4f26aedb57e3ff888eba",
+    "conversion/ordinary-signal-verification.json": "4b7e9fa5f5c8e3d81e12a458cc1044865bb08e972e90b1064ad6a0ac4449abc1",
+    "conversion/mapping-failure-verification.json": "91bfd5208a98271a6e149f5666a326f443e3fc7a54020dea7c9cd28e5d5764fc",
+    "tests/test_dispositions.py": "8d0ed94c868b5e4285b774a900f4e3f55bf1fb0c4d9695daa2301323bbeb02e6",
+    "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
+    "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23",
+    "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0",
+    "tests/test_http_note_contracts.py": "9ff58d5c5506df3637144e6903fac9b7618e74b133fdda196a71a7e7e84d82ba",
+    "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f",
+    "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
+    "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
+    "testdata/inputs/ordinary-signal-report.json": "591be65f688ef67060d08579890673e9f673ba747a68f7e5ef7c0e849fbdc443",
+    "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a",
+    "conversion/sqpoll-wakeup-verification.json": "a049409fcce9ebad3ac83c1750ca512c5ca51560811b4203715941d53bcb71f7",
+    "conversion/http-send-verification.json": "0aa813962e0a6b195823a231d61ee54afd40042b62a120861283127ef0cc5ebd",
+    "conversion/http-note-verification.json": "181274c8ad0d8095254cb3ab0caa8b30818fb701f0c4f103bcb68294ec798eb2"
+  },
+  "log_sha256": {
+    "conversion/disposition-note-before-tests.log": "44d8f96c1a451b3e439ecb5fd4fa1c8692ff37fb653653879990e857a5b47ac7",
+    "conversion/disposition-note-after-tests.log": "a8afa4e310d1a05d852ae260696e1b14c2fcd0d230f258a16729a79d8f188499",
+    "conversion/disposition-note-final-tests.log": "d3d4f8beeaf6cb67f89cf5e46ad75894eb7708b328e307fef10b5346e9895aaf",
+    "conversion/disposition-note-index-generate.log": "31f56d766585e3aebf551d41348b8c63a5ee377fd6147cebc0629bee3014f168",
+    "conversion/disposition-note-index-freshness.log": "8b26525eaf04e6d7075049610491a2d2b0f738616a8502a7608e3e9e7c0b68ea",
+    "conversion/disposition-note-publication.log": "32896fb8b561b9e4c04697716647c95d3747396dc147e31136350b7daffb8eec"
+  },
+  "replayed_consumers": [
+    "sqpoll-wakeup-verification.json",
+    "http-send-verification.json",
+    "http-note-verification.json"
+  ],
+  "historical_fields_preserved": true,
+  "navigation": "Data-only Markdown edits; indexed_report actual body read. Cached graph stale/Fabric unavailable, no caller/absence claim.",
+  "diagnostics": {
+    "paths": [
+      "conversion/implicit-literal-disposition.md",
+      "conversion/tutorial-block-disposition.md"
+    ],
+    "source": "active all-server changed-path probe",
+    "clean": 2,
+    "findings": 0,
+    "unsupported": 0,
+    "unavailable": 0,
+    "failed": 0,
+    "inconclusive": 0,
+    "wait_ms": 10000,
+    "scope": "No whole-workspace or semantic acceptance; historical diagnostics/dispositions unchanged."
+  },
+  "runner_issue": "write_stdin session474 became unavailable. Complete retained logs were inspected; final14 selected run and index invariants independently replayed. Not a test/mutant kill.",
+  "snapshot_extension": "First90-path snapshot excluded LICENSE/two Sphinx plugins. Extended to93 from exact baseline Git bytes and verified against current files; original90-path reproduction preserved.",
+  "review": "Supported-child-host blocker unchanged; no retry, fallback or review artifact.",
+  "completion": {
+    "goal_complete": false,
+    "delivered": false,
+    "open": "Other original-purpose comparisons, mandatory independent review/findings/final acceptance and personal-fork delivery."
+  }
+}

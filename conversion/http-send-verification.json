@@ -114,7 +114,7 @@
   "source_sha256": {
     "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
     "conversion/audit.md": "63cf3f4ef991bb4cf8f16bffbb1c3b7f067c9053e5819358d426344f0d0537bb",
-    "conversion/tutorial-block-disposition.md": "2fb6eeea4772400b5a3a6d01b1dd7fe0a95a7feb4183771eff7d8ef639683d45",
+    "conversion/tutorial-block-disposition.md": "6a4c9c9578760f38ce7913462fa7b0f621786975fe944ee50320da30b332926f",
     "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
     "testdata/inputs/http-send-events.json": "89526b0575c991e9812b14b8d7e71f98356efed1d3b8f50cc3d692d984868b27",
     "testdata/inputs/http-send-input.bin": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
@@ -257,5 +257,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_disposition_notes": {
+    "scope": "Excluded author-note/index changes only. Fourteen relevant signal/mapping/index/HTTP-SEND/SQPOLL/note contracts replayed;93 publication/native/tool inputs byte-identical. Full99/build51/strict publication/81 reader/EPUBCheck remain historical, not rerun or independent acceptance. No make epub invoked; current archive independently rechecked.",
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 7.481,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "full_suite_rerun": false,
+    "native_build_rerun": false,
+    "strict_publication_build_rerun": false,
+    "new_mutant_claims": 0
   }
 }

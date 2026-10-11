@@ -5,7 +5,7 @@ Author comparison, not independent review. Source:
 inventoried low-level/tutorial blocks: 29 C blocks and eight build/output
 literals. Together with `implicit-literal-disposition.md` and
 `reference-block-disposition.md`, all 128 block IDs have author conversion notes.
-**This is not a complete line-level disposition.**
+**The complete author line index is in `line-disposition-verification.json`; it is not semantic acceptance.**
 
 Replacement paths below are repository-relative. The migrated chapter for each
 original path is recorded in `chapter-map.json`; chapters include these compiled
@@ -53,9 +53,9 @@ sources, not separate handwritten copies. Tests/limits follow the table.
 
 ## Evidence and limits
 
-- Compiler/build: exact Zig 0.17.0; 15 executables/31 steps. Native CLI/TCP
-  contracts: `tests/test_examples.py`, `tests/test_http.py`, `tests/test_reference.py`.
-  `test-verification.json` binds source hashes and actual passing property counts.
+- `type-binding-verification.json`: exact Zig 0.17.0, 25 executables/51 steps,
+  historical 99 tests/16 properties with 400 valid generated cases each.
+  These author notes do not imply a new build or independent acceptance.
 - Readers/copy: binary/empty/multiple-file/buffer-boundary cases and two 400-case
   properties; aliases/unsupported kinds rejected without destruction; exact
   redirected-stdout regression. `block-device-verification.json`: all four
@@ -68,13 +68,14 @@ sources, not separate handwritten copies. Tests/limits follow the table.
   TLS, keep-alive, request bodies, deadlines, streaming or exhaustion model.
 - Named complete-source blocks above were compared by responsibility/API use;
   repeated excerpts were compared directly. This does not replace a source-line
-  semantic audit or independent review. Queue u32 wraparound/interleaving model,
-  source mutation assessment and broader failure paths remain open.
+  semantic audit or independent review. Selected native mutations are bounded;
+  u32 wrap/concurrent interleavings and broader failure paths remain unverified.
 - `raw-mapping-verification.json`: shared/separate virtual mapping strategies,
   1,025 variable-length reads per case, independent prefix/hash/count oracle,
   real child DONTFORK exclusion and per-page/descriptor teardown. Four compiled
-  mapping mutants killed; exact source restoration checked. Older-kernel boot
-  compatibility and injected partial-construction failures remain unverified.
+  normal-mapping mutants killed. `mapping-failure-verification.json` separately
+  checks five private-FD x86_64 seccomp mmap ENOMEM paths and reverse unwind/caller
+  ownership. Not physical OOM, all errno/SDK failures or older-kernel compatibility.
 - Original historical performance/thread/sample output is not treated as a
   measured property of this edition. Optional trace commands retain teaching
   purpose but have no execution attestation.

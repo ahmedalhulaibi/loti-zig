@@ -5,11 +5,11 @@
   "note_documents": [
     {
       "name": "implicit-literal-disposition.md",
-      "sha256": "dae260afa7908cd0013c31be64ccc544afbbe81fe1d0c8d5f4d70aba068c0dac"
+      "sha256": "56dac28fc15e6423f2763a312b69bcc4a75cd4c93ec6e27707980b190b210478"
     },
     {
       "name": "tutorial-block-disposition.md",
-      "sha256": "2fb6eeea4772400b5a3a6d01b1dd7fe0a95a7feb4183771eff7d8ef639683d45"
+      "sha256": "6a4c9c9578760f38ce7913462fa7b0f621786975fe944ee50320da30b332926f"
     },
     {
       "name": "reference-block-disposition.md",
