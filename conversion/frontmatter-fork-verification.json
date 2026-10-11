@@ -1,0 +1,17 @@
+{
+  "scope": "Fresh read-only GitHub fork/parent API and SSH remote master. Local conversion still undelivered;not final post-push verification.",
+  "api": {
+    "default_branch": "master",
+    "fork": true,
+    "full_name": "ahmedalhulaibi/loti-zig",
+    "html_url": "https://github.com/ahmedalhulaibi/loti-zig",
+    "parent": "shuveb/loti",
+    "pushed_at": "2024-08-02T10:09:03Z"
+  },
+  "remote_master_observation": "c9ee2424af02e4c1e4765088580107d5e17b826e\trefs/heads/master\n",
+  "local_clone": "/home/ahmed/workspace/va/loti-zig",
+  "local_branch": "master",
+  "local_head_at_observation": "ec7e1d9811e7c0222f5eaa6180a246fcaac85f13",
+  "remotes": "origin\tgit@github.com:ahmedalhulaibi/loti-zig.git (fetch)\norigin\tgit@github.com:ahmedalhulaibi/loti-zig.git (push)\nupstream\tgit@github.com:shuveb/loti.git (fetch)\nupstream\tgit@github.com:shuveb/loti.git (push)\n",
+  "pushed_by_this_work": false
+}

@@ -5,15 +5,16 @@ failures; no reviewer ran. Resume only after a supported child host or an
 owner-authorised independent mechanism is available. Do not substitute author
 tests, hashes, parsers, mutation results or this document for that review.
 
-Latest author checkpoint: `http-purpose-verification.json` and
-`prompt-to-artifact-checklist.md`. Seven purpose reports select128/128 original
-blocks; full102/16×400,289 bounded mutants. These are not review acceptance.
-Current `http-purpose-*` publication/reader/EPUBCheck receipts follow the suite's
-make-epub; older101/99/canonical-name receipts remain historical. Inspect default
-TCP EOF and child-only descriptor retirement, not Connection headers or observer
-mode alone. Prior link repair's stale index target SHA was separately reproduced
-and refreshed without changing original selectors. Wider prose/final requirements
-and delivery remain open.
+Latest author checkpoint: `frontmatter-verification.json`,
+`completion-audit-current.md` and `prompt-to-artifact-checklist.md`. Original
+26 whole chapters/128 blocks have author comparison; full103/16×400,292 bounded
+mutants. These are not review acceptance. Current frontmatter-* package/reader/
+EPUBCheck receipts follow suite make-epub; older102/101/99/canonical receipts stay
+historical. Inspect default TCP EOF/private descriptor retirement, not Connection
+headers or observer mode alone. Prior link target index SHA and README121/368/
+non-overwriting current-report instructions were separately reproduced/repaired.
+No other required gap found by author; independently challenge that decision,
+classify broader unclaimed assurance and review final exact HEAD before delivery.
 
 ## Contract
 

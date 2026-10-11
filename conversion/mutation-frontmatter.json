@@ -1,0 +1,53 @@
+{
+  "scope": "Three author reader-source contract kills, not native or independent acceptance. Owned README routing only; fixed expectations/test source unchanged; no tracked historical reports overwritten.",
+  "constraints": {
+    "MemoryMax": "4G",
+    "MemorySwapMax": 0,
+    "TasksMax": 128
+  },
+  "core_sha256": {
+    "tests/test_readme_publication.py": "259f621ffeb31d9d9d0056a474fb3e33c1f8754a22a8d73561d69eb4d7cb041a",
+    "testdata/inputs/readme-publication-contract.json": "880f24c05e04f693254cc47562ccea5dffd2cab7553a85ca61f63870d41499e5"
+  },
+  "assessments": [
+    {
+      "name": "old-literal-cardinality",
+      "kind": "source-prose",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "assessment": "substantive-assertion-kill",
+      "syntax": "valid Markdown/unchanged shell command structure"
+    },
+    {
+      "name": "old-narrative-cardinality",
+      "kind": "source-prose",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "assessment": "substantive-assertion-kill",
+      "syntax": "valid Markdown/unchanged shell command structure"
+    },
+    {
+      "name": "overwrite-historical-receipts",
+      "kind": "source-prose",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "assessment": "substantive-assertion-kill",
+      "syntax": "valid Markdown/unchanged shell command structure"
+    }
+  ],
+  "restored_tests": 1,
+  "production_readme_unchanged_during_mutations": true,
+  "exclusions": "Syntax/runner/test errors and skips are not substantive kills."
+}

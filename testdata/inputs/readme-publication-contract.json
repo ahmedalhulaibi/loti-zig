@@ -1,0 +1,10 @@
+{
+  "statistics": {"edition_chapters": "27", "literal_blocks": "121", "illustration_word": "five", "narrative_paragraphs": "368"},
+  "report_properties": {"edition_chapters": 27, "literal_blocks": 121, "byte_identical_illustrations": 5, "narrative_paragraphs": 368},
+  "commands": [
+    ["mkdir", "-p", "_build/verification"],
+    [".venv/bin/python", "tools/verify_epub.py", "--report", "_build/verification/epub.json"],
+    [".venv/bin/python", "tools/check_reader_layout.py", "--report", "_build/verification/reader-layout.json"],
+    ["python3", "tools/check_block_devices.py", "--report", "_build/verification/block-devices.json"]
+  ]
+}

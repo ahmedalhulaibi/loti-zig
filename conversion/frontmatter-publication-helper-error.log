@@ -1,0 +1,3 @@
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'InventoryContract' from 'tests.test_inventory' (/home/ahmed/workspace/va/loti-zig/tests/test_inventory.py)

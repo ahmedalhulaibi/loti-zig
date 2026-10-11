@@ -22,11 +22,15 @@ python3 tools/check_line_dispositions.py --check
 LOTI_TEST_CASES=400 .venv/bin/python -m unittest discover
 make html
 make epub
-.venv/bin/python tools/verify_epub.py --report conversion/epub-verification.json
-.venv/bin/python tools/check_reader_layout.py --report conversion/reader-layout-verification.json
+mkdir -p _build/verification
+.venv/bin/python tools/verify_epub.py --report _build/verification/epub.json
+.venv/bin/python tools/check_reader_layout.py --report _build/verification/reader-layout.json
 java -jar "$EPUBCHECK_JAR" _build/epub/Lord-of-the-io_uring-Zig-0.17.0.epub
-python3 tools/check_block_devices.py --report conversion/block-device-verification.json
+python3 tools/check_block_devices.py --report _build/verification/block-devices.json
 ```
+
+Current report outputs go under ignored `_build/verification/`. Tracked receipts
+in `conversion/` retain historical evidence; do not overwrite them during a check.
 
 Reader-layout tests also need Node **26.8.1**, npm Playwright **1.64.0** and system
 Chromium. Install exact tooling with `mise install node@26.8.1 npm:playwright@1.64.0`;
@@ -47,13 +51,13 @@ virtio block support. The VM verifier accepts `--kernel` and `--busybox` paths;
 recorded lab: QEMU 11.1.1/Linux 7.2.3-arch1-3. All disks are generated files,
 attached read-only. No host storage device or root host operation is used.
 
-Publication checks verify all 27 chapters in reading order/navigation, 120 literal
+Publication checks verify all 27 chapters in reading order/navigation, 121 literal
 blocks against Sphinx source, five byte-identical illustrations, licence and local
 links. Negative tests reject nine damaged-archive classes plus 19 source-literal
 policy and four rendered-language damages, including matched stale artifact pairs.
 All literals have explicit Zig/console/JSON/text labels matching packaged classes;
 checks reject bounded C-import/helper/compiler markers. Ordered source fidelity
-also checks 359 resolved narrative paragraphs (references/typography resolved;
+also checks 368 resolved narrative paragraphs (references/typography resolved;
 formatting whitespace folded), rejecting six stale/missing/duplicated/reordered
 prose damages while accepting whitespace-only formatting. It excludes structural
 TOC compact paragraphs/rubrics/captions, not code literals. Three whole bindings

@@ -1,0 +1,11 @@
+{
+  "scope": "Two existing publication boundary methods, ten actual verifier executions/nine owned archive damages, no class setUpClass/make-epub and no expected-values override. Current owned archive input files assigned exactly as normal setUpClass after its rebuild. Not full suite or new acceptance authority.",
+  "tests": 2,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "seconds": 3.31,
+  "book_sha256": "77a968717162565f207d888d6bda251309c5b9e9fe25e7ec0015b66434991de3",
+  "archive_unchanged": true,
+  "helper_error": "Initial unused InventoryContract import failed before replay. Exact error re-produced/captured; no checks/kills claimed from it."
+}

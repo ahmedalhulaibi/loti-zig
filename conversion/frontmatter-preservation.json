@@ -1,0 +1,72 @@
+{
+  "scope": "Actual original/current source bytes, effective Sphinx config and current EPUB metadata/chapter presence. Not semantic/independent review or live external-link availability.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "licence_sha256": "0ca6b5bf162b52d507c407e41bb536bf81462d40f4b863f194c68895480114fb",
+  "source_illustrations_and_logo": [
+    {
+      "path": "_static/Linux_Performance_Fulll_Chart-1.png",
+      "bytes": 37701,
+      "sha256": "8262345da4b7aa5c6976fc94e9433a5e9a870f52c5b3fe57c712d3c367782886"
+    },
+    {
+      "path": "_static/Linux_Performance_more_than_1000_users.png",
+      "bytes": 39677,
+      "sha256": "f81cd7c6b66961b4e0d69c59789fd7fcc7947fdc507a45267975db66380c335d"
+    },
+    {
+      "path": "_static/Linux_Performance_upto_1000_users.png",
+      "bytes": 44040,
+      "sha256": "7ba815a122ac2eb7856853f43ad9e406b82310cd655eab0f7b2cc0942686329c"
+    },
+    {
+      "path": "_static/Linux_Process_Models.jpg",
+      "bytes": 85906,
+      "sha256": "732de58804c2c4d077eaef910f66523c58ca9202d72178fd5b0ee82d555bebf1"
+    },
+    {
+      "path": "_static/Linux_Process_Models.png",
+      "bytes": 85449,
+      "sha256": "b7a64dfbd42297c975f98390d5c71f1278e50a5b2fb691dce02fc7fa20683d9d"
+    },
+    {
+      "path": "_static/ZeroHTTPd_static.png",
+      "bytes": 109038,
+      "sha256": "1552c7bc1a6a81408ea60eeb134e2d4ca79b62b9a0bbad2072d4c26945f2547f"
+    },
+    {
+      "path": "_static/io_uring_logo.png",
+      "bytes": 21814,
+      "sha256": "25dbe3f11cb7976ff915d5c7472dcc31ce6feebeecfb5dccf83a9b8969d57649"
+    }
+  ],
+  "all_seven_original_source_assets_exact": true,
+  "epub_metadata": {
+    "title": "Lord of the io_uring \u2014 Zig 0.17.0",
+    "creator": "Shuveb Hussain; Zig adaptation by Ahmed Alhulaibi",
+    "language": "en",
+    "publisher": "ahmedalhulaibi/loti-zig",
+    "identifier": "loti-zig-0.17.0",
+    "rights": "2020, Shuveb Hussain; Zig adaptation, Ahmed Alhulaibi"
+  },
+  "effective_templates_path": [],
+  "legacy_analytics_template": "Original _templates/layout.html still in source but templates_path=[];not selected. Actual EPUB no JS verified separately. Not an io_uring/C example; no cleanup change requested/needed.",
+  "retired_empty_compile_commands": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "retired_delme": "Full226-line catalog covered by original inventory/disposition and actual native consumers;no main/body runnable app.",
+  "removed_bytecode": "Original generated manpage.cpython-38.pyc retired; source plugin preserved. Not runnable teaching example.",
+  "pre_suite_epub_sha256": "77a968717162565f207d888d6bda251309c5b9e9fe25e7ec0015b66434991de3",
+  "current_epub_sha256": "e5f9fbb328782c4e5784955082684d9663cf2c705765d461dc0de0a068feb9cf",
+  "post_suite_metadata_rechecked_equal": true,
+  "all_seven_current_packaged_assets_exact": [
+    "_static/Linux_Performance_Fulll_Chart-1.png",
+    "_static/Linux_Performance_more_than_1000_users.png",
+    "_static/Linux_Performance_upto_1000_users.png",
+    "_static/Linux_Process_Models.jpg",
+    "_static/Linux_Process_Models.png",
+    "_static/ZeroHTTPd_static.png",
+    "_static/io_uring_logo.png"
+  ],
+  "pre_suite_snapshot_retained": "frontmatter-preservation-pre-suite.json"
+}

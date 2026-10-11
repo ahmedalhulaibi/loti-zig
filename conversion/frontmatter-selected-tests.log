@@ -1,0 +1,12 @@
+test_publication_statistics_and_commands_match_current_contract (tests.test_readme_publication.ReaderDocumentationContracts.test_publication_statistics_and_commands_match_current_contract)
+Kills stale literal/narrative claims and historical-receipt overwrite instructions. ... ok
+test_fresh_inventory_processes_are_deterministic (tests.test_inventory.InventoryContracts.test_fresh_inventory_processes_are_deterministic) ... ok
+test_implicit_syscall_literals_are_not_silently_omitted (tests.test_inventory.InventoryContracts.test_implicit_syscall_literals_are_not_silently_omitted) ... ok
+test_independent_rst_parser_agrees_and_every_literal_line_is_present (tests.test_inventory.InventoryContracts.test_independent_rst_parser_agrees_and_every_literal_line_is_present) ... ok
+test_damaged_notes_and_stale_reports_fail (tests.test_dispositions.DispositionContracts.test_damaged_notes_and_stale_reports_fail) ... ok
+test_exact_line_index_and_fresh_process_determinism (tests.test_dispositions.DispositionContracts.test_exact_line_index_and_fresh_process_determinism) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.153s
+
+OK

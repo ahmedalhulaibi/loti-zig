@@ -1,0 +1,7 @@
+test_publication_statistics_and_commands_match_current_contract (tests.test_readme_publication.ReaderDocumentationContracts.test_publication_statistics_and_commands_match_current_contract)
+Kills stale literal/narrative claims and historical-receipt overwrite instructions. ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.551s
+
+OK

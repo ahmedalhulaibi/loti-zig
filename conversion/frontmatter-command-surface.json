@@ -1,0 +1,352 @@
+{
+  "scope": "Actual README executable command coverage and owned native25 output identities, not new execution or arbitrary-argument success. CLI/TCP effects are separately tested by existing public contracts; caller-owned CONNECT/ACCEPT peers and private output inputs required.",
+  "documented_commands": [
+    [
+      "zig-out/bin/readv",
+      "input.txt"
+    ],
+    [
+      "zig-out/bin/raw-cat",
+      "input.txt"
+    ],
+    [
+      "zig-out/bin/cat",
+      "input.txt"
+    ],
+    [
+      "zig-out/bin/cp",
+      "source.bin",
+      "destination.bin"
+    ],
+    [
+      "zig-out/bin/cp",
+      "source.bin",
+      "destination.bin",
+      "--short-write",
+      "1"
+    ],
+    [
+      "zig-out/bin/cp",
+      "source.bin",
+      "destination.bin",
+      "--short-write",
+      "1",
+      "--fail-read"
+    ],
+    [
+      "zig-out/bin/link",
+      "linked.txt"
+    ],
+    [
+      "zig-out/bin/link",
+      "linked.txt",
+      "--fail-read"
+    ],
+    [
+      "zig-out/bin/fixed-buffers",
+      "fixed.txt"
+    ],
+    [
+      "zig-out/bin/sq-poll",
+      "polling.txt"
+    ],
+    [
+      "zig-out/bin/sq-poll",
+      "polling.txt",
+      "--observe"
+    ],
+    [
+      "zig-out/bin/register-eventfd",
+      "input.txt"
+    ],
+    [
+      "zig-out/bin/probe"
+    ],
+    [
+      "zig-out/bin/probe",
+      "--raw",
+      ">",
+      "probe.bin"
+    ],
+    [
+      "zig-out/bin/probe",
+      "--snapshot",
+      "probe.bin"
+    ],
+    [
+      "zig-out/bin/webserver",
+      "public",
+      "8080"
+    ],
+    [
+      "zig-out/bin/webserver",
+      "public",
+      "0",
+      "--observe-send"
+    ],
+    [
+      "zig-out/bin/reference-setup",
+      "input.txt"
+    ],
+    [
+      "zig-out/bin/reference-setup",
+      "input.txt",
+      "--separate-mappings"
+    ],
+    [
+      "zig-out/bin/reference-setup",
+      "--mapping-failure",
+      "separate-sqes"
+    ],
+    [
+      "zig-out/bin/reference-completion"
+    ],
+    [
+      "zig-out/bin/reference-completion",
+      "0",
+      "1",
+      "3",
+      "8",
+      "1"
+    ],
+    [
+      "zig-out/bin/reference-signals"
+    ],
+    [
+      "zig-out/bin/reference-signals",
+      "--ordinary"
+    ],
+    [
+      "zig-out/bin/reference-files",
+      "input.txt",
+      "new-output.bin"
+    ],
+    [
+      "zig-out/bin/reference-rwf",
+      "input.bin"
+    ],
+    [
+      "zig-out/bin/reference-splice",
+      "input.txt"
+    ],
+    [
+      "zig-out/bin/reference-poll"
+    ],
+    [
+      "zig-out/bin/reference-poll",
+      "arm",
+      "write",
+      "wait",
+      "drain",
+      "arm",
+      "cancel",
+      "missing",
+      "quiet"
+    ],
+    [
+      "zig-out/bin/reference-epoll"
+    ],
+    [
+      "zig-out/bin/reference-epoll",
+      "add",
+      "write",
+      "wait",
+      "modify",
+      "wait",
+      "modify",
+      "wait",
+      "delete",
+      "drain",
+      "close",
+      "wait"
+    ],
+    [
+      "zig-out/bin/reference-connect",
+      "PORT"
+    ],
+    [
+      "zig-out/bin/reference-accept",
+      "16",
+      "both"
+    ],
+    [
+      "zig-out/bin/reference-messages",
+      "input.txt",
+      "3"
+    ],
+    [
+      "zig-out/bin/reference-buffers",
+      "input.txt"
+    ],
+    [
+      "zig-out/bin/reference-buffers",
+      "input.txt",
+      "read",
+      "read",
+      "provide",
+      "read"
+    ],
+    [
+      "zig-out/bin/reference-buffers",
+      "input.txt",
+      "--zero-result"
+    ],
+    [
+      "zig-out/bin/reference-buffers",
+      "input.txt",
+      "--zero-result",
+      "--fail-eof"
+    ],
+    [
+      "zig-out/bin/reference-registration",
+      "input.txt",
+      "replacement.txt"
+    ],
+    [
+      "zig-out/bin/reference-submission",
+      "input.txt"
+    ],
+    [
+      "zig-out/bin/reference-submission",
+      "--linked-timeout"
+    ],
+    [
+      "zig-out/bin/reference-submission",
+      "--cancel"
+    ],
+    [
+      "zig-out/bin/reference-raw",
+      "input.txt"
+    ]
+  ],
+  "native_executables": {
+    "cat": {
+      "bytes": 12494093,
+      "sha256": "8d1d0395118f33f5ed02d2fc938c6efabdb9104b279e39003b4e1f51a367011e",
+      "elf": true
+    },
+    "cp": {
+      "bytes": 12715597,
+      "sha256": "ff4111d9bc78d2afbf0853e636d6ad1b68831f51d2e10be0b58982ac06b7d75f",
+      "elf": true
+    },
+    "fixed-buffers": {
+      "bytes": 12503522,
+      "sha256": "b0e582e5f6bc10928c7e8b461690747ff31a3f38f47f9ada39b887c017428e49",
+      "elf": true
+    },
+    "link": {
+      "bytes": 12503736,
+      "sha256": "7bfd381587826ed013bfc6e536850b31f78ce8f80eec28f34f32826fbb601d28",
+      "elf": true
+    },
+    "probe": {
+      "bytes": 12840226,
+      "sha256": "cb69176874e42e3fb253de5716995eda83775dcdc341652ba4d72ad3c630e347",
+      "elf": true
+    },
+    "raw-cat": {
+      "bytes": 12452450,
+      "sha256": "e80985f70b79ba6fb3ecbaa247f5dcab6163315bcf6cc0d89116d311cddf31f8",
+      "elf": true
+    },
+    "readv": {
+      "bytes": 12422520,
+      "sha256": "477a2940eb55442c7f0ec759bd58e7b080476a933384f232030b1ac6fb580000",
+      "elf": true
+    },
+    "reference-accept": {
+      "bytes": 12732066,
+      "sha256": "461efd7a921f9ae87fd77295958fa7813087ddb8530283b3ed9c649b423a2a54",
+      "elf": true
+    },
+    "reference-buffers": {
+      "bytes": 12815693,
+      "sha256": "50543a31e3249ed46344ccf6ba0d728c83a01195cfb66ebf60655c6947f87b41",
+      "elf": true
+    },
+    "reference-completion": {
+      "bytes": 12878690,
+      "sha256": "fa57739c06462e388dbe6722eedf3c45f7457d7eeb717ac971e3fc3dda859c81",
+      "elf": true
+    },
+    "reference-connect": {
+      "bytes": 12732578,
+      "sha256": "efeac0b600ae4bbcd679ccb5d0b768695ada768023c6436dbe803499e687c278",
+      "elf": true
+    },
+    "reference-epoll": {
+      "bytes": 12806925,
+      "sha256": "ba3a318f2ac4851564b1eee553cfa83ff91046d337c737ead841d6e3af7951a9",
+      "elf": true
+    },
+    "reference-files": {
+      "bytes": 12782690,
+      "sha256": "c009c545a43ebe8de6a4bf69763131afe8e8b995b28fa566c2cf1c4a0760d3e1",
+      "elf": true
+    },
+    "reference-messages": {
+      "bytes": 12920546,
+      "sha256": "73ae76b8e56f3d80f3b6525ea262ce49ec5c93dd603fdbfb2b9d90de2661bcf7",
+      "elf": true
+    },
+    "reference-poll": {
+      "bytes": 13020664,
+      "sha256": "a8fa43c02f302c04636d7cab0cf3235372963736ae84a3491d036322a6b7b2d3",
+      "elf": true
+    },
+    "reference-raw": {
+      "bytes": 12518840,
+      "sha256": "f22cabba9c28de83a0425e44dc5206c9e8e8770d08df5c5165bfb2c07e6c9f58",
+      "elf": true
+    },
+    "reference-registration": {
+      "bytes": 12700024,
+      "sha256": "178f93138d4cf4a63c5c5f415fecb1a4c7a671028498ca5137fd7f6b783a2e0f",
+      "elf": true
+    },
+    "reference-rwf": {
+      "bytes": 12690509,
+      "sha256": "7c7cdb8c0140e76ada1ce9ad0e53bb55e806add4ec25f3bbb7f71db04c995d7f",
+      "elf": true
+    },
+    "reference-setup": {
+      "bytes": 12773752,
+      "sha256": "df60ef4e27b10638a01779b12165301af03b39d395bbeaae483aa094341c95df",
+      "elf": true
+    },
+    "reference-signals": {
+      "bytes": 12791416,
+      "sha256": "60a3aa7c76c8d1a639ab384b22bac46c486f34acf1e86fd18e3b493cff26e997",
+      "elf": true
+    },
+    "reference-splice": {
+      "bytes": 12765432,
+      "sha256": "94dab64289d47ba1c994e88deda09174f13006cd837b423d3a9bfd512d43c81e",
+      "elf": true
+    },
+    "reference-submission": {
+      "bytes": 12939512,
+      "sha256": "f416b8a39b2fe05cca504309c9d1af728dd607c479dce37be79a0012711695a7",
+      "elf": true
+    },
+    "register-eventfd": {
+      "bytes": 12519544,
+      "sha256": "a868a8d8c503ec6335862d9ff1dd0ca0a65e65212e55cd419bf35044d23ff10f",
+      "elf": true
+    },
+    "sq-poll": {
+      "bytes": 12692408,
+      "sha256": "42367f30baf09b130d5f7b90b2de5b11812179762e14d40c7089b95a030c6a42",
+      "elf": true
+    },
+    "webserver": {
+      "bytes": 12767437,
+      "sha256": "5b68d64202c491c8f06408b49fcec207e13be567be655e760bf82861228f9b01",
+      "elf": true
+    }
+  },
+  "all25_documented": true,
+  "commands_not_blindly_executed": true,
+  "execution_evidence": "Current full103 plus bounded prior original-purpose/native receipts; generated vectors/maps do not prove every argument/kernel path."
+}

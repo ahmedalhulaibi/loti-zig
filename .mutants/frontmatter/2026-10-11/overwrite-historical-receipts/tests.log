@@ -1,0 +1,27 @@
+test_publication_statistics_and_commands_match_current_contract (tests.test_readme_publication.ReaderDocumentationContracts.test_publication_statistics_and_commands_match_current_contract)
+Kills stale literal/narrative claims and historical-receipt overwrite instructions. ... FAIL
+
+======================================================================
+FAIL: test_publication_statistics_and_commands_match_current_contract (tests.test_readme_publication.ReaderDocumentationContracts.test_publication_statistics_and_commands_match_current_contract)
+Kills stale literal/narrative claims and historical-receipt overwrite instructions.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_readme_publication.py", line 36, in test_publication_statistics_and_commands_match_current_contract
+    self.assertEqual(selected, [wanted])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [['.v[27 chars]ify_epub.py', '--report', 'conversion/epub-verification.json']] != [['.v[27 chars]ify_epub.py', '--report', '_build/verification/epub.json']]
+
+First differing element 0:
+['.ve[25 chars]rify_epub.py', '--report', 'conversion/epub-verification.json']
+['.ve[25 chars]rify_epub.py', '--report', '_build/verification/epub.json']
+
+  [['.venv/bin/python',
+    'tools/verify_epub.py',
+    '--report',
+-   'conversion/epub-verification.json']]
++   '_build/verification/epub.json']]
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)
