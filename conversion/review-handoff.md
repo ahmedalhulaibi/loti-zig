@@ -14,14 +14,14 @@ adds18 complete native bodies, nine chapter pairs and16 supplemental lexical
 rows persisted in `source-inventory-supplement.json`. Current-body reach is30/30; original-purpose
 classification and independent acceptance remain distinct, unresolved gates.
 
-Latest author checkpoint: `submit-consumption-audit.md` and
-`submit-consumption-verification.json`; CONNECT lifetime now distinguishes API
-return from kernel consumption and links the native feature chapter. Owned
-SQPOLL probe returns64 with64 unconsumed SQEs; all tagged CQEs retire safely.
-Affected3 tests/strict publication/81 reflows/EPUBCheck pass. Full103/16×400 and
-cached native build remain earlier6c5016c evidence, not replayed/promoted here.
-Native/test/fixture bodies unchanged;226 selected pins are not dependency seals.
-Original26/128 comparisons and292 kills remain historical author evidence.
+Latest author checkpoint: `clean-consumer-audit.md` and
+`clean-consumer-verification.json`;clean local244cc2a clone starts without
+ignored inputs and compiles all25 executables uncached/51 steps. Full103/
+16×400 and actual post-suite publication/81 reflows/EPUBCheck pass. Shared locked
+environment reused explicitly;temporary prerequisite symlink removed. No
+native/book/test/fixture edit;original package unchanged;all28 XHTML bodies
+byte-match. Consumer archive stays in owned clone;not remote delivery or
+archive-bit determinism. Original26/128 comparisons/292 kills remain history.
 Independent BLOCK and final exact-HEAD acceptance remain unresolved;no push.
 
 ## Contract
