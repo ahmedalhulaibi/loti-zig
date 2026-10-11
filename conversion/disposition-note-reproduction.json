@@ -1,0 +1,101 @@
+{
+  "scope": "Stale author assessment, not native defect: implicit SIGUSR1 delivery/restoration called untested; tutorial count15/31 and injected-construction-failure limit stale. Complete567-outside-line index exists, not all-line semantic acceptance.",
+  "base_commit": "15e8062efd6c44e11a8a51bd1c2d229027b081d7",
+  "stale_implicit_rows": [
+    "| `ref-iouring/io_uring_enter.rst:58` | Signal-mask explanation in `ref-iouring/io_uring_enter.rst`; `raw_ops.wait_with_timeout` in `examples/raw_ops.zig` | Ordinary mask and EXT_ARG layouts distinguished; a non-null empty mask is exercised by the expiring reference wait |",
+    "| `ref-iouring/io_uring_enter.rst:64` | Atomic-mask explanation in `ref-iouring/io_uring_enter.rst` | Separate set/wait/restore calls identified as racy, not recreated as recommended code; delivered-signal/mask-restoration behaviour remains untested |"
+  ],
+  "stale_implicit_summary": [
+    "All 128 block IDs now have author notes across this file,",
+    "`tutorial-block-disposition.md` and `reference-block-disposition.md`. Still open:",
+    "complete line/prose disposition; delivered-signal/interruption and mask-restoration",
+    "execution; queue-state/wraparound checks; whole-port source mutation assessment;",
+    "independent semantic review. The SYNC_FILE_RANGE gap now has a native",
+    "helper, constructor and actual success/invalid-flags/invalid-descriptor CQEs.",
+    "Neither CQ success nor publication fidelity proves physical write-out/durability."
+  ],
+  "stale_tutorial_header": "**This is not a complete line-level disposition.**",
+  "stale_tutorial_evidence": [
+    "- Compiler/build: exact Zig 0.17.0; 15 executables/31 steps. Native CLI/TCP",
+    "  contracts: `tests/test_examples.py`, `tests/test_http.py`, `tests/test_reference.py`.",
+    "  `test-verification.json` binds source hashes and actual passing property counts.",
+    "- Readers/copy: binary/empty/multiple-file/buffer-boundary cases and two 400-case",
+    "  properties; aliases/unsupported kinds rejected without destruction; exact",
+    "  redirected-stdout regression. `block-device-verification.json`: all four",
+    "  programs preserve bytes from four owned read-only virtio devices in an isolated",
+    "  x86_64 guest. Original copy's sizing feature is restored. Other device/ABI",
+    "  combinations, forced short READ/vector writes and multi-slot partial interleavings remain unverified. Controlled single-slot scalar WRITE now runs through a process-local file-size cap.",
+    "- HTTP: binary/empty files, MIME/length, indexes/queries, malformed/method/missing",
+    "  responses, traversal/encoded traversal/symlinks, fragments, limits, concurrency",
+    "  and a completing request beside a stalled client. No production security audit,",
+    "  TLS, keep-alive, request bodies, deadlines, streaming or exhaustion model.",
+    "- Named complete-source blocks above were compared by responsibility/API use;",
+    "  repeated excerpts were compared directly. This does not replace a source-line",
+    "  semantic audit or independent review. Queue u32 wraparound/interleaving model,",
+    "  source mutation assessment and broader failure paths remain open.",
+    "- `raw-mapping-verification.json`: shared/separate virtual mapping strategies,",
+    "  1,025 variable-length reads per case, independent prefix/hash/count oracle,",
+    "  real child DONTFORK exclusion and per-page/descriptor teardown. Four compiled",
+    "  mapping mutants killed; exact source restoration checked. Older-kernel boot",
+    "  compatibility and injected partial-construction failures remain unverified.",
+    "- Original historical performance/thread/sample output is not treated as a",
+    "  measured property of this edition. Optional trace commands retain teaching",
+    "  purpose but have no execution attestation."
+  ],
+  "actual_historical_gates": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance.",
+    "zig": "0.17.0",
+    "build_steps": 51,
+    "executables": 25,
+    "strict_html": true,
+    "strict_epub": true,
+    "chapters": 27,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "reader": {
+      "cases": 81,
+      "element_counts": {
+        "pre": 363,
+        "table": 6,
+        "image": 15,
+        "heading": 333,
+        "figure": 0
+      },
+      "violations": 0
+    }
+  },
+  "baseline_log_sha256": "44d8f96c1a451b3e439ecb5fd4fa1c8692ff37fb653653879990e857a5b47ac7",
+  "source_sha256": {
+    "conversion/implicit-literal-disposition.md": "dae260afa7908cd0013c31be64ccc544afbbe81fe1d0c8d5f4d70aba068c0dac",
+    "conversion/tutorial-block-disposition.md": "2fb6eeea4772400b5a3a6d01b1dd7fe0a95a7feb4183771eff7d8ef639683d45",
+    "conversion/line-disposition-verification.json": "6d7b502e89ac550b7fa90d7e256782caa763bb27c5b286d8342ea6e43fbad2a7",
+    "tests/test_dispositions.py": "8d0ed94c868b5e4285b774a900f4e3f55bf1fb0c4d9695daa2301323bbeb02e6",
+    "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
+    "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23",
+    "tests/test_mapping_failures.py": "3d9b8908d2d2ebaf7011e6d63c7a3396277dca18d34cd10007f866c1ae2226c0",
+    "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
+    "testdata/inputs/ordinary-signal-report.json": "591be65f688ef67060d08579890673e9f673ba747a68f7e5ef7c0e849fbdc443",
+    "testdata/inputs/mapping-failure-stages.json": "9173c8eba5eddc0421b383f1e2e0447362673279bd66ea6338cb53c4b59a300a",
+    "conversion/test-verification.json": "ecd50a1acf4a7c915baac14791b6b97f9210a1aa210551ba96c8c19a2ad5ba7c",
+    "conversion/type-binding-verification.json": "13c05be532375277628102ae0d9d6393c29aa31b65b727c880c1d07da99f1d65",
+    "conversion/signal-wait-verification.json": "406a584c24df0401b63cb7f54e66ff73a17c679a0c2e4f26aedb57e3ff888eba",
+    "conversion/ordinary-signal-verification.json": "4b7e9fa5f5c8e3d81e12a458cc1044865bb08e972e90b1064ad6a0ac4449abc1",
+    "conversion/mapping-failure-verification.json": "91bfd5208a98271a6e149f5666a326f443e3fc7a54020dea7c9cd28e5d5764fc"
+  },
+  "review": "No independent review/retry/fallback. Supported-host blocker unchanged; no push or completion."
+}
