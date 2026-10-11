@@ -1,0 +1,83 @@
+{
+  "scope": "Author replay runner annotations/constructor compatibility only; public tests/fixtures/native/manuscript unchanged. Initial8/2x400 remain historical, amended8 replace them, not16 tests or4 properties.",
+  "initial_source_text": "import json,sys,unittest\nfrom pathlib import Path\nfrom collections import Counter\nfrom hypothesis.statistics import collector\nroot=Path.cwd();sys.path.insert(0,str(root));active=[None];stats=[]\nclass Result(unittest.TextTestResult):\n def startTest(self,test):active[0]=test.id();super().startTest(test)\ndef collect(value):\n phases={}\n for name in ['reuse-phase','generate-phase','shrink-phase']:\n  if name in value:\n   counts=Counter(item['status'] for item in value[name]['test-cases'])\n   phases[name]={status:counts[status] for status in ['valid','interesting','invalid','overrun']}\n stats.append({'test':active[0],'phases':phases,'stopped_because':value['stopped-because']})\nnames=['tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification','tests.test_reference.ReferenceContracts.test_registration_rejects_missing_or_extra_inputs','tests.test_examples.ExampleContracts.test_fixed_buffers_write_and_read_registered_ranges','tests.test_examples.ExampleContracts.test_eventfd_counter_and_completion_are_real','tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode','tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit','tests.test_examples.ExampleContracts.test_probe_rejects_invalid_arguments_and_snapshot_sizes','tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts']\nwith collector.with_value(collect):\n result=unittest.TextTestRunner(verbosity=2,resultclass=Result).run(unittest.defaultTestLoader.loadTestsFromNames(names))\nassert result.wasSuccessful() and result.testsRun==8 and not result.skipped\nassert len(stats)==2 and all(s['phases']['generate-phase']['valid']==400 for s in stats)\nPath('/tmp/loti-registration-purpose-tests.json').write_text(json.dumps({'tests':result.testsRun,'failures':len(result.failures),'errors':len(result.errors),'skips':len(result.skipped),'selected_tests':names,'property_statistics':stats},indent=2)+'\\n')\nprint('8 selected contracts passed;2 attributed properties x400 generated valid cases;full99 receipt not overwritten')\n",
+  "initial_source_sha256": "e39585c797573335f7e79cc93696a099c9e3b5a7b54801dad27af793444e3e25",
+  "current_source_sha256": "8b7f407d8f123ccc73cd5f00ce5e4a72aa125b75fb55444cd82d62d1250f4887",
+  "initial_log_text": "test_registration_helpers_and_async_notification (tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification) ... ok\ntest_registration_rejects_missing_or_extra_inputs (tests.test_reference.ReferenceContracts.test_registration_rejects_missing_or_extra_inputs) ... ok\ntest_fixed_buffers_write_and_read_registered_ranges (tests.test_examples.ExampleContracts.test_fixed_buffers_write_and_read_registered_ranges) ... ok\ntest_eventfd_counter_and_completion_are_real (tests.test_examples.ExampleContracts.test_eventfd_counter_and_completion_are_real) ... ok\ntest_probe_emits_kernel_report_for_every_known_opcode (tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode) ... ok\ntest_probe_snapshot_support_respects_both_bounds_and_flag_bit (tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit) ... ok\ntest_probe_rejects_invalid_arguments_and_snapshot_sizes (tests.test_examples.ExampleContracts.test_probe_rejects_invalid_arguments_and_snapshot_sizes) ... ok\ntest_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 7.917s\n\nOK\n8 selected contracts passed;2 attributed properties x400 generated valid cases;full99 receipt not overwritten\n",
+  "initial_log_sha256": "f7b52674a24a7299d44df612e02655044ff38a0c6a50f1be95dde8d62dc6e0f1",
+  "initial_statistics": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "selected_tests": [
+      "tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification",
+      "tests.test_reference.ReferenceContracts.test_registration_rejects_missing_or_extra_inputs",
+      "tests.test_examples.ExampleContracts.test_fixed_buffers_write_and_read_registered_ranges",
+      "tests.test_examples.ExampleContracts.test_eventfd_counter_and_completion_are_real",
+      "tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode",
+      "tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit",
+      "tests.test_examples.ExampleContracts.test_probe_rejects_invalid_arguments_and_snapshot_sizes",
+      "tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts"
+    ],
+    "property_statistics": [
+      {
+        "test": "tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification",
+        "phases": {
+          "reuse-phase": {
+            "valid": 0,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          },
+          "generate-phase": {
+            "valid": 400,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          }
+        },
+        "stopped_because": "settings.max_examples=400"
+      },
+      {
+        "test": "tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit",
+        "phases": {
+          "reuse-phase": {
+            "valid": 0,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          },
+          "generate-phase": {
+            "valid": 400,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          }
+        },
+        "stopped_because": "settings.max_examples=400"
+      }
+    ]
+  },
+  "initial_runtime_seconds": 7.917,
+  "current_runtime_seconds": 7.897,
+  "initial_diagnostics": {
+    "errors": 4,
+    "messages": [
+      "No overloads for __setitem__ match the provided arguments",
+      "str cannot be assigned to None list element",
+      "collector.with_value incorrectly inferred as accepting only None",
+      "Result default inherited constructor conflicts with runner stream protocol"
+    ]
+  },
+  "correction": "Explicit optional-string active label; structural collector Protocol and cast for unannotated generic API; forwarding Result constructor. No test expectation change.",
+  "remaining_diagnostic": {
+    "tool": "ast-grep",
+    "rule": "no-ellipsis-body",
+    "message": "Bare ellipsis body \u2014 function was scaffolded but never completed",
+    "line": 8,
+    "disposition": "false-positive",
+    "reason": "typing.Protocol member signature, not a runtime scaffold. Session disposition, no inline suppression."
+  },
+  "final_probe": "Two active all-server paths:0 primary errors;1 auxiliary warning then marked false-positive. Not unconditional whole-workspace acceptance."
+}

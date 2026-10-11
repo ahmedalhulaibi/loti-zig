@@ -1,0 +1,14 @@
+test_registration_helpers_and_async_notification (tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification) ... ok
+test_registration_rejects_missing_or_extra_inputs (tests.test_reference.ReferenceContracts.test_registration_rejects_missing_or_extra_inputs) ... ok
+test_fixed_buffers_write_and_read_registered_ranges (tests.test_examples.ExampleContracts.test_fixed_buffers_write_and_read_registered_ranges) ... ok
+test_eventfd_counter_and_completion_are_real (tests.test_examples.ExampleContracts.test_eventfd_counter_and_completion_are_real) ... ok
+test_probe_emits_kernel_report_for_every_known_opcode (tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode) ... ok
+test_probe_snapshot_support_respects_both_bounds_and_flag_bit (tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit) ... ok
+test_probe_rejects_invalid_arguments_and_snapshot_sizes (tests.test_examples.ExampleContracts.test_probe_rejects_invalid_arguments_and_snapshot_sizes) ... ok
+test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 7.897s
+
+OK
+8 selected contracts passed;2 attributed properties x400 generated valid cases;full99 receipt not overwritten

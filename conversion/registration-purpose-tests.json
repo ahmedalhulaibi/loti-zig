@@ -1,0 +1,54 @@
+{
+  "tests": 8,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "selected_tests": [
+    "tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification",
+    "tests.test_reference.ReferenceContracts.test_registration_rejects_missing_or_extra_inputs",
+    "tests.test_examples.ExampleContracts.test_fixed_buffers_write_and_read_registered_ranges",
+    "tests.test_examples.ExampleContracts.test_eventfd_counter_and_completion_are_real",
+    "tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode",
+    "tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit",
+    "tests.test_examples.ExampleContracts.test_probe_rejects_invalid_arguments_and_snapshot_sizes",
+    "tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts"
+  ],
+  "property_statistics": [
+    {
+      "test": "tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    },
+    {
+      "test": "tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    }
+  ]
+}

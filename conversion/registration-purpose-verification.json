@@ -1,0 +1,385 @@
+{
+  "scope": "Author full-chapter purpose comparison of original advanced_usage/supported_caps18 declaration/layout blocks, not independent acceptance or new implementation.",
+  "base_commit": "32167717b43aab00e937e9d9e9133153d62c222d",
+  "original_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "original_chapter_sha256": {
+    "ref-liburing/advanced_usage.rst": "a9e9fc842fae1cda13cd681dd0aefd8ae09149d825b89976807fc82b04c7cd9e",
+    "ref-liburing/supported_caps.rst": "5d071cd1caa00921fb1df9b165f9392ec48e2de7f6498461b21be6dbe063bb26"
+  },
+  "original_block_ids": [
+    "ref-liburing/advanced_usage.rst:9",
+    "ref-liburing/advanced_usage.rst:31",
+    "ref-liburing/advanced_usage.rst:51",
+    "ref-liburing/advanced_usage.rst:73",
+    "ref-liburing/advanced_usage.rst:93",
+    "ref-liburing/advanced_usage.rst:115",
+    "ref-liburing/advanced_usage.rst:135",
+    "ref-liburing/advanced_usage.rst:155",
+    "ref-liburing/advanced_usage.rst:174",
+    "ref-liburing/advanced_usage.rst:189",
+    "ref-liburing/supported_caps.rst:7",
+    "ref-liburing/supported_caps.rst:8",
+    "ref-liburing/supported_caps.rst:20",
+    "ref-liburing/supported_caps.rst:21",
+    "ref-liburing/supported_caps.rst:35",
+    "ref-liburing/supported_caps.rst:51",
+    "ref-liburing/supported_caps.rst:69",
+    "ref-liburing/supported_caps.rst:85"
+  ],
+  "surrounding_prose": "Both full original files, including related tutorial/syscall links, allocation/error/return/credential descriptions, compared with current chapters. C prose count/errno/allocation contracts corrected rather than copied.",
+  "author_decision": "No required translation/example-purpose gap found in this subset. Originals are declarations/layouts, not standalone runnable programs; native complete consumers supplement them. Not unclaimed broader properties or remaining all-original-purpose acceptance.",
+  "selected_replay": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "selected_tests": [
+      "tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification",
+      "tests.test_reference.ReferenceContracts.test_registration_rejects_missing_or_extra_inputs",
+      "tests.test_examples.ExampleContracts.test_fixed_buffers_write_and_read_registered_ranges",
+      "tests.test_examples.ExampleContracts.test_eventfd_counter_and_completion_are_real",
+      "tests.test_examples.ExampleContracts.test_probe_emits_kernel_report_for_every_known_opcode",
+      "tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit",
+      "tests.test_examples.ExampleContracts.test_probe_rejects_invalid_arguments_and_snapshot_sizes",
+      "tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts"
+    ],
+    "property_statistics": [
+      {
+        "test": "tests.test_reference.ReferenceContracts.test_registration_helpers_and_async_notification",
+        "phases": {
+          "reuse-phase": {
+            "valid": 0,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          },
+          "generate-phase": {
+            "valid": 400,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          }
+        },
+        "stopped_because": "settings.max_examples=400"
+      },
+      {
+        "test": "tests.test_examples.ExampleContracts.test_probe_snapshot_support_respects_both_bounds_and_flag_bit",
+        "phases": {
+          "reuse-phase": {
+            "valid": 0,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          },
+          "generate-phase": {
+            "valid": 400,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          }
+        },
+        "stopped_because": "settings.max_examples=400"
+      }
+    ]
+  },
+  "seconds": 7.897,
+  "actual_whole_report": {
+    "buffers": true,
+    "files_updated": true,
+    "fixed_files": {
+      "before": {
+        "tag": 10,
+        "slot": 1,
+        "res": 25,
+        "flags": 0,
+        "bytes": [
+          111,
+          114,
+          105,
+          103,
+          105,
+          110,
+          97,
+          108,
+          32,
+          114,
+          101,
+          103,
+          105,
+          115,
+          116,
+          101,
+          114,
+          101,
+          100,
+          32,
+          102,
+          105,
+          108,
+          101,
+          10
+        ]
+      },
+      "sparse": {
+        "tag": 11,
+        "slot": 0,
+        "res": -9,
+        "flags": 0,
+        "bytes": []
+      },
+      "after_sync_update": {
+        "tag": 12,
+        "slot": 1,
+        "res": 28,
+        "flags": 0,
+        "bytes": [
+          114,
+          101,
+          112,
+          108,
+          97,
+          99,
+          101,
+          109,
+          101,
+          110,
+          116,
+          32,
+          114,
+          101,
+          103,
+          105,
+          115,
+          116,
+          101,
+          114,
+          101,
+          100,
+          32,
+          102,
+          105,
+          108,
+          101,
+          10
+        ]
+      },
+      "replacement_fd_closed": true,
+      "async_update": {
+        "tag": 13,
+        "res": 1,
+        "flags": 0
+      },
+      "after_async_update": {
+        "tag": 14,
+        "slot": 1,
+        "res": 25,
+        "flags": 0,
+        "bytes": [
+          111,
+          114,
+          105,
+          103,
+          105,
+          110,
+          97,
+          108,
+          32,
+          114,
+          101,
+          103,
+          105,
+          115,
+          116,
+          101,
+          114,
+          101,
+          100,
+          32,
+          102,
+          105,
+          108,
+          101,
+          10
+        ]
+      },
+      "removed": {
+        "tag": 15,
+        "slot": 1,
+        "res": -9,
+        "flags": 0,
+        "bytes": []
+      },
+      "unregistered": {
+        "tag": 16,
+        "slot": 1,
+        "res": -9,
+        "flags": 0,
+        "bytes": []
+      }
+    },
+    "async_notifications": 1,
+    "personality_result": 0,
+    "probe_nop": true,
+    "standalone_probe_nop": true
+  },
+  "actual_registration_trace": {
+    "setups": 2,
+    "registration_calls": 14,
+    "operation_counts_and_raw_results": [
+      {
+        "opcode": "IORING_REGISTER_BUFFERS",
+        "nr_args": 1,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_UNREGISTER_BUFFERS",
+        "nr_args": 0,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_REGISTER_FILES",
+        "nr_args": 2,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_REGISTER_FILES_UPDATE",
+        "nr_args": 1,
+        "result": 1
+      },
+      {
+        "opcode": "IORING_REGISTER_FILES_UPDATE",
+        "nr_args": 1,
+        "result": 1
+      },
+      {
+        "opcode": "IORING_UNREGISTER_FILES",
+        "nr_args": 0,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_REGISTER_EVENTFD",
+        "nr_args": 1,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_UNREGISTER_EVENTFD",
+        "nr_args": 0,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_REGISTER_EVENTFD_ASYNC",
+        "nr_args": 1,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_UNREGISTER_EVENTFD",
+        "nr_args": 0,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_REGISTER_PERSONALITY",
+        "nr_args": 0,
+        "result": 1
+      },
+      {
+        "opcode": "IORING_UNREGISTER_PERSONALITY",
+        "nr_args": 1,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_REGISTER_PROBE",
+        "nr_args": 256,
+        "result": 0
+      },
+      {
+        "opcode": "IORING_REGISTER_PROBE",
+        "nr_args": 256,
+        "result": 0
+      }
+    ],
+    "existing_ring_calls": 13,
+    "temporary_ring_probe_calls": 1,
+    "null_argument_calls": 6,
+    "temporary_ring_closed_before_caller_ring": true,
+    "scope": "Author inspection of whole register call shapes/ordered counts/results/null ID operands and closure. Strace abbreviates probe operation arrays; no complete-record decoding from trace, independent parser-agent or all error/FD-lifetime assurance."
+  },
+  "source_sha256": {
+    "conversion/registration-purpose-audit.md": "af3c9bd60c02554a635384c1a5ba1e4fce6e051047830611ee3ff06f44e9dc3c",
+    "conversion/source-inventory.json": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+    "conversion/chapter-map.json": "1d95f62c232872ec0a8c1466a9f395c9523241cac7e2a75a79cc3c81b17f6309",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
+    "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
+    "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
+    "conversion/line-disposition-verification.json": "3c616b5bde7685abbaff6321fe0b995151da510bfe47ac235ee4f93e22cb3e05",
+    "conversion/test-verification.json": "ecd50a1acf4a7c915baac14791b6b97f9210a1aa210551ba96c8c19a2ad5ba7c",
+    "conversion/disposition-note-unchanged-publication.json": "6889426b092fa2b660983433af941d9efa36d9b7a1a05f1cb86729e25a43f9df",
+    "conversion/type-binding-verification.json": "13c05be532375277628102ae0d9d6393c29aa31b65b727c880c1d07da99f1d65",
+    "conversion/registered-files-verification.json": "6d52b5dd39b57d9929e32e699d3a38ac8fa7a5af5989ab8aabebb2593a01447b",
+    "conversion/probe-type-verification.json": "3fd75cc1fb8c026c83859de7b95efe37466dbd686ae50de469880b2fb43abd43",
+    "ref-zig/advanced_usage.rst": "1269025f689aad53ed289ccc601cf92af5332d7213768f3a0189bebfe27e5590",
+    "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
+    "ref-zig/_api/advanced_usage.inc": "4cb14a4113152bbcce8525cd28643798840747ff81788463bbe9185b0e91eb76",
+    "ref-zig/_api/supported_caps.inc": "7233e95b571d920685e0f02fa889dec917b0c60ee507f8ceaa3a9d550d0096ed",
+    "ref-zig/_api/probe_types.inc": "8e3e7efba816ef164e92dba7cdc966e538522685849844360a62145fe9b2a4bf",
+    "ref-iouring/io_uring_register.rst": "91e0bc0059d062312351677a72b6ff65c41b250bac4a66c7a3c90c7ff5e13adb",
+    "tutorial/probe.rst": "b415df42f0cc9c67740248da0b7404f30b4db4e484765e0a97db0768060ff07c",
+    "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/probe.zig": "f7a10ca0cefce3d68d40814c88d4ce206b2f90a6722df71b0c28d6019482eaa7",
+    "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
+    "examples/register_eventfd.zig": "3e59de2ec80f68917de35bb901729e37f0966acdb6295c4bf46dbc31d9e9bd6c",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
+    "tests/test_reference_probe_types.py": "35110472b16ed0ddc447f2df096ec2134173b296246ab6625f7e3e41eec4933e",
+    "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
+    "testdata/inputs/registration-replacement.txt": "5f52cf151d72e08fb506215edf9498de680819fd2d5ed87c7daf59ca7765bcf0",
+    "testdata/inputs/probe-type-bindings.json": "ed1f2dd5a2b33f0e62eb8c795298d686976efadbf8faaece762d5ea2f4937791",
+    "testdata/inputs/probe-opcodes.json": "77e7993b0b234164d3a248e8e14a7bd19b1988d868f207181ac657b861416132",
+    "conversion/registration-purpose-runner-amendment.json": "d16757ead48a3b9fd12e55167b74e2dba2951c64d4e555634c9b0766d78a37d0"
+  },
+  "sdk_source_sha256": {
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
+  },
+  "artifact_sha256": {
+    "conversion/registration-purpose-tests.log": "2d55b77a0af24afb0e3e6adf92bd05c0e941cb8ebcfaad9717b2de754cab68c0",
+    "conversion/registration-purpose-tests.json": "55223baa5ef1febbcbf47681dc42517fc20538f87f93d019a7818f3878726852",
+    "conversion/registration-purpose-native.trace": "2c07880f152d5a002a07760971bdfe68416f204acadc81989b458669557422ca",
+    "conversion/registration-purpose-native.json": "3354fde37b1f5973e8460966ae800c0bec5f5089eb1c6f1a0a7985062979df71",
+    "conversion/registration-purpose-run.py": "8b7f407d8f123ccc73cd5f00ce5e4a72aa125b75fb55444cd82d62d1250f4887"
+  },
+  "native_binary_sha256": {
+    "reference-registration": "178f93138d4cf4a63c5c5f415fecb1a4c7a671028498ca5137fd7f6b783a2e0f",
+    "fixed-buffers": "b0e582e5f6bc10928c7e8b461690747ff31a3f38f47f9ada39b887c017428e49",
+    "register-eventfd": "a868a8d8c503ec6335862d9ff1dd0ca0a65e65212e55cd419bf35044d23ff10f",
+    "probe": "cb69176874e42e3fb253de5716995eda83775dcdc341652ba4d72ad3c630e347"
+  },
+  "historical_gates": {
+    "full_tests": 99,
+    "new_full_suite_run": false,
+    "build_rerun": false,
+    "strict_publication_rerun": false,
+    "reader_rerun": false,
+    "epubcheck_rerun": false,
+    "unchanged_native_publication_tool_inputs": 93,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "scope": "Excluded author-audit artifacts only. Native/manuscript/test/producer bytes and99 source pins unchanged; no make epub/new build required or claimed. Historical reader/EPUBCheck/strict gates remain historical."
+  },
+  "new_mutant_claims": 0,
+  "navigation": "SDK/helper/consumer bodies inspected directly; cached graph stale/Fabric unavailable, no missing-caller/semantic acceptance inference.",
+  "inspection_corrections": "Attempted nonexistent registration-contract.json; actual literal test/registration fixtures used. Exec session487 unavailable; complete retained runner log/result checked. Initial receipt draft expected7 null-argument calls, actual6; AssertionError at stdin line27 before copying/final receipt. Corrected arithmetic only, no test/native/spec changes or mutant kill. Session495 also unavailable; exact complete amended log/2x400 records checked.",
+  "review": "Supported-host blocker unchanged; no unsupported retry, fallback or independent report.",
+  "completion": {
+    "goal_complete": false,
+    "delivered": false,
+    "open": "Other original-purpose comparisons, mandatory independent review/findings/final audit and personal-fork delivery."
+  },
+  "runner_amendment": "registration-purpose-runner-amendment.json",
+  "diagnostics": {
+    "checked_paths": 2,
+    "initial_primary_errors": 4,
+    "final_primary_errors": 0,
+    "auxiliary_false_positives": 1,
+    "scope": "All-server active audit/runner paths only; protocol ellipsis warning marked false-positive, not suppressed; no workspace/semantic acceptance."
+  }
+}
