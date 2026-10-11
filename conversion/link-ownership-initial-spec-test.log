@@ -1,0 +1,23 @@
+test_close_effect_and_cancelled_close_fallback_before_process_exit (tests.test_link_ownership.LinkedOwnershipContracts.test_close_effect_and_cancelled_close_fallback_before_process_exit)
+Kills NOP-as-CLOSE and process-exit-only cleanup despite identical CQE reports. ... FAIL
+
+======================================================================
+FAIL: test_close_effect_and_cancelled_close_fallback_before_process_exit (tests.test_link_ownership.LinkedOwnershipContracts.test_close_effect_and_cancelled_close_fallback_before_process_exit)
+Kills NOP-as-CLOSE and process-exit-only cleanup despite identical CQE reports.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_link_ownership.py", line 136, in test_close_effect_and_cancelled_close_fallback_before_process_exit
+    self.assertEqual(json.loads(actual["stdout"]), plan["report"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'results': [16, 16, 0], 'data': 'Hello, io_uring!'} != {'results': [15, 15, 0], 'data': 'Hello, io_uring!'}
+- {'data': 'Hello, io_uring!', 'results': [16, 16, 0]}
+?                                           ^   ^
+
++ {'data': 'Hello, io_uring!', 'results': [15, 15, 0]}
+?                                           ^   ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.026s
+
+FAILED (failures=1)

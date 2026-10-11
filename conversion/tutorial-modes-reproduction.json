@@ -1,0 +1,96 @@
+{
+  "base_commit": "c13f63df52599924305136d8bb6b66046a1e2f7e",
+  "scope": "Two gaps: reader-facing link JSON says15 but original/native message is16 bytes; existing linked-result/file-byte test passes compiled NOP substituted for CLOSE. Native source itself remains correct/unchanged.",
+  "original_selector": "tutorial/link_liburing.rst:96",
+  "current_source_sha256": "a567172a2563a8f3ddd1040d24c1afb11acd60a68f12ca6900dbb85752526cbb",
+  "current_source_text": ".. _link_zig:\n\nLinking requests\n================\n\nQueue order alone does not establish an execution dependency. Set\n``linux.IOSQE_IO_LINK`` on an SQE to link it to the next SQE. Leave this flag\nclear on the chain's last request. This example links a write, a read and a\nclose; the read must observe the write before the descriptor is closed.\n\n.. code-block:: console\n\n   zig build\n   zig-out/bin/link /tmp/loti-link.txt\n   zig-out/bin/link /tmp/loti-link-failure.txt --fail-read\n\nSuccess produces the complete JSON record:\n\n.. code-block:: json\n\n   {\"results\":[15,15,0],\"data\":\"Hello, io_uring!\"}\n\nThe failure run opens the file without read permission. Its write succeeds,\nthe read reports ``-EBADF`` and the unstarted linked close reports\n``-ECANCELED``:\n\n.. code-block:: json\n\n   {\"results\":[15,-9,-125],\"data\":\"\"}\n\nThe application records results by tags 1, 2 and 3 rather than assuming CQ\narrival order. A successful asynchronous close transfers closure responsibility;\nif it is cancelled, deferred application cleanup still closes the descriptor.\n\n.. literalinclude:: ../examples/link.zig\n   :language: zig\n   :caption: Successful and cancelled write/read/close chains\n\nA soft link breaks on an unsuccessful result, including an unexpected short\nread or write. It is not a transaction: earlier writes are not rolled back.\n``IOSQE_IO_HARDLINK`` preserves a submitted chain across operation-result\nfailures, but cannot protect against all submission failures. Independent chains\ncan run concurrently. Do not confuse linking with ``IOSQE_IO_DRAIN``.\n\n``tests/test_examples.py`` checks both complete result arrays, the returned text\nand actual file bytes. The read/write/close opcodes require Linux 5.6 or later;\nsetup and each result remain the authoritative capability checks.\n",
+  "original_chapter_sha256": "0e0753c80b8a1fac221f35f373d37ced882f7fcc7196be7c42d8644bbbe5c70f",
+  "published_book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+  "source_json_records": [
+    {
+      "results": [
+        15,
+        15,
+        0
+      ],
+      "data": "Hello, io_uring!"
+    },
+    {
+      "results": [
+        15,
+        -9,
+        -125
+      ],
+      "data": ""
+    }
+  ],
+  "published_json_records": [
+    {
+      "results": [
+        15,
+        15,
+        0
+      ],
+      "data": "Hello, io_uring!"
+    },
+    {
+      "results": [
+        15,
+        -9,
+        -125
+      ],
+      "data": ""
+    }
+  ],
+  "native_json_records": [
+    {
+      "results": [
+        16,
+        16,
+        0
+      ],
+      "data": "Hello, io_uring!"
+    },
+    {
+      "results": [
+        16,
+        -9,
+        -125
+      ],
+      "data": ""
+    }
+  ],
+  "message_bytes": 16,
+  "native_source_sha256": "bf09728b29ec21d439e97473e2daf57febe42550eed9b00274091fddf21a1f61",
+  "native_binary_sha256": "7bfd381587826ed013bfc6e536850b31f78ce8f80eec28f34f32826fbb601d28",
+  "owned_close_to_nop_variant": {
+    "replacement": {
+      "old": "_ = try ring.close(3, file.handle);",
+      "new": "_ = try ring.nop(3);"
+    },
+    "source_sha256": "04e9a98d36828bd20d66b22d8b9faf0e85ef03b750a18d42f51ad8ed8bdb3d55",
+    "binary_sha256": "051acdebd6fe3b2df452ee59820ac61b419f7b79987d5821f136344e156ecb86",
+    "existing_test": "tests.test_examples.ExampleContracts.test_linked_execution_and_failure_cancellation",
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "scope": "Execution path routing only; existing test source/expected values unchanged. This is a survivor reproduction, not a kill."
+  },
+  "initial_new_spec_amendment_pending": {
+    "original_sha256": "126f12b0e005d1d60818f75a051216bed7e3124639b8cd7f6b6118234e1fb0a2",
+    "failure": "New ownership draft copied the same incorrect15-byte book counts; initial native run gave AssertionError16-versus15 after the successful ownership checkpoint. Initial fixture/log preserved. No native fault, Hypothesis shrink or kill."
+  },
+  "source_sha256": {
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "examples/link.zig": "bf09728b29ec21d439e97473e2daf57febe42550eed9b00274091fddf21a1f61",
+    "tutorial/link.rst": "a567172a2563a8f3ddd1040d24c1afb11acd60a68f12ca6900dbb85752526cbb"
+  },
+  "artifact_sha256": {
+    "conversion/link-ownership-initial-spec.json": "126f12b0e005d1d60818f75a051216bed7e3124639b8cd7f6b6118234e1fb0a2",
+    "conversion/link-ownership-initial-spec-test.log": "0ea727d70df06c1d01839c20ff285ebe0cb5b49c07d9f239c61d8f0983830081",
+    "conversion/link-ownership-existing-reproduction.log": "31f6dadad632e67296f5b4151548d611063f7baa9f99c5c1e9976e6374626818",
+    "conversion/link-ownership-reproduction-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "completion": false
+}

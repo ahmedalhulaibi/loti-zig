@@ -1,0 +1,19 @@
+{
+  "payload": "Hello, io_uring!",
+  "plans": [
+    {
+      "name": "successful-close",
+      "arguments": [],
+      "report": {"results": [15, 15, 0], "data": "Hello, io_uring!"},
+      "publication": {"file_descriptors": 0, "ring_descriptors": 1},
+      "application_close_results": []
+    },
+    {
+      "name": "cancelled-close",
+      "arguments": ["--fail-read"],
+      "report": {"results": [15, -9, -125], "data": ""},
+      "publication": {"file_descriptors": 1, "ring_descriptors": 1},
+      "application_close_results": [0]
+    }
+  ]
+}

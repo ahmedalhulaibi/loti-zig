@@ -1,0 +1,7 @@
+test_linked_execution_and_failure_cancellation (tests.test_examples.ExampleContracts.test_linked_execution_and_failure_cancellation) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.017s
+
+OK
+Compiled CLOSE-to-NOP variant passed unchanged existing result/file-byte expectations; native execution routed to owned binary only.
