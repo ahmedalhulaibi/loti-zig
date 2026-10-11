@@ -46,7 +46,7 @@
     "tutorial/probe.rst": "b415df42f0cc9c67740248da0b7404f30b4db4e484765e0a97db0768060ff07c",
     "tutorial/register_eventfd.rst": "db713152a495faceec5cb26cac2bbb4d6c00faebbf9614d8c403e4f125a2e2f9",
     "tutorial/sq_poll.rst": "0c9a763df7ddcede3df3dc8920fb7efefa73e0f9bb244ba90513e95fd05f2f78",
-    "tutorial/webserver.rst": "d3b3bf9066938cb5baeb88650120380dd4c77f058576c1eddbd781fbf82724e2",
+    "tutorial/webserver.rst": "6128e7b6d2e30f9b22976196b2a6b94f954cdb02d6c2019e060a1fc8f32d4d7f",
     "what_is_io_uring.rst": "3e19f9421ed9a8a4236ded73358483f1a3c04089e2f706e41ed8838f698baca9"
   },
   "inventoried_lines": 3618,

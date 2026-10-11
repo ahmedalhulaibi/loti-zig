@@ -62,8 +62,8 @@ before the expected size yields an internal-error response. Socket failures
 release the client instead of terminating the entire server. ``MSG.NOSIGNAL``
 prevents an abandoned response from raising SIGPIPE.
 
-The headers and body remain owned by the client until the send completes. The
-completion is copied and automatically consumed by ``ring.copy_cqe()``; there
+During normal state transitions, the client keeps the headers and body until the
+send completes. The completion is copied and consumed by ``ring.copy_cqe()``; there
 is no additional ``cqe_seen`` call.
 
 Optional ``webserver DOCUMENT_ROOT PORT --observe-send`` reports actual prepared
@@ -146,5 +146,9 @@ client. These checks are not a production HTTP conformance or security audit.
 
 There is no TLS, keep-alive, request-body handling, header-field validation,
 per-client deadline or streaming-file transfer. Do not expose this teaching
-server as an Internet-facing service. The code has not yet passed the required
-independent review.
+server as an Internet-facing service. A reproduced fatal observer-output failure
+left a late accepted socket open after application cleanup, until process exit.
+Retirement of pending I/O during fatal cleanup remains unverified. Do not treat
+``defer ring.deinit()`` as an operand-retirement barrier or use this example as a
+fatal-error cleanup pattern. The code has not yet passed the required independent
+review.

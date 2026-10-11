@@ -24,9 +24,12 @@ until explicit accepted close. No HTTP batch-tail or use-after-free claim.
 Author repair contract specifies unpublished/pending/ready/copied states and
 negative/timeout cancellation. Need approved independent runtime verifier/sealed
 tests before design-heavy ownership/retirement repair;read-only reviewer not bypassed.
-Native/book/tests/fixtures/226 selected pins/current04c4e128 unchanged;affected3/
-publication3934e60 and full103/cold25/44d9b32 remain history;292 kills unchanged.
-Fresh fork identity/source-directory404 still valid checkpoint;complete meaning/
+Native/tests/fixtures unchanged. `http-unwind-disclosure-audit.md`/verification
+qualify normal lifetime and warn about the fatal defect;only HTTP manuscript
+changes within226 selected inputs. Latest affected3/5.761s/strict publication;
+current archive5739833e,81 reflows/zero validator messages. Prior3934e60 CP gates
+and44d9b32 full103/cold25 remain historical;292 kills unchanged.
+Prior fork identity/source-directory404 retained as historical evidence;complete meaning/
 independent acceptance/final audit/personal-fork delivery open. No push or completion.
 
 ## Contract
