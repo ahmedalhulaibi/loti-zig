@@ -34,12 +34,12 @@ exclusions/dispositions. Canonical counts alone are not exhaustive spelling/flag
 coverage. Independent verification is not waived; required omissions must still
 be fixed. **Do not mark complete or push before acceptance.**
 
-Latest direct checkpoint: `fork-source-links-audit.md` and verification JSON.
-Fresh API/SSH confirm personal fork but converted examples directory is404.
-CP origin label corrected without overstating original fio credit;only CP
-manuscript/canonical digest changes. Affected3/current strict archive/81 reflows/
-EPUBCheck pass. Native/fatal-retirement work unchanged;full103/cold25 remain44d9b32.
-Independent acceptance/completeness/final delivery remain open.
+Latest direct finding: `accept-teardown-audit.md` and reproduction JSON.
+Two actual HTTP fatal cleanups retain late accepted socket8 after ring/client/
+listener/root close,until process exit. Native40-CQE private probe shows cancel0/
+ring close cannot release successful ACCEPT descriptors. No native/book/test edit;
+226 inputs/04c4e128 archive unchanged. Independent verifier/sealed tests required
+before lifecycle repair;memory retirement/completeness/acceptance/delivery open.
 
 Next: obtain a runtime-capable independent verifier/qualifying owner-approved
 alternative;specify fatal pending-I/O retirement,then repair/replay affected gates.

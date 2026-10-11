@@ -14,18 +14,20 @@ adds18 complete native bodies, nine chapter pairs and16 supplemental lexical
 rows persisted in `source-inventory-supplement.json`. Current-body reach is30/30; original-purpose
 classification and independent acceptance remain distinct, unresolved gates.
 
-Latest author checkpoint: `fork-source-links-audit.md`/verification JSON.
-Fresh public personal fork identity/API+SSH masterc9ee2424/actual original tree
-confirmed. Converted examples directory404/30 native files absent. Local-link
-publication checks do not cover this external source-delivery requirement.
-CP label now generic fio io_uring program,matching original credit without copier
-claim. Native/tests/fixtures unchanged;only CP differs within prior226 inputs.
-Affected3 tests/5.915s,current strict publication/81 reflows/EPUBCheck pass;
-archive04c4e128…;prior217ae9e5 historical. Supplement not repinned,fresh16 slices.
-Fatal HTTP retirement from pending-teardown audit remains unverified;need approved
-independent runtime verifier/qualifying alternative before design-heavy repair.
-Full103/cold25 remain44d9b32;292 kills unchanged;complete meaning/final acceptance/
-personal-fork delivery open. No push/reviewer/PR/release/completion.
+Latest author finding: `accept-teardown-audit.md`/reproduction JSON.
+Two actual observer-mode fatal cleanups leave socket8 outside client owners after
+ring5/client6-7/listener4/root3 close. Owned TCP tuple/inode/full pre-exit census
+show FD retained while process alive;only process exit gives peer EOF.
+Private native20 processes/40 ACCEPT CQEs plus1 separate trace:cancel ALL|ANY0/
+ring close/listener close do not close successful ACCEPT descriptor;byte90 works
+until explicit accepted close. No HTTP batch-tail or use-after-free claim.
+Author repair contract specifies unpublished/pending/ready/copied states and
+negative/timeout cancellation. Need approved independent runtime verifier/sealed
+tests before design-heavy ownership/retirement repair;read-only reviewer not bypassed.
+Native/book/tests/fixtures/226 selected pins/current04c4e128 unchanged;affected3/
+publication3934e60 and full103/cold25/44d9b32 remain history;292 kills unchanged.
+Fresh fork identity/source-directory404 still valid checkpoint;complete meaning/
+independent acceptance/final audit/personal-fork delivery open. No push or completion.
 
 ## Contract
 

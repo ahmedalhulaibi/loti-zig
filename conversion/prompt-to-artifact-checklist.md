@@ -14,16 +14,16 @@ preserved purpose/order/attribution/licence/images; verified accepted delivery.
 | 4. Update relevant text | Whole26 author comparisons plus flags/CONNECT/payload/constructor fixes;latest CP origin label matches original generic fio-program credit | Shuveb/fio citation retained;native implementation unchanged. Whole current paragraph checked;independent meaning acceptance remains open. |
 | Publication fidelity | fork-source-links-verification.json:strict HTML/EPUB;27 chapters/121 literals/368 paragraphs;whole CP origin paragraph/four GitHub anchors | Current04c4e128… archive checked. GitHub source directory404 is outside local-link verifier scope. Prior receipts stay historical;fidelity is not semantics. |
 | Native/public/tool contracts | Last44d9b32 cold25/full103/16×400;latest affected3/5.915s and4 source CLIs pass | Native/tests/fixtures exact;only CP changes within prior226 selected pins;historical supplement kept,fresh16 slices/five historical differences captured. No full/build promotion. |
-| Fatal IO lifetime | pending-teardown-reproduction.json:idle RECV+next ACCEPT consumed before observer WriteFailed;ring/client closes follow;SDK sync-cancel pipe targets retire | No demonstrated UAF or all HTTP I/O retirement. Verifier-authored boundary tests/barrier design needed;native code unchanged. |
+| Fatal IO lifetime/ownership | accept-teardown-reproduction.json:two actual HTTP pre-exit FD censuses retain late accepted socket after ring/client/listener/root close;native40 ACCEPT CQEs retain FD despite cancel0/ring close | Verified descriptor cleanup omission;no UAF/all memory retirement proof. Independent verifier-authored sealed tests/lifecycle repair required;native code unchanged. |
 | Verify verifier strength | `mutation-frontmatter.json`:three valid README source-prose kills; cumulative292 bounded valid mutants | Literal/narrative stale claims and canonical-output overwrite caught; restored1. Author hashes are not ACL seals, comprehensive mutation assessment or independent acceptance. |
 | Reader suitability | Latest fork-source-links receipt:81 Chromium reflows/zero violations;EPUBCheck5.2.1 zero messages | Actual04c4e128 archive;sweeps not added;no Supernote/device pagination/font-override or Calibre claim. |
 | Attribution/licence/images | Current publication verifier plus unchanged original `LICENSE`, licence.rst, five illustrations/logo and Shuveb/Ahmed credits | Byte/structure checks retained; final prompt audit must inspect actual artefacts. |
 | Mandatory independent review | `conversion/review-blocker.md`, handoff, `independent-review-fd9025d.md`; native async c27be9dc completed | BLOCK: partial source inspection only; no independent complete purpose census or runtime/publication validation. Parent direct review is not independent acceptance. |
 | Final delivery/completion | Final current-HEAD review/findings, affected/full gates, personal-fork push and remote hash verification | Not done. No PR/release requested; do not push/complete before acceptance. |
 
-Latest direct gates: `fork-source-links-audit.md`/verification JSON.
-Fresh fork identity/current remote original/source directory404;CP caption fixed.
-Affected3/current publication checked;fatal cleanup/independent acceptance unchanged.
+Latest direct findings: `accept-teardown-audit.md`/reproduction JSON.
+Actual fatal HTTP cleanup leaves late accepted FD until exit;barrier alone is
+insufficient.226 selected inputs/current04c4e128 archive unchanged;no gate replay.
 Native/tests/fixtures/expectations and historical receipts remain unchanged.
 Owner prefers direct review; independent-acceptance boundary remains open.
 
