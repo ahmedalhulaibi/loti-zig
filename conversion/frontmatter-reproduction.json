@@ -1,0 +1,33 @@
+{
+  "scope": "Required reader-facing README cardinality/current-report command defect; native/manuscript sources remain correct. Old published-source agreement cannot establish README claim accuracy.",
+  "base_commit": "ec7e1d9811e7c0222f5eaa6180a246fcaac85f13",
+  "readme_sha256": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
+  "original_readme_git_blob": "9b0105b6c8d41217ef6c3075800144a69893541c",
+  "old_claims": {
+    "literal_blocks": 120,
+    "narrative_paragraphs": 359
+  },
+  "actual_current_report": {
+    "literal_blocks": 121,
+    "narrative_paragraphs": 368,
+    "book_sha256": "77a968717162565f207d888d6bda251309c5b9e9fe25e7ec0015b66434991de3"
+  },
+  "old_report_command_outputs": [
+    "conversion/epub-verification.json",
+    "conversion/reader-layout-verification.json",
+    "conversion/block-device-verification.json"
+  ],
+  "required_output_policy": "Current generated checks go to ignored _build/verification/, not tracked historical receipts. Do not silently rewrite retained acceptance evidence.",
+  "prospective_core_sha256": {
+    "tests/test_readme_publication.py": "259f621ffeb31d9d9d0056a474fb3e33c1f8754a22a8d73561d69eb4d7cb041a",
+    "testdata/inputs/readme-publication-contract.json": "880f24c05e04f693254cc47562ccea5dffd2cab7553a85ca61f63870d41499e5"
+  },
+  "red_result": {
+    "tests": 1,
+    "failures": 1,
+    "errors": 0,
+    "skips": 0
+  },
+  "new_mutants": 0,
+  "completion": false
+}
