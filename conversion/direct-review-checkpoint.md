@@ -6,8 +6,9 @@ Owner prefers direct review; no new reviewer agent or profile change.
 Receipts: `_build/verification/direct-review.Am66dcFA/` (ignored current output).
 
 - Exact Zig0.17.0; format clean; native build51/51, cached steps.
-- Inventory3618/128; original/native bindings76/99;13 declarations; complete
-  line index567 outside-block lines. These are enumeration checks, not meanings.
+- Canonical inventory3618/128; original/native bindings76/99;13 declarations;
+  all567 canonical outside-block lines indexed. Counts follow scanner policy,
+  not every spelling/flag or its meaning.
 - Full103 tests,0 failures/errors/skips,169.959s;16 properties×400 generated
   valid cases. Suite runner only re-anchors ROOT and routes the final receipt;
   no test/fixture/expectation edits. `suite-routing.json` records both hashes.
@@ -35,3 +36,8 @@ These are **author** results. The independent report is partial/BLOCK; current
 direct source/purpose comparison, independent acceptance, final audit and fork
 delivery remain open. Source/manuscript/fixture inputs did not change in this
 metadata update; no historical report was repinned or promoted.
+
+Follow-up: `direct-source-review-a194680.md` records the18 remaining native
+bodies and nine original/current chapter pairs. A broader all-text lexical scan
+adds16 explicitly classified exclusions to the canonical census. All203 tested
+pins remain exact; source reach/classification are author evidence, not acceptance.

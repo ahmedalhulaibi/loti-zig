@@ -9,8 +9,10 @@ parsers, mutation results or this document for that review.
 
 Owner now prefers direct review; no new reviewer agents are launched. Fresh
 direct gates are recorded in `direct-review-checkpoint.md`; these are author
-verification, not a waiver of independent acceptance. Finish actual source/
-purpose comparison and resolve that acceptance boundary before delivery.
+verification, not a waiver of independent acceptance. `direct-source-review-a194680.md`
+adds18 complete native bodies, nine chapter pairs and16 supplemental lexical
+exclusions/dispositions. Combined current-body reach is30/30; original-purpose
+classification and independent acceptance remain distinct, unresolved gates.
 
 Latest author checkpoint: `frontmatter-verification.json`,
 `completion-audit-current.md` and `prompt-to-artifact-checklist.md`. Original
