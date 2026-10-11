@@ -21,13 +21,13 @@
   "source_sha256": {
     "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e",
     "tests/test_literal_policy.py": "11253e4b9ed50b9cd1b46875f1bad51c72fc1d65dc4182ac92e7fd6417e5f9e6",
-    "tests/test_publication.py": "7c20159f4469c359b618728e4196f612c544234ba6655ae7c35274c432f8b58e",
+    "tests/test_publication.py": "d0ccb35431c588d7729597552fa1e4badcfa75cee5b039ac833a487285c8f792",
     "testdata/inputs/literal-policy-damages.json": "0be602e17560f2f43fdc362b98500181827725de2094cc1485359b18bfa4fd78",
     "conversion/literal-policy-spec-sha256.json": "cfe306a7937d296e057950d134f56b850e2700efedc9c529e6fee692a39f7651",
     "conversion/literal-policy-spec-amendment.json": "f3b73bc0ddd3c79c0c21a8674067da7f428dbe679c536d42ed82c0563bbe961a",
     "conversion/literal-policy-damages-initial.json": "4916416f2a203c8ef7a4f06b1b23b771ae5117553cea4b6dabe5d4078f94bf18",
-    "README.md": "8dae6b572b5125052ebeace8ed51d5130d7b8ab552bc020d74170bfa24f222df",
-    "testing.md": "eb8485687a7f9e1a4096939825bbe70ed60401c7d57fdf0b8fa18585b9c1a08f"
+    "README.md": "d5210647ca5b5cd59c99faa49acfaf896eb458fdf06dca0549b997a9c8dd7029",
+    "testing.md": "49637efe3978495029ac4bf24ce46446f2999b144be544f8a5e3abc153a12aec"
   },
   "diagnostics": {
     "scope": "Active primary LSP on three changed Python paths; no cache-only cleanliness claim. Existing OPF spelling infos/other-feature suppressions stay disclosed in their own receipts.",
@@ -77,6 +77,14 @@
     "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
     "changed": [
       "tools/verify_epub.py",
+      "tests/test_publication.py",
+      "README.md",
+      "testing.md"
+    ]
+  },
+  "replay_after_provided_buffer_zero": {
+    "scope": "After full88-test/sixteen400-case suite and final strict publication/narrative/layout/EPUBCheck; current execution-consumer fingerprints only refreshed. Historical mutation/gates/diagnostics remain historical, not independent review.",
+    "changed": [
       "tests/test_publication.py",
       "README.md",
       "testing.md"

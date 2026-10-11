@@ -81,7 +81,7 @@
     }
   },
   "source_sha256": {
-    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
+    "tools/reference_map.py": "2ab05db26e7c51b3b4dedcb67bff6bbb35853fd87fa394bcb97917434a680234",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "testdata/inputs/reference-semantics-bindings.json": "a1dad2b6ff5bda1a97c18f24f7afd0433bb06a1af210bccc207a37362a08d980",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
@@ -93,7 +93,7 @@
     "conversion/reference-claim-audit.md": "386b13012f307b2df339c1145c5a7ea60397ddcc828e657eabca2269606429de",
     "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
     "ref-zig/setup_teardown.rst": "8cfb07794f25aaab05b111f3f8dab8685f1d78994b71509ee6b95fdb73a1e6f7",
-    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56"
+    "ref-zig/submission.rst": "c3e0ad7424e64879bc10c33a683d2c76a8624636a3390f145a0ba1bff7f15604"
   },
   "sdk_source_sha256": {
     "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
@@ -239,5 +239,12 @@
     "zig_signature": "pub fn io_uring_enter(fd: fd_t, to_submit: u32, min_complete: u32, flags: u32, sig: ?*sigset_t) usize"
   },
   "count_qualification": "Current raw binding/fixture amended for SQPOLL generally returning to_submit, replayed old whole-five and new whole-three contracts; prior author binding retained above. Historical five-producer mutation evidence is not reassessed.",
-  "metadata_generation_correction": "Pre-commit completion-pin audit caught a fixture ordinal assumption selecting submit_and_wait instead of enter; corrected by original-name lookup. No production/core/native/gate change; no mutant/test kill."
+  "metadata_generation_correction": "Pre-commit completion-pin audit caught a fixture ordinal assumption selecting submit_and_wait instead of enter; corrected by original-name lookup. No production/core/native/gate change; no mutant/test kill.",
+  "replay_after_provided_buffer_zero": {
+    "scope": "After full88-test/sixteen400-case suite and final strict publication/narrative/layout/EPUBCheck; current execution-consumer fingerprints only refreshed. Historical mutation/gates/diagnostics remain historical, not independent review.",
+    "changed": [
+      "tools/reference_map.py",
+      "ref-zig/submission.rst"
+    ]
+  }
 }

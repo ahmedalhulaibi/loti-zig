@@ -1,0 +1,170 @@
+{
+  "scope": "Bounded legacy IORING_OP_PROVIDE/REMOVE single64-byte group7/ID257, stable nonempty regular input1\u20134097 on current Linux/x86_64. Positive-length EOF0 carries BUFFER and consumes; requestedlen0 at0 reads provided capacity rather than ordinary zero-byte I/O. Early completion guard/fault mode stops before further pool operations. Not pbuf-rings, all descriptor types/errors/unwinds, multishot/multi-buffer ordering/concurrency/cancellation/other kernels or architectures, independent review or device assurance.",
+  "reproduction": "provided-buffer-zero-reproduction.json",
+  "core": "provided-buffer-zero-spec-sha256.json",
+  "failure_supplement": "provided-buffer-zero-failure-spec-sha256.json",
+  "failure_initial": "provided-buffer-zero-failure-spec-initial-sha256.json",
+  "failure_amendment": "provided-buffer-zero-failure-spec-amendment.json",
+  "mutation": "mutation-provided-buffer-zero.json",
+  "contracts": {
+    "tests": 4,
+    "generated_valid_binaries": 400,
+    "literal_input_bytes": [
+      0,
+      255,
+      90,
+      105,
+      103
+    ],
+    "explicit_boundaries": [
+      64,
+      65,
+      4097
+    ],
+    "shrinking_claim": false,
+    "whole_literal_fixture": "testdata/inputs/provided-buffer-zero-report.json",
+    "success_submissions": 13,
+    "success_trace_damages": 8,
+    "typed_negatives": 7,
+    "failure_submissions": 2,
+    "failure_trace_damages": 7,
+    "failure_reuse_positive": true,
+    "default_tests_model_fixtures_preserved": true,
+    "test_process_deadline_seconds": 10,
+    "scope": "Absolute cursor0, actual SQEs/CQEs/storage/counts/BUFFER IDs and real syscall/first-close observations; no passing skips or eventual-exit-only pool/cursor proxy."
+  },
+  "actual_oracles": {
+    "success": {
+      "rings": 1,
+      "submissions": 13,
+      "ordinary_waits": 13,
+      "cursor_queries": 2,
+      "absolute_cursor_preserved": true,
+      "synchronous_source_reads": 0
+    },
+    "failure": {
+      "rings": 1,
+      "submissions_before_error": 2,
+      "cursor_queries": 1,
+      "further_pool_requests": 0,
+      "ring_closed_before_source": true,
+      "source_closed": true
+    }
+  },
+  "diagnostics": {
+    "scope": "Active primary LSP on six changed source/test paths; zero visible findings. Existing feature suppressions/OPF infos disclosed in their own receipts, not unconditional all-provider clean.",
+    "paths": [
+      "examples/reference_buffers.zig",
+      "tests/test_provided_buffer_zero.py",
+      "tests/test_provided_buffer_zero_failure.py",
+      "tools/reference_map.py",
+      "tests/test_submission_prose.py",
+      "tests/test_publication.py"
+    ],
+    "visible_primary": 0
+  },
+  "navigation": {
+    "fabric": "Executable unavailable, no transitive-caller completeness inferred",
+    "graph": "Stale cached commit/absent who-uses node; current bodies and explicit build/test/map/book consumers inspected. One public boundary crosses consumer folders,not multiple independent domain writers.",
+    "churn": "Committed-history58/58 complete preimplementation,not code/review acceptance"
+  },
+  "manual_scope_note": "Provided-buffer-ring overview data-arrival-only consumption is not adopted for the legacy EOF path; legacy helpers and actual current-kernel CQEs/removal counts govern bounded claim.",
+  "source_sha256": {
+    "README.md": "d5210647ca5b5cd59c99faa49acfaf896eb458fdf06dca0549b997a9c8dd7029",
+    "conversion/prose-line-disposition.md": "06773bac5549760c5bc4e7e158cc161b4b418291463a04fb8e73213d523a8b2c",
+    "conversion/provided-buffer-zero-failure-spec-amendment.json": "1f8fce7d5500e02d5768fdb2b26f97409126fd382ea0d302bda573b1d597e3fb",
+    "conversion/provided-buffer-zero-failure-spec-initial-sha256.json": "3177caefc8d5cbe6439c173f63e8697ef643c7716812a7e35d8e286886ae75ec",
+    "conversion/provided-buffer-zero-failure-spec-sha256.json": "f4c16474dc831d29ae1b1592437e0a0a9d1c2222d4311de1b5a4c4a63e1fdc19",
+    "conversion/provided-buffer-zero-failure-test-initial.txt": "eb3e47f569cae7288470a7b938557df4da56cd8b5e34add778d4376763a5fcad",
+    "conversion/provided-buffer-zero-failure.trace": "592d50c0eee3f17d8285525046d6f4328002662409f40e2b26f9b4e4201f7053",
+    "conversion/provided-buffer-zero-spec-sha256.json": "ec6e709202af5f8cc84ee21f9db2eb07cb980f644bc7eb5a791abccc87479290",
+    "conversion/provided-buffer-zero.trace": "1acc7b7c00bd195213e1049bbf423129d36271d7997ba6dc4d9dbc01c8abd379",
+    "conversion/reference-map.json": "028d54813461b75cd24f57506d383dcce5287ef860f1087dac689dd465da096f",
+    "conversion/submission-prose-cardinality-buffer-zero.json": "dfc01aebf273065f454b47b886160fe2e03cadb0a594001b0876706da302da19",
+    "conversion/submission-prose-spec-before-buffer-zero.json": "94d3e41dd2a371e7997b65182bc575ee05ac63bd5c49aa2f799dcf0fcd221364",
+    "examples/reference_buffers.zig": "a53c67f6ed7cd7e42666176ab7306ad491fc5482ea79bf318b537b5be984d53c",
+    "ref-zig/cqe.rst": "91278cb1975342e8a59afacce499e5af3218f9bdb3219007dc4ad15d35f67992",
+    "ref-zig/submission.rst": "c3e0ad7424e64879bc10c33a683d2c76a8624636a3390f145a0ba1bff7f15604",
+    "testdata/inputs/provided-buffer-zero-failure-invalid-traces.json": "cfb60d4ab7da534037ba226d4ae90f1c793137d9910cb8b64db3bfce57b04b0b",
+    "testdata/inputs/provided-buffer-zero-failure-reused.trace": "f4374317d53c9ca172b2c3a99ee6d41a6c81b9cd901047b3c3cf000fa01260fa",
+    "testdata/inputs/provided-buffer-zero-failure.trace": "12f5e986e88711e09ff79131b0c255ad153e2a75d1f0448b201c16bcd52df33b",
+    "testdata/inputs/provided-buffer-zero-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/provided-buffer-zero-invalid-traces.json": "9712a88916795ebbd6596a4f17b6d6de9f154fdbffed96bdbd468646a8f8348d",
+    "testdata/inputs/provided-buffer-zero-report.json": "c982c21651dc0fd412ec874e9d541006f52061cdf90af2b6bdd1b76bbbfbab3c",
+    "testdata/inputs/provided-buffer-zero.trace": "216592c6451f50c2ee35998b8df8f5b000367980aab366b7d7e23549225775ce",
+    "testing.md": "49637efe3978495029ac4bf24ce46446f2999b144be544f8a5e3abc153a12aec",
+    "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c",
+    "tests/test_provided_buffer_zero_failure.py": "405677c7f71341e6e0b49a988254ec74dae187cdd9c8923e36bf4cde190bdb41",
+    "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
+    "tests/test_publication.py": "d0ccb35431c588d7729597552fa1e4badcfa75cee5b039ac833a487285c8f792",
+    "tests/test_submission_prose.py": "71eb1c7ba1fd26f9c28486fdc44143da11fda895d5cd3f7071e7691184ef8036",
+    "tools/reference_map.py": "2ab05db26e7c51b3b4dedcb67bff6bbb35853fd87fa394bcb97917434a680234"
+  },
+  "reference_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring.7.txt": "f69f9f00c108647a750bf3b545c937e15b2040b4afde8650093a52b992aafc41",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_provided_buffers.7.txt": "aa16983aed64ada511d6ac5c9cb3a2ef5d82443823216d111448f8997d751fc2",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_prep_provide_buffers.3.txt": "b7de7673f356f10e1e9851edb050db64b3add06a9cdee23b1018b5a069a59bec"
+  },
+  "replayed_consumers": [
+    "accept-verification.json",
+    "connect-verification.json",
+    "copy-short-verification.json",
+    "epoll-verification.json",
+    "file-operations-verification.json",
+    "literal-policy-verification.json",
+    "mapping-failure-verification.json",
+    "messages-verification.json",
+    "ordinary-signal-verification.json",
+    "poll-verification.json",
+    "provided-buffers-verification.json",
+    "reference-semantics-verification.json",
+    "registered-files-verification.json",
+    "rwf-verification.json",
+    "signal-wait-verification.json",
+    "splice-verification.json",
+    "sqpoll-wakeup-verification.json",
+    "submission-prose-verification.json"
+  ],
+  "gates": {
+    "zig": "0.17.0",
+    "executables": 25,
+    "build_steps": 51,
+    "tests": 88,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 164.813,
+    "strict_html": true,
+    "strict_epub": true,
+    "chapters": 27,
+    "literals": 120,
+    "narrative_paragraphs": 359,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "reader": {
+      "cases": 81,
+      "code_blocks": 360,
+      "tables": 6,
+      "images": 15,
+      "headings": 333,
+      "figures": 0,
+      "violations": 0
+    },
+    "book_sha256": "6c4e3ac195a38a1f08d3143b4fdac60c7929661cc5d254e54616856770ef5e72",
+    "scope": "Final archive rebuilt/checked after full current suite; not original-purpose independent semantic acceptance, whole-port assurance or reader-device acceptance."
+  },
+  "completion": {
+    "independent_review": "Blocked; host unchanged,no retry/fallback/alternative reviewer",
+    "pushed": false,
+    "goal_complete": false
+  }
+}

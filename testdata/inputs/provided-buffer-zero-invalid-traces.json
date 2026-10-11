@@ -1,0 +1,50 @@
+[
+  {
+    "id": "missing_submission",
+    "old": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "lseek(3, 0, SEEK_CUR) = 0\n",
+    "error": "IncompleteBufferZeroTrace"
+  },
+  {
+    "id": "wrong_ring",
+    "old": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(3, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "error": "WrongBufferZeroEnterArguments"
+  },
+  {
+    "id": "implicit_submission",
+    "old": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 0, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "error": "WrongBufferZeroEnterArguments"
+  },
+  {
+    "id": "wait_flag_missing",
+    "old": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 1, 1, 0, NULL, 8) = 1\n",
+    "error": "WrongBufferZeroEnterArguments"
+  },
+  {
+    "id": "mask_size_wrong",
+    "old": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 128) = 1\n",
+    "error": "WrongBufferZeroEnterArguments"
+  },
+  {
+    "id": "cursor_changed",
+    "old": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\nlseek(3, 0, SEEK_CUR) = 0\n",
+    "new": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\nlseek(3, 0, SEEK_CUR) = 5\n",
+    "error": "WrongBufferZeroCursor"
+  },
+  {
+    "id": "cursor_not_observed",
+    "old": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\nlseek(3, 0, SEEK_CUR) = 0\n",
+    "new": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "error": "IncompleteBufferZeroTrace"
+  },
+  {
+    "id": "sync_source_read",
+    "old": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "lseek(3, 0, SEEK_CUR) = 0\npread64(3, \"x\", 1, 0) = 1\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "error": "SynchronousBufferZeroRead"
+  }
+]

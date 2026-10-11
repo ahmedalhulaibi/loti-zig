@@ -1,0 +1,8 @@
+Running as unit: run-p3557208-i7739949.scope; invocation ID: 3cd81f4977d74ef28b06a5f729897c5d
+/tmp/loti-buffer-zero-uncompiled.zig:68:54: error: bitwise not operation on type 'comptime_int'
+    if (name == .eof) @constCast(sqe).flags &= ~linux.IOSQE_BUFFER_SELECT;
+                                                ~~~~~^~~~~~~~~~~~~~~~~~~~
+referenced by:
+    zeroResults: /tmp/loti-buffer-zero-uncompiled.zig:82:28
+    main: /tmp/loti-buffer-zero-uncompiled.zig:132:27
+    5 reference(s) hidden; use '-freference-trace=7' to see all references

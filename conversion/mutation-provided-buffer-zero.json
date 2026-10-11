@@ -1,0 +1,213 @@
+{
+  "scope": "Eleven compiled native/three syntax-valid trace-parser variants assessed at three table/literal/trace CLI boundaries. Hypothesis assertion groups in initial missing-mode red are not mutant kills/shrinks. Whole-native/SDK/kernel/race/independent-review assurance not claimed.",
+  "mutants": [
+    {
+      "id": "eof-offset-is-zero",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "d50774f2e50f67f780d2f193a288ee99f903d61b68c1e438d975c8b5a29d8d88",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-offset-is-zero.log"
+    },
+    {
+      "id": "eof-zero-length-proxy",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "22c7e1b4be58190b221feb097a158fb71c458a5c8e4e734edb905698a3e191d8",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-zero-length-proxy.log"
+    },
+    {
+      "id": "eof-wrong-buffer-group",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "7b76b85dd46d6373825a7f9b5745eb127758aecbafbd75f0044aef630cae0d9e",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-wrong-buffer-group.log"
+    },
+    {
+      "id": "eof-selection-flag-omitted",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "e09926e15cd59a7917fbb4c81fe7f0dc00cfa9f6f92a45462f91e1fc10473317",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-selection-flag-omitted.log"
+    },
+    {
+      "id": "zero-cqe-selection-hidden",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "5730adf2a0dbc1b78a14ebce2a1b3ec8c8380af0d2ff4a1378d16209cef454aa",
+      "log": ".mutants/zero-buffer/2026-10-10/zero-cqe-selection-hidden.log"
+    },
+    {
+      "id": "requested-zero-length-is-64",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "d851f99942bed9f7c9ae2d8505f60812f1626d238b074d3b0c1a89a17096fa90",
+      "log": ".mutants/zero-buffer/2026-10-10/requested-zero-length-is-64.log"
+    },
+    {
+      "id": "recycle-poison-omitted",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "ffedb52af51b4f68f386e029444dc14c40361f3a1162c31c13352ed2610bf23c",
+      "log": ".mutants/zero-buffer/2026-10-10/recycle-poison-omitted.log"
+    },
+    {
+      "id": "final-remove-is-nop",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "91814b2ea6178a782e2d08dd9013d09100c695b43a8ca8b2d7d4bdeec51b5115",
+      "log": ".mutants/zero-buffer/2026-10-10/final-remove-is-nop.log"
+    },
+    {
+      "id": "data-snapshot-is-poison",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "2650f0b8356487691a4107f6b802dc92807796455bfecf2542b67620f9bb8e2b",
+      "log": ".mutants/zero-buffer/2026-10-10/data-snapshot-is-poison.log"
+    },
+    {
+      "id": "cursor-observations-fabricated",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "f35119323ccff632d8490076ffb8f84532a91e8ef1d9d3c5f74b8ad511c31a8d",
+      "log": ".mutants/zero-buffer/2026-10-10/cursor-observations-fabricated.log"
+    },
+    {
+      "id": "eof-validation-deferred",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "d1f376e08e60c9d245f821e8e651d6d4d6b6e869b7fc41b3974ded00359e7bd8",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-validation-deferred.log"
+    },
+    {
+      "id": "submission-count-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "ca34675259934e76ece17504c5ef3afa42e0dad02d416ed7f1986a2938debf5d",
+      "log": ".mutants/zero-buffer/2026-10-10/submission-count-ignored.log"
+    },
+    {
+      "id": "enter-arguments-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 4,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "f1bf5b0e5af5de731fcd2111b2c4e775a8563f0cfefacd2af3a0f806b9a91049",
+      "log": ".mutants/zero-buffer/2026-10-10/enter-arguments-ignored.log"
+    },
+    {
+      "id": "cursor-value-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "895fa1d2dfd4d53ddd43afcc6828a9f5607e578347211d096b02d8d9dba2bc38",
+      "log": ".mutants/zero-buffer/2026-10-10/cursor-value-ignored.log"
+    }
+  ],
+  "restored_source_sha256": {
+    "examples/reference_buffers.zig": "a53c67f6ed7cd7e42666176ab7306ad491fc5482ea79bf318b537b5be984d53c",
+    "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c"
+  },
+  "spec_exact": true,
+  "baseline": {
+    "tests": 7,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "generated_cases_per_each_of_two_properties": 400,
+    "log": ".mutants/zero-buffer/2026-10-10/restored.log"
+  },
+  "containment": "Sequential4GiB/no-swap/TasksMax128 user scope; native source restored and rebuilt before Python-only variants, final exact sources/core and native build restored.",
+  "exclusions": [
+    {
+      "id": "eof-selection-flag-omitted-initial",
+      "status": "uncompiled/not assessed",
+      "code": "~linux.IOSQE_BUFFER_SELECT on comptime_int",
+      "correction": "~@as(u8, linux.IOSQE_BUFFER_SELECT)",
+      "reassessment": "Compiled revised variant killed by substantive boundary assertions; original three valid kills retained, no duplicate IDs. Original failed-build log was overwritten by successful same-ID rebuild; retained original driver failure/partial report and separately reproduced original compiler error on a disposable copy (not claimed original log).",
+      "original_driver_log": ".mutants/zero-buffer/2026-10-10/initial-driver-failure.log",
+      "original_partial": ".mutants/zero-buffer/2026-10-10/initial-partial-report-original.json",
+      "corrected_partial": ".mutants/zero-buffer/2026-10-10/initial-partial-report.json",
+      "reproduced_compile_error": ".mutants/zero-buffer/2026-10-10/initial-flag-uncompiled-reproduced.log"
+    }
+  ],
+  "initial_spec_red": {
+    "tests": 3,
+    "failures": 2,
+    "errors": 1,
+    "scope": "The unittest error is an ExceptionGroup of four substantive missing-mode assertions in explicit examples; red coverage evidence only, not mutant kill or a shrunk regression.",
+    "log": ".mutants/zero-buffer/2026-10-10/spec-red.log"
+  },
+  "superseded_checkpoint": {
+    "report": ".mutants/zero-buffer/2026-10-10/pre-early-guard-report.json",
+    "mutants": 13,
+    "scope": "Pre-guard source/tests checkpoint, superseded by final14 reassessment; not13+14 counted. All14 final variants compiled/syntax-valid and substantively killed; seven-test rebuilt baseline after exact source restore."
+  },
+  "failure_supplement": {
+    "core": "conversion/provided-buffer-zero-failure-spec-sha256.json",
+    "initial": "conversion/provided-buffer-zero-failure-spec-initial-sha256.json",
+    "amendment": "conversion/provided-buffer-zero-failure-spec-amendment.json",
+    "scope": "Actual invalid-FD EOF CQE early stop/two enters/ring then first source close. Original harness assumed one close for a numeric descriptor forever; corrected first retirement allows debug traceback FD reuse after original closure. Original spec/fixtures retained, one positive reuse case added; seven damages unchanged."
+  },
+  "failure_spec_exact": true,
+  "log_normalization": {
+    "scope": "Trailing spaces/tabs/CR and terminal blank lines only. Historical phase normalization remains recorded in superseded report. No substantive observations changed.",
+    "paths": [
+      ".mutants/zero-buffer/2026-10-10/submission-count-ignored.log",
+      ".mutants/zero-buffer/2026-10-10/enter-arguments-ignored.log",
+      ".mutants/zero-buffer/2026-10-10/cursor-value-ignored.log"
+    ]
+  }
+}

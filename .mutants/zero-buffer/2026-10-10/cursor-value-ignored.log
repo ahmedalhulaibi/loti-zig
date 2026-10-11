@@ -1,0 +1,23 @@
+test_invalid_eof_cqe_stops_before_further_pool_operations (tests.test_provided_buffer_zero_failure.ProvidedBufferZeroFailureContracts.test_invalid_eof_cqe_stops_before_further_pool_operations)
+Kills end-of-plan-only validation, speculative re-provision, invented error and unclosed ring/source. ... ok
+test_literal_and_invalid_modes_keep_the_default_contract (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract)
+Kills fabricated zero-result report, broad flags/error acceptance and default CLI drift. ... ok
+test_actual_submissions_absolute_cursor_and_damaged_traces (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_actual_submissions_absolute_cursor_and_damaged_traces)
+Kills fabricated cursor, missing/implicit submissions and synchronous source read proxies. ...
+  test_actual_submissions_absolute_cursor_and_damaged_traces (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_actual_submissions_absolute_cursor_and_damaged_traces) (case='cursor_changed')
+Kills fabricated cursor, missing/implicit submissions and synchronous source read proxies. ... FAIL
+
+======================================================================
+FAIL: test_actual_submissions_absolute_cursor_and_damaged_traces (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_actual_submissions_absolute_cursor_and_damaged_traces) (case='cursor_changed')
+Kills fabricated cursor, missing/implicit submissions and synchronous source read proxies.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffer_zero.py", line 135, in test_actual_submissions_absolute_cursor_and_damaged_traces
+    with self.assertRaises(ValueError) as failure:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.516s
+
+FAILED (failures=1)

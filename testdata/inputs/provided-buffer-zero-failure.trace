@@ -1,0 +1,6 @@
+io_uring_setup(8, {flags=0, sq_entries=8, cq_entries=16}) = 4
+lseek(3, 0, SEEK_CUR) = 0
+io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1
+close(4) = 0
+close(3) = 0

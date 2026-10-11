@@ -1,6 +1,6 @@
 {
   "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review.",
-  "book_sha256": "ac86eaaf0f50a0c8f580e88a3d1720a3b5996d1f0aa333268859dc2e49884746",
+  "book_sha256": "6c4e3ac195a38a1f08d3143b4fdac60c7929661cc5d254e54616856770ef5e72",
   "renderer": {
     "node": "v26.8.1",
     "playwright": "1.64.0",
@@ -7739,5 +7739,6 @@
   },
   "replay_after_literal_policy": "Full79-test/fifteen400-case suite and strict rebuild followed by final81-case sandboxed/offline/JS-disabled browser sweep; old screenshots and historical mutation assessments remain historical, not repeated.",
   "replay_after_sqpoll_wakeup": "Full81-test/fifteen400-case suite; strict final archive rebuilt afterward; final81-case browser sweep. Old screenshots and historical mutation evidence remain historical.",
-  "replay_after_submission_prose": "Full84-test suite followed by final strict EPUB/source/narrative verifier/browser/EPUBCheck. Historical screenshots and mutation/diagnostic evidence retained, not a device/review claim."
+  "replay_after_submission_prose": "Full84-test suite followed by final strict EPUB/source/narrative verifier/browser/EPUBCheck. Historical screenshots and mutation/diagnostic evidence retained, not a device/review claim.",
+  "replay_after_provided_buffer_zero": "Full88-test/sixteen400-case suite followed by strict final HTML/EPUB/narrative verifier/browser/EPUBCheck. Current final book/measurements refreshed; historical screenshots and mutations/diagnostics retained; not device/review acceptance."
 }

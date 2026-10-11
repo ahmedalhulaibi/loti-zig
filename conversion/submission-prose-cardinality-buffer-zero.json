@@ -1,0 +1,17 @@
+{
+  "scope": "Transparent existing report-cardinality update after4 new provided-buffer-zero narrative paragraphs; not test semantics weakening, independent review or historical mutation re-assessment. Original before-buffer-zero hash snapshot preserved; original strengthening/draft still retained.",
+  "previous": "submission-prose-spec-before-buffer-zero.json",
+  "changed_expectation": {
+    "narrative_paragraphs": {
+      "before": 355,
+      "after": 359
+    }
+  },
+  "unchanged": [
+    "three whole bindings",
+    "two manually authored reader paragraphs",
+    "six damaged narrative cases",
+    "one formatting-positive case",
+    "whole structured errors and language/literal/link/licence counts"
+  ]
+}

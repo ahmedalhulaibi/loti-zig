@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 58 native CLI/TCP/reference tests plus twelve binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 61 native CLI/TCP/reference tests plus thirteen binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -328,7 +328,8 @@ literal report and current source/fixture/SDK hashes. The new model property
 executes 400 valid generated binary/command cases; nine plan/input negatives
 have exact typed errors. Selected groups contain one buffer, avoiding any claim
 about multi-buffer selection order. Input bytes are unchanged; only first 64
-bytes are read. EOF/zero-result, multishot, concurrent arrival and cancellation
+bytes are read. At that positive-read checkpoint, EOF/zero-result, multishot,
+concurrent arrival and cancellation
 ownership remain unverified, as do broader state/failure paths.
 
 Eight compiled mutants die: missing BUFFER_SELECT, wrong group, ID decoded from
@@ -951,20 +952,71 @@ unittest errors, not accepted kills. Original error logs retained. An edit-range
 anchor slip/stale-anchor rejection was corrected without loss; no test expectation
 was weakened. See `submission-prose-verification.json`/`mutation-submission-prose.json`.
 
-Current bounded total **206**:144 native,3 index,31 trace-parser,10 binding-producer,
+Historical prose-fidelity checkpoint bounded total **206**:144 native,3 index,31 trace-parser,10 binding-producer,
 3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. Not all99
 bindings, whole-book/whole-port semantics, SDK/kernel assurance or independent
 review. Active primary LSP on four changed Python paths: zero findings; existing
-other-feature suppressions/OPF infos stay disclosed. Full84-test suite has zero
+other-feature suppressions/OPF infos stay disclosed. Historical84-test suite had zero
 failures/errors/skips and fifteen attributed400-case properties (161.036s), followed
 by strict HTML/EPUB, final355-paragraph/120-literal publication verification,
 81 browser cases with zero violations and EPUBCheck5.2.1 with zero messages.
 No reviewer retry/fallback, push or goal completion; required review remains blocked.
 
+## Legacy-buffer EOF ownership and early error guards
+
+`0a0aade` records a missing --zero-result CLI and private native ABI exploration:
+positive-length EOF returns0 **with BUFFER/ID257**, consumes the legacy buffer,
+and subsequent remove1 returns0/READ returns-ENOBUFS. Requested READ length0 at
+offset0 instead reads min(input,64) bytes from that provided buffer. This is
+not ordinary zero-byte I/O or pbuf-ring behavior. Original delme.c:208–212
+provide/remove declarations and scalar READ ownership now have this supplement.
+
+Stable nonempty regular inputs1–4097/no external output;13 actual SQE snapshots,
+tagged CQEs, exact bytes/0xa5 storage, removal0/1, pool exhaustion/re-provision,
+absolute cursor0 and empty SQ/CQ. Four public contracts:400 generated binaries,
+manual5-byte whole report/seven typed negatives/unchanged old defaults/model/
+fixtures;13-call ordinary-enter/cursor oracle with eight damages; a selected-error
+supplement with seven damages and post-retirement FD-reuse positive. CQEs are
+validated **before** subsequent pool/storage operations. --fail-eof produces a
+real invalid-FD READ CQE, stops after two submits and closes the ring before the
+source; no speculative re-provision/removal or JSON report.
+
+Original success core is exact. Failure supplement followed the first green
+implementation/body audit; original failure draft/hash snapshot retained. A
+harness correction tracks first successful source-FD retirement: debug backtrace
+source reads reuse its numeric FD after closure, not the original resource.
+Existing prose-report cardinality changed355→359 for four added paragraphs;
+original before-change snapshot/six damages/bindings/reader semantics preserved.
+These are transparent author specs/amendments, not ACL/verifier-agent sealing.
+
+Eleven compiled native/three syntax-valid parser mutants are substantively killed,
+including EOF length0 proxy, hidden flags, poison/bytes, fake cursor and deferred
+validation. Initial comptime_int bitwise-not variant was uncompiled/excluded;
+explicit u8 revised variant compiled/killed. Its original build log was overwritten;
+original driver/partial report retained and original compiler error separately
+reproduced on a disposable copy, not mislabelled original evidence. First13 kills
+are a superseded pre-guard checkpoint; final14 reassessment is counted once.
+Initial red Hypothesis assertion group is four **explicit** missing-mode failures,
+not mutant kills or a shrink. Final native/source/core restoration and seven-test
+baseline (two400-case properties) are exact; sequential4GiB/no-swap/128-task scope.
+
+Current bounded total **220**:155 native,3 index,34 trace-parser,10 binding-producer,
+3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. Full88-test
+suite: zero failures/errors/skips, sixteen attributed400-case properties,
+164.813s; exact Zig0.17.0/51 steps/25 executables. Strict final HTML/EPUB then
+120 literals/359 source paragraphs,81 browser cases/zero violations and
+EPUBCheck5.2.1/zero messages. Existing suppressions/OPF infos remain disclosed;
+active primary LSP on six changed paths had zero findings. Unsupported Fabric/
+stale graphs/churn history are not complete callers or implementation acceptance.
+Not all descriptor types/errors/unwinds, pbuf-rings, multi-buffer ordering,
+multishot/concurrent/cancellation races, other kernels/architectures, physical
+storage or independent/device assurance. See `provided-buffer-zero-verification.json`.
+Mandatory review host unchanged; no retry/fallback/push/goal completion.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **84 passed**
-  (58 native + one VM + eight publication + three inventory + two line-index + twelve binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **88 passed**
+  (61 native + one VM + eight publication + three inventory + two line-index + thirteen binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -979,7 +1031,7 @@ No reviewer retry/fallback, push or goal completion; required review remains blo
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  fifteen properties**, source hashes, 84 passing tests and zero skips. These remain
+  sixteen properties**, source hashes, 88 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

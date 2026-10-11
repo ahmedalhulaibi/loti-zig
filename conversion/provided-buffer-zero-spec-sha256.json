@@ -1,0 +1,10 @@
+{
+  "scope": "Author preimplementation contracts,not verifier-agent/ACL seal. Preserve old default/model/fixtures exactly.13 steps: positive-length EOF0 carries BUFFER/ID257 and consumes; remove0/exhaustion prove pool gone. Requestedlen0 on selected legacy64-byte buffer reads minN64 positive bytes; final remove1 drains pool. Cursor0 and whole request/CQE/storage oracle;400 generated binaries,manual5-byte literal,eight trace damages. Current Linux evidence,not other descriptor classes/pbuf-rings/multishot/races.",
+  "source_sha256": {
+    "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c",
+    "testdata/inputs/provided-buffer-zero-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/provided-buffer-zero-report.json": "c982c21651dc0fd412ec874e9d541006f52061cdf90af2b6bdd1b76bbbfbab3c",
+    "testdata/inputs/provided-buffer-zero.trace": "216592c6451f50c2ee35998b8df8f5b000367980aab366b7d7e23549225775ce",
+    "testdata/inputs/provided-buffer-zero-invalid-traces.json": "9712a88916795ebbd6596a4f17b6d6de9f154fdbffed96bdbd468646a8f8348d"
+  }
+}

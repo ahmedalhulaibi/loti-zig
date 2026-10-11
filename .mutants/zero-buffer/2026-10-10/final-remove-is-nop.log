@@ -1,0 +1,59 @@
+test_invalid_eof_cqe_stops_before_further_pool_operations (tests.test_provided_buffer_zero_failure.ProvidedBufferZeroFailureContracts.test_invalid_eof_cqe_stops_before_further_pool_operations)
+Kills end-of-plan-only validation, speculative re-provision, invented error and unclosed ring/source. ... ok
+test_literal_and_invalid_modes_keep_the_default_contract (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract)
+Kills fabricated zero-result report, broad flags/error acceptance and default CLI drift. ... FAIL
+test_actual_submissions_absolute_cursor_and_damaged_traces (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_actual_submissions_absolute_cursor_and_damaged_traces)
+Kills fabricated cursor, missing/implicit submissions and synchronous source read proxies. ... FAIL
+
+======================================================================
+FAIL: test_literal_and_invalid_modes_keep_the_default_contract (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract)
+Kills fabricated zero-result report, broad flags/error acceptance and default CLI drift.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffer_zero.py", line 99, in test_literal_and_invalid_modes_keep_the_default_contract
+    self.assertEqual(json.loads(run("reference-buffers", source, "--zero-result").stdout),
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_examples.py", line 26, in run
+    raise AssertionError(f"{name} exited {result.returncode}: {result.stderr.decode(errors='replace')}")
+AssertionError: reference-buffers exited 1: error: UnexpectedPlainBufferCompletion
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:22:9: 0x1205a57 in expectPlain (reference_buffers.zig)
+        return error.UnexpectedPlainBufferCompletion;
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:79:26: 0x12067d9 in zeroStep (reference_buffers.zig)
+        .remove_final => try expectPlain(cqe, 1),
+                         ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:108:17: 0x120863a in zeroResults (reference_buffers.zig)
+    steps[11] = try zeroStep(&ring, try ring.nop(12), fd, .remove_final, &storage);
+                ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:145:9: 0x120a685 in main (reference_buffers.zig)
+        return zeroResults(init.io, file.handle, stat.size, if (fail_eof) .fail_eof else .observe);
+        ^
+
+
+======================================================================
+FAIL: test_actual_submissions_absolute_cursor_and_damaged_traces (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_actual_submissions_absolute_cursor_and_damaged_traces)
+Kills fabricated cursor, missing/implicit submissions and synchronous source read proxies.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffer_zero.py", line 144, in test_actual_submissions_absolute_cursor_and_damaged_traces
+    self.assertEqual(result.returncode, 0, result.stderr.decode(errors="replace"))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : error: UnexpectedPlainBufferCompletion
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:22:9: 0x1205a57 in expectPlain (reference_buffers.zig)
+        return error.UnexpectedPlainBufferCompletion;
+        ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:79:26: 0x12067d9 in zeroStep (reference_buffers.zig)
+        .remove_final => try expectPlain(cqe, 1),
+                         ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:108:17: 0x120863a in zeroResults (reference_buffers.zig)
+    steps[11] = try zeroStep(&ring, try ring.nop(12), fd, .remove_final, &storage);
+                ^
+/home/ahmed/workspace/va/loti-zig/examples/reference_buffers.zig:145:9: 0x120a685 in main (reference_buffers.zig)
+        return zeroResults(init.io, file.handle, stat.size, if (fail_eof) .fail_eof else .observe);
+        ^
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.188s
+
+FAILED (failures=2)

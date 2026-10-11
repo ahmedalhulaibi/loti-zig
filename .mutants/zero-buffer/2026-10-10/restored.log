@@ -1,0 +1,16 @@
+test_actual_submissions_absolute_cursor_and_damaged_traces (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_actual_submissions_absolute_cursor_and_damaged_traces)
+Kills fabricated cursor, missing/implicit submissions and synchronous source read proxies. ... ok
+test_literal_and_invalid_modes_keep_the_default_contract (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract)
+Kills fabricated zero-result report, broad flags/error acceptance and default CLI drift. ... ok
+test_zero_result_flags_and_requested_zero_length_follow_buffer_ownership (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_zero_result_flags_and_requested_zero_length_follow_buffer_ownership)
+Kills result-positive ownership, EOF len0 proxy, wrong offset/group/ID, stale poison and early reuse. ... ok
+test_invalid_plans_and_inputs_are_rejected (tests.test_provided_buffers.ProvidedBufferContracts.test_invalid_plans_and_inputs_are_rejected) ... ok
+test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures) ... ok
+test_selected_buffers_follow_ownership_model (tests.test_provided_buffers.ProvidedBufferContracts.test_selected_buffers_follow_ownership_model) ... ok
+test_invalid_eof_cqe_stops_before_further_pool_operations (tests.test_provided_buffer_zero_failure.ProvidedBufferZeroFailureContracts.test_invalid_eof_cqe_stops_before_further_pool_operations)
+Kills end-of-plan-only validation, speculative re-provision, invented error and unclosed ring/source. ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 8.898s
+
+OK

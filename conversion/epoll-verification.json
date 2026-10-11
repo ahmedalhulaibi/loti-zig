@@ -11,9 +11,9 @@
     "examples/reference_epoll.zig": "1aab395c92e951f58c5ebd8deba5c0704efae8e42bfbf447fd09f80f0cc42a3f",
     "tests/test_epoll.py": "16c5648faf1b43d5ac969441c23fdf1f942798f6af1182942ed40916b35a97b5",
     "tests/test_epoll_trace.py": "59f8a49cd5ca6cf31372c18d39b338a0eef88cdf8219479fe4e3258fcdad59d9",
-    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
-    "conversion/reference-map.json": "fdca48a9f891a60f06805072d6dffae726c44c2c9a4c9f81e6a44758c1505f8a",
-    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56",
+    "tools/reference_map.py": "2ab05db26e7c51b3b4dedcb67bff6bbb35853fd87fa394bcb97917434a680234",
+    "conversion/reference-map.json": "028d54813461b75cd24f57506d383dcce5287ef860f1087dac689dd465da096f",
+    "ref-zig/submission.rst": "c3e0ad7424e64879bc10c33a683d2c76a8624636a3390f145a0ba1bff7f15604",
     "conversion/epoll-spec-sha256.json": "bea2067df042453e93da52729f0356333cd71a711dafb7c8f4c7e624ae3f4200",
     "conversion/epoll-spec-amendment.json": "79d3043c93fe153eecd8d2a8b67f97f71a047407f1f20a3c855f301cfc1055d1",
     "testdata/inputs/epoll-default-plan.json": "e5e4841248106c640a837accaea4ab30ce9b03d493dc50fe926f8b41162f3720",
@@ -791,6 +791,14 @@
   },
   "replay_after_submission_prose": {
     "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tools/reference_map.py",
+      "conversion/reference-map.json",
+      "ref-zig/submission.rst"
+    ]
+  },
+  "replay_after_provided_buffer_zero": {
+    "scope": "After full88-test/sixteen400-case suite and final strict publication/narrative/layout/EPUBCheck; current execution-consumer fingerprints only refreshed. Historical mutation/gates/diagnostics remain historical, not independent review.",
     "changed": [
       "tools/reference_map.py",
       "conversion/reference-map.json",

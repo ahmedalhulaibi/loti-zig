@@ -53,7 +53,7 @@ links. Negative tests reject nine damaged-archive classes plus 19 source-literal
 policy and four rendered-language damages, including matched stale artifact pairs.
 All literals have explicit Zig/console/JSON/text labels matching packaged classes;
 checks reject bounded C-import/helper/compiler markers. Ordered source fidelity
-also checks 355 resolved narrative paragraphs (references/typography resolved;
+also checks 359 resolved narrative paragraphs (references/typography resolved;
 formatting whitespace folded), rejecting six stale/missing/duplicated/reordered
 prose damages while accepting whitespace-only formatting. It excludes structural
 TOC compact paragraphs/rubrics/captions, not code literals. Three whole bindings
@@ -126,6 +126,8 @@ zig-out/bin/reference-accept 16 both
 zig-out/bin/reference-messages input.txt 3
 zig-out/bin/reference-buffers input.txt
 zig-out/bin/reference-buffers input.txt read read provide read
+zig-out/bin/reference-buffers input.txt --zero-result
+zig-out/bin/reference-buffers input.txt --zero-result --fail-eof
 zig-out/bin/reference-registration input.txt replacement.txt
 zig-out/bin/reference-submission input.txt
 zig-out/bin/reference-raw input.txt
@@ -151,7 +153,13 @@ head/readiness transitions; u32 wrap, overflow and concurrent consumers remain o
 ownership. Nonempty regular input is read at offset zero into 64-byte slots.
 Model-based command tests verify flags/IDs, exhaustion, group isolation,
 recycling, actual removal counts and final cleanup. Selected groups contain one
-buffer each; EOF, concurrency, multishot and cancellation races remain open.
+buffer each. Optional `--zero-result` (stable regular1–4097 bytes/no extra commands)
+observes positive-length EOF0 with BUFFER/ID257, actual remove0 and exhaustion.
+Requested length0 at offset0 reads the legacy64-byte buffer capacity, not ordinary
+zero-byte I/O; whole bytes/poison/SQEs/CQEs/cursor/final remove1 are checked.
+Optional `--fail-eof` produces a real invalid-FD READ CQE; early validation stops
+after two submits, then closes the ring before the owned input (no pool reuse).
+Concurrency, pbuf-rings, multishot and cancellation races remain open.
 
 `reference-rwf INPUT` uses a private memfd: actual RWF_APPEND bytes and explicit/
 current cursor behavior, ordinary overwrite proving flags are not sticky,

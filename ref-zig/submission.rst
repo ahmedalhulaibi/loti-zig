@@ -455,14 +455,44 @@ Snapshots are owned copies, not slices into subsequently recycled memory. All
 requests are drained before reuse; an available final buffer is explicitly
 removed before pool lifetime ends. These are provided buffers, **not fixed
 registered buffers**. The selected groups each hold one buffer, so no kernel
-multi-buffer selection order is assumed. EOF/zero-result ownership, concurrent
-or multishot receive and cancellation races remain unverified.
+multi-buffer selection order is assumed. Concurrent/multishot receive,
+ring-based provided buffers and cancellation races remain unverified.
+
+Optional ``--zero-result`` takes a stable nonempty regular input of 1–4097 bytes,
+without additional commands or an output file. A positive-length 64-byte READ
+at the file's actual size returns zero **with BUFFER/ID 257** on this kernel.
+The unchanged 0xa5 storage does not imply pool ownership: a subsequent removal
+of one buffer returns zero, and another selected EOF read returns ``-ENOBUFS``.
+Inspect CQE flags/ID, not just ``res > 0``, before deciding whether to re-provide.
+
+After re-provision, the reference submits a selected READ with requested length
+zero at offset zero. On this legacy 64-byte pool, that request reads up to the
+provided buffer's capacity and consumes it; it is **not** an ordinary zero-byte
+read or an EOF test. Actual prefix bytes, untouched tails and a second removal
+returning zero distinguish this case from the zero-result EOF completion.
+
+All 13 requests have actual SQE snapshots and correlated CQEs. Re-provision is
+after completion; final removal returns one, then EOF selection is exhausted.
+The input cursor is queried before/after and remains zero because offsets are
+absolute. The new test compares whole reports against independent binary/literal
+oracles and checks real submission/wait/cursor syscalls. These bounded sequential
+legacy-buffer observations do not establish other descriptor classes, pbuf-ring
+semantics, multishot/cancellation races or independent review.
+
+Each CQE is validated before further pool operations or a storage reset. Optional
+``--zero-result --fail-eof`` deliberately uses an invalid descriptor for the EOF
+READ. After provide/READ only, ``UnexpectedBufferZeroSelection`` aborts without a
+report or further re-provision/removal. The trace observes exactly two submits,
+then ring closure before source closure; input bytes remain unchanged. This
+checks one real error/unwind path, not all completion errors or cancellations.
 
 .. code-block:: console
 
    zig build
    zig-out/bin/reference-buffers input.bin
    zig-out/bin/reference-buffers input.bin read read provide read
+   zig-out/bin/reference-buffers input.bin --zero-result
+   zig-out/bin/reference-buffers input.bin --zero-result --fail-eof
 
 .. literalinclude:: ../examples/reference_buffers.zig
    :language: zig

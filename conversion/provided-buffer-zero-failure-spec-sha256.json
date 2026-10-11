@@ -1,0 +1,10 @@
+{
+  "scope": "Author post-first-green safety supplement before guard/mode implementation: a deliberate invalid-FD EOF READ must abort after provide1/read2, not validate selection after all13 steps. New --fail-eof is an explicit error mode,not arbitrary host close; source stays owned. One failure/literal/trace contract with seven damages. Original three contracts/spec/fixtures unchanged. Not ACL/sealed verifier-agent or all unwind/race assurance.",
+  "source_sha256": {
+    "tests/test_provided_buffer_zero_failure.py": "405677c7f71341e6e0b49a988254ec74dae187cdd9c8923e36bf4cde190bdb41",
+    "testdata/inputs/provided-buffer-zero-failure.trace": "12f5e986e88711e09ff79131b0c255ad153e2a75d1f0448b201c16bcd52df33b",
+    "testdata/inputs/provided-buffer-zero-failure-invalid-traces.json": "cfb60d4ab7da534037ba226d4ae90f1c793137d9910cb8b64db3bfce57b04b0b",
+    "testdata/inputs/provided-buffer-zero-failure-reused.trace": "f4374317d53c9ca172b2c3a99ee6d41a6c81b9cd901047b3c3cf000fa01260fa"
+  },
+  "amendment": "provided-buffer-zero-failure-spec-amendment.json"
+}

@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 84,
+  "tests_run": 88,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -108,7 +108,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 91
+          "overrun": 87
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -162,7 +162,25 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 79
+          "overrun": 69
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    },
+    {
+      "test": "test_provided_buffer_zero.ProvidedBufferZeroContracts.test_zero_result_flags_and_requested_zero_length_follow_buffer_ownership",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -180,7 +198,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 129
+          "overrun": 121
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -198,7 +216,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 47
+          "overrun": 49
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -290,7 +308,7 @@
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "examples/readv.zig": "5e374ec56283d7f5994c83e3cb8fcd88f88b44a138fdf1c4bfab0316ad34c824",
     "examples/reference_accept.zig": "65e864abebfd4f762906a9504614542da93da7e1aaadd383c31996ad8abf8dd4",
-    "examples/reference_buffers.zig": "a44155312b4f0c382b0c29126516f2ae3dad874ae84d37b9e29790ee5fa5e13a",
+    "examples/reference_buffers.zig": "a53c67f6ed7cd7e42666176ab7306ad491fc5482ea79bf318b537b5be984d53c",
     "examples/reference_completion.zig": "68cb89d6f08ffc80f4d9fe356b3328e00f3675732262b59221d3e0c13bd0fcc6",
     "examples/reference_connect.zig": "222ea4bb96e82e33f6ac52aeafa1d60e6387877a844f9a88c2f54cb2c4b9e909",
     "examples/reference_epoll.zig": "1aab395c92e951f58c5ebd8deba5c0704efae8e42bfbf447fd09f80f0cc42a3f",
@@ -309,7 +327,7 @@
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
     "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
-    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56",
+    "ref-zig/submission.rst": "c3e0ad7424e64879bc10c33a683d2c76a8624636a3390f145a0ba1bff7f15604",
     "testdata/inputs/accept-flags-invalid-traces.json": "f19b59b619a819edbf2131beffe46b510f67c3ab684dadf255704f67b3225372",
     "testdata/inputs/accept-flags.trace": "0b501a40c2110bfe687aa206523f483cb63d291e6325bc14e28da9aae533f2a6",
     "testdata/inputs/accept-invalid-arguments.json": "83adaf5179fd1cad5012ddb03f2b40538c49f3b8bea67a639e7993e8ae0271db",
@@ -372,6 +390,13 @@
     "testdata/inputs/provided-buffer-invalid-plans.json": "6c7749c1f127f3e155dd3d56aee2003ac0d25755431737e2921eb070c564cd59",
     "testdata/inputs/provided-buffer-plans.json": "d50e0ed4acc123babeba111df163ae802d034cd9695c859f9bf5813d74332199",
     "testdata/inputs/provided-buffer-report.json": "1ddf000940bcf1eaeac3d43c142e8035fbbda8a28e398c4cbe5e01441e3c4c60",
+    "testdata/inputs/provided-buffer-zero-failure-invalid-traces.json": "cfb60d4ab7da534037ba226d4ae90f1c793137d9910cb8b64db3bfce57b04b0b",
+    "testdata/inputs/provided-buffer-zero-failure-reused.trace": "f4374317d53c9ca172b2c3a99ee6d41a6c81b9cd901047b3c3cf000fa01260fa",
+    "testdata/inputs/provided-buffer-zero-failure.trace": "12f5e986e88711e09ff79131b0c255ad153e2a75d1f0448b201c16bcd52df33b",
+    "testdata/inputs/provided-buffer-zero-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
+    "testdata/inputs/provided-buffer-zero-invalid-traces.json": "9712a88916795ebbd6596a4f17b6d6de9f154fdbffed96bdbd468646a8f8348d",
+    "testdata/inputs/provided-buffer-zero-report.json": "c982c21651dc0fd412ec874e9d541006f52061cdf90af2b6bdd1b76bbbfbab3c",
+    "testdata/inputs/provided-buffer-zero.trace": "216592c6451f50c2ee35998b8df8f5b000367980aab366b7d7e23549225775ce",
     "testdata/inputs/reference-semantics-bindings.json": "a1dad2b6ff5bda1a97c18f24f7afd0433bb06a1af210bccc207a37362a08d980",
     "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
     "testdata/inputs/registration-replacement.txt": "5f52cf151d72e08fb506215edf9498de680819fd2d5ed87c7daf59ca7765bcf0",
@@ -417,8 +442,10 @@
     "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23",
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
+    "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c",
+    "tests/test_provided_buffer_zero_failure.py": "405677c7f71341e6e0b49a988254ec74dae187cdd9c8923e36bf4cde190bdb41",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tests/test_publication.py": "7c20159f4469c359b618728e4196f612c544234ba6655ae7c35274c432f8b58e",
+    "tests/test_publication.py": "d0ccb35431c588d7729597552fa1e4badcfa75cee5b039ac833a487285c8f792",
     "tests/test_reader_layout.py": "cddadebec602724823445816f41db2bbda1bd907d936c834104ea3e4eb7cd52a",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
@@ -426,12 +453,12 @@
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
     "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
-    "tests/test_submission_prose.py": "0d08e5af4af3266aa93798e4bbf70405c743cbfb8a3bf5152ff1a3beefb2ee94",
+    "tests/test_submission_prose.py": "71eb1c7ba1fd26f9c28486fdc44143da11fda895d5cd3f7071e7691184ef8036",
     "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e",
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
-    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
+    "tools/reference_map.py": "2ab05db26e7c51b3b4dedcb67bff6bbb35853fd87fa394bcb97917434a680234",
     "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."

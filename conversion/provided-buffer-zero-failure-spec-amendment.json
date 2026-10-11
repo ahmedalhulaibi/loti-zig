@@ -1,0 +1,6 @@
+{
+  "scope": "Transparent harness correction, original draft/hash snapshot retained; no original fixture/behavior/error expectation weakened. Not verifier-agent/ACL seal.",
+  "reason": "Debug traceback source reads reuse the retired numeric sourceFD3 after the original ring4/source3 closures. Bind source retirement to its first successful close, not every later close of that number. Ring closure remains exactly once and before original source closure; two enters/inputcursor/ordering unchanged. Added independent positive post-retirement fd-reuse fixture; seven damages unchanged.",
+  "initial": "provided-buffer-zero-failure-spec-initial-sha256.json",
+  "initial_test": "provided-buffer-zero-failure-test-initial.txt"
+}

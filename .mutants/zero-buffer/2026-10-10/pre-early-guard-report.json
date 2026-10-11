@@ -1,0 +1,191 @@
+{
+  "scope": "Ten compiled native/three syntax-valid trace-parser variants assessed at two table/literal/trace CLI boundaries. Hypothesis assertion groups in initial missing-mode red are not mutant kills/shrinks. Whole-native/SDK/kernel/race/independent-review assurance not claimed.",
+  "mutants": [
+    {
+      "id": "eof-offset-is-zero",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "6da3ca738135a88f8797ee72d038da26e440cb037a03511ae90aa914b8f7878d",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-offset-is-zero.log"
+    },
+    {
+      "id": "eof-zero-length-proxy",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "14d51bdb1ba345a4df812635084eafe2ae006f72b628eae3a861db0cf4425677",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-zero-length-proxy.log"
+    },
+    {
+      "id": "eof-wrong-buffer-group",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "5e02345da1a708e601cda4795853c31bff5ce68abbb4c11f9d21b25540d234dc",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-wrong-buffer-group.log"
+    },
+    {
+      "id": "eof-selection-flag-omitted",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "b6c32705b15c12557f03fb2f4fda9ac6539e11567fe6cc6362459aced94362c9",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-selection-flag-omitted.log"
+    },
+    {
+      "id": "zero-cqe-selection-hidden",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "7e0e24c20df007d1981ab78d45b3dc4c40ad4664c3566d1cf119d792a3546ce2",
+      "log": ".mutants/zero-buffer/2026-10-10/zero-cqe-selection-hidden.log"
+    },
+    {
+      "id": "requested-zero-length-is-64",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "d00e1673dac31b1be8cfc48b9734b90ac90fce8253e0ff770a27cf4409a85c5d",
+      "log": ".mutants/zero-buffer/2026-10-10/requested-zero-length-is-64.log"
+    },
+    {
+      "id": "recycle-poison-omitted",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "199291c5b0bd43cada4df6fc52c8767e227602f87e4e90779450cccdbff53e6f",
+      "log": ".mutants/zero-buffer/2026-10-10/recycle-poison-omitted.log"
+    },
+    {
+      "id": "final-remove-is-nop",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "8be93792a70fdb69813134b3159552ba80583373e72c03eb92fbb0a44aa9344a",
+      "log": ".mutants/zero-buffer/2026-10-10/final-remove-is-nop.log"
+    },
+    {
+      "id": "data-snapshot-is-poison",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "05dcf11184919680361ba149b1d8f738915cbdf2e9738d8c1fd95ad0040d8caa",
+      "log": ".mutants/zero-buffer/2026-10-10/data-snapshot-is-poison.log"
+    },
+    {
+      "id": "cursor-observations-fabricated",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "cae7fec5b2f4f8c62b24bf827aed7ea9e7306bcca9920c3775fb0d4a32d64f22",
+      "log": ".mutants/zero-buffer/2026-10-10/cursor-observations-fabricated.log"
+    },
+    {
+      "id": "submission-count-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "ca34675259934e76ece17504c5ef3afa42e0dad02d416ed7f1986a2938debf5d",
+      "log": ".mutants/zero-buffer/2026-10-10/submission-count-ignored.log"
+    },
+    {
+      "id": "enter-arguments-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 4,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "f1bf5b0e5af5de731fcd2111b2c4e775a8563f0cfefacd2af3a0f806b9a91049",
+      "log": ".mutants/zero-buffer/2026-10-10/enter-arguments-ignored.log"
+    },
+    {
+      "id": "cursor-value-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "895fa1d2dfd4d53ddd43afcc6828a9f5607e578347211d096b02d8d9dba2bc38",
+      "log": ".mutants/zero-buffer/2026-10-10/cursor-value-ignored.log"
+    }
+  ],
+  "restored_source_sha256": {
+    "examples/reference_buffers.zig": "ee1636db72b11c21dbd0393acd6fe11a472cf419f743ce6ea634db143286e6dd",
+    "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c"
+  },
+  "spec_exact": true,
+  "baseline": {
+    "tests": 6,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "generated_cases_per_each_of_two_properties": 400,
+    "log": ".mutants/zero-buffer/2026-10-10/restored.log"
+  },
+  "containment": "Sequential4GiB/no-swap/TasksMax128 user scope; native source restored and rebuilt before Python-only variants, final exact sources/core and native build restored.",
+  "exclusions": [
+    {
+      "id": "eof-selection-flag-omitted-initial",
+      "status": "uncompiled/not assessed",
+      "code": "~linux.IOSQE_BUFFER_SELECT on comptime_int",
+      "correction": "~@as(u8, linux.IOSQE_BUFFER_SELECT)",
+      "reassessment": "Compiled revised variant killed by substantive boundary assertions; original three valid kills retained, no duplicate IDs. Original failed-build log was overwritten by successful same-ID rebuild; retained original driver failure/partial report and separately reproduced original compiler error on a disposable copy (not claimed original log).",
+      "original_driver_log": ".mutants/zero-buffer/2026-10-10/initial-driver-failure.log",
+      "original_partial": ".mutants/zero-buffer/2026-10-10/initial-partial-report-original.json",
+      "corrected_partial": ".mutants/zero-buffer/2026-10-10/initial-partial-report.json",
+      "reproduced_compile_error": ".mutants/zero-buffer/2026-10-10/initial-flag-uncompiled-reproduced.log"
+    }
+  ],
+  "initial_spec_red": {
+    "tests": 3,
+    "failures": 2,
+    "errors": 1,
+    "scope": "The unittest error is an ExceptionGroup of four substantive missing-mode assertions in explicit examples; red coverage evidence only, not mutant kill or a shrunk regression.",
+    "log": ".mutants/zero-buffer/2026-10-10/spec-red.log"
+  },
+  "log_normalization": {
+    "scope": "Trailing spaces/tabs/CR and terminal blank lines only; substantive observations unchanged.",
+    "paths": [
+      ".mutants/zero-buffer/2026-10-10/submission-count-ignored.log",
+      ".mutants/zero-buffer/2026-10-10/enter-arguments-ignored.log",
+      ".mutants/zero-buffer/2026-10-10/cursor-value-ignored.log",
+      ".mutants/zero-buffer/2026-10-10/spec-red.log"
+    ]
+  }
+}

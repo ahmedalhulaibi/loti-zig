@@ -9,9 +9,9 @@
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
     "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
-    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
-    "conversion/reference-map.json": "fdca48a9f891a60f06805072d6dffae726c44c2c9a4c9f81e6a44758c1505f8a",
-    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56",
+    "tools/reference_map.py": "2ab05db26e7c51b3b4dedcb67bff6bbb35853fd87fa394bcb97917434a680234",
+    "conversion/reference-map.json": "028d54813461b75cd24f57506d383dcce5287ef860f1087dac689dd465da096f",
+    "ref-zig/submission.rst": "c3e0ad7424e64879bc10c33a683d2c76a8624636a3390f145a0ba1bff7f15604",
     "testdata/inputs/splice-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
     "testdata/inputs/splice-partial.bin": "7456c2d90a90f290eef60a9724d811da38d479f5a6441990d9b41c4e94b634bb",
     "testdata/inputs/splice-report.json": "c6dd5af2ff11234fc659be050b94eac5a934cc9a008ca0b31e3f47ba088285a8"
@@ -248,6 +248,14 @@
   },
   "replay_after_submission_prose": {
     "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tools/reference_map.py",
+      "conversion/reference-map.json",
+      "ref-zig/submission.rst"
+    ]
+  },
+  "replay_after_provided_buffer_zero": {
+    "scope": "After full88-test/sixteen400-case suite and final strict publication/narrative/layout/EPUBCheck; current execution-consumer fingerprints only refreshed. Historical mutation/gates/diagnostics remain historical, not independent review.",
     "changed": [
       "tools/reference_map.py",
       "conversion/reference-map.json",

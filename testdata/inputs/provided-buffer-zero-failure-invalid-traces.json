@@ -1,0 +1,44 @@
+[
+  {
+    "id": "missing_eof_enter",
+    "old": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\nclose(4) = 0\nclose(3) = 0\n",
+    "new": "close(4) = 0\nclose(3) = 0\n",
+    "error": "IncompleteBufferZeroFailureTrace"
+  },
+  {
+    "id": "deferred_eof_check",
+    "old": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\nclose(4) = 0\nclose(3) = 0\n",
+    "new": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\nclose(4) = 0\nclose(3) = 0\n",
+    "error": "IncompleteBufferZeroFailureTrace"
+  },
+  {
+    "id": "bad_enter_arguments",
+    "old": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "new": "lseek(3, 0, SEEK_CUR) = 0\nio_uring_enter(4, 0, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\n",
+    "error": "WrongBufferZeroFailureEnterArguments"
+  },
+  {
+    "id": "ring_close_missing",
+    "old": "close(4) = 0\nclose(3) = 0\n",
+    "new": "close(3) = 0\n",
+    "error": "IncompleteBufferZeroFailureCleanup"
+  },
+  {
+    "id": "ring_close_before_cqe",
+    "old": "io_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\nclose(4) = 0\nclose(3) = 0\n",
+    "new": "close(4) = 0\nio_uring_enter(4, 1, 1, IORING_ENTER_GETEVENTS, NULL, 8) = 1\nclose(3) = 0\n",
+    "error": "WrongBufferZeroFailureOwnershipOrder"
+  },
+  {
+    "id": "source_close_first",
+    "old": "close(4) = 0\nclose(3) = 0\n",
+    "new": "close(3) = 0\nclose(4) = 0\n",
+    "error": "WrongBufferZeroFailureOwnershipOrder"
+  },
+  {
+    "id": "cursor_wrong",
+    "old": "lseek(3, 0, SEEK_CUR) = 0\n",
+    "new": "lseek(3, 0, SEEK_CUR) = 1\n",
+    "error": "WrongBufferZeroFailureCursor"
+  }
+]

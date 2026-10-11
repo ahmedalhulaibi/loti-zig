@@ -1,0 +1,52 @@
+{
+  "scope": "Ten compiled native/three syntax-valid trace-parser variants assessed at two table/literal/trace CLI boundaries. Hypothesis assertion groups in initial missing-mode red are not mutant kills/shrinks. Whole-native/SDK/kernel/race/independent-review assurance not claimed.",
+  "mutants": [
+    {
+      "id": "eof-offset-is-zero",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "6da3ca738135a88f8797ee72d038da26e440cb037a03511ae90aa914b8f7878d",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-offset-is-zero.log"
+    },
+    {
+      "id": "eof-zero-length-proxy",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "14d51bdb1ba345a4df812635084eafe2ae006f72b628eae3a861db0cf4425677",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-zero-length-proxy.log"
+    },
+    {
+      "id": "eof-wrong-buffer-group",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "5e02345da1a708e601cda4795853c31bff5ce68abbb4c11f9d21b25540d234dc",
+      "log": ".mutants/zero-buffer/2026-10-10/eof-wrong-buffer-group.log"
+    }
+  ],
+  "restored_source_sha256": {
+    "examples/reference_buffers.zig": "ee1636db72b11c21dbd0393acd6fe11a472cf419f743ce6ea634db143286e6dd",
+    "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c"
+  },
+  "spec_exact": true,
+  "baseline": {
+    "tests": 6,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "generated_cases_per_each_of_two_properties": 400,
+    "log": ".mutants/zero-buffer/2026-10-10/restored.log"
+  },
+  "containment": "Sequential4GiB/no-swap/TasksMax128 user scope; native source restored and rebuilt before Python-only variants, final exact sources/core and native build restored."
+}

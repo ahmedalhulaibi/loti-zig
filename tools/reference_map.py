@@ -138,7 +138,7 @@ def generate():
             scope = "compiled type usage; runtime ABI-size checks where applicable"
             if original == "io_uring_cqe":
                 example = BUFFERS
-                scope = "compiled type usage; actual selected/unselected flags and buffer-ID helper outcomes; no CQE32 or multishot assurance"
+                scope = "compiled type usage; actual selected/unselected flags and buffer-ID outcomes including zero-result EOF BUFFER/ID ownership; no CQE32, pbuf-ring or multishot assurance"
         elif original == "IORING_OP_SYNC_FILE_RANGE":
             target, native_source, native_name, example = "raw_ops.sync_file_range", "examples/raw_ops.zig", "sync_file_range", RAW
             scope = "constructed and submitted; valid range and invalid flags/descriptor CQEs checked; not crash-durability evidence"
@@ -190,7 +190,7 @@ def generate():
                     difference = "Stable kernel_timespec retained through CQE; count zero expires by time, not another operation count. Expired timer CQE -ETIME is distinct from successful basic enter return zero." if method == "timeout" else "Target is the original u64 timer tag. Successful removal CQE zero is distinct from original timer CQE -ECANCELED; no assumed CQ arrival order, not all expiration/removal races."
                 elif method in {"provide_buffers", "remove_buffers"}:
                     example = BUFFERS
-                    scope = "constructed and submitted; selected bytes/flags, exhaustion, group isolation, recycling and actual removal counts checked; sequential nonempty regular-file reads only"
+                    scope = "constructed and submitted; selected bytes/flags, exhaustion, isolation, recycling/removal counts plus EOF-result-zero BUFFER/ID ownership and requested-length-zero capacity reads checked; sequential legacy pool/nonempty regular input only, not pbuf-ring or multishot races"
                 elif method in {"poll_add", "poll_remove"}:
                     example = POLL
                     scope = "constructed and submitted; validated command-state model, one-shot IN/rearm, two cancellation CQEs, missing target/invalid FD, HUP/EOF and before-exit pipe closure; independent syscall oracle checks deadline guards; no readiness/cancel race or multishot assurance"

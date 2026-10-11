@@ -21,6 +21,8 @@ buffer; ``buffer_id()`` returns its upper-bit ID or ``error.NoBufferSelected``.
 The :ref:`provided-buffer example <provided_buffers>` executes those paths:
 IDs 257/513 are decoded from actual flags, plain/exhausted CQEs have no selected
 ID, and exact storage snapshots track consumption/recycling/removal.
+Its optional legacy-buffer EOF mode observes ``res == 0`` with BUFFER/ID 257;
+zero result alone does not prove that no buffer was consumed.
 ``IORING_CQE_F_MORE`` can indicate further completions from a multishot request.
 The simple tutorial operations are one-shot, but **one SQE does not universally
 mean one CQE**: multishot, notification and skipped-success features differ.

@@ -1,0 +1,35 @@
+test_invalid_eof_cqe_stops_before_further_pool_operations (tests.test_provided_buffer_zero_failure.ProvidedBufferZeroFailureContracts.test_invalid_eof_cqe_stops_before_further_pool_operations)
+Kills end-of-plan-only validation, speculative re-provision, invented error and unclosed ring/source. ... ok
+test_literal_and_invalid_modes_keep_the_default_contract (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract)
+Kills fabricated zero-result report, broad flags/error acceptance and default CLI drift. ... FAIL
+test_actual_submissions_absolute_cursor_and_damaged_traces (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_actual_submissions_absolute_cursor_and_damaged_traces)
+Kills fabricated cursor, missing/implicit submissions and synchronous source read proxies. ... FAIL
+
+======================================================================
+FAIL: test_literal_and_invalid_modes_keep_the_default_contract (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract)
+Kills fabricated zero-result report, broad flags/error acceptance and default CLI drift.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffer_zero.py", line 99, in test_literal_and_invalid_modes_keep_the_default_contract
+    self.assertEqual(json.loads(run("reference-buffers", source, "--zero-result").stdout),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     json.loads((INPUTS / "provided-buffer-zero-report.json").read_text()))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'gro[788 chars]th': 0, 'flags': 32, 'group': 7}, 'cqe': {'tag[6980 chars]': 0} != {'gro[788 chars]th': 64, 'flags': 32, 'group': 7}, 'cqe': {'ta[6981 chars]': 0}
+Diff is 33473 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_actual_submissions_absolute_cursor_and_damaged_traces (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_actual_submissions_absolute_cursor_and_damaged_traces)
+Kills fabricated cursor, missing/implicit submissions and synchronous source read proxies.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_provided_buffer_zero.py", line 145, in test_actual_submissions_absolute_cursor_and_damaged_traces
+    self.assertEqual(json.loads(result.stdout), json.loads((INPUTS / "provided-buffer-zero-report.json").read_text()))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'gro[788 chars]th': 0, 'flags': 32, 'group': 7}, 'cqe': {'tag[6980 chars]': 0} != {'gro[788 chars]th': 64, 'flags': 32, 'group': 7}, 'cqe': {'ta[6981 chars]': 0}
+Diff is 33473 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.110s
+
+FAILED (failures=2)

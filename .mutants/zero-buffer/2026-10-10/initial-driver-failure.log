@@ -1,0 +1,9 @@
+Running as unit: run-p3551562-i7706965.scope; invocation ID: 43f187c29e4d43c693d3300fb3a93104
+eof-offset-is-zero killed
+eof-zero-length-proxy killed
+eof-wrong-buffer-group killed
+Traceback (most recent call last):
+  File "/tmp/loti-buffer-zero-mutations.py", line 34, in <module>
+    build=run(['zig','build'],directory/(name+'-build.log'));assert build.returncode==0,(name,'uncompiled,excluded')
+                                                                    ^^^^^^^^^^^^^^^^^^^
+AssertionError: ('eof-selection-flag-omitted', 'uncompiled,excluded')
