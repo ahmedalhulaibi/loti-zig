@@ -1,0 +1,10 @@
+Running as unit: run-p3815009-i8009478.scope; invocation ID: 75b1b41003b047869535cfb449968d8d
+nop-construction-only {'tests': 1, 'failures': 1, 'errors': 0, 'skips': 0}
+registered-buffer-index-is-file-slot {'tests': 1, 'failures': 1, 'errors': 0, 'skips': 0}
+iovec-descriptor-claimed-kernel-borrow {'tests': 1, 'failures': 1, 'errors': 0, 'skips': 0}
+recv-result-claimed-capacity {'tests': 1, 'failures': 1, 'errors': 0, 'skips': 0}
+Traceback (most recent call last):
+  File "/tmp/loti-reference-execution-mutations.py", line 26, in <module>
+    assert command([str(root/'.venv/bin/python'),'-m','unittest','tests.test_reference_execution_map','tests.test_reference'],'restored-test.log').returncode==0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

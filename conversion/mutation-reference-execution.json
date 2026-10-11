@@ -1,0 +1,105 @@
+{
+  "scope": "Four syntax-valid binding-producer variants pass generation/freshness but fail whole semantic/execution-reference fixtures. Not native/kernel or whole99-binding/independent acceptance.",
+  "mutants": [
+    {
+      "id": "nop-construction-only",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "registered-buffer-index-is-file-slot",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "iovec-descriptor-claimed-kernel-borrow",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "recv-result-claimed-capacity",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    }
+  ],
+  "source_sha256": {
+    "tools/reference_map.py": "ab77cd15913a7d4571cb8ee05a60bfe55ca083616077977d3e72c93e700d24c5",
+    "conversion/reference-map.json": "62bcaedbf725263258d6071d91bbf2c512d9f71cb08b71880196f202ce31e8d4"
+  },
+  "restored_source_sha256": {
+    "tools/reference_map.py": "ab77cd15913a7d4571cb8ee05a60bfe55ca083616077977d3e72c93e700d24c5",
+    "conversion/reference-map.json": "62bcaedbf725263258d6071d91bbf2c512d9f71cb08b71880196f202ce31e8d4"
+  },
+  "log_normalization": {
+    "scope": "Trailing ASCII spaces/tabs/CR and terminal blank lines only.",
+    "changed": [
+      {
+        "file": ".mutants/reference-execution/2026-10-10/nop-construction-only-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/reference-execution/2026-10-10/registered-buffer-index-is-file-slot-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/reference-execution/2026-10-10/iovec-descriptor-claimed-kernel-borrow-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/reference-execution/2026-10-10/recv-result-claimed-capacity-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/reference-execution/2026-10-10/native-build.log",
+        "original_sha256": "43c24693941cc2dc61d065ef6e4162835de0b1a3b79834208a1c16a88c7a1109",
+        "normalized_sha256": "abba852da9172a166ebbcfd10d6be40c15ec5be3cbc51e66793abdc5ed76f89c"
+      },
+      {
+        "file": ".mutants/reference-execution/2026-10-10/strict-html.log",
+        "original_sha256": "145cd0d480e02bf25c88b80343915c06fdcc3031325c1371e2ea6d03721fdec9",
+        "normalized_sha256": "8dd8ff3153e9e93e7fba214505bbb99713a6dc3c5eefc5511dddf4bd79a41a62"
+      },
+      {
+        "file": ".mutants/reference-execution/2026-10-10/strict-epub.log",
+        "original_sha256": "2b896fbf1dee79a2610ad1342057a850309149d8b2bd0cc1136576fc25328277",
+        "normalized_sha256": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940"
+      }
+    ]
+  },
+  "historical_exclusions": {
+    "initial_assessment": "Original4 at68-byte fixture superseded by final4 at71-byte fixture, not8; initial core/fixture/report/logs retained.",
+    "bytecode_cache_replay": "Restored-source nine-test baseline read equal-length same-second mutated bytecode; driver stopped before report. Excluded logs/driver retained; cache-safe rerun passes baseline. No extra kill or native defect claim."
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "scope": "Author correction of four execution-reference/operand meanings, exact-byte arithmetic and bounded contracts. Not whole99-binding/original-purpose or independent semantic acceptance; goal incomplete.",
+  "reproduction": "reference-execution-reproduction.json",
+  "core": "reference-execution-spec-sha256.json",
+  "initial_core": "reference-execution-spec-initial-sha256.json",
+  "amendment": "reference-execution-spec-amendment.json",
+  "mutation": "mutation-reference-execution.json",
+  "bindings": {
+    "corrected": [
+      "io_uring_prep_nop",
+      "io_uring_prep_read_fixed",
+      "io_uring_prep_recv",
+      "io_uring_prep_write_fixed"
+    ],
+    "other95_whole_rows_unchanged": true,
+    "all99_identity_signatures_unchanged": true,
+    "other_map_fields_unchanged": true,
+    "comparison_base": "e0065176d373d60e1ca2c7c3dfadc55da8b1983c"
+  },
+  "contracts": {
+    "new_tests": 1,
+    "native_sources_unchanged": true,
+    "native_replay": "reference-execution-native-replay.json",
+    "poem_bytes": 71,
+    "fixed_request_lengths": [
+      36,
+      35,
+      36,
+      35
+    ],
+    "nop_cqes": 16,
+    "whole_four_binding_fixture": true,
+    "mutation_count": 4,
+    "restored_baseline_tests": 9,
+    "property_based_claim_for_new_test": false
+  },
+  "native_host": {
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64"
+  },
+  "source_sha256": {
+    "tools/reference_map.py": "ab77cd15913a7d4571cb8ee05a60bfe55ca083616077977d3e72c93e700d24c5",
+    "conversion/reference-map.json": "62bcaedbf725263258d6071d91bbf2c512d9f71cb08b71880196f202ce31e8d4",
+    "tests/test_reference_execution_map.py": "6dd89c58fbfc4a87caa0c4f4a3020a3d2e5278cb5ba8922b132e5f24992e1626",
+    "testdata/inputs/reference-execution-bindings.json": "ad542359cb5038b41c9eaf473b08a4e47758181d6920026fcfb9a8be14a39f5e",
+    "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
+    "examples/reference_completion.zig": "68cb89d6f08ffc80f4d9fe356b3328e00f3675732262b59221d3e0c13bd0fcc6",
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
+    "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
+    "conversion/audit.md": "ea2110c38ebbfd2926c508f3aac7d237d4c2491145af4e0fe2e4c41acc0a541c",
+    "conversion/review-handoff.md": "7510b17bc23dd0dbde64323bc6cf32ccb1bd39d03ed5775739c95854bed6128f",
+    "conversion/reference-execution-native-replay.json": "90a04bba3d8f50121a9c86accaf8328e6a9c962f9fabdc10e5b2d091cd2ceda7",
+    "conversion/reference-execution-spec-amendment.json": "b237337d30f2b9de6da48ea6bc64df601c1ec844df362735603504e3f42132cd"
+  },
+  "reference_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "replayed_consumers": [
+    "accept-verification.json",
+    "connect-verification.json",
+    "copy-short-verification.json",
+    "epoll-verification.json",
+    "file-operations-verification.json",
+    "literal-policy-verification.json",
+    "mapping-failure-verification.json",
+    "messages-verification.json",
+    "ordinary-signal-verification.json",
+    "poll-verification.json",
+    "provided-buffers-verification.json",
+    "reference-semantics-verification.json",
+    "registered-files-verification.json",
+    "rwf-verification.json",
+    "signal-wait-verification.json",
+    "splice-verification.json",
+    "sqpoll-wakeup-verification.json",
+    "submission-prose-verification.json",
+    "provided-buffer-zero-verification.json",
+    "linked-timeout-verification.json",
+    "async-cancel-verification.json",
+    "http-send-verification.json"
+  ],
+  "gates": {
+    "tests": 95,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 168.259,
+    "book_sha256": "a2ebc0225910228cd0f07f485ceff7b2642ddd2da488be2d1f4ee7d5263df5be",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Source pins replayed through amended full95 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical gate/mutation/screenshot fields retained, not rerun or independent/all-kernel/device acceptance.",
+    "zig": "0.17.0",
+    "executables": 25,
+    "build_steps": 51,
+    "strict_html": true,
+    "strict_epub": true,
+    "chapters": 27,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "reader": {
+      "cases": 81,
+      "element_counts": {
+        "pre": 363,
+        "table": 6,
+        "image": 15,
+        "heading": 333,
+        "figure": 0
+      },
+      "violations": 0
+    }
+  },
+  "diagnostics": {
+    "active_all_server_source_paths": 2,
+    "visible_findings": 0,
+    "prior_dispositions": 1,
+    "scope": "Current active probe; one intentionally hidden finding remains disclosed, not unconditional clean verdict."
+  },
+  "navigation": {
+    "fabric": "Unavailable; stale graph is not acceptance. Existing exact native/SDK bodies and caller consumers inspected; no absent-caller inference."
+  },
+  "remote": {
+    "api": {
+      "default_branch": "master",
+      "fork": true,
+      "full_name": "ahmedalhulaibi/loti-zig",
+      "parent": "shuveb/loti",
+      "pushed_at": "2024-08-02T10:09:03Z"
+    },
+    "ssh_master": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+    "local_path": "/home/ahmed/workspace/va/loti-zig",
+    "delivery": "Original remote commit only; conversion not pushed. No upstream PR or release requested."
+  },
+  "completion": {
+    "goal_complete": false,
+    "review": "Supported-child-host blocker unchanged; no retry/fallback/report. Handoff is not review.",
+    "open": "Mandatory independent original-purpose/semantic review, finding resolution/final gates, acceptance and personal-fork delivery.",
+    "limits": "No forced short fixed-buffer/RECV, per-fragment CQE, u32 wrap/concurrent SQPOLL/all flag/error/unwind/kernel or Supernote-device assurance."
+  },
+  "log_sha256": {
+    ".mutants/reference-execution/2026-10-10/nop-construction-only-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    ".mutants/reference-execution/2026-10-10/nop-construction-only-generate.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/reference-execution/2026-10-10/nop-construction-only-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/reference-execution/2026-10-10/nop-construction-only-test.log": "bbcadadf2db0bfe2763187ed9701b2bfe168528219007ad98252631ae1d69de0",
+    ".mutants/reference-execution/2026-10-10/registered-buffer-index-is-file-slot-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    ".mutants/reference-execution/2026-10-10/registered-buffer-index-is-file-slot-generate.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/reference-execution/2026-10-10/registered-buffer-index-is-file-slot-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/reference-execution/2026-10-10/registered-buffer-index-is-file-slot-test.log": "e5d81d10734231e5514afe9ddb08355606cfb0c980676b12b911d89de4f32c9c",
+    ".mutants/reference-execution/2026-10-10/iovec-descriptor-claimed-kernel-borrow-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    ".mutants/reference-execution/2026-10-10/iovec-descriptor-claimed-kernel-borrow-generate.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/reference-execution/2026-10-10/iovec-descriptor-claimed-kernel-borrow-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/reference-execution/2026-10-10/iovec-descriptor-claimed-kernel-borrow-test.log": "eb5ee6f2c911e0cc6040c04c2b7d35ba6fd8c69938f7fd167cbe33b3ab18ae51",
+    ".mutants/reference-execution/2026-10-10/recv-result-claimed-capacity-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    ".mutants/reference-execution/2026-10-10/recv-result-claimed-capacity-generate.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/reference-execution/2026-10-10/recv-result-claimed-capacity-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/reference-execution/2026-10-10/recv-result-claimed-capacity-test.log": "d6c4f6e3ff249f2d8201f5732926cdc131f6e39d17a66e67ca769f446aecbbb1",
+    ".mutants/reference-execution/2026-10-10/restored-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/reference-execution/2026-10-10/restored-test.log": "38ae4673c6fc7459fe31c9cf8d5ab3daea84e2445b3428b392882719314322eb",
+    ".mutants/reference-execution/2026-10-10/spec-red.log": "01cea6f2a976e56a006f83b836c672c6cc4e83ed822d6a9c7d5c23a987ba0a46",
+    ".mutants/reference-execution/2026-10-10/byte-count-spec-red.log": "b5b245fffcfd4e2ab56beccc7fa3c94b7780ebebeffe8a199540cb6665215822",
+    ".mutants/reference-execution/2026-10-10/byte-count-spec-green.log": "d7fe913a317343f58e97bd79f9e8aa8ae8a25ac422555c68e7538f4a2dd39ea2",
+    ".mutants/reference-execution/2026-10-10/aggregate-restored.log": "1b8e155c23a0bb50369a8ba33a9e1f88fad950813827cdeb88ce769873935db6",
+    ".mutants/reference-execution/2026-10-10/native-build.log": "abba852da9172a166ebbcfd10d6be40c15ec5be3cbc51e66793abdc5ed76f89c",
+    ".mutants/reference-execution/2026-10-10/strict-html.log": "8dd8ff3153e9e93e7fba214505bbb99713a6dc3c5eefc5511dddf4bd79a41a62",
+    ".mutants/reference-execution/2026-10-10/strict-epub.log": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940",
+    ".mutants/reference-execution/2026-10-10/publication.log": "b7d1019e3236ebdd9bb624b64d83e3a46e602be353f3a064ffaa57af8c5700c2",
+    ".mutants/reference-execution/2026-10-10/reader.log": "c4081dbf4d07e78a3c48c2dbd1c87bf5f4b378cfae25cf54fe5936523e991b4f",
+    ".mutants/reference-execution/2026-10-10/epubcheck.log": "1b871a801b1773626c473f38741caef8c98ef34b42c5b60ec1c5109e2bdec171",
+    ".mutants/reference-execution/2026-10-10/mutation-driver.log": "cd8bfd394a51d392aa51458fcf15235e2a5e157a5cf614b3cf38211909b835ed"
+  }
+}

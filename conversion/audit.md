@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 64 native CLI/TCP/reference tests plus sixteen binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 64 native CLI/TCP/reference tests plus seventeen binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -1128,7 +1128,7 @@ not extra kills. Full94-test replay:zero failures/errors/skips,16 attributed
 unchanged. Source scope spans native/test/book/map/dispositions/evidence because
 this single public teaching feature owns those consumers, not a new subsystem.
 
-Current bounded total **259**:184 native,3 index,44 trace-parser,10 binding-producer,
+HTTP short-SEND checkpoint bounded total **259**:184 native,3 index,44 trace-parser,10 binding-producer,
 3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. Not whole-port
 acceptance, forced SIGPIPE delivery, forced vector/header short I/O, every
 transport/flag/kernel/error/unwind or concurrent sending assurance. Five active
@@ -1142,10 +1142,52 @@ zero fatals/errors/warnings/infos. These are publication fidelity/layout gates,
 not independent code, Supernote/pagination or font-override acceptance.
 Review remains blocked; no retry/fallback/push or goal completion.
 
+## Executing reference primaries and native operand meanings
+
+NOP, READ_FIXED, WRITE_FIXED and RECV map rows falsely said constructor-only,
+pointing at the intentionally unsubmitted mixed catalog. No native feature was
+missing: actual fixed-buffers writes/reads four registered512-byte ranges,
+checks tags1–4/counts, unregisters and emits the exact71-byte file/stdout poem;
+completion executes16 result-zero NOPs; webserver receives owned TCP requests.
+The primary sources now reflect those existing effects. Native signatures and
+all other95 bindings remain exact; no constructor batch was newly submitted.
+
+Whole four-entry contract authored before the producer fix; initial core/fixture
+and four-mutant assessment retained. Fresh native bytes exposed an author arithmetic
+error:the poem is71 bytes (segments36/35), not68; the reproduction's request lengths
+also need36/35/36/35. Transparent amendment and a new red/green replay correct only
+those counts; no native behavior changed. No ACL-sealing claim. Meanings distinguish prepared SQE
+from CQE, iovec metadata read at preparation from retained byte storage, registered
+buffer index from fixed-file index, and received count from capacity/stream EOF.
+Four syntax-valid producer mutants pass generation/freshness but fail that whole
+contract; exact source/generated/core restoration and nine-test baseline. This is
+selected author semantic coverage, not independent acceptance of all99 bindings.
+
+One reassessment stopped at the restored baseline because Python reused the last
+equal-length, same-second RECV producer bytecode. Retained as an excluded harness
+failure; remove only owned producer bytecode before each fresh subprocess, then
+reassess all four variants and pass the nine-test baseline. Final4 replace initial4,
+not8; no expectation changes for cache handling.
+
+Full95 tests/zero failures/errors/skips,16 attributed400-case properties/168.259s
+after the71-byte amendment; initial95 replay168.366s retained.
+Current bounded total **263**:184 native,3 index,44 trace-parser,14 binding-producer,
+3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. Publication
+counts unchanged:27 chapters/121 literals/368 paragraphs/81 browser cases/pre363.
+Two changed source paths:zero visible all-server findings/one prior disposition,
+not an unconditional clean verdict. Fabric/stale graph remains non-acceptance.
+
+Fresh GitHub/SSH inspection confirms personal fork/parent and local path, but
+remote master is still original `c9ee2424af02e4c1e4765088580107d5e17b826e`.
+`review-handoff.md` now maps the full original-purpose review and required gates;
+it is not a reviewer report. Current supported-host blocker unchanged; no retry,
+fallback, push or goal-completion call. See `reference-execution-verification.json`
+for final publication/source/replay/remote receipts; review and delivery stay open.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **94 passed**
-  (64 native + one VM + eight publication + three inventory + two line-index + sixteen binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **95 passed**
+  (64 native + one VM + eight publication + three inventory + two line-index + seventeen binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -1160,7 +1202,7 @@ Review remains blocked; no retry/fallback/push or goal completion.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  sixteen properties**, source hashes, 94 passing tests and zero skips. These remain
+  sixteen properties**, source hashes, 95 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

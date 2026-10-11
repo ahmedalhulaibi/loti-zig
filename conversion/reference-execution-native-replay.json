@@ -1,0 +1,120 @@
+{
+  "scope": "Author replay of existing native examples; not independent acceptance.",
+  "fixed_buffers": {
+    "exit": 0,
+    "stderr_empty": true,
+    "stdout_is_regular_file": true,
+    "stdout_bytes": 71,
+    "file_bytes": 71,
+    "stdout_hex": "576861742069732074686973206c6966652069662c2066756c6c206f6620636172652c0a57652068617665206e6f2074696d6520746f207374616e6420616e642073746172652e",
+    "file_sha256": "ba73d4132c502cfb2cbfaa576241fbc427219888ded9198d0eb0b4489d3239ba"
+  },
+  "completion": {
+    "empty": 0,
+    "pending": 4,
+    "space": 4,
+    "copied": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "manual": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "drained": 0,
+    "timed_out": true,
+    "timer_result": -62,
+    "nonblocking": {
+      "sq_capacity": 8,
+      "cq_capacity": 16,
+      "pending_before": 8,
+      "full_rejected": true,
+      "pending_after": 8,
+      "sq_tail_before": 17,
+      "sq_tail_after": 17,
+      "submitted": 8,
+      "sq_after_submit": 0,
+      "cq_before": 8,
+      "head_before": 9,
+      "steps": [
+        {
+          "capacity": 0,
+          "before": 8,
+          "count": 0,
+          "after": 8,
+          "head_before": 9,
+          "head_after": 9
+        },
+        {
+          "capacity": 1,
+          "before": 8,
+          "count": 1,
+          "after": 7,
+          "head_before": 9,
+          "head_after": 10
+        },
+        {
+          "capacity": 3,
+          "before": 7,
+          "count": 3,
+          "after": 4,
+          "head_before": 10,
+          "head_after": 13
+        },
+        {
+          "capacity": 8,
+          "before": 4,
+          "count": 4,
+          "after": 0,
+          "head_before": 13,
+          "head_after": 17
+        },
+        {
+          "capacity": 1,
+          "before": 0,
+          "count": 0,
+          "after": 0,
+          "head_before": 17,
+          "head_after": 17
+        }
+      ],
+      "copied": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "drained": 0,
+      "head_after": 17
+    }
+  },
+  "reproduction_erratum": {
+    "fields": [
+      "actual_effects.fixed_buffers.request_lengths",
+      "pending map/fixture/audit exact68-byte claims"
+    ],
+    "recorded_lengths": [
+      34,
+      34,
+      34,
+      34
+    ],
+    "actual_lengths": [
+      36,
+      35,
+      36,
+      35
+    ],
+    "recorded_pending_text_bytes": 68,
+    "correct_text_bytes": 71,
+    "reason": "Existing exact-byte stdout/file hex encodes71 bytes:36-byte first line and35-byte second line. Literal byte segmentation and native replay confirm71. Original reproduction stdout_file_bytes71 is correct; its four34-byte request lengths and pending68-byte prose were incorrect. Original reproduction and initial fixture/core/mutation assessment retained."
+  }
+}

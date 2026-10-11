@@ -1,0 +1,20 @@
+F
+======================================================================
+FAIL: test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts (tests.test_reference_execution_map.ReferenceExecutionMapContracts.test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference_execution_map.py", line 19, in test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[91 chars]ence_submission.zig', 'verification_scope': 'e[1990 chars]qe'}] != [{'or[91 chars]ence_completion.zig', 'verification_scope': 'c[3522 chars]qe'}]
+
+First differing element 0:
+{'ori[90 chars]ence_submission.zig', 'verification_scope': 'e[303 chars]sqe'}
+{'ori[90 chars]ence_completion.zig', 'verification_scope': 'c[542 chars]sqe'}
+
+Diff is 6889 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.068s
+
+FAILED (failures=1)

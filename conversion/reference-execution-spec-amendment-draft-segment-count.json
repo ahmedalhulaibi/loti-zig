@@ -1,0 +1,19 @@
+{
+  "scope": "Transparent author arithmetic correction before finalization; no native or test-logic changes and no independent acceptance.",
+  "initial_core": "reference-execution-spec-initial-sha256.json",
+  "initial_fixture": "reference-execution-bindings-initial.json",
+  "initial_mutation": "mutation-reference-execution-initial.json",
+  "final_core": "reference-execution-spec-sha256.json",
+  "change": "Only READ_FIXED/WRITE_FIXED verification_scope exact68-byte\u2192exact71-byte in fixture/producer/audit. Whole fixture equality verified after that exact replacement.",
+  "independent_observation": "Literal whole poem bytes and native regular-file stdout/file replay both71; source string segments34/37, request lengths34/37/34/37. Original reproduction stdout_file_bytes71 correct; request_lengths four34 wrong and retained.",
+  "native_replay": "reference-execution-native-replay.json",
+  "red_log": ".mutants/reference-execution/2026-10-10/byte-count-spec-red.log",
+  "first_red": "1 test/1 assertion failure/zero errors,0.060s; fixture71 before producer68 correction.",
+  "mutation_policy": "Rerun all four syntax-valid variants after amendment; final4 supersede initial4, not8. Retain initial report/logs.",
+  "harness_exclusion": {
+    "artifact": ".mutants/reference-execution/2026-10-10/excluded-bytecode-cache-replay",
+    "failure": "Restored source was correct, but fresh Python process reused last equal-length same-second RECV producer bytecode;9-test baseline one assertion failure. Driver stopped before final report. No final acceptance or extra mutant count.",
+    "correction": "Before each compiler/generator/test subprocess, remove only owned tools/__pycache__/reference_map.*.pyc. Rerun all four variants and baseline; retain excluded driver/report/logs.",
+    "fixture_policy": "No semantic/test-logic expectation change for cache correction."
+  }
+}

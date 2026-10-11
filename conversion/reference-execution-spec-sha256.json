@@ -1,0 +1,7 @@
+{
+  "scope": "Author amended whole four-entry contract:independently replayed poem71 bytes, not68. Initial core/fixture retained; not ACL seal/verifier-agent or whole-binding acceptance.",
+  "source_sha256": {
+    "tests/test_reference_execution_map.py": "6dd89c58fbfc4a87caa0c4f4a3020a3d2e5278cb5ba8922b132e5f24992e1626",
+    "testdata/inputs/reference-execution-bindings.json": "ad542359cb5038b41c9eaf473b08a4e47758181d6920026fcfb9a8be14a39f5e"
+  }
+}

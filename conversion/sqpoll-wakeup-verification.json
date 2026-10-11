@@ -261,5 +261,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current source pins replayed through full94-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained. Not independent/all kernel/race/device acceptance."
+  },
+  "replay_after_reference_execution": {
+    "tests": 95,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 168.259,
+    "book_sha256": "a2ebc0225910228cd0f07f485ceff7b2642ddd2da488be2d1f4ee7d5263df5be",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Source pins replayed through amended full95 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical gate/mutation/screenshot fields retained, not rerun or independent/all-kernel/device acceptance."
   }
 }

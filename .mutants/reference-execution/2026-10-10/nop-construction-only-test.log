@@ -1,0 +1,22 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts (tests.test_reference_execution_map.ReferenceExecutionMapContracts.test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts) ... FAIL
+
+======================================================================
+FAIL: test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts (tests.test_reference_execution_map.ReferenceExecutionMapContracts.test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference_execution_map.py", line 19, in test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[131 chars]e': 'executed SQE construction; mixed requests[3309 chars]qe'}] != [{'or[131 chars]e': 'constructed and submitted; tagged result-[3482 chars]qe'}]
+
+First differing element 0:
+{'ori[130 chars]e': 'executed SQE construction; mixed requests[329 chars]sqe'}
+{'ori[130 chars]e': 'constructed and submitted; tagged result-[502 chars]sqe'}
+
+Diff is 5558 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.057s
+
+FAILED (failures=1)

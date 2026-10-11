@@ -1,0 +1,61 @@
+{
+  "scope": "Four syntax-valid binding-producer variants pass generation/freshness but fail whole semantic/execution-reference fixtures. Not native/kernel or whole99-binding/independent acceptance.",
+  "mutants": [
+    {
+      "id": "nop-construction-only",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "registered-buffer-index-is-file-slot",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "iovec-descriptor-claimed-kernel-borrow",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "recv-result-claimed-capacity",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    }
+  ],
+  "source_sha256": {
+    "tools/reference_map.py": "8390a42762dff6b291f8fdc1d4c1342cf4bd44a708c7089572024d0e0fd448cb",
+    "conversion/reference-map.json": "64e010fcbccf59b47337dc4c72d75c4f151d938770ce1cfb6e753d4f63af610b"
+  },
+  "restored_source_sha256": {
+    "tools/reference_map.py": "8390a42762dff6b291f8fdc1d4c1342cf4bd44a708c7089572024d0e0fd448cb",
+    "conversion/reference-map.json": "64e010fcbccf59b47337dc4c72d75c4f151d938770ce1cfb6e753d4f63af610b"
+  }
+}

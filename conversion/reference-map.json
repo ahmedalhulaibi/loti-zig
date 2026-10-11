@@ -279,9 +279,9 @@
     {
       "original": "io_uring_prep_nop",
       "zig": "std.os.linux.IoUring.nop",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/reference_completion.zig",
+      "verification_scope": "constructed and submitted; tagged result-zero NOP CQEs, copied/manual consumption, full eight-slot SQ rejection and nonblocking CQ capacity/physical wrap checked; sequential single producer, not u32 counter wrap or concurrent/SQPOLL assurance",
+      "semantic_difference": "Returns a prepared SQE, not a CQE or completed byte count. NOP completion result is zero; caller submits and consumes each tagged CQE exactly once.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn nop(self: *IoUring, user_data: u64) !*linux.io_uring_sqe"
     },
@@ -342,9 +342,9 @@
     {
       "original": "io_uring_prep_read_fixed",
       "zig": "std.os.linux.IoUring.read_fixed",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/fixed_buffers.zig",
+      "verification_scope": "constructed and submitted; four registered512-byte buffers, WRITE_FIXED tags1/2 then READ_FIXED tags3/4 at explicit file offsets, exact71-byte poem/stdout/file and tagged completion counts checked; unregister after both batches, not forced partial I/O, invalid ranges/indices or concurrent/error/unwind assurance",
+      "semantic_difference": "Native *posix.iovec supplies base/len during preparation; SQE stores that byte address/length, not a borrowed iovec pointer. Registered-buffer index goes in buf_index, not the fixed-file table or IOSQE_FIXED_FILE. Retain byte storage through its CQE and while registered; this example keeps iovecs too.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn read_fixed(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: *posix.iovec,\n    offset: u64,\n    buffer_index: u16,\n) !*linux.io_uring_sqe"
     },
@@ -360,9 +360,9 @@
     {
       "original": "io_uring_prep_recv",
       "zig": "std.os.linux.IoUring.recv",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/webserver.zig",
+      "verification_scope": "constructed and submitted; owned loopback HTTP requests including caller-fragmented headers, exact response bytes/statuses, confinement and progress beside a stalled receiver checked; not an attested per-fragment CQE count, forced short RECV, all flags/datagrams/multishot/races/error paths",
+      "semantic_difference": "RecvBuffer.buffer is mutable byte storage retained through CQE; positive stream result is initialized byte count, not requested capacity, and zero for a positive-length TCP request is peer EOF. Receive flags use SQE rw_flags, not u8 dependency flags.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn recv(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: RecvBuffer,\n    flags: u32,\n) !*linux.io_uring_sqe"
     },
@@ -450,9 +450,9 @@
     {
       "original": "io_uring_prep_write_fixed",
       "zig": "std.os.linux.IoUring.write_fixed",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/fixed_buffers.zig",
+      "verification_scope": "constructed and submitted; four registered512-byte buffers, WRITE_FIXED tags1/2 then READ_FIXED tags3/4 at explicit file offsets, exact71-byte poem/stdout/file and tagged completion counts checked; unregister after both batches, not forced partial I/O, invalid ranges/indices or concurrent/error/unwind assurance",
+      "semantic_difference": "Native *posix.iovec supplies base/len during preparation; SQE stores that byte address/length, not a borrowed iovec pointer. Registered-buffer index goes in buf_index, not the fixed-file table or IOSQE_FIXED_FILE. Retain byte storage through its CQE and while registered; this example keeps iovecs too.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn write_fixed(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: *posix.iovec,\n    offset: u64,\n    buffer_index: u16,\n) !*linux.io_uring_sqe"
     },

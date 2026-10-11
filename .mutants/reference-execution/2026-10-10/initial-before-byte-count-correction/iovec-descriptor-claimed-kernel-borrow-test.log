@@ -1,0 +1,22 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts (tests.test_reference_execution_map.ReferenceExecutionMapContracts.test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts) ... FAIL
+
+======================================================================
+FAIL: test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts (tests.test_reference_execution_map.ReferenceExecutionMapContracts.test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference_execution_map.py", line 19, in test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[1238 chars]es the iovec pointer borrowed by the kernel th[2385 chars]qe'}] != [{'or[1238 chars]es that byte address/length, not a borrowed io[2375 chars]qe'}]
+
+First differing element 1:
+{'ori[547 chars]es the iovec pointer borrowed by the kernel th[433 chars]sqe'}
+{'ori[547 chars]es that byte address/length, not a borrowed io[428 chars]sqe'}
+
+Diff is 5756 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.060s
+
+FAILED (failures=1)
