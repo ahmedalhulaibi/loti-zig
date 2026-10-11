@@ -29,6 +29,11 @@ current5739833e archive/affected3/publication replayed. Native/tests/fixtures an
 historical receipts unchanged. Owner prefers direct review; independent protected
 tests/repair/completeness/acceptance/delivery remain open.
 
+`http-lifecycle-plan.md`/verification and projects/http-lifecycle define12 desired
+scenarios/53 steps and candidate retirement mechanisms;syntax/whole-render checks
+only. All226 existing selected pins/archive5739833e unchanged. Not independent
+executable tests,ACL protection,native repair,new gates or lifecycle acceptance.
+
 Next: finish required purpose comparison, findings resolution and final exact
 HEAD acceptance, then accepted personal-fork delivery and post-push remote/
 source-link verification. Author26/128 comparisons, parent green gates and fork

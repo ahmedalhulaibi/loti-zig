@@ -44,6 +44,13 @@ Current archive5739833e;affected3/strict publication replayed,not a native repai
 Independent protected tests/lifecycle repair,memory retirement,completeness,
 acceptance and delivery remain open.
 
+Preparation:`http-lifecycle-plan.md`/verification and projects/http-lifecycle model:
+12 desired scenarios/53 steps,not executable tests or an accepted design. Exact
+source/SDK shows shared publication before enter can fail;HTTP phase/CQ copying
+are not ownership or publication ledgers. Compare per-tag async cancellation with
+out-of-band synchronous cancellation;close-only rejected. All226 prior selected
+edition inputs/current5739833e archive unchanged;no runtime/full/publication replay.
+
 Next: obtain a runtime-capable independent verifier/qualifying owner-approved
 alternative;specify fatal pending-I/O retirement,then repair/replay affected gates.
 Finish source/purpose comparison and exact required-surface audit before personal

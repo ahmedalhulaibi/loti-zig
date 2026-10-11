@@ -32,6 +32,14 @@ and44d9b32 full103/cold25 remain historical;292 kills unchanged.
 Prior fork identity/source-directory404 retained as historical evidence;complete meaning/
 independent acceptance/final audit/personal-fork delivery open. No push or completion.
 
+Verifier preparation:`http-lifecycle-plan.md`/verification and
+projects/http-lifecycle/{glossary.json,scenarios.js}. Twelve desired scenarios/53
+steps distinguish shared publication,terminal retirement,copied result ownership,
+idle-phase descriptor ownership and control admission. Exact SDK publishes SQ tail
+before enter can fail. Candidate async-per-tag versus synchronous-register drain;
+close-only rejected. Author syntax/render checks are not executable tests,ACL seals
+or accepted design;all226 prior selected inputs/archive5739833e unchanged.
+
 ## Contract
 
 Review the current checked-out commit; record its full hash and clean/dirty state.

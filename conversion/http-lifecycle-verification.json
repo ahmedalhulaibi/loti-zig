@@ -1,0 +1,343 @@
+{
+  "scope": "Author planning-model syntax/render consistency;not executable regression tests,ACL seals,native repair or independent acceptance.",
+  "source_base_commit": "932caf4e893f32f27248d35dc328ddf87695c574",
+  "scenarios": [
+    {
+      "id": "1A",
+      "description": "fatal failure with a prepared unpublished request",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "a RequestLease in PreparedUnpublished holding a ResourceLease"
+        },
+        {
+          "kind": "when",
+          "text": "CleanupStarted disables normal producers"
+        },
+        {
+          "kind": "then",
+          "text": "the request is proven unpublished and becomes AbandonedUnpublished"
+        },
+        {
+          "kind": "and",
+          "text": "cleanup does not flush that application SQE"
+        },
+        {
+          "kind": "and",
+          "text": "the ResourceLease is released only after all other retaining requests retire"
+        }
+      ]
+    },
+    {
+      "id": "1B",
+      "description": "enter fails after shared SQ tail publication",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "a RequestLease made Published before io_uring_enter"
+        },
+        {
+          "kind": "when",
+          "text": "enter reports an error during fatal unwind"
+        },
+        {
+          "kind": "then",
+          "text": "the lease remains Published or PublicationUncertain, never PreparedUnpublished"
+        },
+        {
+          "kind": "and",
+          "text": "its ResourceLease remains live until correlated TerminalCompletion"
+        }
+      ]
+    },
+    {
+      "id": "2A",
+      "description": "drain pending one-shot operations without restarting HTTP work",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "published RequestLease instances for ACCEPT, RECV, heap READ and SEND"
+        },
+        {
+          "kind": "when",
+          "text": "CleanupStarted disables normal completion callbacks and rearming"
+        },
+        {
+          "kind": "then",
+          "text": "cleanup consumes each correlated TerminalCompletion without producing HTTP work"
+        },
+        {
+          "kind": "and",
+          "text": "each ResourceLease stays live through every retaining target retirement"
+        },
+        {
+          "kind": "and",
+          "text": "only then can CleanupSettled permit deferred resource destruction"
+        }
+      ]
+    },
+    {
+      "id": "2B",
+      "description": "cancellation receipt is not target acknowledgment",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "a published RequestLease with an unread target completion or an unresolved target"
+        },
+        {
+          "kind": "when",
+          "text": "a CancellationReceipt reports success, a nonnegative count or no match"
+        },
+        {
+          "kind": "then",
+          "text": "only separately observed TerminalCompletion establishes TargetRetired; it is not consumed twice"
+        },
+        {
+          "kind": "and",
+          "text": "no control tag or submit count substitutes for TargetRetired"
+        }
+      ]
+    },
+    {
+      "id": "2C",
+      "description": "failed timed-out or noncancelable target preserves ownership",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "an unresolved published RequestLease retaining application memory"
+        },
+        {
+          "kind": "when",
+          "text": "cancellation fails, times out or cannot retire the target"
+        },
+        {
+          "kind": "then",
+          "text": "CleanupStalled preserves the ResourceLease and access to outstanding results"
+        },
+        {
+          "kind": "and",
+          "text": "cleanup does not return through defers that free referenced memory"
+        },
+        {
+          "kind": "and",
+          "text": "the verifier requires an explicit safe escalation policy before acceptance"
+        }
+      ]
+    },
+    {
+      "id": "3A",
+      "description": "successful ACCEPT completion remains unread during fatal cleanup",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "an ACCEPT TerminalCompletion in ReadyUnread with a nonnegative descriptor"
+        },
+        {
+          "kind": "when",
+          "text": "cleanup drains that completion despite cancel no-match"
+        },
+        {
+          "kind": "then",
+          "text": "AcceptDescriptorClaimed creates a ResourceLease and ResourceReleased closes it"
+        },
+        {
+          "kind": "and",
+          "text": "owned peer EOF and whole descriptor census are observed before process exit"
+        }
+      ]
+    },
+    {
+      "id": "3B",
+      "description": "copied acknowledged ACCEPT result has not reached a client owner",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "an ACCEPT result in CopiedUndispatched after CQ advancement"
+        },
+        {
+          "kind": "when",
+          "text": "fatal cleanup starts before the result is transferred to a ClientSlot"
+        },
+        {
+          "kind": "then",
+          "text": "cleanup claims and releases its ResourceLease exactly once"
+        },
+        {
+          "kind": "and",
+          "text": "an empty CQ or copied-result discard cannot substitute for release"
+        }
+      ]
+    },
+    {
+      "id": "3C",
+      "description": "descriptor zero is a successful ACCEPT resource",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "an ACCEPT TerminalCompletion whose result is descriptor zero"
+        },
+        {
+          "kind": "when",
+          "text": "cleanup claims successful resource results"
+        },
+        {
+          "kind": "then",
+          "text": "descriptor zero receives a ResourceLease and is closed exactly once"
+        },
+        {
+          "kind": "and",
+          "text": "zero is not classified as EOF or a failed ACCEPT"
+        }
+      ]
+    },
+    {
+      "id": "3D",
+      "description": "idle phase does not erase an already claimed accepted descriptor",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "a ClientSlot still in idle owns an accepted ResourceLease"
+        },
+        {
+          "kind": "when",
+          "text": "configuration fails before reception is queued"
+        },
+        {
+          "kind": "then",
+          "text": "cleanup releases that owned descriptor despite the idle phase"
+        },
+        {
+          "kind": "and",
+          "text": "phase filtering cannot discard descriptor ownership"
+        }
+      ]
+    },
+    {
+      "id": "4A",
+      "description": "cleanup control admission respects a finite SQ",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "up to thirty-three unresolved application leases and a requested sixty-four-entry SQ"
+        },
+        {
+          "kind": "when",
+          "text": "cleanup needs up to thirty-three cancellation requests"
+        },
+        {
+          "kind": "then",
+          "text": "control admission accounts for remaining SQ occupancy, not just controller count"
+        },
+        {
+          "kind": "and",
+          "text": "cleanup does not assume all sixty-six application and control entries fit at once"
+        },
+        {
+          "kind": "and",
+          "text": "backpressure or admission failure cannot trigger early operand release"
+        }
+      ]
+    },
+    {
+      "id": "4B",
+      "description": "fatal observer output failure with a late loopback peer",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "an idle receiver and next ACCEPT are published while another response is active"
+        },
+        {
+          "kind": "when",
+          "text": "observer output fails and a late peer connects"
+        },
+        {
+          "kind": "then",
+          "text": "cleanup retires published requests and claims every successful ACCEPT resource"
+        },
+        {
+          "kind": "and",
+          "text": "pre-exit census and peer EOF prove cleanup, not operating-system process exit"
+        }
+      ]
+    },
+    {
+      "id": "4C",
+      "description": "normal partial I/O and per-client errors remain unchanged",
+      "steps": [
+        {
+          "kind": "given",
+          "text": "CleanupSession is inactive during normal HTTP operation"
+        },
+        {
+          "kind": "when",
+          "text": "a request fragments, SEND completes short or a peer abandons its response"
+        },
+        {
+          "kind": "then",
+          "text": "whole wire bytes and per-client progress preserve the existing public contracts"
+        },
+        {
+          "kind": "and",
+          "text": "another client can finish while one client waits"
+        },
+        {
+          "kind": "and",
+          "text": "normal producer rearming remains enabled outside fatal cleanup"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "scenarios": 12,
+    "steps": 53,
+    "entities": 5,
+    "value_objects": 4,
+    "events": 8
+  },
+  "model_source_sha256": {
+    "projects/http-lifecycle/glossary.json": "37a3dd53860cd8b1f5674735a5c02f0e95f8d842dcd1e25311298edd2c0f7060",
+    "projects/http-lifecycle/scenarios.js": "a1c85e99ac14544150e3c94fb025d11b760904024db8e0e96c9cd00f353256b7"
+  },
+  "authority_sha256": {
+    "/home/ahmed/workspace/va/loti-zig/examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_register_sync_cancel.3.txt": "df54bc97948d515a11d14dbb13f59c8b45a00af6a36595f427ad69884543ae5d",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_prep_cancel.3.txt": "53e1337482cf6e25f7d1b838ebcab80036fcf01e40e683a5eeee79ab3be758e6"
+  },
+  "generator": {
+    "path": "/home/ahmed/.local/share/mise/installs/go/1.26.1/bin/scengen",
+    "sha256": "f87d39744d8a4c534d1f8df585a3230a3f77e6e700338e5e4b2b1e078490384b",
+    "reported_version": "scengen version unknown (built from source)",
+    "templates": {
+      "/home/ahmed/.config/scengen/templates/scenario/markdown.tmpl": "9beabb40fb6f34ec419328db7c51eb411799216119a2f8dc4c68c288f93916fb",
+      "/home/ahmed/.config/scengen/templates/glossary/markdown.tmpl": "a3e55dbd0439257f9a8ca259b88e50e6d730adef2aba3081e4b316ea49e4459c"
+    }
+  },
+  "whole_source_render_equal": true,
+  "two_fresh_parse_renders_byte_identical": true,
+  "unchanged_selected_edition_inputs": 226,
+  "book_sha256": "5739833eb7db7829d616e61382b9449eedd5f183d9fea9d62be9fa4a55ace84e",
+  "artifact_sha256": {
+    "glossary-first.md": "a663595159d408d87ec156c4ce4c61ee9beb9c810dcfa4f359dd0b1df5529e3a",
+    "glossary-requested-json.table.txt": "8921fe61fbb70cb0d33e0167e1cdcb4f25d87b24ecf941d0fffbc6da2098f85a",
+    "glossary-second.md": "a663595159d408d87ec156c4ce4c61ee9beb9c810dcfa4f359dd0b1df5529e3a",
+    "initial-verify-model.log": "3aa404f495726d4ef93424218a7917a7539a3c6f857330ae35451bba18704d9e",
+    "initial-verify-model.py": "06e50799c4786d9fc630f9318a1c8bcd697924e06b8f58b438ebd13b18f9386b",
+    "node-syntax.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scenarios-first.md": "a684f78c61b6928b99f97b15a96dbe6efca39268521cc93c9bef240556ff95d9",
+    "scenarios-requested-json.table.txt": "70300d618c13410a3c4bcae9010bc380ba6750a85c97486205ad81c2fc1061cd",
+    "scenarios-second.md": "a684f78c61b6928b99f97b15a96dbe6efca39268521cc93c9bef240556ff95d9",
+    "scengen-version.log": "eff8d8d946ae8b0199b54a0ebff614e044e90a8bdbb4cddbc6181c03f181343b",
+    "verify-model.py": "e9233fda549a14444923aa72b75e24cb43eaec18cf375a51a5172273d139fb84"
+  },
+  "limits": [
+    "Model is proposed domain scaffolding,not accepted implementation design or an independent behavioral oracle.",
+    "Initial author render checker omitted the template final newline;initial helper/error retained. Corrected checker,not model data or native code.",
+    "No native/manuscript/test/fixture/expectation change or new test/property/kill;no native/full/publication gate replay.",
+    "No simulation/load/device/kernel-compatibility/memory-retirement acceptance;66>64 is a conservative admission bound.",
+    "Initial shim resolution failed;existing absolute generator used without install/config change. Version unknown,binary digest pinned for this receipt only.",
+    "Requested JSON list output was a table. Preserved as table text;not parsed/claimed as successful JSON.",
+    "Kernel-reference search returned no hits;known local manuals read completely. Stale graph disclosed;exact source bodies used.",
+    "Independent protected tests,retirement-failure policy,repair,completeness/meaning acceptance and delivery remain open."
+  ]
+}

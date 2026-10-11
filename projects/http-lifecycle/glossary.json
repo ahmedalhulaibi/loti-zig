@@ -1,0 +1,46 @@
+{
+  "context": "HTTP one-shot request retirement; proposed spec, not implementation or sealed tests",
+  "entities": [
+    {
+      "name": "CleanupSession",
+      "definition": "Fatal-unwind ownership coordinator. Stops normal producers; settles only after request retirement and resource release. A stalled session must not return through operand-invalidating defers.",
+      "fields": [{"name": "id", "kind": "identifier"}, {"name": "state"}, {"name": "requestIds", "kind": "reference"}, {"name": "resourceIds", "kind": "reference"}]
+    },
+    {
+      "name": "RequestLease",
+      "definition": "One logical generation of a one-shot ACCEPT, RECV, READ or SEND. Tag reuse is not identity reuse. Holds operands until terminal target completion, or proven abandonment before publication.",
+      "fields": [{"name": "id", "kind": "identifier"}, {"name": "tag"}, {"name": "generation"}, {"name": "operation"}, {"name": "publicationState"}, {"name": "completionState"}, {"name": "retired"}, {"name": "resourceIds", "kind": "reference"}]
+    },
+    {
+      "name": "ResourceLease",
+      "definition": "Application ownership of a descriptor or allocation. Successful ACCEPT creates a descriptor lease independently of cancellation. FD number alone is not identity; zero is a valid descriptor.",
+      "fields": [{"name": "id", "kind": "identifier"}, {"name": "kind"}, {"name": "ownerId", "kind": "reference"}, {"name": "descriptor"}, {"name": "retainingRequestIds", "kind": "reference"}, {"name": "released"}]
+    },
+    {
+      "name": "ClientSlot",
+      "definition": "Stable server slot. HTTP phase, descriptor ownership and request publication are distinct facts. A slot can own an accepted descriptor before its phase leaves idle.",
+      "fields": [{"name": "id", "kind": "identifier"}, {"name": "phase"}, {"name": "requestId", "kind": "reference"}, {"name": "resourceIds", "kind": "reference"}]
+    },
+    {
+      "name": "ControlLease",
+      "definition": "Cancellation attempt with its own identity and admission/retirement state. Async control tags are distinct from application tags; synchronous return and control CQE are different evidence forms. Controls never restart HTTP work.",
+      "fields": [{"name": "id", "kind": "identifier"}, {"name": "kind"}, {"name": "tag"}, {"name": "targetRequestIds", "kind": "reference"}, {"name": "resourceIds", "kind": "reference"}, {"name": "retired"}]
+    }
+  ],
+  "valueObjects": [
+    {"name": "PublicationState", "definition": "PreparedUnpublished, Published or PublicationUncertain. An enter error after SQ-tail publication cannot revert a lease to PreparedUnpublished.", "fields": [{"name": "state"}]},
+    {"name": "CompletionState", "definition": "Awaiting, ReadyUnread, CopiedUndispatched, Dispatched or AbandonedUnpublished. CQ advancement is not accepted-resource release.", "fields": [{"name": "state"}]},
+    {"name": "TerminalCompletion", "definition": "A correlated terminal one-shot target CQE. Retires that operation's operand use; successful ACCEPT also creates a ResourceLease. Not a control CQE, submit count or ring-close observation.", "fields": [{"name": "requestId", "kind": "reference"}, {"name": "tag"}, {"name": "result"}, {"name": "flags"}]},
+    {"name": "CancellationReceipt", "definition": "Control outcome, not universal target-retirement evidence. Includes cancel CQE, synchronous canceled count, no-match, error or timeout; target completions/resource results remain separately owned.", "fields": [{"name": "targetRequestId", "kind": "reference"}, {"name": "controlTag"}, {"name": "result"}, {"name": "timedOut"}]}
+  ],
+  "domainEvents": [
+    {"name": "CleanupStarted", "definition": "Normal producers and rearming are disabled.", "payload": [{"name": "sessionId"}]},
+    {"name": "RequestPublished", "definition": "SQE becomes visible through shared SQ-tail publication, before enter outcome is interpreted.", "payload": [{"name": "requestId"}]},
+    {"name": "CompletionCopied", "definition": "CQ slot is acknowledged; copied result remains owned until dispatched or claimed by cleanup.", "payload": [{"name": "requestId"}, {"name": "result"}]},
+    {"name": "TargetRetired", "definition": "Terminal target completion consumed, or prepared request proven never published and abandoned.", "payload": [{"name": "requestId"}]},
+    {"name": "AcceptDescriptorClaimed", "definition": "Nonnegative ACCEPT result transferred to explicit resource ownership, including FD0.", "payload": [{"name": "requestId"}, {"name": "resourceId"}, {"name": "descriptor"}]},
+    {"name": "ResourceReleased", "definition": "Owned descriptor closed or allocation freed only after all retaining leases retire.", "payload": [{"name": "resourceId"}]},
+    {"name": "CleanupSettled", "definition": "No unresolved published lease, unclaimed accepted descriptor or retained operand remains; required controls also retired.", "payload": [{"name": "sessionId"}]},
+    {"name": "CleanupStalled", "definition": "Retirement cannot yet be established; preserve ownership and escalate instead of optimistic release.", "payload": [{"name": "sessionId"}, {"name": "reason"}]}
+  ]
+}
