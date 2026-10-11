@@ -1,0 +1,22 @@
+{
+  "base_commit": "44cf3a12f900ec12b2a16ce18582fe0bec475018",
+  "scope": "Only testing.md source pin and explicit scoped replay added; all other original receipt fields identical. Prior exact JSON bytes recoverable from base Git and SHA256. No historical body erased or unrun gate promoted.",
+  "consumers": [
+    "conversion/async-cancel-verification.json",
+    "conversion/http-send-verification.json",
+    "conversion/linked-timeout-verification.json",
+    "conversion/literal-policy-verification.json",
+    "conversion/provided-buffer-zero-verification.json",
+    "conversion/sqpoll-wakeup-verification.json",
+    "conversion/submission-prose-verification.json"
+  ],
+  "source_sha256": {
+    "conversion/async-cancel-verification.json": "5d25650c8781f1cf1bea7bd9d74d54f2048f708b6ec16e4d1afe2d7b5b357fdf",
+    "conversion/http-send-verification.json": "f018ea430d4534cf1f8ae2461ef48a9c0e3d5bc43ccb9186d5edc1e141b6b963",
+    "conversion/linked-timeout-verification.json": "f185e2defc942e65079c55faeb99e42b02ebf441bd8325853dea974fd60b7c3a",
+    "conversion/literal-policy-verification.json": "c10294cd7d6e37f7d8b27b900f6a4a983d9cbf9152ea8393508a2882c47452b0",
+    "conversion/provided-buffer-zero-verification.json": "9c4eb4e40b1edfb00d96a073e80bcdcbd5d12f205b85e1c974274e0812882b19",
+    "conversion/sqpoll-wakeup-verification.json": "5a7f0e88feed28b4abee1a912c16a7753d72782731309aac0efb2083363a8c56",
+    "conversion/submission-prose-verification.json": "55dc2bd34a988184c069b85dd54808f38ea9981e6ae57e75ae63c95c2e07c462"
+  }
+}

@@ -126,7 +126,7 @@
     "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
     "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
     "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
-    "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "testing.md": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed",
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
     "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f",
     "tests/test_publication.py": "25615a30481205efcc5b8b26a2ff475d725718c18c25d44340202a76d8ec4180",
@@ -270,5 +270,26 @@
     "native_build_rerun": false,
     "strict_publication_build_rerun": false,
     "new_mutant_claims": 0
+  },
+  "replay_after_testing_plan": {
+    "scope": "Excluded testing-plan365->368 only; current15 selected public contracts/one400-case property plus23 literal/seven narrative boundary probes replayed without make epub. Historical full99/native/strict/reader/EPUBCheck/mutation bodies retained, not rerun.",
+    "base_commit": "44cf3a12f900ec12b2a16ce18582fe0bec475018",
+    "prior_receipt_sha256": "0aa813962e0a6b195823a231d61ee54afd40042b62a120861283127ef0cc5ebd",
+    "prior_testing_plan_sha256": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "current_testing_plan_sha256": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed",
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 1,
+    "generated_valid_cases": 400,
+    "publication_probes": 30,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "tests_receipt": "conversion/raw-syscall-purpose-tests.json",
+    "tests_receipt_sha256": "672cac5efedc95ff2abd0944ebf7fe2d9eff315c107db04944bed21679304794",
+    "tests_log_sha256": "df8358474779959ca6fb4a00825e7d49211c84bec2153dc1fda84e615a1acf20",
+    "publication_receipt_sha256": "32896fb8b561b9e4c04697716647c95d3747396dc147e31136350b7daffb8eec",
+    "whole_testing_row_checked": true,
+    "all_other_testing_bytes_unchanged": true
   }
 }

@@ -1,0 +1,300 @@
+{
+  "scope": "Author complete raw syscall/index prose and19-block purpose comparison, plus excluded testing-plan count correction; not independent or whole-port acceptance.",
+  "base_commit": "44cf3a12f900ec12b2a16ce18582fe0bec475018",
+  "red_reproduction_commit": "d419e8ad85902117454731518289adaeea2d4bcf",
+  "original_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "original_chapter_sha256": {
+    "ref-iouring/index.rst": "3b8aaf8c76c4e7f9db9acc428855c903aa8c9cc6107c443a3edcaa570836b7d6",
+    "ref-iouring/io_uring_setup.rst": "a2b568848632cd8f165f0454f1c755fe92483975adeb8bb3966a7905d4b1cf19",
+    "ref-iouring/io_uring_enter.rst": "ccd209fe64abe9511d4a5983dbefa07b82782cad0a3d6e91b127410a8a75df4b",
+    "ref-iouring/io_uring_register.rst": "6ce675fbfc34060763eaf595a8ffee13f5f3ef19bb76ab00210cb7762f537e4e"
+  },
+  "original_block_ids": [
+    "ref-iouring/io_uring_enter.rst:11",
+    "ref-iouring/io_uring_enter.rst:15",
+    "ref-iouring/io_uring_enter.rst:58",
+    "ref-iouring/io_uring_enter.rst:64",
+    "ref-iouring/io_uring_enter.rst:76",
+    "ref-iouring/io_uring_enter.rst:425",
+    "ref-iouring/io_uring_register.rst:11",
+    "ref-iouring/io_uring_register.rst:15",
+    "ref-iouring/io_uring_setup.rst:11",
+    "ref-iouring/io_uring_setup.rst:15",
+    "ref-iouring/io_uring_setup.rst:30",
+    "ref-iouring/io_uring_setup.rst:77",
+    "ref-iouring/io_uring_setup.rst:163",
+    "ref-iouring/io_uring_setup.rst:181",
+    "ref-iouring/io_uring_setup.rst:194",
+    "ref-iouring/io_uring_setup.rst:211",
+    "ref-iouring/io_uring_setup.rst:217",
+    "ref-iouring/io_uring_setup.rst:226",
+    "ref-iouring/io_uring_setup.rst:241"
+  ],
+  "inventoried_lines": 330,
+  "outside_block_lines": 197,
+  "complete_prose_scope": {
+    "setup_flags": [
+      "IOPOLL",
+      "SQPOLL",
+      "SQ_AFF",
+      "CQSIZE"
+    ],
+    "feature_families": [
+      "SINGLE_MMAP",
+      "NODROP",
+      "SUBMIT_STABLE",
+      "RW_CUR_POS",
+      "CUR_PERSONALITY"
+    ],
+    "registration_operations": [
+      "IORING_REGISTER_BUFFERS",
+      "IORING_UNREGISTER_BUFFERS",
+      "IORING_REGISTER_FILES",
+      "IORING_REGISTER_FILES_UPDATE",
+      "IORING_UNREGISTER_FILES",
+      "IORING_REGISTER_EVENTFD",
+      "IORING_REGISTER_EVENTFD_ASYNC",
+      "IORING_UNREGISTER_EVENTFD",
+      "IORING_REGISTER_PROBE",
+      "IORING_REGISTER_PERSONALITY",
+      "IORING_UNREGISTER_PERSONALITY"
+    ],
+    "enter": "All original opcodes, five dependency/fixed/async flags, signal race, SQ publication/reuse versus operand lifetime, CQ tag/result/flags and errno recovery; native corrections to obsolete encodings/limits, not blanket current-kernel claims."
+  },
+  "author_decision": "No required original raw-chapter purpose gap found in this subset. Original literals are includes/layout/pseudocode, not19 independent runnable applications. Stale excluded testing-plan cardinality corrected independently; larger original-purpose/review/delivery work remains.",
+  "selected_replay": {
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "unittest_seconds": 6.627,
+    "driver_including_publication_seconds": 23.275,
+    "property_statistics": [
+      {
+        "test": "tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_zero_result_flags_and_requested_zero_length_follow_buffer_ownership",
+        "phases": {
+          "reuse-phase": {
+            "valid": 0,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          },
+          "generate-phase": {
+            "valid": 400,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          }
+        },
+        "stopped_because": "settings.max_examples=400"
+      }
+    ],
+    "publication_probes": 30,
+    "literal_source_cases": 19,
+    "literal_render_cases": 4,
+    "narrative_negative_cases": 6,
+    "narrative_whitespace_positive": 1,
+    "scope": "Existing public contracts plus direct boundary damage helpers; no test or expectation overrides, no make-epub setUpClass, no new damage/mutation kill counts."
+  },
+  "native_observation": {
+    "scope": "One finite owned regular-binary/empty concatenation plan, pipe and file stdout. Current SINGLE_MMAP ordinary one-producer/one-outstanding operation; not u32 wrap, all partial reads/signals, concurrency/overflow, older kernels or independent acceptance.",
+    "fixture": "testdata/inputs/http-send-input.bin",
+    "input_bytes": [
+      131072,
+      0
+    ],
+    "stdout_bytes": 131072,
+    "stdout_sha256": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
+    "pipe_file_equal": true,
+    "input_unchanged": true,
+    "empty_stderr": true,
+    "sq_entries": 8,
+    "cq_entries": 16,
+    "submissions": 34,
+    "enter_shape": {
+      "to_submit": 1,
+      "min_complete": 1,
+      "flags": "IORING_ENTER_GETEVENTS",
+      "mask": null,
+      "mask_bytes": 8,
+      "returned_submissions": 1
+    },
+    "mapping_bytes": [
+      352,
+      512
+    ],
+    "mapping_offsets": [
+      0,
+      268435456
+    ],
+    "mapping_retirement": "SQEs then shared region, each exactly once before observed ring close",
+    "trace": "conversion/raw-syscall-purpose-native.trace",
+    "limits": "Enter counts are submissions, not CQE/result counts. Full output and inspected native tag/result/head publication provide bounded byte evidence; trace does not observe atomics or all operand fields. No synchronous-read substitution assertion from this restricted trace filter."
+  },
+  "testing_plan_repair": {
+    "whole_row_matches": true,
+    "other_bytes_unchanged": true,
+    "old_sha256": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "new_sha256": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed"
+  },
+  "consumers": {
+    "base_commit": "44cf3a12f900ec12b2a16ce18582fe0bec475018",
+    "scope": "Only testing.md source pin and explicit scoped replay added; all other original receipt fields identical. Prior exact JSON bytes recoverable from base Git and SHA256. No historical body erased or unrun gate promoted.",
+    "consumers": [
+      "conversion/async-cancel-verification.json",
+      "conversion/http-send-verification.json",
+      "conversion/linked-timeout-verification.json",
+      "conversion/literal-policy-verification.json",
+      "conversion/provided-buffer-zero-verification.json",
+      "conversion/sqpoll-wakeup-verification.json",
+      "conversion/submission-prose-verification.json"
+    ],
+    "source_sha256": {
+      "conversion/async-cancel-verification.json": "5d25650c8781f1cf1bea7bd9d74d54f2048f708b6ec16e4d1afe2d7b5b357fdf",
+      "conversion/http-send-verification.json": "f018ea430d4534cf1f8ae2461ef48a9c0e3d5bc43ccb9186d5edc1e141b6b963",
+      "conversion/linked-timeout-verification.json": "f185e2defc942e65079c55faeb99e42b02ebf441bd8325853dea974fd60b7c3a",
+      "conversion/literal-policy-verification.json": "c10294cd7d6e37f7d8b27b900f6a4a983d9cbf9152ea8393508a2882c47452b0",
+      "conversion/provided-buffer-zero-verification.json": "9c4eb4e40b1edfb00d96a073e80bcdcbd5d12f205b85e1c974274e0812882b19",
+      "conversion/sqpoll-wakeup-verification.json": "5a7f0e88feed28b4abee1a912c16a7753d72782731309aac0efb2083363a8c56",
+      "conversion/submission-prose-verification.json": "55dc2bd34a988184c069b85dd54808f38ea9981e6ae57e75ae63c95c2e07c462"
+    }
+  },
+  "source_sha256": {
+    "ref-iouring/index.rst": "72b18bd357ebf131c4b46b99f206b11174bae45ae7d2bc8551252edc8c358d62",
+    "ref-iouring/io_uring_setup.rst": "fbaa239e902e9dc6976c3a251f7535938603d946fea57349ea8f73a16e06de5e",
+    "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
+    "ref-iouring/io_uring_register.rst": "91e0bc0059d062312351677a72b6ff65c41b250bac4a66c7a3c90c7ff5e13adb",
+    "ref-iouring/_api/io_uring_setup.inc": "167ca20dbc1fe6dfa69a0b0ad2772806e99a3f6708f999bd2a3dcb1876e72a90",
+    "ref-iouring/_api/io_uring_enter.inc": "099e5ee5430359414878a24f3333bbbf7727d493a3aabf7b25b2557ff030399e",
+    "ref-iouring/_api/io_uring_register.inc": "1ffdb81689f09b6eaac574569cd3097b82e8ef1589717be077db261ede1f2b54",
+    "ref-iouring/_api/params.inc": "1310475b80e751542420510c74f4b190f3e7e1682ff4cc735f1b53d22b804274",
+    "ref-iouring/_api/offsets.inc": "3856266d0b86cb0d23d0456e23a3ffb6443c00c0ba5c930c7b61016d88b3fd38",
+    "low_level.rst": "46eb6a0987772f250de00810d80e067bf696a8e4f8146f1a868e168d6f6014de",
+    "ref-zig/sqe.rst": "e93b2d66aa339084a6dc0307fd1e500fada6badccbf5cf4caab12533da8913c4",
+    "ref-zig/cqe.rst": "91278cb1975342e8a59afacce499e5af3218f9bdb3219007dc4ad15d35f67992",
+    "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
+    "ref-zig/advanced_usage.rst": "1269025f689aad53ed289ccc601cf92af5332d7213768f3a0189bebfe27e5590",
+    "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/reference_setup.zig": "c601487b9e78fd81aec3eabde091353b17b5f87251641b3443d1b302e3518ae7",
+    "examples/reference_signals.zig": "a2cc003381be3903aecfa65d7c7e719e4c0c45817f1ff976dcb6fd3fa54e9382",
+    "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
+    "examples/sq_poll.zig": "38902d98ddfeb80423222129543a23fce78c130b9216c5e92346cb1a0bb710d4",
+    "testing.md": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed",
+    "conversion/source-inventory.json": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
+    "conversion/implicit-literal-disposition.md": "56dac28fc15e6423f2763a312b69bcc4a75cd4c93ec6e27707980b190b210478",
+    "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
+    "conversion/line-disposition-verification.json": "3c616b5bde7685abbaff6321fe0b995151da510bfe47ac235ee4f93e22cb3e05",
+    "conversion/disposition-note-unchanged-publication.json": "6889426b092fa2b660983433af941d9efa36d9b7a1a05f1cb86729e25a43f9df",
+    "conversion/test-verification.json": "ecd50a1acf4a7c915baac14791b6b97f9210a1aa210551ba96c8c19a2ad5ba7c",
+    "conversion/type-binding-verification.json": "13c05be532375277628102ae0d9d6393c29aa31b65b727c880c1d07da99f1d65",
+    "conversion/setup-completion-purpose-verification.json": "00e2ccb85a1cc5c36e0e713a10005ee3745412afc282c3099c6b201a602340ab",
+    "conversion/registration-purpose-verification.json": "a75420c3a751f34ea1eeab1a91f756659a95374773b5020a1d4936db24317dff",
+    "conversion/submission-purpose-verification.json": "abd1a2614bdadb800437928cfe029476f05faac9ef1dc8feed4b5cfd133abcbc",
+    "testdata/inputs/http-send-input.bin": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "tests/test_literal_policy.py": "11253e4b9ed50b9cd1b46875f1bad51c72fc1d65dc4182ac92e7fd6417e5f9e6",
+    "tests/test_submission_prose.py": "d913437ac0258cad5d4f58b46c80e0817748354a21131b3fba5600247bcf98f1",
+    "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
+    "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c",
+    "tests/test_provided_buffer_zero_failure.py": "405677c7f71341e6e0b49a988254ec74dae187cdd9c8923e36bf4cde190bdb41",
+    "tests/test_linked_timeout.py": "bef445b63a28e96d3151c933249f9b073d30f78eb7e368b3ee1a5b97a207d972",
+    "tests/test_async_cancel.py": "3eebe3909f092342b90d29bc3599640976b24b77fa68408e1b800d945e052328",
+    "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f",
+    "tests/test_dispositions.py": "8d0ed94c868b5e4285b774a900f4e3f55bf1fb0c4d9695daa2301323bbeb02e6"
+  },
+  "artifact_sha256": {
+    "conversion/raw-syscall-purpose-audit.md": "38306ca6b8cab5fe45e9fbfa754ad09eb644514c60c122dfa83171abae002820",
+    "conversion/raw-syscall-purpose-consumers.json": "84310db49efb9ef835fffcf7d2ae64798f6cd630c6a1130e5c08ad6ae55f6a6e",
+    "conversion/raw-syscall-purpose-native-run.py": "f1755326bdb21f604b35766019ea1a6c2d55e16aa9203087dee74fe14fce55fd",
+    "conversion/raw-syscall-purpose-native.json": "8ab13c7ccf6aca7faafc2232b55413ef1330cadd365d982162e795269f6c78e0",
+    "conversion/raw-syscall-purpose-native.trace": "eb6bf7d5a0775ff1da68ccd1a7321cb52e24a77bd48c709f6b06c0e79a4e0bbf",
+    "conversion/raw-syscall-purpose-publication.json": "32896fb8b561b9e4c04697716647c95d3747396dc147e31136350b7daffb8eec",
+    "conversion/raw-syscall-purpose-reproduction.json": "7080595141a5414ed9af1c13f60ba50f8c111316fc7d3402d374e63e9175d73f",
+    "conversion/raw-syscall-purpose-run.py": "4a9b814b116d6c10a086a495f010e5e2b930a9e84f739d8e806a68d1cf84efc3",
+    "conversion/raw-syscall-purpose-tests.json": "672cac5efedc95ff2abd0944ebf7fe2d9eff315c107db04944bed21679304794",
+    "conversion/raw-syscall-purpose-tests.log": "df8358474779959ca6fb4a00825e7d49211c84bec2153dc1fda84e615a1acf20"
+  },
+  "sdk_source_sha256": {
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "native_binary_sha256": {
+    "raw-cat": "e80985f70b79ba6fb3ecbaa247f5dcab6163315bcf6cc0d89116d311cddf31f8",
+    "reference-setup": "df60ef4e27b10638a01779b12165301af03b39d395bbeaae483aa094341c95df",
+    "reference-registration": "178f93138d4cf4a63c5c5f415fecb1a4c7a671028498ca5137fd7f6b783a2e0f",
+    "reference-signals": "60a3aa7c76c8d1a639ab384b22bac46c486f34acf1e86fd18e3b493cff26e997",
+    "sq-poll": "42367f30baf09b130d5f7b90b2de5b11812179762e14d40c7089b95a030c6a42",
+    "reference-buffers": "50543a31e3249ed46344ccf6ba0d728c83a01195cfb66ebf60655c6947f87b41",
+    "reference-submission": "f416b8a39b2fe05cca504309c9d1af728dd607c479dce37be79a0012711695a7",
+    "webserver": "5b68d64202c491c8f06408b49fcec207e13be567be655e760bf82861228f9b01"
+  },
+  "historical_gates": {
+    "full_tests": 99,
+    "full_source_pins_checked": 194,
+    "type_source_and_log_pins_checked": 90,
+    "unchanged_native_publication_tool_inputs": 93,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "new_full_suite_run": false,
+    "build_rerun": false,
+    "strict_publication_rerun": false,
+    "make_epub_invoked": false,
+    "reader_rerun": false,
+    "epubcheck_rerun": false,
+    "current_archive_reverified_after_probes": true,
+    "scope": "Only excluded plan/audit/receipt changes; no implementation/manuscript/public-test/producer change. Direct archive fidelity is current; full99/build/strict/reader/EPUBCheck bodies stay historical."
+  },
+  "prose_arithmetic_amendment": {
+    "scope": "Initial uncommitted audit draft said ten registration operations; immutable original has eleven. One-word correction before final audit; no test fixture/expectation/native/mutation change. Original draft exactly reconstructable by reversing the following line replacement.",
+    "original_line": "- All ten original registration operations remain: buffer/file registration and",
+    "corrected_line": "- All eleven original registration operations remain: buffer/file registration and",
+    "original_full_draft_sha256": "d2e8ab3ec3acbd548fed4e7c4f9e447d0eba4c401ac73b31362820f97e8504da",
+    "corrected_audit_sha256": "38306ca6b8cab5fe45e9fbfa754ad09eb644514c60c122dfa83171abae002820"
+  },
+  "diagnostics": {
+    "source": "Active all-server four-path probe",
+    "paths": [
+      "conversion/raw-syscall-purpose-run.py",
+      "conversion/raw-syscall-purpose-native-run.py",
+      "conversion/raw-syscall-purpose-audit.md",
+      "testing.md"
+    ],
+    "primary_errors": 0,
+    "initial_findings": 1,
+    "finding": {
+      "file": "conversion/raw-syscall-purpose-run.py",
+      "line": 74,
+      "tool": "Semgrep",
+      "rule": "python.lang.security.deserialization.pickle.avoid-pickle",
+      "severity": "warning",
+      "message": "Avoid using `pickle`, which is known to lead to code execution vulnerabilities. When unpickling, the serialized data could be manipulated to run arbitrary code. Instead, consider serializing the relevant data as JSON or a similar text-based serialization format."
+    },
+    "disposition": "False-positive in this bounded runner: hardcoded locally generated owned Sphinx doctree after current archive/source verification, no supplied/untrusted file/path. Not permission to load arbitrary pickles; no inline suppression.",
+    "final_visible_findings": 0,
+    "final_dropped_by_disposition": 1,
+    "clean_outcomes": 4,
+    "unsupported": 0,
+    "unavailable": 0,
+    "failed": 0,
+    "inconclusive": 0,
+    "wait_ms": 10000,
+    "scope": "Finding/disposition disclosed; not unconditional or whole-workspace/semantic acceptance."
+  },
+  "instrumentation_limits": [
+    "Session563 became unavailable (unknown process id pi-563); complete15-test log/successful JSON/30 CLI probes and exact copied-log digest independently inspected. Session absence is not success proof.",
+    "Native trace display was truncated; complete retained trace parsed by runner. No absent-call claim from truncated output; restricted filter expressly does not attest synchronous-read absence."
+  ],
+  "navigation": "Actual immutable/current chapters and SDK/helper/consumer bodies read. Cached graph stale/usage missing and unavailable Fabric are not caller, absence or acceptance proof.",
+  "new_mutant_claims": 0,
+  "latest_bounded_author_mutants": 284,
+  "review": "Supported child-host blocker unchanged; no retry/fallback/artifact. Review must cover finalized current HEAD, not obsolete launch base.",
+  "completion": {
+    "goal_complete": false,
+    "delivered": false,
+    "open": "Remaining original-purpose comparisons, mandatory independent review/findings/final prompt-to-artifact acceptance and personal-fork delivery."
+  }
+}

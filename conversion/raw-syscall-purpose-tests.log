@@ -1,0 +1,28 @@
+test_actual_private_ring_wakeup_calls_and_damaged_traces (tests.test_sqpoll_wakeup.PollingWakeContracts.test_actual_private_ring_wakeup_calls_and_damaged_traces)
+Kills metadata-only wakeup/ownership and omitted, wrong-flag or implicit-submission syscall claims. ... ok
+test_observed_sleep_and_cqes_preserve_default_file_bytes (tests.test_sqpoll_wakeup.PollingWakeContracts.test_observed_sleep_and_cqes_preserve_default_file_bytes)
+Kills elapsed-time/fabricated-flag proxies, wrong fixed indexes/offsets and premature CQ consumption. ... ok
+test_actual_submissions_absolute_cursor_and_damaged_traces (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_actual_submissions_absolute_cursor_and_damaged_traces)
+Kills fabricated cursor, missing/implicit submissions and synchronous source read proxies. ... ok
+test_literal_and_invalid_modes_keep_the_default_contract (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_literal_and_invalid_modes_keep_the_default_contract)
+Kills fabricated zero-result report, broad flags/error acceptance and default CLI drift. ... ok
+test_zero_result_flags_and_requested_zero_length_follow_buffer_ownership (tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_zero_result_flags_and_requested_zero_length_follow_buffer_ownership)
+Kills result-positive ownership, EOF len0 proxy, wrong offset/group/ID, stale poison and early reuse. ... ok
+test_invalid_eof_cqe_stops_before_further_pool_operations (tests.test_provided_buffer_zero_failure.ProvidedBufferZeroFailureContracts.test_invalid_eof_cqe_stops_before_further_pool_operations)
+Kills end-of-plan-only validation, speculative re-provision, invented error and unclosed ring/source. ... ok
+test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) ... ok
+test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) ... ok
+test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) ... ok
+test_exact_u64_target_and_unrelated_read_follow_separate_completion_ownership (tests.test_async_cancel.AsyncCancelContracts.test_exact_u64_target_and_unrelated_read_follow_separate_completion_ownership) ... ok
+test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive (tests.test_http_send.HttpSendContracts.test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive) ... ok
+test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) ... ok
+test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings)
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ... ok
+test_damaged_notes_and_stale_reports_fail (tests.test_dispositions.DispositionContracts.test_damaged_notes_and_stale_reports_fail) ... ok
+test_exact_line_index_and_fresh_process_determinism (tests.test_dispositions.DispositionContracts.test_exact_line_index_and_fresh_process_determinism) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 6.627s
+
+OK
+15 tests/one400-case property;23 literal +7 narrative probes; testing row corrected, other bytes/book unchanged

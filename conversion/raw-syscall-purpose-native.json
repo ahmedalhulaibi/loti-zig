@@ -1,0 +1,35 @@
+{
+  "scope": "One finite owned regular-binary/empty concatenation plan, pipe and file stdout. Current SINGLE_MMAP ordinary one-producer/one-outstanding operation; not u32 wrap, all partial reads/signals, concurrency/overflow, older kernels or independent acceptance.",
+  "fixture": "testdata/inputs/http-send-input.bin",
+  "input_bytes": [
+    131072,
+    0
+  ],
+  "stdout_bytes": 131072,
+  "stdout_sha256": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
+  "pipe_file_equal": true,
+  "input_unchanged": true,
+  "empty_stderr": true,
+  "sq_entries": 8,
+  "cq_entries": 16,
+  "submissions": 34,
+  "enter_shape": {
+    "to_submit": 1,
+    "min_complete": 1,
+    "flags": "IORING_ENTER_GETEVENTS",
+    "mask": null,
+    "mask_bytes": 8,
+    "returned_submissions": 1
+  },
+  "mapping_bytes": [
+    352,
+    512
+  ],
+  "mapping_offsets": [
+    0,
+    268435456
+  ],
+  "mapping_retirement": "SQEs then shared region, each exactly once before observed ring close",
+  "trace": "conversion/raw-syscall-purpose-native.trace",
+  "limits": "Enter counts are submissions, not CQE/result counts. Full output and inspected native tag/result/head publication provide bounded byte evidence; trace does not observe atomics or all operand fields. No synchronous-read substitution assertion from this restricted trace filter."
+}

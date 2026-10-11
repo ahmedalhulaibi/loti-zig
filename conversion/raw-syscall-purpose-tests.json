@@ -1,0 +1,363 @@
+{
+  "scope": "15 selected public tests, plus30 existing publication boundary probes run directly without their make-epub setUpClass. No test/expectation overrides, no new full99/mutant/review claim.",
+  "tests": 15,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "seconds": 23.275,
+  "selected_tests": [
+    "tests.test_sqpoll_wakeup",
+    "tests.test_provided_buffer_zero",
+    "tests.test_provided_buffer_zero_failure",
+    "tests.test_linked_timeout",
+    "tests.test_async_cancel",
+    "tests.test_http_send",
+    "tests.test_submission_prose.SubmissionBindingContracts",
+    "tests.test_dispositions"
+  ],
+  "property_statistics": [
+    {
+      "test": "tests.test_provided_buffer_zero.ProvidedBufferZeroContracts.test_zero_result_flags_and_requested_zero_length_follow_buffer_ownership",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    }
+  ],
+  "publication": {
+    "scope": "Publication structure and source fidelity; not semantic or independent review.",
+    "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "original_chapters": 26,
+    "edition_chapters": 27,
+    "literal_blocks": 121,
+    "byte_identical_illustrations": 5,
+    "narrative_paragraphs": 368,
+    "narrative_source_matches": true,
+    "literal_policy": {
+      "language_counts": {
+        "zig": 99,
+        "console": 18,
+        "json": 2,
+        "text": 2
+      },
+      "rendered_languages_match": true,
+      "bounded_legacy_markers_absent": true
+    },
+    "licence_exact": true,
+    "local_links_valid": true,
+    "drm_absent": true,
+    "javascript_absent": true
+  },
+  "publication_probes": [
+    {
+      "family": "literal",
+      "name": "language-c",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: c"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "language-cpp",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: cpp"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "language-c++",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: c++"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "language-C",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: C"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "language-c89",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: c89"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "language-c99",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: c99"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "language-rust",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: rust"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "language-python",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: python"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "language-None",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: None"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "language-default",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Unsupported literal language in tutorial/cat.rst: default"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "gcc",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Legacy literal marker in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "clang",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Legacy literal marker in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "cc",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Legacy literal marker in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "luring",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Legacy literal marker in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "cimport",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Legacy literal marker in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "cinclude",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Legacy literal marker in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "include",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Legacy literal marker in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "wrapper",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Legacy literal marker in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "c-main",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Legacy literal marker in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "render-cpp",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Rendered literal language differs in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "render-console",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Rendered literal language differs in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "render-missing",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Rendered literal language differs in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "literal",
+      "name": "render-duplicate",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Rendered literal language differs in tutorial/cat.rst"
+      }
+    },
+    {
+      "family": "narrative",
+      "name": "stale-language",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Narrative source differs in ref-zig/submission.rst"
+      }
+    },
+    {
+      "family": "narrative",
+      "name": "count-means-completed",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Narrative source differs in ref-zig/submission.rst"
+      }
+    },
+    {
+      "family": "narrative",
+      "name": "missing",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Narrative source differs in ref-zig/submission.rst"
+      }
+    },
+    {
+      "family": "narrative",
+      "name": "duplicate",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Narrative source differs in ref-zig/submission.rst"
+      }
+    },
+    {
+      "family": "narrative",
+      "name": "order",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Narrative source differs in ref-zig/submission.rst"
+      }
+    },
+    {
+      "family": "narrative",
+      "name": "rubric",
+      "returncode": 1,
+      "result": {
+        "event": "loti.epub.verification.failed",
+        "error": "Narrative source differs in ref-zig/submission.rst"
+      }
+    },
+    {
+      "family": "narrative",
+      "name": "whitespace",
+      "returncode": 0,
+      "result": {
+        "scope": "Publication structure and source fidelity; not semantic or independent review.",
+        "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+        "book_sha256": "e516c46139cc388e235eb12edfc5e9c23dc985e7a7e7c8474531f58f0bb4980c",
+        "original_chapters": 26,
+        "edition_chapters": 27,
+        "literal_blocks": 121,
+        "byte_identical_illustrations": 5,
+        "narrative_paragraphs": 368,
+        "narrative_source_matches": true,
+        "literal_policy": {
+          "language_counts": {
+            "zig": 99,
+            "console": 18,
+            "json": 2,
+            "text": 2
+          },
+          "rendered_languages_match": true,
+          "bounded_legacy_markers_absent": true
+        },
+        "licence_exact": true,
+        "local_links_valid": true,
+        "drm_absent": true,
+        "javascript_absent": true
+      }
+    }
+  ],
+  "testing_plan": {
+    "whole_row_matches": true,
+    "other_bytes_unchanged": true,
+    "old_sha256": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "new_sha256": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed"
+  },
+  "make_epub_invoked": false
+}

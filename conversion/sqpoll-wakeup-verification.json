@@ -161,7 +161,7 @@
     "testdata/inputs/sqpoll-wakeup-output.bin": "44fe6650361db29c9a01e673739d74510d87901cfbd92a2f0691a2d1900e41fb",
     "testdata/inputs/sqpoll-wakeup-report.json": "4a59e4d0f25093615b8065cbd6abc01fca4427ab853dd9c6a8dfe43ec180118e",
     "testdata/inputs/sqpoll-wakeup.trace": "f250196d5c720380631ad9872b82ab8a8861f1c2de0a73ee959fdd7215cdcf62",
-    "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "testing.md": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed",
     "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
     "tutorial/sq_poll.rst": "0c9a763df7ddcede3df3dc8920fb7efefa73e0f9bb244ba90513e95fd05f2f78"
   },
@@ -326,5 +326,26 @@
     "native_build_rerun": false,
     "strict_publication_build_rerun": false,
     "new_mutant_claims": 0
+  },
+  "replay_after_testing_plan": {
+    "scope": "Excluded testing-plan365->368 only; current15 selected public contracts/one400-case property plus23 literal/seven narrative boundary probes replayed without make epub. Historical full99/native/strict/reader/EPUBCheck/mutation bodies retained, not rerun.",
+    "base_commit": "44cf3a12f900ec12b2a16ce18582fe0bec475018",
+    "prior_receipt_sha256": "a049409fcce9ebad3ac83c1750ca512c5ca51560811b4203715941d53bcb71f7",
+    "prior_testing_plan_sha256": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "current_testing_plan_sha256": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed",
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 1,
+    "generated_valid_cases": 400,
+    "publication_probes": 30,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "tests_receipt": "conversion/raw-syscall-purpose-tests.json",
+    "tests_receipt_sha256": "672cac5efedc95ff2abd0944ebf7fe2d9eff315c107db04944bed21679304794",
+    "tests_log_sha256": "df8358474779959ca6fb4a00825e7d49211c84bec2153dc1fda84e615a1acf20",
+    "publication_receipt_sha256": "32896fb8b561b9e4c04697716647c95d3747396dc147e31136350b7daffb8eec",
+    "whole_testing_row_checked": true,
+    "all_other_testing_bytes_unchanged": true
   }
 }

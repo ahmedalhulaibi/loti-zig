@@ -47,7 +47,7 @@
     "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
     "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
     "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
-    "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "testing.md": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed",
     "conversion/submission-prose-spec-sha256.json": "3ad4de92720e70e40e2c47cfb1db94551a69dac9d37aee93d47b4b23a92d702a",
     "conversion/submission-prose-spec-initial-sha256.json": "78d862b91006e58698c72c456686f8da1335c043b214f5b98a368cff93c04df9",
     "conversion/submission-prose-spec-amendment.json": "3e7edbd44ca597a40a80005d504a004af28e0311d77ae70dacb77e05f60130d0",
@@ -216,5 +216,26 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_testing_plan": {
+    "scope": "Excluded testing-plan365->368 only; current15 selected public contracts/one400-case property plus23 literal/seven narrative boundary probes replayed without make epub. Historical full99/native/strict/reader/EPUBCheck/mutation bodies retained, not rerun.",
+    "base_commit": "44cf3a12f900ec12b2a16ce18582fe0bec475018",
+    "prior_receipt_sha256": "fde2436ac7380dae4d93365f93c908fa8b792a269c57d21d842309aa2ce4bf75",
+    "prior_testing_plan_sha256": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "current_testing_plan_sha256": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed",
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 1,
+    "generated_valid_cases": 400,
+    "publication_probes": 30,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "tests_receipt": "conversion/raw-syscall-purpose-tests.json",
+    "tests_receipt_sha256": "672cac5efedc95ff2abd0944ebf7fe2d9eff315c107db04944bed21679304794",
+    "tests_log_sha256": "df8358474779959ca6fb4a00825e7d49211c84bec2153dc1fda84e615a1acf20",
+    "publication_receipt_sha256": "32896fb8b561b9e4c04697716647c95d3747396dc147e31136350b7daffb8eec",
+    "whole_testing_row_checked": true,
+    "all_other_testing_bytes_unchanged": true
   }
 }

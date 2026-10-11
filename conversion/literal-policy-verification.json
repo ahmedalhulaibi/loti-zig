@@ -27,7 +27,7 @@
     "conversion/literal-policy-spec-amendment.json": "f3b73bc0ddd3c79c0c21a8674067da7f428dbe679c536d42ed82c0563bbe961a",
     "conversion/literal-policy-damages-initial.json": "4916416f2a203c8ef7a4f06b1b23b771ae5117553cea4b6dabe5d4078f94bf18",
     "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
-    "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38"
+    "testing.md": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed"
   },
   "diagnostics": {
     "scope": "Active primary LSP on three changed Python paths; no cache-only cleanliness claim. Existing OPF spelling infos/other-feature suppressions stay disclosed in their own receipts.",
@@ -179,5 +179,26 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_testing_plan": {
+    "scope": "Excluded testing-plan365->368 only; current15 selected public contracts/one400-case property plus23 literal/seven narrative boundary probes replayed without make epub. Historical full99/native/strict/reader/EPUBCheck/mutation bodies retained, not rerun.",
+    "base_commit": "44cf3a12f900ec12b2a16ce18582fe0bec475018",
+    "prior_receipt_sha256": "61ce30a84243a6556992255bae53615581b3773cc8fe1924ac8f2b0a6e11980b",
+    "prior_testing_plan_sha256": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "current_testing_plan_sha256": "aed21c7ee2278497ea953751890124ac68e94efd61499039223a67d14e5279ed",
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 1,
+    "generated_valid_cases": 400,
+    "publication_probes": 30,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "tests_receipt": "conversion/raw-syscall-purpose-tests.json",
+    "tests_receipt_sha256": "672cac5efedc95ff2abd0944ebf7fe2d9eff315c107db04944bed21679304794",
+    "tests_log_sha256": "df8358474779959ca6fb4a00825e7d49211c84bec2153dc1fda84e615a1acf20",
+    "publication_receipt_sha256": "32896fb8b561b9e4c04697716647c95d3747396dc147e31136350b7daffb8eec",
+    "whole_testing_row_checked": true,
+    "all_other_testing_bytes_unchanged": true
   }
 }
