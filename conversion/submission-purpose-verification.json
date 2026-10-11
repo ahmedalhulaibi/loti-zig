@@ -1,0 +1,291 @@
+{
+  "scope": "Author full-chapter comparison of original submission/SQE32 blocks; not independent/full-port acceptance or new implementation.",
+  "base_commit": "a18710b87b79df5d5d8a1521905724912db3cb83",
+  "original_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "original_chapter_sha256": {
+    "ref-liburing/submission.rst": "1effbf7b3ac88706ecef94902f230bd0df68a8c673cefe85fe92cc88a808abc7",
+    "ref-liburing/sqe.rst": "d28a18d7d809ead800c8510000134b5d1e0a1a77addb87398b24be888e2b3ce7"
+  },
+  "original_block_ids": [
+    "ref-liburing/sqe.rst:13",
+    "ref-liburing/submission.rst:12",
+    "ref-liburing/submission.rst:32",
+    "ref-liburing/submission.rst:51",
+    "ref-liburing/submission.rst:62",
+    "ref-liburing/submission.rst:73",
+    "ref-liburing/submission.rst:89",
+    "ref-liburing/submission.rst:114",
+    "ref-liburing/submission.rst:127",
+    "ref-liburing/submission.rst:148",
+    "ref-liburing/submission.rst:169",
+    "ref-liburing/submission.rst:190",
+    "ref-liburing/submission.rst:213",
+    "ref-liburing/submission.rst:234",
+    "ref-liburing/submission.rst:259",
+    "ref-liburing/submission.rst:283",
+    "ref-liburing/submission.rst:300",
+    "ref-liburing/submission.rst:321",
+    "ref-liburing/submission.rst:341",
+    "ref-liburing/submission.rst:361",
+    "ref-liburing/submission.rst:380",
+    "ref-liburing/submission.rst:399",
+    "ref-liburing/submission.rst:418",
+    "ref-liburing/submission.rst:442",
+    "ref-liburing/submission.rst:461",
+    "ref-liburing/submission.rst:473",
+    "ref-liburing/submission.rst:493",
+    "ref-liburing/submission.rst:505",
+    "ref-liburing/submission.rst:525",
+    "ref-liburing/submission.rst:544",
+    "ref-liburing/submission.rst:565",
+    "ref-liburing/submission.rst:583"
+  ],
+  "surrounding_prose": "Complete chapters: introductory cat snippet, acquisition/full error, flags/tags/counts, operation operands/results/lifetimes, fixed-buffer and polling TODOs, API/man links and erroneous READ_FIXED/WRITE_FIXED/RECV/CONNECT/SPLICE prose compared with native bodies.",
+  "author_decision": "No required conversion gap found in this subset. Preparation execution is not kernel-operation execution; original32 blocks are declarations/layout/snippet, not32 standalone applications. Broader unclaimed behavior is not universally accepted.",
+  "selected_replay": {
+    "scope": "Selected author submission/SQE replay, not full99 or independent acceptance. No make epub invoked.",
+    "tests": 31,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 12.741,
+    "selected_tests": [
+      "tests.test_reference.ReferenceContracts.test_raw_sqe_bindings_execute_and_memory_advice_changes_memory",
+      "tests.test_reference.ReferenceContracts.test_every_preparation_has_the_expected_opcode_and_correlation_tag",
+      "tests.test_reference_semantics",
+      "tests.test_reference_execution_map",
+      "tests.test_submission_prose.SubmissionBindingContracts",
+      "tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files",
+      "tests.test_examples.ExampleContracts.test_fixed_buffers_write_and_read_registered_ranges",
+      "tests.test_examples.ExampleContracts.test_linked_execution_and_failure_cancellation",
+      "tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs",
+      "tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans",
+      "tests.test_poll_waits",
+      "tests.test_epoll.EpollContracts.test_literal_and_fixed_plans",
+      "tests.test_epoll_trace",
+      "tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls",
+      "tests.test_accept.AcceptContracts.test_independent_full_address_literal",
+      "tests.test_accept_flags",
+      "tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs",
+      "tests.test_messages_trace",
+      "tests.test_messages_census",
+      "tests.test_http",
+      "tests.test_http_send.HttpSendContracts.test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive",
+      "tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output",
+      "tests.test_linked_timeout",
+      "tests.test_async_cancel",
+      "tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures",
+      "tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership"
+    ],
+    "property_statistics": [
+      {
+        "test": "tests.test_reference.ReferenceContracts.test_raw_sqe_bindings_execute_and_memory_advice_changes_memory",
+        "phases": {
+          "reuse-phase": {
+            "valid": 0,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          },
+          "generate-phase": {
+            "valid": 400,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          }
+        },
+        "stopped_because": "settings.max_examples=400"
+      }
+    ]
+  },
+  "native_observations": {
+    "path": "conversion/submission-purpose-native.json",
+    "cases": [
+      {
+        "program": "reference-submission",
+        "stdout_bytes": 2404,
+        "stdout_sha256": "6cb4776de48b40ef4d7b199c628e5d109e54c7db0924d93c1a2a1cc4c4ac1893",
+        "enter_calls": [],
+        "pipe_file_equal": true,
+        "input_unchanged": true,
+        "ring_close_observed": true
+      },
+      {
+        "program": "reference-raw",
+        "stdout_bytes": 243,
+        "stdout_sha256": "e09b5a6ed9fd3178403af5dcf5201604c88054b625accddb458cc564b5f12387",
+        "enter_calls": [
+          {
+            "submit": 1,
+            "minimum": 0,
+            "flags": "0",
+            "returned": 1
+          },
+          {
+            "submit": 3,
+            "minimum": 0,
+            "flags": "0",
+            "returned": 3
+          },
+          {
+            "submit": 0,
+            "minimum": 1,
+            "flags": "IORING_ENTER_GETEVENTS",
+            "returned": 0
+          },
+          {
+            "submit": 1,
+            "minimum": 0,
+            "flags": "0",
+            "returned": 1
+          },
+          {
+            "submit": 2,
+            "minimum": 0,
+            "flags": "0",
+            "returned": 2
+          }
+        ],
+        "pipe_file_equal": true,
+        "input_unchanged": true,
+        "ring_close_observed": true
+      }
+    ],
+    "scope": "Finite five-field whole33 constructor reports, zero mixed-batch enters/registrations; raw prefix/advice-page/range results and actual submission batches. Trace does not expose every SQE operand; no performance/durability/universal sink or independent-review inference."
+  },
+  "source_sha256": {
+    "conversion/submission-purpose-audit.md": "c3984e240a3e2ded0c0539ca77eb28507014dac61d06f923c055addbb0c8279a",
+    "conversion/source-inventory.json": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+    "conversion/chapter-map.json": "1d95f62c232872ec0a8c1466a9f395c9523241cac7e2a75a79cc3c81b17f6309",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
+    "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
+    "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
+    "conversion/line-disposition-verification.json": "3c616b5bde7685abbaff6321fe0b995151da510bfe47ac235ee4f93e22cb3e05",
+    "conversion/disposition-note-unchanged-publication.json": "6889426b092fa2b660983433af941d9efa36d9b7a1a05f1cb86729e25a43f9df",
+    "conversion/type-binding-verification.json": "13c05be532375277628102ae0d9d6393c29aa31b65b727c880c1d07da99f1d65",
+    "conversion/test-verification.json": "ecd50a1acf4a7c915baac14791b6b97f9210a1aa210551ba96c8c19a2ad5ba7c",
+    "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
+    "ref-zig/sqe.rst": "e93b2d66aa339084a6dc0307fd1e500fada6badccbf5cf4caab12533da8913c4",
+    "ref-zig/_api/submission.inc": "2b94975dd041e7ddacd1d50b21d3ec3fe55ecaf496eb223b93d4d78b7f2855d5",
+    "ref-zig/_api/sqe.inc": "4341b4eadc2f7dc57e817c0d6e7865e3fbf122ce078dc035627aa9b00ec4c433",
+    "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
+    "examples/reference_submission.zig": "caed7d975ccadc60c08ee62e8681159764ccdd1698ebd8bc5a42704d77de22b3",
+    "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
+    "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
+    "tests/test_reference_execution_map.py": "6dd89c58fbfc4a87caa0c4f4a3020a3d2e5278cb5ba8922b132e5f24992e1626",
+    "tests/test_submission_prose.py": "d913437ac0258cad5d4f58b46c80e0817748354a21131b3fba5600247bcf98f1",
+    "tests/test_file_operations.py": "11a70eafa618fa1246fcae50baa7f6ffd91c3bfd43174812c79ca7531fdbb186",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
+    "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
+    "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
+    "tests/test_epoll.py": "16c5648faf1b43d5ac969441c23fdf1f942798f6af1182942ed40916b35a97b5",
+    "tests/test_epoll_trace.py": "59f8a49cd5ca6cf31372c18d39b338a0eef88cdf8219479fe4e3258fcdad59d9",
+    "tests/test_connect.py": "289c8c0273c9c64111f02304f55b8e4a2acc2403ea41030abd3e0a6da50435ef",
+    "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
+    "tests/test_accept_flags.py": "be6adee86c57e9b3046dd3139a55957c9285ce6c0fb180422c2fa37ba622a45f",
+    "tests/test_messages.py": "81d3040e93ec8773925d75ce0229d707ec3b8410b22a01a871913a9890b374ff",
+    "tests/test_messages_trace.py": "4cb1d5ed5968d9432a2eef736904398d3a980f522d3d5f600e30b0e260085c6a",
+    "tests/test_messages_census.py": "a3a9c584773a1d9c8fc6288d91773a2e3d9f213a1251490eed13ccb2dfbce8b0",
+    "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
+    "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f",
+    "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e",
+    "tests/test_linked_timeout.py": "bef445b63a28e96d3151c933249f9b073d30f78eb7e368b3ee1a5b97a207d972",
+    "tests/test_async_cancel.py": "3eebe3909f092342b90d29bc3599640976b24b77fa68408e1b800d945e052328",
+    "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
+    "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23"
+  },
+  "sdk_source_sha256": {
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf",
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
+  },
+  "artifact_sha256": {
+    "conversion/submission-purpose-native-run.py": "326951ea2b61f3153ba030e9e95c3c4e143c390541c329cf21ff0aa59eff9582",
+    "conversion/submission-purpose-native.json": "73a41b73a460a2796bbf4f3570025e17d4e5cb8fe734010dbe38a27be7c8c092",
+    "conversion/submission-purpose-reference-raw.trace": "a97ade4e1ef6d1ca0cf28f486736857c736eb0227fb9bcb260fa7e389196b443",
+    "conversion/submission-purpose-reference-submission.trace": "916a09fbbc79ac8b32e9ac60f798314552a16be67124930a07ed5909332f91a6",
+    "conversion/submission-purpose-run.py": "bdaf2eea4da46413ac1e641c74c74695b92c10396fd700611e69b30c5c6697db",
+    "conversion/submission-purpose-tests.json": "0659c0075bdef40dc76738180f719947e5aa1493484d17bb00fda86bbabc2aae",
+    "conversion/submission-purpose-tests.log": "d36c569970f8ff0fba28ca5843e55a1f8d42117f975290381012b349bb19206e"
+  },
+  "native_binary_sha256": {
+    "cat": "8d1d0395118f33f5ed02d2fc938c6efabdb9104b279e39003b4e1f51a367011e",
+    "cp": "ff4111d9bc78d2afbf0853e636d6ad1b68831f51d2e10be0b58982ac06b7d75f",
+    "fixed-buffers": "b0e582e5f6bc10928c7e8b461690747ff31a3f38f47f9ada39b887c017428e49",
+    "link": "7bfd381587826ed013bfc6e536850b31f78ce8f80eec28f34f32826fbb601d28",
+    "webserver": "5b68d64202c491c8f06408b49fcec207e13be567be655e760bf82861228f9b01",
+    "reference-submission": "f416b8a39b2fe05cca504309c9d1af728dd607c479dce37be79a0012711695a7",
+    "reference-raw": "f22cabba9c28de83a0425e44dc5206c9e8e8770d08df5c5165bfb2c07e6c9f58",
+    "reference-files": "c009c545a43ebe8de6a4bf69763131afe8e8b995b28fa566c2cf1c4a0760d3e1",
+    "reference-splice": "94dab64289d47ba1c994e88deda09174f13006cd837b423d3a9bfd512d43c81e",
+    "reference-poll": "a8fa43c02f302c04636d7cab0cf3235372963736ae84a3491d036322a6b7b2d3",
+    "reference-epoll": "ba3a318f2ac4851564b1eee553cfa83ff91046d337c737ead841d6e3af7951a9",
+    "reference-connect": "efeac0b600ae4bbcd679ccb5d0b768695ada768023c6436dbe803499e687c278",
+    "reference-accept": "461efd7a921f9ae87fd77295958fa7813087ddb8530283b3ed9c649b423a2a54",
+    "reference-messages": "73ae76b8e56f3d80f3b6525ea262ce49ec5c93dd603fdbfb2b9d90de2661bcf7",
+    "reference-rwf": "7c7cdb8c0140e76ada1ce9ad0e53bb55e806add4ec25f3bbb7f71db04c995d7f",
+    "reference-buffers": "50543a31e3249ed46344ccf6ba0d728c83a01195cfb66ebf60655c6947f87b41",
+    "reference-signals": "60a3aa7c76c8d1a639ab384b22bac46c486f34acf1e86fd18e3b493cff26e997"
+  },
+  "historical_gates": {
+    "full_tests": 99,
+    "full_source_pins_checked": 194,
+    "type_receipt_source_and_log_pins_checked": 90,
+    "unchanged_native_publication_tool_inputs": 93,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "new_full_suite_run": false,
+    "build_rerun": false,
+    "strict_publication_rerun": false,
+    "make_epub_invoked": false,
+    "reader_rerun": false,
+    "epubcheck_rerun": false,
+    "scope": "Only excluded author audit/runner/result artifacts added; historical gates stay historical. Exact source/log/archive checks, not new semantic or independent acceptance."
+  },
+  "diagnostics": {
+    "source": "Active all-server three changed-path probes",
+    "paths": [
+      "conversion/submission-purpose-run.py",
+      "conversion/submission-purpose-native-run.py",
+      "conversion/submission-purpose-audit.md"
+    ],
+    "primary_errors": 0,
+    "initial_auxiliary_findings": 8,
+    "numeric_parse_warnings": {
+      "line70": 3,
+      "line72": 1,
+      "line77": 1,
+      "line96": 1
+    },
+    "json_decode_findings": {
+      "line73": 1,
+      "line87": 1
+    },
+    "disposition": "All8 false-positive: numeric values originate in matched decimal regex captures; owned-stdout JSON decoding intentionally aborts this audit on invalid records. No inline suppression or mutation-kill use.",
+    "final_visible_findings": 0,
+    "final_dropped_by_disposition": 8,
+    "clean_outcomes": 3,
+    "unsupported": 0,
+    "unavailable": 0,
+    "failed": 0,
+    "inconclusive": 0,
+    "wait_ms": 10000,
+    "scope": "Reported findings and dispositions, not an unconditional clean verdict or whole-workspace/semantic acceptance."
+  },
+  "instrumentation_limits": [
+    "Two preliminary read-only inventory queries used nonexistent code_blocks/path keys, causing KeyError before any audit/result writes; corrected to blocks/file from the actual schema. Not test/native failures or mutation kills.",
+    "write_stdin session536 returned unknown process id pi-536; complete retained31-test log, successful JSON statistics and exact copied-log digest independently inspected. No lost run attestation from session absence."
+  ],
+  "navigation": "Actual SDK/preparer/helper/consumer bodies read. Cached graph is stale; absent usage/Fabric unsupported are not absence, caller or acceptance evidence.",
+  "new_mutant_claims": 0,
+  "latest_bounded_author_mutants": 284,
+  "review": "Supported-host blocker unchanged; missing artifacts checked, no retry/fallback or independent review.",
+  "completion": {
+    "goal_complete": false,
+    "delivered": false,
+    "open": "Other original-purpose comparisons, mandatory independent review/findings/final acceptance and personal-fork delivery."
+  }
+}

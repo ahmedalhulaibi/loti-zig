@@ -1,0 +1,317 @@
+{
+  "scope": "Two finite owned file/pipe comparisons. Constructor observation covers five printed fields, not every operand; zero enters establishes no mixed submission. Raw tagged CQEs plus exact prefix/page checks, not advisory performance or durability. Not PBT/independent-agent acceptance.",
+  "input_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f",
+  "cases": [
+    {
+      "program": "reference-submission",
+      "stdout_bytes": 2404,
+      "stdout_sha256": "6cb4776de48b40ef4d7b199c628e5d109e54c7db0924d93c1a2a1cc4c4ac1893",
+      "stdout_hex": "7b22746167223a312c226f7065726174696f6e223a224e4f50222c226c656e677468223a302c22666c616773223a342c226275666665725f696e646578223a307d0a7b22746167223a322c226f7065726174696f6e223a2252454144222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a332c226f7065726174696f6e223a225752495445222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a342c226f7065726174696f6e223a225245414456222c226c656e677468223a312c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a352c226f7065726174696f6e223a22575249544556222c226c656e677468223a312c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a362c226f7065726174696f6e223a224653594e43222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a372c226f7065726174696f6e223a22434c4f5345222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a382c226f7065726174696f6e223a224f50454e4154222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a392c226f7065726174696f6e223a224f50454e415432222c226c656e677468223a32342c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31302c226f7065726174696f6e223a2246414c4c4f43415445222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31312c226f7065726174696f6e223a225354415458222c226c656e677468223a3531322c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31322c226f7065726174696f6e223a2246414456495345222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31332c226f7065726174696f6e223a224d414456495345222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31342c226f7065726174696f6e223a2253504c494345222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31352c226f7065726174696f6e223a22414343455054222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31362c226f7065726174696f6e223a22434f4e4e454354222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31372c226f7065726174696f6e223a2252454356222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31382c226f7065726174696f6e223a2253454e44222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a31392c226f7065726174696f6e223a22524543564d5347222c226c656e677468223a312c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a32302c226f7065726174696f6e223a2253454e444d5347222c226c656e677468223a312c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a32312c226f7065726174696f6e223a2245504f4c4c5f43544c222c226c656e677468223a312c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a32322c226f7065726174696f6e223a22504f4c4c5f414444222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a32332c226f7065726174696f6e223a22504f4c4c5f52454d4f5645222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a32342c226f7065726174696f6e223a22524541445f4649584544222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a32352c226f7065726174696f6e223a2257524954455f4649584544222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a32362c226f7065726174696f6e223a2246494c45535f555044415445222c226c656e677468223a312c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a32372c226f7065726174696f6e223a2250524f564944455f42554646455253222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a317d0a7b22746167223a32382c226f7065726174696f6e223a2252454d4f56455f42554646455253222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a317d0a7b22746167223a32392c226f7065726174696f6e223a2254494d454f5554222c226c656e677468223a312c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a33302c226f7065726174696f6e223a2254494d454f55545f52454d4f5645222c226c656e677468223a302c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a33312c226f7065726174696f6e223a224153594e435f43414e43454c222c226c656e677468223a302c22666c616773223a342c226275666665725f696e646578223a307d0a7b22746167223a33322c226f7065726174696f6e223a224c494e4b5f54494d454f5554222c226c656e677468223a312c22666c616773223a302c226275666665725f696e646578223a307d0a7b22746167223a33332c226f7065726174696f6e223a2253594e435f46494c455f52414e4745222c226c656e677468223a343039362c22666c616773223a302c226275666665725f696e646578223a307d0a",
+      "report": [
+        {
+          "tag": 1,
+          "operation": "NOP",
+          "length": 0,
+          "flags": 4,
+          "buffer_index": 0
+        },
+        {
+          "tag": 2,
+          "operation": "READ",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 3,
+          "operation": "WRITE",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 4,
+          "operation": "READV",
+          "length": 1,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 5,
+          "operation": "WRITEV",
+          "length": 1,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 6,
+          "operation": "FSYNC",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 7,
+          "operation": "CLOSE",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 8,
+          "operation": "OPENAT",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 9,
+          "operation": "OPENAT2",
+          "length": 24,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 10,
+          "operation": "FALLOCATE",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 11,
+          "operation": "STATX",
+          "length": 512,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 12,
+          "operation": "FADVISE",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 13,
+          "operation": "MADVISE",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 14,
+          "operation": "SPLICE",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 15,
+          "operation": "ACCEPT",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 16,
+          "operation": "CONNECT",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 17,
+          "operation": "RECV",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 18,
+          "operation": "SEND",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 19,
+          "operation": "RECVMSG",
+          "length": 1,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 20,
+          "operation": "SENDMSG",
+          "length": 1,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 21,
+          "operation": "EPOLL_CTL",
+          "length": 1,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 22,
+          "operation": "POLL_ADD",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 23,
+          "operation": "POLL_REMOVE",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 24,
+          "operation": "READ_FIXED",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 25,
+          "operation": "WRITE_FIXED",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 26,
+          "operation": "FILES_UPDATE",
+          "length": 1,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 27,
+          "operation": "PROVIDE_BUFFERS",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 1
+        },
+        {
+          "tag": 28,
+          "operation": "REMOVE_BUFFERS",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 1
+        },
+        {
+          "tag": 29,
+          "operation": "TIMEOUT",
+          "length": 1,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 30,
+          "operation": "TIMEOUT_REMOVE",
+          "length": 0,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 31,
+          "operation": "ASYNC_CANCEL",
+          "length": 0,
+          "flags": 4,
+          "buffer_index": 0
+        },
+        {
+          "tag": 32,
+          "operation": "LINK_TIMEOUT",
+          "length": 1,
+          "flags": 0,
+          "buffer_index": 0
+        },
+        {
+          "tag": 33,
+          "operation": "SYNC_FILE_RANGE",
+          "length": 4096,
+          "flags": 0,
+          "buffer_index": 0
+        }
+      ],
+      "body_hex": "",
+      "pipe_file_equal": true,
+      "input_unchanged": true,
+      "empty_stderr": true,
+      "setup_depth": 128,
+      "enter_calls": [],
+      "registration_calls": 0,
+      "ring_close_observed": true,
+      "trace_path": "conversion/submission-purpose-reference-submission.trace"
+    },
+    {
+      "program": "reference-raw",
+      "stdout_bytes": 243,
+      "stdout_sha256": "e09b5a6ed9fd3178403af5dcf5201604c88054b625accddb458cc564b5f12387",
+      "stdout_hex": "7b226f70656e617432223a747275652c22666164766973655f726573756c74223a302c226d6164766973655f726573756c74223a302c226d656d6f72795f7a65726f6564223a747275652c22726561645f726573756c74223a36342c2273796e635f72616e6765223a7b226f6666736574223a302c226c656e677468223a343039362c22666c616773223a372c22726573756c74223a307d2c2273796e635f6661696c75726573223a5b2d32322c2d395d7d0a000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "report": {
+        "openat2": true,
+        "fadvise_result": 0,
+        "madvise_result": 0,
+        "memory_zeroed": true,
+        "read_result": 64,
+        "sync_range": {
+          "offset": 0,
+          "length": 4096,
+          "flags": 7,
+          "result": 0
+        },
+        "sync_failures": [
+          -22,
+          -9
+        ]
+      },
+      "body_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "pipe_file_equal": true,
+      "input_unchanged": true,
+      "empty_stderr": true,
+      "setup_depth": 8,
+      "enter_calls": [
+        {
+          "submit": 1,
+          "minimum": 0,
+          "flags": "0",
+          "returned": 1
+        },
+        {
+          "submit": 3,
+          "minimum": 0,
+          "flags": "0",
+          "returned": 3
+        },
+        {
+          "submit": 0,
+          "minimum": 1,
+          "flags": "IORING_ENTER_GETEVENTS",
+          "returned": 0
+        },
+        {
+          "submit": 1,
+          "minimum": 0,
+          "flags": "0",
+          "returned": 1
+        },
+        {
+          "submit": 2,
+          "minimum": 0,
+          "flags": "0",
+          "returned": 2
+        }
+      ],
+      "registration_calls": 0,
+      "ring_close_observed": true,
+      "trace_path": "conversion/submission-purpose-reference-raw.trace"
+    }
+  ]
+}

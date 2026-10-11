@@ -1,0 +1,48 @@
+test_raw_sqe_bindings_execute_and_memory_advice_changes_memory (tests.test_reference.ReferenceContracts.test_raw_sqe_bindings_execute_and_memory_advice_changes_memory) ... ok
+test_every_preparation_has_the_expected_opcode_and_correlation_tag (tests.test_reference.ReferenceContracts.test_every_preparation_has_the_expected_opcode_and_correlation_tag) ... ok
+test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) ... ok
+test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts (tests.test_reference_execution_map.ReferenceExecutionMapContracts.test_executed_nop_fixed_buffer_and_stream_receive_bindings_have_whole_contracts) ... ok
+test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings)
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ... ok
+test_literal_oracle_and_rejected_paths_preserve_files (tests.test_file_operations.FileOperationContracts.test_literal_oracle_and_rejected_paths_preserve_files) ... ok
+test_fixed_buffers_write_and_read_registered_ranges (tests.test_examples.ExampleContracts.test_fixed_buffers_write_and_read_registered_ranges) ... ok
+test_linked_execution_and_failure_cancellation (tests.test_examples.ExampleContracts.test_linked_execution_and_failure_cancellation) ... ok
+test_literal_oracle_and_typed_invalid_inputs (tests.test_splice.SpliceContracts.test_literal_oracle_and_typed_invalid_inputs) ... ok
+test_literal_oracle_and_valid_plans (tests.test_poll.PollContracts.test_literal_oracle_and_valid_plans)
+Kills false cancellation success, omitted rearm, HUP/EOF substitution and exit-only cleanup. ... ok
+test_native_deadline_waits_and_damaged_traces (tests.test_poll_waits.PollDeadlineContracts.test_native_deadline_waits_and_damaged_traces)
+Kills bypassed/fabricated empty checks and weak timeout/count/mask trace parsing. ... ok
+test_literal_and_fixed_plans (tests.test_epoll.EpollContracts.test_literal_and_fixed_plans)
+Kills shared-model blindness, fake ctl success, optional-event misuse and exit-only cleanup. ... ok
+test_actual_waits_async_controls_and_damaged_traces (tests.test_epoll_trace.EpollTraceContracts.test_actual_waits_async_controls_and_damaged_traces)
+Kills fabricated readiness, synchronous ctl substitutions, truncated event tags and vacuous traces. ... ok
+test_native_connection_matches_external_peer_and_syscalls (tests.test_connect.ConnectContracts.test_native_connection_matches_external_peer_and_syscalls)
+Kills client/listener confusion, wrong length/byte order, fake success/query/cleanup and synchronous substitution. ... ok
+test_independent_full_address_literal (tests.test_accept.AcceptContracts.test_independent_full_address_literal)
+A separate symbolic literal pins the whole full-address shape without the table encoder. ... ok
+test_actual_flags_and_ordered_ownership_queries (tests.test_accept_flags.AcceptFlagContracts.test_actual_flags_and_ordered_ownership_queries)
+Reject input-derived flags without actual kernel observations; retain after listener close before teardown. ... ok
+test_literal_fixed_plans_and_typed_invalid_inputs (tests.test_messages.MessageContracts.test_literal_fixed_plans_and_typed_invalid_inputs)
+Separate hand-pinned shape catches a drifting model; rejection preserves source and bounds allocations. ... ok
+test_actual_async_messages_ownership_and_damaged_traces (tests.test_messages_trace.MessageTraceContracts.test_actual_async_messages_ownership_and_damaged_traces)
+Kills synchronous stand-ins, omitted submissions/closures/CLOEXEC checks and permissive trace parsing. ... ok
+test_actual_procfs_census_rejects_fake_counts_and_damaged_traces (tests.test_messages_census.MessageCensusContracts.test_actual_procfs_census_rejects_fake_counts_and_damaged_traces)
+Kills fabricated descriptor census that survives JSON/model and socket-CQE checks. ... ok
+test_defined_error_responses_and_root_confinement (tests.test_http.HttpContracts.test_defined_error_responses_and_root_confinement) ... ok
+test_fragmented_request_and_concurrent_clients (tests.test_http.HttpContracts.test_fragmented_request_and_concurrent_clients) ... ok
+test_get_mime_length_and_binary_body (tests.test_http.HttpContracts.test_get_mime_length_and_binary_body) ... ok
+test_one_slow_client_does_not_block_other_clients (tests.test_http.HttpContracts.test_one_slow_client_does_not_block_other_clients) ... ok
+test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive (tests.test_http_send.HttpSendContracts.test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive) ... ok
+test_literal_and_invalid_inputs_preserve_source_and_create_no_output (tests.test_rwf.RwfContracts.test_literal_and_invalid_inputs_preserve_source_and_create_no_output) ... ok
+test_actual_submission_stimulus_guards_and_before_exit_retirement (tests.test_linked_timeout.LinkedTimeoutContracts.test_actual_submission_stimulus_guards_and_before_exit_retirement) ... ok
+test_deadline_success_failure_and_orphan_have_distinct_tagged_results (tests.test_linked_timeout.LinkedTimeoutContracts.test_deadline_success_failure_and_orphan_have_distinct_tagged_results) ... ok
+test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) ... ok
+test_exact_u64_target_and_unrelated_read_follow_separate_completion_ownership (tests.test_async_cancel.AsyncCancelContracts.test_exact_u64_target_and_unrelated_read_follow_separate_completion_ownership) ... ok
+test_literal_default_and_all_plan_fixtures (tests.test_provided_buffers.ProvidedBufferContracts.test_literal_default_and_all_plan_fixtures) ... ok
+test_pending_masks_timer_cqes_and_queued_nop_ownership (tests.test_ordinary_signals.OrdinarySignalContracts.test_pending_masks_timer_cqes_and_queued_nop_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 12.741s
+
+OK
+31 selected contracts passed; one property x400 generated valid cases; full99 receipt unchanged
