@@ -1,0 +1,141 @@
+{
+  "scope": "Author reader-precision reproduction; not an implementation defect or independent acceptance.",
+  "head": "b4047f64501031d553966ebf65ed7212544737b4",
+  "source_paragraphs": {
+    "ref-zig/submission.rst": "The first RECVMSG requests DONTWAIT/TRUNC/CMSG_CLOEXEC. For datagrams, input\nMSG_TRUNC returns the full record length even when receive capacity is smaller;\nonly ``min(capacity, length)`` bytes are initialized. Output ``msg.flags`` reports\nTRUNC separately from ordinary CQE flags. The extra 16 poisoned bytes remain\nuntouched. A zero result can consume an empty datagram: the next DONTWAIT receive\nreturns -EAGAIN, not another empty record or TCP EOF. Never use a datagram's full\nCQE length as a buffer slice length when MSG_TRUNC was requested.",
+    "ref-zig/sqe.rst": "See :ref:`submission` for every converted operation constructor and the executed\n33-constructor reference. See :ref:`io_uring_enter` for queue publication and\nflag semantics. ``reference-setup`` verifies the ordinary SQE size at runtime.\n"
+  },
+  "packaged_paragraphs": {
+    "ref-zig/submission.rst": "The first RECVMSG requests DONTWAIT/TRUNC/CMSG_CLOEXEC. For datagrams, input MSG_TRUNC returns the full record length even when receive capacity is smaller; only min(capacity, length) bytes are initialized. Output msg.flags reports TRUNC separately from ordinary CQE flags. The extra 16 poisoned bytes remain untouched. A zero result can consume an empty datagram: the next DONTWAIT receive returns -EAGAIN, not another empty record or TCP EOF. Never use a datagram\u2019s full CQE length as a buffer slice length when MSG_TRUNC was requested.",
+    "ref-zig/sqe.rst": "See Submission for every converted operation constructor and the executed 33-constructor reference. See linux.io_uring_enter for queue publication and flag semantics. reference-setup verifies the ordinary SQE size at runtime."
+  },
+  "archive_sha256": "fc435ceac8ebd730d614c4f43009a19179ed4488b912415d0cc279a5286165a4",
+  "first_recvmsg": {
+    "request": {
+      "operation": "RECVMSG",
+      "tag": 1,
+      "descriptor": "socket",
+      "length": 1,
+      "offset": 0,
+      "flags": 0,
+      "operation_flags": 64,
+      "vector_lengths": [
+        0,
+        1
+      ],
+      "control_capacity": 0,
+      "name_supplied": false,
+      "name_length": 0
+    },
+    "cqe": {
+      "tag": 1,
+      "result": -11,
+      "flags": 0
+    },
+    "message": {
+      "flags": 0,
+      "control_length": 0,
+      "name_length": 0
+    },
+    "storage": [
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165
+    ],
+    "control": null
+  },
+  "payload_recvmsg": {
+    "request": {
+      "operation": "RECVMSG",
+      "tag": 3,
+      "descriptor": "socket",
+      "length": 1,
+      "offset": 0,
+      "flags": 0,
+      "operation_flags": 1073741920,
+      "vector_lengths": [
+        1,
+        2
+      ],
+      "control_capacity": 24,
+      "name_supplied": false,
+      "name_length": 0
+    },
+    "cqe": {
+      "tag": 3,
+      "result": 5,
+      "flags": 0
+    },
+    "message": {
+      "flags": 1073741856,
+      "control_length": 24,
+      "name_length": 0
+    },
+    "storage": [
+      0,
+      255,
+      90,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165,
+      165
+    ],
+    "control": {
+      "length": 20,
+      "level": 1,
+      "type": 1
+    }
+  },
+  "message_whole_literal_sha256": "2f6e73f62e6a8ea6b48b867ddb65495091ae2d081c2bab009709b9ecf6b308d0",
+  "constructors": {
+    "records": 33,
+    "io_uring_calls": [
+      "io_uring_setup"
+    ],
+    "unsubmitted": true,
+    "stdout_sha256": "6cb4776de48b40ef4d7b199c628e5d109e54c7db0924d93c1a2a1cc4c4ac1893"
+  },
+  "source_sha256": {
+    "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
+    "ref-zig/sqe.rst": "e93b2d66aa339084a6dc0307fd1e500fada6badccbf5cf4caab12533da8913c4",
+    "examples/reference_messages.zig": "4e29206d6b45dbe42ccac3135a586970f0016b58868efb9ae938ee927549ea76",
+    "examples/reference_submission.zig": "caed7d975ccadc60c08ee62e8681159764ccdd1698ebd8bc5a42704d77de22b3"
+  },
+  "precision_decisions": [
+    "The first receive is the tag1 DONTWAIT/-EAGAIN probe; the TRUNC/CMSG_CLOEXEC payload receive is tag3.",
+    "The constructor program runs, but its mixed33 requests are not submitted; say preparation rather than executed reference."
+  ],
+  "selected_before": {
+    "tests": 2,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "no_new_mutants_or_properties": true
+}
