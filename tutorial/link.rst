@@ -4,9 +4,9 @@ Linking requests
 ================
 
 Queue order alone does not establish an execution dependency. Set
-``linux.IOSQE_IO_LINK`` on an SQE to link it to the next SQE. Leave this flag
-clear on the chain's last request. This example links a write, a read and a
-close; the read must observe the write before the descriptor is closed.
+``linux.IOSQE_IO_LINK`` to link to the next SQE within one submission. Leave the
+flag clear on the last request and submit the whole chain in one batch. This
+example links a write, a read and a close; the read observes the write before close.
 
 .. code-block:: console
 
@@ -38,9 +38,9 @@ if it is cancelled, deferred application cleanup still closes the descriptor.
 
 A soft link breaks on an unsuccessful result, including an unexpected short
 read or write. It is not a transaction: earlier writes are not rolled back.
-``IOSQE_IO_HARDLINK`` preserves a submitted chain across operation-result
-failures, but cannot protect against all submission failures. Independent chains
-can run concurrently. Do not confuse linking with ``IOSQE_IO_DRAIN``.
+``IOSQE_IO_HARDLINK`` preserves a chain across operation-result failures. SQE
+validation/initialization failures can still break it, even after a positive
+submit return. Independent chains can run concurrently; ``IOSQE_IO_DRAIN`` differs.
 
 ``tests/test_examples.py`` checks both complete result arrays, the returned text
 and actual file bytes. The read/write/close opcodes require Linux 5.6 or later;

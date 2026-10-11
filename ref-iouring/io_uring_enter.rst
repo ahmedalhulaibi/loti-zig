@@ -135,14 +135,14 @@ SQE flags
    subject to the kernel's drain rules. Different from a dependency chain.
 
 ``IOSQE_IO_LINK``
-   Link to the next SQE; the first entry without the bit ends the chain. An
-   unsuccessful/unexpected result can cancel the remaining unstarted members
-   with ``-ECANCELED``. Unrelated requests/chains remain independent.
+   Link to the next SQE in the same submission; the first entry without this bit
+   or the submission boundary ends the chain. An unsuccessful/unexpected result
+   can cancel unstarted members with ``-ECANCELED``. Other chains remain independent.
 
 ``IOSQE_IO_HARDLINK``
-   Preserve a submitted chain across completion-result failures; submission
-   failure can still break it. Do not require a separate soft-link bit to use
-   the kernel's hard-link semantics.
+   Preserve a chain across operation-result failures; SQE validation/initialization
+   failure can still break it, even after a positive submit return. Do not require
+   a separate soft-link bit to use the kernel's hard-link semantics.
 
 ``IOSQE_ASYNC``
    Request asynchronous issue from the start rather than the inline-first attempt.

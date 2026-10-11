@@ -16,11 +16,11 @@ no upstream PR or release required. Tests/manifests/author effort are not accept
 
 | Command / surface | Evidence / limits |
 |---|---|
-| zig version;zig fmt --check;zig build --summary all | Clean local244cc2a clone: exact0.17;empty isolated global/local caches;all25 compile uncached;51/51 steps. No native/book/test/fixture edit. Earlier cached build/formatter evidence stays historical. |
-| tools/inventory.py;reference_map.py;reference_docs.py;check_line_dispositions.py --check | Clean consumer CLIs pass:3618/128/567,76/99,13 includes;source/index bytes unchanged. Prior submission SHA repair remains historical,not refreshed again. |
-| LOTI_TEST_CASES=400 locked .venv unittest boundaries | Clean local244cc2a clone:103/zero failures-errors-skips/175.449s,16×400;unchanged expectations/receipts. Shared26-package locked environment attached explicitly then removed;no dependency-bootstrap or independent acceptance claim. |
+| zig version;zig fmt --check;zig build --summary all | Last44d9b32 consumer gate: exact0.17/25 uncached compilations/51 steps. Native/test/fixture bodies remain exact;latest changes are LINK/HARDLINK prose,not a new native build. |
+| tools/inventory.py;reference_map.py;reference_docs.py;check_line_dispositions.py --check | Latest4 CLIs pass:3618/128/567,76/99,13 includes;canonical replay changes only raw-enter/link target hashes. Historical supplement kept;fresh16 live slices in sqe-flag-verification.json. |
+| LOTI_TEST_CASES=400 locked .venv unittest boundaries | Last full44d9b32 consumer:103/175.449s/16×400;not rerun after flag prose edits. Latest affected6/10.046s/zero failures-errors-skips;expectations/fixtures unchanged. |
 | README current verification commands | New literal fixture/consumer test checks statistics and full argv, executes known mkdir/verifier and compares stdout/file. _build/verification outputs cannot overwrite tracked historical receipts. |
-| make html;make epub with strict warnings | Clean consumer initial strict HTML/EPUB and actual post-suite archive checked separately. All28 XHTML bodies equal original package;source/count/gate fidelity is not semantic acceptance. |
+| make html;make epub with strict warnings | Latest flag prose strict HTML/EPUB follows affected6 tests;four whole corrected paragraphs and actual archive checked. Earlier clean-consumer XHTML equality is historical,not current-package equality. |
 | verify_epub;check_reader_layout;EPUBCheck5.2.1 | Current post-suite receipt bytes,27 chapters/121 literals/368 paragraphs/order/local links/licence/images/no DRM/JS;81 browser reflows/zero validator messages. Not Supernote/pagination/font-override/semantic acceptance. |
 | Post-completion selected mutation scopes |292 bounded author kills including3 README prose kills; native/compiler failures/test errors/skips excluded. Not comprehensive mutation or independent proof. |
 | Independent verifier / current final HEAD | Native async c27be9dc completed against fd9025d; independent-review-fd9025d.md returns BLOCK for incomplete coverage/tool/runtime verification, not a demonstrated defect. Owner prefers direct review; parent gates do not establish independent acceptance. |
@@ -34,11 +34,11 @@ exclusions/dispositions. Canonical counts alone are not exhaustive spelling/flag
 coverage. Independent verification is not waived; required omissions must still
 be fixed. **Do not mark complete or push before acceptance.**
 
-Latest direct consumer replay: `clean-consumer-audit.md` and
-`clean-consumer-verification.json`;relocated tracked source builds25 executables
-uncached and passes full103/16×400 plus publication gates. All28 XHTML bodies
-match the original package;consumer archive differs and remains in owned clone.
-Shared prerequisites are declared;independent BLOCK/delivery remain open.
+Latest direct replay: `sqe-flag-audit.md`/`sqe-flag-verification.json`;
+finite native probes distinguish DRAIN, LINK, HARDLINK and submission boundaries.
+Two manuscripts clarify chain scope and initialization failure despite positive
+submit return. Affected6 tests/current strict archive/81 reflows/EPUBCheck pass;
+independent BLOCK/completeness/final delivery remain open.
 
 Next: finish remaining source/purpose comparison, resolve the independent
 acceptance boundary, fix findings and replay affected gates. Audit exact required
