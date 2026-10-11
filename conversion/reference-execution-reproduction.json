@@ -1,0 +1,99 @@
+{
+  "scope": "Four misleading reference-map construction-only dispositions; native examples already execute all four operations. No native defect or absent implementation claim.",
+  "before": [
+    {
+      "original": "io_uring_prep_nop",
+      "zig": "std.os.linux.IoUring.nop",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn nop(self: *IoUring, user_data: u64) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_read_fixed",
+      "zig": "std.os.linux.IoUring.read_fixed",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn read_fixed(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: *posix.iovec,\n    offset: u64,\n    buffer_index: u16,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_recv",
+      "zig": "std.os.linux.IoUring.recv",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn recv(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: RecvBuffer,\n    flags: u32,\n) !*linux.io_uring_sqe"
+    },
+    {
+      "original": "io_uring_prep_write_fixed",
+      "zig": "std.os.linux.IoUring.write_fixed",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
+      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "declaration_source": "os/linux/IoUring.zig",
+      "zig_signature": "pub fn write_fixed(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: *posix.iovec,\n    offset: u64,\n    buffer_index: u16,\n) !*linux.io_uring_sqe"
+    }
+  ],
+  "actual_effects": {
+    "fixed_buffers": {
+      "exit": 0,
+      "stdout_file_bytes": 71,
+      "stdout_file_hex": "576861742069732074686973206c6966652069662c2066756c6c206f6620636172652c0a57652068617665206e6f2074696d6520746f207374616e6420616e642073746172652e",
+      "operations": "Actual inspected register_buffers, WRITE_FIXED1/2, READ_FIXED3/4, tagged expected counts, unregister; four512-byte regions.",
+      "request_lengths": [
+        34,
+        34,
+        34,
+        34
+      ],
+      "buffer_indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "completion": {
+      "exit": 0,
+      "copied": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "manual": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "nonblocking_copied": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    "recv": "Actual Server.queue/complete uses recv mutable remaining request slice; existing TCP fragmented-header/defined-response/stalled-client contracts execute it. Native source/test pins below, not an actual fragmented-CQE count claim."
+  },
+  "source_sha256": {
+    "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
+    "examples/reference_completion.zig": "68cb89d6f08ffc80f4d9fe356b3328e00f3675732262b59221d3e0c13bd0fcc6",
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
+    "tools/reference_map.py": "49abc8d8e9ae20127b31ad2b6b697d52b7c022436284d0a10ad74b4566fd25e5",
+    "conversion/reference-map.json": "4a08b67517499955bbb45b587ce5478e6d95748ca3e0642900c5611ecf6f161c"
+  },
+  "plan": "Whole four-entry contract before producer fix, then exact semantic/index/borrow-lifetime explanations and primary executing source. Other95 entries/signatures unchanged. Challenge source producer while syntax/generation/freshness still pass.",
+  "limits": "Author-inspected bounded correction, not whole99-binding or independent semantic acceptance. Existing review blocker unchanged; no retry/fallback/push/goal completion."
+}
