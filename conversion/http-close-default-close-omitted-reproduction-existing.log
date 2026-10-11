@@ -1,0 +1,9 @@
+test_defined_error_responses_and_root_confinement (tests.test_http.HttpContracts.test_defined_error_responses_and_root_confinement) ... ok
+test_fragmented_request_and_concurrent_clients (tests.test_http.HttpContracts.test_fragmented_request_and_concurrent_clients) ... ok
+test_get_mime_length_and_binary_body (tests.test_http.HttpContracts.test_get_mime_length_and_binary_body) ... ok
+test_one_slow_client_does_not_block_other_clients (tests.test_http.HttpContracts.test_one_slow_client_does_not_block_other_clients) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.034s
+
+OK

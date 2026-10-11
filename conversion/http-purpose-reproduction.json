@@ -1,0 +1,42 @@
+{
+  "scope": "Default HTTP descriptor-retirement verifier gap, not a native implementation defect. Header/body-only contracts passed two compiled default-only leaks; observer-mode tests cannot replace default-mode effects.",
+  "base_commit": "2af592a651185df10fecbabd2f93640420222384",
+  "original_selectors": [
+    "tutorial/webserver_liburing.rst:597",
+    "tutorial/webserver_liburing.rst:636"
+  ],
+  "survivors": [
+    {
+      "name": "default-close-omitted",
+      "insertion": "        if (self.mode == .serve) self.clients[id].fd = -1;\n",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "f97aa7cac4531673032916f62260d111392078f9d262cc3d42197ae2443f16e4",
+      "binary_sha256": "74e1bd583da80a9296c69929889c0c6878225eedbe7ec2b63ccab81f376a10f7",
+      "scope": "Compiled isolated native variant; existing ROOT used for execution routing only, expected results/test source unchanged. Current observed-send mode unaffected; default socket is leaked."
+    },
+    {
+      "name": "default-shutdown-is-not-close",
+      "insertion": "        if (self.mode == .serve) {\n            _ = linux.shutdown(self.clients[id].fd, linux.SHUT.WR);\n            self.clients[id].fd = -1;\n        }\n",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "ab773c3c31ecb4bb0ab76dd12d7c2ce5d65b46d20abfaac454a6f2d1cda8d194",
+      "binary_sha256": "417bc84e82844bc065700f0cbb3fc6555f73c39ae4e61c7f824a0a12ca6189a7",
+      "scope": "Compiled isolated native variant; existing ROOT used for execution routing only, expected results/test source unchanged. Current observed-send mode unaffected; default socket is leaked."
+    }
+  ],
+  "native_source_sha256": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+  "native_binary_sha256": "5b68d64202c491c8f06408b49fcec207e13be567be655e760bf82861228f9b01",
+  "original_existing_test_sha256": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
+  "prospective_new_contract_sha256": {
+    "tests/test_http_close.py": "48de4647e51b9aa6a0b5a18affe354ee7b3aeb07da3a9f03ec83a60dd3c32072",
+    "testdata/inputs/http-close-contracts.json": "469cefa71d36b5acc3353b7dee94c87351d71b5ee5d7167a437a32849f947e67"
+  },
+  "baseline": "Prospective new native boundary test passed current production source; owns loopback peers and checks full wire through EOF plus child-only sockets/file inode retirement.",
+  "new_kills_claimed": 0,
+  "completion": false
+}

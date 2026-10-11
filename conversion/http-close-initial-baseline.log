@@ -1,0 +1,7 @@
+test_default_responses_and_request_eof_retire_owned_descriptors (tests.test_http_close.DefaultHttpCloseContracts.test_default_responses_and_request_eof_retire_owned_descriptors)
+Kills default-only socket leaks and shutdown-write masquerading as close. ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.012s
+
+OK
