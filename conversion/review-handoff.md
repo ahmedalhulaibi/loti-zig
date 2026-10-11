@@ -14,16 +14,15 @@ adds18 complete native bodies, nine chapter pairs and16 supplemental lexical
 rows persisted in `source-inventory-supplement.json`. Current-body reach is30/30; original-purpose
 classification and independent acceptance remain distinct, unresolved gates.
 
-Latest author checkpoint: `submission-reader-audit.md`,
-`submission-reader-verification.json`, current completion/prompt checklists.
-Original26 chapters/128 blocks have historical author comparisons; new reader
-scope names payload RECVMSG and unsubmitted33-constructor requests precisely.
-Fresh full103/16×400, strict HTML/EPUB/81 reflows/EPUBCheck pass;292 historical
-kills unchanged. Historical203 pins cover only4/27 manuscripts; new27-chapter
-hashes are post-gate snapshots, not complete dependency or independent seals.
-Old frontmatter/102/101/99/archive receipts remain history. Inspect default TCP
-EOF/private descriptor retirement, not headers/observer mode alone. Independent
-BLOCK and final exact-HEAD acceptance remain unresolved; nothing pushed.
+Latest author checkpoint: `submit-consumption-audit.md` and
+`submit-consumption-verification.json`; CONNECT lifetime now distinguishes API
+return from kernel consumption and links the native feature chapter. Owned
+SQPOLL probe returns64 with64 unconsumed SQEs; all tagged CQEs retire safely.
+Affected3 tests/strict publication/81 reflows/EPUBCheck pass. Full103/16×400 and
+cached native build remain earlier6c5016c evidence, not replayed/promoted here.
+Native/test/fixture bodies unchanged;226 selected pins are not dependency seals.
+Original26/128 comparisons and292 kills remain historical author evidence.
+Independent BLOCK and final exact-HEAD acceptance remain unresolved;no push.
 
 ## Contract
 

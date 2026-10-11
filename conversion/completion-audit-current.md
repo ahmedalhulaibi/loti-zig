@@ -16,11 +16,11 @@ no upstream PR or release required. Tests/manifests/author effort are not accept
 
 | Command / surface | Evidence / limits |
 |---|---|
-| zig version;zig fmt --check;zig build --summary all | Latest submission-reader gates: exact0.17/formatter/25 native executables/51 of51 cached steps. Native/helper/test/fixture bodies unchanged;two manuscript sentences clarified. |
-| tools/inventory.py;reference_map.py;reference_docs.py;check_line_dispositions.py --check | Latest CLIs pass:3618/128/567,76/99,13 includes. Only SQE/submission target hashes refreshed after replay; all notes/selectors stable. |
-| LOTI_TEST_CASES=400 locked .venv unittest boundaries | submission-reader-verification.json:103/zero failures-errors-skips/172.323s;16 properties×400 valid cases. Historical203 pins cover4/27 manuscripts; fresh27 chapter snapshots extend selected union to226, not whole dependency coverage. |
+| zig version;zig fmt --check;zig build --summary all | Last6c5016c gate: exact0.17/formatter/25 native executables/51 of51 cached steps. All native/helper/test/fixture bodies remain exact; latest edit is CONNECT prose only. |
+| tools/inventory.py;reference_map.py;reference_docs.py;check_line_dispositions.py --check | Latest CLIs pass:3618/128/567,76/99,13 includes. Latest replay refreshes submission target SHA only; all notes/selectors stable. |
+| LOTI_TEST_CASES=400 locked .venv unittest boundaries | Last full6c5016c:103/zero failures-errors-skips/172.323s,16×400. Latest affected3 tests pass6.814s; no full replay/promotion after new prose edit. Selected226 pins include all27 chapters/all30 native bodies, not whole dependency coverage. |
 | README current verification commands | New literal fixture/consumer test checks statistics and full argv, executes known mkdir/verifier and compares stdout/file. _build/verification outputs cannot overwrite tracked historical receipts. |
-| make html;make epub with strict warnings | Latest strict HTML/EPUB logs follow full103 replay; final actual archive and two whole corrected paragraphs checked. Fidelity can still publish an incorrect claim. |
+| make html;make epub with strict warnings | Latest submit-consumption strict HTML/EPUB follows selected3 tests; whole corrected lifetime paragraph/native internal link/current archive checked. Fidelity can still publish an incorrect claim. |
 | verify_epub;check_reader_layout;EPUBCheck5.2.1 | Current post-suite receipt bytes,27 chapters/121 literals/368 paragraphs/order/local links/licence/images/no DRM/JS;81 browser reflows/zero validator messages. Not Supernote/pagination/font-override/semantic acceptance. |
 | Post-completion selected mutation scopes |292 bounded author kills including3 README prose kills; native/compiler failures/test errors/skips excluded. Not comprehensive mutation or independent proof. |
 | Independent verifier / current final HEAD | Native async c27be9dc completed against fd9025d; independent-review-fd9025d.md returns BLOCK for incomplete coverage/tool/runtime verification, not a demonstrated defect. Owner prefers direct review; parent gates do not establish independent acceptance. |
@@ -34,11 +34,11 @@ exclusions/dispositions. Canonical counts alone are not exhaustive spelling/flag
 coverage. Independent verification is not waived; required omissions must still
 be fixed. **Do not mark complete or push before acceptance.**
 
-Latest direct replay: `submission-reader-audit.md` and
-`submission-reader-verification.json`; two reader-scope clarifications, full103/
-16×400, strict publication/81 reflows/EPUBCheck. Historical203-pin selection is
-not complete manuscript coverage; new27-chapter hashes are post-gate snapshots.
-Historical receipts and independent BLOCK remain unchanged.
+Latest direct replay: `submit-consumption-audit.md` and
+`submit-consumption-verification.json`; positive SQPOLL return with unconsumed
+SQEs reproduced safely; CONNECT lifetime prose corrected. Affected3 tests and
+strict publication/81 reflows/EPUBCheck pass. Full103/16×400 remains the earlier
+6c5016c checkpoint, not a new full run. Independent BLOCK is unchanged.
 
 Next: finish remaining source/purpose comparison, resolve the independent
 acceptance boundary, fix findings and replay affected gates. Audit exact required

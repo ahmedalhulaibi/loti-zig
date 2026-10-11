@@ -303,11 +303,13 @@ then observe local/remote IPv4 endpoints with actual returned lengths; ports are
 converted from network byte order. The independent listener checks its accepted
 peer against these observations and receives EOF after queried client closure.
 
-The example keeps the peer bytes unchanged and live through completion. Modern
-SUBMIT_STABLE kernels need input storage through successful submission only;
-this conservative lifetime also covers early-kernel requirements described by
-:man:`io_uring_prep_connect(3)`. Failed socket state is unspecified: each negative
-socket probe gets a fresh owned FD, then closes it. Probes cover invalid FD,
+The example keeps the peer bytes unchanged and live through completion.
+``IORING_FEAT_SUBMIT_STABLE`` means relevant metadata has been consumed when
+the kernel consumes the SQE; see :ref:`io_uring_setup`.
+A positive ``submit`` return is not a consumption acknowledgment for SQPOLL.
+Keep the peer address until the matching CQE, not merely until that return.
+Failed socket state is unspecified: each negative socket probe gets a fresh
+owned FD, then closes it. Probes cover invalid FD,
 non-socket FD, short address, wrong family, a private bound-but-not-listening
 refusal endpoint, and already-connected TCP. The guard holds its port during the
 refusal test; no unrelated endpoint is used. Reconnect failure is observed only
