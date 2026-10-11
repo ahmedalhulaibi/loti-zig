@@ -16,11 +16,11 @@ no upstream PR or release required. Tests/manifests/author effort are not accept
 
 | Command / surface | Evidence / limits |
 |---|---|
-| zig version;zig fmt --check;zig build --summary all | Exact0.17/native25/prior51-step build; unchanged93 native/publication inputs since strict gates. Full-suite VM contract invokes zig build; no fresh51-step claim unless separately run. |
-| tools/inventory.py;reference_map.py;reference_docs.py;check_line_dispositions.py --check | Current frontmatter logs;3618/128,76/99,13 includes and current complete line index. Canonical link digest repair is preserved, not hidden. |
-| LOTI_TEST_CASES=400 locked .venv unittest boundaries | Public CLI/TCP/VM/effects/ownership; full suite and Hypothesis statistics in current frontmatter verification.16 generated properties; finite cases are not extra properties. |
+| zig version;zig fmt --check;zig build --summary all | Latest submission-reader gates: exact0.17/formatter/25 native executables/51 of51 cached steps. Native/helper/test/fixture bodies unchanged;two manuscript sentences clarified. |
+| tools/inventory.py;reference_map.py;reference_docs.py;check_line_dispositions.py --check | Latest CLIs pass:3618/128/567,76/99,13 includes. Only SQE/submission target hashes refreshed after replay; all notes/selectors stable. |
+| LOTI_TEST_CASES=400 locked .venv unittest boundaries | submission-reader-verification.json:103/zero failures-errors-skips/172.323s;16 properties×400 valid cases. Historical203 pins cover4/27 manuscripts; fresh27 chapter snapshots extend selected union to226, not whole dependency coverage. |
 | README current verification commands | New literal fixture/consumer test checks statistics and full argv, executes known mkdir/verifier and compares stdout/file. _build/verification outputs cannot overwrite tracked historical receipts. |
-| make html;make epub with strict warnings | Prior strict logs plus unchanged93 inputs; suite also invokes make epub. Current package must be checked after the last invocation. Fidelity alone can publish an incorrect claim. |
+| make html;make epub with strict warnings | Latest strict HTML/EPUB logs follow full103 replay; final actual archive and two whole corrected paragraphs checked. Fidelity can still publish an incorrect claim. |
 | verify_epub;check_reader_layout;EPUBCheck5.2.1 | Current post-suite receipt bytes,27 chapters/121 literals/368 paragraphs/order/local links/licence/images/no DRM/JS;81 browser reflows/zero validator messages. Not Supernote/pagination/font-override/semantic acceptance. |
 | Post-completion selected mutation scopes |292 bounded author kills including3 README prose kills; native/compiler failures/test errors/skips excluded. Not comprehensive mutation or independent proof. |
 | Independent verifier / current final HEAD | Native async c27be9dc completed against fd9025d; independent-review-fd9025d.md returns BLOCK for incomplete coverage/tool/runtime verification, not a demonstrated defect. Owner prefers direct review; parent gates do not establish independent acceptance. |
@@ -34,10 +34,11 @@ exclusions/dispositions. Canonical counts alone are not exhaustive spelling/flag
 coverage. Independent verification is not waived; required omissions must still
 be fixed. **Do not mark complete or push before acceptance.**
 
-Latest direct replay: `direct-review-checkpoint.md` records exact0.17.0,
-51/51 cached build steps, full103/16×400, strict HTML/EPUB, current archive
-fidelity/81 reflows and EPUBCheck zero messages. Historical receipts stay
-historical; these new parent results do not establish independent acceptance.
+Latest direct replay: `submission-reader-audit.md` and
+`submission-reader-verification.json`; two reader-scope clarifications, full103/
+16×400, strict publication/81 reflows/EPUBCheck. Historical203-pin selection is
+not complete manuscript coverage; new27-chapter hashes are post-gate snapshots.
+Historical receipts and independent BLOCK remain unchanged.
 
 Next: finish remaining source/purpose comparison, resolve the independent
 acceptance boundary, fix findings and replay affected gates. Audit exact required

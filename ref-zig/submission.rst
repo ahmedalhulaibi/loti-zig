@@ -194,7 +194,7 @@ ignored input ``flags``. Header, vectors and nested control storage remain live
 through the CQE. Empty vectors still use valid userspace base addresses: Linux
 checks iovec address ranges even when lengths are zero.
 
-The first RECVMSG requests DONTWAIT/TRUNC/CMSG_CLOEXEC. For datagrams, input
+The payload RECVMSG requests DONTWAIT/TRUNC/CMSG_CLOEXEC. For datagrams, input
 MSG_TRUNC returns the full record length even when receive capacity is smaller;
 only ``min(capacity, length)`` bytes are initialized. Output ``msg.flags`` reports
 TRUNC separately from ordinary CQE flags. The extra 16 poisoned bytes remain

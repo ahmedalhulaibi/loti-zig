@@ -34,6 +34,6 @@ paths, socket addresses, message headers and output structures valid until the
 dependent operation completes. The submitted SQE slot itself becomes reusable
 when the kernel consumes it; that does not release its referenced storage.
 
-See :ref:`submission` for every converted operation constructor and the executed
+See :ref:`submission` for every converted operation constructor and the unsubmitted
 33-constructor reference. See :ref:`io_uring_enter` for queue publication and
 flag semantics. ``reference-setup`` verifies the ordinary SQE size at runtime.

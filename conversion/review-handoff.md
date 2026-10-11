@@ -14,16 +14,16 @@ adds18 complete native bodies, nine chapter pairs and16 supplemental lexical
 rows persisted in `source-inventory-supplement.json`. Current-body reach is30/30; original-purpose
 classification and independent acceptance remain distinct, unresolved gates.
 
-Latest author checkpoint: `frontmatter-verification.json`,
-`completion-audit-current.md` and `prompt-to-artifact-checklist.md`. Original
-26 whole chapters/128 blocks have author comparison; full103/16×400,292 bounded
-mutants. These are not review acceptance. Current frontmatter-* package/reader/
-EPUBCheck receipts follow suite make-epub; older102/101/99/canonical receipts stay
-historical. Inspect default TCP EOF/private descriptor retirement, not Connection
-headers or observer mode alone. Prior link target index SHA and README121/368/
-non-overwriting current-report instructions were separately reproduced/repaired.
-No other required gap found by author; independently challenge that decision,
-classify broader unclaimed assurance and review final exact HEAD before delivery.
+Latest author checkpoint: `submission-reader-audit.md`,
+`submission-reader-verification.json`, current completion/prompt checklists.
+Original26 chapters/128 blocks have historical author comparisons; new reader
+scope names payload RECVMSG and unsubmitted33-constructor requests precisely.
+Fresh full103/16×400, strict HTML/EPUB/81 reflows/EPUBCheck pass;292 historical
+kills unchanged. Historical203 pins cover only4/27 manuscripts; new27-chapter
+hashes are post-gate snapshots, not complete dependency or independent seals.
+Old frontmatter/102/101/99/archive receipts remain history. Inspect default TCP
+EOF/private descriptor retirement, not headers/observer mode alone. Independent
+BLOCK and final exact-HEAD acceptance remain unresolved; nothing pushed.
 
 ## Contract
 
