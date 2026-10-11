@@ -1,0 +1,1656 @@
+{
+  "scope": "Author finite current-kernel SQE flag checks,not independent acceptance,PBT,mutation kills or exhaustive flag/race coverage.",
+  "source_commit": "44d9b32ce7c6cab4ac066a4960be13d2e681719c",
+  "kernel": "7.2.3-arch1-3",
+  "compiler": "0.17.0",
+  "before": {
+    "head": "44d9b32ce7c6cab4ac066a4960be13d2e681719c",
+    "tree": "fe087e067ec18646a33c52654cbf54d9e1ca5937",
+    "raw_flag_paragraphs": "``IOSQE_IO_DRAIN``\n   Hold this request until prior work completes and order later work behind it,\n   subject to the kernel's drain rules. Different from a dependency chain.\n\n``IOSQE_IO_LINK``\n   Link to the next SQE; the first entry without the bit ends the chain. An\n   unsuccessful/unexpected result can cancel the remaining unstarted members\n   with ``-ECANCELED``. Unrelated requests/chains remain independent.\n\n``IOSQE_IO_HARDLINK``\n   Preserve a submitted chain across completion-result failures; submission\n   failure can still break it. Do not require a separate soft-link bit to use\n   the kernel's hard-link semantics.\n\n``IOSQE_ASYNC``\n   Request asynchronous issue from the start rather than the inline-first attempt.\n   It does not by itself establish dependencies or order CQ arrival.",
+    "tutorial_link_paragraph": "Queue order alone does not establish an execution dependency. Set\n``linux.IOSQE_IO_LINK`` on an SQE to link it to the next SQE. Leave this flag\nclear on the chain's last request. This example links a write, a read and a\nclose; the read must observe the write before the descriptor is closed.",
+    "source_sha256": {
+      "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
+      "tutorial/link.rst": "5e91d1504ed3009f8e995f02f57ea0d13ae6f9fee678bfa9f24bcf56dc503b52"
+    },
+    "scope": "Existing link prose omits explicit submission boundary;drain already describes both preceding/following ordering. Kernel probe required before clarification.",
+    "packaged_link_paragraphs": {
+      "ref-iouring/io_uring_enter.xhtml": [
+        "Link to the next SQE; the first entry without the bit ends the chain. An unsuccessful/unexpected result can cancel the remaining unstarted members with -ECANCELED. Unrelated requests/chains remain independent."
+      ],
+      "tutorial/link.xhtml": [
+        "Queue order alone does not establish an execution dependency. Set linux.IOSQE_IO_LINK on an SQE to link it to the next SQE. Leave this flag clear on the chain\u2019s last request. This example links a write, a read and a close; the read must observe the write before the descriptor is closed."
+      ]
+    },
+    "archive_sha256": "8111dd101e590429587545ea2293a23add5774eb1dfa79603012eb02887ecc2d"
+  },
+  "evidence_root": "_build/verification/sqe-flag-effects.qyj7ELZx",
+  "helper_source": "const std = @import(\"std\");\nconst linux = std.os.linux;\nconst raw = @import(\"raw\");\n\ncomptime {\n    if (!std.mem.eql(u8, @import(\"builtin\").zig_version_string, \"0.17.0\")) @compileError(\"Requires exact Zig 0.17.0\");\n}\n\nconst Pipe = struct {\n    fds: [2]linux.fd_t,\n    fn init() !Pipe {\n        var fds: [2]linux.fd_t = undefined;\n        if (linux.errno(linux.pipe2(&fds, .{ .NONBLOCK = true, .CLOEXEC = true })) != .SUCCESS) return error.PrivatePipeFailed;\n        return .{ .fds = fds };\n    }\n    fn deinit(self: *Pipe) void {\n        for (self.fds) |fd| {\n            if (fd >= 0) _ = linux.close(fd);\n        }\n    }\n    fn put(self: *Pipe, byte: u8) !void {\n        const bytes = [_]u8{byte};\n        if (linux.write(self.fds[1], &bytes, 1) != 1) return error.PrivateWriteFailed;\n    }\n    fn take(self: *Pipe) !?u8 {\n        var bytes = [_]u8{165};\n        const result = linux.read(self.fds[0], &bytes, 1);\n        if (result == 1) return bytes[0];\n        if (linux.errno(result) == .AGAIN and bytes[0] == 165) return null;\n        return error.PrivateReadUnexpected;\n    }\n    fn readable(self: *Pipe) !bool {\n        var fds = [_]linux.pollfd{.{ .fd = self.fds[0], .events = linux.POLL.IN, .revents = 0 }};\n        const result = linux.poll(&fds, 1, 0);\n        if (result == 0 and fds[0].revents == 0) return false;\n        if (result == 1 and fds[0].revents == linux.POLL.IN) return true;\n        return error.PrivatePollUnexpected;\n    }\n};\n\nconst Stage = struct {\n    buffer: [2]u8 = .{ 165, 165 },\n    b_readable: ?bool = null,\n    witness: ?u8 = null,\n};\nconst Row = struct {\n    kind: enum { drain, link, boundary },\n    mode: enum { blocked_prior, blocked_drain, short, timeout, invalid_fd, invalid_opcode, split },\n    request_flags: u8,\n    prepared_flags: [3]?u8 = .{ null, null, null },\n    submitted: [2]?u32 = .{ null, null },\n    early: [3]bool = .{ false, false, false },\n    completions: [3]?linux.io_uring_cqe = .{ null, null, null },\n    before: Stage = .{},\n    after: Stage = .{},\n    guards: u32 = 0,\n};\n\nfn completion(ring: *linux.IoUring, row: *Row, early: bool) !u64 {\n    const timeout: linux.kernel_timespec = .{ .sec = 1, .nsec = 0 };\n    try raw.wait_with_timeout(ring, 1, &timeout, null);\n    const cqe = try ring.copy_cqe();\n    if (cqe.user_data < 1 or cqe.user_data > 3 or cqe.flags != 0) return error.UnexpectedCqe;\n    const index: usize = @intCast(cqe.user_data - 1);\n    if (row.completions[index] != null) return error.DuplicateCqe;\n    row.completions[index] = cqe;\n    row.early[index] = early;\n    return cqe.user_data;\n}\n\nfn guard(ring: *linux.IoUring, row: *Row) !void {\n    const timeout: linux.kernel_timespec = .{ .sec = 0, .nsec = 1_000_000 };\n    raw.wait_with_timeout(ring, 1, &timeout, null) catch |err| {\n        if (err == error.WaitTimedOut and ring.cq_ready() == 0) {\n            row.guards += 1;\n            return;\n        }\n        return err;\n    };\n    return error.UnexpectedEarlyCompletion;\n}\n\nfn drained(ring: *linux.IoUring) !void {\n    if (ring.sq_ready() != 0 or ring.cq_ready() != 0) return error.QueueNotDrained;\n}\n\nfn drain(flags: u8, prior_ready: bool) !Row {\n    var a = try Pipe.init();\n    defer a.deinit();\n    var b = try Pipe.init();\n    defer b.deinit();\n    var witness = try Pipe.init();\n    defer witness.deinit();\n    var ring = try linux.IoUring.init(8, 0);\n    defer ring.deinit();\n    var bytes = [_]u8{ 165, 165 };\n    const write_bytes = [_]u8{99};\n    var row: Row = .{ .kind = .drain, .mode = if (prior_ready) .blocked_drain else .blocked_prior, .request_flags = flags };\n    if (prior_ready) try a.put(97) else try b.put(98);\n    const first = try ring.read(1, a.fds[0], .{ .buffer = bytes[0..1] }, std.math.maxInt(u64));\n    const middle = try ring.read(2, b.fds[0], .{ .buffer = bytes[1..2] }, std.math.maxInt(u64));\n    middle.flags = flags;\n    const last = try ring.write(3, witness.fds[1], &write_bytes, std.math.maxInt(u64));\n    row.prepared_flags = .{ first.flags, middle.flags, last.flags };\n    row.submitted[0] = try ring.submit();\n    if (row.submitted[0] != 3 or ring.sq_ready() != 0) return error.SubmissionNotConsumed;\n    if (flags == 0) {\n        _ = try completion(&ring, &row, true);\n        _ = try completion(&ring, &row, true);\n    } else if (prior_ready) {\n        if (try completion(&ring, &row, true) != 1) return error.DrainFirstWrong;\n    }\n    try guard(&ring, &row);\n    try guard(&ring, &row);\n    row.before = .{ .buffer = bytes, .b_readable = try b.readable(), .witness = try witness.take() };\n    if (flags != 0 and row.before.witness != null) return error.DrainWitnessStarted;\n    if (prior_ready) try b.put(98) else try a.put(97);\n    while (row.completions[0] == null or row.completions[1] == null or row.completions[2] == null) {\n        _ = try completion(&ring, &row, false);\n    }\n    for (row.completions) |cqe| if (cqe == null or cqe.?.res != 1) return error.DrainResultWrong;\n    row.after = .{ .buffer = bytes, .b_readable = try b.readable(), .witness = try witness.take() };\n    try drained(&ring);\n    return row;\n}\n\nfn linked(flags: u8, mode: @FieldType(Row, \"mode\")) !Row {\n    var source = try Pipe.init();\n    defer source.deinit();\n    var witness = try Pipe.init();\n    defer witness.deinit();\n    var ring = try linux.IoUring.init(8, 0);\n    defer ring.deinit();\n    var bytes = [_]u8{ 165, 165 };\n    const write_bytes = [_]u8{99};\n    const timeout: linux.kernel_timespec = .{ .sec = 0, .nsec = 1_000_000 };\n    var row: Row = .{ .kind = .link, .mode = mode, .request_flags = flags };\n    if (mode == .short) {\n        try source.put(97);\n        if (linux.errno(linux.close(source.fds[1])) != .SUCCESS) return error.SourceWriterCloseFailed;\n        source.fds[1] = -1;\n    }\n    const first = if (mode == .timeout) try ring.timeout(1, &timeout, 0, 0) else try ring.read(1, if (mode == .invalid_fd) -1 else source.fds[0], .{ .buffer = &bytes }, std.math.maxInt(u64));\n    if (mode == .invalid_opcode) first.opcode = @fromBackingInt(@intCast(255));\n    first.flags = flags;\n    const last = try ring.write(2, witness.fds[1], &write_bytes, std.math.maxInt(u64));\n    row.prepared_flags = .{ first.flags, last.flags, null };\n    row.submitted[0] = try ring.submit();\n    if (mode == .invalid_opcode and row.submitted[0] == 1 and ring.sq_ready() == 1) {\n        row.submitted[1] = try ring.submit();\n        if (row.submitted[1] != 1) return error.PartialSubmissionWrong;\n    } else if (row.submitted[0] != 2) return error.SubmissionWrong;\n    _ = try completion(&ring, &row, false);\n    _ = try completion(&ring, &row, false);\n    row.after = .{ .buffer = bytes, .witness = try witness.take() };\n    try drained(&ring);\n    return row;\n}\n\nfn boundary(flags: u8) !Row {\n    var source = try Pipe.init();\n    defer source.deinit();\n    if (linux.fcntl(source.fds[0], linux.F.SETFL, 0) != 0) return error.BlockingSourceFailed;\n    var witness = try Pipe.init();\n    defer witness.deinit();\n    var ring = try linux.IoUring.init(8, 0);\n    defer ring.deinit();\n    var bytes = [_]u8{ 165, 165 };\n    const write_bytes = [_]u8{99};\n    var row: Row = .{ .kind = .boundary, .mode = .split, .request_flags = flags };\n    const first = try ring.read(1, source.fds[0], .{ .buffer = bytes[0..1] }, std.math.maxInt(u64));\n    first.flags = flags;\n    row.prepared_flags[0] = first.flags;\n    row.submitted[0] = try ring.submit();\n    if (row.submitted[0] != 1 or ring.sq_ready() != 0) return error.FirstSubmissionWrong;\n    const last = try ring.write(2, witness.fds[1], &write_bytes, std.math.maxInt(u64));\n    row.prepared_flags[1] = last.flags;\n    row.submitted[1] = try ring.submit();\n    if (row.submitted[1] != 1) return error.SecondSubmissionWrong;\n    if (try completion(&ring, &row, true) != 2) return error.CrossSubmissionLinked;\n    guard(&ring, &row) catch |err| {\n        if (ring.cq_ready() != 0) {\n            const unexpected = try ring.copy_cqe();\n            std.debug.print(\"{{\\\"event\\\":\\\"unexpected_boundary_cqe\\\",\\\"request_flags\\\":{d},\\\"tag\\\":{d},\\\"result\\\":{d},\\\"cqe_flags\\\":{d}}}\\n\", .{ flags, unexpected.user_data, unexpected.res, unexpected.flags });\n        }\n        return err;\n    };\n    row.before = .{ .buffer = bytes, .witness = try witness.take() };\n    if (row.before.witness != 99 or bytes[0] != 165) return error.SplitWitnessWrong;\n    try source.put(97);\n    if (try completion(&ring, &row, false) != 1) return error.SplitReadWrong;\n    row.after = .{ .buffer = bytes, .witness = try witness.take() };\n    try drained(&ring);\n    return row;\n}\n\npub fn main(init: std.process.Init) !void {\n    var rows: [19]Row = undefined;\n    var used: usize = 0;\n    for ([_]u8{ 0, linux.IOSQE_IO_DRAIN }) |flag| for ([_]bool{ false, true }) |ready| {\n        rows[used] = try drain(flag, ready);\n        used += 1;\n    };\n    for ([_]u8{ 0, linux.IOSQE_IO_LINK, linux.IOSQE_IO_HARDLINK }) |flag| for ([_]@FieldType(Row, \"mode\"){ .short, .timeout, .invalid_fd }) |mode| {\n        rows[used] = try linked(flag, mode);\n        used += 1;\n    };\n    for ([_]u8{ 0, linux.IOSQE_IO_LINK, linux.IOSQE_IO_HARDLINK }) |flag| {\n        rows[used] = try linked(flag, .invalid_opcode);\n        used += 1;\n    }\n    for ([_]u8{ 0, linux.IOSQE_IO_LINK, linux.IOSQE_IO_HARDLINK }) |flag| {\n        rows[used] = try boundary(flag);\n        used += 1;\n    }\n    if (used != rows.len) return error.RowCountWrong;\n    var bytes: [4096]u8 = undefined;\n    var output = std.Io.File.stdout().writerStreaming(init.io, &bytes);\n    try std.json.Stringify.value(rows, .{ .emit_strings_as_arrays = true }, &output.interface);\n    try output.interface.writeByte('\\n');\n    try output.interface.flush();\n}\n",
+  "helper_sha256": "1d17ffefb8986e526e2c1f39ff1fa413b06dd480ffb3123faaa93b72a07f6228",
+  "model_source": "import json\nimport subprocess\nfrom pathlib import Path\n\nOUT = Path(__file__).resolve().parent\n\n\ndef read_json(path):\n    try:\n        return json.loads(path.read_text())\n    except (OSError, ValueError) as error:\n        raise RuntimeError(\"InvalidOwnedFlagJson\") from error\n\n\ndef cqe(tag, result):\n    return {\"user_data\": tag, \"res\": result, \"flags\": 0}\n\n\ndef stage(buffer=None, readable=None, witness=None):\n    return {\"buffer\": [165, 165] if buffer is None else buffer,\n            \"b_readable\": readable, \"witness\": witness}\n\n\ndef expected(plan):\n    flag = plan[\"request_flags\"]\n    row = {\"kind\": plan[\"kind\"], \"request_flags\": flag,\n           \"prepared_flags\": [flag, 0, None], \"submitted\": [2, None],\n           \"early\": [False, False, False],\n           \"completions\": [cqe(i + 1, result) for i, result in enumerate(plan[\"results\"])],\n           \"before\": stage(), \"after\": stage(), \"guards\": 0}\n    if len(row[\"completions\"]) == 2:\n        row[\"completions\"].append(None)\n    if plan[\"kind\"] == \"drain\":\n        ready = plan[\"prior_ready\"]\n        row.update(mode=\"blocked_drain\" if ready else \"blocked_prior\",\n                   prepared_flags=[0, flag, 0], submitted=[3, None],\n                   early=plan[\"early\"], guards=2,\n                   before=stage([97, 165] if ready else [165, 165 if flag else 98],\n                                plan[\"before_b_readable\"], plan[\"before_witness\"]),\n                   after=stage([97, 98], False, 99 if flag else None))\n    elif plan[\"kind\"] == \"link\":\n        row.update(mode=plan[\"mode\"],\n                   after=stage([97, 165] if plan[\"mode\"] == \"short\" else [165, 165],\n                               witness=plan[\"witness\"]))\n        if plan[\"mode\"] == \"invalid_opcode\" and flag == 0:\n            row[\"submitted\"] = [1, 1]\n    else:\n        row.update(mode=\"split\", submitted=plan[\"submissions\"], early=plan[\"early\"],\n                   before=stage(witness=plan[\"before_witness\"]),\n                   after=stage([97, 165]), guards=1)\n    return row\n\n\nspec = read_json(OUT / \"spec-current.json\")\nmodel = [expected(plan) for plan in spec[\"plans\"]]\ninitial = read_json(OUT / \"nineteen-plan.stdout\")\nif initial != model:\n    raise RuntimeError((\"InitialFlagModelMismatch\", initial, model))\nobservations = []\nfor run in range(20):\n    result = subprocess.run([str(OUT / \"flag-probe\")], capture_output=True,\n                            text=True, timeout=15, check=False)\n    (OUT / f\"run-{run:02d}.stdout\").write_text(result.stdout)\n    (OUT / f\"run-{run:02d}.stderr\").write_text(result.stderr)\n    if (result.returncode, result.stderr) != (0, \"\"):\n        raise RuntimeError((\"OwnedFlagProbeFailed\", run, result.returncode, result.stderr))\n    try:\n        actual = json.loads(result.stdout)\n    except ValueError as error:\n        raise RuntimeError(\"InvalidOwnedFlagProbeOutput\") from error\n    if actual != model:\n        raise RuntimeError((\"FlagModelMismatch\", run, actual, model))\n    observations.append({\"run\": run, \"plans\": len(actual), \"cqes\": 42,\n                         \"guard_timeouts\": 11, \"submissions\": 23})\n(OUT / \"model.json\").write_text(json.dumps(model, indent=2) + \"\\n\")\n(OUT / \"runs.json\").write_text(json.dumps(observations, indent=2) + \"\\n\")\nprint(\"20 processes;19 finite plans each;840 exact CQEs;460 submissions;220 guards;whole rows match scoped model;initial badFD classification retained.\")\n",
+  "spec_initial": {
+    "head": "44d9b32ce7c6cab4ac066a4960be13d2e681719c",
+    "scope": "Hand-pinned finite flag semantics before helper implementation;not independent sealed tests or edition mutation.",
+    "flags": {
+      "none": 0,
+      "drain": 2,
+      "link": 4,
+      "hardlink": 8
+    },
+    "plans": [
+      {
+        "kind": "drain",
+        "request_flags": 0,
+        "prior_ready": false,
+        "early": [
+          false,
+          true,
+          true
+        ],
+        "results": [
+          1,
+          1,
+          1
+        ],
+        "before_b_readable": false,
+        "before_witness": 99
+      },
+      {
+        "kind": "drain",
+        "request_flags": 0,
+        "prior_ready": true,
+        "early": [
+          true,
+          false,
+          true
+        ],
+        "results": [
+          1,
+          1,
+          1
+        ],
+        "before_b_readable": false,
+        "before_witness": 99
+      },
+      {
+        "kind": "drain",
+        "request_flags": 2,
+        "prior_ready": false,
+        "early": [
+          false,
+          false,
+          false
+        ],
+        "results": [
+          1,
+          1,
+          1
+        ],
+        "before_b_readable": true,
+        "before_witness": null
+      },
+      {
+        "kind": "drain",
+        "request_flags": 2,
+        "prior_ready": true,
+        "early": [
+          true,
+          false,
+          false
+        ],
+        "results": [
+          1,
+          1,
+          1
+        ],
+        "before_b_readable": false,
+        "before_witness": null
+      },
+      {
+        "kind": "link",
+        "request_flags": 0,
+        "mode": "short",
+        "results": [
+          1,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 0,
+        "mode": "timeout",
+        "results": [
+          -62,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 0,
+        "mode": "invalid_fd",
+        "results": [
+          -9,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 4,
+        "mode": "short",
+        "results": [
+          1,
+          -125
+        ],
+        "witness": null
+      },
+      {
+        "kind": "link",
+        "request_flags": 4,
+        "mode": "timeout",
+        "results": [
+          -62,
+          -125
+        ],
+        "witness": null
+      },
+      {
+        "kind": "link",
+        "request_flags": 4,
+        "mode": "invalid_fd",
+        "results": [
+          -9,
+          -125
+        ],
+        "witness": null
+      },
+      {
+        "kind": "link",
+        "request_flags": 8,
+        "mode": "short",
+        "results": [
+          1,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 8,
+        "mode": "timeout",
+        "results": [
+          -62,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 8,
+        "mode": "invalid_fd",
+        "results": [
+          -9,
+          -125
+        ],
+        "witness": null
+      },
+      {
+        "kind": "boundary",
+        "request_flags": 0,
+        "early": [
+          false,
+          true,
+          false
+        ],
+        "results": [
+          1,
+          1
+        ],
+        "before_witness": 99,
+        "submissions": [
+          1,
+          1
+        ]
+      },
+      {
+        "kind": "boundary",
+        "request_flags": 4,
+        "early": [
+          false,
+          true,
+          false
+        ],
+        "results": [
+          1,
+          1
+        ],
+        "before_witness": 99,
+        "submissions": [
+          1,
+          1
+        ]
+      },
+      {
+        "kind": "boundary",
+        "request_flags": 8,
+        "early": [
+          false,
+          true,
+          false
+        ],
+        "results": [
+          1,
+          1
+        ],
+        "before_witness": 99,
+        "submissions": [
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "spec_current": {
+    "head": "44d9b32ce7c6cab4ac066a4960be13d2e681719c",
+    "scope": "Finite19-plan model;retains initial16-plan spec separately. BadFD was wrongly classified as submission failure:current-kernel hardlink retains its tail. Invalid opcode added with hand-pinned expectations before helper implementation.",
+    "flags": {
+      "none": 0,
+      "drain": 2,
+      "link": 4,
+      "hardlink": 8
+    },
+    "plans": [
+      {
+        "kind": "drain",
+        "request_flags": 0,
+        "prior_ready": false,
+        "early": [
+          false,
+          true,
+          true
+        ],
+        "results": [
+          1,
+          1,
+          1
+        ],
+        "before_b_readable": false,
+        "before_witness": 99
+      },
+      {
+        "kind": "drain",
+        "request_flags": 0,
+        "prior_ready": true,
+        "early": [
+          true,
+          false,
+          true
+        ],
+        "results": [
+          1,
+          1,
+          1
+        ],
+        "before_b_readable": false,
+        "before_witness": 99
+      },
+      {
+        "kind": "drain",
+        "request_flags": 2,
+        "prior_ready": false,
+        "early": [
+          false,
+          false,
+          false
+        ],
+        "results": [
+          1,
+          1,
+          1
+        ],
+        "before_b_readable": true,
+        "before_witness": null
+      },
+      {
+        "kind": "drain",
+        "request_flags": 2,
+        "prior_ready": true,
+        "early": [
+          true,
+          false,
+          false
+        ],
+        "results": [
+          1,
+          1,
+          1
+        ],
+        "before_b_readable": false,
+        "before_witness": null
+      },
+      {
+        "kind": "link",
+        "request_flags": 0,
+        "mode": "short",
+        "results": [
+          1,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 0,
+        "mode": "timeout",
+        "results": [
+          -62,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 0,
+        "mode": "invalid_fd",
+        "results": [
+          -9,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 4,
+        "mode": "short",
+        "results": [
+          1,
+          -125
+        ],
+        "witness": null
+      },
+      {
+        "kind": "link",
+        "request_flags": 4,
+        "mode": "timeout",
+        "results": [
+          -62,
+          -125
+        ],
+        "witness": null
+      },
+      {
+        "kind": "link",
+        "request_flags": 4,
+        "mode": "invalid_fd",
+        "results": [
+          -9,
+          -125
+        ],
+        "witness": null
+      },
+      {
+        "kind": "link",
+        "request_flags": 8,
+        "mode": "short",
+        "results": [
+          1,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 8,
+        "mode": "timeout",
+        "results": [
+          -62,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 8,
+        "mode": "invalid_fd",
+        "results": [
+          -9,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 0,
+        "mode": "invalid_opcode",
+        "results": [
+          -22,
+          1
+        ],
+        "witness": 99
+      },
+      {
+        "kind": "link",
+        "request_flags": 4,
+        "mode": "invalid_opcode",
+        "results": [
+          -22,
+          -125
+        ],
+        "witness": null
+      },
+      {
+        "kind": "link",
+        "request_flags": 8,
+        "mode": "invalid_opcode",
+        "results": [
+          -22,
+          -125
+        ],
+        "witness": null
+      },
+      {
+        "kind": "boundary",
+        "request_flags": 0,
+        "early": [
+          false,
+          true,
+          false
+        ],
+        "results": [
+          1,
+          1
+        ],
+        "before_witness": 99,
+        "submissions": [
+          1,
+          1
+        ]
+      },
+      {
+        "kind": "boundary",
+        "request_flags": 4,
+        "early": [
+          false,
+          true,
+          false
+        ],
+        "results": [
+          1,
+          1
+        ],
+        "before_witness": 99,
+        "submissions": [
+          1,
+          1
+        ]
+      },
+      {
+        "kind": "boundary",
+        "request_flags": 8,
+        "early": [
+          false,
+          true,
+          false
+        ],
+        "results": [
+          1,
+          1
+        ],
+        "before_witness": 99,
+        "submissions": [
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "whole_expected_and_observed_rows": [
+    {
+      "kind": "drain",
+      "request_flags": 0,
+      "prepared_flags": [
+        0,
+        0,
+        0
+      ],
+      "submitted": [
+        3,
+        null
+      ],
+      "early": [
+        false,
+        true,
+        true
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 3,
+          "res": 1,
+          "flags": 0
+        }
+      ],
+      "before": {
+        "buffer": [
+          165,
+          98
+        ],
+        "b_readable": false,
+        "witness": 99
+      },
+      "after": {
+        "buffer": [
+          97,
+          98
+        ],
+        "b_readable": false,
+        "witness": null
+      },
+      "guards": 2,
+      "mode": "blocked_prior"
+    },
+    {
+      "kind": "drain",
+      "request_flags": 0,
+      "prepared_flags": [
+        0,
+        0,
+        0
+      ],
+      "submitted": [
+        3,
+        null
+      ],
+      "early": [
+        true,
+        false,
+        true
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 3,
+          "res": 1,
+          "flags": 0
+        }
+      ],
+      "before": {
+        "buffer": [
+          97,
+          165
+        ],
+        "b_readable": false,
+        "witness": 99
+      },
+      "after": {
+        "buffer": [
+          97,
+          98
+        ],
+        "b_readable": false,
+        "witness": null
+      },
+      "guards": 2,
+      "mode": "blocked_drain"
+    },
+    {
+      "kind": "drain",
+      "request_flags": 2,
+      "prepared_flags": [
+        0,
+        2,
+        0
+      ],
+      "submitted": [
+        3,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 3,
+          "res": 1,
+          "flags": 0
+        }
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": true,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          97,
+          98
+        ],
+        "b_readable": false,
+        "witness": 99
+      },
+      "guards": 2,
+      "mode": "blocked_prior"
+    },
+    {
+      "kind": "drain",
+      "request_flags": 2,
+      "prepared_flags": [
+        0,
+        2,
+        0
+      ],
+      "submitted": [
+        3,
+        null
+      ],
+      "early": [
+        true,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 3,
+          "res": 1,
+          "flags": 0
+        }
+      ],
+      "before": {
+        "buffer": [
+          97,
+          165
+        ],
+        "b_readable": false,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          97,
+          98
+        ],
+        "b_readable": false,
+        "witness": 99
+      },
+      "guards": 2,
+      "mode": "blocked_drain"
+    },
+    {
+      "kind": "link",
+      "request_flags": 0,
+      "prepared_flags": [
+        0,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          97,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "guards": 0,
+      "mode": "short"
+    },
+    {
+      "kind": "link",
+      "request_flags": 0,
+      "prepared_flags": [
+        0,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": -62,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "guards": 0,
+      "mode": "timeout"
+    },
+    {
+      "kind": "link",
+      "request_flags": 0,
+      "prepared_flags": [
+        0,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": -9,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "guards": 0,
+      "mode": "invalid_fd"
+    },
+    {
+      "kind": "link",
+      "request_flags": 4,
+      "prepared_flags": [
+        4,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": -125,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          97,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "guards": 0,
+      "mode": "short"
+    },
+    {
+      "kind": "link",
+      "request_flags": 4,
+      "prepared_flags": [
+        4,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": -62,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": -125,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "guards": 0,
+      "mode": "timeout"
+    },
+    {
+      "kind": "link",
+      "request_flags": 4,
+      "prepared_flags": [
+        4,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": -9,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": -125,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "guards": 0,
+      "mode": "invalid_fd"
+    },
+    {
+      "kind": "link",
+      "request_flags": 8,
+      "prepared_flags": [
+        8,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          97,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "guards": 0,
+      "mode": "short"
+    },
+    {
+      "kind": "link",
+      "request_flags": 8,
+      "prepared_flags": [
+        8,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": -62,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "guards": 0,
+      "mode": "timeout"
+    },
+    {
+      "kind": "link",
+      "request_flags": 8,
+      "prepared_flags": [
+        8,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": -9,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "guards": 0,
+      "mode": "invalid_fd"
+    },
+    {
+      "kind": "link",
+      "request_flags": 0,
+      "prepared_flags": [
+        0,
+        0,
+        null
+      ],
+      "submitted": [
+        1,
+        1
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": -22,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "guards": 0,
+      "mode": "invalid_opcode"
+    },
+    {
+      "kind": "link",
+      "request_flags": 4,
+      "prepared_flags": [
+        4,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": -22,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": -125,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "guards": 0,
+      "mode": "invalid_opcode"
+    },
+    {
+      "kind": "link",
+      "request_flags": 8,
+      "prepared_flags": [
+        8,
+        0,
+        null
+      ],
+      "submitted": [
+        2,
+        null
+      ],
+      "early": [
+        false,
+        false,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": -22,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": -125,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "after": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "guards": 0,
+      "mode": "invalid_opcode"
+    },
+    {
+      "kind": "boundary",
+      "request_flags": 0,
+      "prepared_flags": [
+        0,
+        0,
+        null
+      ],
+      "submitted": [
+        1,
+        1
+      ],
+      "early": [
+        false,
+        true,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "after": {
+        "buffer": [
+          97,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "guards": 1,
+      "mode": "split"
+    },
+    {
+      "kind": "boundary",
+      "request_flags": 4,
+      "prepared_flags": [
+        4,
+        0,
+        null
+      ],
+      "submitted": [
+        1,
+        1
+      ],
+      "early": [
+        false,
+        true,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "after": {
+        "buffer": [
+          97,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "guards": 1,
+      "mode": "split"
+    },
+    {
+      "kind": "boundary",
+      "request_flags": 8,
+      "prepared_flags": [
+        8,
+        0,
+        null
+      ],
+      "submitted": [
+        1,
+        1
+      ],
+      "early": [
+        false,
+        true,
+        false
+      ],
+      "completions": [
+        {
+          "user_data": 1,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 2,
+          "res": 1,
+          "flags": 0
+        },
+        null
+      ],
+      "before": {
+        "buffer": [
+          165,
+          165
+        ],
+        "b_readable": null,
+        "witness": 99
+      },
+      "after": {
+        "buffer": [
+          97,
+          165
+        ],
+        "b_readable": null,
+        "witness": null
+      },
+      "guards": 1,
+      "mode": "split"
+    }
+  ],
+  "runs": [
+    {
+      "run": 0,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 1,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 2,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 3,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 4,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 5,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 6,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 7,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 8,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 9,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 10,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 11,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 12,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 13,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 14,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 15,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 16,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 17,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 18,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    },
+    {
+      "run": 19,
+      "plans": 19,
+      "cqes": 42,
+      "guard_timeouts": 11,
+      "submissions": 23,
+      "stdout_sha256": "3552a438bb6e29a26d0f671f6a90737c903d3eb103349e45b44cd4b7711e652e"
+    }
+  ],
+  "bounded_totals": {
+    "processes": 20,
+    "plans_per_process": 19,
+    "validated_cqes": 840,
+    "submission_calls": 460,
+    "guard_timeouts": 220
+  },
+  "additional_trace": {
+    "setups": 19,
+    "submission_calls": 23,
+    "guard_timeouts": 11,
+    "scope": "One additional traced process;not added to20-process counters."
+  },
+  "trace_sha256": "1304250e339e0e2355f235217eac58698241b3cf3ec93c0f11dec80c37ebdc2c",
+  "local_authority": {
+    "path": "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_enter.2.txt",
+    "headings": [
+      "IOSQE_IO_DRAIN",
+      "IOSQE_IO_LINK",
+      "IOSQE_IO_HARDLINK"
+    ],
+    "sha256": "e76e4da09284d625759a641978f8abb38fe194a9ab1bd33df213e208dcffefbe"
+  },
+  "discovery_limits": [
+    "Initial prior-ready model typo corrected before helper compilation;draft retained.",
+    "Initial helper failed compilation:invalid left-hand side to assignment;draft/log retained;not a kill.",
+    "Nonblocking standalone linked READ yielded tag1/result-11;initial pending assumption invalid. Blocking private source FD gives pending READ in split-submission cases;both outputs/helpers retained. No universal nonblocking-read or kernel-defect claim.",
+    "BadFD was wrongly predicted as hardlink submission failure. Observed READ result-9 preserves hardlinked WRITE;initial expected/actual mismatch retained. Unsupported opcode255 instead yields-22 and cancels both linked/hardlinked tails.",
+    "Unlinked invalid opcode consumes first SQE only;submit returns1 then1 for remaining WRITE. Initial submit==2 assumption failed;helper/log retained.",
+    "Formatter-only draft changes and failed discovery are not suite failures or mutation kills.",
+    "All borrowed storage retained through validated tagged CQEs on successful plans;no all-error-unwind or teardown acceptance.",
+    "Native edition programs/tests/fixtures unchanged;fresh full103 remains44d9b32 clean-consumer evidence. Existing prose test passes old paragraphs and does not cover submission-boundary semantics.",
+    "Existing IO_DRAIN prose already states both preceding/following ordering;no defect found there.",
+    "Link reference/tutorial omit explicit submission-boundary termination;finite split-submission case demonstrates independent later WRITE before first READ release. Clarify both passages.",
+    "Supplement targetee0b124 snapshot remains historical;do not silently repin its old slices when current flag prose changes.",
+    "292 kills/16 properties unchanged;no new reviewer or push;independent BLOCK remains."
+  ]
+}
