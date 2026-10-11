@@ -1,0 +1,81 @@
+{
+  "source_commit": "9a82118dfc0287b01e06f1e8baabe5fd180a7a9d",
+  "original_selector": "delme.c:222-223",
+  "missing_purpose": "Generic ASYNC_CANCEL only constructed; execute exact full-u64 tag matching, distinct cancel/target completions, missing/completed targets and unrelated-request/borrowed-buffer ownership. Existing poll/timeout removal and linked-timeout evidence is not generic cancellation execution.",
+  "baseline_cli": {
+    "arguments": [
+      "zig-out/bin/reference-submission",
+      "--cancel"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "typed_error": "FileNotFound"
+  },
+  "private_abi_probe": {
+    "source_sha256": "0a6f838b130dc8cc96bf5c6fa77c684e125849fc7f0b7a993c68e3f3dc701469",
+    "report": {
+      "cqes": [
+        {
+          "user_data": 100,
+          "res": 0,
+          "flags": 0
+        },
+        {
+          "user_data": 1311673391471656961,
+          "res": -125,
+          "flags": 0
+        },
+        {
+          "user_data": 101,
+          "res": -2,
+          "flags": 0
+        },
+        {
+          "user_data": 102,
+          "res": -2,
+          "flags": 0
+        },
+        {
+          "user_data": 103,
+          "res": -22,
+          "flags": 0
+        },
+        {
+          "user_data": 6230730084467081217,
+          "res": 1,
+          "flags": 0
+        },
+        {
+          "user_data": 104,
+          "res": -2,
+          "flags": 0
+        }
+      ],
+      "bytes": [
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        [
+          90,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      ]
+    },
+    "scope": "Author owned private-pipe/current-kernel exploration, not independent review."
+  },
+  "planned_scope": "Cancellation helper/native CLI, public tests, binding, reader inclusion and dispositions are adapters of one original teaching purpose; no unrelated domain change.",
+  "review": "Still blocked; no retry, fallback or completion claim."
+}
