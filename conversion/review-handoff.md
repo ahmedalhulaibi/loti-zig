@@ -1,9 +1,16 @@
 # Independent review handoff
 
-Status: **blocked, not accepted**. `review-blocker.md` records unsupported-host
-failures; no reviewer ran. Resume only after a supported child host or an
-owner-authorised independent mechanism is available. Do not substitute author
-tests, hashes, parsers, mutation results or this document for that review.
+Status: **incomplete, not accepted**. `review-blocker.md` retains earlier host
+failures. Native async reviewer `c27be9dc` now ran against `fd9025d`; its report
+is `independent-review-fd9025d.md`. It found no verified defect in its inspected
+subset but returned BLOCK: original-purpose coverage and independent runtime/
+publication acceptance were incomplete. Do not substitute author tests, hashes,
+parsers, mutation results or this document for that review.
+
+Owner now prefers direct review; no new reviewer agents are launched. Fresh
+direct gates are recorded in `direct-review-checkpoint.md`; these are author
+verification, not a waiver of independent acceptance. Finish actual source/
+purpose comparison and resolve that acceptance boundary before delivery.
 
 Latest author checkpoint: `frontmatter-verification.json`,
 `completion-audit-current.md` and `prompt-to-artifact-checklist.md`. Original

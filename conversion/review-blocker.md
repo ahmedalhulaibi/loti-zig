@@ -17,7 +17,7 @@ Parent compilation and execution checks remain useful, but are **not** an
 independent review. The document rewrite can continue; completion/publication
 audit must stay open.
 
-## Current retry
+## Historical retry — no child started
 
 - Time: `2026-10-10T04:34:18-04:00`.
 - Protocol: native async `reviewer`, fresh context, read-only; executable agent
@@ -34,6 +34,21 @@ audit must stay open.
 - Result: independent review remains blocked. No findings, review attestation,
   foreground/CLI fallback or goal-completion claim was produced.
 
-Next input: provide a supported Pi child host, or authorize another independent
-review mechanism. Then inspect the current edition, resolve findings, and repeat
-the final verification gates.
+## Completed retry — partial review
+
+- Run: `c27be9dc-be43-4ca0-85d3-d98be72fdf5f`; native async, fresh reviewer.
+- Target: clean `master`, `fd9025d5685209c9c0c6c4cc8e3398835be875a4`.
+- Completed: `2026-10-11T15:07:09Z`; report `independent-review-fd9025d.md`.
+- Host launch succeeded for this run; no host modification or alternate runner.
+- Reviewer shell/Git prohibition and absent `watchdog_diff` restricted it to
+  partial static inspection. Parent supplied verbatim Git snapshots/bounded
+  diffs, explicitly not independently measured live identity.
+- Verdict: BLOCK. No verified code defect in the inspected subset; exhaustive
+  original-purpose and runtime/publication acceptance remain incomplete.
+- Owner now prefers direct review. `direct-review-checkpoint.md` records fresh
+  parent gates; no new reviewer agent is launched and no acceptance waiver is
+  inferred. Earlier failure records retain their historical meaning.
+
+Next: finish source/purpose comparisons and resolve independent acceptance;
+parent verification alone cannot satisfy the constitution's separate rule.
+No accepted push, release, upstream PR or goal-completion claim.

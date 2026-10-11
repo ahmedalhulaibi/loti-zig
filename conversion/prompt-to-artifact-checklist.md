@@ -17,13 +17,18 @@ preserved purpose/order/attribution/licence/images; verified accepted delivery.
 | Verify verifier strength | `mutation-frontmatter.json`:three valid README source-prose kills; cumulative292 bounded valid mutants | Literal/narrative stale claims and canonical-output overwrite caught; restored1. Author hashes are not ACL seals, comprehensive mutation assessment or independent acceptance. |
 | Reader suitability | `frontmatter-reader.json`:81 Chromium reflows; current EPUBCheck5.2.1 zero messages | Post-suite current archive; prior81 cases are not added to current81. No Supernote/device pagination/font-override or Calibre claim. |
 | Attribution/licence/images | Current publication verifier plus unchanged original `LICENSE`, licence.rst, five illustrations/logo and Shuveb/Ahmed credits | Byte/structure checks retained; final prompt audit must inspect actual artefacts. |
-| Mandatory independent review | `conversion/review-blocker.md`, handoff; both reviewer reports remain absent | Blocked supported Pi child host; no qualifying change, retry or alternate mechanism. Owner-supported host/authorisation required. |
+| Mandatory independent review | `conversion/review-blocker.md`, handoff, `independent-review-fd9025d.md`; native async c27be9dc completed | BLOCK: partial source inspection only; no independent complete purpose census or runtime/publication validation. Parent direct review is not independent acceptance. |
 | Final delivery/completion | Final current-HEAD review/findings, affected/full gates, personal-fork push and remote hash verification | Not done. No PR/release requested; do not push/complete before acceptance. |
 
-Next: supported independent review of final HEAD, findings resolution, final
-current gates including all103 discovered tests, accepted personal-fork delivery
-and post-push remote/source-link verification. Author26/128 comparisons and fresh
-fork ownership checks do not close those requirements.
+Latest direct gates: `direct-review-checkpoint.md`; all103/16×400 and strict
+native/publication/reader/EPUBCheck checks replayed without changing source/test
+expectations or historical receipts. Owner prefers direct source review; that
+work and the independent-acceptance boundary remain open.
+
+Next: finish required purpose comparison, findings resolution and final exact
+HEAD acceptance, then accepted personal-fork delivery and post-push remote/
+source-link verification. Author26/128 comparisons, parent green gates and fork
+ownership checks do not close those requirements.
 Historical99/type/build/reader reports are retained as history, not silently
 promoted after manuscript change. Uncertainty or missing verification means
 not achieved; hashes/indexes/effort cannot substitute for the requirement.

@@ -23,7 +23,7 @@ no upstream PR or release required. Tests/manifests/author effort are not accept
 | make html;make epub with strict warnings | Prior strict logs plus unchanged93 inputs; suite also invokes make epub. Current package must be checked after the last invocation. Fidelity alone can publish an incorrect claim. |
 | verify_epub;check_reader_layout;EPUBCheck5.2.1 | Current post-suite receipt bytes,27 chapters/121 literals/368 paragraphs/order/local links/licence/images/no DRM/JS;81 browser reflows/zero validator messages. Not Supernote/pagination/font-override/semantic acceptance. |
 | Post-completion selected mutation scopes |292 bounded author kills including3 README prose kills; native/compiler failures/test errors/skips excluded. Not comprehensive mutation or independent proof. |
-| Independent verifier / current final HEAD | Both required reviewer reports absent; supported child-host launch blocker unchanged. No qualifying change/retry/alternate mechanism. Must obtain supported host or owner-authorised independent mechanism. |
+| Independent verifier / current final HEAD | Native async c27be9dc completed against fd9025d; independent-review-fd9025d.md returns BLOCK for incomplete coverage/tool/runtime verification, not a demonstrated defect. Owner prefers direct review; parent gates do not establish independent acceptance. |
 | Personal-fork delivery / PR state | No conversion pushed, PR/release not requested or created. Final remote/source verification follows acceptance, not the other way round. |
 
 ## Decision
@@ -34,6 +34,11 @@ not waived. Unclaimed broader kernel/transport/race/durability/production/device
 assurance is classified in frontmatter-purpose-audit; a required omission found
 by a reviewer must still be fixed. **Do not mark complete or push before review.**
 
-Next input: supported Pi child host or explicit owner authorisation for another
-independent mechanism. Review final HEAD; fix findings; rerun affected/full gates;
-audit exact required surfaces; push personal fork and verify delivered commit.
+Latest direct replay: `direct-review-checkpoint.md` records exact0.17.0,
+51/51 cached build steps, full103/16×400, strict HTML/EPUB, current archive
+fidelity/81 reflows and EPUBCheck zero messages. Historical receipts stay
+historical; these new parent results do not establish independent acceptance.
+
+Next: finish remaining source/purpose comparison, resolve the independent
+acceptance boundary, fix findings and replay affected gates. Audit exact required
+surfaces, then push the personal fork and verify the delivered commit.
