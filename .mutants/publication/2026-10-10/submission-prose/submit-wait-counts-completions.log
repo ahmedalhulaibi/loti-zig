@@ -1,0 +1,20 @@
+test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings)
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ...
+  test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings) (original='io_uring_submit_and_wait')
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ... FAIL
+
+======================================================================
+FAIL: test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings) (original='io_uring_submit_and_wait')
+Kills accurate-looking signatures paired with unqualified or completion-count semantics.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 72, in test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings
+    self.assertEqual(rows[row["original"]], row)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'ori[207 chars]shes requests and waits; the return value coun[145 chars]u32'} != {'ori[207 chars]shes SQEs and requests a completion threshold.[248 chars]u32'}
+Diff is 753 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.090s
+
+FAILED (failures=1)

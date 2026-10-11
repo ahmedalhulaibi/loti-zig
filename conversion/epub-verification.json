@@ -1,11 +1,13 @@
 {
   "scope": "Publication structure and source fidelity; not semantic or independent review.",
   "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
-  "book_sha256": "e3362e9b5b0e85414045be083dec038882ade12df08ff9bf619c66e5d389dfaf",
+  "book_sha256": "ac86eaaf0f50a0c8f580e88a3d1720a3b5996d1f0aa333268859dc2e49884746",
   "original_chapters": 26,
   "edition_chapters": 27,
   "literal_blocks": 120,
   "byte_identical_illustrations": 5,
+  "narrative_paragraphs": 355,
+  "narrative_source_matches": true,
   "literal_policy": {
     "language_counts": {
       "zig": 98,

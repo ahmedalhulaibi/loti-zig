@@ -9,9 +9,9 @@
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
     "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
-    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
-    "conversion/reference-map.json": "7293b7d485946ba967dd446a6cf37c0b7e991adf6ceb14d6a06ae93746ea409f",
-    "ref-zig/submission.rst": "12a293b5bc15a32069283691713d726b7e9962786b18f668eba3e2aa8be65192",
+    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
+    "conversion/reference-map.json": "fdca48a9f891a60f06805072d6dffae726c44c2c9a4c9f81e6a44758c1505f8a",
+    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56",
     "testdata/inputs/splice-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
     "testdata/inputs/splice-partial.bin": "7456c2d90a90f290eef60a9724d811da38d479f5a6441990d9b41c4e94b634bb",
     "testdata/inputs/splice-report.json": "c6dd5af2ff11234fc659be050b94eac5a934cc9a008ca0b31e3f47ba088285a8"
@@ -245,5 +245,13 @@
     ],
     "suite": "77 tests/zero failures/errors/skips; fifteen attributed properties x400 generated valid cases; per-I/O flags/native/model/CLI/VM/binding/publication contracts replayed.",
     "scope": "Historical mutations retain tested-version scope, no retroactive reassessment/independent reviewer acceptance."
+  },
+  "replay_after_submission_prose": {
+    "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tools/reference_map.py",
+      "conversion/reference-map.json",
+      "ref-zig/submission.rst"
+    ]
   }
 }

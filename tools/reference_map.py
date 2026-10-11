@@ -67,8 +67,8 @@ OTHER = {
     "io_uring_queue_init_params": ("init_params", SETUP, "Caller supplies zeroed native parameters; returned fields describe actual mappings."),
     "io_uring_queue_exit": ("deinit", SETUP, "Closes the descriptor and unmaps memory; complete or cancel-and-drain outstanding requests before destroying their operands."),
     "io_uring_get_sqe": ("get_sqe", PREPARE, "Queue exhaustion is SubmissionQueueFull, not a null pointer."),
-    "io_uring_submit": ("submit", COMPLETE, "Returns submitted SQEs, not completed operations; SQPOLL counts are not completion proof."),
-    "io_uring_submit_and_wait": ("submit_and_wait", COMPLETE, "Publishes requests and waits; the return value still counts submissions."),
+    "io_uring_submit": ("submit", COMPLETE, "Without SQPOLL, returns submitted SQEs rather than completed operations. With SQPOLL, success may be higher/lower, including zero, than requests submitted during this call; inspect tagged CQEs."),
+    "io_uring_submit_and_wait": ("submit_and_wait", COMPLETE, "Publishes SQEs and requests a completion threshold. Without SQPOLL, result counts submissions; with SQPOLL it has the same non-exact count semantics as submit, never a CQE count."),
     "io_uring_wait_cqe": ("copy_cqe", COMPLETE, "Returns a CQE value and advances the CQ; do not acknowledge it again."),
     "io_uring_wait_cqe_nr": ("copy_cqes", COMPLETE, "copy_cqes(destination, wait_nr) copies available entries and advances CQ; its waiting semantics are not a strict batch-size guarantee."),
     "io_uring_peek_cqe": ("copy_cqes", COMPLETE, "A one-element destination with wait_nr=0 gives nonblocking copy-and-consume, not a borrowed pointer."),
@@ -90,7 +90,7 @@ OTHER = {
 
 SPECIAL = {
     "io_uring_setup": ("std.os.linux.io_uring_setup", "os/linux.zig", SETUP, "io_uring_setup", "Raw setup returns errno-encoded usize and fills native parameters; successful result owns a descriptor."),
-    "io_uring_enter": ("std.os.linux.io_uring_enter", "os/linux.zig", "examples/raw_cat.zig", "io_uring_enter", "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Decode the raw usize result with linux.errno."),
+    "io_uring_enter": ("std.os.linux.io_uring_enter", "os/linux.zig", "examples/raw_cat.zig", "io_uring_enter", "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Outside SQPOLL, success counts consumed SQEs; with SQPOLL it generally returns to_submit, not observed poller consumption. Decode the raw usize result with linux.errno."),
     "io_ring_get_sqe": ("std.os.linux.IoUring.get_sqe", "os/linux/IoUring.zig", PREPARE, "get_sqe", "Corrects an original prose typo; no function named io_ring_get_sqe exists."),
     "io_uring_set_sqe_data": ("sqe.user_data = tag", None, PREPARE, None, "Corrects an original prose typo; use the native tag field."),
     "io_uring_queue_mmap": ("RawRing.map", "examples/raw_cat.zig", SETUP, "map", "Accepts an existing setup descriptor; owns it only on success. Selects shared SQ/CQ or separate SQ/CQ plus SQEs by SINGLE_MMAP; failure unmaps partial regions but leaves the FD to the caller."),

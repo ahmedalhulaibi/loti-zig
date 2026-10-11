@@ -1,0 +1,39 @@
+[
+  {
+    "name": "stale-language",
+    "kind": "text",
+    "text": "Compile the examples with gcc and link liburing.",
+    "page": "ref-zig/submission.xhtml"
+  },
+  {
+    "name": "count-means-completed",
+    "kind": "text",
+    "text": "Submission return values count completed operations.",
+    "page": "ref-zig/submission.xhtml"
+  },
+  {
+    "name": "missing",
+    "kind": "missing",
+    "page": "ref-zig/submission.xhtml"
+  },
+  {
+    "name": "duplicate",
+    "kind": "duplicate",
+    "page": "ref-zig/submission.xhtml"
+  },
+  {
+    "name": "order",
+    "kind": "order",
+    "page": "ref-zig/submission.xhtml"
+  },
+  {
+    "name": "rubric",
+    "kind": "rubric",
+    "page": "ref-zig/submission.xhtml"
+  },
+  {
+    "name": "whitespace",
+    "kind": "whitespace",
+    "page": "ref-zig/submission.xhtml"
+  }
+]

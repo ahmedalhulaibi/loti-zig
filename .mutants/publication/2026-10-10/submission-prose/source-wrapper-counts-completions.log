@@ -1,0 +1,20 @@
+test_reader_count_paragraphs_have_whole_mode_qualified_contracts (tests.test_submission_prose.NarrativePublicationContracts.test_reader_count_paragraphs_have_whole_mode_qualified_contracts)
+Kills correct manifests paired with source prose that overstates SQPOLL return counts. ...
+  test_reader_count_paragraphs_have_whole_mode_qualified_contracts (tests.test_submission_prose.NarrativePublicationContracts.test_reader_count_paragraphs_have_whole_mode_qualified_contracts) (page='ref-zig/submission.xhtml')
+Kills correct manifests paired with source prose that overstates SQPOLL return counts. ... FAIL
+
+======================================================================
+FAIL: test_reader_count_paragraphs_have_whole_mode_qualified_contracts (tests.test_submission_prose.NarrativePublicationContracts.test_reader_count_paragraphs_have_whole_mode_qualified_contracts) (page='ref-zig/submission.xhtml')
+Kills correct manifests paired with source prose that overstates SQPOLL return counts.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 91, in test_reader_count_paragraphs_have_whole_mode_qualified_contracts
+    self.assertEqual(paragraphs[case["index"]], case["text"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'subm[73 chars]unts completed operations. submit_and_wait(wai[392 chars]ing.' != 'subm[73 chars]unts submissions, not completed operations. su[409 chars]ing.'
+Diff is 1267 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.451s
+
+FAILED (failures=1)

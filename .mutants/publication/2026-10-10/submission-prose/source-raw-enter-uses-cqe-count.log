@@ -1,0 +1,20 @@
+test_reader_count_paragraphs_have_whole_mode_qualified_contracts (tests.test_submission_prose.NarrativePublicationContracts.test_reader_count_paragraphs_have_whole_mode_qualified_contracts)
+Kills correct manifests paired with source prose that overstates SQPOLL return counts. ...
+  test_reader_count_paragraphs_have_whole_mode_qualified_contracts (tests.test_submission_prose.NarrativePublicationContracts.test_reader_count_paragraphs_have_whole_mode_qualified_contracts) (page='ref-iouring/io_uring_enter.xhtml')
+Kills correct manifests paired with source prose that overstates SQPOLL return counts. ... FAIL
+
+======================================================================
+FAIL: test_reader_count_paragraphs_have_whole_mode_qualified_contracts (tests.test_submission_prose.NarrativePublicationContracts.test_reader_count_paragraphs_have_whole_mode_qualified_contracts) (page='ref-iouring/io_uring_enter.xhtml')
+Kills correct manifests paired with source prose that overstates SQPOLL return counts.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 91, in test_reader_count_paragraphs_have_whole_mode_qualified_contracts
+    self.assertEqual(paragraphs[case["index"]], case["text"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'fd i[276 chars]als the number of CQEs because the poller subm[300 chars]res.' != 'fd i[276 chars]als to_submit because the poller submits outsi[291 chars]res.'
+Diff is 1258 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.451s
+
+FAILED (failures=1)

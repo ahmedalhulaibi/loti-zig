@@ -10,11 +10,13 @@ import posixpath
 import re
 import subprocess
 import sys
+import tempfile
 from urllib.parse import unquote, urlsplit
 import xml.etree.ElementTree as ET
 from zipfile import ZIP_STORED, ZipFile
 
 from docutils import nodes
+from sphinx.application import Sphinx
 
 ROOT = Path(__file__).resolve().parent.parent
 NS = {
@@ -84,6 +86,25 @@ def check_literal_policy(document, source_literals, page):
     return languages
 
 
+def prose(text):
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def narrative_sources(documents, doctrees):
+    """Resolve labels/smart quotes exactly as the publisher; this is fidelity, not review."""
+    result = {}
+    with tempfile.TemporaryDirectory(prefix="loti-resolved-prose-") as directory:
+        app = Sphinx(str(ROOT), str(ROOT), directory, str(doctrees), "epub", status=None, warning=None)
+        for document in documents:
+            # Trusted local generated artifacts only; never supplied external pickles.
+            resolved = app.env.get_and_resolve_doctree(str(Path(document).with_suffix("")), app.builder)
+            paragraphs = [prose(node.astext()) for node in resolved.findall(nodes.paragraph)
+                          if type(node) is nodes.paragraph]
+            require(bool(paragraphs), f"Missing source narrative in {document}")
+            result[document] = paragraphs
+    return result
+
+
 def verify(book, doctrees):
     mapping = json.loads((ROOT / "conversion/chapter-map.json").read_text())
     commit = mapping["source_commit"]
@@ -110,6 +131,7 @@ def verify(book, doctrees):
     require(set(documents) == source_documents, "Unmapped or missing edition document")
     expected_pages = [page_name(name) for name in documents]
     literal_count = image_count = 0
+    narrative_count = 0
     language_counts = {language: 0 for language in ("zig", "console", "json", "text")}
     with ZipFile(book) as archive:
         require(archive.testzip() is None, "Archive CRC failure")
@@ -163,6 +185,7 @@ def verify(book, doctrees):
                 if parsed.fragment:
                     require(target in ids and unquote(parsed.fragment) in ids[target],
                             f"Missing fragment: {name} -> {uri}")
+        narratives = narrative_sources(documents, doctrees)
         for document in documents:
             page = pages[page_name(document)]
             # Only load locally generated Sphinx artifacts, never untrusted pickles.
@@ -175,6 +198,10 @@ def verify(book, doctrees):
             actual = ["".join(element.itertext()).rstrip("\n") for element in page.findall(".//x:pre", NS)]
             require(actual == expected, f"Literal source differs in {document}")
             literal_count += len(actual)
+            paragraphs = [prose("".join(node.itertext())) for node in page.findall(".//x:p", NS)
+                          if not {"rubric", "caption", "admonition-title"} & set(node.get("class", "").split())]
+            require(paragraphs == narratives[document], f"Narrative source differs in {document}")
+            narrative_count += len(paragraphs)
             entry = next((entry for entry in chapters if entry["zig"] == document), None)
             if entry is None:
                 continue
@@ -197,6 +224,7 @@ def verify(book, doctrees):
         "source_commit": commit, "book_sha256": hashlib.sha256(book.read_bytes()).hexdigest(),
         "original_chapters": len(chapters), "edition_chapters": len(documents),
         "literal_blocks": literal_count, "byte_identical_illustrations": image_count,
+        "narrative_paragraphs": narrative_count, "narrative_source_matches": True,
         "literal_policy": {"language_counts": language_counts,
                            "rendered_languages_match": True, "bounded_legacy_markers_absent": True},
         "licence_exact": True, "local_links_valid": True, "drm_absent": True, "javascript_absent": True,

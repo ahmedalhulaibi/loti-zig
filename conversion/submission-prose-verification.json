@@ -1,0 +1,114 @@
+{
+  "scope": "Author source-fidelity for355 ordered resolved narrative paragraphs and selected ordinary/SQPOLL submission-count semantics (three whole bindings/two separately authored reader paragraphs). Not general language parsing, all prose/titles/links/99bindings semantics, native expanded effect assurance, independent review or device acceptance.",
+  "reproduction": "submission-prose-reproduction.json",
+  "core": "submission-prose-spec-sha256.json",
+  "initial": "submission-prose-spec-initial-sha256.json",
+  "amendment": "submission-prose-spec-amendment.json",
+  "contracts": {
+    "tests": 3,
+    "whole_bindings": 3,
+    "manual_whole_reader_paragraphs": 2,
+    "damaged_narratives": 6,
+    "formatting_positive": 1,
+    "resolved_paragraphs": 355,
+    "normalization": "Whitespace runs only; ordered comparison, exact text otherwise; reference/typography resolution shared with publisher.",
+    "excluded_structures": [
+      "compact TOC paragraph subclasses",
+      "rubrics",
+      "captions",
+      "admonition titles",
+      "headings"
+    ]
+  },
+  "mutations": "mutation-submission-prose.json",
+  "diagnostics": {
+    "scope": "Active primary LSP on four changed Python paths,zero findings; not empty cache proof. Existing other-feature suppressions/OPF spelling infos retained in their receipts.",
+    "paths": [
+      "tools/verify_epub.py",
+      "tools/reference_map.py",
+      "tests/test_submission_prose.py",
+      "tests/test_publication.py"
+    ],
+    "visible_primary": 0
+  },
+  "source_sha256": {
+    "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e",
+    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
+    "tests/test_submission_prose.py": "0d08e5af4af3266aa93798e4bbf70405c743cbfb8a3bf5152ff1a3beefb2ee94",
+    "tests/test_publication.py": "7c20159f4469c359b618728e4196f612c544234ba6655ae7c35274c432f8b58e",
+    "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
+    "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
+    "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
+    "testdata/inputs/reference-semantics-bindings.json": "a1dad2b6ff5bda1a97c18f24f7afd0433bb06a1af210bccc207a37362a08d980",
+    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56",
+    "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
+    "conversion/reference-map.json": "fdca48a9f891a60f06805072d6dffae726c44c2c9a4c9f81e6a44758c1505f8a",
+    "conversion/reference-claim-audit.md": "386b13012f307b2df339c1145c5a7ea60397ddcc828e657eabca2269606429de",
+    "conversion/prose-line-disposition.md": "fbea94e125ffc80b55916d3ecda04b3be5ce15d141ca8934a36fb8567ac7a362",
+    "conversion/reference-block-disposition.md": "a1c5c0ad95b6d532e7c0146ae41132e160ffee570603c9ca68b6b8e689caf3c3",
+    "README.md": "8dae6b572b5125052ebeace8ed51d5130d7b8ab552bc020d74170bfa24f222df",
+    "testing.md": "eb8485687a7f9e1a4096939825bbe70ed60401c7d57fdf0b8fa18585b9c1a08f",
+    "conversion/submission-prose-spec-sha256.json": "94d3e41dd2a371e7997b65182bc575ee05ac63bd5c49aa2f799dcf0fcd221364",
+    "conversion/submission-prose-spec-initial-sha256.json": "78d862b91006e58698c72c456686f8da1335c043b214f5b98a368cff93c04df9",
+    "conversion/submission-prose-spec-amendment.json": "3e7edbd44ca597a40a80005d504a004af28e0311d77ae70dacb77e05f60130d0",
+    "conversion/submission-prose-test-initial.txt": "0c027ba06b9fc022631e8c329283697e45a50be661614e09ceb08d776168ca80"
+  },
+  "reference_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_enter.2.txt": "e76e4da09284d625759a641978f8abb38fe194a9ab1bd33df213e208dcffefbe"
+  },
+  "consumer_receipts_replayed": [
+    "accept-verification.json",
+    "connect-verification.json",
+    "copy-short-verification.json",
+    "epoll-verification.json",
+    "file-operations-verification.json",
+    "literal-policy-verification.json",
+    "mapping-failure-verification.json",
+    "messages-verification.json",
+    "ordinary-signal-verification.json",
+    "poll-verification.json",
+    "provided-buffers-verification.json",
+    "reference-semantics-verification.json",
+    "registered-files-verification.json",
+    "rwf-verification.json",
+    "signal-wait-verification.json",
+    "splice-verification.json",
+    "sqpoll-wakeup-verification.json"
+  ],
+  "gates": {
+    "zig": "0.17.0",
+    "executables": 25,
+    "build_steps": 51,
+    "tests": 84,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 15,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 161.036,
+    "strict_html": true,
+    "strict_epub": true,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "chapters": 27,
+    "literals": 120,
+    "narrative_paragraphs": 355,
+    "reader_cases": 81,
+    "reader_violations": 0,
+    "book_sha256": "ac86eaaf0f50a0c8f580e88a3d1720a3b5996d1f0aa333268859dc2e49884746",
+    "scope": "Final publication/browser/EPUBCheck ran after aggregate suite; reviewed log and artifacts, not stale source pins/author inventory as acceptance."
+  },
+  "completion": {
+    "independent_review": "blocked, host unchanged; no retry/alternative/fallback",
+    "pushed": false,
+    "goal_complete": false
+  },
+  "metadata_generation_correction": "Post-replay pre-commit audit caught wrong ordinal in selected-reference receipt update; corrected via original-name lookup and exact whole-fixture comparison. Production/tests/core unchanged."
+}

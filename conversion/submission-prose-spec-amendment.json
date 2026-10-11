@@ -1,0 +1,7 @@
+{
+  "scope": "Unsealed author strengthening before mutation assessment, not independent verifier/ACL protection. Original test draft/hash snapshot retained.",
+  "reason": "Correct bindings/fidelity alone do not accept source narrative semantics. Added two manual whole reader paragraphs in a separate boundary contract, with fixed ordinal/context; original3 binding rows and6 negative/1 positive damages unchanged. Initial unimplemented Sphinx helper reporter=None failure was development, not a mutant kill or changed expectation.",
+  "initial": "submission-prose-spec-initial-sha256.json",
+  "initial_test": "submission-prose-test-initial.txt",
+  "supplement": "testdata/inputs/submission-count-paragraphs.json"
+}

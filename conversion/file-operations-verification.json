@@ -243,7 +243,7 @@
     "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
     "testdata/inputs/file-operations-report.json": "82215f932bf6622b6c5362d08c9035a33e24d3d5bd83e5f8cb3fce59466facd1",
     "testdata/inputs/file-operations-invalid-arguments.json": "95a3fe47a3473a059f6d5b4ca47cbcb298ce14d6c0d8ec8874e201824f218de6",
-    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
+    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
     "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1"
   },
   "sdk_source_sha256": {
@@ -332,5 +332,11 @@
     ],
     "suite": "77 tests/zero failures/errors/skips; fifteen attributed properties x400 generated valid cases; per-I/O flags/native/model/CLI/VM/binding/publication contracts replayed.",
     "scope": "Historical mutations retain tested-version scope, no retroactive reassessment/independent reviewer acceptance."
+  },
+  "replay_after_submission_prose": {
+    "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tools/reference_map.py"
+    ]
   }
 }

@@ -1,0 +1,161 @@
+{
+  "scope": "Three valid producers/four valid prose-fidelity verifier/two strict-built source-narrative mutations killed by public boundary assertions. No native/kernel, all99-binding/whole-book semantic or independent-review acceptance.",
+  "mutants": [
+    {
+      "id": "submit-count-unqualified",
+      "kind": "binding",
+      "syntax_valid": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 1,
+      "source_sha256": "3a26e089cdbe31b4d31c995ca6bd57ec85e92cd283388286ce2e7e765e454c03",
+      "log": ".mutants/publication/2026-10-10/submission-prose/submit-count-unqualified.log",
+      "passing_proxy": "generation/freshness"
+    },
+    {
+      "id": "submit-wait-counts-completions",
+      "kind": "binding",
+      "syntax_valid": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 1,
+      "source_sha256": "63043ea48bf49d70c6aeea1ca953df11dc7796165793b15ce0c698ef925aff56",
+      "log": ".mutants/publication/2026-10-10/submission-prose/submit-wait-counts-completions.log",
+      "passing_proxy": "generation/freshness"
+    },
+    {
+      "id": "raw-enter-consumption-unqualified",
+      "kind": "binding",
+      "syntax_valid": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 1,
+      "source_sha256": "12556e026c4dc764ec619b467d57df2328e295d51dc8470343b8869dd351bbe5",
+      "log": ".mutants/publication/2026-10-10/submission-prose/raw-enter-consumption-unqualified.log",
+      "passing_proxy": "generation/freshness"
+    },
+    {
+      "id": "narrative-comparison-omitted",
+      "kind": "fidelity",
+      "syntax_valid": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 6,
+      "source_sha256": "2b7c65ef0d6d9b5a1fd20ad4fcb583afdc262b1594ad9e909465ec2e07f9c62b",
+      "log": ".mutants/publication/2026-10-10/submission-prose/narrative-comparison-omitted.log",
+      "passing_proxy": null
+    },
+    {
+      "id": "narrative-order-and-duplicates-ignored",
+      "kind": "fidelity",
+      "syntax_valid": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 2,
+      "source_sha256": "523511e33715f84ea3aa235e8d8825196e51380f12539c177980d8e9c87a2d20",
+      "log": ".mutants/publication/2026-10-10/submission-prose/narrative-order-and-duplicates-ignored.log",
+      "passing_proxy": null
+    },
+    {
+      "id": "narrative-missing-paragraphs-accepted",
+      "kind": "fidelity",
+      "syntax_valid": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 4,
+      "source_sha256": "648d404eaef481b31ef0ad3599a1cae076cd531bf461bb3ea336915fa98e7fb5",
+      "log": ".mutants/publication/2026-10-10/submission-prose/narrative-missing-paragraphs-accepted.log",
+      "passing_proxy": null
+    },
+    {
+      "id": "submission-chapter-narrative-skipped",
+      "kind": "fidelity",
+      "syntax_valid": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 6,
+      "source_sha256": "209eba565cf52b18dd2590c7bd7056189948d8b5d0c1dac74ee9e5e857852013",
+      "log": ".mutants/publication/2026-10-10/submission-prose/submission-chapter-narrative-skipped.log",
+      "passing_proxy": null
+    },
+    {
+      "id": "source-wrapper-counts-completions",
+      "kind": "reader",
+      "syntax_valid": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 1,
+      "source_sha256": "5e8a2d8c8148d5df95962fd34e169eca0203ead56da4f3300d54498c34eaf1a1",
+      "log": ".mutants/publication/2026-10-10/submission-prose/source-wrapper-counts-completions.log",
+      "passing_proxy": "strict build/full fidelity"
+    },
+    {
+      "id": "source-raw-enter-uses-cqe-count",
+      "kind": "reader",
+      "syntax_valid": true,
+      "status": "killed",
+      "errors": 0,
+      "skips": 0,
+      "failures": 1,
+      "source_sha256": "b2f943cffcaf7bcb4fbdad2b5a37ae0a0d47144251cee1b23d1f612a3d8e655e",
+      "log": ".mutants/publication/2026-10-10/submission-prose/source-raw-enter-uses-cqe-count.log",
+      "passing_proxy": "strict build/full fidelity"
+    }
+  ],
+  "restored_source_sha256": {
+    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
+    "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e",
+    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56",
+    "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3"
+  },
+  "generated_bytes_restored": true,
+  "spec_exact": true,
+  "baseline": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "log": ".mutants/publication/2026-10-10/submission-prose/restored.log"
+  },
+  "containment": "Sequential4GiB/no-swap/TasksMax128 systemd user scope; strict restore rebuild, no native source changed.",
+  "exclusions": [
+    {
+      "id": "initial-driver-startup",
+      "variant_started": false,
+      "accepted_kills": 0,
+      "error": "FileNotFoundError: nonexistent conversion/reference-map.md; confirmed generator only writes reference-map.json, fixed driver and restarted same direct protocol.",
+      "log": ".mutants/publication/2026-10-10/submission-prose/initial-driver-error.log"
+    }
+  ],
+  "development_error": {
+    "error": "Direct unpickled doctree reporter=None caused six unittest JSON-decode errors; fixed helper via Sphinx get_and_resolve_doctree/get_doctree, which attaches its reporter/environment. No core error expectation changed, no mutant accepted.",
+    "log": ".mutants/publication/2026-10-10/submission-prose/development-helper-error.log"
+  },
+  "log_normalization": {
+    "scope": "Trailing spaces/tabs/CR and terminal blank lines only; substantive observations retained.",
+    "paths": [
+      ".mutants/publication/2026-10-10/submission-prose/submit-count-unqualified.log",
+      ".mutants/publication/2026-10-10/submission-prose/submit-wait-counts-completions.log",
+      ".mutants/publication/2026-10-10/submission-prose/raw-enter-consumption-unqualified.log",
+      ".mutants/publication/2026-10-10/submission-prose/narrative-comparison-omitted.log",
+      ".mutants/publication/2026-10-10/submission-prose/narrative-order-and-duplicates-ignored.log",
+      ".mutants/publication/2026-10-10/submission-prose/narrative-missing-paragraphs-accepted.log",
+      ".mutants/publication/2026-10-10/submission-prose/submission-chapter-narrative-skipped.log",
+      ".mutants/publication/2026-10-10/submission-prose/source-wrapper-counts-completions-build.log",
+      ".mutants/publication/2026-10-10/submission-prose/source-wrapper-counts-completions.log",
+      ".mutants/publication/2026-10-10/submission-prose/source-raw-enter-uses-cqe-count-build.log",
+      ".mutants/publication/2026-10-10/submission-prose/source-raw-enter-uses-cqe-count.log",
+      ".mutants/publication/2026-10-10/submission-prose/restored-build.log",
+      ".mutants/publication/2026-10-10/submission-prose/development-helper-error.log",
+      ".mutants/publication/2026-10-10/submission-prose/spec-red.log"
+    ]
+  }
+}

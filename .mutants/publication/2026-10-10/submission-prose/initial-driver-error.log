@@ -1,0 +1,12 @@
+Running as unit: run-p3515436-i7737403.scope; invocation ID: 527ed7ff6a064b6383c7e8dc14dc804d
+Traceback (most recent call last):
+  File "/tmp/loti-submission-prose-mutations.py", line 3, in <module>
+    root=Path.cwd();mapper=root/'tools/reference_map.py';verifier=root/'tools/verify_epub.py';wrapper=root/'ref-zig/submission.rst';enter=root/'ref-iouring/io_uring_enter.rst';originals={p:p.read_bytes() for p in [mapper,verifier,wrapper,enter]};generated={p:p.read_bytes() for p in [root/'conversion/reference-map.json',root/'conversion/reference-map.md']};rows=[]
+                                                                                                                                                                                                                                                                   ~~~~~~~~~~~~^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/pathlib/_abc.py", line 625, in read_bytes
+    with self.open(mode='rb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ahmed/workspace/va/loti-zig/conversion/reference-map.md'

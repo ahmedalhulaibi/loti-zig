@@ -11,6 +11,8 @@ The full description list was inspected; these bodies/claims were checked direct
 | MADVISE effect | Tag 3, DONTNEED on owned anonymous memory; every byte becomes zero | Exact page-zero boundary, not other advice/mappings |
 | OPENAT2 effect | Tag 1 returns FD; tag 5 reads its exact prefix; RDONLY/NO_SYMLINKS | Descriptor/prefix boundary, not memory advice |
 | Normal eventfd binding was suspected unused | `reference_registration.main` registers/unregisters normal mode before async mode; tutorial also uses normal mode | No change; suspicion disproved by body inspection |
+| Both submit wrappers always return exact submitted counts | Zig0.17.0 SDK `submit` delegates to `submit_and_wait(0)`; method comment qualifies SQPOLL count higher/lower/zero; actual bodies flush SQ/wake/enter | Ordinary submission count versus non-exact SQPOLL result, never operation-completion count; both bindings/manuscript qualified |
+| Raw enter always observes poller consumption | `io_uring_enter.2` RETURN VALUE separates ordinary consumed requests and SQPOLL generally returning `to_submit` | SQPOLL raw count is not observed poller consumption; caller release-publication/CQE ownership remain unchanged |
 
 External ordering reference: `man-qmd/build/docs/liburing/man/io_uring.7.txt`,
 **EXAMPLES**: release store at line 623 precedes enter at line 631. This is ABI

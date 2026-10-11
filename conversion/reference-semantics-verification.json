@@ -10,7 +10,7 @@
       "zig": "std.os.linux.io_uring_enter",
       "example": "examples/raw_cat.zig",
       "verification_scope": "compiled and executed",
-      "semantic_difference": "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Decode the raw usize result with linux.errno.",
+      "semantic_difference": "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Outside SQPOLL, success counts consumed SQEs; with SQPOLL it generally returns to_submit, not observed poller consumption. Decode the raw usize result with linux.errno.",
       "declaration_source": "os/linux.zig",
       "zig_signature": "pub fn io_uring_enter(fd: fd_t, to_submit: u32, min_complete: u32, flags: u32, sig: ?*sigset_t) usize"
     },
@@ -81,19 +81,19 @@
     }
   },
   "source_sha256": {
-    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
+    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
-    "testdata/inputs/reference-semantics-bindings.json": "bd87f6f4e06670f52ac4dc0610c8d1dbfeae4fe7b49fee2cf1a44ea41faf951c",
+    "testdata/inputs/reference-semantics-bindings.json": "a1dad2b6ff5bda1a97c18f24f7afd0433bb06a1af210bccc207a37362a08d980",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
     "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
     "examples/reference_raw.zig": "1a520779a704974d19a88c468c309c45e9ded6ef67eb85274fd8ff204700b20e",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "examples/reference_setup.zig": "c601487b9e78fd81aec3eabde091353b17b5f87251641b3443d1b302e3518ae7",
     "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
-    "conversion/reference-claim-audit.md": "a27ae9d7bdb58c838ef3931e11f576f25620f8de68d68083a07842d43c20b36a",
-    "ref-iouring/io_uring_enter.rst": "8f56f691c9d6812e9562651828d416c3a5bcaeeec998ae5f358625d77e6ccc43",
+    "conversion/reference-claim-audit.md": "386b13012f307b2df339c1145c5a7ea60397ddcc828e657eabca2269606429de",
+    "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
     "ref-zig/setup_teardown.rst": "8cfb07794f25aaab05b111f3f8dab8685f1d78994b71509ee6b95fdb73a1e6f7",
-    "ref-zig/submission.rst": "12a293b5bc15a32069283691713d726b7e9962786b18f668eba3e2aa8be65192"
+    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56"
   },
   "sdk_source_sha256": {
     "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
@@ -218,5 +218,26 @@
     ],
     "suite": "77 tests/zero failures/errors/skips; fifteen attributed properties x400 generated valid cases; per-I/O flags/native/model/CLI/VM/binding/publication contracts replayed.",
     "scope": "Historical mutations retain tested-version scope, no retroactive reassessment/independent reviewer acceptance."
-  }
+  },
+  "replay_after_submission_prose": {
+    "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tools/reference_map.py",
+      "testdata/inputs/reference-semantics-bindings.json",
+      "conversion/reference-claim-audit.md",
+      "ref-iouring/io_uring_enter.rst",
+      "ref-zig/submission.rst"
+    ]
+  },
+  "prior_raw_enter_count_binding": {
+    "original": "io_uring_enter",
+    "zig": "std.os.linux.io_uring_enter",
+    "example": "examples/raw_cat.zig",
+    "verification_scope": "compiled and executed",
+    "semantic_difference": "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Decode the raw usize result with linux.errno.",
+    "declaration_source": "os/linux.zig",
+    "zig_signature": "pub fn io_uring_enter(fd: fd_t, to_submit: u32, min_complete: u32, flags: u32, sig: ?*sigset_t) usize"
+  },
+  "count_qualification": "Current raw binding/fixture amended for SQPOLL generally returning to_submit, replayed old whole-five and new whole-three contracts; prior author binding retained above. Historical five-producer mutation evidence is not reassessed.",
+  "metadata_generation_correction": "Pre-commit completion-pin audit caught a fixture ordinal assumption selecting submit_and_wait instead of enter; corrected by original-name lookup. No production/core/native/gate change; no mutant/test kill."
 }

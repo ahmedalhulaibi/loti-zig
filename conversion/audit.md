@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 58 native CLI/TCP/reference tests plus eleven binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 58 native CLI/TCP/reference tests plus twelve binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -82,7 +82,8 @@ The original copy's `BLKGETSIZE64` input feature is now recreated and executed
 against disposable read-only virtual disks. Native `cp` accepts regular or block
 input; output is explicitly restricted to regular files. Raw mapping now restores
 the separate SQ/CQ strategy; forced-mode evidence is not an older-kernel boot.
-Forced short-I/O/state checks remain unverified; see the bounded probe oracle below.
+Forced scalar short WRITE is now checked below; vector/socket/short-READ progress,
+u32/concurrent queue state and broader failure paths remain unverified.
 
 ## Reader/copy repair and bounded mutation evidence
 
@@ -900,7 +901,7 @@ fixtures unchanged. This is not ACL-sealed or independent verifier acceptance.
 Nine compiled native/three syntax-valid parser mutants killed by assertions,
 zero accepted errors/skips; exact spec/source restoration and rebuilt three-test
 baseline, sequential4GiB/no-swap scope. See `mutation-sqpoll-wakeup.json`.
-Current bounded total **197**: 144 native, three index,31 trace-parser, seven
+Historical SQPOLL checkpoint bounded total **197**: 144 native, three index,31 trace-parser, seven
 historical binding-producer, three CSS, three layout-oracle, six publication-policy.
 This is current-host sequential sleep/wakeup evidence, not awake syscall
 elimination, all ordering/races, concurrent producers, affinity/shared pollers,
@@ -913,15 +914,57 @@ already executed basic-mask/timer evidence; other restart/IOPOLL/concurrent-send
 limits retained. Churny committed-history probe is not code acceptance. Mandatory
 review host unchanged; no retry/fallback/push or goal completion. See
 `sqpoll-wakeup-verification.json` for final replay/current fingerprints.
-Final gates: Zig0.17.0/51 build steps,81 tests/zero failures/errors/skips,
+Historical SQPOLL checkpoint gates: Zig0.17.0/51 build steps,81 tests/zero failures/errors/skips,
 fifteen attributed400-case properties; strict HTML/EPUB and EPUBCheck5.2.1 with
 zero messages. Final27 chapters/120 literals;81 browser cases/360 code blocks/
 333 headings, no violations; rebuilt after suite. Browser is not device acceptance.
 
+## Qualified submission counts and packaged narrative fidelity
+
+`e46661e` records three unqualified SQPOLL submission-count bindings and four
+accepted owned-archive prose corruptions: stale C build text, false completion
+meaning, duplicate and reordered paragraphs. Literal fidelity/labels alone had
+not checked narrative. SDK0.17.0 `submit` delegates to `submit_and_wait(0)`:
+ordinary success counts submissions; SQPOLL can report higher/lower/zero than
+actually submitted during that call. Raw enter generally returns `to_submit`
+under SQPOLL, not observed poller consumption. Both wrappers/raw-enter bindings,
+reader prose and author dispositions now state the distinction. CQEs prove
+operation completion; these corrections add no native/queue execution coverage.
+
+`verify_epub.py` compares ordered355 narrative paragraphs from resolved owned
+Sphinx doctrees against packaged XHTML, folding only formatting whitespace.
+Resolution handles links/typography; structural TOC compact paragraphs, rubrics,
+image/code captions/admonition titles and headings are separate scopes. Shared
+publisher resolution proves fidelity, not whether the source itself is correct.
+Three new public contracts: three complete bindings, six prose damages plus
+one whitespace-positive/full report, and two separately authored whole reader
+paragraphs. Original tests/hash snapshot preserved; the reader-semantic supplement
+was an explicit author strengthening before mutations, not ACL/verifier sealing.
+
+Nine valid mutants: three producers pass generation/freshness but fail whole
+bindings; four verifier weakenings fail damaged-archive assertions; two incorrect
+source-prose variants pass strict build/full fidelity but fail whole reader
+paragraphs. Exact source/generated/core restoration and eight-test baseline;
+sequential4GiB/no-swap/128-task scope. Initial missing generated-markdown driver
+path stopped before any variant; direct-unpickle reporter=None caused development
+unittest errors, not accepted kills. Original error logs retained. An edit-range
+anchor slip/stale-anchor rejection was corrected without loss; no test expectation
+was weakened. See `submission-prose-verification.json`/`mutation-submission-prose.json`.
+
+Current bounded total **206**:144 native,3 index,31 trace-parser,10 binding-producer,
+3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. Not all99
+bindings, whole-book/whole-port semantics, SDK/kernel assurance or independent
+review. Active primary LSP on four changed Python paths: zero findings; existing
+other-feature suppressions/OPF infos stay disclosed. Full84-test suite has zero
+failures/errors/skips and fifteen attributed400-case properties (161.036s), followed
+by strict HTML/EPUB, final355-paragraph/120-literal publication verification,
+81 browser cases with zero violations and EPUBCheck5.2.1 with zero messages.
+No reviewer retry/fallback, push or goal completion; required review remains blocked.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **81 passed**
-  (58 native + one VM + six publication + three inventory + two line-index + eleven binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **84 passed**
+  (58 native + one VM + eight publication + three inventory + two line-index + twelve binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -936,7 +979,7 @@ zero messages. Final27 chapters/120 literals;81 browser cases/360 code blocks/
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  fifteen properties**, source hashes, 77 passing tests and zero skips. These remain
+  fifteen properties**, source hashes, 84 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

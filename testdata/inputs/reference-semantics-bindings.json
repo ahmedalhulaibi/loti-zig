@@ -4,7 +4,7 @@
     "zig": "std.os.linux.io_uring_enter",
     "example": "examples/raw_cat.zig",
     "verification_scope": "compiled and executed",
-    "semantic_difference": "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Decode the raw usize result with linux.errno.",
+    "semantic_difference": "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Outside SQPOLL, success counts consumed SQEs; with SQPOLL it generally returns to_submit, not observed poller consumption. Decode the raw usize result with linux.errno.",
     "declaration_source": "os/linux.zig",
     "zig_signature": "pub fn io_uring_enter(fd: fd_t, to_submit: u32, min_complete: u32, flags: u32, sig: ?*sigset_t) usize"
   },

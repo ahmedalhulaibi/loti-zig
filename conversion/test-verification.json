@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 81,
+  "tests_run": 84,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -108,7 +108,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 88
+          "overrun": 91
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -162,7 +162,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 61
+          "overrun": 79
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -180,7 +180,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 136
+          "overrun": 129
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -198,7 +198,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 49
+          "overrun": 47
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -308,6 +308,8 @@
     "examples/sq_poll.zig": "38902d98ddfeb80423222129543a23fce78c130b9216c5e92346cb1a0bb710d4",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
+    "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
+    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56",
     "testdata/inputs/accept-flags-invalid-traces.json": "f19b59b619a819edbf2131beffe46b510f67c3ab684dadf255704f67b3225372",
     "testdata/inputs/accept-flags.trace": "0b501a40c2110bfe687aa206523f483cb63d291e6325bc14e28da9aae533f2a6",
     "testdata/inputs/accept-invalid-arguments.json": "83adaf5179fd1cad5012ddb03f2b40538c49f3b8bea67a639e7993e8ae0271db",
@@ -370,7 +372,7 @@
     "testdata/inputs/provided-buffer-invalid-plans.json": "6c7749c1f127f3e155dd3d56aee2003ac0d25755431737e2921eb070c564cd59",
     "testdata/inputs/provided-buffer-plans.json": "d50e0ed4acc123babeba111df163ae802d034cd9695c859f9bf5813d74332199",
     "testdata/inputs/provided-buffer-report.json": "1ddf000940bcf1eaeac3d43c142e8035fbbda8a28e398c4cbe5e01441e3c4c60",
-    "testdata/inputs/reference-semantics-bindings.json": "bd87f6f4e06670f52ac4dc0610c8d1dbfeae4fe7b49fee2cf1a44ea41faf951c",
+    "testdata/inputs/reference-semantics-bindings.json": "a1dad2b6ff5bda1a97c18f24f7afd0433bb06a1af210bccc207a37362a08d980",
     "testdata/inputs/registration-original.txt": "42448146ba6dbd76dd7ecad0b2547d742ffbfd75ca314212b505a0ef8845bd5d",
     "testdata/inputs/registration-replacement.txt": "5f52cf151d72e08fb506215edf9498de680819fd2d5ed87c7daf59ca7765bcf0",
     "testdata/inputs/rwf-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
@@ -388,6 +390,9 @@
     "testdata/inputs/sqpoll-wakeup-output.bin": "44fe6650361db29c9a01e673739d74510d87901cfbd92a2f0691a2d1900e41fb",
     "testdata/inputs/sqpoll-wakeup-report.json": "4a59e4d0f25093615b8065cbd6abc01fca4427ab853dd9c6a8dfe43ec180118e",
     "testdata/inputs/sqpoll-wakeup.trace": "f250196d5c720380631ad9872b82ab8a8861f1c2de0a73ee959fdd7215cdcf62",
+    "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
+    "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
+    "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
     "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
     "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
     "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
@@ -413,7 +418,7 @@
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tests/test_publication.py": "f49601c9eaab1016441bfcd838fbb95a369681b301a00d35ae38f51b110ce6ca",
+    "tests/test_publication.py": "7c20159f4469c359b618728e4196f612c544234ba6655ae7c35274c432f8b58e",
     "tests/test_reader_layout.py": "cddadebec602724823445816f41db2bbda1bd907d936c834104ea3e4eb7cd52a",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
@@ -421,12 +426,13 @@
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
     "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
+    "tests/test_submission_prose.py": "0d08e5af4af3266aa93798e4bbf70405c743cbfb8a3bf5152ff1a3beefb2ee94",
     "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e",
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
-    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
-    "tools/verify_epub.py": "91e2f6a7349eefb41ea0988aa7de300d15cd28ce31f275c9723fcbe5c8974117"
+    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
+    "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."
 }

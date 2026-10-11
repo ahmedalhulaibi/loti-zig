@@ -1,0 +1,16 @@
+test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted)
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... ok
+test_reader_count_paragraphs_have_whole_mode_qualified_contracts (tests.test_submission_prose.NarrativePublicationContracts.test_reader_count_paragraphs_have_whole_mode_qualified_contracts)
+Kills correct manifests paired with source prose that overstates SQPOLL return counts. ... ok
+test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings)
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ... ok
+test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) ... ok
+test_complete_source_fidelity_report (tests.test_publication.PublicationContract.test_complete_source_fidelity_report) ... ok
+test_damaged_artifacts_are_rejected (tests.test_publication.PublicationContract.test_damaged_artifacts_are_rejected) ... ok
+test_packaged_literal_languages_must_match_the_source (tests.test_literal_policy.LiteralPolicyContracts.test_packaged_literal_languages_must_match_the_source) ... ok
+test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity (tests.test_literal_policy.LiteralPolicyContracts.test_source_language_aliases_and_legacy_markers_fail_even_with_exact_fidelity) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 20.095s
+
+OK

@@ -1,0 +1,148 @@
+test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted)
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ...
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='stale-language')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... ERROR
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='count-means-completed')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... ERROR
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='missing')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... ERROR
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='duplicate')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... ERROR
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='order')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... ERROR
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='rubric')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... ERROR
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='whitespace')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings)
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ... ok
+test_selected_reference_claims_match_whole_binding_contract (tests.test_reference_semantics.ReferenceSemanticContracts.test_selected_reference_claims_match_whole_binding_contract) ... ok
+
+======================================================================
+ERROR: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='stale-language')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 108, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='count-means-completed')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 108, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='missing')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 108, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='duplicate')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 108, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='order')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 108, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='rubric')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 108, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual(json.loads(result.stderr), {
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ahmed/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='whitespace')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 94, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stderr), (0, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, 'Traceback (most recent call last):\n [1587 chars]'\n') != (0, '')
+
+First differing element 0:
+1
+0
+
+Diff is 1862 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 3 tests in 4.153s
+
+FAILED (failures=1, errors=6)

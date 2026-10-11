@@ -9,9 +9,9 @@
   "source_sha256": {
     "examples/reference_messages.zig": "4e29206d6b45dbe42ccac3135a586970f0016b58868efb9ae938ee927549ea76",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
-    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
-    "ref-zig/submission.rst": "12a293b5bc15a32069283691713d726b7e9962786b18f668eba3e2aa8be65192",
-    "conversion/reference-map.json": "7293b7d485946ba967dd446a6cf37c0b7e991adf6ceb14d6a06ae93746ea409f",
+    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
+    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56",
+    "conversion/reference-map.json": "fdca48a9f891a60f06805072d6dffae726c44c2c9a4c9f81e6a44758c1505f8a",
     "tests/test_messages.py": "81d3040e93ec8773925d75ce0229d707ec3b8410b22a01a871913a9890b374ff",
     "tests/test_messages_trace.py": "4cb1d5ed5968d9432a2eef736904398d3a980f522d3d5f600e30b0e260085c6a",
     "tests/test_messages_census.py": "a3a9c584773a1d9c8fc6288d91773a2e3d9f213a1251490eed13ccb2dfbce8b0",
@@ -729,5 +729,13 @@
     ],
     "suite": "77 tests/zero failures/errors/skips; fifteen attributed properties x400 generated valid cases; per-I/O flags/native/model/CLI/VM/binding/publication contracts replayed.",
     "scope": "Historical mutations retain tested-version scope, no retroactive reassessment/independent reviewer acceptance."
+  },
+  "replay_after_submission_prose": {
+    "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tools/reference_map.py",
+      "ref-zig/submission.rst",
+      "conversion/reference-map.json"
+    ]
   }
 }

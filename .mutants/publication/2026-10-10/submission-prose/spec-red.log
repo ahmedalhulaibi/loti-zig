@@ -1,0 +1,176 @@
+test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted)
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ...
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='stale-language')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='count-means-completed')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='missing')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='duplicate')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='order')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='rubric')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='whitespace')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings)
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ...
+  test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings) (original='io_uring_enter')
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ... FAIL
+  test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings) (original='io_uring_submit')
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ... FAIL
+  test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings) (original='io_uring_submit_and_wait')
+Kills accurate-looking signatures paired with unqualified or completion-count semantics. ... FAIL
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='stale-language')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 107, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [657 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 864 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='count-means-completed')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 107, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [657 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 864 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='missing')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 107, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [657 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 864 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='duplicate')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 107, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [657 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 864 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='order')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 107, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [657 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 864 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='rubric')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 107, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [657 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 864 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='whitespace')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 95, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual(json.loads(result.stdout), {
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "scope": "Publication structure and source fidelity; not semantic or independent review.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        "narrative_paragraphs": 355, "narrative_source_matches": True,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+AssertionError: {'sco[336 chars], 'literal_policy': {'language_counts': {'zig'[209 chars]True} != {'sco[336 chars], 'licence_exact': True, 'local_links_valid': [272 chars]True}
+Diff is 891 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings) (original='io_uring_enter')
+Kills accurate-looking signatures paired with unqualified or completion-count semantics.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 72, in test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings
+    self.assertEqual(rows[row["original"]], row)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'ori[268 chars]rst. Decode the raw usize result with linux.er[161 chars]ize'} != {'ori[268 chars]rst. Outside SQPOLL, success counts consumed S[284 chars]ize'}
+Diff is 936 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings) (original='io_uring_submit')
+Kills accurate-looking signatures paired with unqualified or completion-count semantics.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 72, in test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings
+    self.assertEqual(rows[row["original"]], row)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'ori[179 chars]e': 'Returns submitted SQEs, not completed ope[146 chars]u32'} != {'ori[179 chars]e': 'Without SQPOLL, returns submitted SQEs ra[250 chars]u32'}
+Diff is 741 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings (tests.test_submission_prose.SubmissionBindingContracts.test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings) (original='io_uring_submit_and_wait')
+Kills accurate-looking signatures paired with unqualified or completion-count semantics.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 72, in test_both_wrappers_and_raw_enter_have_mode_qualified_whole_bindings
+    self.assertEqual(rows[row["original"]], row)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'ori[207 chars]shes requests and waits; the return value stil[142 chars]u32'} != {'ori[207 chars]shes SQEs and requests a completion threshold.[248 chars]u32'}
+Diff is 750 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 2 tests in 3.073s
+
+FAILED (failures=10)

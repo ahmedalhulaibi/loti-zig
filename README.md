@@ -52,9 +52,14 @@ blocks against Sphinx source, five byte-identical illustrations, licence and loc
 links. Negative tests reject nine damaged-archive classes plus 19 source-literal
 policy and four rendered-language damages, including matched stale artifact pairs.
 All literals have explicit Zig/console/JSON/text labels matching packaged classes;
-checks reject bounded C-import/helper/compiler markers. This is not a language
-parser or proof that every declaration/example is semantically correct. These
-checks **do not** satisfy independent review.
+checks reject bounded C-import/helper/compiler markers. Ordered source fidelity
+also checks 355 resolved narrative paragraphs (references/typography resolved;
+formatting whitespace folded), rejecting six stale/missing/duplicated/reordered
+prose damages while accepting whitespace-only formatting. It excludes structural
+TOC compact paragraphs/rubrics/captions, not code literals. Three whole bindings
+and two independent reader paragraphs qualify ordinary versus SQPOLL return
+counts. These checks are not language parsing, all-reference semantic acceptance
+or **independent review**.
 
 `conversion/source-inventory.json` preserves 3,618 original matched lines and
 128 source blocks/declarations: 120 C blocks/declarations and eight output literals.

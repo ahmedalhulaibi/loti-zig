@@ -168,7 +168,7 @@
     "examples/reference_signals.zig": "a2cc003381be3903aecfa65d7c7e719e4c0c45817f1ff976dcb6fd3fa54e9382",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
-    "tests/test_publication.py": "f49601c9eaab1016441bfcd838fbb95a369681b301a00d35ae38f51b110ce6ca",
+    "tests/test_publication.py": "7c20159f4469c359b618728e4196f612c544234ba6655ae7c35274c432f8b58e",
     "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
     "testdata/inputs/signal-invalid-arguments.json": "6ef7a293b412e6da43cd05f57b81c26b34a6bde8631879e8dce77fce6018c55c"
   },
@@ -252,5 +252,11 @@
     "suite": "77 tests/zero failures/errors/skips; fifteen attributed properties x400 generated valid cases; per-I/O flags/native/model/CLI/VM/binding/publication contracts replayed.",
     "scope": "Historical mutations retain tested-version scope, no retroactive reassessment/independent reviewer acceptance."
   },
-  "replay_after_literal_policy": "Only publication expected-report policy fields changed. After full79-test suite, execution fingerprints refreshed; no native/default/ordinary signal core or historical mutation reassessment claim."
+  "replay_after_literal_policy": "Only publication expected-report policy fields changed. After full79-test suite, execution fingerprints refreshed; no native/default/ordinary signal core or historical mutation reassessment claim.",
+  "replay_after_submission_prose": {
+    "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tests/test_publication.py"
+    ]
+  }
 }

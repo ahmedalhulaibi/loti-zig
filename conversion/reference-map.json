@@ -107,7 +107,7 @@
       "zig": "std.os.linux.io_uring_enter",
       "example": "examples/raw_cat.zig",
       "verification_scope": "compiled and executed",
-      "semantic_difference": "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Decode the raw usize result with linux.errno.",
+      "semantic_difference": "Consumes already-published SQ entries or waits according to flags; the caller publishes SQ tail first. Outside SQPOLL, success counts consumed SQEs; with SQPOLL it generally returns to_submit, not observed poller consumption. Decode the raw usize result with linux.errno.",
       "declaration_source": "os/linux.zig",
       "zig_signature": "pub fn io_uring_enter(fd: fd_t, to_submit: u32, min_complete: u32, flags: u32, sig: ?*sigset_t) usize"
     },
@@ -668,7 +668,7 @@
       "zig": "std.os.linux.IoUring.submit",
       "example": "examples/reference_completion.zig",
       "verification_scope": "compiled and executed",
-      "semantic_difference": "Returns submitted SQEs, not completed operations; SQPOLL counts are not completion proof.",
+      "semantic_difference": "Without SQPOLL, returns submitted SQEs rather than completed operations. With SQPOLL, success may be higher/lower, including zero, than requests submitted during this call; inspect tagged CQEs.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn submit(self: *IoUring) !u32"
     },
@@ -677,7 +677,7 @@
       "zig": "std.os.linux.IoUring.submit_and_wait",
       "example": "examples/reference_completion.zig",
       "verification_scope": "compiled and executed",
-      "semantic_difference": "Publishes requests and waits; the return value still counts submissions.",
+      "semantic_difference": "Publishes SQEs and requests a completion threshold. Without SQPOLL, result counts submissions; with SQPOLL it has the same non-exact count semantics as submit, never a CQE count.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn submit_and_wait(self: *IoUring, wait_nr: u32) !u32"
     },

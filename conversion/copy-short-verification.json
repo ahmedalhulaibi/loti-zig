@@ -11,8 +11,8 @@
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "tests/test_copy_short.py": "75e7e25ff6c83c7395c45703ff3515faf71cb7fe0c794a06cf47d81309b63fe5",
     "tests/test_copy_short_recovery.py": "8b089719fa714b635545b12c8106009308daf8f8f1aff7438e22e9888549aae6",
-    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
-    "conversion/reference-map.json": "7293b7d485946ba967dd446a6cf37c0b7e991adf6ceb14d6a06ae93746ea409f",
+    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
+    "conversion/reference-map.json": "fdca48a9f891a60f06805072d6dffae726c44c2c9a4c9f81e6a44758c1505f8a",
     "tutorial/cp.rst": "ae113b0656c6cca42094d74d713a5ea2d30ad967ae9046e0dc3d75d1c74801da",
     "conversion/copy-short.trace": "bc6ca2eb6a9bec1bd012422421673aacf8c6ec14d06c4a56254f1a24cabda71e",
     "conversion/copy-short-recovery.trace": "68dee83142decc537e0a6d4d6954db8dafa48d1048a2b8ddf9fa91945f7ee694",
@@ -204,5 +204,12 @@
     ],
     "suite": "77 tests/zero failures/errors/skips; fifteen attributed properties x400 generated valid cases; per-I/O flags/native/model/CLI/VM/binding/publication contracts replayed.",
     "scope": "Historical mutations retain tested-version scope, no retroactive reassessment/independent reviewer acceptance."
+  },
+  "replay_after_submission_prose": {
+    "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tools/reference_map.py",
+      "conversion/reference-map.json"
+    ]
   }
 }

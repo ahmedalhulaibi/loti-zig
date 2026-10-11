@@ -1,0 +1,115 @@
+test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted)
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ...
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='stale-language')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='count-means-completed')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='missing')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='duplicate')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='order')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+  test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='rubric')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison. ... FAIL
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='stale-language')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 118, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [726 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 945 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='count-means-completed')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 118, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [726 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 945 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='missing')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 118, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [726 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 945 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='duplicate')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 118, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [726 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 945 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='order')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 118, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [726 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 945 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_narrative_changes_fail_but_formatting_whitespace_is_accepted (tests.test_submission_prose.NarrativePublicationContracts.test_narrative_changes_fail_but_formatting_whitespace_is_accepted) (case='rubric')
+Kills literal-only, set-based, missing-paragraph and vacuous prose comparison.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_submission_prose.py", line 118, in test_narrative_changes_fail_but_formatting_whitespace_is_accepted
+    self.assertEqual((result.returncode, result.stdout), (1, ""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, '{\n  "scope": "Publication structure [726 chars]}\n') != (1, '')
+
+First differing element 0:
+0
+1
+
+Diff is 945 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 5.789s
+
+FAILED (failures=6)

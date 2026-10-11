@@ -19,15 +19,15 @@
   },
   "mutations": "mutation-literal-policy.json",
   "source_sha256": {
-    "tools/verify_epub.py": "91e2f6a7349eefb41ea0988aa7de300d15cd28ce31f275c9723fcbe5c8974117",
+    "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e",
     "tests/test_literal_policy.py": "11253e4b9ed50b9cd1b46875f1bad51c72fc1d65dc4182ac92e7fd6417e5f9e6",
-    "tests/test_publication.py": "f49601c9eaab1016441bfcd838fbb95a369681b301a00d35ae38f51b110ce6ca",
+    "tests/test_publication.py": "7c20159f4469c359b618728e4196f612c544234ba6655ae7c35274c432f8b58e",
     "testdata/inputs/literal-policy-damages.json": "0be602e17560f2f43fdc362b98500181827725de2094cc1485359b18bfa4fd78",
     "conversion/literal-policy-spec-sha256.json": "cfe306a7937d296e057950d134f56b850e2700efedc9c529e6fee692a39f7651",
     "conversion/literal-policy-spec-amendment.json": "f3b73bc0ddd3c79c0c21a8674067da7f428dbe679c536d42ed82c0563bbe961a",
     "conversion/literal-policy-damages-initial.json": "4916416f2a203c8ef7a4f06b1b23b771ae5117553cea4b6dabe5d4078f94bf18",
-    "README.md": "3f45f86f049baec7ab785ccc84b7ffcd3aa01030d563514700c8b5d1a81ad4f3",
-    "testing.md": "348b9d1e21f51e1e0c6807a2269472fc2af097ac71daeff6f808fbdf06bc06e3"
+    "README.md": "8dae6b572b5125052ebeace8ed51d5130d7b8ab552bc020d74170bfa24f222df",
+    "testing.md": "eb8485687a7f9e1a4096939825bbe70ed60401c7d57fdf0b8fa18585b9c1a08f"
   },
   "diagnostics": {
     "scope": "Active primary LSP on three changed Python paths; no cache-only cleanliness claim. Existing OPF spelling infos/other-feature suppressions stay disclosed in their own receipts.",
@@ -72,5 +72,14 @@
     "book_sha256": "643aac576f2dc2d60f16d3f1c5b5c7e2efc8aec6714455b32953f9adb69a499a",
     "scope": "Final publication/EPUBCheck/layout followed aggregate suite. Not semantic/independent-review or reader-device acceptance."
   },
-  "replay_after_sqpoll_wakeup": "After full81-test/fifteen400-case suite and final strict publication/browser/EPUBCheck. Updated only changed execution-consumer fingerprints, not historical mutation or independent-review acceptance."
+  "replay_after_sqpoll_wakeup": "After full81-test/fifteen400-case suite and final strict publication/browser/EPUBCheck. Updated only changed execution-consumer fingerprints, not historical mutation or independent-review acceptance.",
+  "replay_after_submission_prose": {
+    "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tools/verify_epub.py",
+      "tests/test_publication.py",
+      "README.md",
+      "testing.md"
+    ]
+  }
 }

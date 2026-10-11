@@ -144,9 +144,9 @@
   },
   "manual_notes": "io_uring_setup.2 IORING_SETUP_SQPOLL states flag/wakeup, fixed-file/privilege history. io_uring_sqpoll.7 overview has contradictory privilege versions and calls sq_ready a flag check; those claims were not adopted. Actual SDK sq_ready is a count; flags are acquire-loaded directly. SDK flush release and subsequent internal flag check inspected; no other-architecture memory-order proof.",
   "source_sha256": {
-    "README.md": "3f45f86f049baec7ab785ccc84b7ffcd3aa01030d563514700c8b5d1a81ad4f3",
+    "README.md": "8dae6b572b5125052ebeace8ed51d5130d7b8ab552bc020d74170bfa24f222df",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
-    "conversion/prose-line-disposition.md": "45936811cdbd038e47f84d3b5af87008dd0dd94695f4186896e2f668e1dfa29d",
+    "conversion/prose-line-disposition.md": "fbea94e125ffc80b55916d3ecda04b3be5ce15d141ca8934a36fb8567ac7a362",
     "conversion/sqpoll-wakeup-spec-amendment.json": "537d28860a7ecc4e5595c71c52debc463df4498be0fc9d68159bb688254098ae",
     "conversion/sqpoll-wakeup-spec-initial-sha256.json": "9bedce75a0c3a7ad19c553a13f0461a12dab7439c4cb619386b1789659185f55",
     "conversion/sqpoll-wakeup-spec-sha256.json": "0da3f9445d645cd528f3afae0de3e8a7f31d43994aa87968dabcf0f66f2011e0",
@@ -161,7 +161,7 @@
     "testdata/inputs/sqpoll-wakeup-output.bin": "44fe6650361db29c9a01e673739d74510d87901cfbd92a2f0691a2d1900e41fb",
     "testdata/inputs/sqpoll-wakeup-report.json": "4a59e4d0f25093615b8065cbd6abc01fca4427ab853dd9c6a8dfe43ec180118e",
     "testdata/inputs/sqpoll-wakeup.trace": "f250196d5c720380631ad9872b82ab8a8861f1c2de0a73ee959fdd7215cdcf62",
-    "testing.md": "348b9d1e21f51e1e0c6807a2269472fc2af097ac71daeff6f808fbdf06bc06e3",
+    "testing.md": "eb8485687a7f9e1a4096939825bbe70ed60401c7d57fdf0b8fa18585b9c1a08f",
     "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
     "tutorial/sq_poll.rst": "0c9a763df7ddcede3df3dc8920fb7efefa73e0f9bb244ba90513e95fd05f2f78"
   },
@@ -207,5 +207,13 @@
     "completion_guards": 3,
     "queried_closures": 1,
     "ring_retained_after_unregister": true
+  },
+  "replay_after_submission_prose": {
+    "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "README.md",
+      "conversion/prose-line-disposition.md",
+      "testing.md"
+    ]
   }
 }

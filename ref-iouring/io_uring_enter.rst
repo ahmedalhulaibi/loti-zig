@@ -10,8 +10,11 @@ Zig 0.17.0 entry point is:
 
 ``fd`` identifies the ring; ``to_submit`` limits SQ entries to consume.
 ``min_complete`` requests a wait threshold with ``IORING_ENTER_GETEVENTS``.
-The successful return counts consumed submissions, not successful operations or
-CQEs copied by the application. The syscall does not advance application CQ head.
+Outside SQPOLL, success counts consumed submissions, not successful operations or
+CQEs copied by the application. With SQPOLL, success generally equals
+``to_submit`` because the poller submits outside the syscall's context; it is not
+an observation of the poller's actual consumption. Correlate CQEs instead.
+The syscall does not advance application CQ head.
 Raw errors are errno-encoded ``usize`` values decoded with ``linux.errno``.
 Operation-specific failures normally arrive separately in CQE ``res``.
 

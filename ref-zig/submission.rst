@@ -22,11 +22,13 @@ a ninth NOP returns ``SubmissionQueueFull`` without changing pending count or
 local tail, then submits and consumes all eight. This is an executed capacity
 failure, not merely a constructor signature. It uses one producer without SQPOLL.
 
-``submit`` publishes queued entries and returns a submission count through a
-Zig error union. ``submit_and_wait(wait_nr)`` also requests a completion wait,
-but its returned number still counts submissions. SQPOLL can consume entries
-concurrently; do not treat these return counts as completion counts or assume
-every ``submit`` performs an enter syscall. See :ref:`sq_poll`.
+``submit`` publishes queued entries; outside SQPOLL its Zig error-union result
+counts submissions, not completed operations. ``submit_and_wait(wait_nr)`` also
+requests a completion threshold. With SQPOLL, a successful count from **either**
+method may be higher or lower, including zero, than requests actually submitted
+during that call. The SDK's ``submit`` delegates to ``submit_and_wait(0)``; the
+non-exact SQPOLL rule applies to both. Correlate operation results through CQEs.
+Do not assume every ``submit`` enters the kernel; see :ref:`sq_poll`.
 
 File data and durability
 ------------------------

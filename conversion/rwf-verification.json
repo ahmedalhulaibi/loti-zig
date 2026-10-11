@@ -13,9 +13,9 @@
     "examples/reference_rwf.zig": "103e568c2fc2486eb241038202d7bd772c1be509df2b56ff2bf910822db3709b",
     "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
-    "tools/reference_map.py": "7445536b475b8850c5c712cda007deb15707eae1552ada2c5fd8e63fea2fe5de",
-    "conversion/reference-map.json": "7293b7d485946ba967dd446a6cf37c0b7e991adf6ceb14d6a06ae93746ea409f",
-    "ref-zig/submission.rst": "12a293b5bc15a32069283691713d726b7e9962786b18f668eba3e2aa8be65192",
+    "tools/reference_map.py": "9eaa4dd41a6612fc0561ed758f35b6317fefa47c551e2a9a0ab419e85b93b0c7",
+    "conversion/reference-map.json": "fdca48a9f891a60f06805072d6dffae726c44c2c9a4c9f81e6a44758c1505f8a",
+    "ref-zig/submission.rst": "85a53b2ee57cca93b3059efd7b2bd813c087fe9dadf5994b2aee241047df2c56",
     "conversion/rwf.trace": "a9aff6312f7cb0a6fc2765852a3959257fb2f525cc1eb78ff4aa2119da039acf",
     "conversion/rwf-spec-sha256.json": "1c12594eb638a544ccd831f95c666bac8b2c0fc6eae526a57ef08a6f32ccf64e",
     "testdata/inputs/rwf-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
@@ -261,5 +261,13 @@
       }
     },
     "stopped_because": "settings.max_examples=400"
+  },
+  "replay_after_submission_prose": {
+    "scope": "After full84-test/fifteen400-case suite, strict publication/narrative/layout/EPUBCheck; only current execution/consumer fingerprints refreshed. Historical mutation/diagnostic/gate evidence remains historical, not new review acceptance.",
+    "changed": [
+      "tools/reference_map.py",
+      "conversion/reference-map.json",
+      "ref-zig/submission.rst"
+    ]
   }
 }
