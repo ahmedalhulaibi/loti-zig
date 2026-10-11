@@ -1,0 +1,139 @@
+{
+  "base_commit": "a2dadb2698eec6004ab8528442bbeb27d3f3a568",
+  "scope": "Author uncovered original delme.c:208\u2013212 provide/remove and READ-selection zero-result ownership. New mode missing; not independent review or all kernel/device assurance.",
+  "original_selectors": [
+    "delme.c:208-212",
+    "ref-liburing/submission.rst:127"
+  ],
+  "current_public_cli": {
+    "arguments": [
+      "testdata/inputs/provided-buffer-input.bin",
+      "--zero-result"
+    ],
+    "returncode": 1,
+    "stdout_hex": "",
+    "first_stderr": "error: UnknownBufferCommand",
+    "input_bytes": 64,
+    "input_sha256": "fdeab9acf3710362bd2658cdc9a29e8f9c757fcf9811603a8c447cd1d9151108"
+  },
+  "pre_spec_native_abi_exploration": {
+    "scope": "Disposable private64-byte legacy IORING_OP_PROVIDE_BUFFERS group7/ID257 and current Linux, no product code edits. EOF positive64-byte request consumes buffer despite result0; len0 at offset0 expands to provided64-byte capacity and reads positive bytes. Both next reads reportENOBUFS and remove1 returns0. These observations inform author tests, not independent agent acceptance.",
+    "probe": [
+      {
+        "length": 64,
+        "provide": {
+          "user_data": 1,
+          "res": 0,
+          "flags": 0
+        },
+        "read": {
+          "user_data": 2,
+          "res": 0,
+          "flags": 16842753
+        },
+        "exhausted": {
+          "user_data": 4,
+          "res": -105,
+          "flags": 0
+        },
+        "remove": {
+          "user_data": 3,
+          "res": 0,
+          "flags": 0
+        },
+        "storage": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      },
+      {
+        "length": 0,
+        "provide": {
+          "user_data": 1,
+          "res": 0,
+          "flags": 0
+        },
+        "read": {
+          "user_data": 2,
+          "res": 64,
+          "flags": 16842753
+        },
+        "exhausted": {
+          "user_data": 4,
+          "res": -105,
+          "flags": 0
+        },
+        "remove": {
+          "user_data": 3,
+          "res": 0,
+          "flags": 0
+        },
+        "storage": "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>?"
+      }
+    ],
+    "source_sha256": "10f9965d42abd805120c902933c91acb07b48c32643cd3c9e84e80fdf4828850"
+  },
+  "next_contract": "Optional --zero-result retains existing default/report/tests; positive-length EOF selection0 and actual remove0, request-length0 data selection and byte oracle, exhaustion/re-provision/removal1 and untouched poison, absolute file cursor0."
+}
