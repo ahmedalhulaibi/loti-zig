@@ -15,8 +15,8 @@
     "tests/test_ordinary_signals.py": "9926decaccb8032f833f8c815ffcf22684de199408e07ded152a44f475d72c23",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
-    "tools/reference_map.py": "ab77cd15913a7d4571cb8ee05a60bfe55ca083616077977d3e72c93e700d24c5",
-    "conversion/reference-map.json": "62bcaedbf725263258d6071d91bbf2c512d9f71cb08b71880196f202ce31e8d4",
+    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
     "ref-zig/completion.rst": "1e1a954707004567b6092f1d8cbf812600f34f25b2be9942e833df998cce0a3f",
     "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
     "conversion/ordinary-signal.trace": "3116b1eefa5b3421b68df05367e0edf71b46475417d6bf52fee9018d42abe518",
@@ -270,5 +270,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Source pins replayed through amended full95 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical gate/mutation/screenshot fields retained, not rerun or independent/all-kernel/device acceptance."
+  },
+  "replay_after_probe_types": {
+    "tests": 96,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.084,
+    "book_sha256": "904b14ec5785eaa4c69b36289d29c1c2d5f1a84f8c972d38f1e9769905870f43",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full96 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical binding-comparison/gate/mutation/screenshot fields remain historical, not new whole-type/kernel/device/independent acceptance."
   }
 }

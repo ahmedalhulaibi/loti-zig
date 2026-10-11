@@ -40,6 +40,10 @@ author indexes, not accepted dispositions. Read source bodies, not cached outlin
   executing primaries and iovec-metadata vs byte-storage lifetime independently.
   Check the arithmetic amendment:the poem is71 bytes (36/35), not68. Initial
   author fixture/core and excluded bytecode-cache replay remain in evidence.
+- Probe header/op bindings now target the actual probe consumer, not an unused
+  constructor catalog. Inspect `probe-type-verification.json`; independently
+  check fixed-capacity value ownership, native enum fields, both lookup bounds
+  and bit0-only support. Remaining generic type-primary rows are not accepted.
 
 ## Verification and evidence
 

@@ -1,0 +1,121 @@
+{
+  "scope": "Four syntax-valid probe-type binding-producer variants pass generation/freshness but fail whole two-row consumer/ownership/bounds/flag contracts. Not native/kernel, all type/binding or independent acceptance.",
+  "mutants": [
+    {
+      "id": "unused-catalog-primary",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "flexible-array-heap-ownership",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "allocated-capacity-is-reported-count",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "entry-any-nonzero-flag-supported",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 1,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    }
+  ],
+  "source_sha256": {
+    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5"
+  },
+  "restored_source_sha256": {
+    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5"
+  },
+  "log_normalization": {
+    "scope": "Trailing ASCII spaces/tabs/CR and terminal blank lines only; substantive observations unchanged.",
+    "changed": [
+      {
+        "file": ".mutants/probe-type/2026-10-10/unused-catalog-primary-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/unused-catalog-primary-test.log",
+        "original_sha256": "12c6255345050d2c740393481cb00a729b2d475954039d2d065177fb14173781",
+        "normalized_sha256": "e514878d9906ef50e2dc127e600c8fc1388e608b5e1fe478a5563dfd90537b75"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/flexible-array-heap-ownership-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/flexible-array-heap-ownership-test.log",
+        "original_sha256": "bf6eb07c05d58653d2e281046c34480bf34e18c3d20492e6aea3946427b6d0c0",
+        "normalized_sha256": "3c1d516099e436ae8181d8308a09fa1f210ac29e5076e3dda58472965cdfbf37"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/allocated-capacity-is-reported-count-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/allocated-capacity-is-reported-count-test.log",
+        "original_sha256": "e1893ce91ff9c7bc412e1dc70bba7546fbaef2c529f24d7e7df7edfe3c60d6c2",
+        "normalized_sha256": "176a70739b413971e51a067e36093a384cf02978e836517e1f9f74df0f3e9af8"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/entry-any-nonzero-flag-supported-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/entry-any-nonzero-flag-supported-test.log",
+        "original_sha256": "0aeac7a2c67efdaf8ec24d3c56a0f282d2e7ad5612d3a1533c6aa7085b164eac",
+        "normalized_sha256": "58d5dbfb233f92ee4b37eed9c1ac50e2b88f74c61b6551dfc778eaf7b9736ccb"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/native-build.log",
+        "original_sha256": "7bc779a74a0b1d73e127d9ca2e99f43055586d9d2728b3175059323a25384760",
+        "normalized_sha256": "f6243a240a6c56faa3ecaab786ba80a94ff12e4dc76bbe649597f7e1001002ee"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/strict-html.log",
+        "original_sha256": "145cd0d480e02bf25c88b80343915c06fdcc3031325c1371e2ea6d03721fdec9",
+        "normalized_sha256": "8dd8ff3153e9e93e7fba214505bbb99713a6dc3c5eefc5511dddf4bd79a41a62"
+      },
+      {
+        "file": ".mutants/probe-type/2026-10-10/strict-epub.log",
+        "original_sha256": "2b896fbf1dee79a2610ad1342057a850309149d8b2bd0cc1136576fc25328277",
+        "normalized_sha256": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940"
+      }
+    ]
+  }
+}

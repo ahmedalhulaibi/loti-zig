@@ -1,0 +1,7 @@
+{
+  "scope": "Author preproducer-fix whole two-row probe-type contract; not ACL seal/verifier-agent or acceptance of all type/binding purposes.",
+  "source_sha256": {
+    "tests/test_reference_probe_types.py": "35110472b16ed0ddc447f2df096ec2134173b296246ab6625f7e3e41eec4933e",
+    "testdata/inputs/probe-type-bindings.json": "ed1f2dd5a2b33f0e62eb8c795298d686976efadbf8faaece762d5ea2f4937791"
+  }
+}

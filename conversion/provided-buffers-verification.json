@@ -4531,7 +4531,7 @@
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
     "examples/reference_buffers.zig": "a53c67f6ed7cd7e42666176ab7306ad491fc5482ea79bf318b537b5be984d53c",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tools/reference_map.py": "ab77cd15913a7d4571cb8ee05a60bfe55ca083616077977d3e72c93e700d24c5",
+    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
     "testdata/inputs/provided-buffer-plans.json": "d50e0ed4acc123babeba111df163ae802d034cd9695c859f9bf5813d74332199",
     "testdata/inputs/provided-buffer-invalid-plans.json": "6c7749c1f127f3e155dd3d56aee2003ac0d25755431737e2921eb070c564cd59",
     "testdata/inputs/provided-buffer-input.bin": "fdeab9acf3710362bd2658cdc9a29e8f9c757fcf9811603a8c447cd1d9151108",
@@ -4689,5 +4689,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Source pins replayed through amended full95 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical gate/mutation/screenshot fields retained, not rerun or independent/all-kernel/device acceptance."
+  },
+  "replay_after_probe_types": {
+    "tests": 96,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.084,
+    "book_sha256": "904b14ec5785eaa4c69b36289d29c1c2d5f1a84f8c972d38f1e9769905870f43",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full96 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical binding-comparison/gate/mutation/screenshot fields remain historical, not new whole-type/kernel/device/independent acceptance."
   }
 }

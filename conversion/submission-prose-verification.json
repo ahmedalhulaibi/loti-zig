@@ -33,7 +33,7 @@
   },
   "source_sha256": {
     "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e",
-    "tools/reference_map.py": "ab77cd15913a7d4571cb8ee05a60bfe55ca083616077977d3e72c93e700d24c5",
+    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
     "tests/test_submission_prose.py": "d913437ac0258cad5d4f58b46c80e0817748354a21131b3fba5600247bcf98f1",
     "tests/test_publication.py": "25615a30481205efcc5b8b26a2ff475d725718c18c25d44340202a76d8ec4180",
     "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
@@ -42,7 +42,7 @@
     "testdata/inputs/reference-semantics-bindings.json": "a1dad2b6ff5bda1a97c18f24f7afd0433bb06a1af210bccc207a37362a08d980",
     "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
     "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
-    "conversion/reference-map.json": "62bcaedbf725263258d6071d91bbf2c512d9f71cb08b71880196f202ce31e8d4",
+    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
     "conversion/reference-claim-audit.md": "386b13012f307b2df339c1145c5a7ea60397ddcc828e657eabca2269606429de",
     "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
     "conversion/reference-block-disposition.md": "a1c5c0ad95b6d532e7c0146ae41132e160ffee570603c9ca68b6b8e689caf3c3",
@@ -177,5 +177,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Source pins replayed through amended full95 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical gate/mutation/screenshot fields retained, not rerun or independent/all-kernel/device acceptance."
+  },
+  "replay_after_probe_types": {
+    "tests": 96,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.084,
+    "book_sha256": "904b14ec5785eaa4c69b36289d29c1c2d5f1a84f8c972d38f1e9769905870f43",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full96 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical binding-comparison/gate/mutation/screenshot fields remain historical, not new whole-type/kernel/device/independent acceptance."
   }
 }

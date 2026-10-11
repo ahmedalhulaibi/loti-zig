@@ -1,0 +1,39 @@
+{"tests": 1, "failures": 2, "errors": 0, "skips": 0}
+test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) ...
+  test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) (surface='producer') ... FAIL
+  test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) (surface='published') ... FAIL
+
+======================================================================
+FAIL: test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) (surface='producer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference_probe_types.py", line 25, in test_probe_header_and_entry_have_whole_native_consumer_contracts
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[586 chars]; ops_len is the allocated capacity256; all en[834 chars]t.'}] != [{'or[586 chars]; ops holds256 native entries, but only report[832 chars]t.'}]
+
+First differing element 0:
+{'ori[585 chars]; ops_len is the allocated capacity256; all en[136 chars]gs.'}
+{'ori[585 chars]; ops holds256 native entries, but only report[134 chars]gs.'}
+
+Diff is 2399 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) (surface='published')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference_probe_types.py", line 25, in test_probe_header_and_entry_have_whole_native_consumer_contracts
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[586 chars]; ops_len is the allocated capacity256; all en[834 chars]t.'}] != [{'or[586 chars]; ops holds256 native entries, but only report[832 chars]t.'}]
+
+First differing element 0:
+{'ori[585 chars]; ops_len is the allocated capacity256; all en[136 chars]gs.'}
+{'ori[585 chars]; ops holds256 native entries, but only report[134 chars]gs.'}
+
+Diff is 2399 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.060s
+
+FAILED (failures=2)

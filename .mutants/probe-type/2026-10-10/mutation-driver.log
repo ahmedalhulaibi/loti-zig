@@ -1,0 +1,6 @@
+Running as unit: run-p3835916-i8013193.scope; invocation ID: 82142ebab95544b28304cdc16105bfc6
+unused-catalog-primary {'tests': 1, 'failures': 2, 'errors': 0, 'skips': 0}
+flexible-array-heap-ownership {'tests': 1, 'failures': 2, 'errors': 0, 'skips': 0}
+allocated-capacity-is-reported-count {'tests': 1, 'failures': 2, 'errors': 0, 'skips': 0}
+entry-any-nonzero-flag-supported {'tests': 1, 'failures': 2, 'errors': 0, 'skips': 0}
+Four producer kills; exact source/generated/core restoration; six-test baseline

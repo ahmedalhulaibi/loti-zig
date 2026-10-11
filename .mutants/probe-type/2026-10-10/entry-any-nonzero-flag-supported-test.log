@@ -1,0 +1,39 @@
+{"tests": 1, "failures": 2, "errors": 0, "skips": 0}
+test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) ...
+  test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) (surface='producer') ... FAIL
+  test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) (surface='published') ... FAIL
+
+======================================================================
+FAIL: test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) (surface='producer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference_probe_types.py", line 25, in test_probe_header_and_entry_have_whole_native_consumer_contracts
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[1315 chars]rted accepts any nonzero flags; probe is_suppo[96 chars]t.'}] != [{'or[1315 chars]rted tests IO_URING_OP_SUPPORTED bit0; probe i[103 chars]t.'}]
+
+First differing element 1:
+{'ori[537 chars]rted accepts any nonzero flags; probe is_suppo[95 chars]rt.'}
+{'ori[537 chars]rted tests IO_URING_OP_SUPPORTED bit0; probe i[102 chars]rt.'}
+
+Diff is 2647 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_probe_header_and_entry_have_whole_native_consumer_contracts (tests.test_reference_probe_types.ProbeTypeBindingContracts.test_probe_header_and_entry_have_whole_native_consumer_contracts) (surface='published')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_reference_probe_types.py", line 25, in test_probe_header_and_entry_have_whole_native_consumer_contracts
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[1315 chars]rted accepts any nonzero flags; probe is_suppo[96 chars]t.'}] != [{'or[1315 chars]rted tests IO_URING_OP_SUPPORTED bit0; probe i[103 chars]t.'}]
+
+First differing element 1:
+{'ori[537 chars]rted accepts any nonzero flags; probe is_suppo[95 chars]rt.'}
+{'ori[537 chars]rted tests IO_URING_OP_SUPPORTED bit0; probe i[102 chars]rt.'}
+
+Diff is 2647 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.061s
+
+FAILED (failures=2)

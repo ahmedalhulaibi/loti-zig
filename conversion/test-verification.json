@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 95,
+  "tests_run": 96,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -198,7 +198,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 92
+          "overrun": 111
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -216,7 +216,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 48
+          "overrun": 57
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -399,6 +399,7 @@
     "testdata/inputs/probe-opcodes.json": "77e7993b0b234164d3a248e8e14a7bd19b1988d868f207181ac657b861416132",
     "testdata/inputs/probe-regression-high-flag-big.bin": "17b95007ab44bc471e96e4d6186f55df60550b491ea28b583102606b21a87ae4",
     "testdata/inputs/probe-regression-high-flag-little.bin": "867fa329e8168f57da861d7cfddca5a66d08500214420bd5ce217d88e16d200f",
+    "testdata/inputs/probe-type-bindings.json": "ed1f2dd5a2b33f0e62eb8c795298d686976efadbf8faaece762d5ea2f4937791",
     "testdata/inputs/provided-buffer-cleanup-regression.json": "bd9bded8128e337206c07f718ed53d8293edcdd91422b562030f389703138556",
     "testdata/inputs/provided-buffer-input.bin": "fdeab9acf3710362bd2658cdc9a29e8f9c757fcf9811603a8c447cd1d9151108",
     "testdata/inputs/provided-buffer-invalid-plans.json": "6c7749c1f127f3e155dd3d56aee2003ac0d25755431737e2921eb070c564cd59",
@@ -467,6 +468,7 @@
     "tests/test_reader_layout.py": "3efd6ba16f5676fcc32d814db607d7f777d9eb6b4a33aa0b42b58f6557831b1f",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_reference_execution_map.py": "6dd89c58fbfc4a87caa0c4f4a3020a3d2e5278cb5ba8922b132e5f24992e1626",
+    "tests/test_reference_probe_types.py": "35110472b16ed0ddc447f2df096ec2134173b296246ab6625f7e3e41eec4933e",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
@@ -477,7 +479,7 @@
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
-    "tools/reference_map.py": "ab77cd15913a7d4571cb8ee05a60bfe55ca083616077977d3e72c93e700d24c5",
+    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
     "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e",
     "tutorial/webserver.rst": "d3b3bf9066938cb5baeb88650120380dd4c77f058576c1eddbd781fbf82724e2"
   },

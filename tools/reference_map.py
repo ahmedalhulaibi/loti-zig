@@ -139,6 +139,14 @@ def generate():
             if original == "io_uring_cqe":
                 example = BUFFERS
                 scope = "compiled type usage; actual selected/unselected flags and buffer-ID outcomes including zero-result EOF BUFFER/ID ownership; no CQE32, pbuf-ring or multishot assurance"
+            elif original == "io_uring_probe":
+                example = "examples/probe.zig"
+                scope = "compiled get_probe/snapshot value usage; compile-time2064-byte ABI check, independently decoded raw headers and all59 named support records, generated snapshot bounds/flag lookup checked; current-kernel/native-endian only, not successful opcode execution, portable snapshots or independent acceptance"
+                difference = "Owned fixed-capacity native value, not a flexible-array allocation or foreign pointer. The16-byte header has last_op/ops_len lookup bounds; ops holds256 native entries, but only reported entries are valid. Header last_op and entry op are IORING_OP enum(u8); support uses IO_URING_OP_SUPPORTED bit0, not any nonzero flags."
+            elif original == "io_uring_probe_op":
+                example = "examples/probe.zig"
+                scope = "compiled probe.ops element through SDK lookup; independent8-byte raw-entry decoding, generated native-endian snapshot flag/bounds checks and complete59 named-opcode comparison; opposite-endian fixture decoding is not big-endian execution or successful opcode execution"
+                difference = "Native8-byte operation record:op is IORING_OP enum(u8), followed by resv:u8, flags:u16 and resv2:u32. Entry is_supported tests IO_URING_OP_SUPPORTED bit0; probe is_supported first checks both header bounds. Reserved fields or unrelated flag bits do not imply support."
         elif original == "IORING_OP_SYNC_FILE_RANGE":
             target, native_source, native_name, example = "raw_ops.sync_file_range", "examples/raw_ops.zig", "sync_file_range", RAW
             scope = "constructed and submitted; valid range and invalid flags/descriptor CQEs checked; not crash-durability evidence"

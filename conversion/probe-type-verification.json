@@ -1,0 +1,403 @@
+{
+  "scope": "Author two-row probe-type consumer/ownership/lookup correction and current native probe replay. Not whole22-type/99-binding/original-purpose or independent acceptance; goal incomplete.",
+  "reproduction": "probe-type-reproduction.json",
+  "core": "probe-type-spec-sha256.json",
+  "mutation": "mutation-probe-type.json",
+  "bindings": {
+    "corrected": [
+      "io_uring_probe",
+      "io_uring_probe_op"
+    ],
+    "other97_whole_rows_unchanged": true,
+    "all99_identity_signatures_unchanged": true,
+    "other_map_fields_unchanged": true,
+    "comparison_base": "d92f5207bf22471d6d1163943aa534be6cbd9faf"
+  },
+  "contracts": {
+    "new_tests": 1,
+    "whole_contract_surfaces": [
+      "producer",
+      "published"
+    ],
+    "native_sources_unchanged": true,
+    "native_replay": {
+      "exit": 0,
+      "raw_bytes": 2064,
+      "raw_sha256": "e858235576ae9ffccdcf7df97ad0e22ce515be493c26096d1124336f23c33c47",
+      "byteorder": "little",
+      "header": {
+        "last_op": 64,
+        "ops_len": 65,
+        "reserved": 0,
+        "reserved_words": [
+          0,
+          0,
+          0
+        ]
+      },
+      "named_records": 59,
+      "whole_listing_independently_matches_raw": true
+    },
+    "raw_artifact_reused_byte_identically": "probe-kernel.bin",
+    "mutation_count": 4,
+    "restored_baseline_tests": 6,
+    "new_property_based_claim": false
+  },
+  "native_host": {
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64",
+    "byteorder": "little"
+  },
+  "source_sha256": {
+    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
+    "tests/test_reference_probe_types.py": "35110472b16ed0ddc447f2df096ec2134173b296246ab6625f7e3e41eec4933e",
+    "testdata/inputs/probe-type-bindings.json": "ed1f2dd5a2b33f0e62eb8c795298d686976efadbf8faaece762d5ea2f4937791",
+    "examples/probe.zig": "f7a10ca0cefce3d68d40814c88d4ce206b2f90a6722df71b0c28d6019482eaa7",
+    "examples/reference_submission.zig": "caed7d975ccadc60c08ee62e8681159764ccdd1698ebd8bc5a42704d77de22b3",
+    "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "testdata/inputs/probe-opcodes.json": "77e7993b0b234164d3a248e8e14a7bd19b1988d868f207181ac657b861416132",
+    "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
+    "ref-zig/_api/probe_types.inc": "8e3e7efba816ef164e92dba7cdc966e538522685849844360a62145fe9b2a4bf",
+    "conversion/audit.md": "a6cfedd1695d27339fb7533be324729a18f24fd1e6a3ed2896caf25dee987245",
+    "conversion/review-handoff.md": "7b92738357c37dd4de0bc478e31cb7d4aba153efaa055fcaca82babe87836b54"
+  },
+  "reference_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
+  },
+  "replayed_consumers": [
+    "accept-verification.json",
+    "connect-verification.json",
+    "copy-short-verification.json",
+    "epoll-verification.json",
+    "file-operations-verification.json",
+    "literal-policy-verification.json",
+    "mapping-failure-verification.json",
+    "messages-verification.json",
+    "ordinary-signal-verification.json",
+    "poll-verification.json",
+    "provided-buffers-verification.json",
+    "reference-semantics-verification.json",
+    "registered-files-verification.json",
+    "rwf-verification.json",
+    "signal-wait-verification.json",
+    "splice-verification.json",
+    "sqpoll-wakeup-verification.json",
+    "submission-prose-verification.json",
+    "provided-buffer-zero-verification.json",
+    "linked-timeout-verification.json",
+    "async-cancel-verification.json",
+    "http-send-verification.json",
+    "reference-execution-verification.json"
+  ],
+  "gates": {
+    "tests": 96,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.084,
+    "book_sha256": "904b14ec5785eaa4c69b36289d29c1c2d5f1a84f8c972d38f1e9769905870f43",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full96 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical binding-comparison/gate/mutation/screenshot fields remain historical, not new whole-type/kernel/device/independent acceptance.",
+    "zig": "0.17.0",
+    "executables": 25,
+    "build_steps": 51,
+    "strict_html": true,
+    "strict_epub": true,
+    "chapters": 27,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "reader": {
+      "cases": 81,
+      "element_counts": {
+        "pre": 363,
+        "table": 6,
+        "image": 15,
+        "heading": 333,
+        "figure": 0
+      },
+      "violations": 0
+    }
+  },
+  "diagnostics": {
+    "active_all_server_source_paths": 2,
+    "visible_findings": 0,
+    "prior_dispositions": 1,
+    "scope": "Active current probe; one hidden finding remains disclosed, not unconditional clean verdict."
+  },
+  "navigation": {
+    "fabric": "Unavailable in tools/PATH; no call-graph completeness claim.",
+    "graph": "Stale989c85c0/reportedHEAD2f4b15a7; actual probe/catalog/registration/SDK/consumer bodies authoritative.",
+    "churn": {
+      "coverage": {
+        "binary_files": 433,
+        "failed_commits": 0,
+        "indexed_commits": 5,
+        "loaded_commits": 69,
+        "requested_commits": 69,
+        "skipped_merge_commits": 0,
+        "status": "complete",
+        "timestamp_anomalies": 0
+      },
+      "metric_version": 1,
+      "query": {
+        "attribution_mode": "commit-author",
+        "group_by": [
+          "directory"
+        ],
+        "mode": "complete",
+        "period": "total",
+        "revision": "HEAD",
+        "since_utc": "2026-10-10T00:00:00Z",
+        "threshold_seconds": 2592000,
+        "timezone": "UTC",
+        "until_utc": "2026-10-11T03:52:07Z",
+        "week_start": "monday"
+      },
+      "replacement_policy": "positional-hunk-v1",
+      "rows": [
+        {
+          "additions": 865,
+          "change_units": 1734,
+          "copied_lines": 0,
+          "deletions": 1162,
+          "keys": {
+            "directory": "."
+          },
+          "new_work": 572,
+          "refactor": 1058,
+          "replacements": 293,
+          "rework": 104
+        },
+        {
+          "additions": 32813,
+          "change_units": 32813,
+          "copied_lines": 4611,
+          "deletions": 0,
+          "keys": {
+            "directory": ".mutants"
+          },
+          "new_work": 32813,
+          "refactor": 0,
+          "replacements": 0,
+          "rework": 0
+        },
+        {
+          "additions": 22,
+          "change_units": 22,
+          "copied_lines": 0,
+          "deletions": 0,
+          "keys": {
+            "directory": "_static"
+          },
+          "new_work": 22,
+          "refactor": 0,
+          "replacements": 0,
+          "rework": 0
+        },
+        {
+          "additions": 86086,
+          "change_units": 86364,
+          "copied_lines": 1136,
+          "deletions": 2433,
+          "keys": {
+            "directory": "conversion"
+          },
+          "new_work": 83931,
+          "refactor": 0,
+          "replacements": 2155,
+          "rework": 2433
+        },
+        {
+          "additions": 4366,
+          "change_units": 4373,
+          "copied_lines": 0,
+          "deletions": 89,
+          "keys": {
+            "directory": "examples"
+          },
+          "new_work": 4284,
+          "refactor": 0,
+          "replacements": 82,
+          "rework": 89
+        },
+        {
+          "additions": 11,
+          "change_units": 11,
+          "copied_lines": 0,
+          "deletions": 0,
+          "keys": {
+            "directory": "public"
+          },
+          "new_work": 11,
+          "refactor": 0,
+          "replacements": 0,
+          "rework": 0
+        },
+        {
+          "additions": 460,
+          "change_units": 1185,
+          "copied_lines": 0,
+          "deletions": 1039,
+          "keys": {
+            "directory": "ref-iouring"
+          },
+          "new_work": 146,
+          "refactor": 1030,
+          "replacements": 314,
+          "rework": 9
+        },
+        {
+          "additions": 0,
+          "change_units": 1273,
+          "copied_lines": 0,
+          "deletions": 1273,
+          "keys": {
+            "directory": "ref-liburing"
+          },
+          "new_work": 0,
+          "refactor": 1273,
+          "replacements": 0,
+          "rework": 0
+        },
+        {
+          "additions": 1761,
+          "change_units": 1761,
+          "copied_lines": 0,
+          "deletions": 38,
+          "keys": {
+            "directory": "ref-zig"
+          },
+          "new_work": 1723,
+          "refactor": 0,
+          "replacements": 38,
+          "rework": 38
+        },
+        {
+          "additions": 28,
+          "change_units": 28,
+          "copied_lines": 0,
+          "deletions": 3,
+          "keys": {
+            "directory": "sphinx-plugins"
+          },
+          "new_work": 25,
+          "refactor": 3,
+          "replacements": 3,
+          "rework": 0
+        },
+        {
+          "additions": 8958,
+          "change_units": 8958,
+          "copied_lines": 105,
+          "deletions": 6,
+          "keys": {
+            "directory": "testdata"
+          },
+          "new_work": 8952,
+          "refactor": 0,
+          "replacements": 6,
+          "rework": 6
+        },
+        {
+          "additions": 4334,
+          "change_units": 4338,
+          "copied_lines": 0,
+          "deletions": 95,
+          "keys": {
+            "directory": "tests"
+          },
+          "new_work": 4243,
+          "refactor": 0,
+          "replacements": 91,
+          "rework": 95
+        },
+        {
+          "additions": 1296,
+          "change_units": 1300,
+          "copied_lines": 0,
+          "deletions": 29,
+          "keys": {
+            "directory": "tools"
+          },
+          "new_work": 1271,
+          "refactor": 0,
+          "replacements": 25,
+          "rework": 29
+        },
+        {
+          "additions": 561,
+          "change_units": 2274,
+          "copied_lines": 0,
+          "deletions": 1875,
+          "keys": {
+            "directory": "tutorial"
+          },
+          "new_work": 399,
+          "refactor": 1869,
+          "replacements": 162,
+          "rework": 6
+        }
+      ]
+    },
+    "churn_scope": "Committed69/69 history before this correction; excludes uncommitted work and is not semantic acceptance."
+  },
+  "remote": {
+    "api": {
+      "default_branch": "master",
+      "fork": true,
+      "full_name": "ahmedalhulaibi/loti-zig",
+      "parent": "shuveb/loti",
+      "pushed_at": "2024-08-02T10:09:03Z"
+    },
+    "ssh_master": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+    "local_path": "/home/ahmed/workspace/va/loti-zig",
+    "delivery": "Conversion not pushed; no upstream PR/release requested."
+  },
+  "completion": {
+    "goal_complete": false,
+    "review": "Supported-child-host blocker unchanged; no retry/fallback/report. Handoff is not review.",
+    "open": "Remaining type/operation/prose original-purpose comparison, mandatory independent review, findings/final gates, acceptance and personal-fork delivery.",
+    "limits": "No successful-opcode, portable snapshot, big-endian runtime, all kernel/policy/error/unwind/concurrency or Supernote-device assurance."
+  },
+  "log_sha256": {
+    ".mutants/probe-type/2026-10-10/unused-catalog-primary-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    ".mutants/probe-type/2026-10-10/unused-catalog-primary-generate.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/probe-type/2026-10-10/unused-catalog-primary-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/probe-type/2026-10-10/unused-catalog-primary-test.log": "e514878d9906ef50e2dc127e600c8fc1388e608b5e1fe478a5563dfd90537b75",
+    ".mutants/probe-type/2026-10-10/flexible-array-heap-ownership-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    ".mutants/probe-type/2026-10-10/flexible-array-heap-ownership-generate.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/probe-type/2026-10-10/flexible-array-heap-ownership-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/probe-type/2026-10-10/flexible-array-heap-ownership-test.log": "3c1d516099e436ae8181d8308a09fa1f210ac29e5076e3dda58472965cdfbf37",
+    ".mutants/probe-type/2026-10-10/allocated-capacity-is-reported-count-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    ".mutants/probe-type/2026-10-10/allocated-capacity-is-reported-count-generate.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/probe-type/2026-10-10/allocated-capacity-is-reported-count-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/probe-type/2026-10-10/allocated-capacity-is-reported-count-test.log": "176a70739b413971e51a067e36093a384cf02978e836517e1f9f74df0f3e9af8",
+    ".mutants/probe-type/2026-10-10/entry-any-nonzero-flag-supported-compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    ".mutants/probe-type/2026-10-10/entry-any-nonzero-flag-supported-generate.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/probe-type/2026-10-10/entry-any-nonzero-flag-supported-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/probe-type/2026-10-10/entry-any-nonzero-flag-supported-test.log": "58d5dbfb233f92ee4b37eed9c1ac50e2b88f74c61b6551dfc778eaf7b9736ccb",
+    ".mutants/probe-type/2026-10-10/restored-freshness.log": "3eced6fb7fcb4d21bbec4a1ff848ffc73e6e5bf9b98e622bf72263c13b68f1f3",
+    ".mutants/probe-type/2026-10-10/restored-test.log": "7283280290f49e46c78bc7aca482c337f9b9d13ac5877e9c56d91af922a6035a",
+    ".mutants/probe-type/2026-10-10/spec-red.log": "91f2f4b446ec96332c071ab94169a126442244221459f8f2ddebacb5bf030d23",
+    ".mutants/probe-type/2026-10-10/spec-green.log": "e118810635968309af494306dffa6d36bf8530decae5bfb5745eb0a18d5fe790",
+    ".mutants/probe-type/2026-10-10/native-replay.log": "b18a6df54011a2c4f3dcd510cc5651413dd40a35737b0e38db4496ea2fd487ab",
+    ".mutants/probe-type/2026-10-10/aggregate-restored.log": "3e2e654d6c4f1ecfd45805f5a97cb604f541efbfe631e5a6c70734f78a836fb8",
+    ".mutants/probe-type/2026-10-10/native-build.log": "f6243a240a6c56faa3ecaab786ba80a94ff12e4dc76bbe649597f7e1001002ee",
+    ".mutants/probe-type/2026-10-10/strict-html.log": "8dd8ff3153e9e93e7fba214505bbb99713a6dc3c5eefc5511dddf4bd79a41a62",
+    ".mutants/probe-type/2026-10-10/strict-epub.log": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940",
+    ".mutants/probe-type/2026-10-10/publication.log": "ae931854a801969c0585dcec8030933505756a34bc8b2e321293cf6d191ac6eb",
+    ".mutants/probe-type/2026-10-10/reader.log": "c4081dbf4d07e78a3c48c2dbd1c87bf5f4b378cfae25cf54fe5936523e991b4f",
+    ".mutants/probe-type/2026-10-10/epubcheck.log": "1b871a801b1773626c473f38741caef8c98ef34b42c5b60ec1c5109e2bdec171",
+    ".mutants/probe-type/2026-10-10/mutation-driver.log": "f579dffdc45da02f1a96378128a48cf30d6a2bb844c6929297aad578f8780c88"
+  }
+}

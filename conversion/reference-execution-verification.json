@@ -39,8 +39,8 @@
     "architecture": "x86_64"
   },
   "source_sha256": {
-    "tools/reference_map.py": "ab77cd15913a7d4571cb8ee05a60bfe55ca083616077977d3e72c93e700d24c5",
-    "conversion/reference-map.json": "62bcaedbf725263258d6071d91bbf2c512d9f71cb08b71880196f202ce31e8d4",
+    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
     "tests/test_reference_execution_map.py": "6dd89c58fbfc4a87caa0c4f4a3020a3d2e5278cb5ba8922b132e5f24992e1626",
     "testdata/inputs/reference-execution-bindings.json": "ad542359cb5038b41c9eaf473b08a4e47758181d6920026fcfb9a8be14a39f5e",
     "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
@@ -49,8 +49,8 @@
     "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
-    "conversion/audit.md": "ea2110c38ebbfd2926c508f3aac7d237d4c2491145af4e0fe2e4c41acc0a541c",
-    "conversion/review-handoff.md": "7510b17bc23dd0dbde64323bc6cf32ccb1bd39d03ed5775739c95854bed6128f",
+    "conversion/audit.md": "a6cfedd1695d27339fb7533be324729a18f24fd1e6a3ed2896caf25dee987245",
+    "conversion/review-handoff.md": "7b92738357c37dd4de0bc478e31cb7d4aba153efaa055fcaca82babe87836b54",
     "conversion/reference-execution-native-replay.json": "90a04bba3d8f50121a9c86accaf8328e6a9c962f9fabdc10e5b2d091cd2ceda7",
     "conversion/reference-execution-spec-amendment.json": "b237337d30f2b9de6da48ea6bc64df601c1ec844df362735603504e3f42132cd"
   },
@@ -176,5 +176,18 @@
     ".mutants/reference-execution/2026-10-10/reader.log": "c4081dbf4d07e78a3c48c2dbd1c87bf5f4b378cfae25cf54fe5936523e991b4f",
     ".mutants/reference-execution/2026-10-10/epubcheck.log": "1b871a801b1773626c473f38741caef8c98ef34b42c5b60ec1c5109e2bdec171",
     ".mutants/reference-execution/2026-10-10/mutation-driver.log": "cd8bfd394a51d392aa51458fcf15235e2a5e157a5cf614b3cf38211909b835ed"
+  },
+  "replay_after_probe_types": {
+    "tests": 96,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.084,
+    "book_sha256": "904b14ec5785eaa4c69b36289d29c1c2d5f1a84f8c972d38f1e9769905870f43",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full96 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical binding-comparison/gate/mutation/screenshot fields remain historical, not new whole-type/kernel/device/independent acceptance."
   }
 }

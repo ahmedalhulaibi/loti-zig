@@ -468,16 +468,16 @@
     {
       "original": "io_uring_probe",
       "zig": "std.os.linux.io_uring_probe",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
-      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+      "example": "examples/probe.zig",
+      "verification_scope": "compiled get_probe/snapshot value usage; compile-time2064-byte ABI check, independently decoded raw headers and all59 named support records, generated snapshot bounds/flag lookup checked; current-kernel/native-endian only, not successful opcode execution, portable snapshots or independent acceptance",
+      "semantic_difference": "Owned fixed-capacity native value, not a flexible-array allocation or foreign pointer. The16-byte header has last_op/ops_len lookup bounds; ops holds256 native entries, but only reported entries are valid. Header last_op and entry op are IORING_OP enum(u8); support uses IO_URING_OP_SUPPORTED bit0, not any nonzero flags."
     },
     {
       "original": "io_uring_probe_op",
       "zig": "std.os.linux.io_uring_probe_op",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
-      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+      "example": "examples/probe.zig",
+      "verification_scope": "compiled probe.ops element through SDK lookup; independent8-byte raw-entry decoding, generated native-endian snapshot flag/bounds checks and complete59 named-opcode comparison; opposite-endian fixture decoding is not big-endian execution or successful opcode execution",
+      "semantic_difference": "Native8-byte operation record:op is IORING_OP enum(u8), followed by resv:u8, flags:u16 and resv2:u32. Entry is_supported tests IO_URING_OP_SUPPORTED bit0; probe is_supported first checks both header bounds. Reserved fields or unrelated flag bits do not imply support."
     },
     {
       "original": "io_uring_queue_exit",
