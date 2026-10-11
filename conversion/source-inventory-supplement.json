@@ -1,0 +1,395 @@
+{
+  "version": 1,
+  "scope": "Supplemental original-line enumeration and author dispositions; not independent acceptance.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "target_commit": "ee0b1241bc8d09c9e7ae43a2642e85f5da6f9dc1",
+  "canonical_inventory": {
+    "path": "conversion/source-inventory.json",
+    "sha256": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+    "lines": 3618,
+    "blocks": 128
+  },
+  "query": {
+    "pattern": "\\b(?:c|c99|c11|gcc|clang|liburing)\\b|\\.c\\b|#\\s*include|io[_-]?uring|IORING_|IOSQE_",
+    "ignore_case": true,
+    "tracked_files": 42,
+    "utf8_files": 34,
+    "excluded_nontext_paths": [
+      "_static/Linux_Performance_Fulll_Chart-1.png",
+      "_static/Linux_Performance_more_than_1000_users.png",
+      "_static/Linux_Performance_upto_1000_users.png",
+      "_static/Linux_Process_Models.jpg",
+      "_static/Linux_Process_Models.png",
+      "_static/ZeroHTTPd_static.png",
+      "_static/io_uring_logo.png",
+      "sphinx-plugins/__pycache__/manpage.cpython-38.pyc"
+    ],
+    "lexical_candidates": 1056
+  },
+  "supplemental_lines": 16,
+  "classification_counts": {
+    "article-link": 2,
+    "copyright-marker": 2,
+    "navigation": 3,
+    "sqe-flag": 9
+  },
+  "original_file_sha256": {
+    "LICENSE": "0ca6b5bf162b52d507c407e41bb536bf81462d40f4b863f194c68895480114fb",
+    "index.rst": "ca090e250c15616c6736ec5974b66d3d46f9910f21a0dc4349f3ada02c92b537",
+    "low_level.rst": "25330ba3b2e45179954cdf4c158e9f802c9b740c83a2def285154cc6e01e3890",
+    "ref-iouring/index.rst": "3b8aaf8c76c4e7f9db9acc428855c903aa8c9cc6107c443a3edcaa570836b7d6",
+    "ref-iouring/io_uring_enter.rst": "ccd209fe64abe9511d4a5983dbefa07b82782cad0a3d6e91b127410a8a75df4b",
+    "ref-iouring/io_uring_register.rst": "6ce675fbfc34060763eaf595a8ffee13f5f3ef19bb76ab00210cb7762f537e4e",
+    "sphinx-plugins/manpage.py": "85f745fa105074b2dbc362f7223dba841663fb1400a3f712168637e6cef71cb7",
+    "tutorial/cp_liburing.rst": "d34f2fa8e5295e70708babe3d2d5d980a616a305e594280bd3b6b9aa7ac5f91d"
+  },
+  "target_file_sha256": {
+    "LICENSE": "0ca6b5bf162b52d507c407e41bb536bf81462d40f4b863f194c68895480114fb",
+    "index.rst": "a8e427731c760b7069deb003df2a02d98ee3486208dfde1725219a6ead72d43b",
+    "low_level.rst": "46eb6a0987772f250de00810d80e067bf696a8e4f8146f1a868e168d6f6014de",
+    "ref-iouring/index.rst": "72b18bd357ebf131c4b46b99f206b11174bae45ae7d2bc8551252edc8c358d62",
+    "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
+    "ref-iouring/io_uring_register.rst": "91e0bc0059d062312351677a72b6ff65c41b250bac4a66c7a3c90c7ff5e13adb",
+    "ref-zig/advanced_usage.rst": "1269025f689aad53ed289ccc601cf92af5332d7213768f3a0189bebfe27e5590",
+    "sphinx-plugins/manpage.py": "b0245fead6398a95288e3143daf7851250babe02daaee33015f292162e632d8a",
+    "tutorial/cp.rst": "ae113b0656c6cca42094d74d713a5ea2d30ad967ae9046e0dc3d75d1c74801da"
+  },
+  "entries": [
+    {
+      "id": "LICENSE:3",
+      "file": "LICENSE",
+      "line": 3,
+      "text": "Copyright (c) 2020 Shuveb Hussain",
+      "class": "copyright-marker",
+      "author_disposition": "copyright-preserved-not-C-language",
+      "target": {
+        "file": "LICENSE",
+        "start_line": 3,
+        "end_line": 3,
+        "lines": [
+          "Copyright (c) 2020 Shuveb Hussain"
+        ]
+      }
+    },
+    {
+      "id": "index.rst:67",
+      "file": "index.rst",
+      "line": 67,
+      "text": "    :name: sec-iouring-reference",
+      "class": "navigation",
+      "author_disposition": "named-toc-option-retired-section-preserved",
+      "target": {
+        "file": "index.rst",
+        "start_line": 63,
+        "end_line": 68,
+        "lines": [
+          "",
+          ".. toctree::",
+          "   :maxdepth: 2",
+          "   :caption: Linux syscall reference",
+          "",
+          "   ref-iouring/index"
+        ]
+      }
+    },
+    {
+      "id": "index.rst:69",
+      "file": "index.rst",
+      "line": 69,
+      "text": "    ref-iouring/index",
+      "class": "navigation",
+      "author_disposition": "syscall-navigation-preserved",
+      "target": {
+        "file": "index.rst",
+        "start_line": 63,
+        "end_line": 68,
+        "lines": [
+          "",
+          ".. toctree::",
+          "   :maxdepth: 2",
+          "   :caption: Linux syscall reference",
+          "",
+          "   ref-iouring/index"
+        ]
+      }
+    },
+    {
+      "id": "low_level.rst:9",
+      "file": "low_level.rst",
+      "line": 9,
+      "text": "To get a good understanding of this example, you will need to be familiar with the :man:`readv(2)` system call. If you aren't familiar with it, I suggest you read `a more gentler <https://unixism.net/2020/04/io-uring-by-example-part-1-introduction/>`_ introduction and then return back here to continue.",
+      "class": "article-link",
+      "author_disposition": "foreign-article-pointer-retired-native-prerequisite-inline",
+      "target": {
+        "file": "low_level.rst",
+        "start_line": 24,
+        "end_line": 35,
+        "lines": [
+          "Scatter reads first",
+          "-------------------",
+          "",
+          "``readv`` fills an array of ``std.posix.iovec`` ranges in sequence. Each range",
+          "has a mutable byte pointer and a length. A successful call can fill only part of",
+          "the combined capacity; zero bytes means end of input. Never print every allocated",
+          "byte merely because a buffer exists.",
+          "",
+          "The synchronous program establishes the byte-preservation contract before",
+          "introducing ring publication. It streams through two 2048-byte ranges, retries",
+          "interrupted calls and writes exactly the returned count.",
+          ""
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/index.rst:7",
+      "file": "ref-iouring/index.rst",
+      "line": 7,
+      "text": "    :name: toc-iouring-reference",
+      "class": "navigation",
+      "author_disposition": "named-toc-option-retired-order-preserved",
+      "target": {
+        "file": "ref-iouring/index.rst",
+        "start_line": 1,
+        "end_line": 14,
+        "lines": [
+          "Linux syscall reference",
+          "=======================",
+          "",
+          "These Linux ABI entry points are exposed by ``std.os.linux``. Unlike Zig's",
+          "``IoUring`` methods, raw syscalls return errno-encoded ``usize`` values. Decode",
+          "with ``linux.errno(result)`` before casting a successful descriptor or count.",
+          "They do not set a libc ``errno`` variable or return a Zig error union.",
+          "",
+          ".. toctree::",
+          "   :maxdepth: 1",
+          "",
+          "   io_uring_setup",
+          "   io_uring_enter",
+          "   io_uring_register"
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:344",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 344,
+      "text": "**IOSQE_FIXED_FILE**",
+      "class": "sqe-flag",
+      "author_disposition": "native-fixed-file-namespace-preserved",
+      "target": {
+        "file": "ref-iouring/io_uring_enter.rst",
+        "start_line": 130,
+        "end_line": 131,
+        "lines": [
+          "``IOSQE_FIXED_FILE``",
+          "   Interpret SQE ``fd`` as a registered-file table index."
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:350",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 350,
+      "text": "**IOSQE_IO_DRAIN**",
+      "class": "sqe-flag",
+      "author_disposition": "native-drain-dependency-distinction-preserved",
+      "target": {
+        "file": "ref-iouring/io_uring_enter.rst",
+        "start_line": 133,
+        "end_line": 135,
+        "lines": [
+          "``IOSQE_IO_DRAIN``",
+          "   Hold this request until prior work completes and order later work behind it,",
+          "   subject to the kernel's drain rules. Different from a dependency chain."
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:355",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 355,
+      "text": "**IOSQE_IO_LINK**",
+      "class": "sqe-flag",
+      "author_disposition": "native-soft-link-meaning-preserved",
+      "target": {
+        "file": "ref-iouring/io_uring_enter.rst",
+        "start_line": 137,
+        "end_line": 140,
+        "lines": [
+          "``IOSQE_IO_LINK``",
+          "   Link to the next SQE; the first entry without the bit ends the chain. An",
+          "   unsuccessful/unexpected result can cancel the remaining unstarted members",
+          "   with ``-ECANCELED``. Unrelated requests/chains remain independent."
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:371",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 371,
+      "text": "**IOSQE_IO_HARDLINK**",
+      "class": "sqe-flag",
+      "author_disposition": "native-hard-link-meaning-corrected",
+      "target": {
+        "file": "ref-iouring/io_uring_enter.rst",
+        "start_line": 142,
+        "end_line": 145,
+        "lines": [
+          "``IOSQE_IO_HARDLINK``",
+          "   Preserve a submitted chain across completion-result failures; submission",
+          "   failure can still break it. Do not require a separate soft-link bit to use",
+          "   the kernel's hard-link semantics."
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:372",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 372,
+      "text": "   Like IOSQE_IO_LINK, but it doesn't sever regardless of the completion",
+      "class": "sqe-flag",
+      "author_disposition": "completion-versus-submission-failure-distinguished",
+      "target": {
+        "file": "ref-iouring/io_uring_enter.rst",
+        "start_line": 142,
+        "end_line": 145,
+        "lines": [
+          "``IOSQE_IO_HARDLINK``",
+          "   Preserve a submitted chain across completion-result failures; submission",
+          "   failure can still break it. Do not require a separate soft-link bit to use",
+          "   the kernel's hard-link semantics."
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:376",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 376,
+      "text": "   IOSQE_IO_HARDLINK implies IOSQE_IO_LINK. Available since 5.5.",
+      "class": "sqe-flag",
+      "author_disposition": "separate-soft-link-bit-not-required",
+      "target": {
+        "file": "ref-iouring/io_uring_enter.rst",
+        "start_line": 142,
+        "end_line": 145,
+        "lines": [
+          "``IOSQE_IO_HARDLINK``",
+          "   Preserve a submitted chain across completion-result failures; submission",
+          "   failure can still break it. Do not require a separate soft-link bit to use",
+          "   the kernel's hard-link semantics."
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:378",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 378,
+      "text": "**IOSQE_ASYNC**",
+      "class": "sqe-flag",
+      "author_disposition": "native-async-issue-not-ordering-preserved",
+      "target": {
+        "file": "ref-iouring/io_uring_enter.rst",
+        "start_line": 147,
+        "end_line": 149,
+        "lines": [
+          "``IOSQE_ASYNC``",
+          "   Request asynchronous issue from the start rather than the inline-first attempt.",
+          "   It does not by itself establish dependencies or order CQ arrival."
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:475",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 475,
+      "text": "   **IOSQE_FIXED_FILE** flag was set in the submission queue entry, but",
+      "class": "sqe-flag",
+      "author_disposition": "unregistered-fixed-table-EBADF-observed-by-native-reference",
+      "target": {
+        "file": "ref-zig/advanced_usage.rst",
+        "start_line": 34,
+        "end_line": 39,
+        "lines": [
+          "An asynchronous ``prep_files_update`` restores the original descriptor. Its",
+          "separate CQE reports **one updated entry**, not zero. Only after that CQE does the",
+          "next read use the restored entry. Replacing slot 1 with ``-1`` and unregistering",
+          "the table each make later fixed-file reads fail with ``-EBADF``. The JSON report",
+          "contains actual tags/results/flags and byte arrays, not padded buffers. This",
+          "sequential example does not establish safety for racing table updates and I/O."
+        ]
+      }
+    },
+    {
+      "id": "ref-iouring/io_uring_register.rst:73",
+      "file": "ref-iouring/io_uring_register.rst",
+      "line": 73,
+      "text": "To make use of the registered files, the **IOSQE_FIXED_FILE** flag must",
+      "class": "sqe-flag",
+      "author_disposition": "native-fixed-file-addressing-and-lifetimes-preserved",
+      "target": {
+        "file": "ref-iouring/io_uring_register.rst",
+        "start_line": 37,
+        "end_line": 49,
+        "lines": [
+          "",
+          "``REGISTER_FILES`` takes a ``linux.fd_t`` array and count. Fixed-file SQEs set",
+          "``IOSQE_FIXED_FILE`` and put a table index in ``fd``. ``-1`` creates a sparse entry",
+          "where supported. ``REGISTER_FILES_UPDATE`` takes a native",
+          "``linux.io_uring_files_update`` containing a table offset and descriptor pointer;",
+          "``nr_args`` counts replacements. ``UNREGISTER_FILES`` takes null/zero.",
+          "",
+          "``IoUring.register_files_update`` handles that ABI structure synchronously.",
+          "``sqe.prep_files_update`` instead prepares an asynchronous update request, with",
+          "its own CQE. Table references and process descriptor ownership are different;",
+          "closing a process descriptor is not the same as unregistering a table entry.",
+          "Release resources only after their dependent requests finish.",
+          "The :ref:`registration reference <advanced_usage>` demonstrates both update paths,"
+        ]
+      }
+    },
+    {
+      "id": "sphinx-plugins/manpage.py:4",
+      "file": "sphinx-plugins/manpage.py",
+      "line": 4,
+      "text": "# Copyright (c) 2013 Dariusz Dwornikowski.  All rights reserved.",
+      "class": "copyright-marker",
+      "author_disposition": "copyright-preserved-not-C-language",
+      "target": {
+        "file": "sphinx-plugins/manpage.py",
+        "start_line": 4,
+        "end_line": 4,
+        "lines": [
+          "# Copyright (c) 2013 Dariusz Dwornikowski.  All rights reserved."
+        ]
+      }
+    },
+    {
+      "id": "tutorial/cp_liburing.rst:264",
+      "file": "tutorial/cp_liburing.rst",
+      "line": 264,
+      "text": "**Based on** `unixism.net/2020/04/io-uring-by-example-part-2-queuing-multiple-requests/ <https://unixism.net/2020/04/io-uring-by-example-part-2-queuing-multiple-requests/>`_",
+      "class": "article-link",
+      "author_disposition": "foreign-article-pointer-retired-native-copy-origin-credited",
+      "target": {
+        "file": "tutorial/cp.rst",
+        "start_line": 6,
+        "end_line": 11,
+        "lines": [
+          "The :ref:`reader <cat_zig>` has one outstanding request. A copy can overlap a",
+          "read for one range with a write for another. This example keeps two stable",
+          "16-KiB slots and submits a batch when work is available. Its origin is Shuveb",
+          "Hussain's tutorial, based on the",
+          "`fio copying example <https://github.com/axboe/fio/blob/master/t/io_uring.c>`_.",
+          "The implementation here is native Zig 0.17.0."
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Query coverage is not semantic acceptance.",
+    "Copyright markers are not C-language references.",
+    "Native flag semantics and retired-article dispositions are author judgments.",
+    "Canonical counts and historical receipts are unchanged.",
+    "No build, boundary suite, publication or mutation campaign is replayed."
+  ]
+}

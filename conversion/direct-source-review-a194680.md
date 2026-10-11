@@ -20,7 +20,7 @@ Complete, untruncated current bodies read in this pass:
 | reference_completion | Copied CQEs consume once; separate borrowed batch; ninth-SQE rejection; capacity-zero drain; physical CQ wrap, not counter overflow |
 | reference_signals | Pending self-thread signals; ordinary vs EXT_ARG masks; timer/target CQEs; queued NOP retention; exact action/mask restoration |
 | reference_registration | Buffer/file namespaces; sparse/replaced/removed slots; retained registered reference; async update count1; eventfd/personality/probe distinctions |
-| reference_raw | Confined OPENAT2; correlated advice/range results; actual MADV_DONTNEED zeroing; completed prefix; negative range results |
+| reference_raw | NO_SYMLINKS OPENAT2 (not BENEATH-confined); correlated advice/range results; actual MADV_DONTNEED zeroing; completed prefix; negative range results |
 | link, probe | Tag-correlated dependency/close ownership; native value probe, raw byte response, lookup bounds/support bit |
 | register_eventfd, sq_poll | Joined listener/counter/CQE lifetimes; producer-first notification retained; fixed-file index; acquired sleep state and separate actual CQEs |
 | reference_files, reference_rwf | Exclusive output; vectored completed-byte progress; allocation/sync/reopen/close; operation flags vs dependency bits; APPEND/cursor/nonsticky effects |
@@ -64,6 +64,29 @@ counts nor old receipts were rewritten. No missing literal block or unconverted
 example was found by this query. Do not call the canonical keyword census alone
 an exhaustive census of every io_uring spelling/flag; this broader classification
 and the original-purpose scope still require independent challenge.
+
+## Follow-up at ee0b124
+
+`source-inventory-supplement.json` now persists the16 complete original lines,
+immutable file hashes, nine current target-file hashes and exact target slices.
+A separate structural recomputation agrees with the all34-text-file query and
+all16 original rows. Classes: nine SQE-flag references, three navigation lines,
+two article pointers, two copyright markers. Canonical3618/128 counts and all203
+tested input hashes remain unchanged. This is durable author enumeration, not
+independent semantic acceptance.
+
+Corrected this audit's misleading **Confined OPENAT2** label. The raw reference
+uses AT.FDCWD/NO_SYMLINKS only; it does not set BENEATH. Three owned finite native
+CLI plans confirm absolute and parent-relative paths succeed with the whole
+expected report/exact64-byte prefix, while a symlink fails with OpenAt2Failed.
+HTTP's root-relative BENEATH|NO_SYMLINKS path is separate and unchanged. This is
+an audit-wording correction, not a native/manuscript defect or new test/property.
+Receipts: `_build/verification/inventory-supplement.7lIA50vJ/`; no full suite,
+build, publication or mutation campaign replay. No new agents or push.
+
+Source supplement probe retains the exact original asset pathname (typos false
+positive). Two materializer JSON-call findings are fail-closed CLI false positives;
+invalid/missing owned input cannot produce an artifact. No inline suppressions.
 
 ## Boundary
 
