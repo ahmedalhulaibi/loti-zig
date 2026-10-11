@@ -51,7 +51,8 @@
     "examples/reference_messages.zig": "4e29206d6b45dbe42ccac3135a586970f0016b58868efb9ae938ee927549ea76",
     "examples/reference_connect.zig": "222ea4bb96e82e33f6ac52aeafa1d60e6387877a844f9a88c2f54cb2c4b9e909",
     "examples/reference_accept.zig": "65e864abebfd4f762906a9504614542da93da7e1aaadd383c31996ad8abf8dd4",
-    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04"
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "conversion/type-binding-initial-log-normalization.json": "3630e65cca5dd05aec25c58a568a055ef653a2ea582ce589e8ff88505cc9bf8d"
   },
   "replayed_consumers": [
     "accept-verification.json",
@@ -211,5 +212,6 @@
     ".mutants/type-bindings/2026-10-11/reader.log": "c4081dbf4d07e78a3c48c2dbd1c87bf5f4b378cfae25cf54fe5936523e991b4f",
     ".mutants/type-bindings/2026-10-11/epubcheck.log": "1b871a801b1773626c473f38741caef8c98ef34b42c5b60ec1c5109e2bdec171",
     ".mutants/type-bindings/2026-10-11/mutation-driver.log": "317387f97cdda773910d40506841c7c296eda50c1c9a085e39a70ab617465754"
-  }
+  },
+  "initial_log_normalization": "type-binding-initial-log-normalization.json"
 }

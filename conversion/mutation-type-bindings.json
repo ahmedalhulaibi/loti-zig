@@ -168,7 +168,7 @@
   },
   "amendment": "type-binding-spec-amendment.json:three exact field-width outputs; original13/core/full99 retained, final13 replace initial13, not26",
   "log_normalization": {
-    "scope": "Trailing ASCII spaces/tabs/CR and terminal blank lines only; initial checkpoint unchanged.",
+    "scope": "Trailing ASCII spaces/tabs/CR and terminal blank lines only; initial13 text logs/original bytes separately disclosed, initial empty logs restored/source/core unchanged.",
     "changed": [
       {
         "file": ".mutants/type-bindings/2026-10-11/wrapper-is-kernel-extern-syntax.log",
@@ -315,6 +315,7 @@
         "original_sha256": "2b896fbf1dee79a2610ad1342057a850309149d8b2bd0cc1136576fc25328277",
         "normalized_sha256": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940"
       }
-    ]
+    ],
+    "initial_checkpoint": "type-binding-initial-log-normalization.json"
   }
 }
