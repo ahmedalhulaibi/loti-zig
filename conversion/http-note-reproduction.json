@@ -1,0 +1,40 @@
+{
+  "scope": "Two stale author HTTP reference-evidence notes; not missing native implementations, a reader-facing book defect or whole-line independent acceptance.",
+  "before": [
+    {
+      "original": "ref-liburing/submission.rst:473",
+      "replacement": "`recv`: RecvBuffer; scalar bytes, not msghdr; zero datagrams differ from TCP EOF",
+      "evidence": "P/E; real fragmented/binary/empty HTTP requests exercise RECV; datagram effects unverified"
+    },
+    {
+      "original": "ref-liburing/submission.rst:493",
+      "replacement": "`send`: const bytes/message flags; partial counts and NOSIGNAL explained",
+      "evidence": "P/E; exact HTTP headers/bodies over real TCP; forced partial-send/SIGPIPE cases unverified"
+    }
+  ],
+  "evidence": {
+    "recv": "Inspected complete test_http get/binary/empty, error and fragmented-header method bodies. All actual requests are nonempty textual headers; binary/empty fixtures are served response bodies. Neither per-fragment CQE counts nor forced short RECV are attested.",
+    "send": "Existing http-send-verification.json and actual prepared SEND/range/CQE/event/trace/wire contracts attest forced positive-short body completions, exact bytes, reset isolation/recovery and queried owned socket retirement; not forced header/vector shorts or SIGPIPE delivery.",
+    "index": "Both stale notes currently pass full line indexing/freshness. An index validates identities/coverage, not the meanings of these claims."
+  },
+  "source_sha256": {
+    "conversion/reference-block-disposition.md": "a1c5c0ad95b6d532e7c0146ae41132e160ffee570603c9ca68b6b8e689caf3c3",
+    "conversion/line-disposition-verification.json": "478cfd25ab681973e2bad667e86fe16c25a9a9273157d809aaba7ba70ac3d2e4",
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
+    "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f",
+    "testdata/inputs/http-send-input.bin": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
+    "testdata/inputs/http-send-probe.bin": "f8c8fb8ee15a8b105e98761b6e284396554fe750dc6bc0105d60177aa679245d",
+    "testdata/inputs/http-send-events.json": "89526b0575c991e9812b14b8d7e71f98356efed1d3b8f50cc3d692d984868b27",
+    "testdata/inputs/http-send-invalid-events.json": "114feef06555aa32f97eb31c75a594a86ade7816139c3c4d315b5dc017e5268b",
+    "testdata/inputs/http-send.trace": "62392263d7c3a39f902d1216bf8a767e310e8228a26211679c8fbaf46a0957f2",
+    "testdata/inputs/http-send-invalid-traces.json": "5604ba55ae085f21f82d9146ea0bbca45fdc5bd90c2fb5ed0e58d415cb4e5126",
+    "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9"
+  },
+  "plan": "Whole two-row note contract before correction; native/parser/input/index interfaces unchanged. Preserve all other126 block notes, all567 outside-block note selectors and original3,618-line index. Challenge wrong request/response, short-SEND and overclaimed signal/fragment statements despite successful/fresh index.",
+  "completion": {
+    "goal_complete": false,
+    "review": "Supported-child-host blocker unchanged; no retry/fallback/report.",
+    "delivery": "Not pushed; remaining semantic comparison, independent review, final acceptance and delivery are open."
+  }
+}
