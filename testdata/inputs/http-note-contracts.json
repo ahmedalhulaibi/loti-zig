@@ -1,0 +1,12 @@
+[
+  {
+    "original": "ref-liburing/submission.rst:473",
+    "replacement": "`recv`: RecvBuffer; scalar bytes, not msghdr; zero datagrams differ from TCP EOF",
+    "evidence": "P/E; owned TCP request bytes and caller-fragmented headers, statuses/confinement and progress beside a stalled receiver checked; binary/empty fixtures are response bodies, not claimed binary/zero-length RECV inputs. No per-fragment CQE count, forced short RECV, scalar datagram/multishot or all flags/races/failures assurance."
+  },
+  {
+    "original": "ref-liburing/submission.rst:493",
+    "replacement": "`send`: const bytes/message flags; partial counts and NOSIGNAL explained",
+    "evidence": "P/E; actual remaining prepared SQE ranges/flags and positive-short body SEND CQEs, exact whole TCP response bytes, reset isolation/recovery GET and queried owned socket retirement checked by --observe-send contracts. Forced header/vector short sends, SIGPIPE delivery and all transports/flags/races/unwind paths remain unverified."
+  }
+]

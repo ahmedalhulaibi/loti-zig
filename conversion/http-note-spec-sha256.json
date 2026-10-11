@@ -1,0 +1,7 @@
+{
+  "scope": "Author pre-note-correction whole RECV/SEND evidence contract; not ACL seal/verifier-agent or all-original-purpose acceptance.",
+  "source_sha256": {
+    "tests/test_http_note_contracts.py": "9ff58d5c5506df3637144e6903fac9b7618e74b133fdda196a71a7e7e84d82ba",
+    "testdata/inputs/http-note-contracts.json": "e4bc35934c5fa49fac31bf20d0f9fd35902ee27019196e227fe27952b9b8c8f9"
+  }
+}

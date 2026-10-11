@@ -49,8 +49,8 @@
     "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
-    "conversion/audit.md": "a6cfedd1695d27339fb7533be324729a18f24fd1e6a3ed2896caf25dee987245",
-    "conversion/review-handoff.md": "7b92738357c37dd4de0bc478e31cb7d4aba153efaa055fcaca82babe87836b54",
+    "conversion/audit.md": "369cd8627b87d015d1f316d49336bf9b0148b20ce030b2215ddec2c4fb164403",
+    "conversion/review-handoff.md": "21bce3f1b0a0593da1dc4860342ec6ceae0678387360d0ac65aae768c357ffba",
     "conversion/reference-execution-native-replay.json": "90a04bba3d8f50121a9c86accaf8328e6a9c962f9fabdc10e5b2d091cd2ceda7",
     "conversion/reference-execution-spec-amendment.json": "b237337d30f2b9de6da48ea6bc64df601c1ec844df362735603504e3f42132cd"
   },
@@ -189,5 +189,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current source pins replayed through full96 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical binding-comparison/gate/mutation/screenshot fields remain historical, not new whole-type/kernel/device/independent acceptance."
+  },
+  "replay_after_http_notes": {
+    "tests": 97,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.928,
+    "book_sha256": "e6f1da4ad52933e18b02cf78f3d7da99fe0ff15f6d7db44daafb0a740630e3a9",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
   }
 }

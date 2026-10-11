@@ -60,8 +60,8 @@
     "testdata/inputs/probe-opcodes.json": "77e7993b0b234164d3a248e8e14a7bd19b1988d868f207181ac657b861416132",
     "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
     "ref-zig/_api/probe_types.inc": "8e3e7efba816ef164e92dba7cdc966e538522685849844360a62145fe9b2a4bf",
-    "conversion/audit.md": "a6cfedd1695d27339fb7533be324729a18f24fd1e6a3ed2896caf25dee987245",
-    "conversion/review-handoff.md": "7b92738357c37dd4de0bc478e31cb7d4aba153efaa055fcaca82babe87836b54"
+    "conversion/audit.md": "369cd8627b87d015d1f316d49336bf9b0148b20ce030b2215ddec2c4fb164403",
+    "conversion/review-handoff.md": "21bce3f1b0a0593da1dc4860342ec6ceae0678387360d0ac65aae768c357ffba"
   },
   "reference_sha256": {
     "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
@@ -399,5 +399,18 @@
     ".mutants/probe-type/2026-10-10/reader.log": "c4081dbf4d07e78a3c48c2dbd1c87bf5f4b378cfae25cf54fe5936523e991b4f",
     ".mutants/probe-type/2026-10-10/epubcheck.log": "1b871a801b1773626c473f38741caef8c98ef34b42c5b60ec1c5109e2bdec171",
     ".mutants/probe-type/2026-10-10/mutation-driver.log": "f579dffdc45da02f1a96378128a48cf30d6a2bb844c6929297aad578f8780c88"
+  },
+  "replay_after_http_notes": {
+    "tests": 97,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.928,
+    "book_sha256": "e6f1da4ad52933e18b02cf78f3d7da99fe0ff15f6d7db44daafb0a740630e3a9",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
   }
 }

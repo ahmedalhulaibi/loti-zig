@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 64 native CLI/TCP/reference tests plus eighteen binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 64 native CLI/TCP/reference tests plus nineteen binding/trace/evidence-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -1208,7 +1208,7 @@ map/core restoration and six-test baseline. Same-second producer bytecode is
 cleared narrowly before each subprocess, not counted as a mutant or native fix.
 
 Full96 tests/zero failures/errors/skips,16 attributed400-case properties/167.084s.
-Current bounded total **267**:184 native,3 index,44 trace-parser,18 binding-producer,
+Probe-type checkpoint bounded total **267**:184 native,3 index,44 trace-parser,18 binding-producer,
 3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. Two current
 all-server source paths:zero visible findings/one existing disposition disclosed.
 Committed-history churn69/69, no failed commits/anomalies; not semantic acceptance.
@@ -1219,17 +1219,47 @@ goal completion. Mandatory independent review still needs a supported host.
 
 ### Agent Observations
 
-Remaining generic type-primary claims need body-level comparison. Socket note
-rows also need reconciliation: `reference-block-disposition.md` still describes
-forced partial SEND as unverified; current HTTP evidence covers positive-short
-body SEND, not SIGPIPE/header/vector forcing. Its RECV row's binary/empty language
-must distinguish HTTP response bodies from the actual received request bytes.
-These are pending reference-evidence corrections, not new native feature gaps.
+Remaining generic type-primary claims need body-level comparison. The socket-note
+request/response and positive-short SEND corrections are completed below; these
+are reference-evidence changes, not missing native implementations.
+
+## HTTP note evidence:request inputs versus response bodies
+
+Two author note rows still conflated binary/empty response fixtures with RECV
+input coverage and called forced partial SEND unverified. The native contracts
+already cover actual positive-short body SENDs, ranges/flags, whole wire bytes,
+reset recovery and queried owned socket retirement. Notes now say exactly that;
+per-fragment CQE counts, forced short RECV/header/vector sends, SIGPIPE delivery
+and all transport/flag/race/unwind cases remain unverified. No native or
+reader-facing source changed; the update is inside Sphinx-excluded `conversion/`.
+
+Whole two-row contract authored before note changes:one red assertion failure,
+no errors; original core unchanged, no ACL/verifier-agent claim. Four structurally
+valid author-note variants still generate a complete/fresh index but fail the
+whole meaning contract; not compiler/native or reader-facing mutants. Exact
+note/index/core restoration and nine-test HTTP/index/note baseline. All other126
+block notes,567 outside-block selectors and the whole3,618-line index remain
+unchanged; only two row values and their document digest change.
+
+Full97 tests/zero failures/errors/skips,16 attributed400-case properties/166.928s.
+Current bounded total **271**:184 native,3 index,44 trace-parser,18 binding-producer,
+3 CSS,3 layout-oracle,10 publication-policy/fidelity,6 source-prose (two reader
+paragraphs plus these four author-note variants). Two changed-path active probes
+report zero findings; this is not a whole-workspace/semantic acceptance verdict.
+
+89 publication/native/tool inputs match the preceding commit byte-for-byte.
+No new strict HTML/EPUB or native build was needed; preceding strict/build
+results remain historical. The existing full suite itself runs `make epub`;
+current archive fidelity,81-case reader sweep and EPUBCheck are rechecked after
+that suite, not assumed from old archive hashes. See `http-note-verification.json`
+for current source/index/core/archive receipts. Generic type/purpose comparison,
+mandatory independent review and final delivery remain open; no retry/fallback,
+push or goal completion.
 
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **96 passed**
-  (64 native + one VM + eight publication + three inventory + two line-index + eighteen binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **97 passed**
+  (64 native + one VM + eight publication + three inventory + two line-index + nineteen binding/trace/evidence-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -1244,7 +1274,7 @@ These are pending reference-evidence corrections, not new native feature gaps.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  sixteen properties**, source hashes, 96 passing tests and zero skips. These remain
+  sixteen properties**, source hashes, 97 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

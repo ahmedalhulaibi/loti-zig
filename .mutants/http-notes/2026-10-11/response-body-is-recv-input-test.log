@@ -1,0 +1,22 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_http_operation_notes_have_whole_evidence_scopes (tests.test_http_note_contracts.HttpNoteContracts.test_http_operation_notes_have_whole_evidence_scopes) ... FAIL
+
+======================================================================
+FAIL: test_http_operation_notes_have_whole_evidence_scopes (tests.test_http_note_contracts.HttpNoteContracts.test_http_operation_notes_have_whole_evidence_scopes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_note_contracts.py", line 25, in test_http_operation_notes_have_whole_evidence_scopes
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[280 chars]ked; Binary/empty response fixtures prove bina[626 chars]d.'}] != [{'or[280 chars]ked; binary/empty fixtures are response bodies[640 chars]d.'}]
+
+First differing element 0:
+{'ori[279 chars]ked; Binary/empty response fixtures prove bina[139 chars]ce.'}
+{'ori[279 chars]ked; binary/empty fixtures are response bodies[153 chars]ce.'}
+
+Diff is 1580 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)

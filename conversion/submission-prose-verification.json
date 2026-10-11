@@ -45,7 +45,7 @@
     "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
     "conversion/reference-claim-audit.md": "386b13012f307b2df339c1145c5a7ea60397ddcc828e657eabca2269606429de",
     "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
-    "conversion/reference-block-disposition.md": "a1c5c0ad95b6d532e7c0146ae41132e160ffee570603c9ca68b6b8e689caf3c3",
+    "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
     "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
     "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
     "conversion/submission-prose-spec-sha256.json": "3ad4de92720e70e40e2c47cfb1db94551a69dac9d37aee93d47b4b23a92d702a",
@@ -190,5 +190,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current source pins replayed through full96 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical binding-comparison/gate/mutation/screenshot fields remain historical, not new whole-type/kernel/device/independent acceptance."
+  },
+  "replay_after_http_notes": {
+    "tests": 97,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.928,
+    "book_sha256": "e6f1da4ad52933e18b02cf78f3d7da99fe0ff15f6d7db44daafb0a740630e3a9",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
   }
 }

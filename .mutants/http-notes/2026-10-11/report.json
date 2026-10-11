@@ -1,0 +1,65 @@
+{
+  "scope": "Four structurally valid author-note variants pass complete index generation/freshness but fail the whole two-row meaning contract. Not compiled native mutants, reader-facing source damage or independent/all-note semantic acceptance.",
+  "mutants": [
+    {
+      "id": "response-body-is-recv-input",
+      "kind": "source-prose-author-note",
+      "status": "killed",
+      "table_shape_valid": true,
+      "index_generation_passed": true,
+      "index_freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "positive-short-send-unverified",
+      "kind": "source-prose-author-note",
+      "status": "killed",
+      "table_shape_valid": true,
+      "index_generation_passed": true,
+      "index_freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "sigpipe-and-header-vector-forcing-claimed",
+      "kind": "source-prose-author-note",
+      "status": "killed",
+      "table_shape_valid": true,
+      "index_generation_passed": true,
+      "index_freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "caller-fragment-is-one-cqe",
+      "kind": "source-prose-author-note",
+      "status": "killed",
+      "table_shape_valid": true,
+      "index_generation_passed": true,
+      "index_freshness_passed": true,
+      "tests": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    }
+  ],
+  "source_sha256": {
+    "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
+    "conversion/line-disposition-verification.json": "6d7b502e89ac550b7fa90d7e256782caa763bb27c5b286d8342ea6e43fbad2a7"
+  },
+  "restored_source_sha256": {
+    "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
+    "conversion/line-disposition-verification.json": "6d7b502e89ac550b7fa90d7e256782caa763bb27c5b286d8342ea6e43fbad2a7"
+  },
+  "log_normalization": {
+    "scope": "Trailing ASCII spaces/tabs/CR and terminal blank lines only; substantive observations unchanged.",
+    "changed": []
+  }
+}

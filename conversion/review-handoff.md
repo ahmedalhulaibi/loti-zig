@@ -44,6 +44,10 @@ author indexes, not accepted dispositions. Read source bodies, not cached outlin
   constructor catalog. Inspect `probe-type-verification.json`; independently
   check fixed-capacity value ownership, native enum fields, both lookup bounds
   and bit0-only support. Remaining generic type-primary rows are not accepted.
+- RECV/SEND author-note rows now separate request inputs from response bodies
+  and state the actual positive-short body SEND evidence. Inspect
+  `http-note-verification.json`; index freshness alone does not accept meanings
+  or forced signal/header/vector/fragment-CQE claims. No native/book-source change.
 
 ## Verification and evidence
 

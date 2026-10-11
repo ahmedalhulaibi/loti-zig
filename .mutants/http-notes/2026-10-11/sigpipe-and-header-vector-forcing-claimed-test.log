@@ -1,0 +1,22 @@
+{"tests": 1, "failures": 1, "errors": 0, "skips": 0}
+test_http_operation_notes_have_whole_evidence_scopes (tests.test_http_note_contracts.HttpNoteContracts.test_http_operation_notes_have_whole_evidence_scopes) ... FAIL
+
+======================================================================
+FAIL: test_http_operation_notes_have_whole_evidence_scopes (tests.test_http_note_contracts.HttpNoteContracts.test_http_operation_notes_have_whole_evidence_scopes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_note_contracts.py", line 25, in test_http_operation_notes_have_whole_evidence_scopes
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[850 chars]cts. SIGPIPE delivery and all header/vector sh[40 chars]s.'}] != [{'or[850 chars]cts. Forced header/vector short sends, SIGPIPE[70 chars]d.'}]
+
+First differing element 1:
+{'ori[359 chars]cts. SIGPIPE delivery and all header/vector sh[39 chars]ts.'}
+{'ori[359 chars]cts. Forced header/vector short sends, SIGPIPE[69 chars]ed.'}
+
+Diff is 1568 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

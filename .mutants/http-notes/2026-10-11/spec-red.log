@@ -1,0 +1,20 @@
+F
+======================================================================
+FAIL: test_http_operation_notes_have_whole_evidence_scopes (tests.test_http_note_contracts.HttpNoteContracts.test_http_operation_notes_have_whole_evidence_scopes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_note_contracts.py", line 25, in test_http_operation_notes_have_whole_evidence_scopes
+    self.assertEqual(actual, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[156 chars]P/E; real fragmented/binary/empty HTTP request[288 chars]ed'}] != [{'or[156 chars]P/E; owned TCP request bytes and caller-fragme[764 chars]d.'}]
+
+First differing element 0:
+{'ori[155 chars]P/E; real fragmented/binary/empty HTTP request[41 chars]ied'}
+{'ori[155 chars]P/E; owned TCP request bytes and caller-fragme[277 chars]ce.'}
+
+Diff is 1490 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

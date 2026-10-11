@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 96,
+  "tests_run": 97,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -108,7 +108,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 95
+          "overrun": 90
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -162,7 +162,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 78
+          "overrun": 60
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -198,7 +198,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 111
+          "overrun": 109
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -216,7 +216,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 57
+          "overrun": 45
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -297,6 +297,7 @@
   "source_sha256": {
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
+    "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
     "examples/async_cancel.zig": "edc0762891f39b30d7f789f436bc15be0ac0c5a5347bc461443cfac9b7e2841e",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
     "examples/copy_short.zig": "eefed5f302c63c89b6dac82684088e5b0da1e43b349426d47e1445bf6e9e2808",
@@ -363,6 +364,7 @@
     "testdata/inputs/file-operations-report.json": "82215f932bf6622b6c5362d08c9035a33e24d3d5bd83e5f8cb3fce59466facd1",
     "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1",
     "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
+    "testdata/inputs/http-note-contracts.json": "e4bc35934c5fa49fac31bf20d0f9fd35902ee27019196e227fe27952b9b8c8f9",
     "testdata/inputs/http-send-events.json": "89526b0575c991e9812b14b8d7e71f98356efed1d3b8f50cc3d692d984868b27",
     "testdata/inputs/http-send-input.bin": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
     "testdata/inputs/http-send-invalid-events.json": "114feef06555aa32f97eb31c75a594a86ade7816139c3c4d315b5dc017e5268b",
@@ -449,6 +451,7 @@
     "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
     "tests/test_file_operations.py": "11a70eafa618fa1246fcae50baa7f6ffd91c3bfd43174812c79ca7531fdbb186",
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
+    "tests/test_http_note_contracts.py": "9ff58d5c5506df3637144e6903fac9b7618e74b133fdda196a71a7e7e84d82ba",
     "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f",
     "tests/test_inventory.py": "89b2b5ea10a208810d264088b935cc66f9308336a858528dd5a399724661eec5",
     "tests/test_linked_timeout.py": "bef445b63a28e96d3151c933249f9b073d30f78eb7e368b3ee1a5b97a207d972",

@@ -92,7 +92,7 @@
   },
   "source_sha256": {
     "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
-    "conversion/audit.md": "a6cfedd1695d27339fb7533be324729a18f24fd1e6a3ed2896caf25dee987245",
+    "conversion/audit.md": "369cd8627b87d015d1f316d49336bf9b0148b20ce030b2215ddec2c4fb164403",
     "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
     "examples/async_cancel.zig": "edc0762891f39b30d7f789f436bc15be0ac0c5a5347bc461443cfac9b7e2841e",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
@@ -221,5 +221,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current source pins replayed through full96 suite and final strict HTML/EPUB/reader/EPUBCheck. Historical binding-comparison/gate/mutation/screenshot fields remain historical, not new whole-type/kernel/device/independent acceptance."
+  },
+  "replay_after_http_notes": {
+    "tests": 97,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.928,
+    "book_sha256": "e6f1da4ad52933e18b02cf78f3d7da99fe0ff15f6d7db44daafb0a740630e3a9",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
   }
 }

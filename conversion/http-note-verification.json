@@ -1,0 +1,150 @@
+{
+  "scope": "Author two-row HTTP note/effect scope reconciliation and index/HTTP replay. Not a native implementation change, reader-facing prose mutation, all-note/original-purpose or independent acceptance; goal incomplete.",
+  "reproduction": "http-note-reproduction.json",
+  "core": "http-note-spec-sha256.json",
+  "mutation": "mutation-http-notes.json",
+  "notes": {
+    "corrected": [
+      "ref-liburing/submission.rst:473",
+      "ref-liburing/submission.rst:493"
+    ],
+    "other126_block_notes_unchanged": true,
+    "outside567_selectors_unchanged": true,
+    "whole3618_line_index_unchanged": true,
+    "index_digest_only": true,
+    "comparison_base": "32750b7b8d1272aa287e44318528a0f83c824c45"
+  },
+  "contracts": {
+    "new_tests": 1,
+    "whole_note_fixture": true,
+    "new_property_based_claim": false,
+    "mutation_count": 4,
+    "mutation_kind": "source-prose-author-note, not compiled native or reader-facing source",
+    "restored_baseline_tests": 9,
+    "native_http_tests_and_fixtures_unchanged": true
+  },
+  "source_sha256": {
+    "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
+    "conversion/line-disposition-verification.json": "6d7b502e89ac550b7fa90d7e256782caa763bb27c5b286d8342ea6e43fbad2a7",
+    "tests/test_http_note_contracts.py": "9ff58d5c5506df3637144e6903fac9b7618e74b133fdda196a71a7e7e84d82ba",
+    "testdata/inputs/http-note-contracts.json": "e4bc35934c5fa49fac31bf20d0f9fd35902ee27019196e227fe27952b9b8c8f9",
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
+    "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f",
+    "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
+    "conversion/audit.md": "369cd8627b87d015d1f316d49336bf9b0148b20ce030b2215ddec2c4fb164403",
+    "conversion/review-handoff.md": "21bce3f1b0a0593da1dc4860342ec6ceae0678387360d0ac65aae768c357ffba",
+    "conversion/http-note-unchanged-publication.json": "1fc6d4573568ced2abf25b975539ee9f0b7e80a39342be57bf597a8d87546bbd"
+  },
+  "replayed_consumers": [
+    "accept-verification.json",
+    "connect-verification.json",
+    "copy-short-verification.json",
+    "epoll-verification.json",
+    "file-operations-verification.json",
+    "literal-policy-verification.json",
+    "mapping-failure-verification.json",
+    "messages-verification.json",
+    "ordinary-signal-verification.json",
+    "poll-verification.json",
+    "provided-buffers-verification.json",
+    "reference-semantics-verification.json",
+    "registered-files-verification.json",
+    "rwf-verification.json",
+    "signal-wait-verification.json",
+    "splice-verification.json",
+    "sqpoll-wakeup-verification.json",
+    "submission-prose-verification.json",
+    "provided-buffer-zero-verification.json",
+    "linked-timeout-verification.json",
+    "async-cancel-verification.json",
+    "http-send-verification.json",
+    "reference-execution-verification.json",
+    "probe-type-verification.json"
+  ],
+  "gates": {
+    "tests": 97,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.928,
+    "book_sha256": "e6f1da4ad52933e18b02cf78f3d7da99fe0ff15f6d7db44daafb0a740630e3a9",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance.",
+    "zig": "0.17.0",
+    "executables": 25,
+    "native_and_strict_builds_rerun": false,
+    "prior_build_basis": "http-note-unchanged-publication.json:89 byte-identical native/publication/tool inputs. Full suite itself invokes existing make epub; final archive rechecked afterwards.",
+    "chapters": 27,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "reader": {
+      "cases": 81,
+      "element_counts": {
+        "pre": 363,
+        "table": 6,
+        "image": 15,
+        "heading": 333,
+        "figure": 0
+      },
+      "violations": 0
+    }
+  },
+  "diagnostics": {
+    "active_all_server_changed_paths": 2,
+    "visible_findings": 0,
+    "scope": "Current changed-path probe only; not whole-workspace/semantic acceptance; previous workspace dispositions remain historical."
+  },
+  "navigation": {
+    "scope": "Data-only author-note change:exact rows, complete indexer body and HTTP consumer/evidence bodies inspected; no call-graph or absence inference. Existing unsupported Fabric/stale graph not used as acceptance."
+  },
+  "remote": {
+    "api": {
+      "default_branch": "master",
+      "fork": true,
+      "full_name": "ahmedalhulaibi/loti-zig",
+      "parent": "shuveb/loti",
+      "pushed_at": "2024-08-02T10:09:03Z"
+    },
+    "ssh_master": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+    "local_path": "/home/ahmed/workspace/va/loti-zig",
+    "delivery": "Conversion not pushed; no upstream PR/release requested."
+  },
+  "completion": {
+    "goal_complete": false,
+    "review": "Supported-child-host blocker unchanged; no retry/fallback/report. Handoff is not review.",
+    "open": "Remaining generic type/purpose comparisons, mandatory independent review, findings/final gates, acceptance and personal-fork delivery.",
+    "limits": "No per-fragment CQE, forced short RECV/header/vector sends, SIGPIPE delivery, all transport/flag/race/unwind/kernel or Supernote-device assurance."
+  },
+  "log_sha256": {
+    ".mutants/http-notes/2026-10-11/response-body-is-recv-input-index-generate.log": "31f56d766585e3aebf551d41348b8c63a5ee377fd6147cebc0629bee3014f168",
+    ".mutants/http-notes/2026-10-11/response-body-is-recv-input-index-freshness.log": "8b26525eaf04e6d7075049610491a2d2b0f738616a8502a7608e3e9e7c0b68ea",
+    ".mutants/http-notes/2026-10-11/response-body-is-recv-input-test.log": "fddb3c1fc2ed9dbcfb134aa271c524726ef6a031b2fc958b2f608161252fbc80",
+    ".mutants/http-notes/2026-10-11/positive-short-send-unverified-index-generate.log": "31f56d766585e3aebf551d41348b8c63a5ee377fd6147cebc0629bee3014f168",
+    ".mutants/http-notes/2026-10-11/positive-short-send-unverified-index-freshness.log": "8b26525eaf04e6d7075049610491a2d2b0f738616a8502a7608e3e9e7c0b68ea",
+    ".mutants/http-notes/2026-10-11/positive-short-send-unverified-test.log": "e79586bfb764b2491f1a475a15ccd953c0c70887952fd5b4322fd4da8f1c8a9d",
+    ".mutants/http-notes/2026-10-11/sigpipe-and-header-vector-forcing-claimed-index-generate.log": "31f56d766585e3aebf551d41348b8c63a5ee377fd6147cebc0629bee3014f168",
+    ".mutants/http-notes/2026-10-11/sigpipe-and-header-vector-forcing-claimed-index-freshness.log": "8b26525eaf04e6d7075049610491a2d2b0f738616a8502a7608e3e9e7c0b68ea",
+    ".mutants/http-notes/2026-10-11/sigpipe-and-header-vector-forcing-claimed-test.log": "01e158d9194bcbf0478b5111ad47349b5d1970a80063dcb842080075c8547dba",
+    ".mutants/http-notes/2026-10-11/caller-fragment-is-one-cqe-index-generate.log": "31f56d766585e3aebf551d41348b8c63a5ee377fd6147cebc0629bee3014f168",
+    ".mutants/http-notes/2026-10-11/caller-fragment-is-one-cqe-index-freshness.log": "8b26525eaf04e6d7075049610491a2d2b0f738616a8502a7608e3e9e7c0b68ea",
+    ".mutants/http-notes/2026-10-11/caller-fragment-is-one-cqe-test.log": "ead2eeca29168fd77a76b12eba443c189f11882d235192238f93be3bfd062f4f",
+    ".mutants/http-notes/2026-10-11/restored-index.log": "8b26525eaf04e6d7075049610491a2d2b0f738616a8502a7608e3e9e7c0b68ea",
+    ".mutants/http-notes/2026-10-11/restored-test.log": "25a620e17c80a996a913af2b6fa835cf58eab240528dcc1b2c2b456430f20a4a",
+    ".mutants/http-notes/2026-10-11/spec-red.log": "30ca5a55084f7e240fa6acd1d97f93ea8f15cd85ab6d959d45eda3f0f5bee840",
+    ".mutants/http-notes/2026-10-11/spec-green.log": "79d8949beef7d14b9c2120dda7310218a548763adc85f4eaa45f5586b48f524c",
+    ".mutants/http-notes/2026-10-11/aggregate-restored.log": "835b81b1c66c2a0699bca0ba7db6e5459a76efe0ba33b4156f83d0dd16f3ad6d",
+    ".mutants/http-notes/2026-10-11/publication.log": "85f61349ef3dde5e2d3887c0b46d2b84bb65b4cba53d0efceb230b3506cd3701",
+    ".mutants/http-notes/2026-10-11/reader.log": "c4081dbf4d07e78a3c48c2dbd1c87bf5f4b378cfae25cf54fe5936523e991b4f",
+    ".mutants/http-notes/2026-10-11/epubcheck.log": "1b871a801b1773626c473f38741caef8c98ef34b42c5b60ec1c5109e2bdec171",
+    ".mutants/http-notes/2026-10-11/mutation-driver.log": "a96af745d23d3c080b1e0a42d2d8ceccbe244a6a983a773bf5aca7e3f920777c"
+  }
+}
