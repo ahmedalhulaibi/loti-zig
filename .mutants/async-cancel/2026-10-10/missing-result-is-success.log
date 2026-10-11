@@ -1,0 +1,30 @@
+test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) ... FAIL
+
+======================================================================
+FAIL: test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_async_cancel.py", line 115, in test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: UnexpectedCancelResult\n/home[486 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
++ (0, b'')
+- (1,
+-  b'error: UnexpectedCancelResult\n/home/ahmed/workspace/va/loti-zig/examples'
+-  b'/async_cancel.zig:122:45: 0x1210b17 in run (reference_submission.zig)\n  '
+-  b'      if (cqes[index][0].res != expected) return error.UnexpectedCancelResul'
+-  b't;\n                                            ^\n/home/ahmed/workspace/v'
+-  b'a/loti-zig/examples/reference_submission.zig:165:47: 0x1213e7b in main (refe'
+-  b'rence_submission.zig)\n    if (std.mem.eql(u8, args[1], "--cancel")) retu'
+-  b'rn cancellation.run(init.io);\n                                          '
+-  b'    ^\n')
+
+----------------------------------------------------------------------
+Ran 1 test in 0.071s
+
+FAILED (failures=1)

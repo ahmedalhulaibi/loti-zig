@@ -1,6 +1,6 @@
 {
   "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review.",
-  "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
+  "book_sha256": "2fa2398d64e91c7a0881f85644077f6fe94049244fb5bf36c9c983a904661a3d",
   "renderer": {
     "node": "v26.8.1",
     "playwright": "1.64.0",
@@ -14,7 +14,7 @@
   ],
   "cases": 81,
   "element_counts": {
-    "pre": 360,
+    "pre": 363,
     "table": 6,
     "image": 15,
     "heading": 333,
@@ -1290,15 +1290,6 @@
           },
           {
             "index": 7,
-            "left": 8,
-            "right": 312,
-            "scroll": 304,
-            "client": 304,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 8,
             "left": 24,
             "right": 296,
             "scroll": 272,
@@ -1307,11 +1298,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 9,
+            "index": 8,
             "left": 8,
             "right": 312,
             "scroll": 304,
             "client": 304,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 9,
+            "left": 24,
+            "right": 296,
+            "scroll": 272,
+            "client": 272,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -1641,15 +1641,6 @@
           },
           {
             "index": 46,
-            "left": 24,
-            "right": 296,
-            "scroll": 272,
-            "client": 272,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 47,
             "left": 8,
             "right": 312,
             "scroll": 304,
@@ -1658,11 +1649,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 48,
+            "index": 47,
             "left": 24,
             "right": 296,
             "scroll": 272,
             "client": 272,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 48,
+            "left": 8,
+            "right": 312,
+            "scroll": 304,
+            "client": 304,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -1677,6 +1677,15 @@
           },
           {
             "index": 50,
+            "left": 24,
+            "right": 296,
+            "scroll": 272,
+            "client": 272,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 51,
             "left": 24,
             "right": 296,
             "scroll": 272,
@@ -3835,15 +3844,6 @@
           },
           {
             "index": 7,
-            "left": 8,
-            "right": 592,
-            "scroll": 584,
-            "client": 584,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 8,
             "left": 24,
             "right": 576,
             "scroll": 552,
@@ -3852,11 +3852,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 9,
+            "index": 8,
             "left": 8,
             "right": 592,
             "scroll": 584,
             "client": 584,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 9,
+            "left": 24,
+            "right": 576,
+            "scroll": 552,
+            "client": 552,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -4186,15 +4195,6 @@
           },
           {
             "index": 46,
-            "left": 24,
-            "right": 576,
-            "scroll": 552,
-            "client": 552,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 47,
             "left": 8,
             "right": 592,
             "scroll": 584,
@@ -4203,11 +4203,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 48,
+            "index": 47,
             "left": 24,
             "right": 576,
             "scroll": 552,
             "client": 552,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 48,
+            "left": 8,
+            "right": 592,
+            "scroll": 584,
+            "client": 584,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -4222,6 +4231,15 @@
           },
           {
             "index": 50,
+            "left": 24,
+            "right": 576,
+            "scroll": 552,
+            "client": 552,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 51,
             "left": 24,
             "right": 576,
             "scroll": 552,
@@ -6380,15 +6398,6 @@
           },
           {
             "index": 7,
-            "left": 8,
-            "right": 792,
-            "scroll": 784,
-            "client": 784,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 8,
             "left": 24,
             "right": 776,
             "scroll": 752,
@@ -6397,11 +6406,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 9,
+            "index": 8,
             "left": 8,
             "right": 792,
             "scroll": 784,
             "client": 784,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 9,
+            "left": 24,
+            "right": 776,
+            "scroll": 752,
+            "client": 752,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -6731,15 +6749,6 @@
           },
           {
             "index": 46,
-            "left": 24,
-            "right": 776,
-            "scroll": 752,
-            "client": 752,
-            "white_space": "pre-wrap",
-            "wrap": "anywhere"
-          },
-          {
-            "index": 47,
             "left": 8,
             "right": 792,
             "scroll": 784,
@@ -6748,11 +6757,20 @@
             "wrap": "anywhere"
           },
           {
-            "index": 48,
+            "index": 47,
             "left": 24,
             "right": 776,
             "scroll": 752,
             "client": 752,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 48,
+            "left": 8,
+            "right": 792,
+            "scroll": 784,
+            "client": 784,
             "white_space": "pre-wrap",
             "wrap": "anywhere"
           },
@@ -6767,6 +6785,15 @@
           },
           {
             "index": 50,
+            "left": 24,
+            "right": 776,
+            "scroll": 752,
+            "client": 752,
+            "white_space": "pre-wrap",
+            "wrap": "anywhere"
+          },
+          {
+            "index": 51,
             "left": 24,
             "right": 776,
             "scroll": 752,
@@ -7662,7 +7689,7 @@
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
-    "tests/test_reader_layout.py": "cddadebec602724823445816f41db2bbda1bd907d936c834104ea3e4eb7cd52a",
+    "tests/test_reader_layout.py": "3efd6ba16f5676fcc32d814db607d7f777d9eb6b4a33aa0b42b58f6557831b1f",
     "conversion/reader-layout-before.png": "8b87531a66190284853702a1d4bcb15b086b6c02f55b5d6d0b786d424ce77d93",
     "conversion/reader-layout-after.png": "df4728528a37f7c4e9f16da21c8567517c93e081d154a9c06b5d8b42992221dd",
     "conversion/reader-layout-code.png": "82410741bbeac87d2001436f06720ca70d6a95ff24509d528968d02d749dd437",
@@ -7752,5 +7779,18 @@
     "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
     "narrative_paragraphs": 362,
     "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance."
+  },
+  "replay_after_async_cancel": {
+    "tests": 92,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.896,
+    "book_sha256": "2fa2398d64e91c7a0881f85644077f6fe94049244fb5bf36c9c983a904661a3d",
+    "literals": 121,
+    "narrative_paragraphs": 365,
+    "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
   }
 }

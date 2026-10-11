@@ -13,9 +13,9 @@
     "examples/reference_rwf.zig": "103e568c2fc2486eb241038202d7bd772c1be509df2b56ff2bf910822db3709b",
     "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
-    "tools/reference_map.py": "47ec8fedee43c56eeb7675eb1c8ef5a23125ca32098597049a52fa3084fada18",
-    "conversion/reference-map.json": "533d9f44587e6cb951e52e4290338821943351a2d60d1ae4c4fc72f5e67b046f",
-    "ref-zig/submission.rst": "2fd28c9a6d14e72d908ea3fadb119aa4d12b8773faafdd848f4f8bb7c4c4e47a",
+    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a",
+    "conversion/reference-map.json": "829c527d8da549795ff8a1f440f6d5375c0553ed1059a85c27e6ae7e4cc7532f",
+    "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
     "conversion/rwf.trace": "a9aff6312f7cb0a6fc2765852a3959257fb2f525cc1eb78ff4aa2119da039acf",
     "conversion/rwf-spec-sha256.json": "1c12594eb638a544ccd831f95c666bac8b2c0fc6eae526a57ef08a6f32ccf64e",
     "testdata/inputs/rwf-input.bin": "f8cb6659a2956f9962bc85d53def74688468ae44aac2058dc86926b7fe7a4496",
@@ -289,5 +289,18 @@
     "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
     "narrative_paragraphs": 362,
     "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance."
+  },
+  "replay_after_async_cancel": {
+    "tests": 92,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.896,
+    "book_sha256": "2fa2398d64e91c7a0881f85644077f6fe94049244fb5bf36c9c983a904661a3d",
+    "literals": 121,
+    "narrative_paragraphs": 365,
+    "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
   }
 }

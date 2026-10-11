@@ -1,0 +1,21 @@
+pipe2([3, 4], O_NONBLOCK|O_CLOEXEC) = 0
+pipe2([5, 6], O_NONBLOCK|O_CLOEXEC) = 0
+io_uring_setup(8, {flags=0, sq_thread_cpu=0, sq_thread_idle=0, sq_entries=8, cq_entries=16}) = 7
+io_uring_enter(7, 2, 0, 0, NULL, 8) = 2
+io_uring_enter(7, 1, 0, 0, NULL, 8) = 1
+io_uring_enter(7, 0, 1, IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG, {sigmask=NULL, sigmask_sz=0, min_wait_usec=0, ts={tv_sec=1, tv_nsec=0}}, 24) = 0
+io_uring_enter(7, 1, 0, 0, NULL, 8) = 1
+io_uring_enter(7, 1, 0, 0, NULL, 8) = 1
+io_uring_enter(7, 1, 0, 0, NULL, 8) = 1
+write(6, "\x5a", 1) = 1
+io_uring_enter(7, 1, 0, 0, NULL, 8) = 1
+close(3) = 0
+fcntl(3, F_GETFD) = -1 EBADF (Bad file descriptor)
+close(4) = 0
+fcntl(4, F_GETFD) = -1 EBADF (Bad file descriptor)
+close(5) = 0
+fcntl(5, F_GETFD) = -1 EBADF (Bad file descriptor)
+close(6) = 0
+fcntl(6, F_GETFD) = -1 EBADF (Bad file descriptor)
+fcntl(7, F_GETFD) = 1 (FD_CLOEXEC)
+close(7) = 0

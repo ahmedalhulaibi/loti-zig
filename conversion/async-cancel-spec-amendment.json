@@ -1,0 +1,8 @@
+{
+  "scope": "Transparent author-core amendments; not verifier acceptance or sealing.",
+  "initial_snapshot": "async-cancel-spec-initial-sha256.json",
+  "initial_draft": "async-cancel-test-initial.txt",
+  "type_narrowing": "After first-green implementation, bind syscall write regex once before Optional indexing; observations/expectations unchanged.",
+  "pre_mutation_strengthening": "Add wrong-read-batch-size to isolate exact count from list length/retirement positions; original12 damages retained.",
+  "diagnostic_disposition": "Workspace-root import warning marked false-positive after .venv importlib.find_spec returned exact repository tests/test_linked_timeout.py and runtime tests imported it. Not an unconditional clean finding."
+}

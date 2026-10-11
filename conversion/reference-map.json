@@ -190,8 +190,8 @@
       "original": "io_uring_prep_cancel",
       "zig": "std.os.linux.IoUring.cancel",
       "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "verification_scope": "INPUT mode constructs only; separate --cancel submits generic tag cancellation of one of two owned pipe READs with colliding low32 tag bits; distinct -ECANCELED/0 target/canceler CQEs, missing/unknown/completed -ENOENT and invalid-flags -EINVAL; retained unrelated READ bytes/poison and queried four-FD retirement; sequential current-kernel default matching, not all cancellation races/flags/descriptors/unwinds",
+      "semantic_difference": "Native u64 target tag goes in SQE addr, not a borrowed pointer or FD; cancellation flags use rw_flags, not SQE dependency flags. Cancel-request completion does not acknowledge its separately tagged target CQE. Retain target storage until that completion; EALREADY and completion races remain possible outside this bounded plan.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn cancel(\n    self: *IoUring,\n    user_data: u64,\n    cancel_user_data: u64,\n    flags: u32,\n) !*linux.io_uring_sqe"
     },

@@ -243,7 +243,7 @@
     "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
     "testdata/inputs/file-operations-report.json": "82215f932bf6622b6c5362d08c9035a33e24d3d5bd83e5f8cb3fce59466facd1",
     "testdata/inputs/file-operations-invalid-arguments.json": "95a3fe47a3473a059f6d5b4ca47cbcb298ce14d6c0d8ec8874e201824f218de6",
-    "tools/reference_map.py": "47ec8fedee43c56eeb7675eb1c8ef5a23125ca32098597049a52fa3084fada18",
+    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a",
     "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1"
   },
   "sdk_source_sha256": {
@@ -356,5 +356,18 @@
     "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
     "narrative_paragraphs": 362,
     "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance."
+  },
+  "replay_after_async_cancel": {
+    "tests": 92,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.896,
+    "book_sha256": "2fa2398d64e91c7a0881f85644077f6fe94049244fb5bf36c9c983a904661a3d",
+    "literals": 121,
+    "narrative_paragraphs": 365,
+    "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
   }
 }

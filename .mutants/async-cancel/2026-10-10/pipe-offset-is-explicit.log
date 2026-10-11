@@ -1,0 +1,16 @@
+test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) ... FAIL
+
+======================================================================
+FAIL: test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_async_cancel.py", line 116, in test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement
+    self.assertEqual(json.loads(stdout), EXPECTED)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'rea[255 chars]et': 0, 'flags': 0, 'rw_flags': 0, 'target_tag[2281 chars]True} != {'rea[255 chars]et': 18446744073709551615, 'flags': 0, 'rw_fla[2300 chars]True}
+Diff is 4715 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.025s
+
+FAILED (failures=1)

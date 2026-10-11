@@ -168,7 +168,7 @@
     "examples/reference_signals.zig": "a2cc003381be3903aecfa65d7c7e719e4c0c45817f1ff976dcb6fd3fa54e9382",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
-    "tests/test_publication.py": "64dce303cfc86c83da6fbfa6360f3a29c9a796a479b22986b69bab5be21e0bc6",
+    "tests/test_publication.py": "afe975d896f46947842217dbb24038290b285025160f6040d2bcb45df069ccd6",
     "testdata/inputs/signal-contract.json": "ee672dbce46b499b34581ebff320ebc403b896e39c7f26e640b3c7eba8d687b0",
     "testdata/inputs/signal-invalid-arguments.json": "6ef7a293b412e6da43cd05f57b81c26b34a6bde8631879e8dce77fce6018c55c"
   },
@@ -276,5 +276,18 @@
     "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
     "narrative_paragraphs": 362,
     "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance."
+  },
+  "replay_after_async_cancel": {
+    "tests": 92,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.896,
+    "book_sha256": "2fa2398d64e91c7a0881f85644077f6fe94049244fb5bf36c9c983a904661a3d",
+    "literals": 121,
+    "narrative_paragraphs": 365,
+    "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
   }
 }

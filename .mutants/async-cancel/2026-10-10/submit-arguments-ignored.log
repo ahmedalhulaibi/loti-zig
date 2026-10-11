@@ -1,0 +1,26 @@
+test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) ...
+  test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) (damage='implicit-wait') ... FAIL
+  test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) (damage='wrong-mask-size') ... FAIL
+
+======================================================================
+FAIL: test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) (damage='implicit-wait')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_async_cancel.py", line 109, in test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement
+    self.fail("Damaged cancellation syscall contract was accepted")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Damaged cancellation syscall contract was accepted
+
+======================================================================
+FAIL: test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) (damage='wrong-mask-size')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_async_cancel.py", line 109, in test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement
+    self.fail("Damaged cancellation syscall contract was accepted")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Damaged cancellation syscall contract was accepted
+
+----------------------------------------------------------------------
+Ran 1 test in 0.016s
+
+FAILED (failures=2)

@@ -131,6 +131,7 @@ zig-out/bin/reference-buffers input.txt --zero-result --fail-eof
 zig-out/bin/reference-registration input.txt replacement.txt
 zig-out/bin/reference-submission input.txt
 zig-out/bin/reference-submission --linked-timeout
+zig-out/bin/reference-submission --cancel
 zig-out/bin/reference-raw input.txt
 ```
 
@@ -144,7 +145,10 @@ that batch. Its separate `--linked-timeout` mode needs no path: four private-pip
 cases check deadline expiry, ready/failed targets, a lone timer, both tagged CQEs,
 exact bytes/poison and queried pipe closure before ring retirement. One-second
 completion guards and external process bounds contain failures; broader deadline
-races/clocks/flags remain unverified. Other reference/tutorial programs provide separate
+races/clocks/flags remain unverified. Separate `--cancel` needs no path: generic
+full-u64-tag matching, distinct canceler/target CQEs, missing/completed/invalid-flag
+negatives, unrelated READ retention and four queried pipe closures. It does not
+verify all cancellation flags/races/unwinds. Other reference/tutorial programs provide separate
 operation-effect evidence. The HTTP server is loopback-only and is not production
 software. Consult each chapter for capabilities, lifetimes and limits.
 

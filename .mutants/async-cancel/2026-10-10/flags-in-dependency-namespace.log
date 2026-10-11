@@ -1,0 +1,21 @@
+test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) ... FAIL
+
+======================================================================
+FAIL: test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_async_cancel.py", line 115, in test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement
+    self.assertEqual((code, stderr), (0, b""))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1, b'error: CancelQueueNotDrained\n/home/[704 chars]^\n') != (0, b'')
+
+First differing element 0:
+1
+0
+
+Diff is 831 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.072s
+
+FAILED (failures=1)

@@ -81,7 +81,7 @@
     }
   },
   "source_sha256": {
-    "tools/reference_map.py": "47ec8fedee43c56eeb7675eb1c8ef5a23125ca32098597049a52fa3084fada18",
+    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "testdata/inputs/reference-semantics-bindings.json": "a1dad2b6ff5bda1a97c18f24f7afd0433bb06a1af210bccc207a37362a08d980",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
@@ -93,7 +93,7 @@
     "conversion/reference-claim-audit.md": "386b13012f307b2df339c1145c5a7ea60397ddcc828e657eabca2269606429de",
     "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
     "ref-zig/setup_teardown.rst": "8cfb07794f25aaab05b111f3f8dab8685f1d78994b71509ee6b95fdb73a1e6f7",
-    "ref-zig/submission.rst": "2fd28c9a6d14e72d908ea3fadb119aa4d12b8773faafdd848f4f8bb7c4c4e47a"
+    "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7"
   },
   "sdk_source_sha256": {
     "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
@@ -258,5 +258,18 @@
     "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
     "narrative_paragraphs": 362,
     "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance."
+  },
+  "replay_after_async_cancel": {
+    "tests": 92,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.896,
+    "book_sha256": "2fa2398d64e91c7a0881f85644077f6fe94049244fb5bf36c9c983a904661a3d",
+    "literals": 121,
+    "narrative_paragraphs": 365,
+    "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
   }
 }

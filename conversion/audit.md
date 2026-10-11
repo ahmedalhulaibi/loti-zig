@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 62 native CLI/TCP/reference tests plus fourteen binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 63 native CLI/TCP/reference tests plus fifteen binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -1041,7 +1041,7 @@ zero failures/errors/skips,16 attributed400-case properties,166.907s.
 
 Nine compiled native/three syntax-valid parser mutants killed; exact native/core
 restoration, rebuilt ten-test baseline and sequential4GiB/no-swap/128-task scope.
-Current bounded total **232**:164 native,3 index,37 trace-parser,10 binding-producer,
+Linked-deadline checkpoint bounded total **232**:164 native,3 index,37 trace-parser,10 binding-producer,
 3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. Not whole-port,
 all deadline clocks/flags/races/unwinds, other kernels/descriptors or independent
 acceptance. Five changed source paths have zero active-primary LSP findings;
@@ -1052,10 +1052,53 @@ resolved narrative paragraphs;81 browser cases/zero violations and EPUBCheck5.2.
 zero fatals/errors/warnings/infos. See `linked-timeout-verification.json`.
 Review remains blocked; no host retry/fallback, push or goal completion.
 
+## Generic cancellation and unrelated request ownership
+
+`delme.c:222–223` previously had constructor evidence only. Separate
+`reference-submission --cancel` now executes generic ASYNC_CANCEL with no path.
+Two owned pending one-byte pipe READs have different high32/equal low32 tag bits.
+Default full-u64-tag matching cancels only A: target-ECANCELED/canceler0 are
+separate CQEs, correlated by tag without an arrival-order assumption. Repeated,
+unknown and completed tags yield -ENOENT; unsupported operation flags yield
+-EINVAL. Unrelated B remains pending until its own stimulus; READ1, exact bytes
+and poison guards establish retention. Storage stays live through both targets;
+four pipe ends close/query before retained-ring query and eventual retirement.
+
+Two public contracts: fixed flow ×20 fresh processes (not PBT), whole literal
+report, typed arity errors, seven actual SQEs/six submit batches and13 damaged
+syscall traces. One-second completion guards/10-second owned process groups
+contain missing completions. Ten compiled native/three syntax-valid parser
+mutants killed, exact module/core restoration and rebuilt twelve-test baseline;
+sequential4GiB/no-swap/128-task scope. Original author draft/hashes retained:
+Optional regex type narrowing changed no expectation; wrong-read-batch-size
+isolates counts from list cardinality before mutation. Not ACL/verifier sealing.
+
+One helper inclusion adds one Zig literal/three browser pre elements and three
+reader paragraphs:120→121 literals,98→99 Zig literals,362→365 paragraphs,
+360→363 pre elements. First92-test run missed the reader's duplicate pre count
+(one failure/167.003s); only that report count changed, with prior file SHA and
+all damages retained. No native defect, shrink or mutant kill is claimed.
+Full corrected suite:92 tests, zero failures/errors/skips,16 attributed400-case
+properties,166.896s. Prior suite fingerprints remain historical.
+
+Current bounded total **245**:174 native,3 index,40 trace-parser,10 binding-producer,
+3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. This does not
+prove whole-port/SDK/kernel/all flags/descriptor/cancellation-race/unwind behavior.
+Active source diagnostics retain one disclosed workspace-import false positive;
+compiler/runtime evidence and exact import resolution are authoritative. Fabric
+unavailable/stale graph and62/62 churn history do not establish complete callers
+or code acceptance. Final strict HTML/EPUB after92-test suite:27 chapters,
+121 literals/365 paragraphs,81 browser cases/363 pre elements/zero violations,
+EPUBCheck5.2.1 zero messages. Seven active-primary source paths:zero visible
+findings/one disposed import warning; prior suppressions/OPF infos remain disclosed.
+See `async-cancel-verification.json` for current replay fingerprints.
+Mandatory review remains blocked; no host retry,
+substitute reviewer, push or goal completion.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **90 passed**
-  (62 native + one VM + eight publication + three inventory + two line-index + fourteen binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **92 passed**
+  (63 native + one VM + eight publication + three inventory + two line-index + fifteen binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -1070,7 +1113,7 @@ Review remains blocked; no host retry/fallback, push or goal completion.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  sixteen properties**, source hashes, 90 passing tests and zero skips. These remain
+  sixteen properties**, source hashes, 92 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
@@ -1110,7 +1153,7 @@ git diff --check
 
 - Full guide, not the earlier four-chapter subset: **27 chapters** (all 26 original
   documents plus licence), exact mapped reading order and navigation.
-- **120 current literal blocks** match Sphinx's source, independently of the
+- **121 current literal blocks** match Sphinx's source, independently of the
   **128 original** inventory blocks/declarations; this is not a 1:1 map.
 - Local links/fragments resolve; five illustrations, logo and licence are exact.
   No DRM/encryption metadata, JavaScript, script/iframe elements or remote images.

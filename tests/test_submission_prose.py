@@ -107,12 +107,12 @@ class NarrativePublicationContracts(unittest.TestCase):
                             "scope": "Publication structure and source fidelity; not semantic or independent review.",
                             "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
                             "book_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-                            "original_chapters": 26, "edition_chapters": 27, "literal_blocks": 120,
+                            "original_chapters": 26, "edition_chapters": 27, "literal_blocks": 121,
                             "byte_identical_illustrations": 5, "licence_exact": True,
                             "local_links_valid": True, "drm_absent": True, "javascript_absent": True,
-                            "literal_policy": {"language_counts": {"zig": 98, "console": 18, "json": 2, "text": 2},
+                            "literal_policy": {"language_counts": {"zig": 99, "console": 18, "json": 2, "text": 2},
                                                "rendered_languages_match": True, "bounded_legacy_markers_absent": True},
-                            "narrative_paragraphs": 362, "narrative_source_matches": True,
+                            "narrative_paragraphs": 365, "narrative_source_matches": True,
                         })
                     else:
                         self.assertEqual((result.returncode, result.stdout), (1, ""))

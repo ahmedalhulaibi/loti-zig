@@ -439,6 +439,30 @@ race, operation, clock, flag or cancellation path. One-second EXT_ARG waits
 bound missing completions; an external process bound contains native/trace
 failures. The mode does not submit the incompatible 33-constructor batch.
 
+Optional ``reference-submission --cancel`` exercises generic ASYNC_CANCEL on
+two private pipes without a path. The pending one-byte READ tags have equal
+low32 bits but different high32 bits. Default cancellation matches the full
+u64 tag, not a descriptor or target pointer. The cancellation CQE returns zero
+and its distinct target CQE returns ``-ECANCELED``; both are consumed by tag,
+not arrival order.
+
+Repeated, unknown and already-completed tags return ``-ENOENT``. An unsupported
+high operation flag returns ``-EINVAL`` without cancelling the other READ.
+Only then is a byte written to that second pipe: its original READ returns one
+with exact bytes and untouched guards. Storage remains live through target
+completion; queues are drained before all four pipe ends are closed and queried
+while the ring remains owned.
+
+Scope: sequential default-tag matching on this kernel, not every cancellation
+race, flag, descriptor or error/unwind path. One-second completion guards and
+10-second externally bounded process groups contain missing completions. This
+mode is separate from both linked deadlines and the unsubmitted constructor
+batch; successful cancellation does not acknowledge its target CQE for you.
+
+.. literalinclude:: ../examples/async_cancel.zig
+   :language: zig
+   :caption: Full-u64 cancellation and unrelated request retention
+
 ``provide_buffers`` supplies a contiguous allocation, per-buffer size/count,
 group and first ID. ``remove_buffers`` removes a count from a group. Selected
 receive/read requests set ``IOSQE_BUFFER_SELECT``; decode the selected ID from
@@ -586,7 +610,7 @@ Runnable constructor reference
 
 .. literalinclude:: ../examples/reference_submission.zig
    :language: zig
-   :caption: 33 unsubmitted constructors; separate linked-deadline mode
+   :caption: 33 unsubmitted constructors; separate deadline/cancellation modes
 
 ``tests/test_reference.py`` verifies prepared opcode/tag/flags and selected
 length/group fields. The deliberately incompatible mixed descriptor operands

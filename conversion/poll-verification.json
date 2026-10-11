@@ -12,9 +12,9 @@
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "tests/test_poll.py": "130dbfb6e5b7b7618398df0dc4bf42a928a82af9c339dcbaa67009d203407e56",
     "tests/test_poll_waits.py": "f30be58a582efa24fb510e291245894b196019587708ec219765966989db3810",
-    "tools/reference_map.py": "47ec8fedee43c56eeb7675eb1c8ef5a23125ca32098597049a52fa3084fada18",
-    "conversion/reference-map.json": "533d9f44587e6cb951e52e4290338821943351a2d60d1ae4c4fc72f5e67b046f",
-    "ref-zig/submission.rst": "2fd28c9a6d14e72d908ea3fadb119aa4d12b8773faafdd848f4f8bb7c4c4e47a",
+    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a",
+    "conversion/reference-map.json": "829c527d8da549795ff8a1f440f6d5375c0553ed1059a85c27e6ae7e4cc7532f",
+    "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
     "conversion/poll-spec-sha256.json": "25f95439286a15890ff0249e0ec14d6b9dd521ea3c8f9e35f37c4a07930817a7",
     "testdata/inputs/poll-deadline.trace": "276b53fa38940bab91a1663190ca5fcb009af25b4b6fcbe128b3f6879db87bec",
     "testdata/inputs/poll-invalid-plans.json": "b26c9eb8d121029785b8621ddecc5ff4458847fad765b2ed90679192c5d81e17",
@@ -405,5 +405,18 @@
     "book_sha256": "a5b05c656cf98c2bc30ea28f04ccff9cee9763b98cd79cf7dc722b3df2c8e2cd",
     "narrative_paragraphs": 362,
     "scope": "Current source fingerprints replayed at the full suite and final strict publication/reader/EPUBCheck gates. Existing gate/mutation/screenshot fields remain historical; this does not attest independent semantic review or all kernels/races/device acceptance."
+  },
+  "replay_after_async_cancel": {
+    "tests": 92,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.896,
+    "book_sha256": "2fa2398d64e91c7a0881f85644077f6fe94049244fb5bf36c9c983a904661a3d",
+    "literals": 121,
+    "narrative_paragraphs": 365,
+    "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
   }
 }

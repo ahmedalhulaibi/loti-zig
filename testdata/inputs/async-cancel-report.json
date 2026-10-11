@@ -1,0 +1,303 @@
+{
+  "reads": [
+    {
+      "tag": 1311673391471656961,
+      "operation": "READ",
+      "descriptor": "a",
+      "length": 1,
+      "offset": 18446744073709551615,
+      "flags": 0,
+      "rw_flags": 0,
+      "target_tag": null
+    },
+    {
+      "tag": 6230730084467081217,
+      "operation": "READ",
+      "descriptor": "b",
+      "length": 1,
+      "offset": 18446744073709551615,
+      "flags": 0,
+      "rw_flags": 0,
+      "target_tag": null
+    }
+  ],
+  "stages": [
+    {
+      "name": "canceled",
+      "requests": [
+        {
+          "tag": 100,
+          "operation": "ASYNC_CANCEL",
+          "descriptor": "unused",
+          "length": 0,
+          "offset": 0,
+          "flags": 0,
+          "rw_flags": 0,
+          "target_tag": 1311673391471656961
+        }
+      ],
+      "completions": [
+        {
+          "user_data": 1311673391471656961,
+          "res": -125,
+          "flags": 0
+        },
+        {
+          "user_data": 100,
+          "res": 0,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    },
+    {
+      "name": "missing",
+      "requests": [
+        {
+          "tag": 101,
+          "operation": "ASYNC_CANCEL",
+          "descriptor": "unused",
+          "length": 0,
+          "offset": 0,
+          "flags": 0,
+          "rw_flags": 0,
+          "target_tag": 1311673391471656961
+        }
+      ],
+      "completions": [
+        {
+          "user_data": 101,
+          "res": -2,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    },
+    {
+      "name": "unknown",
+      "requests": [
+        {
+          "tag": 102,
+          "operation": "ASYNC_CANCEL",
+          "descriptor": "unused",
+          "length": 0,
+          "offset": 0,
+          "flags": 0,
+          "rw_flags": 0,
+          "target_tag": 18446744073709551615
+        }
+      ],
+      "completions": [
+        {
+          "user_data": 102,
+          "res": -2,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    },
+    {
+      "name": "invalid_flags",
+      "requests": [
+        {
+          "tag": 103,
+          "operation": "ASYNC_CANCEL",
+          "descriptor": "unused",
+          "length": 0,
+          "offset": 0,
+          "flags": 0,
+          "rw_flags": 2147483648,
+          "target_tag": 6230730084467081217
+        }
+      ],
+      "completions": [
+        {
+          "user_data": 103,
+          "res": -22,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    },
+    {
+      "name": "ready",
+      "requests": [],
+      "completions": [
+        {
+          "user_data": 6230730084467081217,
+          "res": 1,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        [
+          90,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    },
+    {
+      "name": "completed",
+      "requests": [
+        {
+          "tag": 104,
+          "operation": "ASYNC_CANCEL",
+          "descriptor": "unused",
+          "length": 0,
+          "offset": 0,
+          "flags": 0,
+          "rw_flags": 0,
+          "target_tag": 6230730084467081217
+        }
+      ],
+      "completions": [
+        {
+          "user_data": 104,
+          "res": -2,
+          "flags": 0
+        }
+      ],
+      "storage": [
+        [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ],
+        [
+          90,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      ],
+      "sq_ready": 0,
+      "cq_ready": 0
+    }
+  ],
+  "pipe_closed": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "ring_retained": true
+}

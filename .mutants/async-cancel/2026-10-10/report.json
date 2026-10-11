@@ -1,0 +1,279 @@
+{
+  "scope": "Ten compiled native/three syntax-valid syscall-oracle mutants. Finite private-pipe cancellation flow, not generated property/whole-port/kernel/race/independent-review assurance.",
+  "mutants": [
+    {
+      "id": "target-tag-truncated",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "67a74f8d60099bea1a7337424573ad8d3ca51e9d4e8ea7054aaca4a7c6714d84",
+      "log": ".mutants/async-cancel/2026-10-10/target-tag-truncated.log"
+    },
+    {
+      "id": "wrong-target-canceled",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "1109bf31668c1adec31c263e439223fa233c7c4352680a809b2468ac6a185b08",
+      "log": ".mutants/async-cancel/2026-10-10/wrong-target-canceled.log"
+    },
+    {
+      "id": "flags-in-dependency-namespace",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "df166428c823cad74eca4c8a08428e2825bb01cc8662ea36f7fac2385ded391c",
+      "log": ".mutants/async-cancel/2026-10-10/flags-in-dependency-namespace.log"
+    },
+    {
+      "id": "missing-result-is-success",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "788a03cda4f4de037bd768ce5484db8d4513b316a7364ea7ffa0320315418456",
+      "log": ".mutants/async-cancel/2026-10-10/missing-result-is-success.log"
+    },
+    {
+      "id": "target-completion-not-consumed",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "6fc6f6162f4ab5c7b92f9f048f07357453b97d84712190e462a87c5f85d773eb",
+      "log": ".mutants/async-cancel/2026-10-10/target-completion-not-consumed.log"
+    },
+    {
+      "id": "zero-length-read-proxy",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "90af4b746803b089e2f6f724e07c840bd33f4642a38b7445c78fc0cb708b7295",
+      "log": ".mutants/async-cancel/2026-10-10/zero-length-read-proxy.log"
+    },
+    {
+      "id": "pipe-offset-is-explicit",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "d106c6fa0a07c3bf0e881b96891f838470c9f522ab53c406bd44098b62e73726",
+      "log": ".mutants/async-cancel/2026-10-10/pipe-offset-is-explicit.log"
+    },
+    {
+      "id": "ready-byte-is-wrong",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "e7f876b3c2712a5901dcd83820dd5e3eedf50a852b61205bf0bac8e7ce67e458",
+      "log": ".mutants/async-cancel/2026-10-10/ready-byte-is-wrong.log"
+    },
+    {
+      "id": "storage-snapshot-is-poison",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "696a97364c80e2d693951cbcdae6c2cbfa0d312b9a3388423e10126c774574f4",
+      "log": ".mutants/async-cancel/2026-10-10/storage-snapshot-is-poison.log"
+    },
+    {
+      "id": "pipe-retirement-is-fabricated",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "dfac0851d4c152ca23c898795775a19e4b18c222f035bb5ff2ae65a9ea0bf039",
+      "log": ".mutants/async-cancel/2026-10-10/pipe-retirement-is-fabricated.log"
+    },
+    {
+      "id": "exact-batch-counts-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "26dc0411d7789ed2973eb11726402a6c722b66b53f6632f45416daa4902a354b",
+      "log": ".mutants/async-cancel/2026-10-10/exact-batch-counts-ignored.log"
+    },
+    {
+      "id": "submit-arguments-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "8ca9c70cbcd694eef6a301c00dad668c9c9ff785b78834ddab9d5a6e4da8345a",
+      "log": ".mutants/async-cancel/2026-10-10/submit-arguments-ignored.log"
+    },
+    {
+      "id": "retirement-order-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "source_sha256": "6a6729f7dda19e4ee530eaca3b81441cebe56b7995b90cebacde6aafe46a85ee",
+      "log": ".mutants/async-cancel/2026-10-10/retirement-order-ignored.log"
+    }
+  ],
+  "restored_source_sha256": {
+    "examples/async_cancel.zig": "edc0762891f39b30d7f789f436bc15be0ac0c5a5347bc461443cfac9b7e2841e",
+    "tests/test_async_cancel.py": "3eebe3909f092342b90d29bc3599640976b24b77fa68408e1b800d945e052328"
+  },
+  "spec_exact": true,
+  "baseline": {
+    "tests": 12,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "log": ".mutants/async-cancel/2026-10-10/restored.log"
+  },
+  "containment": "Sequential4GiB/no-swap/TasksMax128 user scope; owned10-second CLI/strace process groups. Native restored/rebuilt before parser variants and final baseline.",
+  "log_normalization": {
+    "scope": "Trailing ASCII spaces/tabs/CR and terminal blank lines only; substantive observations unchanged.",
+    "changed": [
+      {
+        "file": ".mutants/async-cancel/2026-10-10/target-tag-truncated-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/wrong-target-canceled-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/flags-in-dependency-namespace-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/missing-result-is-success-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/target-completion-not-consumed-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/zero-length-read-proxy-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/pipe-offset-is-explicit-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/ready-byte-is-wrong-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/storage-snapshot-is-poison-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/pipe-retirement-is-fabricated-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/exact-batch-counts-ignored-restored-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/exact-batch-counts-ignored-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/exact-batch-counts-ignored.log",
+        "original_sha256": "b99d3cb91886d9ee416e8a0a10b0981605f6e3bd0bc5bf2f47304ed77cbac336",
+        "normalized_sha256": "23d4c47c7d29b4f2f36964dcbc3642b5a2530500b22dca6ec75702188aab369c"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/submit-arguments-ignored-restored-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/submit-arguments-ignored-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/submit-arguments-ignored.log",
+        "original_sha256": "757d73e53ff74d092b4f0c077f3ef8f90082cecb8d7dc59af7f5e0ac55a46c15",
+        "normalized_sha256": "0f7bcc106529ffc6aaf02a3787368af6a593eb60f783b2e2c2d52e0c7043a80e"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/retirement-order-ignored-restored-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/retirement-order-ignored-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/retirement-order-ignored.log",
+        "original_sha256": "e4f4afb1298214266c62619dd670ad394c4fb847ef17fbd209348aaec318ac78",
+        "normalized_sha256": "e194de0998c34966b80f38ea2173c839f3e019206cce27cb07bcf6aac9efe870"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/restored-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/strict-html.log",
+        "original_sha256": "145cd0d480e02bf25c88b80343915c06fdcc3031325c1371e2ea6d03721fdec9",
+        "normalized_sha256": "8dd8ff3153e9e93e7fba214505bbb99713a6dc3c5eefc5511dddf4bd79a41a62"
+      },
+      {
+        "file": ".mutants/async-cancel/2026-10-10/strict-epub.log",
+        "original_sha256": "2b896fbf1dee79a2610ad1342057a850309149d8b2bd0cc1136576fc25328277",
+        "normalized_sha256": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940"
+      }
+    ]
+  },
+  "exclusions": {
+    "initial_aggregate": "92 tests/one missed browser-pre cardinality failure/167.003s; not native defect, shrink or mutation kill. Corrected full replay retained."
+  }
+}

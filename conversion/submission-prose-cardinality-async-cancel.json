@@ -1,0 +1,40 @@
+{
+  "scope": "Three paragraphs and one compiled cancellation-helper inclusion; original narrative semantic/damage/whitespace expectations retained. Cardinality/source fidelity, not native/independent semantic acceptance.",
+  "previous": "submission-prose-spec-before-async-cancel.json",
+  "changed_expectation": {
+    "narrative_paragraphs": [
+      362,
+      365
+    ],
+    "literal_blocks": [
+      120,
+      121
+    ],
+    "zig_literals": [
+      98,
+      99
+    ],
+    "browser_pre_elements": [
+      360,
+      363
+    ]
+  },
+  "unchanged": [
+    "Three whole bindings",
+    "Two separately authored whole reader paragraphs",
+    "Six narrative damage cases",
+    "Whitespace-only positive and ordered resolution comparison"
+  ],
+  "original_core": "submission-prose-spec-initial-sha256.json",
+  "development_gate_correction": {
+    "missed": "Reader whole-report expected count was360, not363 after adding one code block across three viewports.",
+    "observed": {
+      "tests": 92,
+      "failures": 1,
+      "errors": 0,
+      "seconds": 167.003
+    },
+    "log": "/tmp/loti-async-cancel-final-tests.log",
+    "scope": "Change only reader count; retain existing damages/CSS/oracle mutation evidence and old file SHA. Not a code defect, shrink or mutant kill; require full new replay."
+  }
+}

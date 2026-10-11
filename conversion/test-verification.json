@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 90,
+  "tests_run": 92,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -108,7 +108,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 86
+          "overrun": 85
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -162,7 +162,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 69
+          "overrun": 65
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -198,7 +198,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 128
+          "overrun": 115
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -216,7 +216,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 46
+          "overrun": 54
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -297,6 +297,7 @@
   "source_sha256": {
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
+    "examples/async_cancel.zig": "edc0762891f39b30d7f789f436bc15be0ac0c5a5347bc461443cfac9b7e2841e",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
     "examples/copy_short.zig": "eefed5f302c63c89b6dac82684088e5b0da1e43b349426d47e1445bf6e9e2808",
     "examples/cp.zig": "07fc47895c3b43fd704ecd17a06ca789ddf929fdadf7330ad916ed7a1e3e58d1",
@@ -321,13 +322,13 @@
     "examples/reference_setup.zig": "c601487b9e78fd81aec3eabde091353b17b5f87251641b3443d1b302e3518ae7",
     "examples/reference_signals.zig": "a2cc003381be3903aecfa65d7c7e719e4c0c45817f1ff976dcb6fd3fa54e9382",
     "examples/reference_splice.zig": "cb4c61511195325bfaa4c0ca4baf154b03c2b514a826a113bd0426b934894c41",
-    "examples/reference_submission.zig": "3f18550a211b1f2d812d4ab3dc045c1696eb6a6eeda86da961ac0710f16a07c8",
+    "examples/reference_submission.zig": "caed7d975ccadc60c08ee62e8681159764ccdd1698ebd8bc5a42704d77de22b3",
     "examples/register_eventfd.zig": "3e59de2ec80f68917de35bb901729e37f0966acdb6295c4bf46dbc31d9e9bd6c",
     "examples/sq_poll.zig": "38902d98ddfeb80423222129543a23fce78c130b9216c5e92346cb1a0bb710d4",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "examples/webserver.zig": "d975ec26595177452dd850459ddf0c1cf3498f24433caae6fa21e534d5656bad",
     "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
-    "ref-zig/submission.rst": "2fd28c9a6d14e72d908ea3fadb119aa4d12b8773faafdd848f4f8bb7c4c4e47a",
+    "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
     "testdata/inputs/accept-flags-invalid-traces.json": "f19b59b619a819edbf2131beffe46b510f67c3ab684dadf255704f67b3225372",
     "testdata/inputs/accept-flags.trace": "0b501a40c2110bfe687aa206523f483cb63d291e6325bc14e28da9aae533f2a6",
     "testdata/inputs/accept-invalid-arguments.json": "83adaf5179fd1cad5012ddb03f2b40538c49f3b8bea67a639e7993e8ae0271db",
@@ -335,6 +336,9 @@
     "testdata/inputs/accept-plans.json": "d16d07cc6d510eb2d0de0ea8c57554d35551f0557741d95f2245c7c69847d04e",
     "testdata/inputs/accept-report.json": "8a27d8f139f39c7c79488f961f9840773893ee887db3c91c1f00730a65405dec",
     "testdata/inputs/accept.trace": "91ae99638cc4b1c2e768f9396735530203df318428034f8b750b42108604ccf4",
+    "testdata/inputs/async-cancel-invalid-traces.json": "115ff933863fd1df19474b514d718e2ce2a482c5a4dd01559f7e1f0fd544573a",
+    "testdata/inputs/async-cancel-report.json": "35b3105d45fa8996204d8f11c3fba1159d3932ba133b685b103c1e1ad16cfe28",
+    "testdata/inputs/async-cancel.trace": "ca1f4fa223732d551bb771d4b6917931afc4cb3f9a4ab204bafb8e7616cd2bae",
     "testdata/inputs/completion-invalid-plans.json": "20a857a64b64164cfbc6cdd99c335987b8af52e207740798e3ce9fc6f0d7997d",
     "testdata/inputs/completion-plans.json": "bb81a1461aea4ba4a95040894310a881b146a2b106971ca5f870943397350ed6",
     "testdata/inputs/connect-invalid-arguments.json": "8e6e479819c91aef336466ddf25bbcdfb1328a05790f063fa4c35445319e2e6b",
@@ -425,6 +429,7 @@
     "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
     "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
     "tests/test_accept_flags.py": "be6adee86c57e9b3046dd3139a55957c9285ce6c0fb180422c2fa37ba622a45f",
+    "tests/test_async_cancel.py": "3eebe3909f092342b90d29bc3599640976b24b77fa68408e1b800d945e052328",
     "tests/test_block_devices.py": "18857ffc40a06b68a695a879c45328566abd271fc86ab8c9716bdb5f86bcd5d6",
     "tests/test_connect.py": "289c8c0273c9c64111f02304f55b8e4a2acc2403ea41030abd3e0a6da50435ef",
     "tests/test_copy_short.py": "75e7e25ff6c83c7395c45703ff3515faf71cb7fe0c794a06cf47d81309b63fe5",
@@ -449,20 +454,20 @@
     "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c",
     "tests/test_provided_buffer_zero_failure.py": "405677c7f71341e6e0b49a988254ec74dae187cdd9c8923e36bf4cde190bdb41",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tests/test_publication.py": "64dce303cfc86c83da6fbfa6360f3a29c9a796a479b22986b69bab5be21e0bc6",
-    "tests/test_reader_layout.py": "cddadebec602724823445816f41db2bbda1bd907d936c834104ea3e4eb7cd52a",
+    "tests/test_publication.py": "afe975d896f46947842217dbb24038290b285025160f6040d2bcb45df069ccd6",
+    "tests/test_reader_layout.py": "3efd6ba16f5676fcc32d814db607d7f777d9eb6b4a33aa0b42b58f6557831b1f",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e",
     "tests/test_signals.py": "c187e4fd25c907bda60813cbc142549094b8b2947557ac4e921a5d8cc762d12d",
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
     "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
-    "tests/test_submission_prose.py": "4508e0e100c4601573197a3b38ea735c8253a7bda022a942947b62853bbb4002",
+    "tests/test_submission_prose.py": "9559beed6d321b830c6b007ebec3b4833c9d6febaa8de87742c0763517f8e3ed",
     "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e",
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
-    "tools/reference_map.py": "47ec8fedee43c56eeb7675eb1c8ef5a23125ca32098597049a52fa3084fada18",
+    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a",
     "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e"
   },
   "property_statistics_scope": "Every collector callback attributed to the active unittest case during this complete suite."

@@ -1,6 +1,7 @@
 const std = @import("std");
 const linux = std.os.linux;
 const raw = @import("raw_ops.zig");
+const cancellation = @import("async_cancel.zig");
 
 fn emit(writer: *std.Io.Writer, sqe: *const linux.io_uring_sqe) !void {
     try writer.print("{{\"tag\":{d},\"operation\":\"{s}\",\"length\":{d},\"flags\":{d},\"buffer_index\":{d}}}\n", .{
@@ -161,6 +162,7 @@ pub fn main(init: std.process.Init) !void {
     const args = try init.minimal.args.toSlice(init.arena.allocator());
     if (args.len != 2) return error.ExpectedInputFile;
     if (std.mem.eql(u8, args[1], "--linked-timeout")) return linkedTimeout(init.io);
+    if (std.mem.eql(u8, args[1], "--cancel")) return cancellation.run(init.io);
     const path = try init.arena.allocator().dupeSentinel(u8, args[1], 0);
     const file = try std.Io.Dir.cwd().openFile(init.io, args[1], .{});
     defer file.close(init.io);

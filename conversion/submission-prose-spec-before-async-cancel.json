@@ -1,0 +1,11 @@
+{
+  "scope": "Existing contracts before additional cancellation paragraph/helper inclusion cardinality",
+  "source_sha256": {
+    "tests/test_publication.py": "64dce303cfc86c83da6fbfa6360f3a29c9a796a479b22986b69bab5be21e0bc6",
+    "tests/test_submission_prose.py": "4508e0e100c4601573197a3b38ea735c8253a7bda022a942947b62853bbb4002",
+    "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
+    "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
+    "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
+    "tests/test_reader_layout.py": "cddadebec602724823445816f41db2bbda1bd907d936c834104ea3e4eb7cd52a"
+  }
+}

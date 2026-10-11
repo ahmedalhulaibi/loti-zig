@@ -1,0 +1,186 @@
+{
+  "scope": "Author current-kernel default-tag cancellation/CQE/operand/pipe-retirement contracts. Not ACL/verifier-agent or whole-port/kernel/race/device acceptance; goal incomplete.",
+  "reproduction": "async-cancel-reproduction.json",
+  "core": "async-cancel-spec-sha256.json",
+  "initial_core": "async-cancel-spec-initial-sha256.json",
+  "amendment": "async-cancel-spec-amendment.json",
+  "narrative_amendment": "submission-prose-cardinality-async-cancel.json",
+  "mutation": "mutation-async-cancel.json",
+  "contracts": {
+    "new_tests": 2,
+    "fresh_processes": 20,
+    "generated_property_claim": false,
+    "requests": 7,
+    "cancel_requests": 5,
+    "target_reads": 2,
+    "trace_damages": 13,
+    "default_constructor_body_exact": true,
+    "behavior": "Two low32-colliding full-u64 tags; targetA-ECANCELED/canceler0 separately consumed, missing/unknown/completed -ENOENT, unsupported-flags -EINVAL; targetB remains owned until stimulus/READ1, exact bytes/poison and four queried pipe closures."
+  },
+  "actual_oracle": {
+    "rings": 1,
+    "pipes": 2,
+    "submitted_sqes": 7,
+    "submission_batches": [
+      2,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "completion_guards": 0,
+    "stimulus_writes": 1,
+    "synchronous_pipe_reads": 0,
+    "queried_pipe_closures": 4,
+    "caller_ring_retained": true
+  },
+  "native_host": {
+    "kernel": "7.2.3-arch1-3",
+    "architecture": "x86_64"
+  },
+  "diagnostics": {
+    "active_source_paths": 7,
+    "visible_primary_findings": 0,
+    "disposed_findings": 1,
+    "disposition": "Workspace-root missing tests.test_linked_timeout warning false-positive; .venv importlib.find_spec and runtime imports resolve exact repository file.",
+    "type_narrowing": "Initial Optional regex warning fixed without changing expectations; first2-second re-probe was stale, subsequent10-second all-server/current7-path probe zero visible. Prior suppressions/OPF infos remain disclosed."
+  },
+  "navigation": {
+    "fabric": "Unavailable in current tool surface/PATH",
+    "graph": "Stale989c85c0/reportedHEAD2f4b15a7/absent cached who-uses is not complete callers. Inspected live main/run, SDK cancel/prep_cancel, CLI/default/new tests and explicit map/book consumers.",
+    "churn": {
+      "coverage": {
+        "binary_files": 397,
+        "failed_commits": 0,
+        "indexed_commits": 2,
+        "loaded_commits": 62,
+        "requested_commits": 62,
+        "skipped_merge_commits": 0,
+        "status": "complete",
+        "timestamp_anomalies": 0
+      },
+      "metric_version": 1,
+      "query": {
+        "attribution_mode": "commit-author",
+        "group_by": [],
+        "mode": "complete",
+        "period": "total",
+        "revision": "HEAD",
+        "since_utc": "2026-10-10T01:25:05Z",
+        "threshold_seconds": 2592000,
+        "timezone": "UTC",
+        "until_utc": "2026-10-11T01:25:05Z",
+        "week_start": "monday"
+      },
+      "replacement_policy": "positional-hunk-v1",
+      "rows": [
+        {
+          "additions": 130193,
+          "change_units": 135039,
+          "copied_lines": 3049,
+          "deletions": 7743,
+          "keys": {},
+          "new_work": 127296,
+          "refactor": 5233,
+          "replacements": 2897,
+          "rework": 2510
+        }
+      ]
+    },
+    "churn_scope": "Preimplementation committed-history62/62, not implementation/review acceptance."
+  },
+  "source_sha256": {
+    "README.md": "9f6b1a696c8017c31bd37398f13bad5d6bfde4c2b24c4588650cd376d30242f4",
+    "conversion/audit.md": "a88e2fb7d8d087dff7657025000e4b9afedcee043cd192d1981c0e4b878933e5",
+    "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
+    "examples/async_cancel.zig": "edc0762891f39b30d7f789f436bc15be0ac0c5a5347bc461443cfac9b7e2841e",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "examples/reference_submission.zig": "caed7d975ccadc60c08ee62e8681159764ccdd1698ebd8bc5a42704d77de22b3",
+    "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
+    "testdata/inputs/async-cancel-invalid-traces.json": "115ff933863fd1df19474b514d718e2ce2a482c5a4dd01559f7e1f0fd544573a",
+    "testdata/inputs/async-cancel-report.json": "35b3105d45fa8996204d8f11c3fba1159d3932ba133b685b103c1e1ad16cfe28",
+    "testdata/inputs/async-cancel.trace": "ca1f4fa223732d551bb771d4b6917931afc4cb3f9a4ab204bafb8e7616cd2bae",
+    "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
+    "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
+    "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
+    "testing.md": "6948bb7ec98f20809c4aa22dac6d107381c310a6d68329594ce53690299be0f4",
+    "tests/test_async_cancel.py": "3eebe3909f092342b90d29bc3599640976b24b77fa68408e1b800d945e052328",
+    "tests/test_linked_timeout.py": "bef445b63a28e96d3151c933249f9b073d30f78eb7e368b3ee1a5b97a207d972",
+    "tests/test_publication.py": "afe975d896f46947842217dbb24038290b285025160f6040d2bcb45df069ccd6",
+    "tests/test_reader_layout.py": "3efd6ba16f5676fcc32d814db607d7f777d9eb6b4a33aa0b42b58f6557831b1f",
+    "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
+    "tests/test_submission_prose.py": "9559beed6d321b830c6b007ebec3b4833c9d6febaa8de87742c0763517f8e3ed",
+    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a"
+  },
+  "reference_sha256": {
+    "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_prep_cancel.3.txt": "53e1337482cf6e25f7d1b838ebcab80036fcf01e40e683a5eeee79ab3be758e6",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "replayed_consumers": [
+    "accept-verification.json",
+    "connect-verification.json",
+    "copy-short-verification.json",
+    "epoll-verification.json",
+    "file-operations-verification.json",
+    "literal-policy-verification.json",
+    "mapping-failure-verification.json",
+    "messages-verification.json",
+    "ordinary-signal-verification.json",
+    "poll-verification.json",
+    "provided-buffers-verification.json",
+    "reference-semantics-verification.json",
+    "registered-files-verification.json",
+    "rwf-verification.json",
+    "signal-wait-verification.json",
+    "splice-verification.json",
+    "sqpoll-wakeup-verification.json",
+    "submission-prose-verification.json",
+    "provided-buffer-zero-verification.json",
+    "linked-timeout-verification.json"
+  ],
+  "gates": {
+    "tests": 92,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 166.896,
+    "book_sha256": "2fa2398d64e91c7a0881f85644077f6fe94049244fb5bf36c9c983a904661a3d",
+    "literals": 121,
+    "narrative_paragraphs": 365,
+    "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance.",
+    "zig": "0.17.0",
+    "executables": 25,
+    "build_steps": 51,
+    "strict_html": true,
+    "strict_epub": true,
+    "chapters": 27,
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "reader": {
+      "cases": 81,
+      "element_counts": {
+        "pre": 363,
+        "table": 6,
+        "image": 15,
+        "heading": 333,
+        "figure": 0
+      },
+      "violations": 0
+    }
+  },
+  "completion": {
+    "goal_complete": false,
+    "review": "Still blocked; no host change/retry/fallback/independent reviewer report; current HEAD needs review.",
+    "delivery": "Not pushed; final original-purpose semantic audit and personal-fork delivery remain open.",
+    "unverified_scope": "Other cancellation matching flags, duplicates, descriptors, readiness/completion races, EALREADY/busy and all unwind paths, other kernels/architectures and independent semantic/device acceptance."
+  }
+}

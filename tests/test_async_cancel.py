@@ -1,0 +1,128 @@
+"""Default u64-tag cancellation, two separate CQEs and unrelated READ retention."""
+
+import json
+from pathlib import Path
+import re
+import tempfile
+import unittest
+
+from tests.test_linked_timeout import execute
+
+ROOT = Path(__file__).resolve().parent.parent
+INPUTS = ROOT / "testdata/inputs"
+EXPECTED = json.loads((INPUTS / "async-cancel-report.json").read_text())
+
+
+def inspect_trace(text):
+    lines = [re.sub(r"\)\s+= ", ") = ", line) for line in text.splitlines()]
+    pipes = [(i, re.fullmatch(r"pipe2\(\[(\d+), (\d+)\], O_NONBLOCK\|O_CLOEXEC\) = 0", line))
+             for i, line in enumerate(lines) if line.startswith("pipe2(")]
+    setup = [(i, re.fullmatch(r"io_uring_setup\(8, .*flags=0,.*\) = (\d+)", line))
+             for i, line in enumerate(lines) if line.startswith("io_uring_setup(")]
+    if len(pipes) != 2 or any(match is None for _, match in pipes) or len(setup) != 1 or setup[0][1] is None:
+        raise ValueError("InvalidCancelSetup")
+    descriptors = []
+    for _, match in pipes:
+        assert match is not None
+        descriptors.extend(map(int, match.groups()))
+    ring = int(setup[0][1][1])
+    if len(set(descriptors + [ring])) != 5 or not pipes[0][0] < pipes[1][0] < setup[0][0]:
+        raise ValueError("WrongCancelSetupOwnership")
+    enters, guards = [], []
+    for i, line in enumerate(lines):
+        if line.startswith("io_uring_enter("):
+            match = re.fullmatch(r"io_uring_enter\((\d+), (\d+), (\d+), ([^,]+), (.*), (\d+)\) = (\d+)", line)
+            if match is None:
+                raise ValueError("InvalidCancelEnter")
+            fd, count, minimum, flags, argument, size, result = match.groups()
+            if int(fd) != ring:
+                raise ValueError("WrongCancelEnterOwner")
+            if int(count) > 0:
+                if (int(minimum), flags, argument, int(size), int(result)) != (0, "0", "NULL", 8, int(count)):
+                    raise ValueError("WrongCancelSubmissionArguments")
+                enters.append((i, int(count)))
+            else:
+                guard = re.fullmatch(r"\{sigmask=NULL, sigmask_sz=0, (?:min_wait_usec|min_time)=0, ts=\{tv_sec=1, tv_nsec=0\}\}", argument)
+                if (int(minimum), flags, int(size), int(result)) != (1, "IORING_ENTER_GETEVENTS|IORING_ENTER_EXT_ARG", 24, 0) or guard is None:
+                    raise ValueError("WrongCancelCompletionGuard")
+                guards.append(i)
+        read = re.match(r"(?:read|readv|pread64|preadv)\((-?\d+),", line)
+        if read is not None and int(read[1]) in descriptors:
+            raise ValueError("SynchronousCancelRead")
+    if [count for _, count in enters] != [2, 1, 1, 1, 1, 1]:
+        raise ValueError("WrongCancelSubmissionSequence")
+    if len(guards) > 7 or any(i < enters[0][0] for i in guards):
+        raise ValueError("WrongCancelGuardOrder")
+    writes = []
+    for i, line in enumerate(lines):
+        write = re.match(r"write\((\d+),", line)
+        if write is not None and int(write[1]) in descriptors:
+            writes.append((i, line))
+    if len(writes) != 1 or writes[0][1] != f'write({descriptors[3]}, "\\x5a", 1) = 1' or not enters[4][0] < writes[0][0] < enters[5][0]:
+        raise ValueError("WrongCancelStimulus")
+    retired = []
+    for fd in descriptors:
+        close = [i for i, line in enumerate(lines) if line == f"close({fd}) = 0"]
+        query = [i for i, line in enumerate(lines) if line == f"fcntl({fd}, F_GETFD) = -1 EBADF (Bad file descriptor)"]
+        if len(close) != 1 or len(query) != 1:
+            raise ValueError("IncompleteCancelRetirement")
+        if not enters[-1][0] < close[0] < query[0] or any(i >= close[0] for i in guards):
+            raise ValueError("WrongCancelRetirementOrder")
+        retired.append(query[0])
+    query = [i for i, line in enumerate(lines) if line in {f"fcntl({ring}, F_GETFD) = 1 (FD_CLOEXEC)", f"fcntl({ring}, F_GETFD) = 0x1 (flags FD_CLOEXEC)"}]
+    close = [i for i, line in enumerate(lines) if line == f"close({ring}) = 0"]
+    if len(query) != 1 or len(close) != 1 or not max(retired) < query[0] < close[0]:
+        raise ValueError("WrongCancelRetainedRing")
+    return {"rings": 1, "pipes": 2, "submitted_sqes": 7, "submission_batches": [2, 1, 1, 1, 1, 1],
+            "completion_guards": len(guards), "stimulus_writes": 1, "synchronous_pipe_reads": 0,
+            "queried_pipe_closures": 4, "caller_ring_retained": True}
+
+
+class AsyncCancelContracts(unittest.TestCase):
+    def test_exact_u64_target_and_unrelated_read_follow_separate_completion_ownership(self):
+        # Kills tag truncation, guessed CQEs, cancellation-as-consumption and
+        # loss of unrelated requests/storage, including invalid-flag side effects.
+        for iteration in range(20):
+            with self.subTest(iteration=iteration):
+                code, stdout, stderr = execute(["zig-out/bin/reference-submission", "--cancel"])
+                self.assertEqual((code, stderr), (0, b""))
+                self.assertEqual(json.loads(stdout), EXPECTED)
+        for arguments in ([], ["--cancel", "extra"]):
+            with self.subTest(arguments=arguments):
+                code, stdout, stderr = execute(["zig-out/bin/reference-submission", *arguments])
+                self.assertEqual((code, stdout), (1, b""))
+                self.assertEqual(stderr.splitlines()[0], b"error: ExpectedInputFile")
+
+    def test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement(self):
+        # Kills constant cleanup/deadline claims and missing/misowned enters.
+        oracle = {"rings": 1, "pipes": 2, "submitted_sqes": 7, "submission_batches": [2, 1, 1, 1, 1, 1],
+                  "completion_guards": 1, "stimulus_writes": 1, "synchronous_pipe_reads": 0,
+                  "queried_pipe_closures": 4, "caller_ring_retained": True}
+        self.assertEqual(inspect_trace((INPUTS / "async-cancel.trace").read_text()), oracle)
+        for damage in json.loads((INPUTS / "async-cancel-invalid-traces.json").read_text()):
+            with self.subTest(damage=damage["id"]):
+                try:
+                    inspect_trace(damage["trace"])
+                except ValueError as error:
+                    self.assertEqual(str(error), damage["error"])
+                else:
+                    self.fail("Damaged cancellation syscall contract was accepted")
+        with tempfile.TemporaryDirectory() as directory:
+            trace = Path(directory) / "syscalls.trace"
+            code, stdout, stderr = execute(["strace", "-qq", "-xx", "-s", "512", "-o", str(trace),
+                                           "-e", "trace=pipe2,io_uring_setup,io_uring_enter,read,readv,pread64,preadv,write,close,fcntl",
+                                           "zig-out/bin/reference-submission", "--cancel"])
+            self.assertEqual((code, stderr), (0, b""))
+            self.assertEqual(json.loads(stdout), EXPECTED)
+            try:
+                observed = inspect_trace(trace.read_text())
+            except ValueError as error:
+                self.fail(f"Invalid public cancellation trace: {error}")
+            guards = observed.pop("completion_guards")
+            self.assertLessEqual(guards, 7)
+            oracle.pop("completion_guards")
+            self.assertEqual(observed, oracle)
+
+
+if __name__ == "__main__":
+    unittest.main()

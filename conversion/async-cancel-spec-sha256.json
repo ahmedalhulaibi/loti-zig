@@ -1,0 +1,9 @@
+{
+  "scope": "Author preimplementation contract; no ACL seal or verifier-agent acceptance. Fixed finite flow,20 repetitions not PBT.",
+  "source_sha256": {
+    "tests/test_async_cancel.py": "3eebe3909f092342b90d29bc3599640976b24b77fa68408e1b800d945e052328",
+    "testdata/inputs/async-cancel.trace": "ca1f4fa223732d551bb771d4b6917931afc4cb3f9a4ab204bafb8e7616cd2bae",
+    "testdata/inputs/async-cancel-report.json": "35b3105d45fa8996204d8f11c3fba1159d3932ba133b685b103c1e1ad16cfe28",
+    "testdata/inputs/async-cancel-invalid-traces.json": "115ff933863fd1df19474b514d718e2ce2a482c5a4dd01559f7e1f0fd544573a"
+  }
+}

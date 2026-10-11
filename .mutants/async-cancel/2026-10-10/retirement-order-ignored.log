@@ -1,0 +1,16 @@
+test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) ...
+  test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) (damage='early-pipe-close') ... FAIL
+
+======================================================================
+FAIL: test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement (tests.test_async_cancel.AsyncCancelContracts.test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement) (damage='early-pipe-close')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_async_cancel.py", line 109, in test_actual_submissions_unrelated_pipe_stimulus_and_queried_retirement
+    self.fail("Damaged cancellation syscall contract was accepted")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Damaged cancellation syscall contract was accepted
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (failures=1)
