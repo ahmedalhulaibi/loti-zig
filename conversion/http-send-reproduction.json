@@ -1,0 +1,25 @@
+{
+  "scope": "Original runnable HTTP response teaching purpose; port now claims partial SEND progress and per-client failure isolation without an enforced nonterminal positive-short TCP boundary.",
+  "original_selectors": [
+    "tutorial/webserver_liburing.rst:18",
+    "tutorial/webserver_liburing.rst:623",
+    "tutorial/webserver_liburing.rst:636"
+  ],
+  "native": "examples/webserver.zig",
+  "existing_tests": "tests/test_http.py uses ordinary262400-byte binary response and stalled receive; neither configures server send buffer or attests a nonterminal positive-short SEND CQE.",
+  "baseline": {
+    "argv": [
+      "zig-out/bin/webserver",
+      "public",
+      "0",
+      "--observe-send"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "first_stderr": "error: ExpectedDocumentRootAndPort"
+  },
+  "plan": "Optional no-extra-path --observe-send configures only each owned accepted socket SO_SNDBUF4096/query8192. Record actual prepared SEND address-relative offset/length/flags and tagged CQE, then actual socket close/query. Owned131072-byte pseudorandom file, client SO_RCVBUF4096, require short CQE before drain or reset. Whole TCP bytes and follow-up37-byte GET independently establish progress/storage/reset survival. strace challenges buffer and retirement ordering;13 event/five trace damages.",
+  "limits": "No proof of forced SIGPIPE delivery, synchronous WRITEV, partial header sends, concurrent sender interleavings, every flag/protocol/error/kernel/architecture or independent semantic review.",
+  "mutation_policy": "Compiled native/syntax-valid parser variants only; rebuild restored native before Python variants; sequential bounded scope; spec exact restored.",
+  "review": "Existing host blocker unchanged; no retry/fallback; goal incomplete."
+}
