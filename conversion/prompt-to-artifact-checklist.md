@@ -14,14 +14,16 @@ preserved purpose/order/attribution/licence/images; verified accepted delivery.
 | 4. Update relevant text | Whole26 author comparisons plus latest sqe-flag-audit.md:LINK boundary/HARDLINK validation-initialization clarified in raw reference/tutorial | Finite19-plan native probes support scoped correction;no native/test edit. Independent meaning acceptance remains open. |
 | Publication fidelity | sqe-flag-verification.json:strict HTML/EPUB;actual27 chapters/121 literals/368 paragraphs;four whole corrected flag paragraphs | Current217ae9e5… archive checked;prior consumer d0e95c7b…/main8126d69d… receipts remain history. Fidelity is not semantics. |
 | Native/public/tool contracts | Last44d9b32 cold25 build/full103/16×400/175.449s;latest affected6/10.046s and4 source CLIs pass | Native/tests/fixtures exact;no new full/build promotion.226 selected pins change only2 manuscripts;historical supplement not repinned,fresh16 live slices captured. |
+| Fatal IO lifetime | pending-teardown-reproduction.json:idle RECV+next ACCEPT consumed before observer WriteFailed;ring/client closes follow;SDK sync-cancel pipe targets retire | No demonstrated UAF or all HTTP I/O retirement. Verifier-authored boundary tests/barrier design needed;native code unchanged. |
 | Verify verifier strength | `mutation-frontmatter.json`:three valid README source-prose kills; cumulative292 bounded valid mutants | Literal/narrative stale claims and canonical-output overwrite caught; restored1. Author hashes are not ACL seals, comprehensive mutation assessment or independent acceptance. |
 | Reader suitability | Latest sqe-flag receipt:81 Chromium reflows/zero violations;EPUBCheck5.2.1 zero messages | Actual current archive;sweeps not added;no Supernote/device pagination/font-override or Calibre claim. |
 | Attribution/licence/images | Current publication verifier plus unchanged original `LICENSE`, licence.rst, five illustrations/logo and Shuveb/Ahmed credits | Byte/structure checks retained; final prompt audit must inspect actual artefacts. |
 | Mandatory independent review | `conversion/review-blocker.md`, handoff, `independent-review-fd9025d.md`; native async c27be9dc completed | BLOCK: partial source inspection only; no independent complete purpose census or runtime/publication validation. Parent direct review is not independent acceptance. |
 | Final delivery/completion | Final current-HEAD review/findings, affected/full gates, personal-fork push and remote hash verification | Not done. No PR/release requested; do not push/complete before acceptance. |
 
-Latest direct gates: `sqe-flag-audit.md`/`sqe-flag-verification.json`.
-Two flag prose fixes;affected6/current publication checked;full103 remains44d9b32.
+Latest exploration: `pending-teardown-audit.md`/`pending-teardown-reproduction.json`.
+Fatal HTTP cleanup reproduced;pipe cancellation candidate checked;no native/book/test
+edit or new full/publication replay. Last affected6/publication021e98e;full10344d9b32.
 Native/tests/fixtures/expectations and historical receipts remain unchanged.
 Owner prefers direct review; independent-acceptance boundary remains open.
 

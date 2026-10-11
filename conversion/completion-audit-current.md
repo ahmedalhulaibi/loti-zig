@@ -34,12 +34,14 @@ exclusions/dispositions. Canonical counts alone are not exhaustive spelling/flag
 coverage. Independent verification is not waived; required omissions must still
 be fixed. **Do not mark complete or push before acceptance.**
 
-Latest direct replay: `sqe-flag-audit.md`/`sqe-flag-verification.json`;
-finite native probes distinguish DRAIN, LINK, HARDLINK and submission boundaries.
-Two manuscripts clarify chain scope and initialization failure despite positive
-submit return. Affected6 tests/current strict archive/81 reflows/EPUBCheck pass;
-independent BLOCK/completeness/final delivery remain open.
+Latest direct exploration: `pending-teardown-audit.md` and
+`pending-teardown-reproduction.json`. Observer stdout EIO reproduces fatal
+unwind with an idle RECV/next ACCEPT previously submitted. Native exact-SDK
+synchronous cancellation retires private pipe targets;not all HTTP I/O proof.
+No native/book/test edit. Retirement barrier and independent acceptance remain open.
+Last publication/affected6 gate is021e98e;full103/cold25 remain44d9b32 history.
 
-Next: finish remaining source/purpose comparison, resolve the independent
-acceptance boundary, fix findings and replay affected gates. Audit exact required
-surfaces, then push the personal fork and verify the delivered commit.
+Next: obtain a runtime-capable independent verifier/qualifying owner-approved
+alternative;specify fatal pending-I/O retirement,then repair/replay affected gates.
+Finish source/purpose comparison and exact required-surface audit before personal
+fork delivery. Do not substitute ring-close order or this author probe for acceptance.
