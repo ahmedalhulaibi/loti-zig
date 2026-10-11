@@ -1,0 +1,13 @@
+test_default_responses_and_request_eof_retire_owned_descriptors (tests.test_http_close.DefaultHttpCloseContracts.test_default_responses_and_request_eof_retire_owned_descriptors)
+Kills default-only socket leaks and shutdown-write masquerading as close. ... ok
+test_defined_error_responses_and_root_confinement (tests.test_http.HttpContracts.test_defined_error_responses_and_root_confinement) ... ok
+test_fragmented_request_and_concurrent_clients (tests.test_http.HttpContracts.test_fragmented_request_and_concurrent_clients) ... ok
+test_get_mime_length_and_binary_body (tests.test_http.HttpContracts.test_get_mime_length_and_binary_body) ... ok
+test_one_slow_client_does_not_block_other_clients (tests.test_http.HttpContracts.test_one_slow_client_does_not_block_other_clients) ... ok
+test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive (tests.test_http_send.HttpSendContracts.test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive) ... ok
+test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.061s
+
+OK

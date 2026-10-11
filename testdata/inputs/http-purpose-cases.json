@@ -1,0 +1,13 @@
+{
+  "payload_file": "testdata/inputs/http-send-probe.bin",
+  "mime_cases": [
+    ["item.JpG", "image/jpeg"], ["item.JPEG", "image/jpeg"],
+    ["item.PNG", "image/png"], ["item.GIF", "image/gif"],
+    ["item.HTM", "text/html"], ["item.HTML", "text/html"],
+    ["item.JS", "application/javascript"], ["item.CSS", "text/css"],
+    ["item.TXT", "text/plain"], ["item.unknown", "application/octet-stream"]
+  ],
+  "file_limit": 4194304,
+  "limit_cases": [[4194303, 200], [4194304, 200], [4194305, 413]],
+  "too_large": {"reason": "Content Too Large", "body": "Content Too Large\n"}
+}

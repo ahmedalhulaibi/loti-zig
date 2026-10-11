@@ -1,0 +1,10 @@
+{
+  "payload_file": "testdata/inputs/http-send-probe.bin",
+  "cases": [
+    {"name": "body", "request": "GET /probe.bin HTTP/1.1\r\nHost: localhost\r\n\r\n", "header": "HTTP/1.1 200 OK\r\nServer: loti-zig\r\nContent-Type: application/octet-stream\r\nContent-Length: 37\r\nConnection: close\r\n\r\n", "body": "probe"},
+    {"name": "empty-body", "request": "GET /empty.bin HTTP/1.1\r\n\r\n", "header": "HTTP/1.1 200 OK\r\nServer: loti-zig\r\nContent-Type: application/octet-stream\r\nContent-Length: 0\r\nConnection: close\r\n\r\n", "body": "empty"},
+    {"name": "error-body", "request": "GET /missing HTTP/1.1\r\n\r\n", "header": "HTTP/1.1 404 Not Found\r\nServer: loti-zig\r\nContent-Type: text/plain\r\nContent-Length: 10\r\nConnection: close\r\n\r\n", "body": "Not Found\n"},
+    {"name": "empty-request-eof", "request": "", "header": "", "body": "empty"},
+    {"name": "unfinished-request-eof", "request": "GET /unfinished", "header": "", "body": "empty"}
+  ]
+}

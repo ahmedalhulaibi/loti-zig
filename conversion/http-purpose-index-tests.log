@@ -1,0 +1,7 @@
+test_damaged_notes_and_stale_reports_fail (tests.test_dispositions.DispositionContracts.test_damaged_notes_and_stale_reports_fail) ... ok
+test_exact_line_index_and_fresh_process_determinism (tests.test_dispositions.DispositionContracts.test_exact_line_index_and_fresh_process_determinism) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.582s
+
+OK

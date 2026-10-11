@@ -1,0 +1,24 @@
+test_default_responses_and_request_eof_retire_owned_descriptors (tests.test_http_close.DefaultHttpCloseContracts.test_default_responses_and_request_eof_retire_owned_descriptors)
+Kills default-only socket leaks and shutdown-write masquerading as close. ... FAIL
+
+======================================================================
+FAIL: test_default_responses_and_request_eof_retire_owned_descriptors (tests.test_http_close.DefaultHttpCloseContracts.test_default_responses_and_request_eof_retire_owned_descriptors)
+Kills default-only socket leaks and shutdown-write masquerading as close.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_close.py", line 82, in test_default_responses_and_request_eof_retire_owned_descriptors
+    self.assertEqual(census(process, [probe, empty]), (baseline, 0), case["name"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: ({'socket:[20365886]', 'socket:[20365889]'}, 0) != ({'socket:[20365886]'}, 0)
+
+First differing element 0:
+{'socket:[20365886]', 'socket:[20365889]'}
+{'socket:[20365886]'}
+
+- ({'socket:[20365886]', 'socket:[20365889]'}, 0)
++ ({'socket:[20365886]'}, 0) : body
+
+----------------------------------------------------------------------
+Ran 1 test in 0.010s
+
+FAILED (failures=1)

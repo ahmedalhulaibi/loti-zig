@@ -1,0 +1,46 @@
+{
+  "scope": "Two author-run bounded compiled default-mode leaks. Header-only and write-shutdown proxies killed by public EOF/child-only descriptor census; not whole-port or independent acceptance.",
+  "constraints": {
+    "MemoryMax": "4G",
+    "MemorySwapMax": 0,
+    "TasksMax": 128
+  },
+  "spec_sha256": {
+    "tests/test_http_close.py": "48de4647e51b9aa6a0b5a18affe354ee7b3aeb07da3a9f03ec83a60dd3c32072",
+    "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
+    "testdata/inputs/http-close-contracts.json": "469cefa71d36b5acc3353b7dee94c87351d71b5ee5d7167a437a32849f947e67"
+  },
+  "assessments": [
+    {
+      "name": "default-close-omitted",
+      "kind": "native",
+      "result": "substantive-assertion-kill",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "binary_sha256": "149f1e452730541904f5a387d223dace33868531d87fc03c1e481e070571b43d",
+      "scope": "Default-mode only; owned native execution path routing, no test/expected-value changes."
+    },
+    {
+      "name": "default-shutdown-is-not-close",
+      "kind": "native",
+      "result": "substantive-assertion-kill",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "binary_sha256": "a54f912d6c7cebd76058265cb545cec1d7fddfc3c1642deb7fa7c4e56d59762d",
+      "scope": "Default-mode only; owned native execution path routing, no test/expected-value changes."
+    }
+  ],
+  "new_native_kills": 2,
+  "restored_tests": 7,
+  "production_source_unchanged": true,
+  "production_binary_sha256": "5b68d64202c491c8f06408b49fcec207e13be567be655e760bf82861228f9b01",
+  "exclusions": "Compiler/test errors, skips and runner failures cannot count. Targeted owned EOF deadline assertion is the public connection-close contract; native omission keeps connection open, not a compiler/runner timeout."
+}

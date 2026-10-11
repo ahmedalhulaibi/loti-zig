@@ -1,0 +1,149 @@
+{
+  "scope": "Finite owned real default-mode loopback HTTP: all nine original case-insensitive extension spellings plus fallback;4MiB-1/4MiB/4MiB+1; whole wire through EOF and child-only file/socket census. Not valid image decoding, generated PBT, all statuses, concurrency/races or physical storage failure.",
+  "cases": [
+    {
+      "file": "item.JpG",
+      "status": 200,
+      "mime": "image/jpeg",
+      "body_bytes": 37,
+      "wire_bytes": 139,
+      "wire_sha256": "9be563441a84c5a636f4e32f0b3ac1e95041f0693f278a586d267c50beedf792",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "item.JPEG",
+      "status": 200,
+      "mime": "image/jpeg",
+      "body_bytes": 37,
+      "wire_bytes": 139,
+      "wire_sha256": "9be563441a84c5a636f4e32f0b3ac1e95041f0693f278a586d267c50beedf792",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "item.PNG",
+      "status": 200,
+      "mime": "image/png",
+      "body_bytes": 37,
+      "wire_bytes": 138,
+      "wire_sha256": "764bf0f42646d1fe22f9115802c4967e991ac7fd4d4b5060a5cdd852983e73ec",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "item.GIF",
+      "status": 200,
+      "mime": "image/gif",
+      "body_bytes": 37,
+      "wire_bytes": 138,
+      "wire_sha256": "827beed645966669b176a34ee557ebcc16c8a1acfa84a54e24eeca720af32fdb",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "item.HTM",
+      "status": 200,
+      "mime": "text/html",
+      "body_bytes": 37,
+      "wire_bytes": 138,
+      "wire_sha256": "37a851f0b7a370ab068ca10cc07d3ab3f6fda1fadf146d8400ffc754ec6d790f",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "item.HTML",
+      "status": 200,
+      "mime": "text/html",
+      "body_bytes": 37,
+      "wire_bytes": 138,
+      "wire_sha256": "37a851f0b7a370ab068ca10cc07d3ab3f6fda1fadf146d8400ffc754ec6d790f",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "item.JS",
+      "status": 200,
+      "mime": "application/javascript",
+      "body_bytes": 37,
+      "wire_bytes": 151,
+      "wire_sha256": "db0df3f315f9bce5d153e3e4a6e0448431052cab418588b65c7c1b7f9440dba6",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "item.CSS",
+      "status": 200,
+      "mime": "text/css",
+      "body_bytes": 37,
+      "wire_bytes": 137,
+      "wire_sha256": "3596df5f5f4c829bb7115f4dec9b4f56bc8e0a6bcf3cddfe14f9392221323dfd",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "item.TXT",
+      "status": 200,
+      "mime": "text/plain",
+      "body_bytes": 37,
+      "wire_bytes": 139,
+      "wire_sha256": "97a6c2262c834ba6c929d52db2c3b85b2f8edd08241df535e218c0edec563474",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "item.unknown",
+      "status": 200,
+      "mime": "application/octet-stream",
+      "body_bytes": 37,
+      "wire_bytes": 153,
+      "wire_sha256": "8701410ef8c615e3baea7373a0007d83ce5b5bb915e4fa6f9f3fc4ead1cbcd28",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "size-4194303.bin",
+      "status": 200,
+      "mime": "application/octet-stream",
+      "body_bytes": 4194303,
+      "wire_bytes": 4194424,
+      "wire_sha256": "ee7bd00da2bf29bfe206680fe76065d3ceafbf322f6e8e04ab731041cd028a94",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "size-4194304.bin",
+      "status": 200,
+      "mime": "application/octet-stream",
+      "body_bytes": 4194304,
+      "wire_bytes": 4194425,
+      "wire_sha256": "e7a2f6739f377752ccdac65dd2a8f833777b936c0f0f02d5e60793f74624aba8",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    },
+    {
+      "file": "size-4194305.bin",
+      "status": 413,
+      "mime": "text/plain",
+      "body_bytes": 18,
+      "wire_bytes": 135,
+      "wire_sha256": "dedc700857a5718891f773ad289e8554518977b2d90987a8d0ecc95aa74ef005",
+      "tcp_eof_observed": true,
+      "owned_file_descriptors": 0,
+      "only_original_listener_socket_retained": true
+    }
+  ],
+  "source_files_unchanged": true
+}

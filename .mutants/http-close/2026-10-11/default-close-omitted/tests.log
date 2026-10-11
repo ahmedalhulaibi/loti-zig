@@ -1,0 +1,24 @@
+test_default_responses_and_request_eof_retire_owned_descriptors (tests.test_http_close.DefaultHttpCloseContracts.test_default_responses_and_request_eof_retire_owned_descriptors)
+Kills default-only socket leaks and shutdown-write masquerading as close. ... FAIL
+
+======================================================================
+FAIL: test_default_responses_and_request_eof_retire_owned_descriptors (tests.test_http_close.DefaultHttpCloseContracts.test_default_responses_and_request_eof_retire_owned_descriptors)
+Kills default-only socket leaks and shutdown-write masquerading as close.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_close.py", line 74, in test_default_responses_and_request_eof_retire_owned_descriptors
+    part = peer.recv(65536)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_close.py", line 76, in test_default_responses_and_request_eof_retire_owned_descriptors
+    self.fail("Default HTTP failed to close before owned deadline")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Default HTTP failed to close before owned deadline
+
+----------------------------------------------------------------------
+Ran 1 test in 5.016s
+
+FAILED (failures=1)
