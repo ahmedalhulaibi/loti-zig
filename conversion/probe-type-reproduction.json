@@ -1,0 +1,65 @@
+{
+  "scope": "Two misleading probe-type primary paths, not a native implementation or probe-lookup defect. Author body inspection and current native bytes only; no whole22-type/99-binding or independent acceptance.",
+  "before": [
+    {
+      "original": "io_uring_probe",
+      "zig": "std.os.linux.io_uring_probe",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    },
+    {
+      "original": "io_uring_probe_op",
+      "zig": "std.os.linux.io_uring_probe_op",
+      "example": "examples/reference_submission.zig",
+      "verification_scope": "compiled type usage; runtime ABI-size checks where applicable",
+      "semantic_difference": "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
+    }
+  ],
+  "original_selectors": [
+    "ref-liburing/supported_caps.rst:7",
+    "ref-liburing/supported_caps.rst:8",
+    "ref-liburing/supported_caps.rst:20",
+    "ref-liburing/supported_caps.rst:21"
+  ],
+  "body_evidence": {
+    "catalog": "Inspected entire reference_submission.main and its optional deadline/cancel dispatch:33 mixed preparations use no probe value or operation-entry lookup. Imported namespaces/unused helper declarations are not evidence of a primary compiled consumer.",
+    "actual_consumer": "examples/probe.zig checks size2064 at compile time, returns typed snapshot or get_probe value, and calls probe.is_supported for all59 SDK opcodes; installed SDK checks header bounds then probe.ops[i].is_supported. reference-registration also uses real typed probe values.",
+    "types": "Installed os/linux.zig:io_uring_probe owns16-byte header +256 native8-byte io_uring_probe_op entries; op/last_op are native IORING_OP enum(u8), not invented aliases."
+  },
+  "live_replay": {
+    "exit": 0,
+    "raw_bytes": 2064,
+    "raw_sha256": "e858235576ae9ffccdcf7df97ad0e22ce515be493c26096d1124336f23c33c47",
+    "byteorder": "little",
+    "header": {
+      "last_op": 64,
+      "ops_len": 65,
+      "reserved": 0,
+      "reserved_words": [
+        0,
+        0,
+        0
+      ]
+    },
+    "named_records": 59,
+    "whole_listing_independently_matches_raw": true
+  },
+  "source_sha256": {
+    "tools/reference_map.py": "ab77cd15913a7d4571cb8ee05a60bfe55ca083616077977d3e72c93e700d24c5",
+    "conversion/reference-map.json": "62bcaedbf725263258d6071d91bbf2c512d9f71cb08b71880196f202ce31e8d4",
+    "examples/probe.zig": "f7a10ca0cefce3d68d40814c88d4ce206b2f90a6722df71b0c28d6019482eaa7",
+    "examples/reference_submission.zig": "caed7d975ccadc60c08ee62e8681159764ccdd1698ebd8bc5a42704d77de22b3",
+    "examples/reference_registration.zig": "8888585bdaabd9c45eee3aa74d7346451682a6dfee0cda36f8e67f128d36b8c2",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "testdata/inputs/probe-opcodes.json": "77e7993b0b234164d3a248e8e14a7bd19b1988d868f207181ac657b861416132",
+    "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
+    "ref-zig/_api/probe_types.inc": "8e3e7efba816ef164e92dba7cdc966e538522685849844360a62145fe9b2a4bf"
+  },
+  "plan": "Author a whole two-row contract before producer correction; primary probe source and precise fixed-capacity/bounds/flag meaning. Other97 rows and all99 identity/signature fields remain unchanged. Challenge false primary, flexible allocation and any-nonzero support claims while generation/freshness pass.",
+  "completion": {
+    "goal_complete": false,
+    "review": "Existing supported-host blocker unchanged; no retry/fallback/report.",
+    "delivery": "Not pushed; original-purpose review, final acceptance and delivery remain open."
+  }
+}
