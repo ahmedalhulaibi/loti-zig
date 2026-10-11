@@ -1,0 +1,99 @@
+{
+  "source_commit": "edfbc3d1e481a949509f5d450975bdd3896ff8e2",
+  "original_selectors": [
+    "delme.c:224-226"
+  ],
+  "missing_purpose": "Execute linked deadline expiration and linked-operation success/failure, distinguish both tagged CQEs and retain borrowed buffers/timespecs; constructor metadata does not attest this.",
+  "baseline_cli": {
+    "command": [
+      "zig-out/bin/reference-submission",
+      "--linked-timeout"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "typed_error": "FileNotFound"
+  },
+  "private_abi_probe": {
+    "source_sha256": "3af48901219df15ccd5b7e463c6fe63ef1f0b425223170c4f063ac3857c48380",
+    "observations": [
+      {
+        "stage": 0,
+        "first": {
+          "user_data": 11,
+          "res": -62,
+          "flags": 0
+        },
+        "second": {
+          "user_data": 10,
+          "res": -125,
+          "flags": 0
+        },
+        "data": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      },
+      {
+        "stage": 1,
+        "first": {
+          "user_data": 20,
+          "res": 1,
+          "flags": 0
+        },
+        "second": {
+          "user_data": 21,
+          "res": -125,
+          "flags": 0
+        },
+        "data": [
+          90,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      },
+      {
+        "stage": 2,
+        "first": {
+          "user_data": 30,
+          "res": -9,
+          "flags": 0
+        },
+        "second": {
+          "user_data": 31,
+          "res": -125,
+          "flags": 0
+        },
+        "data": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      },
+      {
+        "user_data": 40,
+        "res": -22,
+        "flags": 0
+      }
+    ],
+    "scope": "Owned nonblocking pipe/current kernel only; author exploration, not independent review."
+  },
+  "review": "Still blocked; no retry/fallback or acceptance.",
+  "planned_scope": "Native/source/test/reader/binding/index consumers within the existing linked-request teaching boundary; separate directories are publication/test adapters, not unrelated subdomains.",
+  "metadata_correction": "Removed nonexistent draft ref-liburing/submission.rst:619-626 selector before implementation; original document has 594 lines and contains no prep_link_timeout declaration."
+}
