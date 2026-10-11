@@ -1,0 +1,7 @@
+test_close_effect_and_cancelled_close_fallback_before_process_exit (tests.test_link_ownership.LinkedOwnershipContracts.test_close_effect_and_cancelled_close_fallback_before_process_exit)
+Kills NOP-as-CLOSE and process-exit-only cleanup despite identical CQE reports. ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.027s
+
+OK

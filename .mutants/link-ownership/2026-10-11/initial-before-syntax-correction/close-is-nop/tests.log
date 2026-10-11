@@ -1,0 +1,23 @@
+test_close_effect_and_cancelled_close_fallback_before_process_exit (tests.test_link_ownership.LinkedOwnershipContracts.test_close_effect_and_cancelled_close_fallback_before_process_exit)
+Kills NOP-as-CLOSE and process-exit-only cleanup despite identical CQE reports. ... FAIL
+
+======================================================================
+FAIL: test_close_effect_and_cancelled_close_fallback_before_process_exit (tests.test_link_ownership.LinkedOwnershipContracts.test_close_effect_and_cancelled_close_fallback_before_process_exit)
+Kills NOP-as-CLOSE and process-exit-only cleanup despite identical CQE reports.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_link_ownership.py", line 135, in test_close_effect_and_cancelled_close_fallback_before_process_exit
+    self.assertEqual(actual["publication"], plan["publication"], plan["name"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'file_descriptors': 1, 'ring_descriptors': 1} != {'file_descriptors': 0, 'ring_descriptors': 1}
+- {'file_descriptors': 1, 'ring_descriptors': 1}
+?                      ^
+
++ {'file_descriptors': 0, 'ring_descriptors': 1}
+?                      ^
+ : successful-close
+
+----------------------------------------------------------------------
+Ran 1 test in 0.014s
+
+FAILED (failures=1)

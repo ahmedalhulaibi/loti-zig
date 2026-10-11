@@ -18,7 +18,7 @@ Success produces the complete JSON record:
 
 .. code-block:: json
 
-   {"results":[15,15,0],"data":"Hello, io_uring!"}
+   {"results":[16,16,0],"data":"Hello, io_uring!"}
 
 The failure run opens the file without read permission. Its write succeeds,
 the read reports ``-EBADF`` and the unstarted linked close reports
@@ -26,7 +26,7 @@ the read reports ``-EBADF`` and the unstarted linked close reports
 
 .. code-block:: json
 
-   {"results":[15,-9,-125],"data":""}
+   {"results":[16,-9,-125],"data":""}
 
 The application records results by tags 1, 2 and 3 rather than assuming CQ
 arrival order. A successful asynchronous close transfers closure responsibility;
@@ -45,3 +45,7 @@ can run concurrently. Do not confuse linking with ``IOSQE_IO_DRAIN``.
 ``tests/test_examples.py`` checks both complete result arrays, the returned text
 and actual file bytes. The read/write/close opcodes require Linux 5.6 or later;
 setup and each result remain the authoritative capability checks.
+``tests/test_link_ownership.py`` checks descriptor state before report publication
+using an owned full stdout pipe; syscall traces check application cleanup after
+a cancelled close. ``tests/test_link_prose.py`` checks complete publisher/archive
+JSON records against the original and native 16-byte message contract.

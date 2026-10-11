@@ -1,0 +1,64 @@
+{
+  "scope": "Author three bounded variants; isolated native copies, unchanged native repository source/binary and immutable expectation hashes. Not whole-port proof or independent review.",
+  "constraints": {
+    "MemoryMax": "4G",
+    "MemorySwapMax": 0,
+    "TasksMax": 128
+  },
+  "spec_sha256": {
+    "tests/test_link_ownership.py": "5a0415f2eb0b7f414bea33f31f8fa0e0b67c560e61fbb2306bb7cb8cc4f05cac",
+    "tests/test_link_prose.py": "7621fecaaedfac617300bbc424facf4e7a19fcf2b989a460dfd7ed94fea1732f",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "testdata/inputs/link-ownership-contracts.json": "7575f0b535471a7d10dc88f3c0f4c0e0d8504ae969ac7a6951c7890697f630d4"
+  },
+  "assessments": [
+    {
+      "name": "close-is-nop",
+      "kind": "native",
+      "result": "substantive-assertion-kill",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "binary_sha256": "e01d5cbbe83b42fae16bc7a1c7bf33ec163cdf5da69109fb6ee8005d032a50c0",
+      "selected_test": "tests.test_link_ownership",
+      "scope": "Owned binary path routing only; sources/expectations unchanged."
+    },
+    {
+      "name": "cancelled-close-fallback-omitted",
+      "kind": "native",
+      "result": "substantive-assertion-kill",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "binary_sha256": "b131781d663b3481ea1be6d12388c7fff884a08ab704616fa3d076d4225f805f",
+      "selected_test": "tests.test_link_ownership",
+      "scope": "Owned binary path routing only; sources/expectations unchanged."
+    },
+    {
+      "name": "source-link-count-is-fifteen",
+      "kind": "source-prose",
+      "result": "substantive-assertion-kill",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0
+      },
+      "binary_sha256": null,
+      "selected_test": "tests.test_link_prose",
+      "scope": "Fresh source/package fidelity passed; whole original/native JSON contract failed."
+    }
+  ],
+  "restored_tests": 3,
+  "new_kills": {
+    "native": 2,
+    "source_prose": 1
+  },
+  "excluded": "Initial incorrect15-byte draft fixture/baseline preserved separately; not a kill. Initial incomplete batch/driver and uncompiled fallback variant missing semicolon retained under initial-before-syntax-correction; final three replace partial initial assessment, not add to it. Compilation, test errors, skips and runner failures cannot count."
+}

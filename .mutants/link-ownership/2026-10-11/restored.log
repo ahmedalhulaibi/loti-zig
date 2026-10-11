@@ -1,0 +1,10 @@
+test_close_effect_and_cancelled_close_fallback_before_process_exit (tests.test_link_ownership.LinkedOwnershipContracts.test_close_effect_and_cancelled_close_fallback_before_process_exit)
+Kills NOP-as-CLOSE and process-exit-only cleanup despite identical CQE reports. ... ok
+test_complete_link_json_examples_match_original_and_native_byte_counts (tests.test_link_prose.LinkedProseContracts.test_complete_link_json_examples_match_original_and_native_byte_counts)
+Kills source/runtime arithmetic drift even when publication faithfully preserves it. ... ok
+test_linked_execution_and_failure_cancellation (tests.test_examples.ExampleContracts.test_linked_execution_and_failure_cancellation) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.595s
+
+OK

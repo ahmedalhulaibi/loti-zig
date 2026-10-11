@@ -1,0 +1,34 @@
+test_complete_link_json_examples_match_original_and_native_byte_counts (tests.test_link_prose.LinkedProseContracts.test_complete_link_json_examples_match_original_and_native_byte_counts)
+Kills source/runtime arithmetic drift even when publication faithfully preserves it. ... FAIL
+
+======================================================================
+FAIL: test_complete_link_json_examples_match_original_and_native_byte_counts (tests.test_link_prose.LinkedProseContracts.test_complete_link_json_examples_match_original_and_native_byte_counts)
+Kills source/runtime arithmetic drift even when publication faithfully preserves it.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_link_prose.py", line 29, in test_complete_link_json_examples_match_original_and_native_byte_counts
+    self.assertEqual(records, expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'results': [15, 15, 0], 'data': 'Hello, io_uring!'}, {[34 chars] ''}] != [{'results': [16, 16, 0], 'data': 'Hello, io_uring!'}, {[34 chars] ''}]
+
+First differing element 0:
+{'results': [15, 15, 0], 'data': 'Hello, io_uring!'}
+{'results': [16, 16, 0], 'data': 'Hello, io_uring!'}
+
+- [{'data': 'Hello, io_uring!', 'results': [15, 15, 0]},
+?                                            ^   ^
+
++ [{'data': 'Hello, io_uring!', 'results': [16, 16, 0]},
+?                                            ^   ^
+
+-  {'data': '', 'results': [15, -9, -125]}]
+?                            ^
+
++  {'data': '', 'results': [16, -9, -125]}]
+?                            ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.534s
+
+FAILED (failures=1)

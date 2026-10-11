@@ -1,0 +1,106 @@
+{
+  "scope": "Finite owned link pre-publication descriptor census/two before-exit syscall traces; fixed/SQPOLL file-pipe bytes; eventfd empty/37/131072 input prefix/file-pipe bytes. Not all error paths, races, platforms, notifications or transports.",
+  "links": [
+    {
+      "plan": "successful-close",
+      "publication": {
+        "file_descriptors": 0,
+        "ring_descriptors": 1
+      },
+      "report": {
+        "results": [
+          16,
+          16,
+          0
+        ],
+        "data": "Hello, io_uring!"
+      },
+      "application_close_results": [],
+      "file_bytes": 16,
+      "file_sha256": "1d3f148c6f836ac160927bb2782589edb811836f3c0e8469e6ecf7957a18dc66",
+      "trace": "conversion/tutorial-modes-link-successful-close.trace",
+      "trace_sha256": "469a96605445deb9c31fb4f568c7c9fb0de77469389611dc31364cf172fbdfa6"
+    },
+    {
+      "plan": "cancelled-close",
+      "publication": {
+        "file_descriptors": 1,
+        "ring_descriptors": 1
+      },
+      "report": {
+        "results": [
+          16,
+          -9,
+          -125
+        ],
+        "data": ""
+      },
+      "application_close_results": [
+        0
+      ],
+      "file_bytes": 16,
+      "file_sha256": "1d3f148c6f836ac160927bb2782589edb811836f3c0e8469e6ecf7957a18dc66",
+      "trace": "conversion/tutorial-modes-link-cancelled-close.trace",
+      "trace_sha256": "b67646765e9b9329313cced596e5b469ca524391067cd3e31599bb7290b6a9f9"
+    }
+  ],
+  "sinks": [
+    {
+      "program": "fixed-buffers",
+      "stdout_file_equals_pipe": true,
+      "stdout_bytes": 71,
+      "stdout_sha256": "ba73d4132c502cfb2cbfaa576241fbc427219888ded9198d0eb0b4489d3239ba",
+      "file_equals_stdout": true,
+      "exit_code": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "program": "sq-poll",
+      "stdout_file_equals_pipe": true,
+      "stdout_bytes": 49,
+      "stdout_sha256": "44fe6650361db29c9a01e673739d74510d87901cfbd92a2f0691a2d1900e41fb",
+      "file_equals_stdout": true,
+      "exit_code": 0,
+      "stderr_bytes": 0
+    }
+  ],
+  "events": [
+    {
+      "input_bytes": 0,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_report": {
+        "notifications": 1,
+        "user_data": 1,
+        "result": 0
+      },
+      "stdout_file_equals_pipe": true,
+      "source_unchanged": true
+    },
+    {
+      "input_bytes": 37,
+      "stdout_bytes": 37,
+      "stdout_sha256": "3633d1783672bee4c0683a9b43e9f6a0cb811ec72c68522b2571ffc36a9eb1aa",
+      "stderr_report": {
+        "notifications": 1,
+        "user_data": 1,
+        "result": 37
+      },
+      "stdout_file_equals_pipe": true,
+      "source_unchanged": true
+    },
+    {
+      "input_bytes": 131072,
+      "stdout_bytes": 512,
+      "stdout_sha256": "75a75df0f355949e6af2521a44f3304ffcb53fd913e41fc9f7facd912ea7b433",
+      "stderr_report": {
+        "notifications": 1,
+        "user_data": 1,
+        "result": 512
+      },
+      "stdout_file_equals_pipe": true,
+      "source_unchanged": true
+    }
+  ],
+  "limits": "Link syscall filter openat/close/setup/enter does not observe every SQE operand or all syscalls. Procfs census at owned blocked stdout is separate from CQE report/automatic exit cleanup. Finite runs are not generated PBT."
+}

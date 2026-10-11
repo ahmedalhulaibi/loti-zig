@@ -1,0 +1,3 @@
+.mutants/link-ownership/2026-10-11/cancelled-close-fallback-omitted/link.zig:11:26: error: expected ';' after statement
+    defer if (!closed) {}
+                         ^

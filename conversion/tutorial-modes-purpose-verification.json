@@ -1,0 +1,381 @@
+{
+  "scope": "Author full original/current five non-HTTP tutorial purposes14 blocks; repaired reader-facing link counts and strengthened actual closure boundary. Not independent or whole-port acceptance.",
+  "base_commit": "c13f63df52599924305136d8bb6b66046a1e2f7e",
+  "red_reproduction_commit": "0c4e5b9a2979abbfcdb379ad9a29ff114f2e21c4",
+  "original_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "original_chapter_sha256": {
+    "tutorial/fixed_buffers.rst": "59d402b212eccdbe68519e5e754fdee68a647fef94f98b7275abcbb5c1341ef7",
+    "tutorial/link_liburing.rst": "0e0753c80b8a1fac221f35f373d37ced882f7fcc7196be7c42d8644bbbe5c70f",
+    "tutorial/probe_liburing.rst": "9f5959ec23692e10d856637a4d9b656a9eef9d7f0881567396e94b3e2298cb30",
+    "tutorial/register_eventfd.rst": "a7606187dcb75f9c78eccee58b71f3e72a5fb93827d1cbbad80a925e5c727b9f",
+    "tutorial/sq_poll.rst": "4dd815d984d3d18c3ddb83de126b8a6d08493b611658f5510057c04e55d144b5"
+  },
+  "original_block_ids": [
+    "tutorial/fixed_buffers.rst:8",
+    "tutorial/fixed_buffers.rst:138",
+    "tutorial/link_liburing.rst:8",
+    "tutorial/link_liburing.rst:96",
+    "tutorial/link_liburing.rst:106",
+    "tutorial/link_liburing.rst:112",
+    "tutorial/link_liburing.rst:118",
+    "tutorial/probe_liburing.rst:7",
+    "tutorial/probe_liburing.rst:74",
+    "tutorial/register_eventfd.rst:9",
+    "tutorial/sq_poll.rst:20",
+    "tutorial/sq_poll.rst:180",
+    "tutorial/sq_poll.rst:201",
+    "tutorial/sq_poll.rst:212"
+  ],
+  "inventoried_lines": 626,
+  "outside_block_lines": 23,
+  "purpose_census": {
+    "compared_unique_blocks": 117,
+    "total_original_blocks": 128,
+    "remaining_original_block_ids": [
+      "tutorial/webserver_liburing.rst:18",
+      "tutorial/webserver_liburing.rst:472",
+      "tutorial/webserver_liburing.rst:490",
+      "tutorial/webserver_liburing.rst:537",
+      "tutorial/webserver_liburing.rst:553",
+      "tutorial/webserver_liburing.rst:568",
+      "tutorial/webserver_liburing.rst:578",
+      "tutorial/webserver_liburing.rst:597",
+      "tutorial/webserver_liburing.rst:611",
+      "tutorial/webserver_liburing.rst:623",
+      "tutorial/webserver_liburing.rst:636"
+    ],
+    "scope": "Purpose-report census only; wider prose and explicit requirement acceptance remain."
+  },
+  "required_reader_gap": {
+    "source_and_packaged_counts_before": [
+      15,
+      15,
+      0,
+      15,
+      -9,
+      -125
+    ],
+    "original_and_native_correct_counts": [
+      16,
+      16,
+      0,
+      16,
+      -9,
+      -125
+    ],
+    "repair": "Only two JSON literal count vectors corrected; existing verification paragraph extended, no new paragraph/cardinality. New whole publisher/archive contract guards meanings, not merely fidelity."
+  },
+  "verification_gap": "Compiled CLOSE-to-NOP survivor passed unchanged existing linked-result/file-byte test; new owned blocked-stdout/procfs/explicit-close oracles kill it.",
+  "gates": {
+    "full_suite": {
+      "receipt": "conversion/tutorial-modes-full-tests.json",
+      "tests": 101,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "seconds": 168.329,
+      "properties": 16,
+      "generated_valid_each": 400,
+      "source_pins": 198,
+      "make_epub_invoked": true
+    },
+    "native_build": {
+      "executables": 25,
+      "steps": 51,
+      "total": 51,
+      "exact_zig": "0.17.0"
+    },
+    "strict_html": true,
+    "strict_epub": true,
+    "current_publication": {
+      "scope": "Publication structure and source fidelity; not semantic or independent review.",
+      "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+      "book_sha256": "3a1aebc6e7def8d67d39a9386a32e4d36174899418f702c0018ceaaebc792233",
+      "original_chapters": 26,
+      "edition_chapters": 27,
+      "literal_blocks": 121,
+      "byte_identical_illustrations": 5,
+      "narrative_paragraphs": 368,
+      "narrative_source_matches": true,
+      "literal_policy": {
+        "language_counts": {
+          "zig": 99,
+          "console": 18,
+          "json": 2,
+          "text": 2
+        },
+        "rendered_languages_match": true,
+        "bounded_legacy_markers_absent": true
+      },
+      "licence_exact": true,
+      "local_links_valid": true,
+      "drm_absent": true,
+      "javascript_absent": true
+    },
+    "current_reader": {
+      "receipt": "conversion/tutorial-modes-reader.json",
+      "cases": 81,
+      "chapters": 27,
+      "book_sha256": "3a1aebc6e7def8d67d39a9386a32e4d36174899418f702c0018ceaaebc792233",
+      "violations": [],
+      "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review."
+    },
+    "epubcheck": {
+      "version": "5.2.1",
+      "fatals": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    }
+  },
+  "native_observation": {
+    "scope": "Finite owned link pre-publication descriptor census/two before-exit syscall traces; fixed/SQPOLL file-pipe bytes; eventfd empty/37/131072 input prefix/file-pipe bytes. Not all error paths, races, platforms, notifications or transports.",
+    "links": [
+      {
+        "plan": "successful-close",
+        "publication": {
+          "file_descriptors": 0,
+          "ring_descriptors": 1
+        },
+        "report": {
+          "results": [
+            16,
+            16,
+            0
+          ],
+          "data": "Hello, io_uring!"
+        },
+        "application_close_results": [],
+        "file_bytes": 16,
+        "file_sha256": "1d3f148c6f836ac160927bb2782589edb811836f3c0e8469e6ecf7957a18dc66",
+        "trace": "conversion/tutorial-modes-link-successful-close.trace",
+        "trace_sha256": "469a96605445deb9c31fb4f568c7c9fb0de77469389611dc31364cf172fbdfa6"
+      },
+      {
+        "plan": "cancelled-close",
+        "publication": {
+          "file_descriptors": 1,
+          "ring_descriptors": 1
+        },
+        "report": {
+          "results": [
+            16,
+            -9,
+            -125
+          ],
+          "data": ""
+        },
+        "application_close_results": [
+          0
+        ],
+        "file_bytes": 16,
+        "file_sha256": "1d3f148c6f836ac160927bb2782589edb811836f3c0e8469e6ecf7957a18dc66",
+        "trace": "conversion/tutorial-modes-link-cancelled-close.trace",
+        "trace_sha256": "b67646765e9b9329313cced596e5b469ca524391067cd3e31599bb7290b6a9f9"
+      }
+    ],
+    "sinks": [
+      {
+        "program": "fixed-buffers",
+        "stdout_file_equals_pipe": true,
+        "stdout_bytes": 71,
+        "stdout_sha256": "ba73d4132c502cfb2cbfaa576241fbc427219888ded9198d0eb0b4489d3239ba",
+        "file_equals_stdout": true,
+        "exit_code": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "program": "sq-poll",
+        "stdout_file_equals_pipe": true,
+        "stdout_bytes": 49,
+        "stdout_sha256": "44fe6650361db29c9a01e673739d74510d87901cfbd92a2f0691a2d1900e41fb",
+        "file_equals_stdout": true,
+        "exit_code": 0,
+        "stderr_bytes": 0
+      }
+    ],
+    "events": [
+      {
+        "input_bytes": 0,
+        "stdout_bytes": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_report": {
+          "notifications": 1,
+          "user_data": 1,
+          "result": 0
+        },
+        "stdout_file_equals_pipe": true,
+        "source_unchanged": true
+      },
+      {
+        "input_bytes": 37,
+        "stdout_bytes": 37,
+        "stdout_sha256": "3633d1783672bee4c0683a9b43e9f6a0cb811ec72c68522b2571ffc36a9eb1aa",
+        "stderr_report": {
+          "notifications": 1,
+          "user_data": 1,
+          "result": 37
+        },
+        "stdout_file_equals_pipe": true,
+        "source_unchanged": true
+      },
+      {
+        "input_bytes": 131072,
+        "stdout_bytes": 512,
+        "stdout_sha256": "75a75df0f355949e6af2521a44f3304ffcb53fd913e41fc9f7facd912ea7b433",
+        "stderr_report": {
+          "notifications": 1,
+          "user_data": 1,
+          "result": 512
+        },
+        "stdout_file_equals_pipe": true,
+        "source_unchanged": true
+      }
+    ],
+    "limits": "Link syscall filter openat/close/setup/enter does not observe every SQE operand or all syscalls. Procfs census at owned blocked stdout is separate from CQE report/automatic exit cleanup. Finite runs are not generated PBT."
+  },
+  "mutation": {
+    "receipt": "conversion/mutation-link-ownership.json",
+    "new_valid_kills": 3,
+    "native": 2,
+    "source_prose": 1,
+    "cumulative_bounded_author_kills": 287,
+    "scope": "Three final substantive assertion failures, zero errors/skips; compilation failure/partial first batch excluded, not added."
+  },
+  "source_sha256": {
+    "tutorial/fixed_buffers.rst": "772e903fd7e81d998063e5c62f5481b706371cf82f52dd2ae9f051fdeebc897a",
+    "tutorial/link.rst": "5e91d1504ed3009f8e995f02f57ea0d13ae6f9fee678bfa9f24bcf56dc503b52",
+    "tutorial/probe.rst": "b415df42f0cc9c67740248da0b7404f30b4db4e484765e0a97db0768060ff07c",
+    "tutorial/register_eventfd.rst": "db713152a495faceec5cb26cac2bbb4d6c00faebbf9614d8c403e4f125a2e2f9",
+    "tutorial/sq_poll.rst": "0c9a763df7ddcede3df3dc8920fb7efefa73e0f9bb244ba90513e95fd05f2f78",
+    "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
+    "examples/link.zig": "bf09728b29ec21d439e97473e2daf57febe42550eed9b00274091fddf21a1f61",
+    "examples/probe.zig": "f7a10ca0cefce3d68d40814c88d4ce206b2f90a6722df71b0c28d6019482eaa7",
+    "examples/register_eventfd.zig": "3e59de2ec80f68917de35bb901729e37f0966acdb6295c4bf46dbc31d9e9bd6c",
+    "examples/sq_poll.zig": "38902d98ddfeb80423222129543a23fce78c130b9216c5e92346cb1a0bb710d4",
+    "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
+    "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "tests/test_link_ownership.py": "5a0415f2eb0b7f414bea33f31f8fa0e0b67c560e61fbb2306bb7cb8cc4f05cac",
+    "tests/test_link_prose.py": "7621fecaaedfac617300bbc424facf4e7a19fcf2b989a460dfd7ed94fea1732f",
+    "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
+    "testdata/inputs/link-ownership-contracts.json": "7575f0b535471a7d10dc88f3c0f4c0e0d8504ae969ac7a6951c7890697f630d4",
+    "conversion/source-inventory.json": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+    "conversion/chapter-map.json": "1d95f62c232872ec0a8c1466a9f395c9523241cac7e2a75a79cc3c81b17f6309",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
+    "conversion/review-blocker.md": "6f8a04789053e16a80225de9faa31ffc98ad8a9f477da122ef74fbd07bd8fa75",
+    "conversion/epub-verification.json": "32896fb8b561b9e4c04697716647c95d3747396dc147e31136350b7daffb8eec",
+    "conversion/reader-layout-verification.json": "f638da0585c84743421149eed4dee0d1ca0321dd11b2884ba26cbed329eec967"
+  },
+  "artifact_sha256": {
+    ".mutants/link-ownership/2026-10-11/cancelled-close-fallback-omitted/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".mutants/link-ownership/2026-10-11/cancelled-close-fallback-omitted/link.zig": "6e4259cf866c4014dd5539046ca159aef1d07e4451371013a9c66d9c0c19f1db",
+    ".mutants/link-ownership/2026-10-11/cancelled-close-fallback-omitted/tests.json": "a93392993180741491b61633d30e0cc13968cd6caaa4110612b5ada6f97dfe21",
+    ".mutants/link-ownership/2026-10-11/cancelled-close-fallback-omitted/tests.log": "9439f29d47237f2a23c606773eceec61a09e8a0072eac8b3556c1052261e10bd",
+    ".mutants/link-ownership/2026-10-11/close-is-nop/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".mutants/link-ownership/2026-10-11/close-is-nop/link.zig": "04e9a98d36828bd20d66b22d8b9faf0e85ef03b750a18d42f51ad8ed8bdb3d55",
+    ".mutants/link-ownership/2026-10-11/close-is-nop/tests.json": "a93392993180741491b61633d30e0cc13968cd6caaa4110612b5ada6f97dfe21",
+    ".mutants/link-ownership/2026-10-11/close-is-nop/tests.log": "dc0a1b487d4a282ae4414183074163c53432b8185c10bfffdb614c577b12fc68",
+    ".mutants/link-ownership/2026-10-11/initial-before-syntax-correction/baseline-after-excluded-build.log": "868ec360e81d3e3f226253a5c7e0b1c5d65a3504e1cd605a14d048b95f0e058c",
+    ".mutants/link-ownership/2026-10-11/initial-before-syntax-correction/cancelled-close-fallback-omitted/build.log": "30e3648f1e302d5ba3b0933ad007c90cc45003266caf2f78a222d9928dbbcfba",
+    ".mutants/link-ownership/2026-10-11/initial-before-syntax-correction/cancelled-close-fallback-omitted/link.zig": "bb96244924e3ae8d9f3018253333bf18dba019c82e8c947042c710f7fe516413",
+    ".mutants/link-ownership/2026-10-11/initial-before-syntax-correction/close-is-nop/build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".mutants/link-ownership/2026-10-11/initial-before-syntax-correction/close-is-nop/link.zig": "04e9a98d36828bd20d66b22d8b9faf0e85ef03b750a18d42f51ad8ed8bdb3d55",
+    ".mutants/link-ownership/2026-10-11/initial-before-syntax-correction/close-is-nop/tests.json": "a93392993180741491b61633d30e0cc13968cd6caaa4110612b5ada6f97dfe21",
+    ".mutants/link-ownership/2026-10-11/initial-before-syntax-correction/close-is-nop/tests.log": "dc0a1b487d4a282ae4414183074163c53432b8185c10bfffdb614c577b12fc68",
+    ".mutants/link-ownership/2026-10-11/initial-before-syntax-correction/driver.log": "6962babf29562a3c7d32e69b9353f4cb9d22a9d3afba61e1b067251dfce0acc1",
+    ".mutants/link-ownership/2026-10-11/initial-before-syntax-correction/driver.py": "00f563abbe06011bcfb29290d489f65f52300f83d836370a2eaa3322180e83df",
+    ".mutants/link-ownership/2026-10-11/report.json": "9c73ac8f30011bc4db231f87331dcf2b7a2f7c429f4307df9d7accf2aa7a7cfc",
+    ".mutants/link-ownership/2026-10-11/restored.log": "e9615531a38bba932930365be21ee36f095361f89f890d513d9cbc46025bee42",
+    ".mutants/link-ownership/2026-10-11/source-link-count-is-fifteen/build.log": "4be0efad92f2b46922bd615e7c8b49d6c47cb834d65997422ffd47c685ac4fce",
+    ".mutants/link-ownership/2026-10-11/source-link-count-is-fifteen/fidelity.json": "f94b3af81deed7e48b2327df133aefb48245d526d5a7161d561a88d04dde5299",
+    ".mutants/link-ownership/2026-10-11/source-link-count-is-fifteen/fidelity.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".mutants/link-ownership/2026-10-11/source-link-count-is-fifteen/tests.json": "a93392993180741491b61633d30e0cc13968cd6caaa4110612b5ada6f97dfe21",
+    ".mutants/link-ownership/2026-10-11/source-link-count-is-fifteen/tests.log": "2ecb8a6ba801791c1c6d82e98e66a77757f709de2db9b29fc35f38f8ee7e9f3c",
+    "conversion/link-ownership-corrected-baseline.log": "587320156c2274b819bb6c21bb3ad4cf0dc80411b0ef5e2a6c045fc05ad32de8",
+    "conversion/link-ownership-existing-reproduction.log": "31f6dadad632e67296f5b4151548d611063f7baa9f99c5c1e9976e6374626818",
+    "conversion/link-ownership-green.log": "3b0b3ce60e124cfc0e7cbe53004e25d7df4535bfe01236fac5a21a87f3b46d72",
+    "conversion/link-ownership-initial-spec-test.log": "0ea727d70df06c1d01839c20ff285ebe0cb5b49c07d9f239c61d8f0983830081",
+    "conversion/link-ownership-initial-spec.json": "126f12b0e005d1d60818f75a051216bed7e3124639b8cd7f6b6118234e1fb0a2",
+    "conversion/link-ownership-mutations.log": "f3aadf82b5c9288d7ae25324abf879b26614870792e25e2874ff396fff1fc383",
+    "conversion/link-ownership-mutations.py": "3a4452d33fb8a7f0b7c54e1fdaaeaa5397ff379550b5c275adab109d4a834e3d",
+    "conversion/link-ownership-reproduction-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "conversion/link-prose-spec-red.log": "dbb8e38c583a269c364586f0282664e7ff70ca0a1c05dbbfa9f9035ee6e2a3f7",
+    "conversion/mutation-link-ownership.json": "9c73ac8f30011bc4db231f87331dcf2b7a2f7c429f4307df9d7accf2aa7a7cfc",
+    "conversion/prompt-to-artifact-checklist.md": "e01ab29c4b99d518dc04d6b2302fd15713561f2fc05c18950c7cefd43dc017d7",
+    "conversion/tutorial-modes-build.log": "d795131055da7314c199371fd82132cfbfb3899a45443a747b5e98874153c3ca",
+    "conversion/tutorial-modes-epub.log": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940",
+    "conversion/tutorial-modes-epubcheck.log": "1b871a801b1773626c473f38741caef8c98ef34b42c5b60ec1c5109e2bdec171",
+    "conversion/tutorial-modes-full-tests.json": "e9b9a91e27acea119ea5117b61b0da679e24f450d3cf8da45a45a49f342338c3",
+    "conversion/tutorial-modes-full-tests.log": "2c0b944687b5f08fe0f1f4942dbc971765d0ef7acb007469595a11801801c2e9",
+    "conversion/tutorial-modes-html.log": "8dd8ff3153e9e93e7fba214505bbb99713a6dc3c5eefc5511dddf4bd79a41a62",
+    "conversion/tutorial-modes-input-changes.json": "81b47334116b2b054b0fe115dd5b367ed8a67abffffc3c7104f18f567901cf25",
+    "conversion/tutorial-modes-link-cancelled-close.trace": "b67646765e9b9329313cced596e5b469ca524391067cd3e31599bb7290b6a9f9",
+    "conversion/tutorial-modes-link-successful-close.trace": "469a96605445deb9c31fb4f568c7c9fb0de77469389611dc31364cf172fbdfa6",
+    "conversion/tutorial-modes-native-run.py": "1a21e979dd0274dfcf3f502aebb83dfa05cba80068d94ad5d970361f7bf2fe0b",
+    "conversion/tutorial-modes-native.json": "6128b7a5dffdead398558cc873c3d94664fe0fee4493ce2ecdd95a9fa17c706a",
+    "conversion/tutorial-modes-publication.json": "aeed720d5436e6f90372869a17f88081a5bf219201fa39ebdcddfc85240f3ac0",
+    "conversion/tutorial-modes-purpose-audit.md": "6d6db1e2038181746035250f4282de372529d308ee94bce0067381ed9ca5acba",
+    "conversion/tutorial-modes-reader-initial-summary.json": "c4081dbf4d07e78a3c48c2dbd1c87bf5f4b378cfae25cf54fe5936523e991b4f",
+    "conversion/tutorial-modes-reader.json": "12932ebef521ddbb7865594c3cad0ba686dede326f7bdc3e9dfcce08939ef566",
+    "conversion/tutorial-modes-reader.log": "c4081dbf4d07e78a3c48c2dbd1c87bf5f4b378cfae25cf54fe5936523e991b4f",
+    "conversion/tutorial-modes-reproduction.json": "9b4e575e770fe8fb714fcd01be6036a15bebecf324f799e3a7b2fcff6712bfc2",
+    "conversion/tutorial-modes-suite.py": "73df1f24e4797667c5924bc851a6debdfce080f5302c5c9bc42351df6e32aaa6",
+    "conversion/tutorial-modes-log-normalization.json": "e04d53b53f34f6f8381b08cc0cb57ea042614da77ddda7d5f2f508bbdfec5464"
+  },
+  "sdk_source_sha256": {
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "native_binary_sha256": {
+    "fixed-buffers": "b0e582e5f6bc10928c7e8b461690747ff31a3f38f47f9ada39b887c017428e49",
+    "link": "7bfd381587826ed013bfc6e536850b31f78ce8f80eec28f34f32826fbb601d28",
+    "probe": "cb69176874e42e3fb253de5716995eda83775dcdc341652ba4d72ad3c630e347",
+    "register-eventfd": "a868a8d8c503ec6335862d9ff1dd0ca0a65e65212e55cd419bf35044d23ff10f",
+    "sq-poll": "42367f30baf09b130d5f7b90b2de5b11812179762e14d40c7089b95a030c6a42"
+  },
+  "historical_integrity": {
+    "old93_changed_inputs": [
+      "tutorial/link.rst"
+    ],
+    "old99_source_pins_unchanged": 194,
+    "type_sources_logs_unchanged": 90,
+    "old_receipts_not_rewritten": true,
+    "new_current_receipts_named": "tutorial-modes-*",
+    "previous_full99_is_historical_not_current101": true
+  },
+  "diagnostics": {
+    "source": "Active LSP all servers; eight changed code/Markdown/RST paths",
+    "visible": 0,
+    "false_positive_dispositions": 2,
+    "unsupported": [
+      "tutorial/link.rst: no LSP server configured; strict Sphinx used separately"
+    ],
+    "disposition_rule": "unchecked-throwing-call-python",
+    "disposition_message": "Call without try/except \u2014 throws on invalid input or missing file",
+    "reasons": "Fixed owned fixture/historical receipt reads intentionally fail-closed; bad/missing data abort evidence, never count as kills. No inline suppression or arbitrary JSON safety claim."
+  },
+  "instrumentation_limits": {
+    "initial_incorrect_spec": "Preserved exact15-byte draft fixture and first native AssertionError16-vs15; author copied book defect, no native fault/shrink/kill. Corrected to independently measured original/native16 before valid mutations.",
+    "initial_mutation_failure": "Missing semicolon in defer-if empty block; original driver/partial first valid assertion/build error/log/baseline retained under initial-before-syntax-correction; final three replace partial counts.",
+    "reader_capture": "First successful81 run emitted summary only; repeated with --report to retain detailed current81 measurements; summary retained, not added as162 cases.",
+    "session_poll": "write_stdin failed: unknown process id pi-615; complete copied gate logs/detailed JSON/source statistics inspected; no owned suite/link process remained.",
+    "native_mutation_execution": "Isolated native source copies/cache binaries; execution routing only, test source and literal expectation hashes unchanged; production source/binary intact.",
+    "log_normalization": {
+      "receipt": "conversion/tutorial-modes-log-normalization.json",
+      "changed_logs": 4,
+      "trigger": "git diff --cached --check failed before green commit on three Sphinx logs trailing ASCII spaces and native build log terminal blank. set -e stopped commit; exact originals retained below/Git-blob validated.",
+      "no_test_or_kill_change": true,
+      "scope": "Raw original bytes/hash/Git blob preserved; current log hashes explicitly normalized. Original temp raw logs still retained; normalized logs are not byte-equal to raw originals."
+    }
+  },
+  "navigation": "Cached graph stale/inconsistent; direct complete bodies/runtime/compiler/pins used, no absent-caller inference. No native symbol modified.",
+  "review": "Supported host blocker unchanged; both reports absent; no unsupported retry/alternate reviewer. Must review finalized HEAD.",
+  "completion": {
+    "complete": false,
+    "pushed": false,
+    "goal_marked_complete": false,
+    "remaining": "HTTP11 original block purposes, wider prose/prompt acceptance, independent review/findings and personal-fork delivery."
+  }
+}

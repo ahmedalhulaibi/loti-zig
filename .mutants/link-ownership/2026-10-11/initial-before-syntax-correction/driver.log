@@ -1,0 +1,6 @@
+Running as unit: run-p4012500-i8158744.scope; invocation ID: ae5ee0e77f564cf0bfbb09cc0d7912a8
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/conversion/link-ownership-mutations.py", line 49, in <module>
+    assert built.returncode == 0, (name, "CompilationIsNotAKill")
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('cancelled-close-fallback-omitted', 'CompilationIsNotAKill')
