@@ -1,0 +1,53 @@
+{
+  "tests": 6,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "selected_tests": [
+    "tests.test_examples.ExampleContracts.test_readers_preserve_concatenated_bytes",
+    "tests.test_examples.ExampleContracts.test_copy_preserves_bytes_across_buffer_boundaries",
+    "tests.test_examples.ExampleContracts.test_copy_rejects_alias_without_destroying_input",
+    "tests.test_examples.ExampleContracts.test_readers_preserve_bytes_when_stdout_is_a_regular_file",
+    "tests.test_examples.ExampleContracts.test_copy_rejects_unsupported_kinds_before_discarding_data",
+    "tests.test_block_devices.BlockDeviceContracts.test_owned_virtio_disks_preserve_every_byte"
+  ],
+  "property_statistics": [
+    {
+      "test": "tests.test_examples.ExampleContracts.test_readers_preserve_concatenated_bytes",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 91
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    },
+    {
+      "test": "tests.test_examples.ExampleContracts.test_copy_preserves_bytes_across_buffer_boundaries",
+      "phases": {
+        "reuse-phase": {
+          "valid": 0,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        },
+        "generate-phase": {
+          "valid": 400,
+          "interesting": 0,
+          "invalid": 0,
+          "overrun": 0
+        }
+      },
+      "stopped_because": "settings.max_examples=400"
+    }
+  ],
+  "vm": "Existing contract runs zig build plus vm-mount build-exe and16 owned read-only guest cases; not full99/strict publication."
+}

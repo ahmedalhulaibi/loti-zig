@@ -1,0 +1,36 @@
+test_readers_preserve_concatenated_bytes (tests.test_examples.ExampleContracts.test_readers_preserve_concatenated_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.677s
+
+OK
+test_copy_preserves_bytes_across_buffer_boundaries (tests.test_examples.ExampleContracts.test_copy_preserves_bytes_across_buffer_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.662s
+
+OK
+test_copy_rejects_alias_without_destroying_input (tests.test_examples.ExampleContracts.test_copy_rejects_alias_without_destroying_input) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.106s
+
+OK
+test_readers_preserve_bytes_when_stdout_is_a_regular_file (tests.test_examples.ExampleContracts.test_readers_preserve_bytes_when_stdout_is_a_regular_file) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.026s
+
+OK
+test_copy_rejects_unsupported_kinds_before_discarding_data (tests.test_examples.ExampleContracts.test_copy_rejects_unsupported_kinds_before_discarding_data) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.108s
+
+OK
+test_owned_virtio_disks_preserve_every_byte (tests.test_block_devices.BlockDeviceContracts.test_owned_virtio_disks_preserve_every_byte) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 10.529s
+
+OK

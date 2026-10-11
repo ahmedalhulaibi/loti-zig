@@ -1,0 +1,277 @@
+{
+  "scope": "Finite owned binary/empty/multiple-file pipe-file stdout and ordinary copy0/37/131072. Batching, not physical overlap/throughput/all operands/all syscalls/all failure unwind.",
+  "sinks": [
+    {
+      "program": "readv",
+      "argument_sizes": [
+        0,
+        131072,
+        37,
+        0
+      ],
+      "stdout_bytes": 131109,
+      "stdout_sha256": "f6361f533e7ec2cb8d25cdbbbfbb04948e45f29f847399c9f65a81e0e898642b",
+      "file_equals_pipe": true,
+      "exit_code": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "program": "raw-cat",
+      "argument_sizes": [
+        0,
+        131072,
+        37,
+        0
+      ],
+      "stdout_bytes": 131109,
+      "stdout_sha256": "f6361f533e7ec2cb8d25cdbbbfbb04948e45f29f847399c9f65a81e0e898642b",
+      "file_equals_pipe": true,
+      "exit_code": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "program": "cat",
+      "argument_sizes": [
+        0,
+        131072,
+        37,
+        0
+      ],
+      "stdout_bytes": 131109,
+      "stdout_sha256": "f6361f533e7ec2cb8d25cdbbbfbb04948e45f29f847399c9f65a81e0e898642b",
+      "file_equals_pipe": true,
+      "exit_code": 0,
+      "stderr_bytes": 0
+    }
+  ],
+  "copies": [
+    {
+      "input_bytes": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "old_output_tail_removed": true,
+      "trace": "conversion/reader-copy-purpose-cp-0.trace",
+      "trace_sha256": "049e2c94b96c60170b0a017122f20600a03574847551cb7064c7bac87c0b026e",
+      "ring_descriptor": 5,
+      "sq_entries": 8,
+      "cq_entries": 16,
+      "enters": [],
+      "submitted": 0,
+      "close_order": [
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "input_bytes": 37,
+      "output_sha256": "f8c8fb8ee15a8b105e98761b6e284396554fe750dc6bc0105d60177aa679245d",
+      "source_unchanged": true,
+      "old_output_tail_removed": true,
+      "trace": "conversion/reader-copy-purpose-cp-37.trace",
+      "trace_sha256": "344da1dd9ef92f0c52378015e0f6b6d2bf1c3fd75356ecf92233bb0fe8db1190",
+      "ring_descriptor": 5,
+      "sq_entries": 8,
+      "cq_entries": 16,
+      "enters": [
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 0,
+          "minimum": 1,
+          "flags": "IORING_ENTER_GETEVENTS",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 0
+        }
+      ],
+      "submitted": 2,
+      "close_order": [
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "input_bytes": 131072,
+      "output_sha256": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
+      "source_unchanged": true,
+      "old_output_tail_removed": true,
+      "trace": "conversion/reader-copy-purpose-cp-131072.trace",
+      "trace_sha256": "f1117bbbacfad2aa83ddc0424913cbcd5f31be2d437faea1b157429711d45199",
+      "ring_descriptor": 5,
+      "sq_entries": 8,
+      "cq_entries": 16,
+      "enters": [
+        {
+          "requested": 2,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 2
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 1,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 1
+        },
+        {
+          "requested": 0,
+          "minimum": 0,
+          "flags": "0",
+          "mask": null,
+          "mask_size": 8,
+          "returned": 0
+        }
+      ],
+      "submitted": 16,
+      "close_order": [
+        5,
+        4,
+        3
+      ]
+    }
+  ],
+  "trace_filter": [
+    "io_uring_setup",
+    "io_uring_enter",
+    "io_uring_register",
+    "close",
+    "read",
+    "readv",
+    "pread64",
+    "preadv",
+    "preadv2",
+    "write",
+    "writev",
+    "pwrite64",
+    "pwritev",
+    "pwritev2",
+    "copy_file_range",
+    "sendfile",
+    "splice"
+  ],
+  "limits": "No listed synchronous data-transfer substitutes or registrations in these copy traces. Filtered absence is not absence of every possible syscall/substitute; return counts are submissions, not CQE counts. Tagged native completion processing and exact destination bytes are separate evidence. Single current Linux/x86_64, no forced short multi-slot operations or completion reorder."
+}

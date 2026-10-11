@@ -1,0 +1,552 @@
+{
+  "scope": "Author full original/current low-level/cat/copy prose and12-block purpose comparison; not independent or whole-port acceptance.",
+  "base_commit": "dfce7d28e25bd291a2f5095e6169b3b26c62ba7c",
+  "original_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "original_chapter_sha256": {
+    "low_level.rst": "25330ba3b2e45179954cdf4c158e9f802c9b740c83a2def285154cc6e01e3890",
+    "tutorial/cat_liburing.rst": "c74ae10c1b444b0c67c8f92052cfedb19d3283e684c20697db073ce1b24fe112",
+    "tutorial/cp_liburing.rst": "d34f2fa8e5295e70708babe3d2d5d980a616a305e594280bd3b6b9aa7ac5f91d"
+  },
+  "original_block_ids": [
+    "low_level.rst:23",
+    "low_level.rst:45",
+    "low_level.rst:82",
+    "low_level.rst:464",
+    "low_level.rst:481",
+    "low_level.rst:531",
+    "low_level.rst:556",
+    "tutorial/cat_liburing.rst:7",
+    "tutorial/cat_liburing.rst:182",
+    "tutorial/cat_liburing.rst:188",
+    "tutorial/cat_liburing.rst:201",
+    "tutorial/cp_liburing.rst:10"
+  ],
+  "inventoried_lines": 945,
+  "outside_block_lines": 38,
+  "author_decision": "No required conversion/example-purpose gap found in this subset; native bounded/scalar/value/tag adaptations retain the synchronous/raw/wrapper/two-request batch purposes. Other originals and review/delivery remain open.",
+  "purpose_report_census": {
+    "prior_unique_blocks": 91,
+    "new_unique_blocks": 12,
+    "compared_unique_blocks": 103,
+    "total_original_blocks": 128,
+    "remaining_block_ids": [
+      "tutorial/fixed_buffers.rst:8",
+      "tutorial/fixed_buffers.rst:138",
+      "tutorial/link_liburing.rst:8",
+      "tutorial/link_liburing.rst:96",
+      "tutorial/link_liburing.rst:106",
+      "tutorial/link_liburing.rst:112",
+      "tutorial/link_liburing.rst:118",
+      "tutorial/probe_liburing.rst:7",
+      "tutorial/probe_liburing.rst:74",
+      "tutorial/register_eventfd.rst:9",
+      "tutorial/sq_poll.rst:20",
+      "tutorial/sq_poll.rst:180",
+      "tutorial/sq_poll.rst:201",
+      "tutorial/sq_poll.rst:212",
+      "tutorial/webserver_liburing.rst:18",
+      "tutorial/webserver_liburing.rst:472",
+      "tutorial/webserver_liburing.rst:490",
+      "tutorial/webserver_liburing.rst:537",
+      "tutorial/webserver_liburing.rst:553",
+      "tutorial/webserver_liburing.rst:568",
+      "tutorial/webserver_liburing.rst:578",
+      "tutorial/webserver_liburing.rst:597",
+      "tutorial/webserver_liburing.rst:611",
+      "tutorial/webserver_liburing.rst:623",
+      "tutorial/webserver_liburing.rst:636"
+    ],
+    "scope": "Purpose-report census, not semantic completeness."
+  },
+  "selected_replay": {
+    "tests": 6,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "selected_tests": [
+      "tests.test_examples.ExampleContracts.test_readers_preserve_concatenated_bytes",
+      "tests.test_examples.ExampleContracts.test_copy_preserves_bytes_across_buffer_boundaries",
+      "tests.test_examples.ExampleContracts.test_copy_rejects_alias_without_destroying_input",
+      "tests.test_examples.ExampleContracts.test_readers_preserve_bytes_when_stdout_is_a_regular_file",
+      "tests.test_examples.ExampleContracts.test_copy_rejects_unsupported_kinds_before_discarding_data",
+      "tests.test_block_devices.BlockDeviceContracts.test_owned_virtio_disks_preserve_every_byte"
+    ],
+    "property_statistics": [
+      {
+        "test": "tests.test_examples.ExampleContracts.test_readers_preserve_concatenated_bytes",
+        "phases": {
+          "reuse-phase": {
+            "valid": 0,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          },
+          "generate-phase": {
+            "valid": 400,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 91
+          }
+        },
+        "stopped_because": "settings.max_examples=400"
+      },
+      {
+        "test": "tests.test_examples.ExampleContracts.test_copy_preserves_bytes_across_buffer_boundaries",
+        "phases": {
+          "reuse-phase": {
+            "valid": 0,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          },
+          "generate-phase": {
+            "valid": 400,
+            "interesting": 0,
+            "invalid": 0,
+            "overrun": 0
+          }
+        },
+        "stopped_because": "settings.max_examples=400"
+      }
+    ],
+    "vm": "Existing contract runs zig build plus vm-mount build-exe and16 owned read-only guest cases; not full99/strict publication."
+  },
+  "summed_unittest_seconds": 18.108,
+  "native_observation": {
+    "scope": "Finite owned binary/empty/multiple-file pipe-file stdout and ordinary copy0/37/131072. Batching, not physical overlap/throughput/all operands/all syscalls/all failure unwind.",
+    "sinks": [
+      {
+        "program": "readv",
+        "argument_sizes": [
+          0,
+          131072,
+          37,
+          0
+        ],
+        "stdout_bytes": 131109,
+        "stdout_sha256": "f6361f533e7ec2cb8d25cdbbbfbb04948e45f29f847399c9f65a81e0e898642b",
+        "file_equals_pipe": true,
+        "exit_code": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "program": "raw-cat",
+        "argument_sizes": [
+          0,
+          131072,
+          37,
+          0
+        ],
+        "stdout_bytes": 131109,
+        "stdout_sha256": "f6361f533e7ec2cb8d25cdbbbfbb04948e45f29f847399c9f65a81e0e898642b",
+        "file_equals_pipe": true,
+        "exit_code": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "program": "cat",
+        "argument_sizes": [
+          0,
+          131072,
+          37,
+          0
+        ],
+        "stdout_bytes": 131109,
+        "stdout_sha256": "f6361f533e7ec2cb8d25cdbbbfbb04948e45f29f847399c9f65a81e0e898642b",
+        "file_equals_pipe": true,
+        "exit_code": 0,
+        "stderr_bytes": 0
+      }
+    ],
+    "copies": [
+      {
+        "input_bytes": 0,
+        "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_unchanged": true,
+        "old_output_tail_removed": true,
+        "trace": "conversion/reader-copy-purpose-cp-0.trace",
+        "trace_sha256": "049e2c94b96c60170b0a017122f20600a03574847551cb7064c7bac87c0b026e",
+        "ring_descriptor": 5,
+        "sq_entries": 8,
+        "cq_entries": 16,
+        "enters": [],
+        "submitted": 0,
+        "close_order": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "input_bytes": 37,
+        "output_sha256": "f8c8fb8ee15a8b105e98761b6e284396554fe750dc6bc0105d60177aa679245d",
+        "source_unchanged": true,
+        "old_output_tail_removed": true,
+        "trace": "conversion/reader-copy-purpose-cp-37.trace",
+        "trace_sha256": "344da1dd9ef92f0c52378015e0f6b6d2bf1c3fd75356ecf92233bb0fe8db1190",
+        "ring_descriptor": 5,
+        "sq_entries": 8,
+        "cq_entries": 16,
+        "enters": [
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 0,
+            "minimum": 1,
+            "flags": "IORING_ENTER_GETEVENTS",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 0
+          }
+        ],
+        "submitted": 2,
+        "close_order": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "input_bytes": 131072,
+        "output_sha256": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
+        "source_unchanged": true,
+        "old_output_tail_removed": true,
+        "trace": "conversion/reader-copy-purpose-cp-131072.trace",
+        "trace_sha256": "f1117bbbacfad2aa83ddc0424913cbcd5f31be2d437faea1b157429711d45199",
+        "ring_descriptor": 5,
+        "sq_entries": 8,
+        "cq_entries": 16,
+        "enters": [
+          {
+            "requested": 2,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 2
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 1,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 1
+          },
+          {
+            "requested": 0,
+            "minimum": 0,
+            "flags": "0",
+            "mask": null,
+            "mask_size": 8,
+            "returned": 0
+          }
+        ],
+        "submitted": 16,
+        "close_order": [
+          5,
+          4,
+          3
+        ]
+      }
+    ],
+    "trace_filter": [
+      "io_uring_setup",
+      "io_uring_enter",
+      "io_uring_register",
+      "close",
+      "read",
+      "readv",
+      "pread64",
+      "preadv",
+      "preadv2",
+      "write",
+      "writev",
+      "pwrite64",
+      "pwritev",
+      "pwritev2",
+      "copy_file_range",
+      "sendfile",
+      "splice"
+    ],
+    "limits": "No listed synchronous data-transfer substitutes or registrations in these copy traces. Filtered absence is not absence of every possible syscall/substitute; return counts are submissions, not CQE counts. Tagged native completion processing and exact destination bytes are separate evidence. Single current Linux/x86_64, no forced short multi-slot operations or completion reorder."
+  },
+  "source_sha256": {
+    "low_level.rst": "46eb6a0987772f250de00810d80e067bf696a8e4f8146f1a868e168d6f6014de",
+    "tutorial/cat.rst": "98eb3485361b25130e5792720bf99b4f39617f67bb902b83a946fc481d83c7f6",
+    "tutorial/cp.rst": "ae113b0656c6cca42094d74d713a5ea2d30ad967ae9046e0dc3d75d1c74801da",
+    "examples/readv.zig": "5e374ec56283d7f5994c83e3cb8fcd88f88b44a138fdf1c4bfab0316ad34c824",
+    "examples/raw_cat.zig": "0c56cce53aa23ee4edbb554b52a6628c2c015c20b92d484ca489e7d46defc264",
+    "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
+    "examples/cp.zig": "07fc47895c3b43fd704ecd17a06ca789ddf929fdadf7330ad916ed7a1e3e58d1",
+    "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
+    "examples/copy_short.zig": "eefed5f302c63c89b6dac82684088e5b0da1e43b349426d47e1445bf6e9e2808",
+    "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
+    "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
+    "tests/test_block_devices.py": "18857ffc40a06b68a695a879c45328566abd271fc86ab8c9716bdb5f86bcd5d6",
+    "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e",
+    "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
+    "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
+    "testdata/inputs/http-send-input.bin": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
+    "testdata/inputs/http-send-probe.bin": "f8c8fb8ee15a8b105e98761b6e284396554fe750dc6bc0105d60177aa679245d",
+    "conversion/source-inventory.json": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+    "conversion/chapter-map.json": "1d95f62c232872ec0a8c1466a9f395c9523241cac7e2a75a79cc3c81b17f6309",
+    "conversion/tutorial-block-disposition.md": "6a4c9c9578760f38ce7913462fa7b0f621786975fe944ee50320da30b332926f",
+    "conversion/line-disposition-verification.json": "3c616b5bde7685abbaff6321fe0b995151da510bfe47ac235ee4f93e22cb3e05",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
+    "conversion/review-blocker.md": "6f8a04789053e16a80225de9faa31ffc98ad8a9f477da122ef74fbd07bd8fa75"
+  },
+  "artifact_sha256": {
+    "conversion/reader-copy-purpose-audit.md": "98383c2f7d779bb72a341dca0066c7bc69a90caf8ee08cce794448331c35a261",
+    "conversion/reader-copy-purpose-cp-0.trace": "049e2c94b96c60170b0a017122f20600a03574847551cb7064c7bac87c0b026e",
+    "conversion/reader-copy-purpose-cp-131072.trace": "f1117bbbacfad2aa83ddc0424913cbcd5f31be2d437faea1b157429711d45199",
+    "conversion/reader-copy-purpose-cp-37.trace": "344da1dd9ef92f0c52378015e0f6b6d2bf1c3fd75356ecf92233bb0fe8db1190",
+    "conversion/reader-copy-purpose-native-run.py": "6ef4b1d91e2560b6e5c918cc86b6d900cf76aad71e2cc1e6b547474e080ee693",
+    "conversion/reader-copy-purpose-native.json": "fd9a922b33b5ae082a812390a059597c56f9e26796793c4f2c9f8842c922d60e",
+    "conversion/reader-copy-purpose-publication.json": "32896fb8b561b9e4c04697716647c95d3747396dc147e31136350b7daffb8eec",
+    "conversion/reader-copy-purpose-run.py": "12dd0bb8148f292fb8d6cf88cb8646e7e6463a6073305edc7e6368a68093d918",
+    "conversion/reader-copy-purpose-tests.json": "ab47e00b6831c9094ccc79c9f31581a4d8da6a4fead84c6370a61877e06e6ad1",
+    "conversion/reader-copy-purpose-tests.log": "64fa7b0d484a3b886221830461a198276e04010e0e4801a9ec6016c0a3380d9d"
+  },
+  "sdk_source_sha256": {
+    "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+  },
+  "native_binary_sha256": {
+    "readv": "477a2940eb55442c7f0ec759bd58e7b080476a933384f232030b1ac6fb580000",
+    "raw-cat": "e80985f70b79ba6fb3ecbaa247f5dcab6163315bcf6cc0d89116d311cddf31f8",
+    "cat": "8d1d0395118f33f5ed02d2fc938c6efabdb9104b279e39003b4e1f51a367011e",
+    "cp": "ff4111d9bc78d2afbf0853e636d6ad1b68831f51d2e10be0b58982ac06b7d75f"
+  },
+  "prior_purpose_receipts": {
+    "conversion/registration-purpose-verification.json": {
+      "sha256": "a75420c3a751f34ea1eeab1a91f756659a95374773b5020a1d4936db24317dff",
+      "unchanged_pin_counts": {
+        "source_sha256": 32,
+        "artifact_sha256": 5,
+        "sdk_source_sha256": 2,
+        "native_binary_sha256": 4
+      }
+    },
+    "conversion/setup-completion-purpose-verification.json": {
+      "sha256": "00e2ccb85a1cc5c36e0e713a10005ee3745412afc282c3099c6b201a602340ab",
+      "unchanged_pin_counts": {
+        "source_sha256": 35,
+        "artifact_sha256": 4,
+        "sdk_source_sha256": 2,
+        "native_binary_sha256": 4
+      }
+    },
+    "conversion/submission-purpose-verification.json": {
+      "sha256": "abd1a2614bdadb800437928cfe029476f05faac9ef1dc8feed4b5cfd133abcbc",
+      "unchanged_pin_counts": {
+        "source_sha256": 43,
+        "artifact_sha256": 7,
+        "sdk_source_sha256": 3,
+        "native_binary_sha256": 17
+      }
+    },
+    "conversion/raw-syscall-purpose-verification.json": {
+      "sha256": "0391bba74869164b7e41796c6fe5d9585878f08af1430cd85b7147663a191a10",
+      "unchanged_pin_counts": {
+        "source_sha256": 45,
+        "artifact_sha256": 10,
+        "sdk_source_sha256": 3,
+        "native_binary_sha256": 8
+      }
+    }
+  },
+  "historical_gates": {
+    "scope": "Historical full99/build51/strict publication/reader81/EPUBCheck retained, not rerun/promoted. Current input/pin equality and direct archive verifier are separate evidence. VM selected contract does invoke zig build and build-exe vm-mount; no new full build-summary report.",
+    "pin_sets_checked": {
+      "native_publication_tools93": 93,
+      "historical_full99_sources": 194,
+      "type_sources_and_logs": 90
+    },
+    "receipts_sha256": {
+      "conversion/disposition-note-unchanged-publication.json": "6889426b092fa2b660983433af941d9efa36d9b7a1a05f1cb86729e25a43f9df",
+      "conversion/test-verification.json": "ecd50a1acf4a7c915baac14791b6b97f9210a1aa210551ba96c8c19a2ad5ba7c",
+      "conversion/type-binding-verification.json": "13c05be532375277628102ae0d9d6393c29aa31b65b727c880c1d07da99f1d65",
+      "conversion/epub-verification.json": "32896fb8b561b9e4c04697716647c95d3747396dc147e31136350b7daffb8eec",
+      "conversion/reader-layout-verification.json": "f638da0585c84743421149eed4dee0d1ca0321dd11b2884ba26cbed329eec967"
+    },
+    "current_book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "current_publication": {
+      "scope": "Publication structure and source fidelity; not semantic or independent review.",
+      "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+      "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+      "original_chapters": 26,
+      "edition_chapters": 27,
+      "literal_blocks": 121,
+      "byte_identical_illustrations": 5,
+      "narrative_paragraphs": 368,
+      "narrative_source_matches": true,
+      "literal_policy": {
+        "language_counts": {
+          "zig": 99,
+          "console": 18,
+          "json": 2,
+          "text": 2
+        },
+        "rendered_languages_match": true,
+        "bounded_legacy_markers_absent": true
+      },
+      "licence_exact": true,
+      "local_links_valid": true,
+      "drm_absent": true,
+      "javascript_absent": true
+    },
+    "make_epub_invoked": false
+  },
+  "diagnostics": {
+    "changed_paths_checked": [
+      "conversion/reader-copy-purpose-run.py",
+      "conversion/reader-copy-purpose-native-run.py",
+      "conversion/reader-copy-purpose-audit.md"
+    ],
+    "source": "active LSP, all servers",
+    "visible": 0,
+    "dispositions": 0,
+    "scope": "Changed Python/Markdown paths only; not unconditional whole-workspace/semantic acceptance."
+  },
+  "instrumentation_limits": {
+    "failed_session_poll": "write_stdin failed: unknown process id pi-585; full retained temp/committed logs byte-equal; six success summaries, JSON/statistics and no owned runner/VM process independently checked.",
+    "read_only_pin_checker_failures": [
+      "KeyError: 'archive_sha256' after report equality check; inspected actual book_sha256 key before final receipt.",
+      "FileNotFoundError: 'os/linux/IoUring.zig' while treating prior SDK-relative pins as repository paths; inspected source/SDK/binary key schemas, then checked with each actual root."
+    ],
+    "no_test_expectation_override": true,
+    "no_failure_as_mutant_kill": true
+  },
+  "navigation": "Cached graph has stale/inconsistent commit metadata; no absent-caller or transitive-edge inference. Direct bodies/runtime/source pins used; no native symbol edited.",
+  "new_mutant_claims": 0,
+  "latest_bounded_author_mutants": 284,
+  "review": {
+    "status": "Blocked supported Pi child host; reports absent; no qualifying host change/retry/fallback in this work. Independent review must cover finalized HEAD."
+  },
+  "completion": {
+    "complete": false,
+    "pushed": false,
+    "goal_marked_complete": false,
+    "remaining": "25 tutorial block purposes outside these reports, wider prose/final requirement acceptance, independent review/findings and personal-fork delivery."
+  }
+}
