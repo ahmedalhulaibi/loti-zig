@@ -1,0 +1,56 @@
+{
+  "scope": "Author bounded counterexample to submit-return implying kernel SQE consumption; not CONNECT premature-free experiment, PBT, mutation kill or independent acceptance.",
+  "base_commit": "6c5016ccc8fde8cf7e50dc46aa92792012b48520",
+  "source_paragraph": "The example keeps the peer bytes unchanged and live through completion. Modern\nSUBMIT_STABLE kernels need input storage through successful submission only;\nthis conservative lifetime also covers early-kernel requirements described by\n:man:`io_uring_prep_connect(3)`. Failed socket state is unspecified: each negative\nsocket probe gets a fresh owned FD, then closes it. Probes cover invalid FD,\nnon-socket FD, short address, wrong family, a private bound-but-not-listening\nrefusal endpoint, and already-connected TCP. The guard holds its port during the\nrefusal test; no unrelated endpoint is used. Reconnect failure is observed only\nafter successful endpoint queries, then the client is closed without reuse.",
+  "packaged_paragraph": "The example keeps the peer bytes unchanged and live through completion. Modern SUBMIT_STABLE kernels need input storage through successful submission only; this conservative lifetime also covers early-kernel requirements described by io_uring_prep_connect(3). Failed socket state is unspecified: each negative socket probe gets a fresh owned FD, then closes it. Probes cover invalid FD, non-socket FD, short address, wrong family, a private bound-but-not-listening refusal endpoint, and already-connected TCP. The guard holds its port during the refusal test; no unrelated endpoint is used. Reconnect failure is observed only after successful endpoint queries, then the client is closed without reuse.",
+  "source_sha256": "af70b1fd162cc89f14b5d443f7602c3e6bdbd370ee7987a268b7fa9d39281e50",
+  "archive_sha256": "232a25b3153a63b5d6836af7077c9e9d7ed4dacfc499538e3fa1a4104b936d08",
+  "observations": {
+    "ordinary": {
+      "mode": "ordinary",
+      "features": 262143,
+      "submit_stable": true,
+      "batches": 256,
+      "batch_size": 64,
+      "completions": 16384,
+      "pending_observations": 0,
+      "max_pending": 0,
+      "first": null
+    },
+    "sqpoll": {
+      "mode": "sqpoll",
+      "features": 262143,
+      "submit_stable": true,
+      "batches": 256,
+      "batch_size": 64,
+      "completions": 16384,
+      "pending_observations": 256,
+      "max_pending": 64,
+      "first": {
+        "batch": 0,
+        "returned": 64,
+        "pending": 64
+      }
+    }
+  },
+  "helper_source": "const std = @import(\"std\");\nconst linux = std.os.linux;\n\npub fn main(init: std.process.Init) !void {\n    if (!std.mem.eql(u8, @import(\"builtin\").zig_version_string, \"0.17.0\")) return error.WrongCompiler;\n    const args = try init.minimal.args.toSlice(init.arena.allocator());\n    if (args.len != 2) return error.ExpectedMode;\n    const flags: u32 = if (std.mem.eql(u8, args[1], \"ordinary\")) 0 else if (std.mem.eql(u8, args[1], \"sqpoll\")) linux.IORING_SETUP_SQPOLL else return error.UnknownMode;\n    var ring = try linux.IoUring.init(64, flags);\n    defer ring.deinit();\n    if ((ring.features & linux.IORING_FEAT_SUBMIT_STABLE) == 0) return error.SubmitStableFeatureMissing;\n    var observations: usize = 0;\n    var max_pending: u32 = 0;\n    var first: ?struct { batch: usize, returned: u32, pending: u32 } = null;\n    var completions: usize = 0;\n    for (0..256) |batch| {\n        if (ring.sq_ready() != 0 or ring.cq_ready() != 0) return error.PreviousBatchNotRetired;\n        for (0..64) |slot| _ = try ring.nop(@intCast(batch * 64 + slot + 1));\n        const returned = try ring.submit();\n        const pending = ring.sq_ready();\n        if (returned > 64 or pending > 64) return error.InvalidSubmissionObservation;\n        if (returned > 0 and pending != 0) {\n            observations += 1;\n            max_pending = @max(max_pending, pending);\n            if (first == null) first = .{ .batch = batch, .returned = returned, .pending = pending };\n        }\n        var seen: [64]bool = @splat(false);\n        for (0..64) |_| {\n            const cqe = try ring.copy_cqe();\n            const base: u64 = @intCast(batch * 64 + 1);\n            if (cqe.user_data < base or cqe.user_data >= base + 64 or cqe.res != 0 or cqe.flags != 0) return error.InvalidCompletion;\n            const slot: usize = @intCast(cqe.user_data - base);\n            if (seen[slot]) return error.DuplicateCompletion;\n            seen[slot] = true;\n            completions += 1;\n        }\n        if (ring.sq_ready() != 0 or ring.cq_ready() != 0) return error.BatchNotRetired;\n    }\n    var storage: [1024]u8 = undefined;\n    var stdout = std.Io.File.stdout().writerStreaming(init.io, &storage);\n    try stdout.interface.print(\"{{\\\"mode\\\":\\\"{s}\\\",\\\"features\\\":{d},\\\"submit_stable\\\":true,\\\"batches\\\":256,\\\"batch_size\\\":64,\\\"completions\\\":{d},\\\"pending_observations\\\":{d},\\\"max_pending\\\":{d},\\\"first\\\":\", .{ args[1], ring.features, completions, observations, max_pending });\n    if (first) |value| {\n        try stdout.interface.print(\"{{\\\"batch\\\":{d},\\\"returned\\\":{d},\\\"pending\\\":{d}}}\", .{ value.batch, value.returned, value.pending });\n    } else try stdout.interface.writeAll(\"null\");\n    try stdout.interface.writeAll(\"}\\n\");\n    try stdout.interface.flush();\n}\n",
+  "helper_sha256": "470353b98181dbd6c261bd8168aa65532e40ffdd7ffa79294974d91580a5cc60",
+  "binary_sha256": "02e59de031af9cfb84e66c0b1dc0e4eb5bec9e521d20e9d712023f6ea6f13553",
+  "feature_qualified_cqes": 32768,
+  "completion_checks": "All256x64 per mode: full-u64 tags in range/no duplicates/result0/flags0;SQ andCQ empty before/after every batch; no operand freed early.",
+  "kernel_feature_reference": {
+    "path": "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_setup.2.txt",
+    "heading": "IORING_FEAT_SUBMIT_STABLE",
+    "text": "If this flag is set, applications can be certain that any data for async offload has been consumed when the kernel has consumed the SQE. Available since kernel5.5."
+  },
+  "sdk_reference": "Exact0.17.0 IoUring.submit/submit_and_wait/sq_ready;SQPOLL count return does not require acquiring consumed SQ head.",
+  "required_correction": "Say kernel consumption, not API-return lifetime inference;retain peer address through taggedCQE;replace liburing helper citation with native kernel feature cross-reference.",
+  "http_followup": "main defers ring.deinit after registering client release, so LIFO tears down ring first. complete/errorResponse release per-client buffers only after consumed CQE. No verified native ordering defect;closed ring is not an all-pending-I/O memory-safety proof.",
+  "discovery_limits": [
+    "Initial owned helper array-repeat syntax was rejected by formatter;draft/log retained;@splat fix compiles;not a kill.",
+    "Read-only HTTP andHTTPS manual-page HEAD probes all timed out;no link availability orHTTPS repair claimed.",
+    "No new reviewer/test/fixture/native edition source edit."
+  ],
+  "evidence_root": "_build/verification/submit-consumption.RYEh7Fh8",
+  "status": "Independent BLOCK and delivery remain open."
+}
