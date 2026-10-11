@@ -1,0 +1,155 @@
+{
+  "scope": "Fresh read-only fork/remote/source-link verification and copy-origin caption comparison;not delivery or independent acceptance.",
+  "local_commit": "55b00bd92c535cd5ee3770be4a6e3592326a8f12",
+  "fork": {
+    "archived": false,
+    "clone_url": "https://github.com/ahmedalhulaibi/loti-zig.git",
+    "default_branch": "master",
+    "disabled": false,
+    "fork": true,
+    "full_name": "ahmedalhulaibi/loti-zig",
+    "html_url": "https://github.com/ahmedalhulaibi/loti-zig",
+    "license": {
+      "spdx_id": "MIT"
+    },
+    "owner": {
+      "login": "ahmedalhulaibi",
+      "type": "User"
+    },
+    "parent": {
+      "full_name": "shuveb/loti",
+      "html_url": "https://github.com/shuveb/loti"
+    },
+    "permissions": {
+      "admin": true,
+      "maintain": true,
+      "pull": true,
+      "push": true,
+      "triage": true
+    },
+    "private": false,
+    "pushed_at": "2024-08-02T10:09:03Z",
+    "ssh_url": "git@github.com:ahmedalhulaibi/loti-zig.git",
+    "updated_at": "2026-10-10T05:35:38Z"
+  },
+  "branch": {
+    "commit": {
+      "sha": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+      "tree": "a12f2e969f8a95d3ca86de57aefcab425b32e5ed"
+    },
+    "name": "master",
+    "protected": false
+  },
+  "remote_tree_sha": "a12f2e969f8a95d3ca86de57aefcab425b32e5ed",
+  "remote_tree_entries": 49,
+  "remote_tree_not_truncated": true,
+  "native_paths_absent_on_remote": [
+    "examples/async_cancel.zig",
+    "examples/cat.zig",
+    "examples/copy_short.zig",
+    "examples/cp.zig",
+    "examples/fixed_buffers.zig",
+    "examples/link.zig",
+    "examples/mapping_fault.zig",
+    "examples/probe.zig",
+    "examples/raw_cat.zig",
+    "examples/raw_ops.zig",
+    "examples/readv.zig",
+    "examples/reference_accept.zig",
+    "examples/reference_buffers.zig",
+    "examples/reference_completion.zig",
+    "examples/reference_connect.zig",
+    "examples/reference_epoll.zig",
+    "examples/reference_files.zig",
+    "examples/reference_messages.zig",
+    "examples/reference_poll.zig",
+    "examples/reference_raw.zig",
+    "examples/reference_registration.zig",
+    "examples/reference_rwf.zig",
+    "examples/reference_setup.zig",
+    "examples/reference_signals.zig",
+    "examples/reference_splice.zig",
+    "examples/reference_submission.zig",
+    "examples/register_eventfd.zig",
+    "examples/sq_poll.zig",
+    "examples/support.zig",
+    "examples/webserver.zig"
+  ],
+  "packaged_github_links": {
+    "archive_sha256": "217ae9e5ad601e4af697525bb015487eabe55ba8966982a920f1319483e4d701",
+    "github_links": [
+      {
+        "document": "index.xhtml",
+        "href": "https://github.com/shuveb/loti",
+        "text": "Lord of the io_uring"
+      },
+      {
+        "document": "index.xhtml",
+        "href": "https://github.com/ahmedalhulaibi/loti-zig",
+        "text": "Zig edition"
+      },
+      {
+        "document": "low_level.xhtml",
+        "href": "https://github.com/ahmedalhulaibi/loti-zig/tree/master/examples",
+        "text": "this repository"
+      },
+      {
+        "document": "tutorial/cp.xhtml",
+        "href": "https://github.com/axboe/fio/blob/master/t/io_uring.c",
+        "text": "fio copying example"
+      }
+    ]
+  },
+  "examples_directory_endpoint": {
+    "message": "Not Found",
+    "documentation_url": "https://docs.github.com/rest/repos/contents#get-repository-content",
+    "status": "404"
+  },
+  "fio_source_metadata": {
+    "download_url": "https://raw.githubusercontent.com/axboe/fio/master/t/io_uring.c",
+    "html_url": "https://github.com/axboe/fio/blob/master/t/io_uring.c",
+    "path": "t/io_uring.c",
+    "sha": "64d30d95504632f127329810300bd3e034e6442b",
+    "size": 43917,
+    "type": "file"
+  },
+  "copy_origin_before": [
+    "The :ref:`reader <cat_zig>` has one outstanding request. A copy can overlap a",
+    "read for one range with a write for another. This example keeps two stable",
+    "16-KiB slots and submits a batch when work is available. Its origin is Shuveb",
+    "Hussain's tutorial, based on the",
+    "`fio copying example <https://github.com/axboe/fio/blob/master/t/io_uring.c>`_.",
+    "The implementation here is native Zig 0.17.0."
+  ],
+  "original_copy_origin": [
+    ".. _cp_liburing:",
+    "",
+    "``cp`` with liburing",
+    "====================",
+    "",
+    "In the :ref:`previous section <cat_liburing>`, we saw how to build the equivalent of the Unix ``cat`` utility using the high-level interface to ``io_uring`` provided by liburing. We did not however queue more than one request at the same time in either of these examples. One of the life goals of ``io_uring`` is to be able to reduce the number of system calls required by letting users queue several operations at once so that the kernel can pick those up in one swoop and process them without the program having to go through one or more system calls for each I/O request.",
+    "",
+    "To that end, in this part, we build a copy program that copies files. It tries to be as efficient as possible by queuing as many requests as the queue depth will allow. Let\u2019s see some code. To give credit where it is due, this is heavily based on `a program from the fio package <https://github.com/axboe/fio/blob/master/t/io_uring.c>`_.",
+    ""
+  ],
+  "observation": "Original says a program from the fio package;edition says fio copying example,which overstates the original citation. The retained C filename is attribution,not a converted native application.",
+  "initial_tree_identifier_error": {
+    "scope": "Initial API tree identifier assumption failed;not repository defect/test failure/mutation kill.",
+    "expected_tree_sha": "a12f2e969f8a95d3ca86de57aefcab425b32e5ed",
+    "observed_api_sha": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+    "api_url": "https://api.github.com/repos/ahmedalhulaibi/loti-zig/git/trees/c9ee2424af02e4c1e4765088580107d5e17b826e",
+    "truncated": false,
+    "entries": 49,
+    "body_sha256": "1c7ec7608317c638420ec2a4b4d064690d2318de9782b92cbcfd5f46060a9c22",
+    "error": "IncompleteRemoteTree"
+  },
+  "limits": [
+    "API and SSH agree original c9ee2424 is still remote master;no push/fetch/ref update.",
+    "Current packaged examples URL has no corresponding remote directory;source-link delivery remains incomplete.",
+    "Commit-alias tree API returns requested commit id in sha;actual tree-id query returns a12f2e96 and identical complete49 entries. Initial failed assumption retained.",
+    "Exact native file content and served browser page not fetched;API complete tree proves paths absent.",
+    "Upstream and fio citations remain origin credit;only personal fork/source directory is a converted-source target.",
+    "Current archive217ae9e5 source404 observation is not a publication/local-link failure or mutation kill.",
+    "Native/tests/fixtures unchanged;independent BLOCK/fatal retirement/completeness/final delivery remain open."
+  ]
+}
