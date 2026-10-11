@@ -113,7 +113,7 @@
   },
   "source_sha256": {
     "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
-    "conversion/audit.md": "369cd8627b87d015d1f316d49336bf9b0148b20ce030b2215ddec2c4fb164403",
+    "conversion/audit.md": "63cf3f4ef991bb4cf8f16bffbb1c3b7f067c9053e5819358d426344f0d0537bb",
     "conversion/tutorial-block-disposition.md": "2fb6eeea4772400b5a3a6d01b1dd7fe0a95a7feb4183771eff7d8ef639683d45",
     "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
     "testdata/inputs/http-send-events.json": "89526b0575c991e9812b14b8d7e71f98356efed1d3b8f50cc3d692d984868b27",
@@ -131,7 +131,7 @@
     "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f",
     "tests/test_publication.py": "25615a30481205efcc5b8b26a2ff475d725718c18c25d44340202a76d8ec4180",
     "tests/test_submission_prose.py": "d913437ac0258cad5d4f58b46c80e0817748354a21131b3fba5600247bcf98f1",
-    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
     "tutorial/webserver.rst": "d3b3bf9066938cb5baeb88650120380dd4c77f058576c1eddbd781fbf82724e2"
   },
   "reference_sha256": {
@@ -244,5 +244,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_type_bindings": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
   }
 }

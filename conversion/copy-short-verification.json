@@ -11,8 +11,8 @@
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
     "tests/test_copy_short.py": "75e7e25ff6c83c7395c45703ff3515faf71cb7fe0c794a06cf47d81309b63fe5",
     "tests/test_copy_short_recovery.py": "8b089719fa714b635545b12c8106009308daf8f8f1aff7438e22e9888549aae6",
-    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
-    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
     "tutorial/cp.rst": "ae113b0656c6cca42094d74d713a5ea2d30ad967ae9046e0dc3d75d1c74801da",
     "conversion/copy-short.trace": "bc6ca2eb6a9bec1bd012422421673aacf8c6ec14d06c4a56254f1a24cabda71e",
     "conversion/copy-short-recovery.trace": "68dee83142decc537e0a6d4d6954db8dafa48d1048a2b8ddf9fa91945f7ee694",
@@ -295,5 +295,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_type_bindings": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
   }
 }

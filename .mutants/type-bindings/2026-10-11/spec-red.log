@@ -1,0 +1,35 @@
+.FF
+======================================================================
+FAIL: test_remaining_type_rows_have_whole_consumer_and_representation_scopes (tests.test_type_bindings.NativeTypeContracts.test_remaining_type_rows_have_whole_consumer_and_representation_scopes) (surface='producer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_type_bindings.py", line 21, in test_remaining_type_rows_have_whole_consumer_and_representation_scopes
+    self.assertEqual([row for row in surface["entries"] if row["original"] in selected], expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[96 chars]nce_submission.zig', 'verification_scope': 'co[5774 chars]t.'}] != [{'or[96 chars]nce_signals.zig', 'verification_scope': 'compi[11573 chars]h.'}]
+
+First differing element 0:
+{'ori[95 chars]nce_submission.zig', 'verification_scope': 'co[167 chars]rt.'}
+{'ori[95 chars]nce_signals.zig', 'verification_scope': 'compi[444 chars]es.'}
+
+Diff is 23734 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_remaining_type_rows_have_whole_consumer_and_representation_scopes (tests.test_type_bindings.NativeTypeContracts.test_remaining_type_rows_have_whole_consumer_and_representation_scopes) (surface='published')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_type_bindings.py", line 21, in test_remaining_type_rows_have_whole_consumer_and_representation_scopes
+    self.assertEqual([row for row in surface["entries"] if row["original"] in selected], expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[96 chars]nce_submission.zig', 'verification_scope': 'co[5774 chars]t.'}] != [{'or[96 chars]nce_signals.zig', 'verification_scope': 'compi[11573 chars]h.'}]
+
+First differing element 0:
+{'ori[95 chars]nce_submission.zig', 'verification_scope': 'co[167 chars]rt.'}
+{'ori[95 chars]nce_signals.zig', 'verification_scope': 'compi[444 chars]es.'}
+
+Diff is 23734 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.136s
+
+FAILED (failures=2)

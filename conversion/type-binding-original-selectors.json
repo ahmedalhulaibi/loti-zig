@@ -1,0 +1,2363 @@
+{
+  "scope": "Exact identifier-token matches within immutable inventoried lines; source text verified against original Git objects. Additional native counterpart types may have no literal standalone original mention; not semantic acceptance or a new inventory scan.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "inventory_sha256": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+  "types": {
+    "io_uring": [
+      {
+        "original": "async_intro.rst:58",
+        "text": "Linux asynchronous APIs before io_uring"
+      },
+      {
+        "original": "async_intro.rst:79",
+        "text": "Does this problem exist in io_uring?"
+      },
+      {
+        "original": "async_intro.rst:81",
+        "text": "No. ``io_uring`` presents a uniform interface whether dealing with sockets or with regular files. Also, due to the design of the API, programs can get data that is read or written to files descriptors directly rather than knowing when a file descriptor is ready and then starting an I/O operation on it subsequently, as is done with :man:`poll(2)` or :man:`epoll(7)`. This is not the only advantage that ``io_uring`` has over existing Linux asynchronous I/O APIs. We'll discuss more in upcoming sections."
+      },
+      {
+        "original": "conf.py:20",
+        "text": "project = 'Lord of the io_uring'"
+      },
+      {
+        "original": "delme.c:5",
+        "text": "io_uring_get_probe_ring(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:15",
+        "text": "extern int io_uring_queue_init(unsigned entries, struct io_uring *ring,"
+      },
+      {
+        "original": "delme.c:18",
+        "text": "extern int io_uring_queue_init_params(unsigned entries, struct io_uring *ring,"
+      },
+      {
+        "original": "delme.c:22",
+        "text": "\tstruct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:24",
+        "text": "extern int io_uring_ring_dontfork(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:26",
+        "text": "extern void io_uring_queue_exit(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:33",
+        "text": "unsigned io_uring_peek_batch_cqe(struct io_uring *ring, struct io_uring_cqe **cqes, unsigned count);"
+      },
+      {
+        "original": "delme.c:35",
+        "text": "extern int io_uring_wait_cqes(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr, struct __kernel_timespec *ts, sigset_t *sigmask);"
+      },
+      {
+        "original": "delme.c:37",
+        "text": "extern int io_uring_wait_cqe_timeout(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, struct __kernel_timespec *ts);"
+      },
+      {
+        "original": "delme.c:45",
+        "text": "static inline int io_uring_wait_cqe_nr(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr)"
+      },
+      {
+        "original": "delme.c:52",
+        "text": "static inline int io_uring_peek_cqe(struct io_uring *ring, struct io_uring_cqe **cqe_ptr)"
+      },
+      {
+        "original": "delme.c:58",
+        "text": "static inline int io_uring_wait_cqe(struct io_uring *ring, struct io_uring_cqe **cqe_ptr)"
+      },
+      {
+        "original": "delme.c:64",
+        "text": "static inline void io_uring_cq_advance(struct io_uring *ring, unsigned nr)"
+      },
+      {
+        "original": "delme.c:70",
+        "text": "static inline void io_uring_cqe_seen(struct io_uring *ring, struct io_uring_cqe *cqe)"
+      },
+      {
+        "original": "delme.c:72",
+        "text": "static inline unsigned io_uring_cq_ready(struct io_uring *ring)"
+      },
+      {
+        "original": "delme.c:77",
+        "text": "extern int io_uring_submit(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:79",
+        "text": "extern int io_uring_submit_and_wait(struct io_uring *ring, unsigned wait_nr);"
+      },
+      {
+        "original": "delme.c:81",
+        "text": "extern struct io_uring_sqe *io_uring_get_sqe(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:178",
+        "text": "extern int io_uring_register_buffers(struct io_uring *ring,"
+      },
+      {
+        "original": "delme.c:182",
+        "text": "extern int io_uring_unregister_buffers(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:184",
+        "text": "extern int io_uring_register_files(struct io_uring *ring, const int *files,"
+      },
+      {
+        "original": "delme.c:187",
+        "text": "extern int io_uring_unregister_files(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:189",
+        "text": "extern int io_uring_register_files_update(struct io_uring *ring, unsigned off,"
+      },
+      {
+        "original": "delme.c:192",
+        "text": "extern int io_uring_register_eventfd(struct io_uring *ring, int fd);"
+      },
+      {
+        "original": "delme.c:194",
+        "text": "extern int io_uring_register_eventfd_async(struct io_uring *ring, int fd);"
+      },
+      {
+        "original": "delme.c:196",
+        "text": "extern int io_uring_unregister_eventfd(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:198",
+        "text": "extern int io_uring_register_probe(struct io_uring *ring,"
+      },
+      {
+        "original": "delme.c:201",
+        "text": "extern int io_uring_register_personality(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:203",
+        "text": "extern int io_uring_unregister_personality(struct io_uring *ring, int id);"
+      },
+      {
+        "original": "delme.c:213",
+        "text": "static inline unsigned io_uring_sq_ready(struct io_uring *ring)"
+      },
+      {
+        "original": "delme.c:214",
+        "text": "static inline unsigned io_uring_sq_space_left(struct io_uring *ring)"
+      },
+      {
+        "original": "index.rst:6",
+        "text": "Welcome to Lord of the io_uring"
+      },
+      {
+        "original": "index.rst:9",
+        "text": "``io_uring`` is a powerful new way to do asynchronous I/O programming under Linux. Doing away with various limitations of previous generation  I/O subsystems, ``io_uring`` holds immense promise. For more details on what ``io_uring`` brings to the table, please see the chapter :ref:`what_is_io_uring`."
+      },
+      {
+        "original": "index.rst:14",
+        "text": "This ``io_uring`` guide was created by Shuveb Hussain, who is also the author of the Linux-focused blog, `unixism.net <https://unixism.net>`_. You can `follow me on Twitter <https://twitter.com/shuveb>`_ where my posts are mainly tech-related with a focus on Linux, performance, scalability and cloud."
+      },
+      {
+        "original": "index.rst:66",
+        "text": "    :caption: io_uring Reference"
+      },
+      {
+        "original": "low_level.rst:3",
+        "text": "The Low-level io_uring Interface"
+      },
+      {
+        "original": "low_level.rst:5",
+        "text": "Like suggested in the previous session, you are unlikely to use the low-level ``io_uring`` API in serious programs. But it is always a good idea to know what kind of an interface ``io_uring`` really presents. For this, you'll have to play around the interface ``io_uring`` directly presents to programs via the shared ring buffers and related ``io_uring`` system calls. A good example and a simple one at that can present this interface well. To this end, here, we present an example that emulates the Unix ``cat`` utility. To keep things simple, we shall create a program that presents ``io_uring`` one operation at a time, waits for it to finish and presents the next operation and so on. While a real program might as well use synchronous/blocking calls to get work done this way, the main aim of this program is to familiarize you with the ``io_uring`` interface without other program logic potentially getting in the way."
+      },
+      {
+        "original": "low_level.rst:13",
+        "text": "``io_uring``\u2018s interface is simple. There is a submission queue and there is a completion queue. In the submission queue, you submit information on various operations you want to get done. For example, in our current program, we want to read files with :man:`readv(2)`, so we place a submission queue request describing it as part of a submission queue entry (SQE). Also, you can place more than one request. As many requests as the queue depth (which you can define) will allow. These operations can be a mix of reads, writes, etc. Then, we call the :c:func:`io_uring_enter` system call to tell the kernel that we\u2019ve added requests to the submission queue. The kernel then does its jujitsu and once it has done processing those requests, it places results in the completion queue as part of a CQE or a completion queue entry one for each corresponding SQE. These CQEs can be accessed from user space instantly since they are placed in a buffer is shared by kernel and user space."
+      },
+      {
+        "original": "low_level.rst:15",
+        "text": "We covered this particular advantage of ``io_uring`` earlier, but the astute reader would have noticed that this interface of filling up a queue with multiple I/O requests and then making a single system call as opposed to one system call for each I/O request is already more efficient. To take efficiency a notch further up, ``io_uring`` supports a mode where the :ref:`kernel polls for entries <sq_poll>` you make into the submission queue without you even having to call :c:func:`io_uring_enter` to inform the kernel about newer submission queue entries. Another point to note is that in a life after Specter and Meltdown hardware vulnerabilities were discovered and operating systems created workarounds for it, system calls are more expensive than ever. So, for high performance applications, reducing the number of system calls is a big deal indeed."
+      },
+      {
+        "original": "low_level.rst:17",
+        "text": "Before you can do any of this, you need to setup the queues, which really are ring buffers with a certain depth/length. You call the :c:func:`io_uring_setup` system call to get this done. We do real work by adding submission queue entries to a ring buffer and reading completion queue entries off of the completion queue ring buffer. This is an overview of how this io_uring interface is designed."
+      },
+      {
+        "original": "low_level.rst:76",
+        "text": "Now that wasn\u2019t too difficult, or was it? You fill these values letting ``io_uring`` know what to do. You can queue multiple SQEs and finally call :c:func:`io_uring_enter` when you want the kernel to start processing your queued requests."
+      },
+      {
+        "original": "low_level.rst:78",
+        "text": "``cat`` with io_uring"
+      },
+      {
+        "original": "low_level.rst:80",
+        "text": "Let\u2019s see how to actually get this done with a ``cat`` utility like program that uses the low-level ``io_uring`` interface."
+      },
+      {
+        "original": "low_level.rst:97",
+        "text": "     * your kernel is probably too old to support io_uring."
+      },
+      {
+        "original": "low_level.rst:99",
+        "text": "    #include <linux/io_uring.h>"
+      },
+      {
+        "original": "low_level.rst:138",
+        "text": "     * This code is written in the days when io_uring-related system calls are not"
+      },
+      {
+        "original": "low_level.rst:181",
+        "text": "     * io_uring requires a lot of setup which looks pretty hairy, but isn't all"
+      },
+      {
+        "original": "low_level.rst:183",
+        "text": "     * io_uring's author has created liburing, which is relatively easy to use."
+      },
+      {
+        "original": "low_level.rst:208",
+        "text": "         * io_uring communication happens via 2 shared kernel-user space ring buffers,"
+      },
+      {
+        "original": "low_level.rst:462",
+        "text": "From :c:func:`main`, we call :c:func:`app_setup_uring`, which does the initialization work required for us to use ``io_uring``. First, we call the :c:func:`io_uring_setup` system call with the queue depth we require and an instance of the structure :c:struct:`io_uring_params` all set to zero. When the call returns, the kernel would have filled up values in the members of this structure. This is how :c:struct:`io_uring_params` looks like:"
+      },
+      {
+        "original": "low_level.rst:477",
+        "text": "The only thing you can specify before passing this structure as part of the :c:func:`io_uring_setup` system call is the ``flags`` structure member, but in this example, there is no flag we want to pass. Also, in this example, we process the files one after the other. We are not going to do any parallel I/O since this is a simple example designed mainly to get an understanding of ``io_uring``'s raw interface. To this end, we set the queue depth to just one."
+      },
+      {
+        "original": "low_level.rst:511",
+        "text": "We save important details in our structures ``app_io_sq_ring`` and ``app_io_cq_ring`` for easy reference later. While we map the two ring buffers for submission and completion each, you might be wondering what the 3rd mapping is for. While the completion queue ring directly indexes the shared array of CQEs, the submission ring has an indirection array in between. The submission side ring buffer is an index into this array, which in turn contains the index into the SQEs. This is useful for certain applications that embed submission requests inside of internal data structures. This setup allows them to submit multiple submission entries in one go while allowing them to adopt ``io_uring`` more easily."
+      },
+      {
+        "original": "low_level.rst:523",
+        "text": "In regular programming, we\u2019re used to dealing with a very clear interface between user-space and the kernel: the system call. However, system calls do have a cost and for high-performance interfaces like ``io_uring``, want to do away with them as much as they can. We saw earlier that rather than making multiple system calls as we normally do, using ``io_uring`` allows us to batch many I/O requests and make a single call to the :c:func:`io_uring_enter` system call. Or in :ref:`polling mode <sq_poll>`, even that call isn\u2019t required."
+      },
+      {
+        "original": "low_level.rst:525",
+        "text": "When reading or updating the shared ring buffers from user space, there is some care that needs to be taken to ensure that when reading, you are seeing the latest data and after updating, you are \u201cflushing\u201d or \u201csyncing\u201d writes so that the kernel sees your updates. This is due to fact the the CPU can reorder reads and writes and so can the compiler. This is typically not a problem when reads and writes are happening on the same CPU. But in the case of ``io_uring``, when there is a shared buffer involved across two different contexts: user space and kernel and these can run on different CPUs after a context switch. You need to ensure from user space that before you read, previous writes are visible. Or when you fill up details in an SQE and update the tail of the submission ring buffer, you want to ensure that the writes you made to the members of the SQE are ordered before the write that updates the ring buffer\u2019s tail. If these writes aren\u2019t ordered, the kernel might see the tail updated, but when it reads the SQE, it might not find all the data it needs at the time it reads it. In :ref:`polling mode <sq_poll>`, where the kernel is looking for changes to the tail, this becomes a real problem. This is all because of how CPUs and compilers reorder reads and writes for optimization."
+      },
+      {
+        "original": "ref-iouring/index.rst:1",
+        "text": "io_uring Reference"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:13",
+        "text": "   #include <linux/io_uring.h>"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:30",
+        "text": "before returning. If the io_uring instance was configured for polling,"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:118",
+        "text": "   the io_uring implementation itself."
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:204",
+        "text": "   event. io_uring timeouts use the **CLOCK_MONOTONIC** clock source."
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:335",
+        "text": "   fashion, like the rest of the io_uring commands. The arguments passed"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:346",
+        "text": "   registered with the io_uring instance (see the"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:365",
+        "text": "   in that chain ends in error. io_uring considers any unexpected result"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:379",
+        "text": "   Normal operation for io_uring is to try and issue an sqe as"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:414",
+        "text": "personalities with io_uring. If set to 0, the current personality of the"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:443",
+        "text": "the io_uring-specific opcodes are documented in the description of the"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:476",
+        "text": "   no files were registered with the io_uring instance."
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:484",
+        "text": "   buffers were not registered for this io_uring instance, or the"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:496",
+        "text": "   the io_uring context was setup for polling (**IORING_SETUP_IOPOLL**"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:501",
+        "text": "   submission queue entry, but the io_uring instance has fixed buffers"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:511",
+        "text": "   submission queue entry, but the io_uring instance was configured for"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:517",
+        "text": "   the *opcode* field of the submission queue entry, but the io_uring"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:527",
+        "text": "   The io_uring instance is in the process of being torn down."
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:530",
+        "text": "   *fd* does not refer to an io_uring instance."
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:13",
+        "text": "   #include <linux/io_uring.h>"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:21",
+        "text": "files for use in an **io_uring**\\ (7) instance referenced by *fd*."
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:62",
+        "text": "down the io_uring instance. Available since 5.1."
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:66",
+        "text": "   All previously registered buffers associated with the io_uring"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:87",
+        "text": "Files are automatically unregistered when the io_uring instance is torn"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:103",
+        "text": "   NULL. All previously registered files associated with the io_uring"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:108",
+        "text": "   on an io_uring instance. If this is desired, an eventfd file"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:128",
+        "text": "   information about the opcodes supported by io_uring on the running"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:138",
+        "text": "   io_uring, and returns an id associated with these credentials."
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:147",
+        "text": "   io_uring. *nr_args* must be set to the id in question, and *arg* must"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:204",
+        "text": "   Attempt to register files or buffers on an io_uring instance that is"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:13",
+        "text": "   #include <linux/io_uring.h>"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:23",
+        "text": "the io_uring instance. The submission and completion queues are shared"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:45",
+        "text": "configure the io_uring instance. *flags* is a bit mask of 0 or more of"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:58",
+        "text": "   non-polled I/O on an io_uring instance."
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:62",
+        "text": "   submission queue polling. An io_uring instance configured in this way"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:106",
+        "text": "If no flags are specified, the io_uring instance is setup for interrupt"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:121",
+        "text": "   If this flag is set, io_uring supports never dropping completion"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:146",
+        "text": "   If this flag is set, then io_uring guarantees that both sync and"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:150",
+        "text": "   originally registered the io_uring. If only one task is using a ring,"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:248",
+        "text": "free all resources associated with the io_uring context."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:9",
+        "text": ".. c:function:: int io_uring_register_buffers(struct io_uring *ring, const struct iovec *iovecs, unsigned nr_iovecs)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:15",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:31",
+        "text": ".. c:function:: int io_uring_unregister_buffers(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:37",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:51",
+        "text": ".. c:function:: int io_uring_register_files(struct io_uring *ring, const int *files, unsigned nr_files)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:57",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:73",
+        "text": ".. c:function:: int io_uring_unregister_files(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:79",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:93",
+        "text": ".. c:function:: int io_uring_register_files_update(struct io_uring *ring, unsigned off, int *files, unsigned nr_files)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:99",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:115",
+        "text": ".. c:function:: int io_uring_register_eventfd(struct io_uring *ring, int fd)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:117",
+        "text": "    By registering an :man:`eventfd(2)` file descriptor with ``io_uring``, it is possible to get notified of completion events on an ``io_uring`` instance and this function lets you do just that."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:121",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:135",
+        "text": ".. c:function:: int io_uring_register_eventfd_async(struct io_uring *ring, int fd)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:141",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:155",
+        "text": ".. c:function:: int io_uring_unregister_eventfd(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:161",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:174",
+        "text": ".. c:function:: int io_uring_register_personality(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:176",
+        "text": "    This operation registers credentials of the running application with ``io_uring``, and returns an ID associated with these credentials. Applications wishing to share a ring between separate users/processes can pass in this credential ID in the SQE ``personality`` field. If set, that particular sqe will be issued with these credentials."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:180",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:189",
+        "text": ".. c:function:: int io_uring_unregister_personality(struct io_uring *ring, int id)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:195",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/completion.rst:9",
+        "text": "These functions deal with completion of I/O requests in ``io_uring``. The snippet below is from the example :ref:`cat with liburing<cat_liburing>`. While there are other possible ways, it shows a general way in which you can use completion related functions. Once a request or multiple requests have been submitted, you can wait for a completion and process it as shown below."
+      },
+      {
+        "original": "ref-liburing/completion.rst:13",
+        "text": "  int get_completion_and_print(struct io_uring *ring) {"
+      },
+      {
+        "original": "ref-liburing/completion.rst:39",
+        "text": "* In ``io_uring``, you can set a user data field in the submission side, which with kernel will then make available unchanged on the completion side. You can use this to uniquely identify requests. You can get the user data pointer from the CQE by calling :c:func:`io_uring_cqe_get_data`."
+      },
+      {
+        "original": "ref-liburing/completion.rst:45",
+        "text": ".. c:function:: int io_uring_wait_cqe(struct io_uring *ring, struct io_uring_cqe **cqe_ptr)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:51",
+        "text": "  * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/completion.rst:60",
+        "text": ".. c:function:: int io_uring_wait_cqe_nr(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:66",
+        "text": "  * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/completion.rst:76",
+        "text": ".. c:function:: int io_uring_wait_cqes(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr, struct __kernel_timespec *ts, sigset_t *sigmask)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:85",
+        "text": "  * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/completion.rst:97",
+        "text": ".. c:function:: int io_uring_wait_cqe_timeout(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, struct __kernel_timespec *ts)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:103",
+        "text": ".. c:function:: int io_uring_peek_cqe(struct io_uring *ring, struct io_uring_cqe **cqe_ptr)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:109",
+        "text": "  * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/completion.rst:118",
+        "text": ".. c:function:: unsigned io_uring_peek_batch_cqe(struct io_uring *ring, struct io_uring_cqe **cqes, unsigned count)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:124",
+        "text": "  * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/completion.rst:148",
+        "text": ".. c:function:: void io_uring_cqe_seen(struct io_uring *ring, struct io_uring_cqe *cqe)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:154",
+        "text": "  * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/completion.rst:159",
+        "text": ".. c:function:: unsigned io_uring_cq_ready(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/cqe.rst:8",
+        "text": "    This structure is part of the raw ``io_uring`` interface and is defined in ``io_uring.h``."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:7",
+        "text": "This section describes functions that help you setup and tear down ``io_uring`` usage in your programs."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:9",
+        "text": ".. c:struct:: io_uring"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:12",
+        "text": "    struct io_uring {"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:63",
+        "text": ".. c:function:: int io_uring_queue_init(unsigned entries, struct io_uring *ring, unsigned flags)"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:65",
+        "text": "    Initializes ``io_uring`` for use in your programs. You'd want to call this function before you get to do anything else with ``io_uring``."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:70",
+        "text": "    * `ring`: pointer to :c:struct:`io_uring` structure which will be filled up by the kernel."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:80",
+        "text": ".. c:function:: int io_uring_queue_init_params(unsigned entries, struct io_uring *ring, struct io_uring_params *p)"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:90",
+        "text": ".. c:function:: int io_uring_queue_mmap(int fd, struct io_uring_params *p, struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:92",
+        "text": "    This is a low-level function you'll only want to use when you want to control a lot of aspects of the ``io_uring`` initialization. Before calling this function, you should have already called the low-level :c:func:`io_uring_setup`. You can then use this function to :man:`mmap(2)` the rings for you."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:98",
+        "text": "    * `ring`: a pointer to :c:struct:`io_uring`"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:100",
+        "text": "    .. seealso:: :ref:`io_uring low-level interface programming <low_level>`"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:104",
+        "text": ".. c:function:: int io_uring_ring_dontfork(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:110",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as setup by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:118",
+        "text": ".. c:function:: void io_uring_queue_exit(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:120",
+        "text": "    Tear down function for ``io_uring``. Unmaps all setup shared ring buffers and closes the low-level ``io_uring`` file descriptor returned by the kernel."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:124",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as setup by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/sqe.rst:5",
+        "text": "The submission queue entry (SQE) is what you use to tell ``io_uring`` what you want to do, like read a file, write a file, accept a connection on a socket, etc."
+      },
+      {
+        "original": "ref-liburing/sqe.rst:8",
+        "text": "    This structure is part of the raw ``io_uring`` interface and is defined in ``io_uring.h``."
+      },
+      {
+        "original": "ref-liburing/submission.rst:32",
+        "text": ".. c:function:: struct io_uring_sqe *io_uring_get_sqe(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:38",
+        "text": "  * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/submission.rst:46",
+        "text": "    * :ref:`io_uring low-level interface programming <low_level>`"
+      },
+      {
+        "original": "ref-liburing/submission.rst:73",
+        "text": ".. c:function:: int io_uring_submit(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:79",
+        "text": "  * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/submission.rst:84",
+        "text": "    * :ref:`io_uring low-level interface programming <low_level>`"
+      },
+      {
+        "original": "ref-liburing/submission.rst:89",
+        "text": ".. c:function:: int io_uring_submit_and_wait(struct io_uring *ring, unsigned wait_nr)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:116",
+        "text": "  This function sets up the submission queue entry pointed to by ``sqe`` with an ``IORING_OP_NOP`` operation, which is a no-op. This kind of operation exists for testing purposes and serves to test the speed and efficiency of the ``io_uring`` interface."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:35",
+        "text": ".. c:function:: struct io_uring_probe *io_uring_get_probe_ring(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:39",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:41",
+        "text": "    **Return value**: on success, a pointer to a :c:struct:`io_uring_probe` which is used to probe the capabilities of the ``io_uring`` subsystem of the running kernel. The :c:struct:`io_uring_probe` contains the list of supported operations. On failure, NULL is returned."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:53",
+        "text": "    Returns a pointer to a :c:struct:`io_uring_probe` which is used to probe the capabilities of the ``io_uring`` subsystem of the running kernel. The :c:struct:`io_uring_probe` contains the list of supported operations."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:62",
+        "text": "    :ref:`Example program <probing_liburing>` to print supported ``io_uring`` operation in the running kernel."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:71",
+        "text": "    Function to determine of an ``io_uring`` operation is supported by your kernel. Returns 0 if the operation is not supported and a non-zero value if support is present. Take a look at :ref:`supported operations example program <probing_liburing>` to see this function in action."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:85",
+        "text": ".. c:function:: int io_uring_register_probe(struct io_uring *ring, struct io_uring_probe *p, unsigned nr)"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:87",
+        "text": "    Low-level function that lets you get ``io_uring`` capabilities."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:91",
+        "text": "    * `ring`: :c:struct:`io_uring` structure as set up by :c:func:`io_uring_queue_init`."
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:5",
+        "text": "We saw that building something as simple as a program that reads a file may not be as straightforward with io_uring. It turns out it is more code than a program that reads files with synchronous I/O. But if you analyze the code for the :ref:`cat utility that used the low-level io_uring interface <low_level>`, you\u2019ll realize that bulk of the code there is boilerplate code that can be easily hidden away in a separate file and it shouldn\u2019t bother with application logic. In any case, we\u2019re learning low-level ``io_uring`` details on purpose for better understanding of how it works. With that out of the way, let\u2019s now look at how a functionally similar program can be implemented using ``liburing``."
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:68",
+        "text": "  int get_completion_and_print(struct io_uring *ring) {"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:92",
+        "text": "  int submit_read_request(char *file_path, struct io_uring *ring) {"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:150",
+        "text": "      struct io_uring ring;"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:158",
+        "text": "      /* Initialize io_uring */"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:177",
+        "text": "* Cat with raw io_uring: ~360 lines"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:180",
+        "text": "Now, that\u2019s some real reduction in the number of lines of code with liburing. And with all the boilerplate code out of the way, the logic pops out. Let\u2019s run through that quickly. We initialize io_uring like this:"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:6",
+        "text": "In the :ref:`previous section <cat_liburing>`, we saw how to build the equivalent of the Unix ``cat`` utility using the high-level interface to ``io_uring`` provided by liburing. We did not however queue more than one request at the same time in either of these examples. One of the life goals of ``io_uring`` is to be able to reduce the number of system calls required by letting users queue several operations at once so that the kernel can pick those up in one swoop and process them without the program having to go through one or more system calls for each I/O request."
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:8",
+        "text": "To that end, in this part, we build a copy program that copies files. It tries to be as efficient as possible by queuing as many requests as the queue depth will allow. Let\u2019s see some code. To give credit where it is due, this is heavily based on `a program from the fio package <https://github.com/axboe/fio/blob/master/t/io_uring.c>`_."
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:35",
+        "text": "  static int setup_context(unsigned entries, struct io_uring *ring) {"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:67",
+        "text": "  static void queue_prepped(struct io_uring *ring, struct io_data *data) {"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:81",
+        "text": "  static int queue_read(struct io_uring *ring, off_t size, off_t offset) {"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:107",
+        "text": "  static void queue_write(struct io_uring *ring, struct io_data *data) {"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:118",
+        "text": "  int copy_file(struct io_uring *ring, off_t insize) {"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:222",
+        "text": "      struct io_uring ring;"
+      },
+      {
+        "original": "tutorial/fixed_buffers.rst:21",
+        "text": "    int fixed_buffers(struct io_uring *ring) {"
+      },
+      {
+        "original": "tutorial/fixed_buffers.rst:116",
+        "text": "        struct io_uring ring;"
+      },
+      {
+        "original": "tutorial/fixed_buffers.rst:120",
+        "text": "            fprintf(stderr, \"Unable to setup io_uring: %s\\n\", strerror(-ret));"
+      },
+      {
+        "original": "tutorial/index.rst:3",
+        "text": "As discussed in previous chapters, while being aware of how the low-level ``io_uring`` interface works is most certainly helpful, you might want to use ``liburing`` in more serious programs. ``liburing`` provides a more high-level interface to ``io_uring`` making it far more productive for you, while also removing a lot of boilerplate code, making your programs a lot shorter and to-the-point."
+      },
+      {
+        "original": "tutorial/link_liburing.rst:5",
+        "text": "In ``io_uring``, completions do not arrive in the order that submissions were issues in. This was discussed in the chapter :ref:`The Low-level io_uring Interface <low_level>`. What if you want to force certain operations to happen in order? This is possible by linking requests together. The example here shows you how it's done."
+      },
+      {
+        "original": "tutorial/link_liburing.rst:16",
+        "text": "    #define STR         \"Hello, io_uring!\""
+      },
+      {
+        "original": "tutorial/link_liburing.rst:19",
+        "text": "    int link_operations(struct io_uring *ring) {"
+      },
+      {
+        "original": "tutorial/link_liburing.rst:75",
+        "text": "        struct io_uring ring;"
+      },
+      {
+        "original": "tutorial/link_liburing.rst:79",
+        "text": "            fprintf(stderr, \"Unable to setup io_uring: %s\\n\", strerror(-ret));"
+      },
+      {
+        "original": "tutorial/link_liburing.rst:88",
+        "text": "This is a fairly simple program. We open an empty file, write a string to it, read the string from the file and then close it. Since ``io_uring`` does not guarantee that operations submitted will be executed in order, it might be a problem for our program. Since it is an empty file that is truncated at every run of the program, there will be nothing to read if the write operation does not complete before the read. Also, if the close operation completed before either the read or write operations or both operations, those might fail as well. For this reason, this program links operations with the ``IOSQE_IO_LINK`` flag. This ensures that operations are executed one after the other."
+      },
+      {
+        "original": "tutorial/link_liburing.rst:90",
+        "text": "This program is fairly simple to understand. In the ``link_operations()`` function, we call :c:func:`io_uring_prep_write`, but then set the ``IOSQE_IO_LINK`` flag on it so that the next operation is linked to this operation. Next, we call :c:func:`io_uring_prep_read`, which is now linked to the previous write operation. We set the ``IOSQE_IO_LINK`` flag on this operation as well so that the subsequent close operation, which we set up with :c:func:`io_uring_prep_close` is linked with this. This causes ``io_uring`` to execute the write, read and close operations one after the other."
+      },
+      {
+        "original": "tutorial/link_liburing.rst:102",
+        "text": "    Buffer contents: Hello, io_uring!"
+      },
+      {
+        "original": "tutorial/link_liburing.rst:126",
+        "text": "The first error (\"Bad file descriptor\") you're seeing is from the failing read operation. The next error you're seeing (\"Operation cancelled\") is ``io_uring`` cancelling the linked close operation."
+      },
+      {
+        "original": "tutorial/probe_liburing.rst:14",
+        "text": "    #include <liburing/io_uring.h>"
+      },
+      {
+        "original": "tutorial/probe_liburing.rst:57",
+        "text": "        printf(\"Report of your kernel's list of supported io_uring operations:\\n\");"
+      },
+      {
+        "original": "tutorial/probe_liburing.rst:77",
+        "text": "    Report of your kernel's list of supported io_uring operations:"
+      },
+      {
+        "original": "tutorial/register_eventfd.rst:7",
+        "text": "``io_uring`` is capable of posting events on an eventfd instance whenever completions occur. This capability enables processes that are multiplexing I/O using :man:`poll(2)` or :man:`epoll(7)` to add a ``io_uring`` registered eventfd instance file descriptor to the interest list so that :man:`poll(2)` or :man:`epoll(7)` can notify them when a completion via ``io_uring`` occurred. This allows such programs to be busy processing their existing event loops rather than being blocked in a call to :c:func:`io_uring_wait_cqe`."
+      },
+      {
+        "original": "tutorial/register_eventfd.rst:23",
+        "text": "    struct io_uring ring;"
+      },
+      {
+        "original": "tutorial/register_eventfd.rst:61",
+        "text": "            fprintf(stderr, \"Unable to setup io_uring: %s\\n\", strerror(-ret));"
+      },
+      {
+        "original": "tutorial/register_eventfd.rst:98",
+        "text": "        /* Setup io_uring instance and register the eventfd */"
+      },
+      {
+        "original": "tutorial/register_eventfd.rst:101",
+        "text": "        /* Initiate a read with io_uring */"
+      },
+      {
+        "original": "tutorial/register_eventfd.rst:118",
+        "text": "While the child thread is blocking on the read on the ``eventfd`` file descriptor, we sleep for 2 seconds in the parent to perceive this sequence clearly. Next, in ``setup_io_uring()``, we create an ``io_uring`` instance and register our ``eventfd`` file descriptor with it. This will cause ``io_uring`` to post an event on this ``eventfd`` for every completion event."
+      },
+      {
+        "original": "tutorial/register_eventfd.rst:120",
+        "text": "We then call ``read_file_with_io_uring()`` from main. In this, we submit a request to read a file. This will cause ``io_uring`` to post an event on the registered ``eventfd`` instance. This should now cause the :man:`read(2)` call in which ``listener_thread()`` is blocked on to unblock and continue execution. In this thread, we fetch the completion and print out the data."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:6",
+        "text": "Reducing the number of system calls is a major aim for ``io_uring``. To this end, ``io_uring`` lets you submit I/O requests without you having to make a single system call. This is done via a special submission queue polling feature that ``io_uring`` supports. In this mode, right after your program sets up polling mode, ``io_uring`` starts a special kernel thread that polls the shared submission queue for entries your program might add. That way, you just have to submit entries into the shared queue and the kernel thread should see it and pick up the submission queue entry without your program having to make the :c:func:`io_uring_enter` system call, which is usually taken care of by ``liburing``. This is a benefit of having a queue that is shared between user space and the kernel."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:8",
+        "text": "How to use this mode? The idea is simple. You tell ``io_uring`` that you want use this mode by setting the ``IORING_SETUP_SQPOLL`` flag in the ``io_uring_params`` structure's ``flags`` member. If the kernel thread that starts along with your process does not see any submission for a period of time, it will quit and your program will need to call the :c:func:`io_uring_enter` system call once more to wake it up. This period of time is configurable via :c:struct`io_uring_params` structure's ``sq_thread_idle`` member. If you keep the submissions coming however, the kernel poller thread should never sleep."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:36",
+        "text": "        if (system(\"ps --ppid 2 | grep io_uring-sq\" ) == 0)"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:37",
+        "text": "            printf(\"Kernel thread io_uring-sq found running...\\n\");"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:39",
+        "text": "            printf(\"Kernel thread io_uring-sq is not running.\\n\");"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:42",
+        "text": "    int start_sq_polling_ops(struct io_uring *ring) {"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:144",
+        "text": "        struct io_uring ring;"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:160",
+        "text": "            fprintf(stderr, \"Unable to setup io_uring: %s\\n\", strerror(-ret));"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:172",
+        "text": "When the program starts, before we setup the ``io_uring`` instance, we print the running status of the kernel thread that does the submission queue polling. The name of this thread is ``io_uring-sq``. The function ``print_sq_poll_kernel_thread_status()`` prints this status. Of course, if there is any other process using submission queue polling, you will see that this kernel thread is indeed running. The parent for all kernel threads is the ``kthreadd`` kernel thread which is started right after ``init``, which famously has a process ID of 1. As a result, ``kthreadd`` has a PID of 2 and we can exploit this fact to filter only kernel threads as a simple optimization."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:174",
+        "text": "To initialize ``io_uring``, we use the :c:func:`io_uring_queue_init_params` rather than the usual :c:func:`io_uring_queue_init` since this takes a pointer to a :c:struct:`io_uring_params` structure as an argument. It is in that argument that we specify ``IORING_SETUP_SQPOLL`` as part of the ``flags`` field and set ``sq_thread_idle`` to 2000, which is the idle time for the submission queue poller kernel thread. If there are no submissions for these many milliseconds, the thread will exit and an :c:func:`io_uring_enter` system call will need to be made internally by ``liburing`` to get the kernel thread going again."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:178",
+        "text": "In this example, we have 4 buffers. The first 2 are used by 2 write operations to write a line each into a file. Later, we use the 3rd and 4th buffers with 2 more read operations to read the 2 written lines and print them. After the write operations, we print the status of the ``io_uring-sq`` kernel thread, which we should now find running."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:184",
+        "text": "    Kernel thread io_uring-sq is not running."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:187",
+        "text": "       1750 ?        00:00:00 io_uring-sq"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:188",
+        "text": "    Kernel thread io_uring-sq found running..."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:197",
+        "text": "You do call :c:func:`io_uring_submit`, though. We saw in previous examples that this caused an :c:func:`io_uring_enter` system call to be issued. Not in this case where you've set up the ``IORING_SETUP_SQPOLL`` flag, though. ``liburing`` completely hides this from you while keeping a constant interface to your programs. But, can we verify this? Yes, we can via the ``bpftrace`` program that uses eBPF to let us peek into the system. Here, we will use tracepoints in the kernel that ``io_uring`` has setup to prove that when we set ``IORING_SETUP_SQPOLL`` and submit I/O requests, in spite of us calling the :c:func:`io_uring_submit` function, our program never makes the :c:func:`io_uring_enter` system call. Like discussed previously, for high throughput programs, the idea is to avoid system calls as much as we can."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:199",
+        "text": "In the program below, we attach to ``io_uring``'s ``io_uring_submit_sqe`` tracepoint. This tracepoint is triggered whenever an SQE is submitted to the kernel. Each time this tracepoint is triggered, we use ``bpftrace`` to print the name of the command and its PID. First, let's run the ``bpftrace`` command on one terminal while running the :ref:`fixed_buffers` example in another. Here is a sample output from my machine. You can see that ``fixed_buffers`` is the one submitting the SQE."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:203",
+        "text": "    \u279c  sudo bpftrace -e 'tracepoint:io_uring:io_uring_submit_sqe {printf(\"%s(%d)\\n\", comm, pid);}'"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:214",
+        "text": "    \u279c  sudo bpftrace -e 'tracepoint:io_uring:io_uring_submit_sqe {printf(\"%s(%d)\\n\", comm, pid);}'"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:215",
+        "text": "    io_uring-sq(30429)"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:216",
+        "text": "    io_uring-sq(30429)"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:217",
+        "text": "    io_uring-sq(30429)"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:218",
+        "text": "    io_uring-sq(30429)"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:6",
+        "text": "We discussed in :ref:`the introduction <async_intro>` that because :man:`select(2)`, :man:`poll(2)` and :man:`epoll(7)` report operations on local / regular files as always being in a ready state, libraries like libuv (this one powers NodeJS) use a separate thread pool to deal with file I/O. One huge advantage with ``io_uring`` is that it presents a single, clean uniform and above all, efficient interface for many types of I/O."
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:8",
+        "text": "In this example, we\u2019ll look at an additional operation, ``accept()`` and how to do it using ``io_uring``. Throw in operations for ``readv()`` and ``writev()``, you have the capability to write a simple web server! This web server is based on code I wrote for ZeroHTTPd, a program that features in an `article series <https://unixism.net/2019/04/linux-applications-performance-introduction/>`_ I wrote to explore various Linux process models and how they perform compared to each other. I\u2019ve rewritten ZeroHTTPd to use the ``io_uring`` interface exclusively."
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:47",
+        "text": "\tstruct io_uring ring;"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:486",
+        "text": "Before anything else, the ``main()`` function calls ``setup_listening_socket()`` to listen on the designated port. But we do not call ``accept()`` to actually accept connections. We do that through a request to ``io_uring`` as explained later."
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:488",
+        "text": "The core of the program is the ``server_loop()`` function, which issues submissions (itself and via other functions) to ``io_uring``, waits for completion queue entries and processes them. Let\u2019s take a closer look at it."
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:576",
+        "text": "We add a new ``accept()`` request back in the submission queue now that we\u2019ve processed the previous one. Else our program won\u2019t be accepting any new connections from clients. We then call the ``add_read_request()`` function which adds a submission request for ``readv()`` so that we can read the HTTP request from the client. Couple of things here: We could have used ``read()``, but that operation isn\u2019t supported in ``io_uring`` until kernel version 5.6, which, as of the time of this writing, is the bleeding edge stable version and won\u2019t be found in many distributions for several months at least. Also, using ``readv()`` and ``writev()`` allows us to build in a lot of common logic, especially around buffer management as we\u2019ll see later. Now, let\u2019s look at ``add_read_request()``:"
+      },
+      {
+        "original": "what_is_io_uring.rst:3",
+        "text": "What is io_uring?"
+      },
+      {
+        "original": "what_is_io_uring.rst:5",
+        "text": "``io_uring`` is a new asynchronous I/O API for Linux created by Jens Axboe from Facebook. It aims at providing an API without the limitations of the current :man:`select(2)`, :man:`poll(2)`, :man:`epoll(7)` or :man:`aio(7)` family of system calls, which we discussed in the previous section. Given that users of asynchronous programming models choose it in the first place for performance reasons, it makes sense to have an API that has very low performance overheads. We shall see how ``io_uring`` achieves this in subsequent sections."
+      },
+      {
+        "original": "what_is_io_uring.rst:8",
+        "text": "The io_uring interface"
+      },
+      {
+        "original": "what_is_io_uring.rst:10",
+        "text": "The very name io_uring comes from the fact that the interfaces uses ring buffers as the main interface for kernel-user space communication. While there are system calls involved, they are kept to a minimum and there is a polling mode you can use to reduce the need to make system calls as much as possible."
+      },
+      {
+        "original": "what_is_io_uring.rst:18",
+        "text": "The mental model you need to construct in order to use ``io_uring`` to build programs that process I/O asynchronously is fairly simple. "
+      },
+      {
+        "original": "what_is_io_uring.rst:22",
+        "text": "* You tell io_uring what you need to get done (read or write a file, accept client connections, etc), which you describe as part of a submission queue entry (SQE) and add it to the tail of the submission ring buffer."
+      },
+      {
+        "original": "what_is_io_uring.rst:33",
+        "text": "io_uring performance"
+      },
+      {
+        "original": "what_is_io_uring.rst:35",
+        "text": "Because of the shared ring buffers between the kernel and user space, io_uring can be a zero-copy system. Copying bytes around becomes necessary when system calls that transfer data between kernel and user space are involved. But since the bulk of the communication in ``io_uring`` is via buffers shared between the kernel and user space, this huge performance overhead is completely avoided. While system calls (and we're used to making them a lot) may not seem like a significant overhead, in high performance applications, making a lot of them will begin to matter. Also, system calls are not as cheap as they used to be. Throw in workarounds the operating system has in place to deal with `Specter and Meltdown <https://meltdownattack.com/>`_, we are talking non-trivial overheads. So, avoiding system calls as much as possible is a fantastic idea in high-performance applications indeed."
+      },
+      {
+        "original": "what_is_io_uring.rst:37",
+        "text": "While using synchronous programming interfaces or even when using asynchronous programming interfaces under Linux, there is at least one system call involved in the submission of each request. In ``io_uring``, you can add several requests, simply by adding multiple SQEs each describing the I/O operation you want and make a single call to io_uring_enter. For starers, that's a win right there. But it gets better."
+      },
+      {
+        "original": "what_is_io_uring.rst:41",
+        "text": "With some clever use of shared ring buffers, ``io_uring`` performance is really memory-bound, since in polling mode, we can do away with system calls altogether. It is important to remember that performance benchmarking is a relative process with some kind of a common point of reference. According to the `io_uring paper <https://kernel.dk/io_uring.pdf>`_, on a reference machine, in polling mode, ``io_uring`` managed to clock 1.7M 4k IOPS, while :man:`aio(7)` manages 608k. Although much more than double, this isn't a fair comparison since :man:`aio(7)` doesn't feature a polled mode. But even when polled mode is disabled, ``io_uring`` hits 1.2M IOPS, close to double that of :man:`aio(7)`."
+      },
+      {
+        "original": "what_is_io_uring.rst:43",
+        "text": "To check the raw throughput of the ``io_uring`` interface, there is a no-op request type. With this, on the reference machine, ``io_uring`` achieves 20M messages per second. See :c:func:`io_uring_prep_nop` for more details."
+      },
+      {
+        "original": "what_is_io_uring.rst:47",
+        "text": "Writing a small program that reads files and prints them on to the console, like how the Unix ``cat`` utility does might be a good starting point to get your hands wet with the ``io_uring`` API. Please see the next chapter for one such example."
+      },
+      {
+        "original": "what_is_io_uring.rst:51",
+        "text": "While being acquainted with the low-level ``io_uring`` API is most certainly a good thing, in real, serious programs you probably want to use the higher-level interface provided by liburing. Programs like `QEMU <https://qemu.org>`_ already use it. If liburing never existed, you'd have built some abstraction layer over the low-lever ``io_uring`` interface. liburing does that for you and it is a well thought-out interface as well. In short, you should probably put in some effort to understand how the low-level ``io_uring`` interface works, but by default you should really be using ``liburing`` in your programs. "
+      }
+    ],
+    "io_uring_sq": [
+      {
+        "original": "ref-liburing/setup_teardown.rst:13",
+        "text": "        struct io_uring_sq sq;"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:24",
+        "text": ".. c:struct:: io_uring_sq"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:27",
+        "text": "    struct io_uring_sq {"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:210",
+        "text": "Let's repeat the previous exercise, but now by running the current example. You can see that the SQE submission happens via the ``io_uring_sq`` kernel thread. We thus avoid system calls."
+      }
+    ],
+    "io_uring_cq": [
+      {
+        "original": "ref-liburing/setup_teardown.rst:14",
+        "text": "        struct io_uring_cq cq;"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:46",
+        "text": ".. c:struct:: io_uring_cq"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:49",
+        "text": "    struct io_uring_cq {"
+      }
+    ],
+    "io_uring_sqe": [
+      {
+        "original": "delme.c:81",
+        "text": "extern struct io_uring_sqe *io_uring_get_sqe(struct io_uring *ring);"
+      },
+      {
+        "original": "delme.c:83",
+        "text": "static inline void io_uring_sqe_set_data(struct io_uring_sqe *sqe, void *data)"
+      },
+      {
+        "original": "delme.c:85",
+        "text": "static inline void io_uring_sqe_set_flags(struct io_uring_sqe *sqe,"
+      },
+      {
+        "original": "delme.c:92",
+        "text": "static inline void io_uring_prep_splice(struct io_uring_sqe *sqe,"
+      },
+      {
+        "original": "delme.c:98",
+        "text": "static inline void io_uring_prep_readv(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:102",
+        "text": "static inline void io_uring_prep_read_fixed(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:106",
+        "text": "static inline void io_uring_prep_writev(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:110",
+        "text": "static inline void io_uring_prep_write_fixed(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:114",
+        "text": "static inline void io_uring_prep_recvmsg(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:117",
+        "text": "static inline void io_uring_prep_sendmsg(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:120",
+        "text": "static inline void io_uring_prep_poll_add(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:123",
+        "text": "static inline void io_uring_prep_poll_remove(struct io_uring_sqe *sqe,"
+      },
+      {
+        "original": "delme.c:126",
+        "text": "static inline void io_uring_prep_fsync(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:129",
+        "text": "static inline void io_uring_prep_nop(struct io_uring_sqe *sqe)"
+      },
+      {
+        "original": "delme.c:131",
+        "text": "static inline void io_uring_prep_accept(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:135",
+        "text": "static inline void io_uring_prep_connect(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:139",
+        "text": "static inline void io_uring_prep_fallocate(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:142",
+        "text": "static inline void io_uring_prep_openat(struct io_uring_sqe *sqe, int dfd,"
+      },
+      {
+        "original": "delme.c:145",
+        "text": "static inline void io_uring_prep_close(struct io_uring_sqe *sqe, int fd)"
+      },
+      {
+        "original": "delme.c:147",
+        "text": "static inline void io_uring_prep_read(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:150",
+        "text": "static inline void io_uring_prep_write(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:153",
+        "text": "static inline void io_uring_prep_statx(struct io_uring_sqe *sqe, int dfd,"
+      },
+      {
+        "original": "delme.c:157",
+        "text": "static inline void io_uring_prep_fadvise(struct io_uring_sqe *sqe, int fd,"
+      },
+      {
+        "original": "delme.c:160",
+        "text": "static inline void io_uring_prep_madvise(struct io_uring_sqe *sqe, void *addr,"
+      },
+      {
+        "original": "delme.c:163",
+        "text": "static inline void io_uring_prep_send(struct io_uring_sqe *sqe, int sockfd,"
+      },
+      {
+        "original": "delme.c:166",
+        "text": "static inline void io_uring_prep_recv(struct io_uring_sqe *sqe, int sockfd,"
+      },
+      {
+        "original": "delme.c:169",
+        "text": "static inline void io_uring_prep_openat2(struct io_uring_sqe *sqe, int dfd,"
+      },
+      {
+        "original": "delme.c:172",
+        "text": "static inline void io_uring_prep_epoll_ctl(struct io_uring_sqe *sqe, int epfd,"
+      },
+      {
+        "original": "delme.c:205",
+        "text": "static inline void io_uring_prep_files_update(struct io_uring_sqe *sqe,"
+      },
+      {
+        "original": "delme.c:208",
+        "text": "static inline void io_uring_prep_provide_buffers(struct io_uring_sqe *sqe,"
+      },
+      {
+        "original": "delme.c:211",
+        "text": "static inline void io_uring_prep_remove_buffers(struct io_uring_sqe *sqe,"
+      },
+      {
+        "original": "delme.c:217",
+        "text": "static inline void io_uring_prep_timeout(struct io_uring_sqe *sqe,"
+      },
+      {
+        "original": "delme.c:220",
+        "text": "static inline void io_uring_prep_timeout_remove(struct io_uring_sqe *sqe,"
+      },
+      {
+        "original": "delme.c:222",
+        "text": "static inline void io_uring_prep_cancel(struct io_uring_sqe *sqe, void *user_data,"
+      },
+      {
+        "original": "delme.c:224",
+        "text": "static inline void io_uring_prep_link_timeout(struct io_uring_sqe *sqe,"
+      },
+      {
+        "original": "low_level.rst:21",
+        "text": "Now that we have a mental model of how things work, let\u2019s look at how this is done in a bit more detail. Compared to the submission queue entry (SQE), the completion queue entry (CQE) is very simple. So, let\u2019s look at it first. The SQE is an instance of an ``io_uring_sqe struct`` using which you submit requests. You add it to the submission ring buffer. The CQE is an instance of an ``io_uring_cqe`` structure which the kernel responds with for every ``io_uring_sqe`` structure instance that is added to the submission queue. This contains the results of the operation you requested via an SQE instance."
+      },
+      {
+        "original": "low_level.rst:47",
+        "text": "  struct io_uring_sqe {"
+      },
+      {
+        "original": "low_level.rst:128",
+        "text": "        struct io_uring_sqe *sqes;"
+      },
+      {
+        "original": "low_level.rst:264",
+        "text": "        s->sqes = mmap(0, p.sq_entries * sizeof(struct io_uring_sqe),"
+      },
+      {
+        "original": "low_level.rst:397",
+        "text": "        struct io_uring_sqe *sqe = &s->sqes[index];"
+      },
+      {
+        "original": "low_level.rst:506",
+        "text": "    s->sqes = mmap(0, p.sq_entries * sizeof(struct io_uring_sqe),"
+      },
+      {
+        "original": "low_level.rst:558",
+        "text": "  struct io_uring_sqe *sqe;"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:81",
+        "text": "   struct io_uring_sqe {"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:44",
+        "text": "submission queue entry (see the *struct io_uring_sqe* definition in"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:74",
+        "text": "be set in the *flags* member of the *struct io_uring_sqe*, and the *fd*"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:219",
+        "text": "   sqentries = mmap(0, sq_entries * sizeof(struct io_uring_sqe),"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:35",
+        "text": "        struct io_uring_sqe *sqes;"
+      },
+      {
+        "original": "ref-liburing/sqe.rst:11",
+        "text": "``struct io_uring_sqe``"
+      },
+      {
+        "original": "ref-liburing/sqe.rst:15",
+        "text": "    struct io_uring_sqe {"
+      },
+      {
+        "original": "ref-liburing/submission.rst:16",
+        "text": "      struct io_uring_sqe *sqe = io_uring_get_sqe(ring);"
+      },
+      {
+        "original": "ref-liburing/submission.rst:32",
+        "text": ".. c:function:: struct io_uring_sqe *io_uring_get_sqe(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:40",
+        "text": "  **Return value**: a pointer to :c:struct:`io_uring_sqe` that represents a vacant SQE. NULL is returned if the submission queue is full."
+      },
+      {
+        "original": "ref-liburing/submission.rst:51",
+        "text": ".. c:function:: void io_uring_sqe_set_data(struct io_uring_sqe *sqe, void *data)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:62",
+        "text": ".. c:function:: void io_uring_sqe_set_flags(struct io_uring_sqe *sqe, unsigned flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:114",
+        "text": ".. c:function:: void io_uring_prep_nop(struct io_uring_sqe *sqe)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:127",
+        "text": ".. c:function:: void io_uring_prep_read(struct io_uring_sqe *sqe, int fd, void *buf, unsigned nbytes, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:148",
+        "text": ".. c:function:: void io_uring_prep_write(struct io_uring_sqe *sqe, int fd, const void *buf, unsigned nbytes, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:169",
+        "text": ".. c:function:: void io_uring_prep_readv(struct io_uring_sqe *sqe, int fd, const struct iovec *iovecs, unsigned nr_vecs, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:190",
+        "text": ".. c:function:: void io_uring_prep_read_fixed(struct io_uring_sqe *sqe, int fd, void *buf, unsigned nbytes, off_t offset, int buf_index)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:213",
+        "text": ".. c:function:: void io_uring_prep_writev(struct io_uring_sqe *sqe, int fd, const struct iovec *iovecs, unsigned nr_vecs, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:234",
+        "text": ".. c:function:: void io_uring_prep_write_fixed(struct io_uring_sqe *sqe, int fd, const void *buf, unsigned nbytes, off_t offset, int buf_index)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:259",
+        "text": ".. c:function:: void io_uring_prep_fsync(struct io_uring_sqe *sqe, int fd, unsigned fsync_flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:283",
+        "text": ".. c:function:: void io_uring_prep_close(struct io_uring_sqe *sqe, int fd)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:300",
+        "text": ".. c:function:: void io_uring_prep_openat(struct io_uring_sqe *sqe, int dfd, const char *path, int flags, mode_t mode)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:321",
+        "text": ".. c:function:: void io_uring_prep_openat2(struct io_uring_sqe *sqe, int dfd, const char *path, struct open_how *how)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:341",
+        "text": ".. c:function:: void io_uring_prep_fallocate(struct io_uring_sqe *sqe, int fd, int mode, off_t offset, off_t len)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:361",
+        "text": ".. c:function:: void io_uring_prep_statx(struct io_uring_sqe *sqe, int dfd, const char *path, int flags, unsigned mask, struct statx *statxbuf)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:380",
+        "text": ".. c:function:: void io_uring_prep_fadvise(struct io_uring_sqe *sqe, int fd, off_t offset, off_t len, int advice)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:399",
+        "text": ".. c:function:: void io_uring_prep_madvise(struct io_uring_sqe *sqe, void *addr, off_t length, int advice)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:418",
+        "text": ".. c:function:: void io_uring_prep_splice(struct io_uring_sqe *sqe, int fd_in, loff_t off_in, int fd_out, loff_t off_out, unsigned int nbytes, unsigned int splice_flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:442",
+        "text": ".. c:function:: void io_uring_prep_recvmsg(struct io_uring_sqe *sqe, int fd, struct msghdr *msg, unsigned flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:461",
+        "text": ".. c:function:: void io_uring_prep_sendmsg(struct io_uring_sqe *sqe, int fd, const struct msghdr *msg, unsigned flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:473",
+        "text": ".. c:function:: void io_uring_prep_recv(struct io_uring_sqe *sqe, int sockfd, void *buf, size_t len, int flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:493",
+        "text": ".. c:function:: void io_uring_prep_send(struct io_uring_sqe *sqe, int sockfd, const void *buf, size_t len, int flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:505",
+        "text": ".. c:function:: void io_uring_prep_accept(struct io_uring_sqe *sqe, int fd, struct sockaddr *addr, socklen_t *addrlen, int flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:525",
+        "text": ".. c:function:: void io_uring_prep_connect(struct io_uring_sqe *sqe, int fd, struct sockaddr *addr, socklen_t addrlen)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:544",
+        "text": ".. c:function:: void io_uring_prep_epoll_ctl(struct io_uring_sqe *sqe, int epfd, int fd, int op, struct epoll_event *ev)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:565",
+        "text": ".. c:function:: void io_uring_prep_poll_add(struct io_uring_sqe *sqe, int fd, short poll_mask)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:583",
+        "text": ".. c:function:: void io_uring_prep_poll_remove(struct io_uring_sqe *sqe, void *user_data)"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:138",
+        "text": "      struct io_uring_sqe *sqe = io_uring_get_sqe(ring);"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:191",
+        "text": "    struct io_uring_sqe *sqe = io_uring_get_sqe(ring);"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:68",
+        "text": "      struct io_uring_sqe *sqe;"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:82",
+        "text": "      struct io_uring_sqe *sqe;"
+      },
+      {
+        "original": "tutorial/fixed_buffers.rst:23",
+        "text": "        struct io_uring_sqe *sqe;"
+      },
+      {
+        "original": "tutorial/link_liburing.rst:20",
+        "text": "        struct io_uring_sqe *sqe;"
+      },
+      {
+        "original": "tutorial/register_eventfd.rst:69",
+        "text": "        struct io_uring_sqe *sqe;"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:48",
+        "text": "        struct io_uring_sqe *sqe;"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:148",
+        "text": "\t\t\tstruct io_uring_sqe *sqe = io_uring_get_sqe(&ring);"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:160",
+        "text": "\t\t\tstruct io_uring_sqe *sqe = io_uring_get_sqe(&ring);"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:175",
+        "text": "\t\t\tstruct io_uring_sqe *sqe = io_uring_get_sqe(&ring);"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:541",
+        "text": "\t\tstruct io_uring_sqe *sqe = io_uring_get_sqe(&ring);"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:581",
+        "text": "\t\tstruct io_uring_sqe *sqe = io_uring_get_sqe(&ring);"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:626",
+        "text": "      struct io_uring_sqe *sqe = io_uring_get_sqe(&ring);"
+      }
+    ],
+    "io_uring_cqe": [
+      {
+        "original": "delme.c:31",
+        "text": "static inline void *io_uring_cqe_get_data(const struct io_uring_cqe *cqe)"
+      },
+      {
+        "original": "delme.c:33",
+        "text": "unsigned io_uring_peek_batch_cqe(struct io_uring *ring, struct io_uring_cqe **cqes, unsigned count);"
+      },
+      {
+        "original": "delme.c:35",
+        "text": "extern int io_uring_wait_cqes(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr, struct __kernel_timespec *ts, sigset_t *sigmask);"
+      },
+      {
+        "original": "delme.c:37",
+        "text": "extern int io_uring_wait_cqe_timeout(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, struct __kernel_timespec *ts);"
+      },
+      {
+        "original": "delme.c:45",
+        "text": "static inline int io_uring_wait_cqe_nr(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr)"
+      },
+      {
+        "original": "delme.c:52",
+        "text": "static inline int io_uring_peek_cqe(struct io_uring *ring, struct io_uring_cqe **cqe_ptr)"
+      },
+      {
+        "original": "delme.c:58",
+        "text": "static inline int io_uring_wait_cqe(struct io_uring *ring, struct io_uring_cqe **cqe_ptr)"
+      },
+      {
+        "original": "delme.c:70",
+        "text": "static inline void io_uring_cqe_seen(struct io_uring *ring, struct io_uring_cqe *cqe)"
+      },
+      {
+        "original": "low_level.rst:21",
+        "text": "Now that we have a mental model of how things work, let\u2019s look at how this is done in a bit more detail. Compared to the submission queue entry (SQE), the completion queue entry (CQE) is very simple. So, let\u2019s look at it first. The SQE is an instance of an ``io_uring_sqe struct`` using which you submit requests. You add it to the submission ring buffer. The CQE is an instance of an ``io_uring_cqe`` structure which the kernel responds with for every ``io_uring_sqe`` structure instance that is added to the submission queue. This contains the results of the operation you requested via an SQE instance."
+      },
+      {
+        "original": "low_level.rst:25",
+        "text": "    struct io_uring_cqe {"
+      },
+      {
+        "original": "low_level.rst:33",
+        "text": "As mentioned in the code comment, the user_data field is something that is passed as-is from the SQE to the CQE instance. Let\u2019s say you submit a bunch of requests in the submission queue, it is not necessary that they complete in the same order and show up on the completion queue as CQEs. Take the following scenario for instance: You have two disks on your machine: one is a slower spinning hard drive and another is a super-fast SSD. You submit 2 requests on the submission queue. The first one to read a 100kB file on the slower spinning hard disk and the second one to read a file of the same size on the faster SSD. If ordering were to be maintained, even though the data from the file on the SSD can be expected to arrive sooner, should the kernel wait for data from the file on the spinning hard drive to become available? Bad idea because this stops us from running as fast as we can. So, CQEs can arrive in any order as they become available. Whichever operation finishes, results for it are made available on the CQ. Since there is no specified order in which CQEs arrive, given that now you know how a CQE looks like from the ``io_uring_cqe`` structure above, how do you identify the which SQE request a particular CQE corresponds to? One way to do that is to use the ``user_data`` field common to both SQEs and CQEs to identify completions. Not that you\u2019d set a unique ID or something, but you\u2019d usually pass a pointer. If this is confusing, just wait till you see a clear example later on here."
+      },
+      {
+        "original": "low_level.rst:122",
+        "text": "        struct io_uring_cqe *cqes;"
+      },
+      {
+        "original": "low_level.rst:215",
+        "text": "        int cring_sz = p.cq_off.cqes + p.cq_entries * sizeof(struct io_uring_cqe);"
+      },
+      {
+        "original": "low_level.rst:303",
+        "text": "        struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "low_level.rst:538",
+        "text": "      struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:152",
+        "text": "   *struct io_uring_cqe* will contain 0. If not found, *res* will"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:430",
+        "text": "   struct io_uring_cqe {"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:243",
+        "text": "   ptr = mmap(0, cq_off.cqes + cq_entries * sizeof(struct io_uring_cqe),"
+      },
+      {
+        "original": "ref-liburing/completion.rst:14",
+        "text": "      struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "ref-liburing/completion.rst:37",
+        "text": "* It fills up details of the completion in the :c:struct:`io_uring_cqe` structure. "
+      },
+      {
+        "original": "ref-liburing/completion.rst:45",
+        "text": ".. c:function:: int io_uring_wait_cqe(struct io_uring *ring, struct io_uring_cqe **cqe_ptr)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:52",
+        "text": "  * `cqe_ptr`: pointer to a pointer to a ``io_uring_cqe`` structure."
+      },
+      {
+        "original": "ref-liburing/completion.rst:60",
+        "text": ".. c:function:: int io_uring_wait_cqe_nr(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:67",
+        "text": "  * `cqe_ptr`: pointer to a pointer to a ``io_uring_cqe`` structure."
+      },
+      {
+        "original": "ref-liburing/completion.rst:76",
+        "text": ".. c:function:: int io_uring_wait_cqes(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr, struct __kernel_timespec *ts, sigset_t *sigmask)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:86",
+        "text": "  * `cqe_ptr`: pointer to a pointer to a ``io_uring_cqe`` structure."
+      },
+      {
+        "original": "ref-liburing/completion.rst:97",
+        "text": ".. c:function:: int io_uring_wait_cqe_timeout(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, struct __kernel_timespec *ts)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:103",
+        "text": ".. c:function:: int io_uring_peek_cqe(struct io_uring *ring, struct io_uring_cqe **cqe_ptr)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:110",
+        "text": "  * `cqe_ptr`: pointer to a pointer to a ``io_uring_cqe`` structure."
+      },
+      {
+        "original": "ref-liburing/completion.rst:118",
+        "text": ".. c:function:: unsigned io_uring_peek_batch_cqe(struct io_uring *ring, struct io_uring_cqe **cqes, unsigned count)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:125",
+        "text": "  * `cqe_ptr`: pointer to a pointer to a ``io_uring_cqe`` structure."
+      },
+      {
+        "original": "ref-liburing/completion.rst:134",
+        "text": ".. c:function:: void *io_uring_cqe_get_data(const struct io_uring_cqe *cqe)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:148",
+        "text": ".. c:function:: void io_uring_cqe_seen(struct io_uring *ring, struct io_uring_cqe *cqe)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:155",
+        "text": "  * `cqe_ptr`: pointer to a pointer to a ``io_uring_cqe`` structure."
+      },
+      {
+        "original": "ref-liburing/cqe.rst:10",
+        "text": "``struct io_uring_cqe``"
+      },
+      {
+        "original": "ref-liburing/cqe.rst:14",
+        "text": "    struct io_uring_cqe {"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:55",
+        "text": "        struct io_uring_cqe *cqes;"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:69",
+        "text": "      struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:203",
+        "text": "    struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:120",
+        "text": "      struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "tutorial/fixed_buffers.rst:24",
+        "text": "        struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "tutorial/link_liburing.rst:21",
+        "text": "        struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "tutorial/register_eventfd.rst:31",
+        "text": "        struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:49",
+        "text": "        struct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:406",
+        "text": "\t\t\tstruct io_uring_cqe *cqe;"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:493",
+        "text": "\t\tstruct io_uring_cqe *cqe;"
+      }
+    ],
+    "io_uring_probe": [
+      {
+        "original": "delme.c:9",
+        "text": "io_uring_opcode_supported(struct io_uring_probe *p, int op)"
+      },
+      {
+        "original": "delme.c:199",
+        "text": "\t\t\t\t\tstruct io_uring_probe *p, unsigned nr);"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:127",
+        "text": "   This operation returns a structure, io_uring_probe, which contains"
+      },
+      {
+        "original": "ref-iouring/io_uring_register.rst:129",
+        "text": "   kernel. *arg* must contain a pointer to a struct io_uring_probe, and"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:7",
+        "text": ".. c:struct:: io_uring_probe"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:10",
+        "text": "    struct io_uring_probe {"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:35",
+        "text": ".. c:function:: struct io_uring_probe *io_uring_get_probe_ring(struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:41",
+        "text": "    **Return value**: on success, a pointer to a :c:struct:`io_uring_probe` which is used to probe the capabilities of the ``io_uring`` subsystem of the running kernel. The :c:struct:`io_uring_probe` contains the list of supported operations. On failure, NULL is returned."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:44",
+        "text": "        This function allocates memory to hold the structure :c:struct:`io_uring_probe`. It is your responsibility to free it once you're done."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:51",
+        "text": ".. c:function:: struct io_uring_probe *io_uring_get_probe(void)"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:53",
+        "text": "    Returns a pointer to a :c:struct:`io_uring_probe` which is used to probe the capabilities of the ``io_uring`` subsystem of the running kernel. The :c:struct:`io_uring_probe` contains the list of supported operations."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:58",
+        "text": "        This function allocates memory to hold the structure :c:struct:`io_uring_probe`. It is your responsibility to free it once you're done."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:69",
+        "text": ".. c:function:: int io_uring_opcode_supported(struct io_uring_probe *p, int op)"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:75",
+        "text": "    * `p`: pointer to a ``io_uring_probe`` structure."
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:85",
+        "text": ".. c:function:: int io_uring_register_probe(struct io_uring *ring, struct io_uring_probe *p, unsigned nr)"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:92",
+        "text": "    * `p`: pointer to ``io_uring_probe`` structure."
+      },
+      {
+        "original": "tutorial/probe_liburing.rst:56",
+        "text": "        struct io_uring_probe *probe = io_uring_get_probe();"
+      }
+    ],
+    "io_uring_probe_op": [
+      {
+        "original": "ref-iouring/io_uring_register.rst:131",
+        "text": "   struct. The ops array is of the type io_uring_probe_op, which holds"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:15",
+        "text": "        struct io_uring_probe_op ops[0];"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:20",
+        "text": ".. c:struct:: io_uring_probe_op"
+      },
+      {
+        "original": "ref-liburing/supported_caps.rst:23",
+        "text": "    struct io_uring_probe_op {"
+      }
+    ],
+    "io_uring_params": [
+      {
+        "original": "delme.c:19",
+        "text": "\tstruct io_uring_params *p);"
+      },
+      {
+        "original": "delme.c:21",
+        "text": "extern int io_uring_queue_mmap(int fd, struct io_uring_params *p,"
+      },
+      {
+        "original": "low_level.rst:143",
+        "text": "    int io_uring_setup(unsigned entries, struct io_uring_params *p)"
+      },
+      {
+        "original": "low_level.rst:192",
+        "text": "        struct io_uring_params p;"
+      },
+      {
+        "original": "low_level.rst:196",
+        "text": "         * We need to pass in the io_uring_params structure to the io_uring_setup()"
+      },
+      {
+        "original": "low_level.rst:220",
+        "text": "         * io_uring_params structure, which is a bit mask. If the "
+      },
+      {
+        "original": "low_level.rst:462",
+        "text": "From :c:func:`main`, we call :c:func:`app_setup_uring`, which does the initialization work required for us to use ``io_uring``. First, we call the :c:func:`io_uring_setup` system call with the queue depth we require and an instance of the structure :c:struct:`io_uring_params` all set to zero. When the call returns, the kernel would have filled up values in the members of this structure. This is how :c:struct:`io_uring_params` looks like:"
+      },
+      {
+        "original": "low_level.rst:466",
+        "text": "  struct io_uring_params {"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:15",
+        "text": ".. c:function:: int io_uring_setup(u32 entries, struct io_uring_params *p)"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:32",
+        "text": "   struct io_uring_params {"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:97",
+        "text": "   cpu set in the *sq_thread_cpu* field of the *struct io_uring_params*."
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:102",
+        "text": "   Create the completion queue with *struct io_uring_params.cq_entries*"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:157",
+        "text": "The rest of the fields in the *struct io_uring_params* are filled in by"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:271",
+        "text": "   *io_uring_params.cq_entries* was invalid."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:80",
+        "text": ".. c:function:: int io_uring_queue_init_params(unsigned entries, struct io_uring *ring, struct io_uring_params *p)"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:82",
+        "text": "    Functionally equivalent to :c:func:`io_uring_queue_init`, but additionally takes a pointer to :c:struct:`io_uring_params` structure, allowing you to specify your own :c:struct:`io_uring_params` structure."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:84",
+        "text": "    In the :c:struct:`io_uring_params` structure, you can only specify ``flags`` which can be used to set :ref:`various flags <io_uring_setup>` and ``sq_thread_cpu`` and ``sq_thread_idle`` fields, which are used to set the CPU affinity and submit queue idle time. Other fields of the structure are filled up by the kernel on return. When you use :c:func:`io_uring_queue_init`, you don't get to specify these values. This function's existence solves this problem for you."
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:90",
+        "text": ".. c:function:: int io_uring_queue_mmap(int fd, struct io_uring_params *p, struct io_uring *ring)"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:97",
+        "text": "    * `p`: a pointer to :c:struct:`io_uring_params`"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:8",
+        "text": "How to use this mode? The idea is simple. You tell ``io_uring`` that you want use this mode by setting the ``IORING_SETUP_SQPOLL`` flag in the ``io_uring_params`` structure's ``flags`` member. If the kernel thread that starts along with your process does not see any submission for a period of time, it will quit and your program will need to call the :c:func:`io_uring_enter` system call once more to wake it up. This period of time is configurable via :c:struct`io_uring_params` structure's ``sq_thread_idle`` member. If you keep the submissions coming however, the kernel poller thread should never sleep."
+      },
+      {
+        "original": "tutorial/sq_poll.rst:145",
+        "text": "        struct io_uring_params params;"
+      },
+      {
+        "original": "tutorial/sq_poll.rst:174",
+        "text": "To initialize ``io_uring``, we use the :c:func:`io_uring_queue_init_params` rather than the usual :c:func:`io_uring_queue_init` since this takes a pointer to a :c:struct:`io_uring_params` structure as an argument. It is in that argument that we specify ``IORING_SETUP_SQPOLL`` as part of the ``flags`` field and set ``sq_thread_idle`` to 2000, which is the idle time for the submission queue poller kernel thread. If there are no submissions for these many milliseconds, the thread will exit and an :c:func:`io_uring_enter` system call will need to be made internally by ``liburing`` to get the kernel thread going again."
+      }
+    ],
+    "io_sqring_offsets": [
+      {
+        "original": "low_level.rst:473",
+        "text": "    struct io_sqring_offsets sq_off;"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:40",
+        "text": "       struct io_sqring_offsets sq_off;"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:165",
+        "text": "   struct io_sqring_offsets {"
+      }
+    ],
+    "io_cqring_offsets": [
+      {
+        "original": "low_level.rst:474",
+        "text": "    struct io_cqring_offsets cq_off;"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:41",
+        "text": "       struct io_cqring_offsets cq_off;"
+      },
+      {
+        "original": "ref-iouring/io_uring_setup.rst:228",
+        "text": "   struct io_cqring_offsets {"
+      }
+    ],
+    "iovec": [
+      {
+        "original": "delme.c:99",
+        "text": "\t\t\t\t       const struct iovec *iovecs,"
+      },
+      {
+        "original": "delme.c:107",
+        "text": "\t\t\t\t\tconst struct iovec *iovecs,"
+      },
+      {
+        "original": "delme.c:179",
+        "text": "\t\t\t\t\tconst struct iovec *iovecs,"
+      },
+      {
+        "original": "low_level.rst:134",
+        "text": "        struct iovec iovecs[];      /* Referred by readv/writev */"
+      },
+      {
+        "original": "low_level.rst:361",
+        "text": "        fi = malloc(sizeof(*fi) + sizeof(struct iovec) * blocks);"
+      },
+      {
+        "original": "low_level.rst:369",
+        "text": "         * For each block of the file we need to read, we allocate an iovec struct"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:9",
+        "text": ".. c:function:: int io_uring_register_buffers(struct io_uring *ring, const struct iovec *iovecs, unsigned nr_iovecs)"
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:16",
+        "text": "    * `iovecs`: pointer to ``iovec`` structure(s)."
+      },
+      {
+        "original": "ref-liburing/advanced_usage.rst:17",
+        "text": "    * `nr_iovecs`: number of structures ``iovec`` structures"
+      },
+      {
+        "original": "ref-liburing/submission.rst:169",
+        "text": ".. c:function:: void io_uring_prep_readv(struct io_uring_sqe *sqe, int fd, const struct iovec *iovecs, unsigned nr_vecs, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:177",
+        "text": "  * `iovecs`: pointer to an array of ``iovec`` structures"
+      },
+      {
+        "original": "ref-liburing/submission.rst:178",
+        "text": "  * `nr_vecs`: number of ``iovec`` instances in the array pointed to by the ``iovecs`` argument."
+      },
+      {
+        "original": "ref-liburing/submission.rst:213",
+        "text": ".. c:function:: void io_uring_prep_writev(struct io_uring_sqe *sqe, int fd, const struct iovec *iovecs, unsigned nr_vecs, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:221",
+        "text": "  * `iovecs`: pointer to an array of ``iovec`` structures"
+      },
+      {
+        "original": "ref-liburing/submission.rst:222",
+        "text": "  * `nr_vecs`: number of ``iovec`` instances in the array pointed to by the ``iovecs`` argument."
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:23",
+        "text": "      struct iovec iovecs[];      /* Referred by readv/writev */"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:105",
+        "text": "                                            (sizeof(struct iovec) * blocks));"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:113",
+        "text": "       * For each block of the file we need to read, we allocate an iovec struct"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:32",
+        "text": "      struct iovec iov;"
+      },
+      {
+        "original": "tutorial/fixed_buffers.rst:6",
+        "text": "The idea with using fixed buffers is this: you provide a set of buffers you describe with an array of ``iovec`` structures and register them with the kernel using :c:func:`io_uring_register_buffers`. This causes the kernel to map these buffers in, avoiding future copies to and from user space. You can then use the \"fixed buffer\" functions like :c:func:`io_uring_prep_write_fixed` and :c:func:`io_uring_prep_read_fixed` specifying the index of the buffer you want to use."
+      },
+      {
+        "original": "tutorial/fixed_buffers.rst:22",
+        "text": "        struct iovec iov[4];"
+      },
+      {
+        "original": "tutorial/fixed_buffers.rst:130",
+        "text": "We allocate 4 buffers via :man:`malloc(3)` and then register them with the kernel with the :c:func:`io_uring_register_buffers` function. The ``iovec`` structure describes each array by holding a base address and the size of the allocated buffer. We use an array of ``iovec`` structures 4 elements long to hold details about the 4 arrays we need."
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:44",
+        "text": "\t\t\tstruct iovec iov[];"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:161",
+        "text": "\t\t\tstruct request *req = malloc(sizeof(*req) + sizeof(struct iovec));"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:184",
+        "text": "\t\t\tstruct request *req = zh_malloc(sizeof(*req) + sizeof(struct iovec));"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:218",
+        "text": "\tvoid copy_file_contents(char *file_path, off_t file_size, struct iovec *iov) {"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:255",
+        "text": "\tvoid send_headers(const char *path, off_t len, struct iovec *iov) {"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:347",
+        "text": "\t\t\t\t\t\t\tstruct request *req = zh_malloc(sizeof(*req) + (sizeof(struct iovec) * 6));"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:559",
+        "text": "\t\tstruct iovec iov[];"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:582",
+        "text": "\t\tstruct request *req = malloc(sizeof(*req) + sizeof(struct iovec));"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:613",
+        "text": "            struct request *req = zh_malloc(sizeof(*req) + (sizeof(struct iovec) * 6));"
+      }
+    ],
+    "open_how": [
+      {
+        "original": "delme.c:170",
+        "text": "\t\t\t\t\tconst char *path, struct open_how *how)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:321",
+        "text": ".. c:function:: void io_uring_prep_openat2(struct io_uring_sqe *sqe, int dfd, const char *path, struct open_how *how)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:330",
+        "text": "  * `how`: a pointer to a ``open_how`` structure which let you control how exactly you want to open the file. See :man:`openat2(2)` for more details."
+      }
+    ],
+    "__kernel_timespec": [
+      {
+        "original": "delme.c:35",
+        "text": "extern int io_uring_wait_cqes(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr, struct __kernel_timespec *ts, sigset_t *sigmask);"
+      },
+      {
+        "original": "delme.c:37",
+        "text": "extern int io_uring_wait_cqe_timeout(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, struct __kernel_timespec *ts);"
+      },
+      {
+        "original": "delme.c:218",
+        "text": "\t\t\t\t\t struct __kernel_timespec *ts,"
+      },
+      {
+        "original": "delme.c:225",
+        "text": "\t\t\t\t\t      struct __kernel_timespec *ts,"
+      },
+      {
+        "original": "ref-liburing/completion.rst:76",
+        "text": ".. c:function:: int io_uring_wait_cqes(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr, struct __kernel_timespec *ts, sigset_t *sigmask)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:88",
+        "text": "  * `ts`: pointer to a ``__kernel_timespec`` structure."
+      },
+      {
+        "original": "ref-liburing/completion.rst:97",
+        "text": ".. c:function:: int io_uring_wait_cqe_timeout(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, struct __kernel_timespec *ts)"
+      }
+    ],
+    "sigset_t": [
+      {
+        "original": "delme.c:35",
+        "text": "extern int io_uring_wait_cqes(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr, struct __kernel_timespec *ts, sigset_t *sigmask);"
+      },
+      {
+        "original": "ref-iouring/io_uring_enter.rst:15",
+        "text": ".. c:function:: int io_uring_enter(unsigned int fd, unsigned int to_submit, unsigned int min_complete, unsigned int flags, sigset_t *sig)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:76",
+        "text": ".. c:function:: int io_uring_wait_cqes(struct io_uring *ring, struct io_uring_cqe **cqe_ptr, unsigned wait_nr, struct __kernel_timespec *ts, sigset_t *sigmask)"
+      },
+      {
+        "original": "ref-liburing/completion.rst:89",
+        "text": "  * `sigmask`: a pointer to ``sigset_t``, the set of signals to block. The prevailing signal mask is restored before returning."
+      }
+    ],
+    "sockaddr": [
+      {
+        "original": "delme.c:132",
+        "text": "\t\t\t\t\tstruct sockaddr *addr,"
+      },
+      {
+        "original": "delme.c:136",
+        "text": "\t\t\t\t\t struct sockaddr *addr,"
+      },
+      {
+        "original": "ref-liburing/submission.rst:505",
+        "text": ".. c:function:: void io_uring_prep_accept(struct io_uring_sqe *sqe, int fd, struct sockaddr *addr, socklen_t *addrlen, int flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:513",
+        "text": "  * `addr`: pointer to a ``sockaddr`` structure. This will be filled with the address of the peer."
+      },
+      {
+        "original": "ref-liburing/submission.rst:514",
+        "text": "  * `addrlen`: pointer to ``socklen_t``. A value-result argument that must be filled in with the size of the ``sockaddr`` structure for the call and which will be set to the size of the peer address."
+      },
+      {
+        "original": "ref-liburing/submission.rst:525",
+        "text": ".. c:function:: void io_uring_prep_connect(struct io_uring_sqe *sqe, int fd, struct sockaddr *addr, socklen_t addrlen)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:533",
+        "text": "  * `addr`: pointer to a ``sockaddr`` structure containing the address of the peer."
+      },
+      {
+        "original": "ref-liburing/submission.rst:534",
+        "text": "  * `addrlen`: pointer to ``socklen_t``. A value-result argument that must be filled in with the size of the ``sockaddr`` structure for the call and which will be set to the size of the peer address."
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:136",
+        "text": "\t\t\t\t\t\t\t (const struct sockaddr *)&srv_addr,"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:149",
+        "text": "\t\t\tio_uring_prep_accept(sqe, server_socket, (struct sockaddr *) client_addr,"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:542",
+        "text": "\t\tio_uring_prep_accept(sqe, server_socket, (struct sockaddr *) client_addr,"
+      }
+    ],
+    "socklen_t": [
+      {
+        "original": "delme.c:133",
+        "text": "\t\t\t\t\tsocklen_t *addrlen, int flags)"
+      },
+      {
+        "original": "delme.c:137",
+        "text": "\t\t\t\t\t socklen_t addrlen)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:505",
+        "text": ".. c:function:: void io_uring_prep_accept(struct io_uring_sqe *sqe, int fd, struct sockaddr *addr, socklen_t *addrlen, int flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:514",
+        "text": "  * `addrlen`: pointer to ``socklen_t``. A value-result argument that must be filled in with the size of the ``sockaddr`` structure for the call and which will be set to the size of the peer address."
+      },
+      {
+        "original": "ref-liburing/submission.rst:525",
+        "text": ".. c:function:: void io_uring_prep_connect(struct io_uring_sqe *sqe, int fd, struct sockaddr *addr, socklen_t addrlen)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:534",
+        "text": "  * `addrlen`: pointer to ``socklen_t``. A value-result argument that must be filled in with the size of the ``sockaddr`` structure for the call and which will be set to the size of the peer address."
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:147",
+        "text": "\t\t\t\t\t\t\t\t\t\t\t\t socklen_t *client_addr_len) {"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:408",
+        "text": "\t\t\tsocklen_t client_addr_len = sizeof(client_addr);"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:495",
+        "text": "\t\tsocklen_t client_addr_len = sizeof(client_addr);"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:540",
+        "text": "\t\t\t\t\t\tsocklen_t *client_addr_len) {"
+      }
+    ],
+    "msghdr": [
+      {
+        "original": "delme.c:115",
+        "text": "\t\t\t\t\t struct msghdr *msg, unsigned flags)"
+      },
+      {
+        "original": "delme.c:118",
+        "text": "\t\t\t\t\t const struct msghdr *msg, unsigned flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:442",
+        "text": ".. c:function:: void io_uring_prep_recvmsg(struct io_uring_sqe *sqe, int fd, struct msghdr *msg, unsigned flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:444",
+        "text": "  This function sets up the submission queue entry pointed to by ``sqe`` with a :man:`recvmsg(2)` like operation. The :man:`recvmsg(2)` system call is used to read data from a socket. It uses a ``msghdr`` structure to reduce the number of arguments it takes. This call works with both connection-oriented (like TCP) and connectionless (like UDP) sockets. See :man:`recvmsg(2)` for more details."
+      },
+      {
+        "original": "ref-liburing/submission.rst:450",
+        "text": "  * `msg`: pointer to an ``msghdr`` structure."
+      },
+      {
+        "original": "ref-liburing/submission.rst:461",
+        "text": ".. c:function:: void io_uring_prep_sendmsg(struct io_uring_sqe *sqe, int fd, const struct msghdr *msg, unsigned flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:475",
+        "text": "  This function sets up the submission queue entry pointed to by ``sqe`` with a :man:`recv(2)` like operation. The :man:`recv(2)` system call is used to read data from a socket. It uses a ``msghdr`` structure to reduce the number of arguments it takes. This call works with both connection-oriented (like TCP) and connectionless (like UDP) sockets. Without the ``flags`` argument, it is the exact equivalent of :man:`read(2)` except one small difference while dealing with zero-length datagrams. See :man:`recv(2)` for more details."
+      }
+    ],
+    "statx": [
+      {
+        "original": "delme.c:155",
+        "text": "\t\t\t\tstruct statx *statxbuf)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:361",
+        "text": ".. c:function:: void io_uring_prep_statx(struct io_uring_sqe *sqe, int dfd, const char *path, int flags, unsigned mask, struct statx *statxbuf)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:363",
+        "text": "  This function sets up the submission queue entry pointed to by ``sqe`` with an :man:`statx(2)` like operation. The :man:`statx(2)` system call gets meta information on the file pointed to by ``path`` which is filled up into a ``statx`` structure pointed to by ``statxbuf``. See :man:`statx(2)` for more details."
+      },
+      {
+        "original": "ref-liburing/submission.rst:368",
+        "text": "  * `dfd`: depending on the value of this and ``path``, the file pointed to by ``path`` can be interpreted as an absolute, relative to process or relative to the directory referred to by a directory descriptor in ``dfd`` along with other types of interpretations are possible. See :man:`statx(2)` for details."
+      },
+      {
+        "original": "ref-liburing/submission.rst:369",
+        "text": "  * `path`: file path. Interpreted in combination with value in ``dfd``. See :man:`statx(2)` for details."
+      },
+      {
+        "original": "ref-liburing/submission.rst:370",
+        "text": "  * `flags`: this is used to influence how the path name is looked up. It can also influence what sort of synchronization the kernel will do when querying a file on a remote filesystem. See :man:`statx(2)` for details."
+      },
+      {
+        "original": "ref-liburing/submission.rst:373",
+        "text": "    * :man:`statx(2)`"
+      }
+    ],
+    "size_t": [
+      {
+        "original": "delme.c:164",
+        "text": "\t\t\t\t      const void *buf, size_t len, int flags)"
+      },
+      {
+        "original": "delme.c:167",
+        "text": "\t\t\t\t      void *buf, size_t len, int flags)"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:40",
+        "text": "        size_t ring_sz;"
+      },
+      {
+        "original": "ref-liburing/setup_teardown.rst:57",
+        "text": "        size_t ring_sz;"
+      },
+      {
+        "original": "ref-liburing/submission.rst:473",
+        "text": ".. c:function:: void io_uring_prep_recv(struct io_uring_sqe *sqe, int sockfd, void *buf, size_t len, int flags)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:493",
+        "text": ".. c:function:: void io_uring_prep_send(struct io_uring_sqe *sqe, int sockfd, const void *buf, size_t len, int flags)"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:31",
+        "text": "      size_t first_len;"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:98",
+        "text": "\tvoid *zh_malloc(size_t size) {"
+      }
+    ],
+    "off_t": [
+      {
+        "original": "delme.c:100",
+        "text": "\t\t\t\t       unsigned nr_vecs, off_t offset)"
+      },
+      {
+        "original": "delme.c:104",
+        "text": "\t\t\t\t\t    off_t offset, int buf_index)"
+      },
+      {
+        "original": "delme.c:108",
+        "text": "\t\t\t\t\tunsigned nr_vecs, off_t offset)"
+      },
+      {
+        "original": "delme.c:112",
+        "text": "\t\t\t\t\t     off_t offset, int buf_index)"
+      },
+      {
+        "original": "delme.c:140",
+        "text": "\t\t\t\t\t   int mode, off_t offset, off_t len)"
+      },
+      {
+        "original": "delme.c:148",
+        "text": "\t\t\t\t      void *buf, unsigned nbytes, off_t offset)"
+      },
+      {
+        "original": "delme.c:151",
+        "text": "\t\t\t\t       const void *buf, unsigned nbytes, off_t offset)"
+      },
+      {
+        "original": "delme.c:158",
+        "text": "\t\t\t\t\t off_t offset, off_t len, int advice)"
+      },
+      {
+        "original": "delme.c:161",
+        "text": "\t\t\t\t\t off_t length, int advice)"
+      },
+      {
+        "original": "low_level.rst:133",
+        "text": "        off_t file_sz;"
+      },
+      {
+        "original": "low_level.rst:160",
+        "text": "    off_t get_file_size(int fd) {"
+      },
+      {
+        "original": "low_level.rst:354",
+        "text": "        off_t file_sz = get_file_size(file_fd);"
+      },
+      {
+        "original": "low_level.rst:357",
+        "text": "        off_t bytes_remaining = file_sz;"
+      },
+      {
+        "original": "low_level.rst:375",
+        "text": "            off_t bytes_to_read = bytes_remaining;"
+      },
+      {
+        "original": "ref-liburing/submission.rst:127",
+        "text": ".. c:function:: void io_uring_prep_read(struct io_uring_sqe *sqe, int fd, void *buf, unsigned nbytes, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:148",
+        "text": ".. c:function:: void io_uring_prep_write(struct io_uring_sqe *sqe, int fd, const void *buf, unsigned nbytes, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:169",
+        "text": ".. c:function:: void io_uring_prep_readv(struct io_uring_sqe *sqe, int fd, const struct iovec *iovecs, unsigned nr_vecs, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:190",
+        "text": ".. c:function:: void io_uring_prep_read_fixed(struct io_uring_sqe *sqe, int fd, void *buf, unsigned nbytes, off_t offset, int buf_index)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:213",
+        "text": ".. c:function:: void io_uring_prep_writev(struct io_uring_sqe *sqe, int fd, const struct iovec *iovecs, unsigned nr_vecs, off_t offset)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:234",
+        "text": ".. c:function:: void io_uring_prep_write_fixed(struct io_uring_sqe *sqe, int fd, const void *buf, unsigned nbytes, off_t offset, int buf_index)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:341",
+        "text": ".. c:function:: void io_uring_prep_fallocate(struct io_uring_sqe *sqe, int fd, int mode, off_t offset, off_t len)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:380",
+        "text": ".. c:function:: void io_uring_prep_fadvise(struct io_uring_sqe *sqe, int fd, off_t offset, off_t len, int advice)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:399",
+        "text": ".. c:function:: void io_uring_prep_madvise(struct io_uring_sqe *sqe, void *addr, off_t length, int advice)"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:22",
+        "text": "      off_t file_sz;"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:31",
+        "text": "  off_t get_file_size(int fd) {"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:98",
+        "text": "      off_t file_sz = get_file_size(file_fd);"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:99",
+        "text": "      off_t bytes_remaining = file_sz;"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:100",
+        "text": "      off_t offset = 0;"
+      },
+      {
+        "original": "tutorial/cat_liburing.rst:119",
+        "text": "          off_t bytes_to_read = bytes_remaining;"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:30",
+        "text": "      off_t first_offset, offset;"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:47",
+        "text": "  static int get_file_size(int fd, off_t *size) {"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:81",
+        "text": "  static int queue_read(struct io_uring *ring, off_t size, off_t offset) {"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:118",
+        "text": "  int copy_file(struct io_uring *ring, off_t insize) {"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:121",
+        "text": "      off_t write_left, offset;"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:133",
+        "text": "              off_t this_size = insize;"
+      },
+      {
+        "original": "tutorial/cp_liburing.rst:223",
+        "text": "      off_t insize;"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:218",
+        "text": "\tvoid copy_file_contents(char *file_path, off_t file_size, struct iovec *iov) {"
+      },
+      {
+        "original": "tutorial/webserver_liburing.rst:255",
+        "text": "\tvoid send_headers(const char *path, off_t len, struct iovec *iov) {"
+      }
+    ],
+    "loff_t": [
+      {
+        "original": "delme.c:93",
+        "text": "\t\t\t\t\tint fd_in, loff_t off_in,"
+      },
+      {
+        "original": "delme.c:94",
+        "text": "\t\t\t\t\tint fd_out, loff_t off_out,"
+      },
+      {
+        "original": "ref-liburing/submission.rst:418",
+        "text": ".. c:function:: void io_uring_prep_splice(struct io_uring_sqe *sqe, int fd_in, loff_t off_in, int fd_out, loff_t off_out, unsigned int nbytes, unsigned int splice_flags)"
+      }
+    ],
+    "mode_t": [
+      {
+        "original": "delme.c:143",
+        "text": "\t\t\t\t\tconst char *path, int flags, mode_t mode)"
+      },
+      {
+        "original": "ref-liburing/submission.rst:300",
+        "text": ".. c:function:: void io_uring_prep_openat(struct io_uring_sqe *sqe, int dfd, const char *path, int flags, mode_t mode)"
+      }
+    ]
+  }
+}

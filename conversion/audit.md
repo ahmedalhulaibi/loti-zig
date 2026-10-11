@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 64 native CLI/TCP/reference tests plus nineteen binding/trace/evidence-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 64 native CLI/TCP/reference tests plus twenty-one binding/trace/evidence-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -1219,7 +1219,8 @@ goal completion. Mandatory independent review still needs a supported host.
 
 ### Agent Observations
 
-Remaining generic type-primary claims need body-level comparison. The socket-note
+Generic type-primary claims needed body-level comparison at this checkpoint;
+all22 type rows receive author comparison below, not independent acceptance. The socket-note
 request/response and positive-short SEND corrections are completed below; these
 are reference-evidence changes, not missing native implementations.
 
@@ -1242,7 +1243,7 @@ block notes,567 outside-block selectors and the whole3,618-line index remain
 unchanged; only two row values and their document digest change.
 
 Full97 tests/zero failures/errors/skips,16 attributed400-case properties/166.928s.
-Current bounded total **271**:184 native,3 index,44 trace-parser,18 binding-producer,
+HTTP-note checkpoint bounded total **271**:184 native,3 index,44 trace-parser,18 binding-producer,
 3 CSS,3 layout-oracle,10 publication-policy/fidelity,6 source-prose (two reader
 paragraphs plus these four author-note variants). Two changed-path active probes
 report zero findings; this is not a whole-workspace/semantic acceptance verdict.
@@ -1256,10 +1257,53 @@ for current source/index/core/archive receipts. Generic type/purpose comparison,
 mandatory independent review and final delivery remain open; no retry/fallback,
 push or goal completion.
 
+## Remaining generic native type scopes
+
+Author compared all22 mapped types against actual SDK declarations and compiled
+consumer bodies. Nineteen generic rows now identify specific consumers, effects
+and limits; all80 other whole rows (including prior CQE/probe types) and all99
+identity/signature fields remain unchanged. See `type-binding-audit.md` and
+immutable-Git-checked token selectors; neither accepts every original block.
+
+Native ring/SQ/CQ owners are auto-layout SDK objects, not C/library/kernel records
+to cast. Kernel params120 and offset records40 carry input/output values and
+mapping-relative byte offsets. Current kernel masks8 differ from glibc/musl
+signal-set ABI; off_t:i64 versus u64 SQE sentinel, mode_t:u32 versus Statx.mode:u16
+and OpenHow.mode:u64, usize versus opcode-specific u32 len, mutable/const nested
+vectors and CONNECT input versus ACCEPT value-result output stay distinct.
+File tests assert bytes/size, not actual mode/umask effects; no such claim added.
+
+Two author contracts before producer fix:whole19 rows failed on both producer
+and published map (two assertions, no errors); literal current-target reflection
+passed. Whole19 fixture/test stay exact, no ACL/verifier-agent seal. Thirteen syntax-valid producer
+variants regenerate/check fresh but fail whole meaning scopes; exact producer,
+map and core restore; eleven-test baseline. Initial reflection's obsolete
+`Pointer.is_const` compiler error is preserved/excluded; actual0.17 uses
+`Pointer.attrs.const`. Diagnostic reflection is not a26th installed example,
+kernel operation or portable-ABI proof. No native implementation changed.
+Reflection amendment preserves original helper/expectation/core/13-mutant and
+full99 checkpoint:three exact field-type outputs for OpenHow.mode and raw
+msghdr iovlen/controllen added because size alone cannot distinguish padded or
+equal-size widths. No expectations weakened; whole19 fixture/Python tests/native
+implementations unchanged. Final13 replace initial13, not26; full99 replayed.
+
+Full99 tests/zero failures/errors/skips,16 attributed400-case properties/167.934s (initial168.603s retained).
+Build51/51; strict HTML/EPUB, final archive fidelity/81 reader cases/EPUBCheck
+rechecked. Current bounded total **284**:184 native,3 index,44 trace-parser,
+31 binding-producer,3 CSS,3 layout-oracle,10 publication-policy/fidelity,
+6 source-prose. Current three-path active all-server probe:zero visible findings,
+one existing disposition disclosed. Fabric unavailable; actual bodies used, not
+stale graph/absent-callers inference. Churn coverage73/73 committed-history only,
+not uncommitted changes or semantic acceptance. See `type-binding-verification.json`.
+
+Other original-purpose comparisons, mandatory independent review, findings/final
+acceptance and personal-fork delivery remain open. Supported-host blocker
+unchanged; no retry/fallback/report, push or goal completion.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **97 passed**
-  (64 native + one VM + eight publication + three inventory + two line-index + nineteen binding/trace/evidence-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **99 passed**
+  (64 native + one VM + eight publication + three inventory + two line-index + twenty-one binding/trace/evidence-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -1274,7 +1318,7 @@ push or goal completion.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  sixteen properties**, source hashes, 97 passing tests and zero skips. These remain
+  sixteen properties**, source hashes, 99 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.

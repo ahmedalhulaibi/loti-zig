@@ -62,6 +62,104 @@ TYPES = {
     "mode_t": "std.posix.mode_t",
 }
 
+TYPE_USAGE = {
+    "__kernel_timespec": (
+        SIGNALS,
+        "compiled16-byte native timespec; submitted timer SQEs and basic/EXT_ARG deadline waits use retained operands; expired/canceled tagged results checked; no all clock/flag/race assurance",
+        "Kernel extern record has sec:i64 and nsec:i64, not a presumed libc timespec layout. SQE timers borrow it through their CQE; EXT_ARG waits borrow their timeout through the blocking enter call. Timer CQE and enter result are different outcomes.",
+    ),
+    "io_cqring_offsets": (
+        SETUP,
+        "compiled returned parameter member; actual shared/separate CQ pointer-region matches, mapped reads and cleanup checked;40-byte declaration reflection on current x86_64, not all setup flags/architectures",
+        "Kernel extern offset record embedded in params.cq_off; head/tail/cqes are byte offsets into the chosen CQ mapping, not pointers or the native CompletionQueue object. user_addr is u64; select the correct mapped region before adding offsets.",
+    ),
+    "io_sqring_offsets": (
+        SETUP,
+        "compiled returned parameter member consumed by RawRing.map; real mapped SQ publication/read effects and cleanup checked;40-byte declaration reflection on current x86_64, not all setup flags/architectures",
+        "Kernel extern offset record embedded in params.sq_off; head/tail/array are mapping-relative byte offsets, not the native SubmissionQueue layout. user_addr is u64; shared control fields and userspace local counters have different roles.",
+    ),
+    "io_uring": (
+        SETUP,
+        "compiled owned SDK ring value; init_params/deinit, returned SQ8/CQ32 sizes and separate owned raw mappings execute; no C-wrapper ABI-size or all flags/interleavings assurance",
+        "Native auto-layout SDK owner with fd/sq/cq, not a kernel extern record or a liburing object to cast or byte-copy. Initialization returns a value through an error union; deinit retires owned mappings/descriptor after dependent requests finish.",
+    ),
+    "io_uring_cq": (
+        SETUP,
+        "compiled explicit pointer to ring.cq; actual CQ32 slice length and mapped completions checked; native auto layout, not C-wrapper ABI-size or CQE32/concurrent overflow assurance",
+        "Native SDK queue view holds mapped head/tail/overflow pointers, mask and CQE slice; it is not io_cqring_offsets or an externally compatible liburing struct. Completion readiness, copying and acknowledgement have distinct semantics.",
+    ),
+    "io_uring_params": (
+        SETUP,
+        "compiled zero-initialized kernel params with CQSIZE; actual returned SQ8/CQ32 and raw CQ512 mappings checked;120-byte declaration reflection on current x86_64, not all flags/features",
+        "Kernel extern input/output record; initialize inputs/reserved storage, then consume returned entries/features/sq_off/cq_off. These offsets describe mappings; params is not the owned IoUring wrapper or its queue views.",
+    ),
+    "io_uring_sq": (
+        SETUP,
+        "compiled explicit pointer to ring.sq; actual SQ8 slice length and mapped submissions checked; native auto layout, not C-wrapper ABI-size or concurrent/SQPOLL counter assurance",
+        "Native SDK queue view includes mapped controls, SQ index/SQE slices, owned mapping slices and local sqe_head/sqe_tail counters. Do not cast a liburing queue or io_sqring_offsets to it; local preparation and shared tail publication differ.",
+    ),
+    "io_uring_sqe": (
+        PREPARE,
+        "compiled typed SQE pointer and33 prepared catalog records; INPUT batch intentionally unsubmitted;64-byte ordinary declaration reflection/setup size check, not SQE128 or execution of that mixed batch",
+        "Kernel extern submission record, not a completion or owned request payload. Opcode selects the meaning of union storage; dependency flags are u8, operation flags are rw_flags:u32, len is u32 and off is u64. Operand storage has operation-specific retention.",
+    ),
+    "iovec": (
+        FILES,
+        "compiled mutable/const two-vector metadata; actual READV/WRITEV bytes, counts and completed-progress effects checked on owned regular files;16-byte declarations on current x86_64, not forced vector shorts/all errors",
+        "Read iovec.base is mutable bytes; write iovec_const.base is const bytes; both lengths are usize. Vector I/O borrows descriptor arrays and their byte storage through CQE, and SQE.len counts vectors rather than total bytes. Fixed-buffer preparers instead copy base/len into SQE.",
+    ),
+    "loff_t": (
+        SPLICE,
+        "compiled native u64 splice value offsets; explicit/current source/destination cursors and short byte progress checked; signed-minus-one bit pattern reflected, not borrowed loff_t pointers or arbitrary negative/huge offsets",
+        "C signed64 offset values are encoded as u64 SQE bit patterns here, not pointers. maxInt(u64) represents -1/current position for supported splice operands; explicit offsets do not move the corresponding file cursor. A pipe requires the current-position sentinel.",
+    ),
+    "mode_t": (
+        FILES,
+        "compiled u32 native open mode; owned exclusive output requests0o600, file effects checked; declaration reflection distinguishes mode_t:u32, Statx.mode:u16 and OpenHow.mode:u64, not an actual permissions/umask-effect oracle",
+        "Open mode is a native integer argument, not open flags or file kind. Do not equate mode_t width with the u16 Statx output field or u64 OpenHow field merely because all carry mode bits; kernel creation also applies its permissions rules.",
+    ),
+    "msghdr": (
+        MESSAGES,
+        "compiled mutable receive/const send nested headers; actual UNIX datagram bytes, zero records, TRUNC/CTRUNC/SCM_RIGHTS and queried cleanup checked;56-byte raw Linux declarations on current x86_64, not all libc layouts/transports",
+        "Raw Linux iovlen/controllen are usize here; POSIX/musl header fields need not share those widths. Retain headers, vectors, bytes and control storage through CQE. Receive updates flags/control length; send input flags in the header are ignored, while message operation flags use SQE rw_flags.",
+    ),
+    "off_t": (
+        "examples/reference_rwf.zig",
+        "compiled explicit linux.off_t=i64 lseek argument; actual u64 SQE explicit/current APPEND and ordinary-write byte/cursor effects checked on private memfd; current64-bit Linux, not arbitrary negative seeks/all offset ranges",
+        "Signed linux.off_t is the syscall positioning value; lseek returns raw errno-encoded u64 and must be decoded. SQE file-offset storage is u64, with all-ones/current-position semantics only for operations supporting it, not every SQE off field.",
+    ),
+    "open_how": (
+        RAW,
+        "compiled24-byte local extern helper; actual RDONLY/RESOLVE_NO_SYMLINKS OPENAT2 descriptor and input-prefix bytes checked; no all resolve/open/create flags or libc-wrapper claim",
+        "Explicit Linux record with flags/mode/resolve:u64 and defaults for mode/resolve. Keep how/path storage through the OPENAT2 CQE; success owns a descriptor, not read bytes. OpenHow.mode width differs from native mode_t.",
+    ),
+    "sigset_t": (
+        SIGNALS,
+        "compiled explicit kernel masks; actual pending SIGUSR1/basic and EXT_ARG temporary/blocked/null masks, handler state and restoration checked;8-byte current x86_64 kernel representation, not glibc/musl1024-bit or all architectures/restarts",
+        "Use the raw Linux kernel signal-set type, not a presumed libc sigset_t layout. Basic enter borrows its mask with kernel NSIG/8; EXT_ARG packages pointer/size separately. Mask loan lasts through the enter call, which neither submits queued SQEs nor consumes CQEs.",
+    ),
+    "size_t": (
+        "examples/webserver.zig",
+        "compiled native byte-slice lengths/offsets; bounded HTTP headers/bodies and actual remaining positive-short SEND progress/wire bytes checked; usize64 on current x86_64, not every usize-to-SQE narrowing or vector-short case",
+        "usize is target-sized length/index storage, not a portable u64 typedef or completed-count promise. SQE.len is u32 and opcode-specific:scalar byte length versus vector count. These bounded byte slices fit that field; completed CQE count advances the remaining slice.",
+    ),
+    "sockaddr": (
+        CONNECT,
+        "compiled generic pointer cast from stable16-byte IPv4 input; actual owned-loopback CONNECT/endpoints/EOF and selected failures checked; native family/port/address bytes, not every address family/storage size",
+        "Generic extern socket-address header is not a universal fixed-size address buffer. Use the concrete family layout and its length; CONNECT borrows peer input and takes length by value, while ACCEPT uses optional address/length outputs. Port/address encoding must match network byte order.",
+    ),
+    "socklen_t": (
+        ACCEPT,
+        "compiled explicit u32 capacity/value-result pointers; all72 null/0–16 IPv4 capacities x four accept-flag modes check actual returned length/bytes/poison/endpoints; not all families/limits or races",
+        "Native u32 socket length, not usize or an address pointer. Initialize ACCEPT capacity and retain its pointer/output storage through CQE; kernel returns full required length even when copied bytes are truncated. CONNECT instead passes a length value in SQE off.",
+    ),
+    "statx": (
+        FILES,
+        "compiled zero-initialized mutable output; actual TYPE/SIZE masks, regular kind and allocated/reopened file sizes checked;256-byte declaration reflection on current x86_64, not every stat field/filesystem or crash durability",
+        "Kernel extern Statx is renamed to avoid the statx function name. Retain output storage through CQE, check returned mask before reading fields and interpret operation result zero as success, not file size. Its mode:u16 is not the native open mode_t width.",
+    ),
+}
+
 OTHER = {
     "io_uring_queue_init": ("init", "examples/cat.zig", "Returns an owned value through a Zig error union; power-of-two u16 entries."),
     "io_uring_queue_init_params": ("init_params", SETUP, "Caller supplies zeroed native parameters; returned fields describe actual mappings."),
@@ -133,10 +231,10 @@ def generate():
         scope = "compiled and executed"
         if original in TYPES:
             target = TYPES[original]
-            example = PREPARE if original not in {"io_uring", "io_uring_sq", "io_uring_cq", "io_uring_params", "io_sqring_offsets", "io_cqring_offsets"} else SETUP
-            difference = "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
-            scope = "compiled type usage; runtime ABI-size checks where applicable"
-            if original == "io_uring_cqe":
+            if original in TYPE_USAGE:
+                example, scope, difference = TYPE_USAGE[original]
+            elif original == "io_uring_cqe":
+                difference = "Native Zig type or explicit Linux ABI representation; not a foreign-language import."
                 example = BUFFERS
                 scope = "compiled type usage; actual selected/unselected flags and buffer-ID outcomes including zero-result EOF BUFFER/ID ownership; no CQE32, pbuf-ring or multishot assurance"
             elif original == "io_uring_probe":
@@ -147,6 +245,8 @@ def generate():
                 example = "examples/probe.zig"
                 scope = "compiled probe.ops element through SDK lookup; independent8-byte raw-entry decoding, generated native-endian snapshot flag/bounds checks and complete59 named-opcode comparison; opposite-endian fixture decoding is not big-endian execution or successful opcode execution"
                 difference = "Native8-byte operation record:op is IORING_OP enum(u8), followed by resv:u8, flags:u16 and resv2:u32. Entry is_supported tests IO_URING_OP_SUPPORTED bit0; probe is_supported first checks both header bounds. Reserved fields or unrelated flag bits do not imply support."
+            else:
+                raise ValueError(f"Missing native type consumer scope: {original}")
         elif original == "IORING_OP_SYNC_FILE_RANGE":
             target, native_source, native_name, example = "raw_ops.sync_file_range", "examples/raw_ops.zig", "sync_file_range", RAW
             scope = "constructed and submitted; valid range and invalid flags/descriptor CQEs checked; not crash-durability evidence"

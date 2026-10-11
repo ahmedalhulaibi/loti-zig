@@ -1,0 +1,15 @@
+Running as unit: run-p3916816-i8130691.scope; invocation ID: 6e695188de4946f9863b3bc4b8270e62
+wrapper-is-kernel-extern {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+offset-record-holds-pointers {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+mixed-catalog-is-submitted {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+read-iovec-is-const {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+splice-minus-one-is-pointer {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+mode-widths-collapsed {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+raw-msghdr-is-libc-portable {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+kernel-mask-is-libc-128-bytes {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+size-t-is-sqe-byte-count {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+connect-length-is-output {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+accept-length-is-value {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+statx-return-mask-ignored {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+open-how-loan-ends-at-preparation {'tests': 2, 'failures': 2, 'errors': 0, 'skips': 0}
+13 producer kills; exact producer/map/core restoration; eleven-test baseline

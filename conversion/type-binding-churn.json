@@ -1,0 +1,39 @@
+{
+  "coverage": {
+    "binary_files": 453,
+    "failed_commits": 0,
+    "indexed_commits": 4,
+    "loaded_commits": 73,
+    "requested_commits": 73,
+    "skipped_merge_commits": 0,
+    "status": "complete",
+    "timestamp_anomalies": 0
+  },
+  "metric_version": 1,
+  "query": {
+    "attribution_mode": "commit-author",
+    "group_by": [],
+    "mode": "complete",
+    "period": "total",
+    "revision": "HEAD",
+    "since_utc": "2026-10-01T00:00:00Z",
+    "threshold_seconds": 2592000,
+    "timezone": "UTC",
+    "until_utc": "2026-10-11T05:07:04Z",
+    "week_start": "monday"
+  },
+  "replacement_policy": "positional-hunk-v1",
+  "rows": [
+    {
+      "additions": 144932,
+      "change_units": 149805,
+      "copied_lines": 6732,
+      "deletions": 8125,
+      "keys": {},
+      "new_work": 141680,
+      "refactor": 5233,
+      "replacements": 3252,
+      "rework": 2892
+    }
+  ]
+}

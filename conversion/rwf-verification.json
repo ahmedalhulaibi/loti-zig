@@ -13,8 +13,8 @@
     "examples/reference_rwf.zig": "103e568c2fc2486eb241038202d7bd772c1be509df2b56ff2bf910822db3709b",
     "tests/test_rwf.py": "7b97960a60dbfeb3e004c6d76c2c51cc5965d6948563c13c5a8f2f166c0b9e5e",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
-    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
-    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
     "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
     "conversion/rwf.trace": "a9aff6312f7cb0a6fc2765852a3959257fb2f525cc1eb78ff4aa2119da039acf",
     "conversion/rwf-spec-sha256.json": "1c12594eb638a544ccd831f95c666bac8b2c0fc6eae526a57ef08a6f32ccf64e",
@@ -354,5 +354,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_type_bindings": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
   }
 }

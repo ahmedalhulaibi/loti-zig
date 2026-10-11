@@ -1,0 +1,16 @@
+{
+  "scope": "Author reflection-width evidence amendment; not unsealing an ACL/verifier-agent contract, weakening expectations or changing native implementations.",
+  "reason": "Size alone cannot distinguish equal-size/padded field widths. Claims mention OpenHow.mode:u64 and raw msghdr iovlen/controllen:usize; original reflection reported sizes but omitted these three exact field types.",
+  "changes": {
+    "testdata/inputs/type-binding-reflection.json": {
+      "old": "fd1504dd4b13d06763c8f04ee644c142523a04c9e5e51bb094991f1102770937",
+      "new": "dfdc221153f10d0c1cf11f80243d01074b0d2a947d65b9ef54989b689ea61fb1"
+    },
+    "conversion/type-binding-reflection.zig": {
+      "old": "395af52e12ba1745014714ccc3a589435571622185aac398f7a220d53334fd06",
+      "new": "57c4d0aa9fcb2fcd6e3da322b2af779fddd460c6403a67ffe4300f3432b787ff"
+    }
+  },
+  "preserved": "initial-before-field-width-reflection contains original helper/expectation/core/mutation/logs/full99 run. Whole19 binding fixture and Python tests remain byte-identical. Final13 mutants replace initial13, not26.",
+  "next": "Replay exact0.17 reflection, all13 variants/restored baseline and full99/current publication. No new test/property or native kill."
+}

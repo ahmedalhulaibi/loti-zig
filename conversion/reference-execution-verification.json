@@ -39,8 +39,8 @@
     "architecture": "x86_64"
   },
   "source_sha256": {
-    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
-    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
     "tests/test_reference_execution_map.py": "6dd89c58fbfc4a87caa0c4f4a3020a3d2e5278cb5ba8922b132e5f24992e1626",
     "testdata/inputs/reference-execution-bindings.json": "ad542359cb5038b41c9eaf473b08a4e47758181d6920026fcfb9a8be14a39f5e",
     "examples/fixed_buffers.zig": "bbce5cc4728a5f7298d02951a327e2806a053abfae8afbb45763fb2ee933cc5f",
@@ -49,8 +49,8 @@
     "tests/test_examples.py": "5a9f3ebc53400800bdc0860326b77a9666acda9376aef281f18b9fc013ecb3fc",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
-    "conversion/audit.md": "369cd8627b87d015d1f316d49336bf9b0148b20ce030b2215ddec2c4fb164403",
-    "conversion/review-handoff.md": "21bce3f1b0a0593da1dc4860342ec6ceae0678387360d0ac65aae768c357ffba",
+    "conversion/audit.md": "63cf3f4ef991bb4cf8f16bffbb1c3b7f067c9053e5819358d426344f0d0537bb",
+    "conversion/review-handoff.md": "7c68a6ffba00a1c4480ff9391c38290b3962175c281e137a899044506791d416",
     "conversion/reference-execution-native-replay.json": "90a04bba3d8f50121a9c86accaf8328e6a9c962f9fabdc10e5b2d091cd2ceda7",
     "conversion/reference-execution-spec-amendment.json": "b237337d30f2b9de6da48ea6bc64df601c1ec844df362735603504e3f42132cd"
   },
@@ -202,5 +202,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_type_bindings": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
   }
 }

@@ -1,6 +1,6 @@
 {
   "scope": "Chromium browser reflow at three CSS viewports; not Supernote-device, paginated-reader, semantic or independent review.",
-  "book_sha256": "e6f1da4ad52933e18b02cf78f3d7da99fe0ff15f6d7db44daafb0a740630e3a9",
+  "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
   "renderer": {
     "node": "v26.8.1",
     "playwright": "1.64.0",
@@ -7844,5 +7844,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_type_bindings": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
   }
 }

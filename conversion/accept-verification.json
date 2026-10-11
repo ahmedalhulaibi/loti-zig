@@ -10,9 +10,9 @@
     "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
     "tests/test_accept_flags.py": "be6adee86c57e9b3046dd3139a55957c9285ce6c0fb180422c2fa37ba622a45f",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
-    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
     "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
-    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
     "conversion/accept.trace": "b2362e9935b3439679b6535e85a3832f1f0cac424ae6cc070843970822033db2",
     "conversion/accept-spec-sha256.json": "6d999cc73fee3ee0a523b5f7362629ee8a39f58127aceec07120e6a36624ff19",
     "conversion/accept-spec-initial-sha256.json": "30034c7f1083356ee166a4606076f1d06ba4b022182f42e702259e1b03ba4a74",
@@ -484,5 +484,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_type_bindings": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
   }
 }

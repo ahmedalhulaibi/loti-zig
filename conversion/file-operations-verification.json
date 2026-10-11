@@ -243,7 +243,7 @@
     "testdata/inputs/file-operations.bin": "85fa2c61110e300739d171143f8f7a520ff52f3c62b049375b381dacd046c48a",
     "testdata/inputs/file-operations-report.json": "82215f932bf6622b6c5362d08c9035a33e24d3d5bd83e5f8cb3fce59466facd1",
     "testdata/inputs/file-operations-invalid-arguments.json": "95a3fe47a3473a059f6d5b4ca47cbcb298ce14d6c0d8ec8874e201824f218de6",
-    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
     "testdata/inputs/file-operations-write-offset-regression.bin": "3a2842b45e7fe0302e3dba716111402f8e5347a28fa96be0e30ef7fafac767d1"
   },
   "sdk_source_sha256": {
@@ -421,5 +421,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_type_bindings": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
   }
 }

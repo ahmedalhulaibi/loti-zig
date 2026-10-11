@@ -1,0 +1,169 @@
+{
+  "scope": "Thirteen syntax-valid binding-producer scope/representation variants pass generation/freshness but fail whole19-row contracts; current-target reflection remains positive. No installed-native mutation, whole-port/architecture/kernel or independent acceptance.",
+  "mutants": [
+    {
+      "id": "wrapper-is-kernel-extern",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "offset-record-holds-pointers",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "mixed-catalog-is-submitted",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "read-iovec-is-const",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "splice-minus-one-is-pointer",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "mode-widths-collapsed",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "raw-msghdr-is-libc-portable",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "kernel-mask-is-libc-128-bytes",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "size-t-is-sqe-byte-count",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "connect-length-is-output",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "accept-length-is-value",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "statx-return-mask-ignored",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "open-how-loan-ends-at-preparation",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    }
+  ],
+  "source_sha256": {
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4"
+  },
+  "restored_source_sha256": {
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4"
+  }
+}

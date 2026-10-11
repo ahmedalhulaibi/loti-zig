@@ -1,0 +1,320 @@
+{
+  "scope": "Thirteen syntax-valid binding-producer scope/representation variants pass generation/freshness but fail whole19-row contracts; current-target reflection remains positive. No installed-native mutation, whole-port/architecture/kernel or independent acceptance.",
+  "mutants": [
+    {
+      "id": "wrapper-is-kernel-extern",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "offset-record-holds-pointers",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "mixed-catalog-is-submitted",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "read-iovec-is-const",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "splice-minus-one-is-pointer",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "mode-widths-collapsed",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "raw-msghdr-is-libc-portable",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "kernel-mask-is-libc-128-bytes",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "size-t-is-sqe-byte-count",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "connect-length-is-output",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "accept-length-is-value",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "statx-return-mask-ignored",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "open-how-loan-ends-at-preparation",
+      "kind": "binding-producer",
+      "status": "killed",
+      "syntax_valid": true,
+      "generation_passed": true,
+      "freshness_passed": true,
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "skips": 0
+    }
+  ],
+  "source_sha256": {
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4"
+  },
+  "restored_source_sha256": {
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4"
+  },
+  "amendment": "type-binding-spec-amendment.json:three exact field-width outputs; original13/core/full99 retained, final13 replace initial13, not26",
+  "log_normalization": {
+    "scope": "Trailing ASCII spaces/tabs/CR and terminal blank lines only; initial checkpoint unchanged.",
+    "changed": [
+      {
+        "file": ".mutants/type-bindings/2026-10-11/wrapper-is-kernel-extern-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/wrapper-is-kernel-extern-test.log",
+        "original_sha256": "122a2fae761778922c4784c6a39ceb7bcb6561d135f14a54aea82df2eb900461",
+        "normalized_sha256": "807e7492d072a7560b09151045869aebd6a8be5768fd8ceb0eeae52acac27842"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/offset-record-holds-pointers-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/offset-record-holds-pointers-test.log",
+        "original_sha256": "44926750cfd17357d47de377795b34bc11ddbb05c82e7fcc6cb7129549bf4b85",
+        "normalized_sha256": "1f5331a73bbb46901cab9ecf9ae03eaed5d046e06491a122c3e98883a980bbac"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/mixed-catalog-is-submitted-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/mixed-catalog-is-submitted-test.log",
+        "original_sha256": "6eba037d370b25e952b8222893ca0a597d10045d05389215eca8f15b6ab670a2",
+        "normalized_sha256": "d4200d67dabbb718ae3105ac8ef65aa5c545a24b36cafe5f9a20fca13ef57279"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/read-iovec-is-const-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/read-iovec-is-const-test.log",
+        "original_sha256": "8c04fae89f2fb4cf16d91ffe5783b2bdebfce8212c6ba479fb4a8d153ce32fdb",
+        "normalized_sha256": "4bdc740515817483d3a0157f5545be48e265e9c9db412c28798aa59d29e9da4d"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/splice-minus-one-is-pointer-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/splice-minus-one-is-pointer-test.log",
+        "original_sha256": "403ef74b9c91fbe8999c408528e75549a4e15e2d30fc258e4c60dea008c0980f",
+        "normalized_sha256": "3c03cc04ff3053b42c3c2e9df97f4abcc2ca16630bacb323c5ebce3c6c4feb16"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/mode-widths-collapsed-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/mode-widths-collapsed-test.log",
+        "original_sha256": "ba58d9022e7d378f69147e22d80a6c44947b87bb990ee583b68d76ebaa028921",
+        "normalized_sha256": "ad75580c61a775d84e75c5b57f9fc7316e8d41c6512198a3e105ced948efc64f"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/raw-msghdr-is-libc-portable-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/raw-msghdr-is-libc-portable-test.log",
+        "original_sha256": "dfbed312d3013349f8ffd34516613e3a0d68ccdb085ca8ac8cda1b32b1001ee2",
+        "normalized_sha256": "cc237c7767d12e0eacb1620075c0a98962ed615868fd04aa4b34a44571e4c7a0"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/kernel-mask-is-libc-128-bytes-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/kernel-mask-is-libc-128-bytes-test.log",
+        "original_sha256": "0f2fb34eafddd22d6bfa28549e38f36925a689b382ef404073aeaf617b751b04",
+        "normalized_sha256": "e8e708ad48f72d969000528dd08994f3906046acec18480a1f78f6e1af1ab69a"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/size-t-is-sqe-byte-count-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/size-t-is-sqe-byte-count-test.log",
+        "original_sha256": "cdc6c2c890e33301943fbb582546bc49d80ed4d2f8487ce6fa8ae855357eec40",
+        "normalized_sha256": "8815c5171b897e921230b052f886d1a23bec4a22fdc5296aa50b8fdd68ce5497"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/connect-length-is-output-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/connect-length-is-output-test.log",
+        "original_sha256": "03feda23031926db9604c0816113f49ec2579f79a6f73056c6ecdf44d32459d5",
+        "normalized_sha256": "68ba9178853202f48dff2d53807492302dacd4baacef013758cbae6d6e15cf51"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/accept-length-is-value-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/accept-length-is-value-test.log",
+        "original_sha256": "6bb093364707f665c4df7c723460b807d01a2bacb7181531e278464aa45d7169",
+        "normalized_sha256": "16252e1103c022de81dcd430ea9897cbae8070bdabc64b0d5e64ac0a15c5bfd0"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/statx-return-mask-ignored-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/statx-return-mask-ignored-test.log",
+        "original_sha256": "0ad45959fa530af60313314c71179bcb4badec064322a6c8d164b43f4723fdda",
+        "normalized_sha256": "0196a2f08d017313aa428d1af419184fa7f423662e65b633b1c828509ddd6ac9"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/open-how-loan-ends-at-preparation-syntax.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/open-how-loan-ends-at-preparation-test.log",
+        "original_sha256": "712402d4fb7076efa8941d70e5a0141920563389d0ba50cf49f6326598709d52",
+        "normalized_sha256": "aa8dcff5f5bffca6c6aea0e223d9fd1ed6fc030bf429af5b9b932eef2c1f76bc"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/build.log",
+        "original_sha256": "0ab99f5d1554aa3b97c990a430b8757e797e0667dbb666e989aa51c8b405442b",
+        "normalized_sha256": "53b25d006bb6e4eaa73c6ad328516ed4d1ddc4118647bc1b47a74aa8f13642ad"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/html.log",
+        "original_sha256": "145cd0d480e02bf25c88b80343915c06fdcc3031325c1371e2ea6d03721fdec9",
+        "normalized_sha256": "8dd8ff3153e9e93e7fba214505bbb99713a6dc3c5eefc5511dddf4bd79a41a62"
+      },
+      {
+        "file": ".mutants/type-bindings/2026-10-11/epub.log",
+        "original_sha256": "2b896fbf1dee79a2610ad1342057a850309149d8b2bd0cc1136576fc25328277",
+        "normalized_sha256": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940"
+      }
+    ]
+  }
+}

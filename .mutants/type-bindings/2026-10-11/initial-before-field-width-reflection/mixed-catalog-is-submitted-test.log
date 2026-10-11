@@ -1,0 +1,40 @@
+{"tests": 2, "failures": 2, "errors": 0, "skips": 0}
+test_current_native_declarations_keep_layout_width_and_constness_boundaries (tests.test_type_bindings.NativeTypeContracts.test_current_native_declarations_keep_layout_width_and_constness_boundaries) ... ok
+test_remaining_type_rows_have_whole_consumer_and_representation_scopes (tests.test_type_bindings.NativeTypeContracts.test_remaining_type_rows_have_whole_consumer_and_representation_scopes) ...
+  test_remaining_type_rows_have_whole_consumer_and_representation_scopes (tests.test_type_bindings.NativeTypeContracts.test_remaining_type_rows_have_whole_consumer_and_representation_scopes) (surface='producer') ... FAIL
+  test_remaining_type_rows_have_whole_consumer_and_representation_scopes (tests.test_type_bindings.NativeTypeContracts.test_remaining_type_rows_have_whole_consumer_and_representation_scopes) (surface='published') ... FAIL
+
+======================================================================
+FAIL: test_remaining_type_rows_have_whole_consumer_and_representation_scopes (tests.test_type_bindings.NativeTypeContracts.test_remaining_type_rows_have_whole_consumer_and_representation_scopes) (surface='producer')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_type_bindings.py", line 21, in test_remaining_type_rows_have_whole_consumer_and_representation_scopes
+    self.assertEqual([row for row in surface["entries"] if row["original"] in selected], expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[4318 chars]atch submitted to execute all33 operations;64-[7363 chars]h.'}] != [{'or[4318 chars]atch intentionally unsubmitted;64-byte ordinar[7351 chars]h.'}]
+
+First differing element 7:
+{'ori[197 chars]atch submitted to execute all33 operations;64-[378 chars]on.'}
+{'ori[197 chars]atch intentionally unsubmitted;64-byte ordinar[366 chars]on.'}
+
+Diff is 16969 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_remaining_type_rows_have_whole_consumer_and_representation_scopes (tests.test_type_bindings.NativeTypeContracts.test_remaining_type_rows_have_whole_consumer_and_representation_scopes) (surface='published')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_type_bindings.py", line 21, in test_remaining_type_rows_have_whole_consumer_and_representation_scopes
+    self.assertEqual([row for row in surface["entries"] if row["original"] in selected], expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'or[4318 chars]atch submitted to execute all33 operations;64-[7363 chars]h.'}] != [{'or[4318 chars]atch intentionally unsubmitted;64-byte ordinar[7351 chars]h.'}]
+
+First differing element 7:
+{'ori[197 chars]atch submitted to execute all33 operations;64-[378 chars]on.'}
+{'ori[197 chars]atch intentionally unsubmitted;64-byte ordinar[366 chars]on.'}
+
+Diff is 16969 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.091s
+
+FAILED (failures=2)

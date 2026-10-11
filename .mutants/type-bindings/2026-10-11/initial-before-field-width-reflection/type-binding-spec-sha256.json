@@ -1,0 +1,9 @@
+{
+  "scope": "Author whole19 type-row/current-target reflection specification before producer changes; not ACL seal/verifier-agent acceptance.",
+  "source_sha256": {
+    "tests/test_type_bindings.py": "7b019007c4800a5e686351f927cc1627029dcf6a76255d5372b876a6f59b13e1",
+    "testdata/inputs/type-binding-contracts.json": "decae04d391bcb98a658a9b5e00d399014cd6ac319df0adc8e935130b0491978",
+    "testdata/inputs/type-binding-reflection.json": "fd1504dd4b13d06763c8f04ee644c142523a04c9e5e51bb094991f1102770937",
+    "conversion/type-binding-reflection.zig": "395af52e12ba1745014714ccc3a589435571622185aac398f7a220d53334fd06"
+  }
+}

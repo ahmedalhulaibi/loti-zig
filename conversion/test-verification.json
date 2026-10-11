@@ -1,6 +1,6 @@
 {
   "scope": "Author-run native/publication/inventory/line-index suite and isolated block-device VM; not independent review or semantic acceptance.",
-  "tests_run": 97,
+  "tests_run": 99,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -108,7 +108,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 90
+          "overrun": 83
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -162,7 +162,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 60
+          "overrun": 79
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -198,7 +198,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 109
+          "overrun": 126
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -216,7 +216,7 @@
           "valid": 400,
           "interesting": 0,
           "invalid": 0,
-          "overrun": 45
+          "overrun": 52
         }
       },
       "stopped_because": "settings.max_examples=400"
@@ -298,6 +298,7 @@
     "_static/ebook.css": "c5474bc312db10efb4c1a99768d03bcd1f0f2a9033d15c3cbd0ad9b4fb5d3ec2",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
     "conversion/reference-block-disposition.md": "4944f91462fca0d6efce36793df81691abe146cfe7ad3b744544ff76a0ba92de",
+    "conversion/type-binding-reflection.zig": "57c4d0aa9fcb2fcd6e3da322b2af779fddd460c6403a67ffe4300f3432b787ff",
     "examples/async_cancel.zig": "edc0762891f39b30d7f789f436bc15be0ac0c5a5347bc461443cfac9b7e2841e",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
     "examples/copy_short.zig": "eefed5f302c63c89b6dac82684088e5b0da1e43b349426d47e1445bf6e9e2808",
@@ -436,6 +437,8 @@
     "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
     "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
     "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
+    "testdata/inputs/type-binding-contracts.json": "decae04d391bcb98a658a9b5e00d399014cd6ac319df0adc8e935130b0491978",
+    "testdata/inputs/type-binding-reflection.json": "dfdc221153f10d0c1cf11f80243d01074b0d2a947d65b9ef54989b689ea61fb1",
     "tests/fixtures/block-init.sh": "26303551e41fb73fea1aec0f60413e64625f3223221063dffcaa5d31b2a455e5",
     "tests/fixtures/vm-mount.zig": "bd17d1f4e4cb942025ea34e864cb86c7094ff973c48257b848f47e0a165f5064",
     "tests/test_accept.py": "257c49428b950f5f3eeddc7a6f0c5f2321ea0e2d7a0a95dd3e72fb8551c3a8b1",
@@ -478,11 +481,12 @@
     "tests/test_splice.py": "076805cc852133699aa694d6fe486b7d4c97813363b1712dd0bf64a88ea0dc6a",
     "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
     "tests/test_submission_prose.py": "d913437ac0258cad5d4f58b46c80e0817748354a21131b3fba5600247bcf98f1",
+    "tests/test_type_bindings.py": "7b019007c4800a5e686351f927cc1627029dcf6a76255d5372b876a6f59b13e1",
     "tools/check_block_devices.py": "fceeff47d394a8db7f891a6e0225691814c3874d779c8514b9ff2d5d2a79b87e",
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
     "tools/check_reader_layout.py": "63f4a1ff3416f05e3db733f786d6cb359bad9e2cd6679ae0507341672629eaf1",
     "tools/reader_layout.cjs": "8989e9d0da5e070550c5ccea0696b477a27dfd77b73b3ae687117fa7bd3f21fa",
-    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
     "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e",
     "tutorial/webserver.rst": "d3b3bf9066938cb5baeb88650120380dd4c77f058576c1eddbd781fbf82724e2"
   },

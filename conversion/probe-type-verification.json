@@ -49,8 +49,8 @@
     "byteorder": "little"
   },
   "source_sha256": {
-    "tools/reference_map.py": "e3b38f0d5e1f6a1414515d54d0a12e1cb938347f996ba5787483eb30e45128c0",
-    "conversion/reference-map.json": "24a63cec1767e4793467e62d335d1398f07c0ce15c3dcd89744553d796594eb5",
+    "tools/reference_map.py": "c7965c5af84b3292048f4598d9627a81714ef991273993c85d0d510670f9b70b",
+    "conversion/reference-map.json": "99e5d56ebd7f0c458954a4aa66961964f2b6ab172b93da01f374c7e0766a7da4",
     "tests/test_reference_probe_types.py": "35110472b16ed0ddc447f2df096ec2134173b296246ab6625f7e3e41eec4933e",
     "testdata/inputs/probe-type-bindings.json": "ed1f2dd5a2b33f0e62eb8c795298d686976efadbf8faaece762d5ea2f4937791",
     "examples/probe.zig": "f7a10ca0cefce3d68d40814c88d4ce206b2f90a6722df71b0c28d6019482eaa7",
@@ -60,8 +60,8 @@
     "testdata/inputs/probe-opcodes.json": "77e7993b0b234164d3a248e8e14a7bd19b1988d868f207181ac657b861416132",
     "ref-zig/supported_caps.rst": "3edd654cad1c03b757e7e98af53b88af89b34648306162129081e21d5b791e9a",
     "ref-zig/_api/probe_types.inc": "8e3e7efba816ef164e92dba7cdc966e538522685849844360a62145fe9b2a4bf",
-    "conversion/audit.md": "369cd8627b87d015d1f316d49336bf9b0148b20ce030b2215ddec2c4fb164403",
-    "conversion/review-handoff.md": "21bce3f1b0a0593da1dc4860342ec6ceae0678387360d0ac65aae768c357ffba"
+    "conversion/audit.md": "63cf3f4ef991bb4cf8f16bffbb1c3b7f067c9053e5819358d426344f0d0537bb",
+    "conversion/review-handoff.md": "7c68a6ffba00a1c4480ff9391c38290b3962175c281e137a899044506791d416"
   },
   "reference_sha256": {
     "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0"
@@ -412,5 +412,18 @@
     "literals": 121,
     "narrative_paragraphs": 368,
     "scope": "Current pins replayed through full97 suite and current archive fidelity/reader/EPUBCheck. No new native/strict build;89 inputs unchanged, prior build proofs retained. Historical comparisons/gates/mutations/screenshots remain historical, not new all-purpose/kernel/device/independent acceptance."
+  },
+  "replay_after_type_bindings": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
   }
 }

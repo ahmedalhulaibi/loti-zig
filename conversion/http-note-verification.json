@@ -32,8 +32,8 @@
     "tests/test_http.py": "0d373babcd7b5669bf612bd30ea397341053ef47240f35149008b8edcf6c6986",
     "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f",
     "tools/check_line_dispositions.py": "6d8c99f5aefedfb47a4ec144ad029aa4fb55d738f786d292d363a626b8f1e2c9",
-    "conversion/audit.md": "369cd8627b87d015d1f316d49336bf9b0148b20ce030b2215ddec2c4fb164403",
-    "conversion/review-handoff.md": "21bce3f1b0a0593da1dc4860342ec6ceae0678387360d0ac65aae768c357ffba",
+    "conversion/audit.md": "63cf3f4ef991bb4cf8f16bffbb1c3b7f067c9053e5819358d426344f0d0537bb",
+    "conversion/review-handoff.md": "7c68a6ffba00a1c4480ff9391c38290b3962175c281e137a899044506791d416",
     "conversion/http-note-unchanged-publication.json": "1fc6d4573568ced2abf25b975539ee9f0b7e80a39342be57bf597a8d87546bbd"
   },
   "replayed_consumers": [
@@ -146,5 +146,18 @@
     ".mutants/http-notes/2026-10-11/reader.log": "c4081dbf4d07e78a3c48c2dbd1c87bf5f4b378cfae25cf54fe5936523e991b4f",
     ".mutants/http-notes/2026-10-11/epubcheck.log": "1b871a801b1773626c473f38741caef8c98ef34b42c5b60ec1c5109e2bdec171",
     ".mutants/http-notes/2026-10-11/mutation-driver.log": "a96af745d23d3c080b1e0a42d2d8ceccbe244a6a983a773bf5aca7e3f920777c"
+  },
+  "replay_after_type_bindings": {
+    "tests": 99,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 167.934,
+    "book_sha256": "8c323a033dddfb07eb72a3b345b32299f8478a793a8d9bcdfec169c507977d82",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Pins replayed after all22 type-body comparisons/19 specific scopes, amended literal reflection, full99/build/strict publication and current archive fidelity/reader/EPUBCheck. Historical mutation/gate/screenshot/comparison fields remain historical, not all-purpose/kernel/device/independent acceptance."
   }
 }
