@@ -1,0 +1,27 @@
+[
+  {
+    "id": "wrong-requested-buffer",
+    "trace": "setsockopt(6, SOL_SOCKET, SO_SNDBUF, [8192], 4) = 0\ngetsockopt(6, SOL_SOCKET, SO_SNDBUF, [8192], [4]) = 0\nclose(6) = 0\nfcntl(6, F_GETFD) = -1 EBADF (Bad file descriptor)\n",
+    "error": "IncompleteHttpSendSocketTrace"
+  },
+  {
+    "id": "wrong-effective-buffer",
+    "trace": "setsockopt(6, SOL_SOCKET, SO_SNDBUF, [4096], 4) = 0\ngetsockopt(6, SOL_SOCKET, SO_SNDBUF, [4096], [4]) = 0\nclose(6) = 0\nfcntl(6, F_GETFD) = -1 EBADF (Bad file descriptor)\n",
+    "error": "IncompleteHttpSendSocketTrace"
+  },
+  {
+    "id": "no-close-query",
+    "trace": "setsockopt(6, SOL_SOCKET, SO_SNDBUF, [4096], 4) = 0\ngetsockopt(6, SOL_SOCKET, SO_SNDBUF, [8192], [4]) = 0\nclose(6) = 0\n",
+    "error": "IncompleteHttpSendSocketTrace"
+  },
+  {
+    "id": "early-close-query",
+    "trace": "setsockopt(6, SOL_SOCKET, SO_SNDBUF, [4096], 4) = 0\ngetsockopt(6, SOL_SOCKET, SO_SNDBUF, [8192], [4]) = 0\nfcntl(6, F_GETFD) = -1 EBADF (Bad file descriptor)\nclose(6) = 0\n",
+    "error": "WrongHttpSendSocketOrder"
+  },
+  {
+    "id": "synchronous-send",
+    "trace": "setsockopt(6, SOL_SOCKET, SO_SNDBUF, [4096], 4) = 0\ngetsockopt(6, SOL_SOCKET, SO_SNDBUF, [8192], [4]) = 0\nsendto(6, \"x\", 1, 0, NULL, 0) = 1\nclose(6) = 0\nfcntl(6, F_GETFD) = -1 EBADF (Bad file descriptor)\n",
+    "error": "SynchronousHttpSend"
+  }
+]

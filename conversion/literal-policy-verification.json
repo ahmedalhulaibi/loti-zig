@@ -21,13 +21,13 @@
   "source_sha256": {
     "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e",
     "tests/test_literal_policy.py": "11253e4b9ed50b9cd1b46875f1bad51c72fc1d65dc4182ac92e7fd6417e5f9e6",
-    "tests/test_publication.py": "afe975d896f46947842217dbb24038290b285025160f6040d2bcb45df069ccd6",
+    "tests/test_publication.py": "25615a30481205efcc5b8b26a2ff475d725718c18c25d44340202a76d8ec4180",
     "testdata/inputs/literal-policy-damages.json": "0be602e17560f2f43fdc362b98500181827725de2094cc1485359b18bfa4fd78",
     "conversion/literal-policy-spec-sha256.json": "cfe306a7937d296e057950d134f56b850e2700efedc9c529e6fee692a39f7651",
     "conversion/literal-policy-spec-amendment.json": "f3b73bc0ddd3c79c0c21a8674067da7f428dbe679c536d42ed82c0563bbe961a",
     "conversion/literal-policy-damages-initial.json": "4916416f2a203c8ef7a4f06b1b23b771ae5117553cea4b6dabe5d4078f94bf18",
-    "README.md": "9f6b1a696c8017c31bd37398f13bad5d6bfde4c2b24c4588650cd376d30242f4",
-    "testing.md": "6948bb7ec98f20809c4aa22dac6d107381c310a6d68329594ce53690299be0f4"
+    "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
+    "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38"
   },
   "diagnostics": {
     "scope": "Active primary LSP on three changed Python paths; no cache-only cleanliness claim. Existing OPF spelling infos/other-feature suppressions stay disclosed in their own receipts.",
@@ -114,5 +114,18 @@
     "literals": 121,
     "narrative_paragraphs": 365,
     "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
+  },
+  "replay_after_http_send": {
+    "tests": 94,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 168.034,
+    "book_sha256": "918b328a5bef9d8646a4b655e5aece434ddf2520685cd121afd53aa1e73db22d",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full94-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained. Not independent/all kernel/race/device acceptance."
   }
 }

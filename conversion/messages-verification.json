@@ -9,9 +9,9 @@
   "source_sha256": {
     "examples/reference_messages.zig": "4e29206d6b45dbe42ccac3135a586970f0016b58868efb9ae938ee927549ea76",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
-    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a",
+    "tools/reference_map.py": "49abc8d8e9ae20127b31ad2b6b697d52b7c022436284d0a10ad74b4566fd25e5",
     "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
-    "conversion/reference-map.json": "829c527d8da549795ff8a1f440f6d5375c0553ed1059a85c27e6ae7e4cc7532f",
+    "conversion/reference-map.json": "4a08b67517499955bbb45b587ce5478e6d95748ca3e0642900c5611ecf6f161c",
     "tests/test_messages.py": "81d3040e93ec8773925d75ce0229d707ec3b8410b22a01a871913a9890b374ff",
     "tests/test_messages_trace.py": "4cb1d5ed5968d9432a2eef736904398d3a980f522d3d5f600e30b0e260085c6a",
     "tests/test_messages_census.py": "a3a9c584773a1d9c8fc6288d91773a2e3d9f213a1251490eed13ccb2dfbce8b0",
@@ -770,5 +770,18 @@
     "literals": 121,
     "narrative_paragraphs": 365,
     "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
+  },
+  "replay_after_http_send": {
+    "tests": 94,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 168.034,
+    "book_sha256": "918b328a5bef9d8646a4b655e5aece434ddf2520685cd121afd53aa1e73db22d",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full94-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained. Not independent/all kernel/race/device acceptance."
   }
 }

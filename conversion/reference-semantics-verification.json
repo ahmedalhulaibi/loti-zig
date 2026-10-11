@@ -81,7 +81,7 @@
     }
   },
   "source_sha256": {
-    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a",
+    "tools/reference_map.py": "49abc8d8e9ae20127b31ad2b6b697d52b7c022436284d0a10ad74b4566fd25e5",
     "tests/test_reference_semantics.py": "cd9e43ace9876e59eb44e8ed01980d3cc01565bd19d28ab5791f253aaf5c5367",
     "testdata/inputs/reference-semantics-bindings.json": "a1dad2b6ff5bda1a97c18f24f7afd0433bb06a1af210bccc207a37362a08d980",
     "examples/cat.zig": "595fcc42aa03f4be13edd1c61578d954c8a6d885f07476f7e20dfc952edcb83e",
@@ -271,5 +271,18 @@
     "literals": 121,
     "narrative_paragraphs": 365,
     "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
+  },
+  "replay_after_http_send": {
+    "tests": 94,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 168.034,
+    "book_sha256": "918b328a5bef9d8646a4b655e5aece434ddf2520685cd121afd53aa1e73db22d",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full94-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained. Not independent/all kernel/race/device acceptance."
   }
 }

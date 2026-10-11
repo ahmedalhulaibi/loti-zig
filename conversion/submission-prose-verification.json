@@ -33,22 +33,22 @@
   },
   "source_sha256": {
     "tools/verify_epub.py": "3764e56b93675cff75222a412cd4879ce3fd5af16fc74841f9d14dd5bd6f905e",
-    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a",
-    "tests/test_submission_prose.py": "9559beed6d321b830c6b007ebec3b4833c9d6febaa8de87742c0763517f8e3ed",
-    "tests/test_publication.py": "afe975d896f46947842217dbb24038290b285025160f6040d2bcb45df069ccd6",
+    "tools/reference_map.py": "49abc8d8e9ae20127b31ad2b6b697d52b7c022436284d0a10ad74b4566fd25e5",
+    "tests/test_submission_prose.py": "d913437ac0258cad5d4f58b46c80e0817748354a21131b3fba5600247bcf98f1",
+    "tests/test_publication.py": "25615a30481205efcc5b8b26a2ff475d725718c18c25d44340202a76d8ec4180",
     "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
     "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
     "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
     "testdata/inputs/reference-semantics-bindings.json": "a1dad2b6ff5bda1a97c18f24f7afd0433bb06a1af210bccc207a37362a08d980",
     "ref-zig/submission.rst": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
     "ref-iouring/io_uring_enter.rst": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
-    "conversion/reference-map.json": "829c527d8da549795ff8a1f440f6d5375c0553ed1059a85c27e6ae7e4cc7532f",
+    "conversion/reference-map.json": "4a08b67517499955bbb45b587ce5478e6d95748ca3e0642900c5611ecf6f161c",
     "conversion/reference-claim-audit.md": "386b13012f307b2df339c1145c5a7ea60397ddcc828e657eabca2269606429de",
     "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
     "conversion/reference-block-disposition.md": "a1c5c0ad95b6d532e7c0146ae41132e160ffee570603c9ca68b6b8e689caf3c3",
-    "README.md": "9f6b1a696c8017c31bd37398f13bad5d6bfde4c2b24c4588650cd376d30242f4",
-    "testing.md": "6948bb7ec98f20809c4aa22dac6d107381c310a6d68329594ce53690299be0f4",
-    "conversion/submission-prose-spec-sha256.json": "09d870ae1c67122150fee6d878dd528dd20e453d265d4e38d0876dc756a821c7",
+    "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
+    "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
+    "conversion/submission-prose-spec-sha256.json": "3ad4de92720e70e40e2c47cfb1db94551a69dac9d37aee93d47b4b23a92d702a",
     "conversion/submission-prose-spec-initial-sha256.json": "78d862b91006e58698c72c456686f8da1335c043b214f5b98a368cff93c04df9",
     "conversion/submission-prose-spec-amendment.json": "3e7edbd44ca597a40a80005d504a004af28e0311d77ae70dacb77e05f60130d0",
     "conversion/submission-prose-test-initial.txt": "0c027ba06b9fc022631e8c329283697e45a50be661614e09ceb08d776168ca80"
@@ -151,5 +151,18 @@
     "literals": 121,
     "narrative_paragraphs": 365,
     "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
+  },
+  "replay_after_http_send": {
+    "tests": 94,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 168.034,
+    "book_sha256": "918b328a5bef9d8646a4b655e5aece434ddf2520685cd121afd53aa1e73db22d",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full94-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained. Not independent/all kernel/race/device acceptance."
   }
 }

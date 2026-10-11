@@ -66,6 +66,22 @@ The headers and body remain owned by the client until the send completes. The
 completion is copied and automatically consumed by ``ring.copy_cqe()``; there
 is no additional ``cqe_seen`` call.
 
+Optional ``webserver DOCUMENT_ROOT PORT --observe-send`` reports actual prepared
+SEND ranges/flags and tagged CQEs after readiness. It sets ``SO_SNDBUF`` to 4096
+on each owned accepted socket and queries Linux's doubled 8192-byte value.
+Default mode does not change these socket buffers or emit send observations.
+
+The bounded TCP contract uses a 131072-byte pseudorandom file and a client with
+``SO_RCVBUF`` 4096. It requires a positive short body-send CQE before the client
+drains data or resets its connection. Independent wire bytes check complete
+progress/storage; a later 37-byte GET checks that a reset did not stop the server.
+
+Address-relative SQE offsets and lengths show which retained bytes are queued;
+completion counts advance the remaining range. The observer queries socket
+retirement before reporting closure. This is sequential current-kernel evidence,
+not forced SIGPIPE delivery, partial header sends, every transport/flag/error,
+concurrent send races or production assurance.
+
 HTTP and filesystem boundary
 ----------------------------
 

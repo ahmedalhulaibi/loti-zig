@@ -1,0 +1,12 @@
+{
+  "scope": "Ten compiled native/four syntax-valid public HTTP observer/model/trace variants, not whole-port/all SIGPIPE/kernel/race assurance. Original author core retained exactly; no independent reviewer claim.",
+  "mutants": [],
+  "source_sha256": {
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_http_send.py": "0419fea1e70273e55394517c51172de0e7a7acc59e14fa82c8ab54bd991e86af"
+  },
+  "restored_source_sha256": {
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_http_send.py": "0419fea1e70273e55394517c51172de0e7a7acc59e14fa82c8ab54bd991e86af"
+  }
+}

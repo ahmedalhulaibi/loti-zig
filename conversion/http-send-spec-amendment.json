@@ -1,0 +1,21 @@
+{
+  "scope": "Author harness containment/typed domain rejection correction after first compiled mutant; not ACL seal or independent verifier attestation.",
+  "initial": "http-send-spec-initial-sha256.json",
+  "original_test": "http-send-test-initial.txt",
+  "reason": "First compiled requested-not-completed variant produced two failures/one error: subTest continued dependent complete/reset/probe sequence after exact wire-byte failure, then consumed stale queued records and raised KeyError. No kill counted.",
+  "changes": [
+    "Keep sequential command-flow loop but remove subTest suppression so first violated invariant aborts dependent steps.",
+    "Catch exactly models ValueError as an assertion at live public observation boundary; expected negative-fixture ValueErrors remain exact.",
+    "Catch owned TCP TimeoutError/ConnectionError as assertion failures, retaining type/errno; do not catch unrelated OS/runner/compiler/import errors."
+  ],
+  "unchanged": "Payload/probe bytes, complete/reset event fixtures, all13 event/five trace damages, ordinary HTTP tests, whole wire comparison, every model predicate and syscall expectation unchanged.",
+  "excluded_initial": "Compiled first variant, two failures/one unittest error; not substantive kill; initial logs/report/driver preserved.",
+  "reassessment": "Rerun all14 variants, not partial carry-forward.",
+  "request_fixture_extraction": {
+    "prior_core": "http-send-spec-before-request-files.json",
+    "prior_test": "http-send-test-before-request-files.txt",
+    "change": "Move exactly the original two HTTP request byte values to JSON input fixture; native protocol bytes/model/damages/fixtures unchanged.",
+    "original_ast_comparison": true,
+    "reassessment": "Final14 replaces previous14, no additional kills claimed."
+  }
+}

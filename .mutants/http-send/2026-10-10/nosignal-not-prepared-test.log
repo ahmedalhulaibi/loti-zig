@@ -1,0 +1,28 @@
+{"tests": 2, "failures": 1, "errors": 0, "skips": 0}
+test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive (tests.test_http_send.HttpSendContracts.test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive) ... FAIL
+test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) ... ok
+
+======================================================================
+FAIL: test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive (tests.test_http_send.HttpSendContracts.test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_send.py", line 152, in require_events
+    return inspect_events(events, payload, reset)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_send.py", line 47, in inspect_events
+    raise ValueError("WrongHttpSendRangeOrFlags")
+ValueError: WrongHttpSendRangeOrFlags
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_send.py", line 202, in test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive
+    summary = self.require_events(events, PAYLOAD, reset)
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_send.py", line 154, in require_events
+    self.fail(f"Invalid public HTTP SEND observations: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid public HTTP SEND observations: WrongHttpSendRangeOrFlags
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.020s
+
+FAILED (failures=1)

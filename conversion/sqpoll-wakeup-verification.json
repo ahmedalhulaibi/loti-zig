@@ -144,7 +144,7 @@
   },
   "manual_notes": "io_uring_setup.2 IORING_SETUP_SQPOLL states flag/wakeup, fixed-file/privilege history. io_uring_sqpoll.7 overview has contradictory privilege versions and calls sq_ready a flag check; those claims were not adopted. Actual SDK sq_ready is a count; flags are acquire-loaded directly. SDK flush release and subsequent internal flag check inspected; no other-architecture memory-order proof.",
   "source_sha256": {
-    "README.md": "9f6b1a696c8017c31bd37398f13bad5d6bfde4c2b24c4588650cd376d30242f4",
+    "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
     "build.zig": "058df7ee357fcb362260f4c0ec2504e289e7ec11a7997a0bf9706980eed6585a",
     "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
     "conversion/sqpoll-wakeup-spec-amendment.json": "537d28860a7ecc4e5595c71c52debc463df4498be0fc9d68159bb688254098ae",
@@ -152,7 +152,7 @@
     "conversion/sqpoll-wakeup-spec-sha256.json": "0da3f9445d645cd528f3afae0de3e8a7f31d43994aa87968dabcf0f66f2011e0",
     "conversion/sqpoll-wakeup-test-initial.txt": "b85c31b1fb2fdfa89a60a5065442a5143a190ab06b218a3428ba1c74bed7f475",
     "conversion/sqpoll-wakeup.trace": "78e2ac710236a30c4db9fcd9cca1a6250099fbcd97cde078227295e85c5e4333",
-    "conversion/tutorial-block-disposition.md": "b235dc4786d54617ec910c8203bedec20b1e1373aed192b6bc2ca0ccf728af6c",
+    "conversion/tutorial-block-disposition.md": "2fb6eeea4772400b5a3a6d01b1dd7fe0a95a7feb4183771eff7d8ef639683d45",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "examples/sq_poll.zig": "38902d98ddfeb80423222129543a23fce78c130b9216c5e92346cb1a0bb710d4",
     "examples/support.zig": "8a42e30d9e7c09f12912049f798ebf433a415143aa8bc707d191055b0dd1a155",
@@ -161,7 +161,7 @@
     "testdata/inputs/sqpoll-wakeup-output.bin": "44fe6650361db29c9a01e673739d74510d87901cfbd92a2f0691a2d1900e41fb",
     "testdata/inputs/sqpoll-wakeup-report.json": "4a59e4d0f25093615b8065cbd6abc01fca4427ab853dd9c6a8dfe43ec180118e",
     "testdata/inputs/sqpoll-wakeup.trace": "f250196d5c720380631ad9872b82ab8a8861f1c2de0a73ee959fdd7215cdcf62",
-    "testing.md": "6948bb7ec98f20809c4aa22dac6d107381c310a6d68329594ce53690299be0f4",
+    "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
     "tests/test_sqpoll_wakeup.py": "86753500fca7d6e04a8dae038f34428b2113efcc37462aa05d16d5434ecddf6e",
     "tutorial/sq_poll.rst": "0c9a763df7ddcede3df3dc8920fb7efefa73e0f9bb244ba90513e95fd05f2f78"
   },
@@ -248,5 +248,18 @@
     "literals": 121,
     "narrative_paragraphs": 365,
     "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
+  },
+  "replay_after_http_send": {
+    "tests": 94,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 168.034,
+    "book_sha256": "918b328a5bef9d8646a4b655e5aece434ddf2520685cd121afd53aa1e73db22d",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full94-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained. Not independent/all kernel/race/device acceptance."
   }
 }

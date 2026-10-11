@@ -48,7 +48,7 @@ sources, not separate handwritten copies. Tests/limits follow the table.
 | `tutorial/webserver_liburing.rst:578` | `Server.queue` receiving stage | Native RECV replaces old kernel-5.5 READV workaround; appends into remaining header capacity, retains storage |
 | `tutorial/webserver_liburing.rst:597` | `Server.complete` receiving stage, `Server.prepare` | Fragmented headers accumulate; EOF releases client; limits/method/path checks produce defined responses |
 | `tutorial/webserver_liburing.rst:611` | `Server.prepare`, `Server.response` | Confined open and metadata lookup synchronous; content read async; exact MIME/length and bounded storage replace six heap vectors |
-| `tutorial/webserver_liburing.rst:623` | `Server.queue` sending stages | Native SEND with NOSIGNAL; separate stable header/body, advance cursor on short sends rather than assume one full WRITEV |
+| `tutorial/webserver_liburing.rst:623` | `Server.queue` sending stages | Native SEND with NOSIGNAL; separate stable header/body, advance cursor on short sends rather than assume one full WRITEV. Optional --observe-send now forces positive-short TCP body progress with SO_SNDBUF4096/query8192; actual SQE address-relative remaining ranges/CQEs, whole pseudorandom wire bytes, early reset/recovery GET and queried socket retirement. Sequential owned loopback, not vector/header-short/SIGPIPE-delivery or all transport/race/unwind assurance |
 | `tutorial/webserver_liburing.rst:636` | `Server.complete`, `Client.release` | Release storage/descriptors only after final send/error; no freeing pending operands; connection closes after one response |
 
 ## Evidence and limits

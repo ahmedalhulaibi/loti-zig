@@ -1,0 +1,928 @@
+[
+  {
+    "id": "buffer-not-bounded",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 8192,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "WrongHttpSendBuffer"
+  },
+  {
+    "id": "buffer-result-fabricated",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 4096
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "WrongHttpSendBuffer"
+  },
+  {
+    "id": "send-buffer-reset",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "WrongHttpSendRangeOrFlags"
+  },
+  {
+    "id": "send-length-not-remaining",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "WrongHttpSendRangeOrFlags"
+  },
+  {
+    "id": "nosignal-omitted",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 0
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "WrongHttpSendRangeOrFlags"
+  },
+  {
+    "id": "wrong-tag",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 2,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "WrongHttpSendRangeOrFlags"
+  },
+  {
+    "id": "zero-count",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 0,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "WrongHttpSendProgress"
+  },
+  {
+    "id": "too-large-count",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 131073,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "WrongHttpSendProgress"
+  },
+  {
+    "id": "early-release",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "IncompleteHttpSendProgress"
+  },
+  {
+    "id": "closure-is-unproved",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": false
+      }
+    ],
+    "reset": false,
+    "error": "IncompleteHttpSendRetirement"
+  },
+  {
+    "id": "reset-error-ignored",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 130048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": true,
+    "error": "IncompleteHttpSendProgress"
+  },
+  {
+    "id": "wrong-reset-error",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 1024,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 1024,
+          "length": 130048,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": -9,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": true,
+    "error": "WrongHttpSendFailure"
+  },
+  {
+    "id": "no-short-observation",
+    "events": [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 131072,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    "reset": false,
+    "error": "HttpShortSendNotObserved"
+  }
+]

@@ -46,10 +46,23 @@ const Status = enum(u16) {
     }
 };
 
+const Mode = enum { serve, observe_send };
+const Phase = enum { idle, receiving, loading, sending_headers, sending_body };
+const SendRequest = struct {
+    operation: linux.IORING_OP,
+    tag: u64,
+    fd: linux.fd_t,
+    phase: Phase,
+    offset: usize,
+    length: u32,
+    flags: u8,
+    rw_flags: u32,
+};
+
 const Client = struct {
     fd: linux.fd_t = -1,
     file_fd: linux.fd_t = -1,
-    phase: enum { idle, receiving, loading, sending_headers, sending_body } = .idle,
+    phase: Phase = .idle,
     request: [8192]u8 = undefined,
     request_len: usize = 0,
     filename: [1024:0]u8 = undefined,
@@ -58,6 +71,7 @@ const Client = struct {
     owned: []u8 = &.{},
     body: []const u8 = "",
     progress: usize = 0,
+    send_request: SendRequest = undefined,
 
     fn release(self: *Client, allocator: std.mem.Allocator) void {
         if (self.file_fd >= 0) _ = linux.close(self.file_fd);
@@ -74,6 +88,38 @@ const Server = struct {
     listener: linux.fd_t,
     ring: *linux.IoUring,
     clients: *[client_limit]Client,
+    mode: Mode = .serve,
+
+    fn emit(self: *Server, value: anytype) !void {
+        if (self.mode != .observe_send) return;
+        var buffer: [1024]u8 = undefined;
+        var output = std.Io.File.stdout().writerStreaming(self.io, &buffer);
+        try std.json.Stringify.value(value, .{}, &output.interface);
+        try output.interface.writeByte('\n');
+        try output.interface.flush();
+    }
+
+    fn sendBuffer(self: *Server, id: usize) !void {
+        if (self.mode != .observe_send) return;
+        const fd = self.clients[id].fd;
+        const requested: i32 = 4096;
+        if (linux.errno(linux.setsockopt(fd, linux.SOL.SOCKET, linux.SO.SNDBUF, std.mem.asBytes(&requested).ptr, @sizeOf(i32))) != .SUCCESS)
+            return error.HttpSendBufferSetFailed;
+        var effective: i32 = 0;
+        var size: linux.socklen_t = @sizeOf(i32);
+        if (linux.errno(linux.getsockopt(fd, linux.SOL.SOCKET, linux.SO.SNDBUF, std.mem.asBytes(&effective).ptr, &size)) != .SUCCESS)
+            return error.HttpSendBufferQueryFailed;
+        if (size != @sizeOf(i32) or effective != 8192) return error.HttpSendBufferNot8192;
+        try self.emit(.{ .event = "loti.http.send-buffer", .tag = id + 1, .fd = fd, .requested = requested, .effective = effective });
+    }
+
+    fn closeClient(self: *Server, id: usize) !void {
+        const fd = self.clients[id].fd;
+        self.clients[id].release(self.allocator);
+        if (self.mode != .observe_send) return;
+        if (linux.errno(linux.fcntl(fd, linux.F.GETFD, 0)) != .BADF) return error.HttpClientSocketNotClosed;
+        try self.emit(.{ .event = "loti.http.closed", .tag = id + 1, .fd = fd, .closed = true });
+    }
 
     fn accept(self: *Server) !void {
         _ = try self.ring.accept(0, self.listener, null, null, linux.SOCK.CLOEXEC);
@@ -85,8 +131,23 @@ const Server = struct {
         switch (client.phase) {
             .receiving => _ = try self.ring.recv(tag, client.fd, .{ .buffer = client.request[client.request_len..] }, 0),
             .loading => _ = try self.ring.read(tag, client.file_fd, .{ .buffer = client.owned[client.progress..] }, client.progress),
-            .sending_headers => _ = try self.ring.send(tag, client.fd, client.header[client.progress..client.header_len], linux.MSG.NOSIGNAL),
-            .sending_body => _ = try self.ring.send(tag, client.fd, client.body[client.progress..], linux.MSG.NOSIGNAL),
+            .sending_headers, .sending_body => {
+                const buffer = if (client.phase == .sending_headers) client.header[0..client.header_len] else client.body;
+                const sqe = try self.ring.send(tag, client.fd, buffer[client.progress..], linux.MSG.NOSIGNAL);
+                const base = @intFromPtr(buffer.ptr);
+                if (sqe.addr < base or sqe.addr - base > buffer.len or sqe.len > buffer.len - (sqe.addr - base))
+                    return error.HttpPreparedSendOutsideStorage;
+                client.send_request = .{
+                    .operation = sqe.opcode,
+                    .tag = sqe.user_data,
+                    .fd = sqe.fd,
+                    .phase = client.phase,
+                    .offset = @intCast(sqe.addr - base),
+                    .length = sqe.len,
+                    .flags = sqe.flags,
+                    .rw_flags = sqe.rw_flags,
+                };
+            },
             .idle => unreachable,
         }
     }
@@ -190,6 +251,7 @@ const Server = struct {
             for (self.clients, 0..) |*client, id| {
                 if (client.phase != .idle) continue;
                 client.fd = fd;
+                try self.sendBuffer(id);
                 client.phase = .receiving;
                 try self.queue(id);
                 return self.accept();
@@ -200,16 +262,20 @@ const Server = struct {
         if (cqe.user_data > client_limit) return error.UnexpectedCompletion;
         const id: usize = @intCast(cqe.user_data - 1);
         const client = &self.clients[id];
+        if (client.phase == .sending_headers or client.phase == .sending_body) {
+            try self.emit(.{ .event = "loti.http.send", .request = client.send_request, .completion = cqe });
+            if (cqe.res > 0 and @as(u32, @intCast(cqe.res)) > client.send_request.length) return error.HttpSendResultOutOfBounds;
+        }
         if (cqe.err() == .INTR or cqe.err() == .AGAIN) return self.queue(id);
         if (cqe.res < 0) {
             if (client.phase == .loading) return self.errorResponse(id, .internal_error);
-            client.release(self.allocator);
+            try self.closeClient(id);
             return;
         }
         const count: usize = @intCast(cqe.res);
         switch (client.phase) {
             .receiving => {
-                if (count == 0) return client.release(self.allocator);
+                if (count == 0) return self.closeClient(id);
                 client.request_len += count;
                 if (std.mem.indexOf(u8, client.request[0..client.request_len], "\r\n\r\n") != null)
                     return self.prepare(id);
@@ -223,7 +289,7 @@ const Server = struct {
                 try self.response(id, .ok, mimeType(std.mem.sliceTo(&client.filename, 0)));
             },
             .sending_headers, .sending_body => {
-                if (count == 0) return client.release(self.allocator);
+                if (count == 0) return self.closeClient(id);
                 client.progress += count;
                 const length = if (client.phase == .sending_headers) client.header_len else client.body.len;
                 if (client.progress < length) return self.queue(id);
@@ -232,7 +298,7 @@ const Server = struct {
                     client.progress = 0;
                     return self.queue(id);
                 }
-                client.release(self.allocator);
+                try self.closeClient(id);
             },
             .idle => return error.CompletionForIdleClient,
         }
@@ -266,7 +332,8 @@ fn mimeType(path: []const u8) []const u8 {
 
 pub fn main(init: std.process.Init) !void {
     const args = try init.minimal.args.toSlice(init.arena.allocator());
-    if (args.len != 3) return error.ExpectedDocumentRootAndPort;
+    if (args.len < 3 or args.len > 4) return error.ExpectedDocumentRootAndPort;
+    const mode: Mode = if (args.len == 3) .serve else if (std.mem.eql(u8, args[3], "--observe-send")) .observe_send else return error.UnknownServerMode;
     const port = try std.fmt.parseInt(u16, args[2], 10);
     const root = try std.Io.Dir.cwd().openDir(init.io, args[1], .{});
     defer root.close(init.io);
@@ -298,9 +365,10 @@ pub fn main(init: std.process.Init) !void {
         .listener = listener,
         .ring = &ring,
         .clients = &clients,
+        .mode = mode,
     };
     var ready_buffer: [256]u8 = undefined;
-    var stdout = std.Io.File.stdout().writer(init.io, &ready_buffer);
+    var stdout = std.Io.File.stdout().writerStreaming(init.io, &ready_buffer);
     try stdout.interface.print("{{\"event\":\"loti.http.ready\",\"address\":\"127.0.0.1\",\"port\":{d}}}\n", .{
         std.mem.bigToNative(u16, address.port),
     });

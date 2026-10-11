@@ -105,6 +105,7 @@ zig-out/bin/probe
 zig-out/bin/probe --raw > probe.bin
 zig-out/bin/probe --snapshot probe.bin
 zig-out/bin/webserver public 8080
+zig-out/bin/webserver public 0 --observe-send
 zig-out/bin/reference-setup input.txt
 zig-out/bin/reference-setup input.txt --separate-mappings
 zig-out/bin/reference-setup --mapping-failure separate-sqes

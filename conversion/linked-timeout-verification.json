@@ -91,8 +91,8 @@
     "churn_scope": "Preimplementation committed-history60/60 coverage; not current-code or review acceptance."
   },
   "source_sha256": {
-    "README.md": "9f6b1a696c8017c31bd37398f13bad5d6bfde4c2b24c4588650cd376d30242f4",
-    "conversion/audit.md": "a88e2fb7d8d087dff7657025000e4b9afedcee043cd192d1981c0e4b878933e5",
+    "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
+    "conversion/audit.md": "af2184206cd6d5f3c7f91f4d659b3ccb8b4d47dbb7e384af30af23c66d544e6d",
     "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
     "examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca",
     "examples/reference_submission.zig": "caed7d975ccadc60c08ee62e8681159764ccdd1698ebd8bc5a42704d77de22b3",
@@ -103,12 +103,12 @@
     "testdata/inputs/submission-count-bindings.json": "a283fcb8014034b2d9e4b9dc13ddc799225909987bfc4fc8ab967741659d6a0f",
     "testdata/inputs/submission-count-paragraphs.json": "aa8322cc810f121294e6988dda5e6e7da994ecce5ad4c03f2e2592e00e802b77",
     "testdata/inputs/submission-prose-damages.json": "f5e4d7decab85ddd3e76d6890d63d585457c3668254a542937ae82828d5d8a3d",
-    "testing.md": "6948bb7ec98f20809c4aa22dac6d107381c310a6d68329594ce53690299be0f4",
+    "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
     "tests/test_linked_timeout.py": "bef445b63a28e96d3151c933249f9b073d30f78eb7e368b3ee1a5b97a207d972",
-    "tests/test_publication.py": "afe975d896f46947842217dbb24038290b285025160f6040d2bcb45df069ccd6",
+    "tests/test_publication.py": "25615a30481205efcc5b8b26a2ff475d725718c18c25d44340202a76d8ec4180",
     "tests/test_reference.py": "50cb3675df8deff4b3db5a7cde4cdee41c35543378f01b4e1113e839f304c71e",
-    "tests/test_submission_prose.py": "9559beed6d321b830c6b007ebec3b4833c9d6febaa8de87742c0763517f8e3ed",
-    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a"
+    "tests/test_submission_prose.py": "d913437ac0258cad5d4f58b46c80e0817748354a21131b3fba5600247bcf98f1",
+    "tools/reference_map.py": "49abc8d8e9ae20127b31ad2b6b697d52b7c022436284d0a10ad74b4566fd25e5"
   },
   "reference_sha256": {
     "/home/ahmed/workspace/va/man-qmd/build/docs/liburing/man/io_uring_prep_link_timeout.3.txt": "4d07afc303d70fa14c30ad3834b53e9f19c7b3bed0baf3dcbc1c87a1adc1bd14",
@@ -197,5 +197,18 @@
     "literals": 121,
     "narrative_paragraphs": 365,
     "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
+  },
+  "replay_after_http_send": {
+    "tests": 94,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 168.034,
+    "book_sha256": "918b328a5bef9d8646a4b655e5aece434ddf2520685cd121afd53aa1e73db22d",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full94-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained. Not independent/all kernel/race/device acceptance."
   }
 }

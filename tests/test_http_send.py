@@ -1,0 +1,247 @@
+"""Actual HTTP short SEND progress and reset survival, not ordinary large GETs."""
+
+import json
+import os
+from pathlib import Path
+import queue
+import re
+import signal
+import socket
+import struct
+import subprocess
+import tempfile
+import threading
+import time
+import unittest
+
+ROOT = Path(__file__).resolve().parent.parent
+INPUTS = ROOT / "testdata/inputs"
+PAYLOAD = (INPUTS / "http-send-input.bin").read_bytes()
+PROBE = (INPUTS / "http-send-probe.bin").read_bytes()
+
+
+def response(payload):
+    header = (f"HTTP/1.1 200 OK\r\nServer: loti-zig\r\nContent-Type: application/octet-stream\r\n"
+              f"Content-Length: {len(payload)}\r\nConnection: close\r\n\r\n").encode()
+    return header, header + payload
+
+
+def inspect_events(events, payload, reset=False):
+    if not events or set(events[0]) != {"event", "tag", "fd", "requested", "effective"}:
+        raise ValueError("IncompleteHttpSendBuffer")
+    first = events[0]
+    if (first["event"], first["tag"], first["requested"], first["effective"]) != ("loti.http.send-buffer", 1, 4096, 8192) or type(first["fd"]) is not int or first["fd"] < 3:
+        raise ValueError("WrongHttpSendBuffer")
+    header, _ = response(payload)
+    lengths = {"sending_headers": len(header), "sending_body": len(payload)}
+    phase, progress, short, failed, sends = "sending_headers", 0, 0, False, 0
+    for event in events[1:-1]:
+        if set(event) != {"event", "request", "completion"} or event["event"] != "loti.http.send":
+            raise ValueError("InvalidHttpSendEvent")
+        request, completion = event["request"], event["completion"]
+        if set(request) != {"operation", "tag", "fd", "phase", "offset", "length", "flags", "rw_flags"} or set(completion) != {"user_data", "res", "flags"}:
+            raise ValueError("InvalidHttpSendShape")
+        expected = {"operation": "SEND", "tag": 1, "fd": first["fd"], "phase": phase,
+                    "offset": progress, "length": lengths[phase] - progress, "flags": 0, "rw_flags": 16384}
+        if request != expected or (completion["user_data"], completion["flags"]) != (1, 0) or failed:
+            raise ValueError("WrongHttpSendRangeOrFlags")
+        result = completion["res"]
+        if type(result) is not int:
+            raise ValueError("InvalidHttpSendResult")
+        sends += 1
+        if result in {-4, -11}:
+            continue
+        if result < 0:
+            if not reset or phase != "sending_body" or result not in {-32, -104}:
+                raise ValueError("WrongHttpSendFailure")
+            failed = True
+            continue
+        if not 0 < result <= request["length"]:
+            raise ValueError("WrongHttpSendProgress")
+        if phase == "sending_body" and result < request["length"]:
+            short += 1
+        progress += result
+        if progress == lengths[phase] and phase == "sending_headers":
+            phase, progress = "sending_body", 0
+    last = events[-1]
+    if last != {"event": "loti.http.closed", "tag": 1, "fd": first["fd"], "closed": True}:
+        raise ValueError("IncompleteHttpSendRetirement")
+    if (reset and not failed) or (not reset and (phase != "sending_body" or progress != len(payload))):
+        raise ValueError("IncompleteHttpSendProgress")
+    if len(payload) == len(PAYLOAD) and short == 0:
+        raise ValueError("HttpShortSendNotObserved")
+    return {"sends": sends, "short_body_sends": short, "reset_error": failed, "socket_closed": True}
+
+
+def inspect_trace(text, event_groups):
+    lines = [re.sub(r"\)\s+= ", ") = ", line) for line in text.splitlines()]
+    cursor, observed = 0, []
+    for events in event_groups:
+        fd = events[0]["fd"]
+        expected = [f"setsockopt({fd}, SOL_SOCKET, SO_SNDBUF, [4096], 4) = 0",
+                    f"getsockopt({fd}, SOL_SOCKET, SO_SNDBUF, [8192], [4]) = 0",
+                    f"close({fd}) = 0", f"fcntl({fd}, F_GETFD) = -1 EBADF (Bad file descriptor)"]
+        positions = []
+        for line in expected:
+            candidates = [i for i in range(cursor, len(lines)) if lines[i] == line]
+            if not candidates:
+                raise ValueError("IncompleteHttpSendSocketTrace")
+            positions.append(candidates[0])
+        if positions != sorted(set(positions)):
+            raise ValueError("WrongHttpSendSocketOrder")
+        for line in lines[positions[0]:positions[2]]:
+            synchronous = re.match(r"(?:write|writev|sendto|sendmsg|sendmmsg)\((\d+),", line)
+            if synchronous is not None and int(synchronous[1]) == fd:
+                raise ValueError("SynchronousHttpSend")
+        cursor = positions[-1] + 1
+        observed.append({"send_buffer": 8192, "queried_socket_close": True})
+    return observed
+
+
+class Server:
+    def __init__(self, root, trace):
+        self.events, self.queue = [], queue.Queue()
+        self.process = subprocess.Popen(["strace", "-qq", "-xx", "-s", "512", "-o", str(trace),
+                                         "-e", "trace=setsockopt,getsockopt,close,fcntl,write,writev,sendto,sendmsg,sendmmsg",
+                                         "zig-out/bin/webserver", str(root), "0", "--observe-send"],
+                                        cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+        self.thread = threading.Thread(target=self.collect, daemon=True)
+        self.thread.start()
+
+    def collect(self):
+        assert self.process.stdout is not None
+        for line in self.process.stdout:
+            try:
+                event = json.loads(line)
+            except (ValueError, UnicodeDecodeError) as error:
+                self.queue.put(error)
+                return
+            self.events.append(event)
+            self.queue.put(event)
+        self.queue.put(None)
+
+    def next(self):
+        try:
+            event = self.queue.get(timeout=5)
+        except queue.Empty as error:
+            raise AssertionError("HTTP send observation deadline exceeded") from error
+        if not isinstance(event, dict):
+            raise AssertionError(f"HTTP observation stream ended or failed: {event}")
+        return event
+
+    def stop(self):
+        try:
+            os.killpg(self.process.pid, signal.SIGTERM)
+        except ProcessLookupError:
+            pass
+        try:
+            self.process.wait(timeout=2)
+        except subprocess.TimeoutExpired:
+            os.killpg(self.process.pid, signal.SIGKILL)
+            self.process.wait()
+        self.thread.join(timeout=2)
+        assert self.process.stdout is not None
+        assert self.process.stderr is not None
+        self.process.stdout.close()
+        self.process.stderr.close()
+
+
+class HttpSendContracts(unittest.TestCase):
+    def require_events(self, events, payload, reset=False):
+        try:
+            return inspect_events(events, payload, reset)
+        except ValueError as error:
+            self.fail(f"Invalid public HTTP SEND observations: {error}")
+
+    def require_trace(self, trace, groups):
+        try:
+            return inspect_trace(trace, groups)
+        except ValueError as error:
+            self.fail(f"Invalid public HTTP socket trace: {error}")
+
+    def test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive(self):
+        # Kills requested-vs-completed progress, buffer reset, early release,
+        # dropped data, missing NOSIGNAL preparation and server-wide reset failure.
+        with tempfile.TemporaryDirectory() as directory:
+            root, trace = Path(directory), Path(directory) / "syscalls.trace"
+            (root / "data.bin").write_bytes(PAYLOAD)
+            (root / "probe.bin").write_bytes(PROBE)
+            server = Server(root, trace)
+            groups = []
+            try:
+                ready = server.next()
+                self.assertEqual(set(ready), {"event", "address", "port"})
+                self.assertEqual((ready["event"], ready["address"]), ("loti.http.ready", "127.0.0.1"))
+                self.assertTrue(type(ready["port"]) is int and 0 < ready["port"] < 65536)
+                for reset in (False, True):
+                    with socket.socket() as client:
+                        client.settimeout(5)
+                        client.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 4096)
+                        client.connect(("127.0.0.1", ready["port"]))
+                        client.sendall(json.loads((INPUTS / "http-send-requests.json").read_text())["data"].encode())
+                        events = [server.next()]
+                        while True:
+                            event = server.next()
+                            events.append(event)
+                            if event["event"] == "loti.http.send" and event["request"]["phase"] == "sending_body" and 0 < event["completion"]["res"] < event["request"]["length"]:
+                                break
+                        if reset:
+                            client.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER, struct.pack("ii", 1, 0))
+                            client.close()
+                        else:
+                            chunks, deadline = [], time.monotonic() + 10
+                            while True:
+                                self.assertLess(time.monotonic(), deadline)
+                                chunk = client.recv(65536)
+                                if not chunk:
+                                    break
+                                chunks.append(chunk)
+                            self.assertEqual(b"".join(chunks), response(PAYLOAD)[1])
+                        while events[-1]["event"] != "loti.http.closed":
+                            events.append(server.next())
+                        summary = self.require_events(events, PAYLOAD, reset)
+                        self.assertGreater(summary["short_body_sends"], 0)
+                        self.assertEqual(summary["reset_error"], reset)
+                        self.assertIsNone(server.process.poll())
+                        groups.append(events)
+                with socket.create_connection(("127.0.0.1", ready["port"]), timeout=5) as probe:
+                    probe.sendall(json.loads((INPUTS / "http-send-requests.json").read_text())["probe"].encode())
+                    chunks = []
+                    while chunk := probe.recv(65536):
+                        chunks.append(chunk)
+                    self.assertEqual(b"".join(chunks), response(PROBE)[1])
+                events = [server.next()]
+                while events[-1]["event"] != "loti.http.closed":
+                    events.append(server.next())
+                self.assertEqual(self.require_events(events, PROBE), {"sends": 2, "short_body_sends": 0, "reset_error": False, "socket_closed": True})
+                groups.append(events)
+                self.assertIsNone(server.process.poll())
+                self.assertEqual(self.require_trace(trace.read_text(), groups), [{"send_buffer": 8192, "queried_socket_close": True}] * 3)
+            except (TimeoutError, ConnectionError) as error:
+                self.fail(f"Owned HTTP transport failed: {type(error).__name__}/{error.errno}")
+            finally:
+                server.stop()
+
+    def test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress(self):
+        # Challenges observation models independently of the live producer.
+        cases = json.loads((INPUTS / "http-send-events.json").read_text())
+        self.assertEqual(inspect_events(cases["complete"], PAYLOAD), {"sends": 3, "short_body_sends": 1, "reset_error": False, "socket_closed": True})
+        self.assertEqual(inspect_events(cases["reset"], PAYLOAD, True), {"sends": 3, "short_body_sends": 1, "reset_error": True, "socket_closed": True})
+        for damage in json.loads((INPUTS / "http-send-invalid-events.json").read_text()):
+            with self.subTest(damage=damage["id"]):
+                try:
+                    inspect_events(damage["events"], PAYLOAD, damage["reset"])
+                except ValueError as error:
+                    self.assertEqual(str(error), damage["error"])
+                else:
+                    self.fail("Damaged HTTP send observation was accepted")
+        trace = (INPUTS / "http-send.trace").read_text()
+        self.assertEqual(inspect_trace(trace, [cases["complete"]]), [{"send_buffer": 8192, "queried_socket_close": True}])
+        for damage in json.loads((INPUTS / "http-send-invalid-traces.json").read_text()):
+            with self.subTest(damage=damage["id"]):
+                try:
+                    inspect_trace(damage["trace"], [cases["complete"]])
+                except ValueError as error:
+                    self.assertEqual(str(error), damage["error"])
+                else:
+                    self.fail("Damaged HTTP socket syscall observation was accepted")

@@ -1,0 +1,12 @@
+{
+  "scope": "Author preimplementation HTTP positive-short-SEND, cursor/storage, reset survival and queried socket retirement core. Not an ACL seal or independent reviewer acceptance. Finite owned loopback cases, not PBT/all kernels/TCP/SIGPIPE delivery/unwind.",
+  "source_sha256": {
+    "tests/test_http_send.py": "0419fea1e70273e55394517c51172de0e7a7acc59e14fa82c8ab54bd991e86af",
+    "testdata/inputs/http-send-input.bin": "57a7a3fe6e7423256ef17eeb4deadb9009811bc6b9b6280f06f6f2d7df45b237",
+    "testdata/inputs/http-send-probe.bin": "f8c8fb8ee15a8b105e98761b6e284396554fe750dc6bc0105d60177aa679245d",
+    "testdata/inputs/http-send-events.json": "89526b0575c991e9812b14b8d7e71f98356efed1d3b8f50cc3d692d984868b27",
+    "testdata/inputs/http-send-invalid-events.json": "114feef06555aa32f97eb31c75a594a86ade7816139c3c4d315b5dc017e5268b",
+    "testdata/inputs/http-send.trace": "62392263d7c3a39f902d1216bf8a767e310e8228a26211679c8fbaf46a0957f2",
+    "testdata/inputs/http-send-invalid-traces.json": "5604ba55ae085f21f82d9146ea0bbca45fdc5bd90c2fb5ed0e58d415cb4e5126"
+  }
+}

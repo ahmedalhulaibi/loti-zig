@@ -387,9 +387,9 @@
     {
       "original": "io_uring_prep_send",
       "zig": "std.os.linux.IoUring.send",
-      "example": "examples/reference_submission.zig",
-      "verification_scope": "executed SQE construction; mixed requests intentionally not submitted",
-      "semantic_difference": "Acquires an SQE, prepares operands and stores the tag; caller submits separately.",
+      "example": "examples/webserver.zig",
+      "verification_scope": "constructed and submitted; bounded owned TCP server --observe-send requires positive-short body SEND CQEs with SO_SNDBUF4096/query8192; actual remaining SQE ranges/flags and tagged CQEs, exact pseudorandom wire bytes, reset/recovery GET and queried socket retirement; sequential current kernel only, not forced header/vector short sends, SIGPIPE delivery or all transport/race/error paths",
+      "semantic_difference": "Scalar byte slice, not WRITEV; completed count advances the address-relative remaining range. Retain header/body storage through each CQE; send flags use SQE rw_flags (MSG.NOSIGNAL here), not u8 dependency flags. Serialize sends per connection; a short SEND is not an error by default.",
       "declaration_source": "os/linux/IoUring.zig",
       "zig_signature": "pub fn send(\n    self: *IoUring,\n    user_data: u64,\n    fd: linux.fd_t,\n    buffer: []const u8,\n    flags: u32,\n) !*linux.io_uring_sqe"
     },

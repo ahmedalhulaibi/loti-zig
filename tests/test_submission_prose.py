@@ -112,7 +112,7 @@ class NarrativePublicationContracts(unittest.TestCase):
                             "local_links_valid": True, "drm_absent": True, "javascript_absent": True,
                             "literal_policy": {"language_counts": {"zig": 99, "console": 18, "json": 2, "text": 2},
                                                "rendered_languages_match": True, "bounded_legacy_markers_absent": True},
-                            "narrative_paragraphs": 365, "narrative_source_matches": True,
+                            "narrative_paragraphs": 368, "narrative_source_matches": True,
                         })
                     else:
                         self.assertEqual((result.returncode, result.stdout), (1, ""))

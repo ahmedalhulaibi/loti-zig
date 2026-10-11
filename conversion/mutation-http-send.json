@@ -1,0 +1,298 @@
+{
+  "scope": "Ten compiled native/four syntax-valid public HTTP observer/model/trace variants, not whole-port/all SIGPIPE/kernel/race assurance. Original author core retained exactly; no independent reviewer claim.",
+  "mutants": [
+    {
+      "id": "requested-not-completed",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "send-buffer-offset-reset",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "nosignal-not-prepared",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "first-short-send-releases-client",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "reset-terminates-server",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "client-socket-close-omitted",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "bounded-buffer-is-larger",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "send-range-observation-fabricated",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "completion-result-is-request-length",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "body-storage-zeroed-before-send",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "request-range-and-flags-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 3,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "short-observation-not-required",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "socket-retirement-order-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "synchronous-socket-send-accepted",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    }
+  ],
+  "source_sha256": {
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f"
+  },
+  "restored_source_sha256": {
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_http_send.py": "d8eba4c143941b4324c004a1ae977b526213e198e6f454b1180bc8650b74ab6f"
+  },
+  "log_normalization": {
+    "scope": "Trailing ASCII spaces/tabs/CR and terminal blank lines only; substantive observations unchanged.",
+    "changed": [
+      {
+        "file": ".mutants/http-send/2026-10-10/requested-not-completed-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/restored-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/initial-progress-harness-error-test.log",
+        "original_sha256": "c18e2daf9d03f26d841fe739b2035335d49244030822ae144c7c251fbd6b2814",
+        "normalized_sha256": "e7e084854f54ac46d08599e14093e6aa022f545a6d8ddbfc4ea39c75e6da7087"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/initial-progress-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/send-buffer-offset-reset-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/nosignal-not-prepared-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/first-short-send-releases-client-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/reset-terminates-server-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/client-socket-close-omitted-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/bounded-buffer-is-larger-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/send-range-observation-fabricated-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/completion-result-is-request-length-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/body-storage-zeroed-before-send-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/request-range-and-flags-ignored-restored-native-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/request-range-and-flags-ignored-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/request-range-and-flags-ignored-test.log",
+        "original_sha256": "df98167e0fe8cafaf8f4694ebc4b261461ab4992f53349765ca1d5deffeafec7",
+        "normalized_sha256": "9161e892d4adee428864a8b90d88ba914a675b44cf099ec84271b5960a7931bb"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/short-observation-not-required-restored-native-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/short-observation-not-required-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/short-observation-not-required-test.log",
+        "original_sha256": "5321d2048032a53e5269f2457809899e0ca2b2529e54388540dfdf88d789fef8",
+        "normalized_sha256": "7ba3b3b6019fe3503d611a9b3729ca8e62e7aae40261138367fd589246da954f"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/socket-retirement-order-ignored-restored-native-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/socket-retirement-order-ignored-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/socket-retirement-order-ignored-test.log",
+        "original_sha256": "0d2d8eee9382c34ea984a40f5540482675832ed8d3e9b748077ffe54873069db",
+        "normalized_sha256": "fa7ad711db069c3c3cd51c9898f53e2cc8dba0565478112e6446a43833fec3b7"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/synchronous-socket-send-accepted-restored-native-build.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/synchronous-socket-send-accepted-compile.log",
+        "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "normalized_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/synchronous-socket-send-accepted-test.log",
+        "original_sha256": "a0b33179b66fc2c7de378b017b65e7b5495869dd81e00f23d7b53a70232616d8",
+        "normalized_sha256": "69a5a46c4d796724283361fc8a29678babf37aa5125cbac6c4b6093bd5a1a8d5"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/strict-html.log",
+        "original_sha256": "145cd0d480e02bf25c88b80343915c06fdcc3031325c1371e2ea6d03721fdec9",
+        "normalized_sha256": "8dd8ff3153e9e93e7fba214505bbb99713a6dc3c5eefc5511dddf4bd79a41a62"
+      },
+      {
+        "file": ".mutants/http-send/2026-10-10/strict-epub.log",
+        "original_sha256": "2b896fbf1dee79a2610ad1342057a850309149d8b2bd0cc1136576fc25328277",
+        "normalized_sha256": "4bd067a88334de9e3d404b954d94dd6b8ca2141947a4d941c738cf16341ca940"
+      }
+    ]
+  },
+  "historical_exclusions": {
+    "initial_progress_variant": "Compiled, two failures/one unittest error; no kill. Initial driver/logs/report and original core retained; transparent containment amendment followed.",
+    "pre_request_fixture_report": "Prior14 superseded by final14 after exact HTTP input fixture extraction; no cumulative28 claim.",
+    "artifact_directory": "Date label corrected from2026-10-11 to actual local run date2026-10-10; log content unchanged except disclosed trailing normalization."
+  }
+}

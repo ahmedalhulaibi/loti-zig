@@ -1,0 +1,610 @@
+{
+  "ready": {
+    "event": "loti.http.ready",
+    "address": "127.0.0.1",
+    "port": 34845
+  },
+  "connections": [
+    [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 6144,
+          "length": 124928,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 12288,
+          "length": 118784,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 2048,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 14336,
+          "length": 116736,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 20480,
+          "length": 110592,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 26624,
+          "length": 104448,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 32768,
+          "length": 98304,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 38912,
+          "length": 92160,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 45056,
+          "length": 86016,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 51200,
+          "length": 79872,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 57344,
+          "length": 73728,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 63488,
+          "length": 67584,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 69632,
+          "length": 61440,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 75776,
+          "length": 55296,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 81920,
+          "length": 49152,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 88064,
+          "length": 43008,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 94208,
+          "length": 36864,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 100352,
+          "length": 30720,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 106496,
+          "length": 24576,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 112640,
+          "length": 18432,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 118784,
+          "length": 12288,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 124928,
+          "length": 6144,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 120,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 120,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 131072,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 6144,
+          "length": 124928,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 6144,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 12288,
+          "length": 118784,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": -104,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ],
+    [
+      {
+        "event": "loti.http.send-buffer",
+        "tag": 1,
+        "fd": 6,
+        "requested": 4096,
+        "effective": 8192
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_headers",
+          "offset": 0,
+          "length": 116,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 116,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.send",
+        "request": {
+          "operation": "SEND",
+          "tag": 1,
+          "fd": 6,
+          "phase": "sending_body",
+          "offset": 0,
+          "length": 37,
+          "flags": 0,
+          "rw_flags": 16384
+        },
+        "completion": {
+          "user_data": 1,
+          "res": 37,
+          "flags": 0
+        }
+      },
+      {
+        "event": "loti.http.closed",
+        "tag": 1,
+        "fd": 6,
+        "closed": true
+      }
+    ]
+  ],
+  "summaries": [
+    {
+      "sends": 23,
+      "short_body_sends": 21,
+      "reset_error": false,
+      "socket_closed": true
+    },
+    {
+      "sends": 4,
+      "short_body_sends": 2,
+      "reset_error": true,
+      "socket_closed": true
+    },
+    {
+      "sends": 2,
+      "short_body_sends": 0,
+      "reset_error": false,
+      "socket_closed": true
+    }
+  ],
+  "trace_oracle": [
+    {
+      "send_buffer": 8192,
+      "queried_socket_close": true
+    },
+    {
+      "send_buffer": 8192,
+      "queried_socket_close": true
+    },
+    {
+      "send_buffer": 8192,
+      "queried_socket_close": true
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/loti-http-send-mutations.py", line 39, in <module>
+    r=command([str(root/'.venv/bin/python'),'-c',runner],id+'-test.log');o=json.loads(r.stdout);assert r.returncode==1 and o['tests']==2 and o['failures']>0 and o['errors']==0 and o['skips']==0,('not-substantive',id,o)
+                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('not-substantive', 'requested-not-completed', {'tests': 2, 'failures': 2, 'errors': 1, 'skips': 0})

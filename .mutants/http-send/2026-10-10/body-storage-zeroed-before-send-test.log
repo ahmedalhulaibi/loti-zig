@@ -1,0 +1,17 @@
+{"tests": 2, "failures": 1, "errors": 0, "skips": 0}
+test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive (tests.test_http_send.HttpSendContracts.test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive) ... FAIL
+test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) ... ok
+
+======================================================================
+FAIL: test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive (tests.test_http_send.HttpSendContracts.test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_send.py", line 199, in test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive
+    self.assertEqual(b"".join(chunks), response(PAYLOAD)[1])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'HTT[127 chars]\n\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00[524240 chars]\x00' != b'HTT[127 chars]\n\x02\xfc\xe9}\x82\xa0\xbbX\xc9\xb8\xe9~\xec\[376894 chars]x104'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.022s
+
+FAILED (failures=1)

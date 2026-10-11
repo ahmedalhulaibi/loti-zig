@@ -1,0 +1,89 @@
+Running Sphinx v8.2.3
+loading translations [en]... done
+building [mo]: targets for 0 po files that are out of date
+writing output...
+building [html]: targets for 27 source files that are out of date
+updating environment: [new config] 27 added, 0 changed, 0 removed
+reading sources... [  4%] async_intro
+reading sources... [  7%] changelog
+reading sources... [ 11%] index
+reading sources... [ 15%] license
+reading sources... [ 19%] low_level
+reading sources... [ 22%] ref-iouring/index
+reading sources... [ 26%] ref-iouring/io_uring_enter
+reading sources... [ 30%] ref-iouring/io_uring_register
+reading sources... [ 33%] ref-iouring/io_uring_setup
+reading sources... [ 37%] ref-zig/advanced_usage
+reading sources... [ 41%] ref-zig/completion
+reading sources... [ 44%] ref-zig/cqe
+reading sources... [ 48%] ref-zig/index
+reading sources... [ 52%] ref-zig/setup_teardown
+reading sources... [ 56%] ref-zig/sqe
+reading sources... [ 59%] ref-zig/submission
+reading sources... [ 63%] ref-zig/supported_caps
+reading sources... [ 67%] tutorial/cat
+reading sources... [ 70%] tutorial/cp
+reading sources... [ 74%] tutorial/fixed_buffers
+reading sources... [ 78%] tutorial/index
+reading sources... [ 81%] tutorial/link
+reading sources... [ 85%] tutorial/probe
+reading sources... [ 89%] tutorial/register_eventfd
+reading sources... [ 93%] tutorial/sq_poll
+reading sources... [ 96%] tutorial/webserver
+reading sources... [100%] what_is_io_uring
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+copying assets...
+copying static files...
+Writing evaluated template result to /home/ahmed/workspace/va/loti-zig/_build/html/_static/basic.css
+Writing evaluated template result to /home/ahmed/workspace/va/loti-zig/_build/html/_static/documentation_options.js
+Writing evaluated template result to /home/ahmed/workspace/va/loti-zig/_build/html/_static/language_data.js
+Writing evaluated template result to /home/ahmed/workspace/va/loti-zig/_build/html/_static/alabaster.css
+copying static files: done
+copying extra files...
+copying extra files: done
+copying assets: done
+writing output... [  4%] async_intro
+writing output... [  7%] changelog
+writing output... [ 11%] index
+writing output... [ 15%] license
+writing output... [ 19%] low_level
+writing output... [ 22%] ref-iouring/index
+writing output... [ 26%] ref-iouring/io_uring_enter
+writing output... [ 30%] ref-iouring/io_uring_register
+writing output... [ 33%] ref-iouring/io_uring_setup
+writing output... [ 37%] ref-zig/advanced_usage
+writing output... [ 41%] ref-zig/completion
+writing output... [ 44%] ref-zig/cqe
+writing output... [ 48%] ref-zig/index
+writing output... [ 52%] ref-zig/setup_teardown
+writing output... [ 56%] ref-zig/sqe
+writing output... [ 59%] ref-zig/submission
+writing output... [ 63%] ref-zig/supported_caps
+writing output... [ 67%] tutorial/cat
+writing output... [ 70%] tutorial/cp
+writing output... [ 74%] tutorial/fixed_buffers
+writing output... [ 78%] tutorial/index
+writing output... [ 81%] tutorial/link
+writing output... [ 85%] tutorial/probe
+writing output... [ 89%] tutorial/register_eventfd
+writing output... [ 93%] tutorial/sq_poll
+writing output... [ 96%] tutorial/webserver
+writing output... [100%] what_is_io_uring
+
+generating indices... done
+writing additional pages... search done
+copying images... [ 20%] _static/Linux_Process_Models.jpg
+copying images... [ 40%] _static/Linux_Performance_upto_1000_users.png
+copying images... [ 60%] _static/Linux_Performance_more_than_1000_users.png
+copying images... [ 80%] _static/Linux_Performance_Fulll_Chart-1.png
+copying images... [100%] _static/ZeroHTTPd_static.png
+
+dumping search index in English (code: en)... done
+dumping object inventory... done
+build succeeded.
+
+The HTML pages are in _build/html.

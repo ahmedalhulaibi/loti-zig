@@ -190,6 +190,10 @@ def generate():
                 elif method == "cancel":
                     scope = "INPUT mode constructs only; separate --cancel submits generic tag cancellation of one of two owned pipe READs with colliding low32 tag bits; distinct -ECANCELED/0 target/canceler CQEs, missing/unknown/completed -ENOENT and invalid-flags -EINVAL; retained unrelated READ bytes/poison and queried four-FD retirement; sequential current-kernel default matching, not all cancellation races/flags/descriptors/unwinds"
                     difference = "Native u64 target tag goes in SQE addr, not a borrowed pointer or FD; cancellation flags use rw_flags, not SQE dependency flags. Cancel-request completion does not acknowledge its separately tagged target CQE. Retain target storage until that completion; EALREADY and completion races remain possible outside this bounded plan."
+                elif method == "send":
+                    example = "examples/webserver.zig"
+                    scope = "constructed and submitted; bounded owned TCP server --observe-send requires positive-short body SEND CQEs with SO_SNDBUF4096/query8192; actual remaining SQE ranges/flags and tagged CQEs, exact pseudorandom wire bytes, reset/recovery GET and queried socket retirement; sequential current kernel only, not forced header/vector short sends, SIGPIPE delivery or all transport/race/error paths"
+                    difference = "Scalar byte slice, not WRITEV; completed count advances the address-relative remaining range. Retain header/body storage through each CQE; send flags use SQE rw_flags (MSG.NOSIGNAL here), not u8 dependency flags. Serialize sends per connection; a short SEND is not an error by default."
                 elif method in {"timeout", "timeout_remove"}:
                     example = SIGNALS
                     scope = "constructed and submitted; ordinary masked waits, guard cancellation and two expired timer CQEs checked; distinct tag-sorted -ECANCELED/0 target/remover CQEs, queued NOP retained until explicit submit; current sequential plan only, not general cancellation races/restart/IOPOLL"

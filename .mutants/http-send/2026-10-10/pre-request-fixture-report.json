@@ -1,0 +1,153 @@
+{
+  "scope": "Ten compiled native/four syntax-valid public HTTP observer/model/trace variants, not whole-port/all SIGPIPE/kernel/race assurance. Original author core retained exactly; no independent reviewer claim.",
+  "mutants": [
+    {
+      "id": "requested-not-completed",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "send-buffer-offset-reset",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "nosignal-not-prepared",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "first-short-send-releases-client",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "reset-terminates-server",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "client-socket-close-omitted",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "bounded-buffer-is-larger",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "send-range-observation-fabricated",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "completion-result-is-request-length",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "body-storage-zeroed-before-send",
+      "kind": "native",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "request-range-and-flags-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 3,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "short-observation-not-required",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "socket-retirement-order-ignored",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    },
+    {
+      "id": "synchronous-socket-send-accepted",
+      "kind": "parser",
+      "status": "killed",
+      "syntax_valid": true,
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0
+    }
+  ],
+  "source_sha256": {
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_http_send.py": "e130712b2e535e8abbfa1ee15548787c07af001da820da156c7f1b2a81d63935"
+  },
+  "restored_source_sha256": {
+    "examples/webserver.zig": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+    "tests/test_http_send.py": "e130712b2e535e8abbfa1ee15548787c07af001da820da156c7f1b2a81d63935"
+  }
+}

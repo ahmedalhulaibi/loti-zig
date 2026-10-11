@@ -1,0 +1,9 @@
+{
+  "scope": "Author report cardinality amendment for three reader-facing TCP observation paragraphs; not semantic or independent acceptance.",
+  "prior": "submission-prose-spec-before-http-send.json",
+  "from": 365,
+  "to": 368,
+  "reason": "tutorial/webserver.rst adds exactly three paragraphs for actual-short-send observation, wire/reset evidence and limits; no new literal/chapter.",
+  "unchanged": "All separately authored submission-count semantic paragraphs/bindings/six damages and formatting positive retained byte-for-byte.",
+  "prior_publication_test_sha256": "afe975d896f46947842217dbb24038290b285025160f6040d2bcb45df069ccd6"
+}

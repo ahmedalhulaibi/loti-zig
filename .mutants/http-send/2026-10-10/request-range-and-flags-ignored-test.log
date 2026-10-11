@@ -1,0 +1,38 @@
+{"tests": 2, "failures": 3, "errors": 0, "skips": 0}
+test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive (tests.test_http_send.HttpSendContracts.test_forced_positive_short_send_and_reset_keep_bytes_progress_and_server_alive) ... ok
+test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) ...
+  test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) (damage='send-buffer-reset') ... FAIL
+  test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) (damage='send-length-not-remaining') ... FAIL
+  test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) (damage='nosignal-omitted') ... FAIL
+
+======================================================================
+FAIL: test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) (damage='send-buffer-reset')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_send.py", line 237, in test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress
+    self.fail("Damaged HTTP send observation was accepted")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Damaged HTTP send observation was accepted
+
+======================================================================
+FAIL: test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) (damage='send-length-not-remaining')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_send.py", line 237, in test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress
+    self.fail("Damaged HTTP send observation was accepted")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Damaged HTTP send observation was accepted
+
+======================================================================
+FAIL: test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress (tests.test_http_send.HttpSendContracts.test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress) (damage='nosignal-omitted')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ahmed/workspace/va/loti-zig/tests/test_http_send.py", line 237, in test_whole_event_and_socket_trace_damages_cannot_hide_lost_progress
+    self.fail("Damaged HTTP send observation was accepted")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Damaged HTTP send observation was accepted
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.024s
+
+FAILED (failures=3)

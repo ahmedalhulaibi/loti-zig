@@ -1,0 +1,140 @@
+{
+  "complete": [
+    {
+      "event": "loti.http.send-buffer",
+      "tag": 1,
+      "fd": 6,
+      "requested": 4096,
+      "effective": 8192
+    },
+    {
+      "event": "loti.http.send",
+      "request": {
+        "operation": "SEND",
+        "tag": 1,
+        "fd": 6,
+        "phase": "sending_headers",
+        "offset": 0,
+        "length": 120,
+        "flags": 0,
+        "rw_flags": 16384
+      },
+      "completion": {
+        "user_data": 1,
+        "res": 120,
+        "flags": 0
+      }
+    },
+    {
+      "event": "loti.http.send",
+      "request": {
+        "operation": "SEND",
+        "tag": 1,
+        "fd": 6,
+        "phase": "sending_body",
+        "offset": 0,
+        "length": 131072,
+        "flags": 0,
+        "rw_flags": 16384
+      },
+      "completion": {
+        "user_data": 1,
+        "res": 1024,
+        "flags": 0
+      }
+    },
+    {
+      "event": "loti.http.send",
+      "request": {
+        "operation": "SEND",
+        "tag": 1,
+        "fd": 6,
+        "phase": "sending_body",
+        "offset": 1024,
+        "length": 130048,
+        "flags": 0,
+        "rw_flags": 16384
+      },
+      "completion": {
+        "user_data": 1,
+        "res": 130048,
+        "flags": 0
+      }
+    },
+    {
+      "event": "loti.http.closed",
+      "tag": 1,
+      "fd": 6,
+      "closed": true
+    }
+  ],
+  "reset": [
+    {
+      "event": "loti.http.send-buffer",
+      "tag": 1,
+      "fd": 6,
+      "requested": 4096,
+      "effective": 8192
+    },
+    {
+      "event": "loti.http.send",
+      "request": {
+        "operation": "SEND",
+        "tag": 1,
+        "fd": 6,
+        "phase": "sending_headers",
+        "offset": 0,
+        "length": 120,
+        "flags": 0,
+        "rw_flags": 16384
+      },
+      "completion": {
+        "user_data": 1,
+        "res": 120,
+        "flags": 0
+      }
+    },
+    {
+      "event": "loti.http.send",
+      "request": {
+        "operation": "SEND",
+        "tag": 1,
+        "fd": 6,
+        "phase": "sending_body",
+        "offset": 0,
+        "length": 131072,
+        "flags": 0,
+        "rw_flags": 16384
+      },
+      "completion": {
+        "user_data": 1,
+        "res": 1024,
+        "flags": 0
+      }
+    },
+    {
+      "event": "loti.http.send",
+      "request": {
+        "operation": "SEND",
+        "tag": 1,
+        "fd": 6,
+        "phase": "sending_body",
+        "offset": 1024,
+        "length": 130048,
+        "flags": 0,
+        "rw_flags": 16384
+      },
+      "completion": {
+        "user_data": 1,
+        "res": -104,
+        "flags": 0
+      }
+    },
+    {
+      "event": "loti.http.closed",
+      "tag": 1,
+      "fd": 6,
+      "closed": true
+    }
+  ]
+}

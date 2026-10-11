@@ -70,7 +70,7 @@
   },
   "manual_scope_note": "Provided-buffer-ring overview data-arrival-only consumption is not adopted for the legacy EOF path; legacy helpers and actual current-kernel CQEs/removal counts govern bounded claim.",
   "source_sha256": {
-    "README.md": "9f6b1a696c8017c31bd37398f13bad5d6bfde4c2b24c4588650cd376d30242f4",
+    "README.md": "9cad8f6aab1dea39f5e3fb3cd7410cdd3689f7d14d19c1b941b4ef52c28329b2",
     "conversion/prose-line-disposition.md": "83580ea5acf5911acee0df887175680a04893b507256fb3e1ee6ef5baa894eeb",
     "conversion/provided-buffer-zero-failure-spec-amendment.json": "1f8fce7d5500e02d5768fdb2b26f97409126fd382ea0d302bda573b1d597e3fb",
     "conversion/provided-buffer-zero-failure-spec-initial-sha256.json": "3177caefc8d5cbe6439c173f63e8697ef643c7716812a7e35d8e286886ae75ec",
@@ -79,7 +79,7 @@
     "conversion/provided-buffer-zero-failure.trace": "592d50c0eee3f17d8285525046d6f4328002662409f40e2b26f9b4e4201f7053",
     "conversion/provided-buffer-zero-spec-sha256.json": "ec6e709202af5f8cc84ee21f9db2eb07cb980f644bc7eb5a791abccc87479290",
     "conversion/provided-buffer-zero.trace": "1acc7b7c00bd195213e1049bbf423129d36271d7997ba6dc4d9dbc01c8abd379",
-    "conversion/reference-map.json": "829c527d8da549795ff8a1f440f6d5375c0553ed1059a85c27e6ae7e4cc7532f",
+    "conversion/reference-map.json": "4a08b67517499955bbb45b587ce5478e6d95748ca3e0642900c5611ecf6f161c",
     "conversion/submission-prose-cardinality-buffer-zero.json": "dfc01aebf273065f454b47b886160fe2e03cadb0a594001b0876706da302da19",
     "conversion/submission-prose-spec-before-buffer-zero.json": "94d3e41dd2a371e7997b65182bc575ee05ac63bd5c49aa2f799dcf0fcd221364",
     "examples/reference_buffers.zig": "a53c67f6ed7cd7e42666176ab7306ad491fc5482ea79bf318b537b5be984d53c",
@@ -92,13 +92,13 @@
     "testdata/inputs/provided-buffer-zero-invalid-traces.json": "9712a88916795ebbd6596a4f17b6d6de9f154fdbffed96bdbd468646a8f8348d",
     "testdata/inputs/provided-buffer-zero-report.json": "c982c21651dc0fd412ec874e9d541006f52061cdf90af2b6bdd1b76bbbfbab3c",
     "testdata/inputs/provided-buffer-zero.trace": "216592c6451f50c2ee35998b8df8f5b000367980aab366b7d7e23549225775ce",
-    "testing.md": "6948bb7ec98f20809c4aa22dac6d107381c310a6d68329594ce53690299be0f4",
+    "testing.md": "aab2623dba171a92b8f706edb051fd36c2a6a89f000d70a6850208f3185d0e38",
     "tests/test_provided_buffer_zero.py": "68cb3494e0b6d8a6302ea1ac6a43ac6e73f7634bdfa386084acae05626fd258c",
     "tests/test_provided_buffer_zero_failure.py": "405677c7f71341e6e0b49a988254ec74dae187cdd9c8923e36bf4cde190bdb41",
     "tests/test_provided_buffers.py": "21424064271382abc8293d2630d16261f273b3cc46fa21ab440b07206d58528d",
-    "tests/test_publication.py": "afe975d896f46947842217dbb24038290b285025160f6040d2bcb45df069ccd6",
-    "tests/test_submission_prose.py": "9559beed6d321b830c6b007ebec3b4833c9d6febaa8de87742c0763517f8e3ed",
-    "tools/reference_map.py": "e5c4e824677103f0fb52e8302d4c4010049033b88750200c07623c5c3b26e92a"
+    "tests/test_publication.py": "25615a30481205efcc5b8b26a2ff475d725718c18c25d44340202a76d8ec4180",
+    "tests/test_submission_prose.py": "d913437ac0258cad5d4f58b46c80e0817748354a21131b3fba5600247bcf98f1",
+    "tools/reference_map.py": "49abc8d8e9ae20127b31ad2b6b697d52b7c022436284d0a10ad74b4566fd25e5"
   },
   "reference_sha256": {
     "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
@@ -191,5 +191,18 @@
     "literals": 121,
     "narrative_paragraphs": 365,
     "scope": "Current source pins replayed through full92-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained, not independent/all kernel/race/device acceptance."
+  },
+  "replay_after_http_send": {
+    "tests": 94,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "properties": 16,
+    "generated_valid_cases_per_property": 400,
+    "suite_seconds": 168.034,
+    "book_sha256": "918b328a5bef9d8646a4b655e5aece434ddf2520685cd121afd53aa1e73db22d",
+    "literals": 121,
+    "narrative_paragraphs": 368,
+    "scope": "Current source pins replayed through full94-test suite and final strict HTML/EPUB/reader/EPUBCheck; historical gate/mutation/screenshot fields retained. Not independent/all kernel/race/device acceptance."
   }
 }

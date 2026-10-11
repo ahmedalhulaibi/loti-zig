@@ -1,0 +1,4 @@
+setsockopt(6, SOL_SOCKET, SO_SNDBUF, [4096], 4) = 0
+getsockopt(6, SOL_SOCKET, SO_SNDBUF, [8192], [4]) = 0
+close(6) = 0
+fcntl(6, F_GETFD) = -1 EBADF (Bad file descriptor)

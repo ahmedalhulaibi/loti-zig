@@ -14,7 +14,7 @@ coverage/attribution/licence/illustrations, validate the book, then push the for
 | 1. Fork and local clone | `fork-verification.json`: GitHub reports `isFork=true`, parent `shuveb/loti`; local repository and personal/upstream remotes | Push final conversion and verify remote commit |
 | 2. Enumerate every original C/io_uring line | `source-inventory.json`/`.md`: 3,618 matched lines, 128 original blocks/declarations (120 C + eight output); fresh `--check`, independent Docutils extraction and exact source-line comparison | 3,618/3,618 lines now have author note references; independent semantic acceptance remains open |
 | 3. Update all references | All 26 original documents rewritten; `chapter-map.json` maps actual paths/order; `reference-map.json` maps 76 inventoried symbols/99 bindings; 13 exact declaration includes | Independent semantic review; resolve any missing operation/lifetime coverage found by disposition |
-| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 63 native CLI/TCP/reference tests plus fifteen binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
+| 4. Recreate every example | 25 native executables; exact compiler gate; 51/51 build steps; 64 native CLI/TCP/reference tests plus sixteen binding/trace-tool contracts plus isolated block-device VM test; 37 tutorial-block dispositions | Inspect remaining conversion limits; broader failure paths/state checks and source mutation assessment; independent review |
 | Build commands/metadata/links | `README.md`, `Makefile`, `conf.py`; native navigation and source inclusions; manuscript scan has no old domains, C blocks, includes or old example URLs | Final scan after remaining fixes |
 | Reader-facing book | Full HTML/EPUB build, EPUBCheck 5.2.1, `verify_epub.py`, `epub-verification.json`, publication boundary tests; `reader-layout-verification.json`/two layout contracts cover all spine documents at three CSS widths, with before/after previews | Final rebuild/audit after semantic/review fixes; Supernote/device pagination and font overrides remain unverified |
 | Licence/illustrations | Original MIT text in `license.rst`; five original illustrations and logo compared byte-for-byte to immutable upstream | Preserve through final rebuild |
@@ -623,9 +623,10 @@ seven historical binding-producer, three CSS, three layout-oracle). Message chec
 Zig 0.17.0/47 build steps; 64 tests/zero failures/errors/skips; thirteen attributed
 400-case properties; strict HTML/EPUB/EPUBCheck; 27 chapters/117 literals, 81
 browser cases/351 code blocks/321 headings without violations. Scope is current
-x86_64/Linux, sequential bounded UNIX datagrams/one right. TCP partial sends and
-SIGPIPE, UDP/address outputs, other ancillary types, descriptor limits, races,
-multishot/cancellation, architectures/kernels and all failure unwinding remain
+x86_64/Linux, sequential bounded UNIX datagrams/one right. This message evidence
+does not attest TCP; separate HTTP short-SEND evidence is now recorded below.
+Forced SIGPIPE delivery, UDP/address outputs, other ancillary types, descriptor
+limits, races, multishot/cancellation, architectures/kernels and all unwinding remain
 unattested. Browser evidence is not device/pagination/font-override acceptance.
 Five source/test/build/generator diagnostic paths plus supplemental census probe
 have no visible findings; suppressed disposition disclosed. Fabric/cached graph
@@ -1081,7 +1082,7 @@ all damages retained. No native defect, shrink or mutant kill is claimed.
 Full corrected suite:92 tests, zero failures/errors/skips,16 attributed400-case
 properties,166.896s. Prior suite fingerprints remain historical.
 
-Current bounded total **245**:174 native,3 index,40 trace-parser,10 binding-producer,
+Generic-cancellation checkpoint bounded total **245**:174 native,3 index,40 trace-parser,10 binding-producer,
 3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. This does not
 prove whole-port/SDK/kernel/all flags/descriptor/cancellation-race/unwind behavior.
 Active source diagnostics retain one disclosed workspace-import false positive;
@@ -1095,10 +1096,56 @@ See `async-cancel-verification.json` for current replay fingerprints.
 Mandatory review remains blocked; no host retry,
 substitute reviewer, push or goal completion.
 
+## Forced TCP short SEND and reset isolation
+
+Original runnable HTTP response selectors: `tutorial/webserver_liburing.rst:18`,
+`:623`,`:636`. Prior262400-byte ordinary GET/stalled receiver did not attest a
+nonterminal positive-short SEND. Missing `--observe-send` returned
+`ExpectedDocumentRootAndPort`. Optional mode now sets only owned accepted
+sockets' SO_SNDBUF4096 and queries8192. Actual prepared address-relative offsets,
+lengths/opcode/tag/FD/dependency flags/MSG.NOSIGNAL and separate copied CQEs are
+reported; each completed count advances the retained remaining range. Socket
+retirement is queried before closure reporting, not inferred from process exit.
+
+Two public contracts: owned131072-byte pseudorandom response, client RCVBUF4096,
+require a short body CQE before drain/reset, whole wire bytes/early reset/error
+CQE/server survival/37-byte recovery GET. Finite sequential flow, not PBT.
+Thirteen whole-event/five syscall damages challenge the independent models;
+strace verifies actual socket-buffer values/close→BADF order/no synchronous sends.
+Manual redirected regular-file JSON protocol preserves readiness and all records;
+three exact typed argument errors also replayed. Default four HTTP tests unchanged.
+
+Ten compiled native/four syntax-valid parser mutants killed; exact source/core
+restoration and rebuilt six-test baseline. Original draft/hash retained: first
+compiled progress mutant had two failures/one unittest error because subTest
+continued dependent steps after a wire-byte failure; excluded, not a kill.
+Containment amendment aborts that flow and turns exactly typed model/owned-TCP
+failures into assertions, not blanket exception suppression. No model predicates,
+fixtures or damages changed. Two request byte values then moved exactly to an
+input JSON fixture; original AST-byte equality checked. Final14 replaces prior14,
+not extra kills. Full94-test replay:zero failures/errors/skips,16 attributed
+400-case properties,168.034s. Three book paragraphs:365→368; literals121/pre363
+unchanged. Source scope spans native/test/book/map/dispositions/evidence because
+this single public teaching feature owns those consumers, not a new subsystem.
+
+Current bounded total **259**:184 native,3 index,44 trace-parser,10 binding-producer,
+3 CSS,3 layout-oracle,10 publication-policy/fidelity,2 source-prose. Not whole-port
+acceptance, forced SIGPIPE delivery, forced vector/header short I/O, every
+transport/flag/kernel/error/unwind or concurrent sending assurance. Five active
+all-server diagnostic paths:zero primary findings/one disposed import/two
+auxiliary OPF spelling infos (valid EPUB term). Fabric unavailable/stale graph,
+64/64 committed-history churn and author checks do not establish independent
+acceptance. See `http-send-verification.json` for final gates/current replay pins.
+Final strict HTML/EPUB rebuilt after the94-test suite:27 chapters/121 literals/
+368 ordered paragraphs;81 browser cases/pre363/zero violations; EPUBCheck5.2.1
+zero fatals/errors/warnings/infos. These are publication fidelity/layout gates,
+not independent code, Supernote/pagination or font-override acceptance.
+Review remains blocked; no retry/fallback/push or goal completion.
+
 ## Native execution evidence
 
-- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **92 passed**
-  (63 native + one VM + eight publication + three inventory + two line-index + fifteen binding/trace-tool tests), zero skips,
+- Compiler: **0.17.0**. Build: **51/51**. Current complete suite: **94 passed**
+  (64 native + one VM + eight publication + three inventory + two line-index + sixteen binding/trace-tool tests), zero skips,
   with `LOTI_TEST_CASES=400`.
 - Ten tutorial executables: `readv`, `raw-cat`, `cat`, `cp`, `probe`, `link`,
   `fixed-buffers`, `sq-poll`, `register-eventfd`, `webserver`.
@@ -1113,7 +1160,7 @@ substitute reviewer, push or goal completion.
   A fifth checks probe lookup across generated header bounds/flags; a sixth
   models nonblocking CQ capacity commands/head/readiness and whole tag coverage.
   `test-verification.json` records **400 generated passing cases for each of all
-  sixteen properties**, source hashes, 92 passing tests and zero skips. These remain
+  sixteen properties**, source hashes, 94 passing tests and zero skips. These remain
   author-run checks, not independent review.
 - Linked success/cancellation, four fixed buffers, post-idle polling and threaded
   eventfd notification execute on Linux; actual file/stdout bytes are checked.
