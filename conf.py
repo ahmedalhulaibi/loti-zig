@@ -12,6 +12,7 @@ copyright = "2020, Shuveb Hussain; Zig adaptation, Ahmed Alhulaibi"
 version = release = "0.17.0"
 root_doc = "index"
 extensions = ["manpage", "zig_lexer"]
+man_url_regex = "https://man.archlinux.org/man/${topic}.${num}.en"
 exclude_patterns = [
     "_build/**", ".venv/**", ".zig-cache/**", "zig-out/**", ".git/**",
     "conversion/**", "examples/**", "tests/**", "tools/**", "Thumbs.db", ".DS_Store",

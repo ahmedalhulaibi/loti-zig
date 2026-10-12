@@ -23,7 +23,7 @@
   "target_sha256": {
     "async_intro.rst": "d6fb0a7017a2753f470f0db054bcda61ebf21f0040b37d520d31e8e314f2f215",
     "changelog.rst": "64034ecb3eca2f2ebc5b33e0533a88138defc6e216834c18177092f48f15e2dd",
-    "conf.py": "8b5daada51efdf1c91e8312889ab45d559e156d3d192044ee441400cf3d62b47",
+    "conf.py": "de6320ea906c0080220607f5a89757bbbd2da79fa54b5e6ff8895bf938e1aea7",
     "index.rst": "a8e427731c760b7069deb003df2a02d98ee3486208dfde1725219a6ead72d43b",
     "low_level.rst": "46eb6a0987772f250de00810d80e067bf696a8e4f8146f1a868e168d6f6014de",
     "ref-iouring/index.rst": "72b18bd357ebf131c4b46b99f206b11174bae45ae7d2bc8551252edc8c358d62",
@@ -46,8 +46,8 @@
     "tutorial/probe.rst": "b415df42f0cc9c67740248da0b7404f30b4db4e484765e0a97db0768060ff07c",
     "tutorial/register_eventfd.rst": "db713152a495faceec5cb26cac2bbb4d6c00faebbf9614d8c403e4f125a2e2f9",
     "tutorial/sq_poll.rst": "0c9a763df7ddcede3df3dc8920fb7efefa73e0f9bb244ba90513e95fd05f2f78",
-    "tutorial/webserver.rst": "5ead560cf7bbaf9353a64c46b5d1ea5b255ee7c53eb314cae1d13a32223529ce",
-    "what_is_io_uring.rst": "3e19f9421ed9a8a4236ded73358483f1a3c04089e2f706e41ed8838f698baca9"
+    "tutorial/webserver.rst": "40d4eb2a22510b3fbd0cf3fad8e9a0eaab045a6c3339cc1a1abab5d058a4385d",
+    "what_is_io_uring.rst": "f3b6743a4a4b68f36d37b9af3680a5c2d72b8761f3fc56ec710ef16fed16ca19"
   },
   "inventoried_lines": 3618,
   "inventoried_blocks": 128,

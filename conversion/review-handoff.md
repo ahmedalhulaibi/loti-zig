@@ -1,61 +1,32 @@
-# Direct review continuation — incomplete
+# Direct continuation — delivery pending
 
-Owner selected direct editing/review,no subagents or mutation tests. Do not launch
-or resume reviewer/test-author agents,or bypass the historical provider block.
-Independent-agent/test-seal workflow is not the chosen path;self-review remains
-labeled self-review. Historical c27be9dc reviewer BLOCK,879b2d75 provider failure,
-source exposure,ACL bypass and draft captures remain preserved.
+Owner-selected direct editing/self-review,no subagents or mutation tests. No
+provider retry/bypass. Historical reviewer BLOCK,provider failures,source exposure,
+ACL bypass andisolated author drafts remain unchanged;not independent acceptance.
 
-## Current checkpoint
+Final-source-purpose-audit.md reconciles all26 original chapter comparisons,
+128 unique blocks,30 native bodies andlive SDK pins. Complete current server,
+remaining lifecycle surfaces andall six changed chapter diffs reviewed.29 native
+bodies unchanged from earlier complete comparisons;HTTP80631c8 repair reviewed
+against actual488-line body. Static private-SQE/FD0/idle/control conclusions are
+not new native branch tests;four existing heap cases remain finite evidence.
 
-Source red9721ed1 commits qualified5-method HTTP regression. Controls cover8
-literal ownership cases,real fast-close-before-census,2 malformed collector
-failures with tracee/FD release+primary preservation,and default wire/idle behavior.
-Actual fatal3 specifically red before native edit;identical oracle green afterward.
-No changes to isolated original author's files.
+Citation RED168508e→unchanged GREEN contract:all12 packaged URL→chapter bindings.
+Four verified HTTPS manual mirrors andfixed archived original paper replace
+unavailable endpoints. Native bodies/test oracles untouched. Final whole110/
+200.443s/0 failures-errors-skips;16 properties configured400. Build51/51(25 cached),
+four CLIs,strict HTML/final EPUB7b42d536,27/121/368;81 reflows/0 violations;
+EPUBCheck5.2.1 zero messages. README status-only replay is separate from whole110.
 
-examples/webserver.zig now tracks per-tag opcode/active/private SQE state;retires
-terminal CQE before fallible HTTP callback;neutralizes only unpublished SQEs to
-NOPs;serializes cancellation control;drains resource-producing/target CQEs without
-producer rearm;closes nonnegative ACCEPT FD including0. Cleanup precedes invalidating
-defers and retains operands indefinitely on no progress. Cancel receipt is not a
-target acknowledgment. SOCK_NONEMPTY is not MORE;terminal hints do not keep a
-one-shot request active. Existing EOF regression caught overly strict flags guard.
+Only remaining required action:commit checked source/documentation,verify selected
+input hashes against exact commit,push only ahmedalhulaibi/loti-zig master,and
+verify remote SHA/tree/native file bytes plus packaged source URLs. Then persist
+final delivery evidence/status,recheck changed inputs andfinal remote content,
+and complete the goal. No upstream PR/release requested.
 
-Latest direct-http-repair-audit.md/verification.json:green5/9.197s,existing HTTP3/
-0.036s,full108/178.898s/0 errors-failures-skips;16 properties configured400;
-build51/51(24 cached);four CLIs3618/128/567,76/99,13;strict HTML/final EPUB;
-27/121/368/archivea735fe85;81 reflows/0 violations;EPUBCheck0. Fresh229 source pins;
-README/HTTP body/manuscript only change among prior226. Historical292 kills unchanged.
-No current cold25 claim,push,PR,release or completion.
-
-Latest extension:http-heap-retirement-audit.md/verification;one new method/four
-heap cases,old methods unchanged;all30 native bodies/README/manuscripts unchanged.
-Final full109/200.682s/0 errors-failures-skips;16 properties configured400;fresh232
-pins. Build51/51(25 cached);strict HTML/EPUB63f6aee8,27/121/368;81 reflows/0 violations;
-EPUBCheck0. Actual kernel-pending SEND -125 plus retained whole heap before release;
-repeated EAGAIN retains ownership until externally terminated. No all-kernel/UAF claim.
-
-## Next review surfaces
-
-- Targeted heap4 scenarios now covered:http-heap-retirement-audit.md/verification;
-  remaining code/purpose review includes private-SQE neutralization,copied results,
-  FD0/idle ownership andgeneral failure constraints,not a new exhaustive kernel claim.
-  Descriptor census/EOF do not prove every operand retirement case.
-- All immutable original c9ee2424 blocks/lines/purposes against current exact body:
-  canonical3618/128+historical16+inline7=3641;grammar26/128/62 corroborates syntax,
-  not meaning. Seven purpose groups cover128 andall26 chapters;finish direct
-  untruncated final review rather than reuse reach/hashes as acceptance.
-- Native borrow/publication/flags:SQPOLL consumption vs submit return,
-  metadata/data lifetimes,LINK submission boundaries/HARDLINK failure stages,
-  registered namespaces/vector/control/socket ownership andcancel target CQEs.
-- Whole final book/code/statistics/commands/attribution/MIT/assets/links against
-  actual final HEAD;source pins and complete suites must cover changed inputs.
-- After required final audit:push personal fork only;verify exact remote commit/
-  content and packaged source URLs. No upstream PR/release requested.
-
-Use exact installed Zig0.17.0,locked .venv and owned _build/verification outputs.
-Prerequisites fail,not skip. Preserve failed attempts and historical receipts;
-do not run baseline-guarded historical helpers against current HEAD blindly.
-No destructive storage,host identity/config changes,libc/liburing imports or
-unsupported APIs. Read actual source/SDK;cached graph remains stale/Fabric unavailable.
+Use exact Zig0.17.0,locked .venv,owned ignored _build/verification outputs. Preserve
+historical receipts;do not blindly run their baseline-guarded helpers on new HEAD.
+No destructive storage,identity/config changes,libc/liburing imports or guessed
+SDK APIs. Current graph stale/Fabric unavailable;actual source/compiler wins.
+No production HTTP,bounded cleanup,all-kernel/progress/UAF,durability or reader-
+device assurance. Historical292 mutation kills unchanged;no new campaign.

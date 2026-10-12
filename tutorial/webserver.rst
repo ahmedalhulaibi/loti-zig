@@ -154,8 +154,9 @@ client. These checks are not a production HTTP conformance or security audit.
 There is no TLS, keep-alive, request-body handling, header-field validation,
 per-client deadline or streaming-file transfer. Do not expose this teaching
 server as an Internet-facing service. A direct regression now verifies pre-exit
-closure for the reproduced late-ACCEPT defect. Broader failure-path and
-heap-retirement validation remains in progress. Cleanup retains operands and
+closure for the reproduced late-ACCEPT defect. Four owned heap-retirement
+scenarios also pass; broader failure-path and memory assurance is not established.
+Cleanup retains operands and
 waits if submission, cancellation or completion cannot progress; it has no
 bounded shutdown guarantee. Do not treat ``defer ring.deinit()`` as an
 operand-retirement barrier or this example as a production fatal-cleanup pattern.

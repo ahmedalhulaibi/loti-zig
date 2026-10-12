@@ -57,10 +57,11 @@ SQ polling spends CPU on a kernel poller. Sleeping pollers still need a wakeup;
 completion waits and filesystem work can still need kernel entries. It is not a
 promise of a syscall-free application or universally higher throughput.
 
-The `original io_uring paper <https://kernel.dk/io_uring.pdf>`_ reports storage
+The `original io_uring paper <https://web.archive.org/web/20230413055100id_/https://kernel.dk/io_uring.pdf>`_ reports storage
 and NOP measurements on its reference machine. Those historical results are
 not measurements of this edition. Benchmark your actual operation mix, storage,
-concurrency and latency targets.
+concurrency and latency targets. The link uses an archived publisher copy;
+the original publisher's TLS endpoint failed verification.
 
 Use the native Zig wrapper
 --------------------------

@@ -1,6 +1,6 @@
 # Lord of the io_uring — Zig 0.17.0
 
-**Draft edition. Direct review and final conversion verification are in progress.**
+**Source and publication checks pass. Personal-fork delivery verification is pending.**
 
 Native Zig adaptation of [Shuveb Hussain's guide](https://github.com/shuveb/loti).
 All 26 original documents have rewritten counterparts; `license.rst` adds the
@@ -9,7 +9,8 @@ unchanged MIT licence. Tutorial and reference programs live here, using
 Original attribution and illustrations remain.
 
 A direct pre-exit regression now passes for the previously reproduced late accepted
-socket defect. Broader failure-path and heap-retirement validation remains in progress.
+socket defect. Four owned heap-retirement scenarios also pass; broader failure-path
+and memory assurance is not established.
 Do not use the HTTP example as a production fatal-error cleanup pattern. See the
 [HTTP warning](tutorial/webserver.rst) and [repair evidence](conversion/direct-http-repair-audit.md).
 
@@ -90,8 +91,11 @@ The [reference map](conversion/reference-map.json) maps 99 native bindings;
 the [chapter map](conversion/chapter-map.json) maps original/new paths. Start at
 [the current completion audit](conversion/completion-audit-current.md) for exact
 checkpoint evidence and remaining work. The owner selected direct editing/review,
-without subagents or mutation testing. Broader lifecycle verification,
-meaning/completeness review and final conversion audit remain open.
+without subagents or mutation testing. [Final source-purpose self-review](conversion/final-source-purpose-audit.md)
+reconciles all 26 original chapters and 128 blocks with current inputs and reviews
+the changed native/manuscript bodies. It is not independent acceptance or general
+production assurance. Publication checks pass; final personal-fork delivery verification
+is pending.
 The goal is not complete; final converted commits have not been pushed.
 
 Author notes index all 128 blocks and 3,618 matched lines; this is not semantic
