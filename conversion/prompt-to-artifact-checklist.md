@@ -39,6 +39,11 @@ spec-first draft/original six assertion ASTs verified. BLOCK_NOT_SEAL_READY:live
 polling can miss correctly closed results;harness exception cleanup needs qualification.
 No protected tests or native fix;all226 prior selected inputs/archive unchanged.
 
+Requirement2 block enumeration:`rst-grammar-inventory-audit.md/verification.json`:
+26 original RSTs/128 grammar spans/62 whole normalized literals;4 omission controls.
+No missing block found;not lexical completeness or independent purpose acceptance.
+Provider-blocked author qualification remains unsealed/unadopted;no native repair.
+
 Next: finish required purpose comparison, findings resolution and final exact
 HEAD acceptance, then accepted personal-fork delivery and post-push remote/
 source-link verification. Author26/128 comparisons, parent green gates and fork

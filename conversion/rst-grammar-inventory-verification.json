@@ -1,0 +1,121 @@
+{
+  "scope": "Parent Sphinx grammar enumeration cross-check of original26 RSTs;not independent meaning/completeness acceptance,HTTP repair,formal tests or mutation kills.",
+  "source_head": "354f62964530563180469a9d36d3c8e9790b64b2",
+  "original_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "original_input_sha256": {
+    "_static/Linux_Performance_Fulll_Chart-1.png": "8262345da4b7aa5c6976fc94e9433a5e9a870f52c5b3fe57c712d3c367782886",
+    "_static/Linux_Performance_more_than_1000_users.png": "f81cd7c6b66961b4e0d69c59789fd7fcc7947fdc507a45267975db66380c335d",
+    "_static/Linux_Performance_upto_1000_users.png": "7ba815a122ac2eb7856853f43ad9e406b82310cd655eab0f7b2cc0942686329c",
+    "_static/Linux_Process_Models.jpg": "732de58804c2c4d077eaef910f66523c58ca9202d72178fd5b0ee82d555bebf1",
+    "_static/Linux_Process_Models.png": "b7a64dfbd42297c975f98390d5c71f1278e50a5b2fb691dce02fc7fa20683d9d",
+    "_static/ZeroHTTPd_static.png": "1552c7bc1a6a81408ea60eeb134e2d4ca79b62b9a0bbad2072d4c26945f2547f",
+    "_static/io_uring_logo.png": "25dbe3f11cb7976ff915d5c7472dcc31ce6feebeecfb5dccf83a9b8969d57649",
+    "async_intro.rst": "82cb8c992f39e96f941c19075e3866cf65dfdced96056f0a46b90816fa916c05",
+    "changelog.rst": "7a269d1d918c3009b74f9b2b16bb72133205c01b06d9635d36ef1be7a999a349",
+    "index.rst": "ca090e250c15616c6736ec5974b66d3d46f9910f21a0dc4349f3ada02c92b537",
+    "low_level.rst": "25330ba3b2e45179954cdf4c158e9f802c9b740c83a2def285154cc6e01e3890",
+    "ref-iouring/index.rst": "3b8aaf8c76c4e7f9db9acc428855c903aa8c9cc6107c443a3edcaa570836b7d6",
+    "ref-iouring/io_uring_enter.rst": "ccd209fe64abe9511d4a5983dbefa07b82782cad0a3d6e91b127410a8a75df4b",
+    "ref-iouring/io_uring_register.rst": "6ce675fbfc34060763eaf595a8ffee13f5f3ef19bb76ab00210cb7762f537e4e",
+    "ref-iouring/io_uring_setup.rst": "a2b568848632cd8f165f0454f1c755fe92483975adeb8bb3966a7905d4b1cf19",
+    "ref-liburing/advanced_usage.rst": "a9e9fc842fae1cda13cd681dd0aefd8ae09149d825b89976807fc82b04c7cd9e",
+    "ref-liburing/completion.rst": "9e2bed04a76bdfb1cf2a13412a2097d6b232ab557acbae69f0f2dcc14faeeb36",
+    "ref-liburing/cqe.rst": "90eab2ff2cf389255bffb7bf60ce255508442fef1e7107c2fe1ffc5ccbf17953",
+    "ref-liburing/index.rst": "1b7fb4c7436294c4667aa5bf77abe42a903080e9bb05eec9c314cc0a4d34781d",
+    "ref-liburing/setup_teardown.rst": "f707b3b288149a5774fcc0ee3c797072561d1996c290fcb4d520e09072e2c461",
+    "ref-liburing/sqe.rst": "d28a18d7d809ead800c8510000134b5d1e0a1a77addb87398b24be888e2b3ce7",
+    "ref-liburing/submission.rst": "1effbf7b3ac88706ecef94902f230bd0df68a8c673cefe85fe92cc88a808abc7",
+    "ref-liburing/supported_caps.rst": "5d071cd1caa00921fb1df9b165f9392ec48e2de7f6498461b21be6dbe063bb26",
+    "tutorial/cat_liburing.rst": "c74ae10c1b444b0c67c8f92052cfedb19d3283e684c20697db073ce1b24fe112",
+    "tutorial/cp_liburing.rst": "d34f2fa8e5295e70708babe3d2d5d980a616a305e594280bd3b6b9aa7ac5f91d",
+    "tutorial/fixed_buffers.rst": "59d402b212eccdbe68519e5e754fdee68a647fef94f98b7275abcbb5c1341ef7",
+    "tutorial/index.rst": "17f460265ec1fdf504c6889b6d2ada3943dfe6cac3c1b3af2f4b9848ff65293f",
+    "tutorial/link_liburing.rst": "0e0753c80b8a1fac221f35f373d37ced882f7fcc7196be7c42d8644bbbe5c70f",
+    "tutorial/probe_liburing.rst": "9f5959ec23692e10d856637a4d9b656a9eef9d7f0881567396e94b3e2298cb30",
+    "tutorial/register_eventfd.rst": "a7606187dcb75f9c78eccee58b71f3e72a5fb93827d1cbbad80a925e5c727b9f",
+    "tutorial/sq_poll.rst": "4dd815d984d3d18c3ddb83de126b8a6d08493b611658f5510057c04e55d144b5",
+    "tutorial/webserver_liburing.rst": "b850337aafd7ffee1a6a6de5eefe48b4865d655d24e17476e9264aba777279a7",
+    "what_is_io_uring.rst": "dd0fa98a2f748990558ca7977e2c14f240cc10de27c69d95e93fbcc0406d5964"
+  },
+  "versions": {
+    "python": "3.13.15",
+    "sphinx": "8.2.3",
+    "docutils": "0.21.2"
+  },
+  "helper_sha256": "cae79d52556d727a79628de4562fa37a2dfccc2042129bdb9143ff355d326088",
+  "generated_conf_sha256": "8d2a1de5dbfeae25ea8fda43ad05cf5fc01a852066ee08083c49e1a536b45023",
+  "inventory_sha256": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+  "grammar": {
+    "parsed_rst_files": 26,
+    "parser_counts": {
+      "literal": 62,
+      "c:function": 61,
+      "c:struct": 5
+    },
+    "canonical_blocks": 128,
+    "matched_unique_blocks": 128,
+    "sphinx_warning_count": 0,
+    "sphinx_statuscode": 0
+  },
+  "implicit_literal_blocks": 23,
+  "explicit_literal_blocks": 39,
+  "whole_literal_body_matches": 62,
+  "normalization": "Exact Docutils string2lines input normalization:tabs8/trailing-whitespace removal/vertical whitespace conversion;then RST common indent removal. Not raw-byte or C-semantic equivalence.",
+  "missing_inventory_blocks": [],
+  "unmatched_parser_nodes": [],
+  "negative_controls": {
+    "scope": "Owned inventory-row omission controls only;not formal tests/native mutation kills.",
+    "results": [
+      {
+        "omitted_kind": "code-block",
+        "omitted_id": "low_level.rst:23",
+        "exit": 1,
+        "specific_parser_mismatch": true,
+        "receipt": "/home/ahmed/workspace/va/loti-zig/_build/verification/rst-grammar-crosscheck.a5p94an6/receipt.json",
+        "fixture_sha256": "6ea7746d4d45624fdb84b387ee47fea89011b24ecde01c98ca661913a71285a5"
+      },
+      {
+        "omitted_kind": "literal-block",
+        "omitted_id": "ref-iouring/io_uring_enter.rst:11",
+        "exit": 1,
+        "specific_parser_mismatch": true,
+        "receipt": "/home/ahmed/workspace/va/loti-zig/_build/verification/rst-grammar-crosscheck.wfrfi0li/receipt.json",
+        "fixture_sha256": "3db31ce85bf54234fb5d22604158de2d9e3d4584e2b9f1bcad352d14825cb9f7"
+      },
+      {
+        "omitted_kind": "c:function",
+        "omitted_id": "ref-iouring/io_uring_enter.rst:15",
+        "exit": 1,
+        "specific_parser_mismatch": true,
+        "receipt": "/home/ahmed/workspace/va/loti-zig/_build/verification/rst-grammar-crosscheck.n67zt_c1/receipt.json",
+        "fixture_sha256": "ea902fd93d9edb9f3ec3ca163b80dde2c30004c058f8f545faf96dbe6bce3b21"
+      },
+      {
+        "omitted_kind": "c:struct",
+        "omitted_id": "ref-liburing/setup_teardown.rst:9",
+        "exit": 1,
+        "specific_parser_mismatch": true,
+        "receipt": "/home/ahmed/workspace/va/loti-zig/_build/verification/rst-grammar-crosscheck.la2a245d/receipt.json",
+        "fixture_sha256": "2f636980062c10c83c665f2e9367f067a443bb40cb454354b32455027ea44c85"
+      }
+    ]
+  },
+  "initial_failure_directory": "/home/ahmed/workspace/va/loti-zig/_build/verification/rst-grammar-crosscheck.4qv4924n",
+  "initial_failures": [
+    "Plain Docutils lacks Sphinx C-domain;exploratory role errors.",
+    "Incorrect guessed cqe filename;read failed,corrected from actual tree.",
+    "Overlarge initial declaration tally truncated;not reading coverage.",
+    "First Sphinx comparison found10 whitespace mismatches/172 inline-role errors;exact parser normalization and correct man-role stub resolved them,initial receipts preserved."
+  ],
+  "full_receipt": "/home/ahmed/workspace/va/loti-zig/_build/verification/rst-grammar-crosscheck.nym5coj2/receipt.json",
+  "full_receipt_sha256": "a5e927d27b7bd0f91ec64f1fc0927a9979a875b86e4a5eae72eef04e0c716424",
+  "prior_selected_edition_inputs_unchanged": 226,
+  "book_sha256": "5739833eb7db7829d616e61382b9449eedd5f183d9fea9d62be9fa4a55ace84e",
+  "limits": [
+    "No original Python config/plugins executed;generated minimal conf and inline man-role stub only.",
+    "C-domain declaration spans matched;not independent operation/lifetime/purpose acceptance.",
+    "No whole-line lexical completeness beyond scanner/supplement implied.",
+    "Manual-link availability not checked by stub.",
+    "No HTTP draft continuation,provider bypass,test sealing,repair,push or completion."
+  ]
+}

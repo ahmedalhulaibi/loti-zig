@@ -48,6 +48,13 @@ make its observation time out. Author must prove a conforming green observation
 path and robust cleanup if evidence parsing fails,before owner-enforced sealing.
 No new reviewer,draft adoption,native/full/publication repair/gate or delivery.
 
+Original grammar cross-check:new `rst-grammar-inventory-audit.md/verification.json`;
+all26 RSTs map128 spans,including23 implicit literals;62 complete normalized bodies
+match and4 omission controls fail specifically. No grammar gaps found. Parent
+algorithmic corroboration,not independent meanings/lifetime/completeness acceptance.
+Qualification879b2d75 failed provider restriction after8 observer/2 collector fixture
+cases only;no implementations/runs. Frozen partial report/patches retained;no bypass.
+
 ## Contract
 
 Review the current checked-out commit; record its full hash and clean/dirty state.

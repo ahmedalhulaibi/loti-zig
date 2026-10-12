@@ -58,6 +58,14 @@ not a completed author report. Live-late-FD polling can reject correct fast clea
 collection failure cleanup remains unverified. Qualify before owner-controlled seal.
 No draft adoption/native repair;existing226 source pins/archive unchanged.
 
+Grammar enumeration cross-check:`rst-grammar-inventory-audit.md/verification.json`.
+All26 original RSTs yield128 inventory spans:62 literals(39 explicit/23 implicit),
+61 C function/5 struct declarations;whole62 bodies match parser-normalized source.
+Four omission controls rejected;no grammar gaps found. Not independent semantics
+or whole-line lexical acceptance. Prior226 edition pins/archive5739833e unchanged.
+Author qualification retry9b9290f2/879b2d75 stopped on provider risk restriction;
+partial fixture/report preserved outside adoption. No bypass/relaunch/native repair.
+
 Next: obtain a runtime-capable independent verifier/qualifying owner-approved
 alternative;specify fatal pending-I/O retirement,then repair/replay affected gates.
 Finish source/purpose comparison and exact required-surface audit before personal
