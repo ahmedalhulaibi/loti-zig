@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-10-12T04:34:08.147035+00:00",
+  "phase": "qualified direct-review descriptor regression RED before native edit",
+  "baseline": "680ce7ba63b6e484b313b18bddfbd50d50d8934f",
+  "tests": 5,
+  "failures": 3,
+  "errors": 0,
+  "skips": 0,
+  "seconds": 10.787,
+  "failure_class": "UNRELEASED_SUCCESSFUL_ACCEPT_PRE_EXIT",
+  "passing_controls": [
+    "default_mode",
+    "eight_literal_observer_cases",
+    "real_fast_close",
+    "two_collection_failures_reap_tracee_pipes_peers_preserve_primary"
+  ],
+  "selected_new_tests_sha256": {
+    "tests/test_http_lifecycle.py": "597d3f335362069d0f6cdd2e2071ee96e0c9fd98b4b3d600c6f3ae9e1a208a08",
+    "testdata/inputs/http-lifecycle.json": "98716c9b770920fdf41cec186e100492d84e2426fa62d09bc5d080fa4df8181c",
+    "tests/fixtures/http_lifecycle_control.py": "6f0b450e43e843275553284e6432d09e7390d34fdf372cc3ba38b88f9cdf19d4"
+  },
+  "original_author_worktree_sha256": {
+    "tests/test_http_lifecycle_draft.py": "1991fa92cc718bafe6ab63b4e778c60e87375b4796f0e059ba27730731bef5a0",
+    "testdata/inputs/http-lifecycle-draft.json": "98716c9b770920fdf41cec186e100492d84e2426fa62d09bc5d080fa4df8181c"
+  },
+  "native_source_sha256": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+  "log_sha256": "bc78b202ec5dcc576a353ccb862d0fc01ad6b56063e233fa32eddb09e3a467dd",
+  "artifacts": "/home/ahmed/workspace/va/loti-zig/_build/verification/http-lifecycle-20261012T003255-52ce3255",
+  "limits": [
+    "Descriptor-only,not heap retirement proof.",
+    "Post-exposure direct qualification,not independent acceptance or protected seal.",
+    "No native repair/mutation/full suite/publication/push yet."
+  ]
+}

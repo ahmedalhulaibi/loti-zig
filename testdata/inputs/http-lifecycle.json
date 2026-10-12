@@ -1,0 +1,291 @@
+{
+  "draft": "unsealed; scenario4B/3A descriptor ownership only",
+  "host": "127.0.0.1",
+  "port_argument": "0",
+  "document_files": {
+    "payload.txt": "independent lifecycle draft control.\n"
+  },
+  "request": "GET /payload.txt HTTP/1.1\r\nHost: localhost\r\n\r\n",
+  "idle_request": "",
+  "late_request": "",
+  "observer_argument": "--observe-send",
+  "fault": {
+    "syscall": "writev",
+    "error": "EIO",
+    "when": 4,
+    "delay_enter": "1s"
+  },
+  "repetitions": 3,
+  "timeout_seconds": 8,
+  "peer_probe_seconds": 0.2,
+  "checkpoint_stability_seconds": 0.1,
+  "stderr_fill_byte_hex": "58",
+  "expected_ready_event": "loti.http.ready",
+  "expected_send_buffer_event": "loti.http.send-buffer",
+  "expected_response": {
+    "status_line": "HTTP/1.1 200 OK",
+    "headers": {
+      "server": "loti-zig",
+      "content-type": "text/plain",
+      "connection": "close"
+    },
+    "body_file": "payload.txt"
+  },
+  "expected_error_class": "WriteFailed",
+  "observer_cases": [
+    {
+      "name": "accepted-closed-before-first-census",
+      "pid": 7001,
+      "endpoint": {
+        "local": [
+          "127.0.0.1",
+          31001
+        ],
+        "remote": [
+          "127.0.0.1",
+          41001
+        ]
+      },
+      "trace": "7001 1000.000100 [   3] close(19<TCP:[127.0.0.1:31001->127.0.0.1:41001]>) = 0\n",
+      "census": {
+        "descriptors": [],
+        "tcp": []
+      },
+      "peer": {
+        "state": "eof",
+        "wire_hex": ""
+      },
+      "expected": {
+        "ownership_evidence": "closed_socket",
+        "surviving_socket_inodes": [],
+        "peer": {
+          "state": "eof",
+          "wire_hex": ""
+        },
+        "cleanup_satisfied": true
+      }
+    },
+    {
+      "name": "accepted-still-open-negative",
+      "pid": 7001,
+      "endpoint": {
+        "local": [
+          "127.0.0.1",
+          31001
+        ],
+        "remote": [
+          "127.0.0.1",
+          41001
+        ]
+      },
+      "trace": "",
+      "census": {
+        "descriptors": [
+          {
+            "fd": 19,
+            "target": "socket:[9001]",
+            "fdinfo": "pos:\t0\nino:\t9001\n",
+            "socket_inode": 9001,
+            "tcp": [
+              {
+                "family": "tcp",
+                "local": [
+                  "127.0.0.1",
+                  31001
+                ],
+                "remote": [
+                  "127.0.0.1",
+                  41001
+                ],
+                "state": "01",
+                "inode": 9001
+              }
+            ]
+          }
+        ],
+        "tcp": []
+      },
+      "peer": {
+        "state": "open",
+        "wire_hex": ""
+      },
+      "expected": {
+        "ownership_evidence": "live_socket",
+        "surviving_socket_inodes": [
+          9001
+        ],
+        "peer": {
+          "state": "open",
+          "wire_hex": ""
+        },
+        "cleanup_satisfied": false
+      }
+    },
+    {
+      "name": "misleading-close-in-write-payload",
+      "pid": 7001,
+      "endpoint": {
+        "local": [
+          "127.0.0.1",
+          31001
+        ],
+        "remote": [
+          "127.0.0.1",
+          41001
+        ]
+      },
+      "trace": "7001 1000.000100 [  20] writev(2<pipe:[88]>, [{iov_base=\"7001 1000.000100 [   3] close(19<TCP:[127.0.0.1:31001->127.0.0.1:41001]>) = 0\", iov_len=120}], 1) = 120\n",
+      "census": {
+        "descriptors": [],
+        "tcp": []
+      },
+      "peer": {
+        "state": "eof",
+        "wire_hex": ""
+      },
+      "expected_error": "ACCEPT_RESULT_NOT_OBSERVED"
+    },
+    {
+      "name": "wrong-peer-close",
+      "pid": 7001,
+      "endpoint": {
+        "local": [
+          "127.0.0.1",
+          31001
+        ],
+        "remote": [
+          "127.0.0.1",
+          41001
+        ]
+      },
+      "trace": "7001 1000.000100 [   3] close(19<TCP:[127.0.0.1:31001->127.0.0.1:41002]>) = 0\n",
+      "census": {
+        "descriptors": [],
+        "tcp": []
+      },
+      "peer": {
+        "state": "eof",
+        "wire_hex": ""
+      },
+      "expected_error": "ACCEPT_RESULT_NOT_OBSERVED"
+    },
+    {
+      "name": "wrong-process-close",
+      "pid": 7001,
+      "endpoint": {
+        "local": [
+          "127.0.0.1",
+          31001
+        ],
+        "remote": [
+          "127.0.0.1",
+          41001
+        ]
+      },
+      "trace": "7002 1000.000100 [   3] close(19<TCP:[127.0.0.1:31001->127.0.0.1:41001]>) = 0\n",
+      "census": {
+        "descriptors": [],
+        "tcp": []
+      },
+      "peer": {
+        "state": "eof",
+        "wire_hex": ""
+      },
+      "expected_error": "ACCEPT_RESULT_NOT_OBSERVED"
+    },
+    {
+      "name": "never-accepted-backlog-reset",
+      "pid": 7001,
+      "endpoint": {
+        "local": [
+          "127.0.0.1",
+          31001
+        ],
+        "remote": [
+          "127.0.0.1",
+          41001
+        ]
+      },
+      "trace": "",
+      "census": {
+        "descriptors": [],
+        "tcp": []
+      },
+      "peer": {
+        "state": "reset",
+        "wire_hex": ""
+      },
+      "expected_error": "ACCEPT_RESULT_NOT_OBSERVED"
+    },
+    {
+      "name": "unknown-eof-not-accept-proof",
+      "pid": 7001,
+      "endpoint": {
+        "local": [
+          "127.0.0.1",
+          31001
+        ],
+        "remote": [
+          "127.0.0.1",
+          41001
+        ]
+      },
+      "trace": "",
+      "census": {
+        "descriptors": [],
+        "tcp": []
+      },
+      "peer": {
+        "state": "eof",
+        "wire_hex": ""
+      },
+      "expected_error": "ACCEPT_RESULT_NOT_OBSERVED"
+    },
+    {
+      "name": "failed-close-not-release",
+      "pid": 7001,
+      "endpoint": {
+        "local": [
+          "127.0.0.1",
+          31001
+        ],
+        "remote": [
+          "127.0.0.1",
+          41001
+        ]
+      },
+      "trace": "7001 1000.000100 [   3] close(19<TCP:[127.0.0.1:31001->127.0.0.1:41001]>) = -1 EBADF (Bad file descriptor)\n",
+      "census": {
+        "descriptors": [],
+        "tcp": []
+      },
+      "peer": {
+        "state": "eof",
+        "wire_hex": ""
+      },
+      "expected_error": "ACCEPT_RESULT_NOT_OBSERVED"
+    }
+  ],
+  "collection_failure_cases": [
+    {
+      "name": "collector-error",
+      "malformed_record": "{",
+      "primary_message": null,
+      "expected_raised": [
+        "JSONDecodeError"
+      ],
+      "expected_primary": null
+    },
+    {
+      "name": "primary-plus-collector-error",
+      "malformed_record": "{",
+      "primary_message": "controlled primary failure",
+      "expected_raised": [
+        "HarnessError",
+        "JSONDecodeError"
+      ],
+      "expected_primary": "HarnessError"
+    }
+  ],
+  "qualification_scope": "literal observer doubles and injected collector failures only; not a repaired native green run"
+}
