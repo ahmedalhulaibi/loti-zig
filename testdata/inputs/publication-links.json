@@ -1,0 +1,14 @@
+{
+  "https://unixism.net/2019/04/linux-applications-performance-introduction/": ["async_intro.xhtml", "tutorial/webserver.xhtml"],
+  "https://github.com/shuveb/loti": ["index.xhtml"],
+  "https://unixism.net": ["index.xhtml"],
+  "https://github.com/ahmedalhulaibi/loti-zig": ["index.xhtml"],
+  "https://github.com/ahmedalhulaibi/loti-zig/tree/master/examples": ["low_level.xhtml"],
+  "https://web.archive.org/web/20230413055100id_/https://kernel.dk/io_uring.pdf": ["what_is_io_uring.xhtml"],
+  "https://man.archlinux.org/man/preadv2.2.en": ["ref-zig/submission.xhtml"],
+  "https://man.archlinux.org/man/sync_file_range.2.en": ["ref-zig/submission.xhtml"],
+  "https://man.archlinux.org/man/splice.2.en": ["ref-zig/submission.xhtml"],
+  "https://man.archlinux.org/man/epoll.7.en": ["ref-zig/submission.xhtml"],
+  "https://github.com/axboe/fio/blob/master/t/io_uring.c": ["tutorial/cp.xhtml"],
+  "https://en.wikipedia.org/wiki/Leisure_(poem)": ["tutorial/fixed_buffers.xhtml"]
+}

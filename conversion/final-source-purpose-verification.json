@@ -1,0 +1,327 @@
+{
+  "scope": "Current-source purpose reconciliation and qualified packaged-citation RED; direct self-review, not independent acceptance.",
+  "base": "7ec38fd30a043e90e97ba12f7682a36dba6aac4c",
+  "reconciliation": {
+    "scope": "Input reconciliation, not automated semantic acceptance.",
+    "head": "7ec38fd30a043e90e97ba12f7682a36dba6aac4c",
+    "original": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+    "original_blobs": {
+      "LICENSE": "0ca6b5bf162b52d507c407e41bb536bf81462d40f4b863f194c68895480114fb",
+      "Makefile": "8b6587b859607f200f116e2cb043fc358e1c3a26c326b563bf348453cfc68307",
+      "_static/Linux_Performance_Fulll_Chart-1.png": "8262345da4b7aa5c6976fc94e9433a5e9a870f52c5b3fe57c712d3c367782886",
+      "_static/Linux_Performance_more_than_1000_users.png": "f81cd7c6b66961b4e0d69c59789fd7fcc7947fdc507a45267975db66380c335d",
+      "_static/Linux_Performance_upto_1000_users.png": "7ba815a122ac2eb7856853f43ad9e406b82310cd655eab0f7b2cc0942686329c",
+      "_static/Linux_Process_Models.jpg": "732de58804c2c4d077eaef910f66523c58ca9202d72178fd5b0ee82d555bebf1",
+      "_static/Linux_Process_Models.png": "b7a64dfbd42297c975f98390d5c71f1278e50a5b2fb691dce02fc7fa20683d9d",
+      "_static/ZeroHTTPd_static.png": "1552c7bc1a6a81408ea60eeb134e2d4ca79b62b9a0bbad2072d4c26945f2547f",
+      "_static/io_uring_logo.png": "25dbe3f11cb7976ff915d5c7472dcc31ce6feebeecfb5dccf83a9b8969d57649",
+      "_templates/layout.html": "dd82f266c50553989cca37ce6d9cb94c9ed5ac1635bbb53994ea6e12321290c2",
+      "async_intro.rst": "82cb8c992f39e96f941c19075e3866cf65dfdced96056f0a46b90816fa916c05",
+      "changelog.rst": "7a269d1d918c3009b74f9b2b16bb72133205c01b06d9635d36ef1be7a999a349",
+      "compile_commands.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "conf.py": "a3266b6a32c161016902201fe49f1498c4d9d231e053c543744c4b5a98250808",
+      "delme.c": "db51679d16ff487ba00192a64aacc4d1e45432e5313fcbc220df56e30f1c9ad8",
+      "index.rst": "ca090e250c15616c6736ec5974b66d3d46f9910f21a0dc4349f3ada02c92b537",
+      "low_level.rst": "25330ba3b2e45179954cdf4c158e9f802c9b740c83a2def285154cc6e01e3890",
+      "make.bat": "b593cd1da19314a43db9a0854f6f92f2c59217571502da3321f9498c02fa16c8",
+      "ref-iouring/index.rst": "3b8aaf8c76c4e7f9db9acc428855c903aa8c9cc6107c443a3edcaa570836b7d6",
+      "ref-iouring/io_uring_enter.rst": "ccd209fe64abe9511d4a5983dbefa07b82782cad0a3d6e91b127410a8a75df4b",
+      "ref-iouring/io_uring_register.rst": "6ce675fbfc34060763eaf595a8ffee13f5f3ef19bb76ab00210cb7762f537e4e",
+      "ref-iouring/io_uring_setup.rst": "a2b568848632cd8f165f0454f1c755fe92483975adeb8bb3966a7905d4b1cf19",
+      "ref-liburing/advanced_usage.rst": "a9e9fc842fae1cda13cd681dd0aefd8ae09149d825b89976807fc82b04c7cd9e",
+      "ref-liburing/completion.rst": "9e2bed04a76bdfb1cf2a13412a2097d6b232ab557acbae69f0f2dcc14faeeb36",
+      "ref-liburing/cqe.rst": "90eab2ff2cf389255bffb7bf60ce255508442fef1e7107c2fe1ffc5ccbf17953",
+      "ref-liburing/index.rst": "1b7fb4c7436294c4667aa5bf77abe42a903080e9bb05eec9c314cc0a4d34781d",
+      "ref-liburing/setup_teardown.rst": "f707b3b288149a5774fcc0ee3c797072561d1996c290fcb4d520e09072e2c461",
+      "ref-liburing/sqe.rst": "d28a18d7d809ead800c8510000134b5d1e0a1a77addb87398b24be888e2b3ce7",
+      "ref-liburing/submission.rst": "1effbf7b3ac88706ecef94902f230bd0df68a8c673cefe85fe92cc88a808abc7",
+      "ref-liburing/supported_caps.rst": "5d071cd1caa00921fb1df9b165f9392ec48e2de7f6498461b21be6dbe063bb26",
+      "sphinx-plugins/__pycache__/manpage.cpython-38.pyc": "f9e9fd98a0716d9fe4ba07b8bdc775fd1e0285f94c8ed2ef1b8cab4f48365eb8",
+      "sphinx-plugins/manpage.py": "85f745fa105074b2dbc362f7223dba841663fb1400a3f712168637e6cef71cb7",
+      "tutorial/cat_liburing.rst": "c74ae10c1b444b0c67c8f92052cfedb19d3283e684c20697db073ce1b24fe112",
+      "tutorial/cp_liburing.rst": "d34f2fa8e5295e70708babe3d2d5d980a616a305e594280bd3b6b9aa7ac5f91d",
+      "tutorial/fixed_buffers.rst": "59d402b212eccdbe68519e5e754fdee68a647fef94f98b7275abcbb5c1341ef7",
+      "tutorial/index.rst": "17f460265ec1fdf504c6889b6d2ada3943dfe6cac3c1b3af2f4b9848ff65293f",
+      "tutorial/link_liburing.rst": "0e0753c80b8a1fac221f35f373d37ced882f7fcc7196be7c42d8644bbbe5c70f",
+      "tutorial/probe_liburing.rst": "9f5959ec23692e10d856637a4d9b656a9eef9d7f0881567396e94b3e2298cb30",
+      "tutorial/register_eventfd.rst": "a7606187dcb75f9c78eccee58b71f3e72a5fb93827d1cbbad80a925e5c727b9f",
+      "tutorial/sq_poll.rst": "4dd815d984d3d18c3ddb83de126b8a6d08493b611658f5510057c04e55d144b5",
+      "tutorial/webserver_liburing.rst": "b850337aafd7ffee1a6a6de5eefe48b4865d655d24e17476e9264aba777279a7",
+      "what_is_io_uring.rst": "dd0fa98a2f748990558ca7977e2c14f240cc10de27c69d95e93fbcc0406d5964"
+    },
+    "original_chapters": {
+      "tutorial/webserver_liburing.rst": "b850337aafd7ffee1a6a6de5eefe48b4865d655d24e17476e9264aba777279a7",
+      "ref-iouring/index.rst": "3b8aaf8c76c4e7f9db9acc428855c903aa8c9cc6107c443a3edcaa570836b7d6",
+      "ref-iouring/io_uring_setup.rst": "a2b568848632cd8f165f0454f1c755fe92483975adeb8bb3966a7905d4b1cf19",
+      "ref-iouring/io_uring_enter.rst": "ccd209fe64abe9511d4a5983dbefa07b82782cad0a3d6e91b127410a8a75df4b",
+      "ref-iouring/io_uring_register.rst": "6ce675fbfc34060763eaf595a8ffee13f5f3ef19bb76ab00210cb7762f537e4e",
+      "low_level.rst": "25330ba3b2e45179954cdf4c158e9f802c9b740c83a2def285154cc6e01e3890",
+      "tutorial/cat_liburing.rst": "c74ae10c1b444b0c67c8f92052cfedb19d3283e684c20697db073ce1b24fe112",
+      "tutorial/cp_liburing.rst": "d34f2fa8e5295e70708babe3d2d5d980a616a305e594280bd3b6b9aa7ac5f91d",
+      "ref-liburing/advanced_usage.rst": "a9e9fc842fae1cda13cd681dd0aefd8ae09149d825b89976807fc82b04c7cd9e",
+      "ref-liburing/supported_caps.rst": "5d071cd1caa00921fb1df9b165f9392ec48e2de7f6498461b21be6dbe063bb26",
+      "ref-liburing/setup_teardown.rst": "f707b3b288149a5774fcc0ee3c797072561d1996c290fcb4d520e09072e2c461",
+      "ref-liburing/completion.rst": "9e2bed04a76bdfb1cf2a13412a2097d6b232ab557acbae69f0f2dcc14faeeb36",
+      "ref-liburing/cqe.rst": "90eab2ff2cf389255bffb7bf60ce255508442fef1e7107c2fe1ffc5ccbf17953",
+      "ref-liburing/submission.rst": "1effbf7b3ac88706ecef94902f230bd0df68a8c673cefe85fe92cc88a808abc7",
+      "ref-liburing/sqe.rst": "d28a18d7d809ead800c8510000134b5d1e0a1a77addb87398b24be888e2b3ce7",
+      "tutorial/fixed_buffers.rst": "59d402b212eccdbe68519e5e754fdee68a647fef94f98b7275abcbb5c1341ef7",
+      "tutorial/link_liburing.rst": "0e0753c80b8a1fac221f35f373d37ced882f7fcc7196be7c42d8644bbbe5c70f",
+      "tutorial/probe_liburing.rst": "9f5959ec23692e10d856637a4d9b656a9eef9d7f0881567396e94b3e2298cb30",
+      "tutorial/register_eventfd.rst": "a7606187dcb75f9c78eccee58b71f3e72a5fb93827d1cbbad80a925e5c727b9f",
+      "tutorial/sq_poll.rst": "4dd815d984d3d18c3ddb83de126b8a6d08493b611658f5510057c04e55d144b5",
+      "index.rst": "ca090e250c15616c6736ec5974b66d3d46f9910f21a0dc4349f3ada02c92b537",
+      "async_intro.rst": "82cb8c992f39e96f941c19075e3866cf65dfdced96056f0a46b90816fa916c05",
+      "what_is_io_uring.rst": "dd0fa98a2f748990558ca7977e2c14f240cc10de27c69d95e93fbcc0406d5964",
+      "tutorial/index.rst": "17f460265ec1fdf504c6889b6d2ada3943dfe6cac3c1b3af2f4b9848ff65293f",
+      "ref-liburing/index.rst": "1b7fb4c7436294c4667aa5bf77abe42a903080e9bb05eec9c314cc0a4d34781d",
+      "changelog.rst": "7a269d1d918c3009b74f9b2b16bb72133205c01b06d9635d36ef1be7a999a349"
+    },
+    "purpose_reports": {
+      "conversion/http-purpose-verification.json": "3392ca176223ad588aab645cbf8533b415341d3e45f8048372fe41d18064ca82",
+      "conversion/raw-syscall-purpose-verification.json": "0391bba74869164b7e41796c6fe5d9585878f08af1430cd85b7147663a191a10",
+      "conversion/reader-copy-purpose-verification.json": "2400f5e20a0a6ece9eb107308a15ff934e2d16529e3fa7356b491bf64caa8b09",
+      "conversion/registration-purpose-verification.json": "a75420c3a751f34ea1eeab1a91f756659a95374773b5020a1d4936db24317dff",
+      "conversion/setup-completion-purpose-verification.json": "00e2ccb85a1cc5c36e0e713a10005ee3745412afc282c3099c6b201a602340ab",
+      "conversion/submission-purpose-verification.json": "abd1a2614bdadb800437928cfe029476f05faac9ef1dc8feed4b5cfd133abcbc",
+      "conversion/tutorial-modes-purpose-verification.json": "5dc7df4a49911e97643caa4b88c9eba7a94e0de1f9d93a95fccc9dd10af8d161",
+      "conversion/frontmatter-verification.json": "87e82e17f02c56532df9cb869422de510d0c6cbe8cf894add4b139e2f2779224"
+    },
+    "block_count": 128,
+    "block_duplicates": [],
+    "native_body_count": 30,
+    "unchanged_native_bodies": 29,
+    "changed_native_bodies": [
+      "examples/webserver.zig"
+    ],
+    "changed_chapters": [
+      "ref-iouring/io_uring_enter.rst",
+      "ref-zig/sqe.rst",
+      "ref-zig/submission.rst",
+      "tutorial/cp.rst",
+      "tutorial/link.rst",
+      "tutorial/webserver.rst"
+    ],
+    "unchanged_sdk_source_sha256": {
+      "os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+      "os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+      "os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf"
+    },
+    "selected_latest_inputs_exact": 232,
+    "original_assets_exact": [
+      "_static/Linux_Performance_Fulll_Chart-1.png",
+      "_static/Linux_Performance_more_than_1000_users.png",
+      "_static/Linux_Performance_upto_1000_users.png",
+      "_static/Linux_Process_Models.jpg",
+      "_static/Linux_Process_Models.png",
+      "_static/ZeroHTTPd_static.png",
+      "_static/io_uring_logo.png"
+    ],
+    "license_exact": true,
+    "deltas": [
+      {
+        "path": "examples/webserver.zig",
+        "receipts": [
+          "http-purpose-verification.json"
+        ],
+        "before_sha256": "06d3cc4affdeb9401a5bd475ae23e13ddd0f04aaa88fb9148a98a3c6e733ab04",
+        "before_commit": "b95248b4ec938e2cffa5ef66d4f8f27f598894b1",
+        "now_sha256": "80335ff3bde1db471a2688274b12dd1cf85944e67867599b058d79b086ae493c",
+        "diff_lines": 166
+      },
+      {
+        "path": "ref-iouring/io_uring_enter.rst",
+        "receipts": [
+          "http-purpose-verification.json",
+          "raw-syscall-purpose-verification.json"
+        ],
+        "before_sha256": "7e5b80b1ff772ed7b448c88e98a80e78d75ccee2b5f7ce91efdb85e0b54971a3",
+        "before_commit": "a2dadb2698eec6004ab8528442bbeb27d3f3a568",
+        "now_sha256": "b04c4ebd982f8a57f5b3a523d91d183fb043eac73202dc3a2dbaff5cb9fbe179",
+        "diff_lines": 25
+      },
+      {
+        "path": "ref-zig/submission.rst",
+        "receipts": [
+          "http-purpose-verification.json",
+          "raw-syscall-purpose-verification.json",
+          "submission-purpose-verification.json"
+        ],
+        "before_sha256": "5bdb3bf000bba4b9f6dfe8cbfddfd1cc116d87514a0d1b908f7fd74c585c1be7",
+        "before_commit": "b80c73e023796ddebac8362354daeee3254c0bbf",
+        "now_sha256": "7bdd3080c546b1d1767f13926bc3f0c77183ae696f9bb59b5ab9f2468aa4719d",
+        "diff_lines": 32
+      },
+      {
+        "path": "tutorial/link.rst",
+        "receipts": [
+          "http-purpose-verification.json",
+          "tutorial-modes-purpose-verification.json"
+        ],
+        "before_sha256": "5e91d1504ed3009f8e995f02f57ea0d13ae6f9fee678bfa9f24bcf56dc503b52",
+        "before_commit": "2af592a651185df10fecbabd2f93640420222384",
+        "now_sha256": "69eb9cb9184aa92ccf63ed6176ad4273fa36b7cfe41b0840cdd1a08283877846",
+        "diff_lines": 30
+      },
+      {
+        "path": "tutorial/webserver.rst",
+        "receipts": [
+          "http-purpose-verification.json"
+        ],
+        "before_sha256": "d3b3bf9066938cb5baeb88650120380dd4c77f058576c1eddbd781fbf82724e2",
+        "before_commit": "b95248b4ec938e2cffa5ef66d4f8f27f598894b1",
+        "now_sha256": "5ead560cf7bbaf9353a64c46b5d1ea5b255ee7c53eb314cae1d13a32223529ce",
+        "diff_lines": 36
+      },
+      {
+        "path": "ref-zig/sqe.rst",
+        "receipts": [
+          "raw-syscall-purpose-verification.json",
+          "submission-purpose-verification.json"
+        ],
+        "before_sha256": "e93b2d66aa339084a6dc0307fd1e500fada6badccbf5cf4caab12533da8913c4",
+        "before_commit": "95e7d21f7f9297ba3ec70ba2bb98572006781d48",
+        "now_sha256": "04d2862924a2125e01aef708a26adec219650de411b1069701ae73c68f4e5a8f",
+        "diff_lines": 12
+      },
+      {
+        "path": "tutorial/cp.rst",
+        "receipts": [
+          "reader-copy-purpose-verification.json"
+        ],
+        "before_sha256": "ae113b0656c6cca42094d74d713a5ea2d30ad967ae9046e0dc3d75d1c74801da",
+        "before_commit": "64b685d1f9b4457df04eaad1b41907a053e49e46",
+        "now_sha256": "f752298af34c631640f02f769458df9f8dffc1149060132cce955ed9e0987fba",
+        "diff_lines": 13
+      }
+    ]
+  },
+  "citation_red": {
+    "tests": 1,
+    "failures": 1,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 0.471,
+    "failure_class": "WrongWholePackagedCitationDestinations",
+    "native_defect": false
+  },
+  "availability": [
+    {
+      "url": "https://www.kernel.dk/io_uring.pdf",
+      "error_type": "URLError",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>",
+      "seconds": 0.564
+    },
+    {
+      "url": "https://kernel.dk/io_uring.pdf",
+      "error_type": "URLError",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'kernel.dk'. (_ssl.c:1032)>",
+      "seconds": 0.239
+    },
+    {
+      "url": "https://man.archlinux.org/man/preadv2.2.en",
+      "status": 200,
+      "final_url": "https://man.archlinux.org/man/preadv2.2.en",
+      "content_type": "text/html; charset=utf-8",
+      "body_bytes": 24178,
+      "body_sha256": "e416aa9f6284ac376beb9fbe0bb2e3b8113d61c341121d6b167483d255f5bb67",
+      "seconds": 0.644
+    },
+    {
+      "url": "https://man.archlinux.org/man/sync_file_range.2.en",
+      "status": 200,
+      "final_url": "https://man.archlinux.org/man/sync_file_range.2.en",
+      "content_type": "text/html; charset=utf-8",
+      "body_bytes": 15320,
+      "body_sha256": "44bf1b49ece20afc138a954546181f98246d76aecf993dba6cc43b4be7b44371",
+      "seconds": 0.665
+    },
+    {
+      "url": "https://man.archlinux.org/man/splice.2.en",
+      "status": 200,
+      "final_url": "https://man.archlinux.org/man/splice.2.en",
+      "content_type": "text/html; charset=utf-8",
+      "body_bytes": 16132,
+      "body_sha256": "afebcc780fc0f0f0d1a8fd547e98c4a44c766f36bf0d8db8a4faa4e6b452c2a7",
+      "seconds": 0.481
+    },
+    {
+      "url": "https://man.archlinux.org/man/epoll.7.en",
+      "status": 200,
+      "final_url": "https://man.archlinux.org/man/epoll.7.en",
+      "content_type": "text/html; charset=utf-8",
+      "body_bytes": 27340,
+      "body_sha256": "5039b68cd89fc3986fd11ad906d08af44f1c2b9a38aaa537e4666a375a342835",
+      "seconds": 0.588
+    },
+    {
+      "url": "https://www.man7.org/linux/man-pages/man2/preadv2.2.html",
+      "error_type": "URLError",
+      "error": "<urlopen error timed out>",
+      "seconds": 15.091
+    }
+  ],
+  "archived_paper": {
+    "url": "https://web.archive.org/web/20230413055100id_/https://kernel.dk/io_uring.pdf",
+    "status": 200,
+    "final_url": "https://web.archive.org/web/20230413055100id_/https://kernel.dk/io_uring.pdf",
+    "content_type": "application/pdf",
+    "bytes": 247968,
+    "sha256": "9737da6398f7d6f59c0fcf598ec4a6d5e3b447dc0692a325095e32b53a02c005"
+  },
+  "archive_sha1_matches_cdx": "DE7XRH7XVOTDHVDJ5KBGBRVDTM4QTFEC",
+  "new_sources_sha256": {
+    "tests/test_publication_links.py": "48c31a27f389f5546b657d041bb56e54c12dab6fed41e5fb974dd87bf359bffd",
+    "testdata/inputs/publication-links.json": "25ac4b6272ac14bfe7129cb1026bcf39a942307f2021d19da4fa81fe57d28ef0",
+    "conversion/final-source-purpose-audit.md": "432ee957dcc79bcc6ddfcb12a7c82c6365c7a9bd69f8f8915ac2e3eb46800b0d"
+  },
+  "artifact_sha256": {
+    "_build/verification/final-purpose-review/citation-red-full.exit": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "_build/verification/final-purpose-review/citation-red-full.log": "8d61c9401923c0daf53b7d170a8a3dd414a443caa934cf16f9c6909dafce3b4b",
+    "_build/verification/final-purpose-review/citation-red.exit": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "_build/verification/final-purpose-review/citation-red.log": "b2fbd9e2a508be21e0491213ef582e6480cb4faa8e4f9c4e993cc436fc7d61a7",
+    "_build/verification/final-purpose-review/delta.json": "0f6c6ed79039fd1b47a04ca94217c4ea4464f59006d718dc1392c3b52546c033",
+    "_build/verification/final-purpose-review/examples--webserver.zig.diff": "f8d67d78826910eff416c398ef032e294be341889cf78a3af2b5fb2808c9f518",
+    "_build/verification/final-purpose-review/external-alternatives.json": "29f2b03f9091d0492f99af87a9e9a8fdf01fdbca61d50baca35cb803fc08f68f",
+    "_build/verification/final-purpose-review/external-alternatives.log": "29f2b03f9091d0492f99af87a9e9a8fdf01fdbca61d50baca35cb803fc08f68f",
+    "_build/verification/final-purpose-review/external-links.json": "6dbfb398ed8075ec5dd0ee432bf1d4e9323a39c751bd176ce3d425730f586508",
+    "_build/verification/final-purpose-review/external-probe.json": "c68ec65d6d8a3545e8f21ca18a890f9915c9a8c8c54f17805326b72861595e79",
+    "_build/verification/final-purpose-review/external-probe.log": "c68ec65d6d8a3545e8f21ca18a890f9915c9a8c8c54f17805326b72861595e79",
+    "_build/verification/final-purpose-review/io_uring-20230413055100.pdf": "9737da6398f7d6f59c0fcf598ec4a6d5e3b447dc0692a325095e32b53a02c005",
+    "_build/verification/final-purpose-review/io_uring-paper.txt": "4020ec18ee374fc5f566d863fc1a088bf863bd805c3c25c9e5e464d6dd9a487b",
+    "_build/verification/final-purpose-review/man.archlinux.org--man--epoll.7.en": "5039b68cd89fc3986fd11ad906d08af44f1c2b9a38aaa537e4666a375a342835",
+    "_build/verification/final-purpose-review/man.archlinux.org--man--preadv2.2.en": "e416aa9f6284ac376beb9fbe0bb2e3b8113d61c341121d6b167483d255f5bb67",
+    "_build/verification/final-purpose-review/man.archlinux.org--man--splice.2.en": "afebcc780fc0f0f0d1a8fd547e98c4a44c766f36bf0d8db8a4faa4e6b452c2a7",
+    "_build/verification/final-purpose-review/man.archlinux.org--man--sync_file_range.2.en": "44bf1b49ece20afc138a954546181f98246d76aecf993dba6cc43b4be7b44371",
+    "_build/verification/final-purpose-review/paper-archive.json": "ba9943d761ae9329069fd01a4a805bf07d43b226a50ea0390000a91e2986ce14",
+    "_build/verification/final-purpose-review/paper-archive.log": "8815e0ed071a3416e42d3b16fb455dc7ed3410d7e9b12ad74c2171a6f1a6c884",
+    "_build/verification/final-purpose-review/paper-download.json": "86abfb0777511626edfa281a29544222311974989fd3c789c9615a9477afe74e",
+    "_build/verification/final-purpose-review/paper-download.log": "86abfb0777511626edfa281a29544222311974989fd3c789c9615a9477afe74e",
+    "_build/verification/final-purpose-review/paper-http.json": "9c84dcad5c3c0759555d7dc5bda6ab21c5e120e13bb2da2a9dead5c3229358dd",
+    "_build/verification/final-purpose-review/paper-http.log": "9c84dcad5c3c0759555d7dc5bda6ab21c5e120e13bb2da2a9dead5c3229358dd",
+    "_build/verification/final-purpose-review/paper-link-search.json": "d4568d0921c61618687890e5c0e6a5ae47776a160ac1224f16cafc3c47adb339",
+    "_build/verification/final-purpose-review/paper-search.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "_build/verification/final-purpose-review/paper-search.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "_build/verification/final-purpose-review/purpose-receipt-census.json": "fb8dbda0eb20c03a30a1f626704952145f95067f8c42bc82caed86ece7c50850",
+    "_build/verification/final-purpose-review/reconcile.py": "f991d0a38bd345a344718ef1c2dcc21c9848a6482ff74f4a3ed7325b417b29cd",
+    "_build/verification/final-purpose-review/reconciliation.json": "b4c3c79802903d0c2302011112290bcf09ab462246da642336d5327796409662",
+    "_build/verification/final-purpose-review/reconciliation.log": "55d7610917c378f1826ca4775142af71a3e2148c7123d8b45adb4eb7cdd34edc",
+    "_build/verification/final-purpose-review/ref-iouring--io_uring_enter.rst.diff": "b56546b58da9a7405e4768a08b4e56176123e97c0554eb0d4357f9c01833654a",
+    "_build/verification/final-purpose-review/ref-zig--sqe.rst.diff": "61be4e9c2c1876b11833e02ffa72bfcaff5a8d27ce49a89e4c4b62fd63daf45f",
+    "_build/verification/final-purpose-review/ref-zig--submission.rst.diff": "7ef937827a6af1087eae0c5ac7d8c1759480846f615342f8ac91f8e5cf3e9e88",
+    "_build/verification/final-purpose-review/tutorial--cp.rst.diff": "5153dd05936a336fa005f3020ff6c265895cda0ec1d483ec29f70b0750c8038d",
+    "_build/verification/final-purpose-review/tutorial--link.rst.diff": "87f40f2a91561202d26112d547716b358d666607cb7320cc517603fb0f20c2dd",
+    "_build/verification/final-purpose-review/tutorial--webserver.rst.diff": "5cb3c261a23fdd1b7fb87c68e1a9a6cd092eb67413d8f3bb86e879f2d1e06648"
+  },
+  "remaining": [
+    "Repair five citation destinations without changing the new oracle.",
+    "Replay final affected/current gates.",
+    "Deliver only the personal fork and verify exact remote/source content."
+  ],
+  "qualification_notes": [
+    "Initial grouped constitution output truncated; design/errors/logging reread separately, remaining three complete in original output.",
+    "Wrong workspace .venv and obsolete guessed test filenames were inspection errors, not native failures.",
+    "Lost pi-1141 polling handle; complete persisted alternatives JSON/log recovered.",
+    "No subagents, mutation tests, TLS bypass or host configuration changes."
+  ]
+}
