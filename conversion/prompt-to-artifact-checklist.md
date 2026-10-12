@@ -49,6 +49,11 @@ Requirement2 additional C inline reach:`source-inline-c-supplement.json`/audit.m
 inspected. Combined enumerated union3641=3618+16+7;historical artifacts immutable.
 Query is bounded,not every spelling or independent meaning/retirement acceptance.
 
+README exposes the three catalogs/current completion audit and known fatal HTTP
+cleanup warning. `readme-conversion-index-audit.md`/verification.json:1 existing
+reader-contract/0.647s,9 tracked relative links/3 fidelity controls/four CLIs pass.
+Only README's selected pin changes;225 others/archive unchanged. No acceptance/repair.
+
 Next: finish required purpose comparison, findings resolution and final exact
 HEAD acceptance, then accepted personal-fork delivery and post-push remote/
 source-link verification. Author26/128 comparisons, parent green gates and fork

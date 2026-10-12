@@ -60,6 +60,12 @@ reference lines separately from canonical3618 and historical16. Current native
 addresses/null arguments checked;2 arrow false positives excluded. Union3641 is
 expanded enumeration,not accepted semantics. No manuscript/native/test changes.
 
+README now exposes all catalogs/maps/current audit plus the reproduced fatal-cleanup
+warning. `readme-conversion-index-audit.md`/verification.json records existing
+reader-contract1/0.647s,9 whole tracked link pairs/3 controls and4 canonical CLIs.
+README7a2a5117→0458782c only;fresh226 pins,prior225/archive5739833e unchanged.
+No protected tests,repair,full/native/cold/publication rebuild,push or completion.
+
 ## Contract
 
 Review the current checked-out commit; record its full hash and clean/dirty state.

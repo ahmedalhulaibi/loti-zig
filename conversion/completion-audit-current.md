@@ -72,6 +72,12 @@ canonical3618/historical16,already represented by native pointer/value/null sema
 9 new syntax candidates include2 non-C arrows. Expanded source union3641;canonical
 3618/128 and historical16 target unchanged. Not exhaustive lexical/meaning acceptance.
 
+README reader guide now links all3 enumeration catalogs,current audit/maps/grammar
+check,and names the fatal HTTP cleanup defect. Receipt:
+`readme-conversion-index-verification.json`;existing reader-contract1/0.647s +9 tracked links/3 controls/four
+CLIs pass. README only changes among226 inputs;fresh226 pins recorded,prior225/book
+5739833e unchanged. No lifecycle repair/full/cold/publication rebuild or delivery.
+
 Next: obtain a runtime-capable independent verifier/qualifying owner-approved
 alternative;specify fatal pending-I/O retirement,then repair/replay affected gates.
 Finish source/purpose comparison and exact required-surface audit before personal

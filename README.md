@@ -8,6 +8,11 @@ unchanged MIT licence. Tutorial and reference programs live here, using
 `std.os.linux.IoUring` and native syscalls without libc or an external ring library.
 Original attribution and illustrations remain.
 
+A reproduced fatal observer-output failure left a late accepted socket open after
+application cleanup, until process exit. Pending-I/O retirement remains unverified.
+Do not use the HTTP example as a fatal-error cleanup pattern. See the
+[HTTP warning](tutorial/webserver.rst) and [cleanup evidence](conversion/accept-teardown-audit.md).
+
 ## Build and check
 
 ```sh
@@ -65,15 +70,27 @@ and two independent reader paragraphs qualify ordinary versus SQPOLL return
 counts. These checks are not language parsing, all-reference semantic acceptance
 or **independent review**.
 
-`conversion/source-inventory.json` preserves 3,618 original matched lines and
-128 source blocks/declarations: 120 C blocks/declarations and eight output literals.
-This includes 16 unlabelled syscall C literals missed by the first scanner;
-`tests/test_inventory.py` cross-checks all implicit literals with Docutils and
-checks every captured line against the immutable source. `reference-map.json`
-maps 99 native bindings;
-`chapter-map.json` maps original/new paths. Line/block semantic disposition,
-broader failure/state checks, bounded source mutation verification and independent
-review remain open. See `conversion/audit.md` and `conversion/review-blocker.md`.
+## Conversion evidence
+
+The [original inventory](conversion/source-inventory.json) preserves 3,618 matched
+lines and 128 blocks/declarations: 120 C blocks/declarations and eight output
+literals. Its repair added 16 implicit literals missed by the first scanner;
+the [grammar cross-check](conversion/rst-grammar-inventory-audit.md) matches all
+128 spans, including 23 implicit literals in total. These are enumeration checks,
+not acceptance of every example's meaning.
+
+Read both additional catalogs: the [historical supplement](conversion/source-inventory-supplement.json)
+records 16 excluded source lines; the [inline C supplement](conversion/source-inline-c-supplement.json)
+adds seven typedef/NULL references already represented by native Zig text. The
+three artifacts enumerate 3,641 unique source lines under their stated query
+policies; they do not prove every spelling or independently accepted semantics.
+Historical target slices remain pinned to their recorded commits.
+
+The [reference map](conversion/reference-map.json) maps 99 native bindings;
+the [chapter map](conversion/chapter-map.json) maps original/new paths. Start at
+[the current completion audit](conversion/completion-audit-current.md) for exact
+checkpoint evidence and remaining work. Protected lifecycle tests, cleanup repair,
+independent meaning/completeness acceptance and final conversion audit remain open.
 The goal is not complete; final converted commits have not been pushed.
 
 Author notes index all 128 blocks and 3,618 matched lines; this is not semantic
