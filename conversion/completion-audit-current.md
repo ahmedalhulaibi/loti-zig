@@ -1,4 +1,4 @@
-# Current objective audit — delivery pending
+# Current objective audit — delivered
 
 Direct editing/self-review,no subagents or mutation tests,as selected by owner.
 Historical independent BLOCK/provider/exposure/ACL evidence remains immutable;
@@ -6,12 +6,12 @@ self-review is not independent acceptance or a test seal. No workspace policy ed
 
 | Explicit requirement | Current evidence / disposition |
 |---|---|
-| Personal fork/local clone | ahmedalhulaibi/loti-zig,parent shuveb/loti,MIT,master,exact local path/remotes verified. Final push/remote verification pending. |
+| Personal fork/local clone | ahmedalhulaibi/loti-zig,parent shuveb/loti,MIT,master,exact local path/remotes verified. Source5998e33 pushed;SSH/API exact remote commit/tree andpublic source links verified. |
 | Every original C/io_uring mention/block |42 immutable blobs;canonical3618/128,historical16,inline7,union3641;grammar26/128/62. Whole original chapter/catalog comparisons plus current-delta review find no remaining required omission. Query scopes remain explicit,not every possible spelling proof. |
 | Every reference |76 original APIs/99 native bindings/13 includes;actual installed0.17 SDK/type/ABI/consumers. All26 original/current chapter comparisons reconciled;changed source semantics reviewed. Four live HTTPS Linux manual mirrors and fixed original-paper archive replace unavailable endpoints. |
 | Every example/relevant text |25 executables/30 native bodies;exact0.17 guard;128 purpose comparisons;26 counterparts+licence chapter. Direct final source review complete;native adaptations/limits disclosed. |
 | Preservation |Original LICENSE and7 source images byte-exact;Shuveb/Ahmed attribution,order and5 packaged images/licence verified. Catalog/empty database/bytecode/inactive template accounted for. |
-| Final delivery |Only personal fork may be pushed. Verify exact final remote commit/tree/native sources and packaged source links. No upstream PR/release requested. |
+| Final delivery |Only personal fork pushed. Source5998e33:all1632 tracked entries and30 native sources match;public source URLs200,raw HTTP bytes exact. Final metadata-only followup uses the same remote-check protocol. No upstream PR/release. |
 
 ## Latest gates
 
@@ -31,5 +31,6 @@ in concrete published/kernel-pending/stalled cases. No production HTTP,bounded
 shutdown,all-kernel/progress/UAF,durability or device-pagination assurance.
 Historical292 mutation kills unchanged;no new mutation execution.
 
-Only final personal-fork delivery/remote verification remains. Do not complete
-while that required gate is open.
+Required source,purpose,preservation,publication anddelivery gates pass in the
+selected direct workflow. See final-delivery-audit.md/verification.json. Remaining
+broader assurance is explicitly outside this teaching-edition contract.

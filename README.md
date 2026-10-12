@@ -1,6 +1,6 @@
 # Lord of the io_uring — Zig 0.17.0
 
-**Source and publication checks pass. Personal-fork delivery verification is pending.**
+**Zig 0.17.0 edition delivered. Source, publication and personal-fork checks pass.**
 
 Native Zig adaptation of [Shuveb Hussain's guide](https://github.com/shuveb/loti).
 All 26 original documents have rewritten counterparts; `license.rst` adds the
@@ -94,9 +94,10 @@ checkpoint evidence and remaining work. The owner selected direct editing/review
 without subagents or mutation testing. [Final source-purpose self-review](conversion/final-source-purpose-audit.md)
 reconciles all 26 original chapters and 128 blocks with current inputs and reviews
 the changed native/manuscript bodies. It is not independent acceptance or general
-production assurance. Publication checks pass; final personal-fork delivery verification
-is pending.
-The goal is not complete; final converted commits have not been pushed.
+production assurance. [Final delivery evidence](conversion/final-delivery-audit.md)
+records the exact remote tree, native source bytes and public source links.
+The converted edition is delivered to this personal fork; no upstream PR or release
+was requested.
 
 Author notes index all 128 blocks and 3,618 matched lines; this is not semantic
 acceptance. Native `cp` now sizes

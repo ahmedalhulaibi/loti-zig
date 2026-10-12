@@ -1,11 +1,11 @@
-# Prompt-to-artifact checklist — delivery pending
+# Prompt-to-artifact checklist — delivered
 
 Direct self-review,no subagents/mutation tests. Historical independent BLOCK,
 provider/exposure/ACL failures are not current independent acceptance.
 
 | Explicit surface | Evidence / disposition |
 |---|---|
-| Fork/location |Personal fork,parent/MIT/master,owned local path/remotes verified;final push/content verification pending. |
+| Fork/location |Personal fork,parent/MIT/master,owned local path/remotes verified;source5998e33 pushed andexact remote tree/source content verified. |
 | Original enumeration |42 immutable blobs;3618/128+historical16+inline7=3641;26-RST grammar128 spans/62 complete literal bodies. Distinct query scopes;whole-source purpose comparisons corroborate completeness. |
 | Reference semantics |76 APIs/99 native bindings/13 includes;all26 whole chapter comparisons reconciled with actual current bytes and installed SDK. All required changed bodies/prose directly reviewed. |
 | Executables/text |25 executables/30 native bodies,128 block purposes,exact0.17 guard;no libc/liburing imports. Native adaptations and non-production scope disclosed. |
@@ -16,9 +16,10 @@ provider/exposure/ACL failures are not current independent acceptance.
 | Reader/validator |81 Chromium reflows/0 violations;EPUBCheck5.2.1 zero messages;Node syntax. Not Supernote,pagination,font-override or device acceptance. |
 | Preservation |Exact original LICENSE/7 source images,Shuveb/Ahmed credits,original reading order;5 packaged image identities verified. |
 | External citations |4 verified HTTPS Linux manual mirrors;fixed archived original publisher PDF200 andwhole archive digest. Original TLS/timeouts preserved;no TLS checks disabled. Public original/fio repositories remain available. |
-| Final delivery |Push only personal fork after these gates;verify exact remote SHA/tree/native file bytes andpackaged source URLs. No upstream PR/release. |
+| Final delivery |Only personal fork pushed;source5998e33 exact1632-entry remote tree,30 native sources,public source URLs200 andraw HTTP bytes verified. Metadata followup uses the same protocol. No upstream PR/release. |
 
 Current receipts:final-source-purpose-verification.json andfinal-citation-repair-
 verification.json. Selected input pins are not all transitive dependencies or
 protection. Historical292 mutation kills unchanged;no new mutation execution.
-Only delivery/remote verification remains;do not complete before it passes.
+All explicit gates pass in the selected direct workflow. Final delivery evidence:
+final-delivery-audit.md/verification.json. Broader limits remain,not hidden gates.
