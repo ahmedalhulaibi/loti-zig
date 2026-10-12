@@ -29,10 +29,18 @@ build51/51(24 cached);four CLIs3618/128/567,76/99,13;strict HTML/final EPUB;
 README/HTTP body/manuscript only change among prior226. Historical292 kills unchanged.
 No current cold25 claim,push,PR,release or completion.
 
+Latest extension:http-heap-retirement-audit.md/verification;one new method/four
+heap cases,old methods unchanged;all30 native bodies/README/manuscripts unchanged.
+Final full109/200.682s/0 errors-failures-skips;16 properties configured400;fresh232
+pins. Build51/51(25 cached);strict HTML/EPUB63f6aee8,27/121/368;81 reflows/0 violations;
+EPUBCheck0. Actual kernel-pending SEND -125 plus retained whole heap before release;
+repeated EAGAIN retains ownership until externally terminated. No all-kernel/UAF claim.
+
 ## Next review surfaces
 
-- Broader native lifecycle states:pending heap READ/SEND,unpublished SQE neutralizing,
-  copied-undispatched result handling,FD0/idle owner andcancel/no-progress paths.
+- Targeted heap4 scenarios now covered:http-heap-retirement-audit.md/verification;
+  remaining code/purpose review includes private-SQE neutralization,copied results,
+  FD0/idle ownership andgeneral failure constraints,not a new exhaustive kernel claim.
   Descriptor census/EOF do not prove every operand retirement case.
 - All immutable original c9ee2424 blocks/lines/purposes against current exact body:
   canonical3618/128+historical16+inline7=3641;grammar26/128/62 corroborates syntax,

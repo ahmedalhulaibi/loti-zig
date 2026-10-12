@@ -54,5 +54,8 @@ preserved/corrected to defaultTestLoader;not a native test failure. Lost polling
 handles resolved from full logs/exit files,not treated as successful tool sessions.
 Changed-path diagnostics checked;no unsupported RST semantic-acceptance claim.
 
-Broader lifecycle/failure/heap-retirement cases,original meaning/completeness
-review,final prompt audit and personal-fork delivery remain open. Goal incomplete.
+Later direct checkpoint:http-heap-retirement-audit.md/verification adds4 actual
+published READ/SEND,kernel-pending cancelled SEND andstalled cleanup memory cases.
+Native80631c8 unchanged;new table-driven regression,prior methods unchanged.
+Original meaning/completeness review,final prompt audit anddelivery remain open.
+Finite target/heap observation is not all-kernel/architecture/UAF assurance.

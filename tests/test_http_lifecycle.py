@@ -21,6 +21,8 @@ import unittest
 import uuid
 from typing import Any, BinaryIO, ClassVar, cast
 
+from tests.fixtures.http_retirement_observer import run_probe
+
 
 REPO = Path(__file__).resolve().parents[1]
 FIXTURE = REPO / "testdata/inputs/http-lifecycle.json"
@@ -556,6 +558,74 @@ class HttpLifecycleContracts(unittest.TestCase):
                     server.close()
                 self.assertEqual(server.result["stdout_records"], [server.result["readiness"]])
                 self.assertEqual(server.result["first_error_line"], "")
+
+    def test_published_heap_operands_retire_or_remain_owned(self):
+        """Catch freeing a published READ/SEND operand before target retirement or during stalled cleanup."""
+        contract_path = REPO / "testdata/inputs/http-retirement-contracts.json"
+        contract = json.loads(contract_path.read_text())
+        save_json(self.directory / "retirement-fixture.json", contract)
+        abi_binary = self.directory / "retirement-abi"
+        bounded_command([str(ZIG), "build-exe", "tests/fixtures/http_retirement_abi.zig",
+                         "-femit-bin=" + str(abi_binary),
+                         "--cache-dir", str(self.directory / "zig-cache"),
+                         "--global-cache-dir", str(self.directory / "zig-global-cache")],
+                        self.directory, "compile-retirement-abi", 120)
+        abi = json.loads(bounded_command([str(abi_binary)], self.directory, "retirement-abi", 8))
+        self.assertEqual((abi["sqe_size"], abi["cqe_size"]), (64, 16))
+        save_json(self.directory / "retirement-provenance.json", {
+            "fixture_sha256": digest(contract_path),
+            "observer_sha256": digest(REPO / "tests/fixtures/http_retirement_observer.py"),
+            "abi_source_sha256": digest(REPO / "tests/fixtures/http_retirement_abi.zig"),
+            "abi_binary_sha256": digest(abi_binary), "webserver_binary_sha256": digest(self.binary)})
+        for case in contract["cases"]:
+            with self.subTest(case=case["name"]):
+                result = run_probe(self.directory / case["name"], binary=self.binary,
+                                   abi=abi, fixture=contract, case=case)
+                operand, final = result["operand"], result["final"]
+                require(operand is not None, "ExpectedHeapOperandNotObserved")
+                self.assertEqual(operand["opcode"], abi["ops"][case["opcode"]])
+                if case.get("consumed"):
+                    self.assertEqual(operand["heap_len"], contract["payload_length"])
+                    self.assertEqual(operand["addr"] - operand["heap_addr"] + operand["len"], operand["heap_len"])
+                    require(0 < operand["len"] < operand["heap_len"], "ConsumedSendDidNotFollowShortProgress")
+                else:
+                    self.assertEqual(operand["len"], contract["payload_length"])
+                self.assertEqual((result["returncode"], result["stderr_first"]),
+                                 (case["returncode"], case["error"]))
+                faults = result["faults"]
+                if case["permanent"]:
+                    require(len(faults) >= 2, "StallNeedsRepeatedEnterFailure")
+                else:
+                    self.assertEqual(len(faults), 1)
+                self.assertEqual([(f["submitted"], f["waited"], f["flags"]) for f in faults],
+                                 [(0, 1, "IORING_ENTER_GETEVENTS")] if case.get("consumed")
+                                 else [(1, 0, "0")] * len(faults))
+                if case["permanent"]:
+                    self.assertEqual(final["pending_sqes"], [operand])
+                    self.assertEqual(final["sq_tail"] - final["sq_head"], 1)
+                    self.assertIs(final["payload_unchanged"], True)
+                    self.assertEqual(final["owned_fds"], list(range(8)))
+                    self.assertEqual(final["cq_head"], final["cq_tail"])
+                    self.assertEqual([c for c in final["all_cqes_before_wrap"]
+                                      if c["tag"] == contract["cancel_control_tag"]], [])
+                else:
+                    self.assertEqual((final["sq_head"], final["cq_head"]),
+                                     (final["sq_tail"], final["cq_tail"]))
+                    self.assertEqual(final["pending_sqes"], [])
+                    targets = [c for c in final["all_cqes_before_wrap"][result["operand_cq_cursor"]:] if c["tag"] == operand["tag"]]
+                    self.assertEqual(len(targets), 1, "TargetCqeMustBeNewAndConsumedOnce")
+                    terminal = targets[-1]
+                    if case.get("consumed"):
+                        self.assertEqual(terminal, {"tag": operand["tag"], "res": contract["cancelled_result"], "flags": 0})
+                    require(terminal["res"] == contract["cancelled_result"]
+                            or 0 < terminal["res"] <= operand["len"], "HeapTargetHasNoTerminalResult")
+                    if case["opcode"] == "SEND" or terminal["res"] == operand["len"]:
+                        self.assertIs(final["payload_matches_file"], True)
+                    self.assertEqual([c for c in final["all_cqes_before_wrap"]
+                                      if c["tag"] == contract["cancel_control_tag"]],
+                                     [{"tag": contract["cancel_control_tag"], "res": 0, "flags": 0}] * (2 if case.get("consumed") else 1))
+                    self.assertEqual([c for c in final["all_cqes_before_wrap"] if c["tag"] == 0 and c["res"] < 0],
+                                     [{"tag": 0, "res": contract["cancelled_result"], "flags": 0}])
 
     def test_fatal_observer_releases_successful_late_accept_before_exit(self):
         """EXPECT CORRECT cleanup; current baseline must be specifically RED."""
