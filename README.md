@@ -1,6 +1,6 @@
 # Lord of the io_uring — Zig 0.17.0
 
-**Draft edition. Required independent review and final conversion audit remain open.**
+**Draft edition. Direct review and final conversion verification are in progress.**
 
 Native Zig adaptation of [Shuveb Hussain's guide](https://github.com/shuveb/loti).
 All 26 original documents have rewritten counterparts; `license.rst` adds the
@@ -8,10 +8,10 @@ unchanged MIT licence. Tutorial and reference programs live here, using
 `std.os.linux.IoUring` and native syscalls without libc or an external ring library.
 Original attribution and illustrations remain.
 
-A reproduced fatal observer-output failure left a late accepted socket open after
-application cleanup, until process exit. Pending-I/O retirement remains unverified.
-Do not use the HTTP example as a fatal-error cleanup pattern. See the
-[HTTP warning](tutorial/webserver.rst) and [cleanup evidence](conversion/accept-teardown-audit.md).
+A direct pre-exit regression now passes for the previously reproduced late accepted
+socket defect. Broader failure-path and heap-retirement validation remains in progress.
+Do not use the HTTP example as a production fatal-error cleanup pattern. See the
+[HTTP warning](tutorial/webserver.rst) and [repair evidence](conversion/direct-http-repair-audit.md).
 
 ## Build and check
 
@@ -89,8 +89,9 @@ Historical target slices remain pinned to their recorded commits.
 The [reference map](conversion/reference-map.json) maps 99 native bindings;
 the [chapter map](conversion/chapter-map.json) maps original/new paths. Start at
 [the current completion audit](conversion/completion-audit-current.md) for exact
-checkpoint evidence and remaining work. Protected lifecycle tests, cleanup repair,
-independent meaning/completeness acceptance and final conversion audit remain open.
+checkpoint evidence and remaining work. The owner selected direct editing/review,
+without subagents or mutation testing. Broader lifecycle verification,
+meaning/completeness review and final conversion audit remain open.
 The goal is not complete; final converted commits have not been pushed.
 
 Author notes index all 128 blocks and 3,618 matched lines; this is not semantic

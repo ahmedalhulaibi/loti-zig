@@ -62,9 +62,16 @@ before the expected size yields an internal-error response. Socket failures
 release the client instead of terminating the entire server. ``MSG.NOSIGNAL``
 prevents an abandoned response from raising SIGPIPE.
 
-During normal state transitions, the client keeps the headers and body until the
-send completes. The completion is copied and consumed by ``ring.copy_cqe()``; there
-is no additional ``cqe_seen`` call.
+The request ledger records an operation before any later fallible callback and
+retires it when its terminal completion is copied. The client keeps its operands
+until that retirement. ``ring.copy_cqe()`` already consumes the completion; there
+is no additional ``cqe_seen`` call. Fatal cleanup stops the state machine, replaces
+only unpublished SQEs with tagged NOPs, submits one cancellation control at a time,
+and drains target completions before resources can be released. A cancellation
+receipt alone does not retire a target. Successful ACCEPT results are closed even
+if they were not dispatched to a client slot; descriptor zero is valid.
+``IORING_CQE_F_SOCK_NONEMPTY`` is a socket hint, not ``IORING_CQE_F_MORE``;
+it does not prevent a one-shot request from retiring.
 
 Optional ``webserver DOCUMENT_ROOT PORT --observe-send`` reports actual prepared
 SEND ranges/flags and tagged CQEs after readiness. It sets ``SO_SNDBUF`` to 4096
@@ -146,9 +153,9 @@ client. These checks are not a production HTTP conformance or security audit.
 
 There is no TLS, keep-alive, request-body handling, header-field validation,
 per-client deadline or streaming-file transfer. Do not expose this teaching
-server as an Internet-facing service. A reproduced fatal observer-output failure
-left a late accepted socket open after application cleanup, until process exit.
-Retirement of pending I/O during fatal cleanup remains unverified. Do not treat
-``defer ring.deinit()`` as an operand-retirement barrier or use this example as a
-fatal-error cleanup pattern. The code has not yet passed the required independent
-review.
+server as an Internet-facing service. A direct regression now verifies pre-exit
+closure for the reproduced late-ACCEPT defect. Broader failure-path and
+heap-retirement validation remains in progress. Cleanup retains operands and
+waits if submission, cancellation or completion cannot progress; it has no
+bounded shutdown guarantee. Do not treat ``defer ring.deinit()`` as an
+operand-retirement barrier or this example as a production fatal-cleanup pattern.

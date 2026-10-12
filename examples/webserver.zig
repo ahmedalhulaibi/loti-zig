@@ -59,6 +59,12 @@ const SendRequest = struct {
     rw_flags: u32,
 };
 
+const PendingRequest = struct {
+    active: bool = false,
+    prepared: ?*linux.io_uring_sqe = null,
+    opcode: linux.IORING_OP = .NOP,
+};
+
 const Client = struct {
     fd: linux.fd_t = -1,
     file_fd: linux.fd_t = -1,
@@ -89,6 +95,95 @@ const Server = struct {
     ring: *linux.IoUring,
     clients: *[client_limit]Client,
     mode: Mode = .serve,
+    requests: [client_limit + 1]PendingRequest = @splat(.{}),
+
+    fn track(self: *Server, sqe: *linux.io_uring_sqe) void {
+        const tag: usize = @intCast(sqe.user_data);
+        std.debug.assert(!self.requests[tag].active);
+        self.requests[tag] = .{ .active = true, .prepared = sqe, .opcode = sqe.opcode };
+    }
+
+    fn submit(self: *Server) !u32 {
+        // flush_sq publishes before enter; an enter error cannot restore private ownership.
+        for (&self.requests) |*request| request.prepared = null;
+        return self.ring.submit();
+    }
+
+    fn retire(self: *Server, cqe: linux.io_uring_cqe) !linux.IORING_OP {
+        if (cqe.user_data > client_limit or cqe.flags & linux.IORING_CQE_F_MORE != 0) return error.UnexpectedCompletion;
+        const request = &self.requests[@intCast(cqe.user_data)];
+        if (!request.active) return error.UnexpectedCompletion;
+        request.active = false;
+        request.prepared = null;
+        return request.opcode;
+    }
+
+    fn cleanupPause(self: *Server) void {
+        std.Io.sleep(self.io, .fromMilliseconds(1), .awake) catch {};
+    }
+
+    fn cleanupSubmit(self: *Server) void {
+        while (self.ring.sq_ready() != 0) {
+            _ = self.submit() catch {
+                self.cleanupPause();
+                continue;
+            };
+        }
+    }
+
+    fn cleanupCompletion(self: *Server) linux.io_uring_cqe {
+        while (true) {
+            return self.ring.copy_cqe() catch {
+                self.cleanupPause();
+                continue;
+            };
+        }
+    }
+
+    fn cleanupResult(self: *Server, cqe: linux.io_uring_cqe) void {
+        const opcode = self.retire(cqe) catch {
+            // Unknown retirement must not return through buffer/resource release defers.
+            while (true) self.cleanupPause();
+        };
+        if (opcode == .ACCEPT and cqe.res >= 0) _ = linux.close(cqe.res);
+    }
+
+    fn shutdown(self: *Server) void {
+        // Only private,unpublished SQEs can be rewritten. NOPs retain their ledger tags.
+        for (&self.requests, 0..) |*request, tag| {
+            if (request.prepared) |sqe| {
+                sqe.prep_nop();
+                sqe.user_data = tag;
+                request.opcode = .NOP;
+            }
+        }
+        self.cleanupSubmit();
+        while (self.ring.cq_ready() != 0) self.cleanupResult(self.cleanupCompletion());
+        const control_tag = std.math.maxInt(u64);
+        for (&self.requests, 0..) |*request, tag| {
+            if (!request.active) continue;
+            while (true) {
+                _ = self.ring.cancel(control_tag, tag, 0) catch {
+                    self.cleanupPause();
+                    continue;
+                };
+                break;
+            }
+            self.cleanupSubmit();
+            while (true) {
+                const cqe = self.cleanupCompletion();
+                if (cqe.user_data == control_tag) break;
+                self.cleanupResult(cqe);
+            }
+        }
+        // Cancellation receipts are not target acknowledgments. Do not rearm here.
+        while (true) {
+            var active = false;
+            for (self.requests) |request| active = active or request.active;
+            if (!active) break;
+            self.cleanupResult(self.cleanupCompletion());
+        }
+    }
 
     fn emit(self: *Server, value: anytype) !void {
         if (self.mode != .observe_send) return;
@@ -122,18 +217,21 @@ const Server = struct {
     }
 
     fn accept(self: *Server) !void {
-        _ = try self.ring.accept(0, self.listener, null, null, linux.SOCK.CLOEXEC);
+        if (self.requests[0].active) return error.DuplicateHttpRequest;
+        self.track(try self.ring.accept(0, self.listener, null, null, linux.SOCK.CLOEXEC));
     }
 
     fn queue(self: *Server, id: usize) !void {
         const client = &self.clients[id];
         const tag = id + 1;
+        if (self.requests[tag].active) return error.DuplicateHttpRequest;
         switch (client.phase) {
-            .receiving => _ = try self.ring.recv(tag, client.fd, .{ .buffer = client.request[client.request_len..] }, 0),
-            .loading => _ = try self.ring.read(tag, client.file_fd, .{ .buffer = client.owned[client.progress..] }, client.progress),
+            .receiving => self.track(try self.ring.recv(tag, client.fd, .{ .buffer = client.request[client.request_len..] }, 0)),
+            .loading => self.track(try self.ring.read(tag, client.file_fd, .{ .buffer = client.owned[client.progress..] }, client.progress)),
             .sending_headers, .sending_body => {
                 const buffer = if (client.phase == .sending_headers) client.header[0..client.header_len] else client.body;
                 const sqe = try self.ring.send(tag, client.fd, buffer[client.progress..], linux.MSG.NOSIGNAL);
+                self.track(sqe);
                 const base = @intFromPtr(buffer.ptr);
                 if (sqe.addr < base or sqe.addr - base > buffer.len or sqe.len > buffer.len - (sqe.addr - base))
                     return error.HttpPreparedSendOutsideStorage;
@@ -241,6 +339,10 @@ const Server = struct {
     }
 
     fn complete(self: *Server, cqe: linux.io_uring_cqe) !void {
+        _ = self.retire(cqe) catch |err| {
+            if (cqe.user_data == 0 and cqe.res >= 0) _ = linux.close(cqe.res);
+            return err;
+        };
         if (cqe.user_data == 0) {
             if (cqe.res < 0) {
                 if (cqe.err() == .INTR or cqe.err() == .AGAIN or cqe.err() == .CONNABORTED)
@@ -367,6 +469,7 @@ pub fn main(init: std.process.Init) !void {
         .clients = &clients,
         .mode = mode,
     };
+    defer server.shutdown();
     var ready_buffer: [256]u8 = undefined;
     var stdout = std.Io.File.stdout().writerStreaming(init.io, &ready_buffer);
     try stdout.interface.print("{{\"event\":\"loti.http.ready\",\"address\":\"127.0.0.1\",\"port\":{d}}}\n", .{
@@ -375,7 +478,7 @@ pub fn main(init: std.process.Init) !void {
     try stdout.interface.flush();
     try server.accept();
     while (true) {
-        _ = try ring.submit();
+        _ = try server.submit();
         const cqe = ring.copy_cqe() catch |err| {
             if (err == error.SignalInterrupt) continue;
             return err;
