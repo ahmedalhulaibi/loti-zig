@@ -66,6 +66,12 @@ or whole-line lexical acceptance. Prior226 edition pins/archive5739833e unchange
 Author qualification retry9b9290f2/879b2d75 stopped on provider risk restriction;
 partial fixture/report preserved outside adoption. No bypass/relaunch/native repair.
 
+Enumeration gap repaired in a separate artifact:`source-inline-c-supplement.json`
+and `source-inline-c-audit.md`:7 original socklen_t/NULL reference lines absent from
+canonical3618/historical16,already represented by native pointer/value/null semantics.
+9 new syntax candidates include2 non-C arrows. Expanded source union3641;canonical
+3618/128 and historical16 target unchanged. Not exhaustive lexical/meaning acceptance.
+
 Next: obtain a runtime-capable independent verifier/qualifying owner-approved
 alternative;specify fatal pending-I/O retirement,then repair/replay affected gates.
 Finish source/purpose comparison and exact required-surface audit before personal

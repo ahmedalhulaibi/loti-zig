@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "scope": "Parent expanded lexical enumeration;not exhaustive lexical or independent semantic acceptance.",
+  "source_commit": "c9ee2424af02e4c1e4765088580107d5e17b826e",
+  "target_commit": "b10f81680f26cc1291f24fcae8da8bad4e3acfcc",
+  "query": {
+    "c-build": "\\bcc\\b|\\bpkg-config\\b|-luring\\b|-std=(?:c|gnu)(?:89|90|99|11|17|23)\\b|-D_GNU_SOURCE\\b|-pthread\\b",
+    "c-inline": "\\bNULL\\b|\\bsizeof\\s*\\(|->|\\b(?:ssize_t|size_t|loff_t|off_t|sigset_t|socklen_t|uintptr_t|uint64_t|uint32_t)\\b",
+    "c-language-alias": "\\bC(?:89|90|17|23)\\b|\\bc:(?:func|type|data|macro):|\\b(?:CFLAGS|CPPFLAGS|LDFLAGS)\\b"
+  },
+  "candidate_counts": {
+    "c-build": 0,
+    "c-inline": 295,
+    "c-language-alias": 118
+  },
+  "outside_canonical_candidates": 9,
+  "new_c_inline_reference_lines": 7,
+  "non_C_false_positives": 2,
+  "original_file_sha256": {
+    "LICENSE": "0ca6b5bf162b52d507c407e41bb536bf81462d40f4b863f194c68895480114fb",
+    "Makefile": "8b6587b859607f200f116e2cb043fc358e1c3a26c326b563bf348453cfc68307",
+    "_static/Linux_Performance_Fulll_Chart-1.png": "8262345da4b7aa5c6976fc94e9433a5e9a870f52c5b3fe57c712d3c367782886",
+    "_static/Linux_Performance_more_than_1000_users.png": "f81cd7c6b66961b4e0d69c59789fd7fcc7947fdc507a45267975db66380c335d",
+    "_static/Linux_Performance_upto_1000_users.png": "7ba815a122ac2eb7856853f43ad9e406b82310cd655eab0f7b2cc0942686329c",
+    "_static/Linux_Process_Models.jpg": "732de58804c2c4d077eaef910f66523c58ca9202d72178fd5b0ee82d555bebf1",
+    "_static/Linux_Process_Models.png": "b7a64dfbd42297c975f98390d5c71f1278e50a5b2fb691dce02fc7fa20683d9d",
+    "_static/ZeroHTTPd_static.png": "1552c7bc1a6a81408ea60eeb134e2d4ca79b62b9a0bbad2072d4c26945f2547f",
+    "_static/io_uring_logo.png": "25dbe3f11cb7976ff915d5c7472dcc31ce6feebeecfb5dccf83a9b8969d57649",
+    "_templates/layout.html": "dd82f266c50553989cca37ce6d9cb94c9ed5ac1635bbb53994ea6e12321290c2",
+    "async_intro.rst": "82cb8c992f39e96f941c19075e3866cf65dfdced96056f0a46b90816fa916c05",
+    "changelog.rst": "7a269d1d918c3009b74f9b2b16bb72133205c01b06d9635d36ef1be7a999a349",
+    "compile_commands.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "conf.py": "a3266b6a32c161016902201fe49f1498c4d9d231e053c543744c4b5a98250808",
+    "delme.c": "db51679d16ff487ba00192a64aacc4d1e45432e5313fcbc220df56e30f1c9ad8",
+    "index.rst": "ca090e250c15616c6736ec5974b66d3d46f9910f21a0dc4349f3ada02c92b537",
+    "low_level.rst": "25330ba3b2e45179954cdf4c158e9f802c9b740c83a2def285154cc6e01e3890",
+    "make.bat": "b593cd1da19314a43db9a0854f6f92f2c59217571502da3321f9498c02fa16c8",
+    "ref-iouring/index.rst": "3b8aaf8c76c4e7f9db9acc428855c903aa8c9cc6107c443a3edcaa570836b7d6",
+    "ref-iouring/io_uring_enter.rst": "ccd209fe64abe9511d4a5983dbefa07b82782cad0a3d6e91b127410a8a75df4b",
+    "ref-iouring/io_uring_register.rst": "6ce675fbfc34060763eaf595a8ffee13f5f3ef19bb76ab00210cb7762f537e4e",
+    "ref-iouring/io_uring_setup.rst": "a2b568848632cd8f165f0454f1c755fe92483975adeb8bb3966a7905d4b1cf19",
+    "ref-liburing/advanced_usage.rst": "a9e9fc842fae1cda13cd681dd0aefd8ae09149d825b89976807fc82b04c7cd9e",
+    "ref-liburing/completion.rst": "9e2bed04a76bdfb1cf2a13412a2097d6b232ab557acbae69f0f2dcc14faeeb36",
+    "ref-liburing/cqe.rst": "90eab2ff2cf389255bffb7bf60ce255508442fef1e7107c2fe1ffc5ccbf17953",
+    "ref-liburing/index.rst": "1b7fb4c7436294c4667aa5bf77abe42a903080e9bb05eec9c314cc0a4d34781d",
+    "ref-liburing/setup_teardown.rst": "f707b3b288149a5774fcc0ee3c797072561d1996c290fcb4d520e09072e2c461",
+    "ref-liburing/sqe.rst": "d28a18d7d809ead800c8510000134b5d1e0a1a77addb87398b24be888e2b3ce7",
+    "ref-liburing/submission.rst": "1effbf7b3ac88706ecef94902f230bd0df68a8c673cefe85fe92cc88a808abc7",
+    "ref-liburing/supported_caps.rst": "5d071cd1caa00921fb1df9b165f9392ec48e2de7f6498461b21be6dbe063bb26",
+    "sphinx-plugins/__pycache__/manpage.cpython-38.pyc": "f9e9fd98a0716d9fe4ba07b8bdc775fd1e0285f94c8ed2ef1b8cab4f48365eb8",
+    "sphinx-plugins/manpage.py": "85f745fa105074b2dbc362f7223dba841663fb1400a3f712168637e6cef71cb7",
+    "tutorial/cat_liburing.rst": "c74ae10c1b444b0c67c8f92052cfedb19d3283e684c20697db073ce1b24fe112",
+    "tutorial/cp_liburing.rst": "d34f2fa8e5295e70708babe3d2d5d980a616a305e594280bd3b6b9aa7ac5f91d",
+    "tutorial/fixed_buffers.rst": "59d402b212eccdbe68519e5e754fdee68a647fef94f98b7275abcbb5c1341ef7",
+    "tutorial/index.rst": "17f460265ec1fdf504c6889b6d2ada3943dfe6cac3c1b3af2f4b9848ff65293f",
+    "tutorial/link_liburing.rst": "0e0753c80b8a1fac221f35f373d37ced882f7fcc7196be7c42d8644bbbe5c70f",
+    "tutorial/probe_liburing.rst": "9f5959ec23692e10d856637a4d9b656a9eef9d7f0881567396e94b3e2298cb30",
+    "tutorial/register_eventfd.rst": "a7606187dcb75f9c78eccee58b71f3e72a5fb93827d1cbbad80a925e5c727b9f",
+    "tutorial/sq_poll.rst": "4dd815d984d3d18c3ddb83de126b8a6d08493b611658f5510057c04e55d144b5",
+    "tutorial/webserver_liburing.rst": "b850337aafd7ffee1a6a6de5eefe48b4865d655d24e17476e9264aba777279a7",
+    "what_is_io_uring.rst": "dd0fa98a2f748990558ca7977e2c14f240cc10de27c69d95e93fbcc0406d5964"
+  },
+  "UTF8_files": 34,
+  "binary_paths": [
+    "_static/Linux_Performance_Fulll_Chart-1.png",
+    "_static/Linux_Performance_more_than_1000_users.png",
+    "_static/Linux_Performance_upto_1000_users.png",
+    "_static/Linux_Process_Models.jpg",
+    "_static/Linux_Process_Models.png",
+    "_static/ZeroHTTPd_static.png",
+    "_static/io_uring_logo.png",
+    "sphinx-plugins/__pycache__/manpage.cpython-38.pyc"
+  ],
+  "canonical_inventory_sha256": "f09c31a486b693e83574b3a945595a729c3de2be5cb5a5aca46f92f2d126b7b5",
+  "historical_supplement_sha256": "730dc0d7bfa5e070df280299ae4dbbeeb35f5d54f945ab3fd136a2d1bd490786",
+  "historical_supplement_not_rewritten": true,
+  "enumerated_union": {
+    "canonical": 3618,
+    "historical_supplement": 16,
+    "new_inline": 7,
+    "total_unique_lines": 3641
+  },
+  "target_file_sha256": {
+    "ref-iouring/io_uring_register.rst": "91e0bc0059d062312351677a72b6ff65c41b250bac4a66c7a3c90c7ff5e13adb",
+    "ref-zig/submission.rst": "7bdd3080c546b1d1767f13926bc3f0c77183ae696f9bb59b5ab9f2468aa4719d"
+  },
+  "authority_sha256": {
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux.zig": "34f8a2301eb7f01c4747d70440c773790284dd074861086aab52bdaac75090a0",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/io_uring_sqe.zig": "26dc07c031e669311306bd4ed7b066eb55638afc216d00fd83ad0fd2352e15bf",
+    "/home/ahmed/.local/share/mise/installs/zig/0.17.0/lib/std/os/linux/IoUring.zig": "4182347ffe74aebb890fb670e5a3fed85841f3e7217b2dca5a13093704cefef3",
+    "/home/ahmed/workspace/va/loti-zig/examples/raw_ops.zig": "02bb704372692ba0630d4fc62a9c16416cecef16c3fde93d368e67d9a20861ca"
+  },
+  "helper_sha256": "e69e32bb3bae4fc578648580c68629299283d5610a236a35a72c47b5a39a682a",
+  "entries": [
+    {
+      "id": "_templates/layout.html:5",
+      "file": "_templates/layout.html",
+      "line": 5,
+      "text": "<!-- Global site tag (gtag.js) - Google Analytics -->",
+      "categories": [
+        "c-inline"
+      ],
+      "already_in_historical_supplement": false,
+      "class": "non-C-arrow",
+      "author_disposition": "HTML comment terminator;not C member access. Retained template unused by default empty templates_path."
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:225",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 225,
+      "text": "   socklen_t addrlen field. See also **accept4(2)** for the general",
+      "categories": [
+        "c-inline"
+      ],
+      "already_in_historical_supplement": false,
+      "class": "c-inline-reference",
+      "author_disposition": "C typedef/NULL reference represented by native Zig types and null arguments;not independent meaning acceptance.",
+      "targets": [
+        {
+          "file": "ref-zig/submission.rst",
+          "start_line": 250,
+          "end_line": 258,
+          "lines": [
+            "",
+            "``CAPACITY`` is ``null`` or decimal 0\u201316. ``null`` passes both output pointers as",
+            "null. Otherwise an aligned, poisoned address buffer and an initialized socklen",
+            "remain live through completion. The SQE stores the address pointer in ``addr``",
+            "and the **length pointer** in ``off``; ``len`` is zero. This is not CONNECT's",
+            "address-length value. On success the kernel writes at most the supplied capacity",
+            "but returns the full IPv4 address length, 16. Even capacity zero can accept a",
+            "connection and return length 16 without writing any bytes. All untouched bytes",
+            "and a 16-byte guard remain poisoned. Peer ports are network-endian; the family"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ref-iouring/io_uring_enter.rst:256",
+      "file": "ref-iouring/io_uring_enter.rst",
+      "line": 256,
+      "text": "   the sockaddr structure, and *off* must contain the socklen_t addrlen",
+      "categories": [
+        "c-inline"
+      ],
+      "already_in_historical_supplement": false,
+      "class": "c-inline-reference",
+      "author_disposition": "C typedef/NULL reference represented by native Zig types and null arguments;not independent meaning acceptance.",
+      "targets": [
+        {
+          "file": "ref-zig/submission.rst",
+          "start_line": 298,
+          "end_line": 304,
+          "lines": [
+            "CONNECT takes a client FD, an input peer address and a numeric address length,",
+            "not the listener/output-address/value-result length used by ACCEPT. The native",
+            "preparer places that value in ``sqe.off``; ``sqe.len`` is zero. A correlated CQE",
+            "of zero means connection success, not a returned FD. Native getsockname/getpeername",
+            "then observe local/remote IPv4 endpoints with actual returned lengths; ports are",
+            "converted from network byte order. The independent listener checks its accepted",
+            "peer against these observations and receives EOF after queried client closure."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ref-iouring/io_uring_register.rst:65",
+      "file": "ref-iouring/io_uring_register.rst",
+      "line": 65,
+      "text": "   This operation takes no argument, and *arg* must be passed as NULL.",
+      "categories": [
+        "c-inline"
+      ],
+      "already_in_historical_supplement": false,
+      "class": "c-inline-reference",
+      "author_disposition": "C typedef/NULL reference represented by native Zig types and null arguments;not independent meaning acceptance.",
+      "targets": [
+        {
+          "file": "ref-iouring/io_uring_register.rst",
+          "start_line": 21,
+          "end_line": 25,
+          "lines": [
+            "``REGISTER_BUFFERS`` takes a ``std.posix.iovec`` array and element count. It pins",
+            "or references supplied memory for later fixed operations; memory-lock limits and",
+            "kernel resource rules apply. Keep ranges stable. A fixed request's address and",
+            "length must fit the selected registered index; using only part of a range is",
+            "valid. ``UNREGISTER_BUFFERS`` takes null/zero and releases the registration."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ref-iouring/io_uring_register.rst:123",
+      "file": "ref-iouring/io_uring_register.rst",
+      "line": 123,
+      "text": "   takes no argument, and *arg* must be passed as NULL and *nr_args*",
+      "categories": [
+        "c-inline"
+      ],
+      "already_in_historical_supplement": false,
+      "class": "c-inline-reference",
+      "author_disposition": "C typedef/NULL reference represented by native Zig types and null arguments;not independent meaning acceptance.",
+      "targets": [
+        {
+          "file": "ref-iouring/io_uring_register.rst",
+          "start_line": 56,
+          "end_line": 60,
+          "lines": [
+            "``REGISTER_EVENTFD`` takes a pointer to one eventfd descriptor and ``nr_args=1``.",
+            "``REGISTER_EVENTFD_ASYNC`` has the same arguments but omits notifications for",
+            "inline completions. ``UNREGISTER_EVENTFD`` takes null/zero. Only one eventfd is",
+            "attached at a time. Counter reads can coalesce notifications and do not identify",
+            "which request completed. Always reap/check CQEs. See :ref:`register_eventfd` and"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ref-iouring/io_uring_register.rst:142",
+      "file": "ref-iouring/io_uring_register.rst",
+      "line": 142,
+      "text": "   be invoked with *arg* set to NULL and *nr_args* set to zero.",
+      "categories": [
+        "c-inline"
+      ],
+      "already_in_historical_supplement": false,
+      "class": "c-inline-reference",
+      "author_disposition": "C typedef/NULL reference represented by native Zig types and null arguments;not independent meaning acceptance.",
+      "targets": [
+        {
+          "file": "ref-iouring/io_uring_register.rst",
+          "start_line": 71,
+          "end_line": 72,
+          "lines": [
+            "``REGISTER_PERSONALITY`` takes null/zero, captures current credentials and returns",
+            "an ID. Store that u16 ID in a prepared SQE's ``personality`` field."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ref-iouring/io_uring_register.rst:148",
+      "file": "ref-iouring/io_uring_register.rst",
+      "line": 148,
+      "text": "   be set to NULL. Available since 5.6.",
+      "categories": [
+        "c-inline"
+      ],
+      "already_in_historical_supplement": false,
+      "class": "c-inline-reference",
+      "author_disposition": "C typedef/NULL reference represented by native Zig types and null arguments;not independent meaning acceptance.",
+      "targets": [
+        {
+          "file": "ref-iouring/io_uring_register.rst",
+          "start_line": 73,
+          "end_line": 76,
+          "lines": [
+            "``UNREGISTER_PERSONALITY`` takes null with the ID in ``nr_args``. Finish dependent",
+            "operations before unregistering. Repository ``raw_ops`` implements both helpers;",
+            "they are not standard ``IoUring`` methods. The reference executes a NOP with the",
+            "registered credential ID, not just registration/unregistration."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ref-iouring/io_uring_register.rst:180",
+      "file": "ref-iouring/io_uring_register.rst",
+      "line": 180,
+      "text": "   specified, and *nr_args* is non-zero or *arg* is non-NULL.",
+      "categories": [
+        "c-inline"
+      ],
+      "already_in_historical_supplement": false,
+      "class": "c-inline-reference",
+      "author_disposition": "C typedef/NULL reference represented by native Zig types and null arguments;not independent meaning acceptance.",
+      "targets": [
+        {
+          "file": "ref-iouring/io_uring_register.rst",
+          "start_line": 21,
+          "end_line": 25,
+          "lines": [
+            "``REGISTER_BUFFERS`` takes a ``std.posix.iovec`` array and element count. It pins",
+            "or references supplied memory for later fixed operations; memory-lock limits and",
+            "kernel resource rules apply. Keep ranges stable. A fixed request's address and",
+            "length must fit the selected registered index; using only part of a range is",
+            "valid. ``UNREGISTER_BUFFERS`` takes null/zero and releases the registration."
+          ]
+        },
+        {
+          "file": "ref-iouring/io_uring_register.rst",
+          "start_line": 38,
+          "end_line": 42,
+          "lines": [
+            "``REGISTER_FILES`` takes a ``linux.fd_t`` array and count. Fixed-file SQEs set",
+            "``IOSQE_FIXED_FILE`` and put a table index in ``fd``. ``-1`` creates a sparse entry",
+            "where supported. ``REGISTER_FILES_UPDATE`` takes a native",
+            "``linux.io_uring_files_update`` containing a table offset and descriptor pointer;",
+            "``nr_args`` counts replacements. ``UNREGISTER_FILES`` takes null/zero."
+          ]
+        },
+        {
+          "file": "ref-iouring/io_uring_register.rst",
+          "start_line": 85,
+          "end_line": 89,
+          "lines": [
+            "``BADF`` identifies invalid descriptors; ``BUSY`` can indicate an existing",
+            "registration or a conflicting operation. ``FAULT`` identifies inaccessible",
+            "storage; ``INVAL`` covers invalid counts/flags/opcode-specific arguments.",
+            "``MFILE`` and ``NOMEM`` can identify file-reference or memory/resource limits;",
+            "``NXIO`` can identify absent registration or teardown. Unsupported resource"
+          ]
+        }
+      ],
+      "limits": "Null/zero operation preconditions plus generic INVAL category;no isolated invalid-unregister runtime claim."
+    },
+    {
+      "id": "tutorial/webserver_liburing.rst:564",
+      "file": "tutorial/webserver_liburing.rst",
+      "line": 564,
+      "text": "Accepted -> Request read -> Response written",
+      "categories": [
+        "c-inline"
+      ],
+      "already_in_historical_supplement": false,
+      "class": "non-C-arrow",
+      "author_disposition": "State-transition arrows;not C member access. Native phases described at tutorial/webserver.rst:43-50."
+    }
+  ],
+  "limits": [
+    "Patterns deliberately cover additional C build/type/null spellings;not all C syntax or every language synonym.",
+    "Arrow candidates classified from whole original lines;HTML and state diagrams not converted as C.",
+    "Zero c-build hits applies only to listed additional aliases,not proof of every build instruction.",
+    "SDK bodies inspected for ACCEPT pointer/CONNECT value and null/zero/ID registration;no new native runtime tests.",
+    "Prior16-row supplement target ee0b124 remains immutable;current7-row target b10f816 is separate.",
+    "No native/book/test edits,provider retry,sealing,repair,accepted semantics,mutation kills or delivery."
+  ]
+}

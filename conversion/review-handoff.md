@@ -55,6 +55,11 @@ algorithmic corroboration,not independent meanings/lifetime/completeness accepta
 Qualification879b2d75 failed provider restriction after8 observer/2 collector fixture
 cases only;no implementations/runs. Frozen partial report/patches retained;no bypass.
 
+`source-inline-c-supplement.json`/audit.md adds7 missing original C typedef/NULL
+reference lines separately from canonical3618 and historical16. Current native
+addresses/null arguments checked;2 arrow false positives excluded. Union3641 is
+expanded enumeration,not accepted semantics. No manuscript/native/test changes.
+
 ## Contract
 
 Review the current checked-out commit; record its full hash and clean/dirty state.

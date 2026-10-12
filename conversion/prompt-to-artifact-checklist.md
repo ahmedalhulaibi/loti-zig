@@ -44,6 +44,11 @@ Requirement2 block enumeration:`rst-grammar-inventory-audit.md/verification.json
 No missing block found;not lexical completeness or independent purpose acceptance.
 Provider-blocked author qualification remains unsealed/unadopted;no native repair.
 
+Requirement2 additional C inline reach:`source-inline-c-supplement.json`/audit.md,
+7 newly enumerated original socklen_t/NULL lines;native target slices/SDK bodies
+inspected. Combined enumerated union3641=3618+16+7;historical artifacts immutable.
+Query is bounded,not every spelling or independent meaning/retirement acceptance.
+
 Next: finish required purpose comparison, findings resolution and final exact
 HEAD acceptance, then accepted personal-fork delivery and post-push remote/
 source-link verification. Author26/128 comparisons, parent green gates and fork
