@@ -34,6 +34,11 @@ scenarios/53 steps and candidate retirement mechanisms;syntax/whole-render check
 only. All226 existing selected pins/archive5739833e unchanged. Not independent
 executable tests,ACL protection,native repair,new gates or lifecycle acceptance.
 
+`http-test-draft-audit.md/json`:private3 ownership reds preserved after child timeout;
+spec-first draft/original six assertion ASTs verified. BLOCK_NOT_SEAL_READY:live-FD
+polling can miss correctly closed results;harness exception cleanup needs qualification.
+No protected tests or native fix;all226 prior selected inputs/archive unchanged.
+
 Next: finish required purpose comparison, findings resolution and final exact
 HEAD acceptance, then accepted personal-fork delivery and post-push remote/
 source-link verification. Author26/128 comparisons, parent green gates and fork

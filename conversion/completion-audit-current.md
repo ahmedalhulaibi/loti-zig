@@ -51,6 +51,13 @@ are not ownership or publication ledgers. Compare per-tag async cancellation wit
 out-of-band synchronous cancellation;close-only rejected. All226 prior selected
 edition inputs/current5739833e archive unchanged;no runtime/full/publication replay.
 
+Direct draft audit:`http-test-draft-audit.md/json`,BLOCK_NOT_SEAL_READY. Spec-first
+initial body matches transcript before captured-body exposure;six literal assertion
+ASTs/fixture unchanged. Preserved private suite03 reaches3 specific ownership reds,
+not a completed author report. Live-late-FD polling can reject correct fast cleanup;
+collection failure cleanup remains unverified. Qualify before owner-controlled seal.
+No draft adoption/native repair;existing226 source pins/archive unchanged.
+
 Next: obtain a runtime-capable independent verifier/qualifying owner-approved
 alternative;specify fatal pending-I/O retirement,then repair/replay affected gates.
 Finish source/purpose comparison and exact required-surface audit before personal

@@ -1,0 +1,302 @@
+{
+  "scope": "Parent read-only audit of frozen unsealed independent-author draft;not native execution,seal or independent final acceptance.",
+  "source_base_commit": "1606bf6e1e50796a71a155d2d1644926d0d35961",
+  "workflow": "077cdd6b-1af4-4787-8e79-695bb945244c",
+  "child": "8b04aa6b-739a-417e-ab5b-ddb796d7c666",
+  "lane_error": "Subagent timed out after 1200000ms.",
+  "worktree": "/home/ahmed/workspace/va/worktrees/loti-zig/pi-worktree-8b04aa6b-739a-417e-ab5b-ddb796d7c666-s0-0",
+  "branch": "pi-subagents/http-test-draft-8b04aa6-5961-s0-t0",
+  "outcome": "BLOCK_NOT_SEAL_READY",
+  "authorship": {
+    "initial_writes": [
+      {
+        "ordinal": 75,
+        "timestamp": "2026-10-11T23:48:41.879Z",
+        "body_sha256": "e976e0d1c7645c79b6c4c2fae80e5570e1cc8d61e0b2ca8149d9124b7be44290"
+      }
+    ],
+    "source_body_exposures": [
+      {
+        "ordinal": 86,
+        "timestamp": "2026-10-11T23:49:14.162Z",
+        "role": "toolResult"
+      }
+    ],
+    "initial_body_matches_frozen_pre_exposure": true,
+    "all_six_assert_equal_call_asts_unchanged": true,
+    "assert_equal_counts": {
+      "test_default_mode_control": 5,
+      "test_fatal_observer_releases_successful_late_accept_before_exit": 1
+    },
+    "fixture_unchanged_after_exposure": true,
+    "bash_git_add_calls": [],
+    "staging_attribution": "No git add in captured child Bash calls;final staged additions not authoritatively attributed."
+  },
+  "draft_sha256": "1991fa92cc718bafe6ab63b4e778c60e87375b4796f0e059ba27730731bef5a0",
+  "pre_exposure_draft_sha256": "e976e0d1c7645c79b6c4c2fae80e5570e1cc8d61e0b2ca8149d9124b7be44290",
+  "fixture_sha256": "4597453818ae755d7934aa68d70ccd975fd8dd75601527a8dccccd0b4391c76d",
+  "patch_sha256": {
+    "post-exposure-diff.patch": "4d64f753f5b8ebd6d67aaf21f47ea899ed15ea1ee108ff51ef3990cf33d14194",
+    "checkpoint-correction.patch": "b7b5c573e832f1fe18965ddd0676689124426265f5099f3d940997eeb283819e",
+    "trace-suffix-correction.patch": "8e4d2ff952a9a224f1303398c98bb6ce57f635fd2fb2da268148266a9fbda723"
+  },
+  "private_suite": {
+    "test_methods": 2,
+    "seconds": 9.571,
+    "specific_failures": 3,
+    "suite_exit": "1",
+    "binary_sha256": "dfd0be9bf1382f958035abbeab126235eee8a54b04950a304544a0d937dcc717",
+    "native_source_pins": 30,
+    "fatal_observations": [
+      {
+        "attempt": 1,
+        "pid": 623572,
+        "returncode": 1,
+        "forced_termination": false,
+        "error": "error: WriteFailed",
+        "state": "S",
+        "wchan": "anon_pipe_write",
+        "syscall": "20 0x2 0x7fff0f742eb8 0x1 0x11b4510 0x1 0x7fff0f7442e8 0x7fff0f742dd0 0x10fa2dc",
+        "descriptors": [
+          {
+            "fd": 0,
+            "fdinfo": "pos:\t0\nflags:\t0100000\nmnt_id:\t28\nino:\t4\n",
+            "socket_inode": null,
+            "target": "/dev/null",
+            "tcp": []
+          },
+          {
+            "fd": 1,
+            "fdinfo": "pos:\t0\nflags:\t01\nmnt_id:\t18\nino:\t23279679\n",
+            "socket_inode": null,
+            "target": "pipe:[23279679]",
+            "tcp": []
+          },
+          {
+            "fd": 2,
+            "fdinfo": "pos:\t0\nflags:\t01\nmnt_id:\t18\nino:\t23279678\n",
+            "socket_inode": null,
+            "target": "pipe:[23279678]",
+            "tcp": []
+          },
+          {
+            "fd": 8,
+            "fdinfo": "pos:\t0\nflags:\t02000002\nmnt_id:\t12\nino:\t23259733\n",
+            "socket_inode": 23259733,
+            "target": "socket:[23259733]",
+            "tcp": [
+              {
+                "family": "tcp",
+                "inode": 23259733,
+                "local": [
+                  "127.0.0.1",
+                  34955
+                ],
+                "remote": [
+                  "127.0.0.1",
+                  54270
+                ],
+                "state": "01"
+              }
+            ]
+          }
+        ],
+        "observation": {
+          "idle_peer": {
+            "state": "eof",
+            "wire_hex": ""
+          },
+          "late_accepted_socket_inodes": [
+            23259733
+          ],
+          "late_peer": {
+            "state": "open",
+            "wire_hex": ""
+          }
+        }
+      },
+      {
+        "attempt": 2,
+        "pid": 623581,
+        "returncode": 1,
+        "forced_termination": false,
+        "error": "error: WriteFailed",
+        "state": "S",
+        "wchan": "anon_pipe_write",
+        "syscall": "20 0x2 0x7ffcf52f56f8 0x1 0x11b4510 0x1 0x7ffcf52f6b28 0x7ffcf52f5610 0x10fa2dc",
+        "descriptors": [
+          {
+            "fd": 0,
+            "fdinfo": "pos:\t0\nflags:\t0100000\nmnt_id:\t28\nino:\t4\n",
+            "socket_inode": null,
+            "target": "/dev/null",
+            "tcp": []
+          },
+          {
+            "fd": 1,
+            "fdinfo": "pos:\t0\nflags:\t01\nmnt_id:\t18\nino:\t23268022\n",
+            "socket_inode": null,
+            "target": "pipe:[23268022]",
+            "tcp": []
+          },
+          {
+            "fd": 2,
+            "fdinfo": "pos:\t0\nflags:\t01\nmnt_id:\t18\nino:\t23268021\n",
+            "socket_inode": null,
+            "target": "pipe:[23268021]",
+            "tcp": []
+          },
+          {
+            "fd": 8,
+            "fdinfo": "pos:\t0\nflags:\t02000002\nmnt_id:\t12\nino:\t23268051\n",
+            "socket_inode": 23268051,
+            "target": "socket:[23268051]",
+            "tcp": [
+              {
+                "family": "tcp",
+                "inode": 23268051,
+                "local": [
+                  "127.0.0.1",
+                  43807
+                ],
+                "remote": [
+                  "127.0.0.1",
+                  58732
+                ],
+                "state": "01"
+              }
+            ]
+          }
+        ],
+        "observation": {
+          "idle_peer": {
+            "state": "eof",
+            "wire_hex": ""
+          },
+          "late_accepted_socket_inodes": [
+            23268051
+          ],
+          "late_peer": {
+            "state": "open",
+            "wire_hex": ""
+          }
+        }
+      },
+      {
+        "attempt": 3,
+        "pid": 623584,
+        "returncode": 1,
+        "forced_termination": false,
+        "error": "error: WriteFailed",
+        "state": "S",
+        "wchan": "anon_pipe_write",
+        "syscall": "20 0x2 0x7ffcfd74d518 0x1 0x11b4510 0x1 0x7ffcfd74e948 0x7ffcfd74d430 0x10fa2dc",
+        "descriptors": [
+          {
+            "fd": 0,
+            "fdinfo": "pos:\t0\nflags:\t0100000\nmnt_id:\t28\nino:\t4\n",
+            "socket_inode": null,
+            "target": "/dev/null",
+            "tcp": []
+          },
+          {
+            "fd": 1,
+            "fdinfo": "pos:\t0\nflags:\t01\nmnt_id:\t18\nino:\t23279716\n",
+            "socket_inode": null,
+            "target": "pipe:[23279716]",
+            "tcp": []
+          },
+          {
+            "fd": 2,
+            "fdinfo": "pos:\t0\nflags:\t01\nmnt_id:\t18\nino:\t23279715\n",
+            "socket_inode": null,
+            "target": "pipe:[23279715]",
+            "tcp": []
+          },
+          {
+            "fd": 8,
+            "fdinfo": "pos:\t0\nflags:\t02000002\nmnt_id:\t12\nino:\t23269319\n",
+            "socket_inode": 23269319,
+            "target": "socket:[23269319]",
+            "tcp": [
+              {
+                "family": "tcp",
+                "inode": 23269319,
+                "local": [
+                  "127.0.0.1",
+                  46451
+                ],
+                "remote": [
+                  "127.0.0.1",
+                  48542
+                ],
+                "state": "01"
+              }
+            ]
+          }
+        ],
+        "observation": {
+          "idle_peer": {
+            "state": "eof",
+            "wire_hex": ""
+          },
+          "late_accepted_socket_inodes": [
+            23269319
+          ],
+          "late_peer": {
+            "state": "open",
+            "wire_hex": ""
+          }
+        }
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "late-accept-green-path",
+      "severity": "blocker",
+      "lines": [
+        245,
+        256,
+        461
+      ],
+      "evidence": "Fatal test waits for a currently live late-peer descriptor before cleanup checkpoint;accepted() returns only when the descriptor is visible.",
+      "counterexample": [
+        "Late peer connects.",
+        "ACCEPT installs an owned FD.",
+        "Correct cleanup closes that FD before the first10ms census poll.",
+        "Every sampled census has no late descriptor;peer EOF and absent FD satisfy intended cleanup.",
+        "accepted() returns no value until timeout;ownership oracle never runs."
+      ],
+      "verification_scope": "Static contract/observer counterexample,not executed corrected implementation.",
+      "required_next": "Independent author must admit already-closed accepted results or distinguish unaccepted backlog cancellation,with a demonstrated conforming green observation path."
+    },
+    {
+      "id": "cleanup-evidence-exception",
+      "severity": "unverified_failure_path",
+      "lines": [
+        319,
+        369
+      ],
+      "evidence": "close() calls fallible JSON collection before its later forced termination/reap/FD-release steps;there is no unconditional cleanup-finally covering those steps.",
+      "verification_scope": "Source control-flow risk;no orphan or malformed-output negative probe demonstrated.",
+      "required_next": "Author must validate collection failures cannot bypass owned process/FD cleanup."
+    }
+  ],
+  "unchanged_selected_edition_inputs": 226,
+  "book_sha256": "5739833eb7db7829d616e61382b9449eedd5f183d9fea9d62be9fa4a55ace84e",
+  "limits": [
+    "Post-authorship captured-body exposure is confirmed;not fully unexposed independence.",
+    "Unchanged literal asserts do not establish complete harness semantics;checkpoint/trace framing changed and green observability remains unresolved.",
+    "No complete author report or enforceable seal;test drafts not adopted. No pending-memory retirement/default-applicable fatal/unpublished/copied-result/cancel-failure coverage acceptance.",
+    "No native/manuscript/test expectation edit,execution,mutation kill,full/cold/publication replay,push or goal completion by parent.",
+    "One grouped read truncated on exposure output;small source/patch/order reads separately completed. Stale graph989c85c0/2f4b15a7 used only for syntax outlines;all relevant bodies read directly."
+  ],
+  "input_sha256": {
+    "capture.json": "d9fda13e86221799a58ad9b446eb970f4e88105420440f42d237e99a0891245d",
+    "transcript.jsonl": "0a6f239027a2b11f933f95207b6b72b797cb2fc5671bbb77400b6d0f5d6638f7",
+    "suite-provenance.json": "a643c8448339f925fa81bfccae145b06a0ce64a429ed01c181b53452863f4f67",
+    "suite-03.stderr": "6dc883abd4b615d89a5f88939e1bd8df9d6b6895d3c6241deadec15fad25e042"
+  },
+  "audit_helper_sha256": "1a067f48469e8106689fc32b3c85ae464e7c253cd0db6ac25a0cc1701107d8a6"
+}

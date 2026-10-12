@@ -40,6 +40,14 @@ before enter can fail. Candidate async-per-tag versus synchronous-register drain
 close-only rejected. Author syntax/render checks are not executable tests,ACL seals
 or accepted design;all226 prior selected inputs/archive5739833e unchanged.
 
+`http-test-draft-audit.md/json` qualifies failed workflow077cdd6b/child8b04aa6b:
+initial e976e0d1 matches original write before exposure;all six assertion ASTs and
+fixture unchanged. Private suite03 has3 specific late ownership reds after controls,
+but BLOCK_NOT_SEAL_READY. accepted() requires a live late FD;correct fast close can
+make its observation time out. Author must prove a conforming green observation
+path and robust cleanup if evidence parsing fails,before owner-enforced sealing.
+No new reviewer,draft adoption,native/full/publication repair/gate or delivery.
+
 ## Contract
 
 Review the current checked-out commit; record its full hash and clean/dirty state.
